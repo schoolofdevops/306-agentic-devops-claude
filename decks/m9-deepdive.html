@@ -190,7 +190,6 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-dasharray="9 7"><rect x="120" y="290" width="860" height="42" rx="10"/></g>
     <text x="550" y="316" text-anchor="middle" class="lbl-g">a role&#8217;s authority is a <tspan class="lbl-b">shape</tspan> — exactly these capabilities, no fewer and no more</text>
   </svg>
-  <p class="takeaway">Over-restriction is a regression too: strip write from the IaC engineer and a one-sided suite stays green while authoring silently breaks.</p>
   <div class="pageno">M9·DD·02</div>
 </section>
 
@@ -217,7 +216,6 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-dasharray="9 7"><rect x="120" y="270" width="860" height="40" rx="10"/></g>
     <text x="550" y="296" text-anchor="middle" class="lbl-g"><tspan class="lbl-b">determinism</tspan> is what makes this a CI check rather than a judgment call — same property as the M8 Change Gate</text>
   </svg>
-  <p class="takeaway">If the answer is &#8220;no,&#8221; the harness won't hand the subagent a write tool — the easy, direct path to a file edit is closed.</p>
   <div class="pageno">M9·DD·03</div>
 </section>
 
@@ -242,7 +240,6 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-dasharray="9 7"><rect x="120" y="298" width="860" height="40" rx="10"/></g>
     <text x="550" y="324" text-anchor="middle" class="lbl-g">the tool-set check guards <tspan class="lbl-b">provisioning</tspan>; the hook and read-only credential guard the <tspan class="lbl-b">action</tspan></text>
   </svg>
-  <p class="takeaway">Layer 1 catches &#8220;a role got more than it should&#8221; at commit time, so the enforcement layers only ever handle the residual.</p>
   <div class="pageno">M9·DD·04</div>
 </section>
 
@@ -269,7 +266,6 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-dasharray="9 7"><rect x="120" y="298" width="860" height="40" rx="10"/></g>
     <text x="550" y="324" text-anchor="middle" class="lbl-g">&#8220;a fix you write is a fix <tspan class="lbl-b">nobody reviewed</tspan>&#8221; — a reviewer that patches what it audits destroys its independence</text>
   </svg>
-  <p class="takeaway">Effective authority is the intersection of every layer — a safe change can only shrink it, so the tighter layer wins.</p>
   <div class="pageno">M9·DD·05</div>
 </section>
 
@@ -290,7 +286,6 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="550" y="292" text-anchor="middle" class="lbl-g">what you show a security reviewer: not &#8220;we trust the roles to stay in their lane,&#8221;</text>
     <text x="550" y="318" text-anchor="middle" class="lbl-g">but &#8220;here is the test that proves each read-only role <tspan class="lbl-b">structurally cannot leave it</tspan>, on every commit&#8221;</text>
   </svg>
-  <p class="takeaway">Each forbidden-action rehearsal that passes is a specific &#8220;well-meaning agent does the wrong thing under pressure&#8221; incident, certified impossible.</p>
   <div class="pageno">M9·DD·06</div>
 </section>
 

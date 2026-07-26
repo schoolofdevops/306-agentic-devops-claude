@@ -138,7 +138,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section data-auto-animate>
   <p class="kicker">MODULE 3 &nbsp;·&nbsp; AGENTIC DEVOPS WITH CLAUDE CODE</p>
   <h2 class="t" style="font-size:2.3em">Context Engineering, Evidence &amp; Operational Memory</h2>
-  <p class="s" style="font-size:1.2em">The boundary from Module 2 keeps the agent safe. The context you engineer here is what makes its work correct.</p>
+  <p class="s" style="font-size:1.2em">the boundary keeps it safe, context makes it right</p>
   <svg viewBox="0 0 1100 300" role="img" aria-label="A purple boundary box from Module 2 holds a small agent figure inside, while a gray thought bubble asking what does it know points into the box.">
     <!-- M2 boundary box (purple meta), agent inside -->
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round">
@@ -166,7 +166,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 2 — boundary safe vs context correct ============ -->
 <section>
   <h2 class="t">The boundary keeps it safe; context makes it correct</h2>
-  <p class="s">Permission decides what the agent is <em>allowed</em> to do. Context decides whether what it does is <em>right</em>. A perfectly permissioned agent that misreads your repo still ships the wrong change — it just ships it safely.</p>
+  <p class="s">permission is <em>allowed</em>; context is <em>right</em></p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="Left panel: a boundary box leads an agent to a safe but wrong change. Right panel: boundary plus context leads the agent to a change that is safe and right.">
     <!-- LEFT panel: boundary only -->
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="70" width="200" height="90" rx="12"/></g>
@@ -197,7 +197,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 3 — context is a budget (the hinge) ============ -->
 <section>
   <h2 class="t">Context is a budget, not a bucket</h2>
-  <p class="s">Everything the agent knows shares one finite window — the contract, the conversation so far, and every fact it collects. Fill it with noise and you bury the three lines that mattered under three hundred that did not.</p>
+  <p class="s">one finite window, shared by everything it knows</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="One outer context-window box holds three stacked blue bands for system plus CLAUDE.md, conversation, and evidence, with a room-left gauge on the right edge.">
     <!-- outer window box -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="3"><rect x="120" y="55" width="640" height="270" rx="14"/></g>
@@ -225,7 +225,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 4 — carry-on, not shipping container ============ -->
 <section>
   <h2 class="t">Pack the carry-on, not the shipping container</h2>
-  <p class="s">A carry-on has a hard size limit, and every item is one you have to find later under time pressure. You pack the passport where you can grab it — you do not pad it with things "just in case" that hide the essentials.</p>
+  <p class="s">pack the passport where you can grab it</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="Left: a neat carry-on bag holding a passport and boarding pass with a green check. Right: a bloated overstuffed bag marked in red with just-in-case items spilling out.">
     <!-- LEFT: neat carry-on (blue) -->
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.8"><rect x="120" y="120" width="240" height="170" rx="14"/></g>
@@ -249,7 +249,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 5 — spend the budget on signal ============ -->
 <section>
   <h2 class="t">Spend the budget on signal</h2>
-  <p class="s">The whole module reduces to one principle. Four techniques stack toward it: a tight contract, rules scoped to where they apply, evidence that arrives structured, and queries that return signal instead of noise.</p>
+  <p class="s">four techniques, one principle: signal over noise</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="Four rising staircase rungs labelled tight CLAUDE.md, scoped rules, structured evidence, and bounded queries, each marked with a green signal tick, climbing toward room to reason.">
     <!-- four rising rungs -->
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.6">
@@ -274,7 +274,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 6 — CLAUDE.md is the operating contract ============ -->
 <section>
   <h2 class="t">CLAUDE.md is the operating contract</h2>
-  <p class="s">Claude Code loads this file before it does anything else, every session. It is the contract you would hand a contractor on day one — not the full building code, but the specific rules for <em>this</em> site, curated because it is short on purpose.</p>
+  <p class="s">the contract you hand a contractor on day one</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A purple clipboard labelled CLAUDE.md operating contract is handed to a hard-hat contractor figure, with three sticky notes reading water shutoff, load-bearing wall, and call before electrical.">
     <!-- clipboard (purple meta) -->
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="3"><rect x="120" y="70" width="280" height="230" rx="12"/></g>
@@ -304,7 +304,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 7 — belongs vs bloat ============ -->
 <section>
   <h2 class="t">The test for every line: would the agent get it wrong?</h2>
-  <p class="s">A line earns its place only if it is non-obvious <em>and</em> stable enough to commit. The service map passes — the agent cannot infer it. A paragraph restating the compose file fails — the agent can just read the file.</p>
+  <p class="s">non-obvious <em>and</em> stable — or it doesn't belong</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="Left green panel lists what belongs in CLAUDE.md; right red panel lists what is bloat and does not belong.">
     <!-- LEFT: belongs (green) -->
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.8"><rect x="70" y="60" width="440" height="270" rx="14"/></g>
@@ -333,7 +333,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 8 — /init surveys, you draw the blueprint (3 fragments) ============ -->
 <section>
   <h2 class="t">/init surveys the site; you draw the blueprint</h2>
-  <p class="s">Claude Code's <code>/init</code> runs reconnaissance and drafts a starter contract — an accurate inventory, not the finished plan. It is the site survey. The value you add is editing it down to what matters.</p>
+  <p class="s"><code>/init</code> surveys the site; you edit the blueprint</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A pipeline: claude slash init produces a draft that is accurate but generic and too long, then you edit it by trimming filler and adding non-obvious rules, producing a curated contract.">
     <!-- start: /init (blue) -->
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.8"><rect x="50" y="140" width="220" height="110" rx="12"/></g>
@@ -370,7 +370,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 9 — root file scaling problem ============ -->
 <section>
   <h2 class="t">One root file has a scaling problem</h2>
-  <p class="s">Northstar is four stacks with rules that are correct here and wrong there. Cram every stack's rules into the root file and each one pays the budget cost in every session — even the sessions where it does not apply.</p>
+  <p class="s">one root file, four stacks, rules that clash</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="An overloaded front-gate sign crammed with rules for four different rooms, marked red and cluttered, with a confused figure scanning it for the one relevant line.">
     <!-- overloaded sign (red, cluttered) -->
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="3"><rect x="120" y="55" width="520" height="260" rx="12"/></g>
@@ -396,7 +396,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 10 — post the rule where it applies (4 fragments) ============ -->
 <section>
   <h2 class="t">Post the rule where it applies</h2>
-  <p class="s">The root file holds what is true everywhere. Each subtree gets its own <code>CLAUDE.md</code> holding what is true only <em>there</em> — like a job site posting the lockout rule in the electrical room, not on the front gate.</p>
+  <p class="s">post the lockout rule in the electrical room</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A root CLAUDE.md hub fans out to four scoped contract boxes, one each for orders-api pytest, inventory-api go test, infra plan-only, and platform no-delete-namespace.">
     <!-- hub: root (purple) -->
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="3"><rect x="430" y="40" width="240" height="90" rx="12"/></g>
@@ -441,7 +441,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 11 — a fact with no provenance is a rumor ============ -->
 <section>
   <h2 class="t">A fact with no provenance is a rumor</h2>
-  <p class="s">"inventory-api is down" — says who, checked when, with what command, and is that still true? An unsourced observation is a liability the agent will build a fix on. The provenance is the trust.</p>
+  <p class="s">says who, checked when, still true?</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="Left: a bare claim inventory-api is down surrounded by three gray question marks, marked red as a rumor. Right: the same claim on a chain-of-custody label, marked green as evidence.">
     <!-- LEFT: bare claim (rumor) -->
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.8"><rect x="70" y="120" width="360" height="90" rx="12"/></g>
@@ -471,7 +471,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 12 — evidence packet is a chain-of-custody label ============ -->
 <section>
   <h2 class="t">The evidence packet is a chain-of-custody label</h2>
-  <p class="s">Give the agent a structure to fill in every time it collects a fact. Each field on the label defends against one specific failure — reproducibility, staleness, poison, over-generalizing from a single reading.</p>
+  <p class="s">each field on the label defends against one failure</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A blue sample bag carries a label listing six evidence-packet fields, each arrowed to the specific failure it defends against.">
     <!-- sample bag (blue) with label -->
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="3"><rect x="60" y="70" width="420" height="230" rx="12"/></g>
@@ -505,7 +505,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 13 — bounded queries (4 fragments) ============ -->
 <section>
   <h2 class="t">Bounded queries: ask for the field, not the haystack</h2>
-  <p class="s">An unbounded dump technically contains the answer and buries it. Four moves compose: select the field, sample a window, cap the output, scope narrow by default. The broad query is the expensive one.</p>
+  <p class="s">ask for the field, not the haystack</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A pipeline reducing an unbounded get pods dash o yaml dump through field selection, sampling, and output caps down to the ten lines that matter.">
     <!-- start: unbounded (red) -->
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.8"><rect x="30" y="130" width="200" height="130" rx="12"/></g>
@@ -546,7 +546,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 14 — compaction is the meeting minutes (2 fragments) ============ -->
 <section>
   <h2 class="t">Compaction is the meeting minutes</h2>
-  <p class="s">A long investigation fills the window and Claude Code compacts — lossy summarization. Anything you would hate to lose to a summary, checkpoint it to a file first, verbatim. Compaction cannot blur what is on disk.</p>
+  <p class="s">compaction cannot blur what is on disk</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A long investigation that fills the window forks two ways: checkpoint to a file which survives verbatim, or leave it in the conversation where compaction can blur the exact strings.">
     <!-- shared node -->
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.8"><rect x="380" y="40" width="330" height="90" rx="12"/></g>
@@ -577,7 +577,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 15 — memory persists, so does the wrong thing ============ -->
 <section>
   <h2 class="t">Memory persists — so does the wrong thing</h2>
-  <p class="s">Memory bridges sessions, but a persistent memory can be wrong for a long time. An untrusted string can climb from read to summarized to remembered to acted — unless provenance gates the climb. This is the Deep Dive's poison.</p>
+  <p class="s">memory persists — so does the wrong thing</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A red untrusted ticket string climbs a staircase of steps read, summarized, remembered, and acted; a green provenance gate blocks the climb, but without it the string reaches the top.">
     <!-- staircase of promotion steps -->
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.4">
@@ -606,7 +606,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section>
   <p class="kicker">MODULE 3 &nbsp;·&nbsp; CONTEXT ENGINEERING, EVIDENCE &amp; MEMORY</p>
   <h2 class="t" style="font-size:2.05em">Keep the wrong thing out, not just the right thing in</h2>
-  <p class="s" style="font-size:1.05em">Context engineering is not only about packing the right information in — it is about keeping the wrong information out. The boundary makes the agent safe; this pack makes it right.</p>
+  <p class="s" style="font-size:1.05em">keep the wrong thing out, not just the right thing in</p>
   <svg viewBox="0 0 1100 300" role="img" aria-label="Five numbered takeaway rows: budget on signal, curate the contract, scope the rules, label your evidence, and provenance keeps poison out.">
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="2.4">
       <circle cx="120" cy="55" r="24"/>

@@ -175,7 +175,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 2 · You have the players, not the play ═══════════════ -->
 <section>
   <h2 class="t">You have the players, not the play</h2>
-  <p class="s">Module 9 gave you six specialists — the SRE investigator, the IaC engineer, the two reviewers, the platform engineer, the FinOps analyst. What you do not yet have is a way to run a <em>play</em>: a way to make them relate to each other for a job.</p>
+  <p class="s">specialists are ready — the play isn't written</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Six labelled role-pieces sit in a row on a board like chess pieces that have not been given any moves. A hand hovers above them and a faint question mark floats over the board — the players are ready but no play is drawn.">
     <!-- board line -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4"><line x1="70" y1="250" x2="1030" y2="250"/></g>
@@ -212,7 +212,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 3 · One incident, two different shapes ═══════════════ -->
 <section>
   <h2 class="t">Two jobs, two completely different shapes</h2>
-  <p class="s">Investigating three hypotheses at once while you steer is not the same shape as auditing four modules reproducibly in a pipeline. Same team — but the coordination is shaped differently.</p>
+  <p class="s">same team, different coordination shape</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A two-panel comparison. Left: a burning incident with one source fanning out to three parallel investigators — the fan-out shape. Right: an assembly line of four inspection stations feeding a merge gate — the reproducible workflow shape.">
     <!-- divider -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-dasharray="9 7"><line x1="550" y1="40" x2="550" y2="320"/></g>
@@ -243,7 +243,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 4 · The wrong shape is a slow, expensive failure ═══════════════ -->
 <section>
   <h2 class="t">The wrong shape is a slow, expensive failure</h2>
-  <p class="s">A wrong orchestration shape is not a syntax error you catch immediately — it's an expensive failure you notice only after it has wasted an incident's worth of time. Spawn one subagent where you needed three, and a five-minute fan-out becomes a fifteen-minute serial slog while production burns.</p>
+  <p class="s">wrong shape wastes an incident's worth of time</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A two-panel comparison. Left: three investigations run single-file in a queue behind a burning clock, taking fifteen minutes — the wrong shape. Right: the same three run in a wide parallel fan finishing in five minutes — the right shape.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-dasharray="9 7"><line x1="550" y1="40" x2="550" y2="320"/></g>
     <!-- LEFT: serial queue, red clock -->
@@ -266,7 +266,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 5 · The incident commander routes, doesn't do ═══════════════ -->
 <section>
   <h2 class="t">The commander routes the work by its shape</h2>
-  <p class="s">On a real bridge call, the commander doesn't do the investigation — they route it. Some work goes to one person and they wait. Some fans out to several at once. Some runs in the background. Some is a standing procedure nobody watches. Their skill is knowing which shape each piece is.</p>
+  <p class="s">the commander routes work, doesn't do it</p>
   <svg viewBox="0 0 1100 380" role="img" aria-label="A hub-and-spoke diagram. The incident commander sits at the center as a purple hub, with four labelled spokes routing outward: one-and-wait, fan-out to several, hand off to background, and a standing scheduled procedure. Each spoke is a different shape of coordination.">
     <!-- hub -->
     <g filter="url(#rough)" fill="var(--p-purple)" stroke="none"><circle cx="550" cy="190" r="70"/></g>
@@ -296,7 +296,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 6 · Eight shapes worth knowing ═══════════════ -->
 <section>
   <h2 class="t">Eight shapes worth knowing</h2>
-  <p class="s">These sort cleanly along a few axes: is a human waiting, are there independent sub-tasks to run at once, must the coordination be reproducible, does the work outlive the current turn. Each row is a different answer to those questions.</p>
+  <p class="s">eight shapes, four questions apart</p>
   <svg viewBox="0 0 1100 350" role="img" aria-label="A table-card listing the eight orchestration topologies as rows: skill, subagent, fork, background session, workflow, team, headless, routine — each with a one-line shape. The live-session shapes are tinted green, the scripted shapes blue.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="30" width="980" height="300" rx="14"/></g>
     <!-- row backgrounds: green = live session moves; blue = scripted -->
@@ -324,7 +324,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 7 · Four axes decide the row (decision tree, 4 fragments) ═══════════════ -->
 <section>
   <h2 class="t">Four axes route every job to one shape</h2>
-  <p class="s">Reproducible? Independent sub-tasks? Human waiting this turn? Outlives the turn? Walk the four gates and you land on exactly one topology. In the lab this is a deterministic script that fails closed on an ambiguous shape.</p>
+  <p class="s">four gates, one topology, no guessing</p>
   <svg viewBox="0 0 1100 380" role="img" aria-label="A decision tree. A job enters and passes through four diamond gates — reproducible, then parallel, then human-waiting, then outlives-turn — routing to leaf boxes: workflow, routine, headless, fork, background, subagent, team, skill. Scripted leaves are blue, live-session leaves are green.">
     <!-- entry -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><rect x="470" y="20" width="160" height="44" rx="10"/></g>
@@ -377,7 +377,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 8 · The Ops Lead is the general contractor ═══════════════ -->
 <section>
   <h2 class="t">The Ops Lead is the general contractor</h2>
-  <p class="s">The interactive parent — the Ops Lead — holds the plan, brings in each licensed trade, and sequences and synthesizes. It never lays the tile itself. The moment it grabs the trowel, nobody is holding the plan and the specialist stands idle.</p>
+  <p class="s">the Ops Lead holds the plan, never the trowel</p>
   <svg viewBox="0 0 1100 350" role="img" aria-label="A general contractor stands holding a plan clipboard with empty hands, routing to three trades who do the work: a tiler, an electrician, and a plumber. A caption notes the contractor's value is entirely in the routing and the synthesis.">
     <!-- contractor (purple = control), empty hands -->
     <g filter="url(#rough)" fill="var(--p-purple)" stroke="none"><rect x="70" y="150" width="150" height="120" rx="12"/></g>
@@ -408,7 +408,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 9 · Sequential delegation (sequence diagram, 4 fragments) ═══════════════ -->
 <section>
   <h2 class="t">Sequential delegation: one job, wait, decide</h2>
-  <p class="s">This is the subagent topology used deliberately — right when each step <em>depends</em> on the last. The Ops Lead hands one bounded job to one specialist, waits for the structured handoff, and decides the next step from what came back. It never edits, runs, or investigates.</p>
+  <p class="s">one job, wait, decide — then the next step</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A sequence diagram with four lifelines: Human, Ops Lead, SRE investigator, and Reviewer. The human reports the incident; the Ops Lead delegates to the SRE and receives an evidence packet; synthesizes; delegates to the reviewer and receives a verdict; then answers the human.">
     <!-- lifelines -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2" stroke-dasharray="4 6">
@@ -453,7 +453,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 10 · Independent causes want a different shape ═══════════════ -->
 <section>
   <h2 class="t">Three independent causes — a different shape</h2>
-  <p class="s">The retry storm from INC-002: latency spiked to 28 seconds, error rate over 30%, three hypotheses on the table. Each lives in a different dimension, and a different specialist could investigate each without waiting on the others.</p>
+  <p class="s">three independent hypotheses, three dimensions</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Three independent hypothesis cards side by side, each drawn as a separate blue card with its own evidence icon and no arrows connecting them: application-retry an app-layer cause, platform-resource an infra-layer cause, and recent-change a timeline cause.">
     <!-- three separate blue cards, deliberately NO arrows between them -->
     <g filter="url(#rough)" fill="var(--p-blue)" stroke="none"><rect x="70" y="90" width="290" height="180" rx="14"/><rect x="405" y="90" width="290" height="180" rx="14"/><rect x="740" y="90" width="290" height="180" rx="14"/></g>
@@ -482,7 +482,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 11 · Fan out, then synthesize (fan-out, 3 fragments) ═══════════════ -->
 <section>
   <h2 class="t">Fan out, then synthesize</h2>
-  <p class="s">Because the three causes are independent, you fan them out: three investigators, in parallel, each on its own dimension. Then you bring the results together. Fanning out only pays off if the investigators stay independent.</p>
+  <p class="s">fan out only pays off if they stay independent</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A fan-out diagram. One incident source on the left splits into three parallel investigators in the middle, each reading its own evidence, which then converge into a single synthesis join box on the right.">
     <!-- source -->
     <g filter="url(#rough)" fill="var(--p-red)" stroke="none"><circle cx="130" cy="170" r="42"/></g>
@@ -526,7 +526,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 12 · Triple-blind study, not a group chat (two-panel, EMOTIONAL PEAK) ═══════════════ -->
 <section>
   <h2 class="t">A triple-blind study, not a group chat</h2>
-  <p class="s">Put three doctors in a group chat and the second anchors on the first, the third goes along — one guess wearing three coats. A triple-blind study is the fix: each reaches a conclusion from its own evidence, and only then do you compare. Convergence then <em>means</em> something.</p>
+  <p class="s">a triple-blind study, not a group chat</p>
   <svg viewBox="0 0 1100 350" role="img" aria-label="A two-panel comparison. Left, a group chat: three heads with arrows passing between them, all landing on the same echoed answer, marked bad in red. Right, a triple-blind study: three heads with no arrows between them each reaching their own conclusion, then compared, marked good in green.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-dasharray="9 7"><line x1="550" y1="40" x2="550" y2="320"/></g>
     <!-- LEFT: group chat (red) -->
@@ -559,7 +559,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 13 · Synthesis has three honest jobs (numbered rows, 3 fragments) ═══════════════ -->
 <section>
   <h2 class="t">Synthesis has three honest jobs</h2>
-  <p class="s">Each job guards a specific failure mode. In the lab, <code>synthesize-hypotheses.sh</code> enforces all three deterministically — the same fail-closed discipline from Module 8, now applied to the synthesis of a parallel fan-out.</p>
+  <p class="s">synthesis has three honest jobs to do</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Three numbered rows. One: corroboration only counts if independent, guarding against contamination. Two: disagreement is surfaced, not averaged, guarding against a two-to-one vote. Three: missing evidence loops, guarding against concluding on partial data.">
     <!-- row 1 (fragment 1) -->
     <g class="fragment" data-fragment-index="0">
@@ -592,7 +592,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 14 · The four orchestration anti-patterns (big-box anatomy) ═══════════════ -->
 <section>
   <h2 class="t">The four ways orchestration goes wrong</h2>
-  <p class="s">Every failure mode above is a specific, nameable anti-pattern. Consensus theater, hidden assumptions, runaway concurrency, and duplication — know their names and you can see them coming.</p>
+  <p class="s">four ways orchestration goes wrong, by name</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A big box titled the four orchestration anti-patterns holds four red-tinted inner boxes: consensus theater, agents agree because they saw each other; hidden assumptions, the parent injects the answer in the prompt; runaway concurrency, too many agents exhaust the budget; and duplication, overlapping work with no partition.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8"><rect x="60" y="40" width="980" height="280" rx="16"/></g>
     <text x="550" y="72" text-anchor="middle" class="lbl-b">the four orchestration anti-patterns</text>
@@ -614,7 +614,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 15 · Each anti-pattern has a control (mapping, 4 fragments) ═══════════════ -->
 <section>
   <h2 class="t">Each anti-pattern has a control</h2>
-  <p class="s">Three of the four controls are <em>structural</em> — properties of how you set up the orchestration, not behaviors you hope for. The one that isn't — hidden assumptions — is discipline in how you <em>write</em> the delegation prompt, and it's the one most likely to bite.</p>
+  <p class="s">structure over hope — except one, and it bites</p>
   <svg viewBox="0 0 1100 350" role="img" aria-label="Four anti-patterns on the left in red map by arrows to four controls on the right in green: consensus theater to blind fan-out plus reject peer-derived claims; hidden assumptions to delegate the question not the answer; runaway concurrency to a max-parallel cap; and duplication to partition plus coverage assertion.">
     <text x="250" y="45" text-anchor="middle" class="lbl-b">anti-pattern</text>
     <text x="850" y="45" text-anchor="middle" class="lbl-b">control</text>
@@ -661,7 +661,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 16 · The reproducible audit is an inspection line (two-panel) ═══════════════ -->
 <section>
   <h2 class="t">The audit is an inspection line, not an interview</h2>
-  <p class="s">A detective interview is adaptive — what the witness says changes the next question. An assembly-line inspection is the opposite: every unit goes through the same stations in the same order, and the report has the same shape whether you run it today or next Tuesday. A compliance audit has to be the inspection.</p>
+  <p class="s">the audit is an inspection line, not an interview</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A two-panel comparison. Left, a detective interview: a detective and a witness with a branching question tree that adapts live. Right, an assembly-line inspection: four identical stations in a fixed line each producing the same-shape record.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-dasharray="9 7"><line x1="550" y1="40" x2="550" y2="320"/></g>
     <!-- LEFT: detective interview (adaptive) -->
@@ -688,7 +688,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 17 · Determinism is what makes it CI-able (scene, 3 fragments) ═══════════════ -->
 <section>
   <h2 class="t">Same answer at width 1, 2, or 4 — that's the gate</h2>
-  <p class="s">The workflow enforces three structural controls at once: partition (one module per worker, no duplication), a <code>--max-parallel</code> cap (no runaway), and a normalized join (comparable records, not a pile of prose). Run it at any width and the answer is identical — concurrency changes the speed, never the result.</p>
+  <p class="s">same answer at any width — that's the gate</p>
   <svg viewBox="0 0 1100 350" role="img" aria-label="A pipeline. Four infrastructure modules — networking, database, compute, storage — are partitioned to bounded workers under a max-parallel cap, which feed one normalized join report. A green stamp reads same answer at one, two, or four.">
     <!-- partition: 4 modules (fragment 1) -->
     <g class="fragment" data-fragment-index="0">
@@ -728,7 +728,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 18 · Where each topology lives (three-lane grouping) ═══════════════ -->
 <section>
   <h2 class="t">Sort them by where they live</h2>
-  <p class="s">These topologies are not all the same kind of thing. Some are moves inside an interactive session, some are how you invoke Claude Code from a script, one is a programmatic library. Sorting by where they live keeps you from reaching for the wrong one.</p>
+  <p class="s">sort them by where they live</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Three lanes. Lane one, inside an interactive session, holds subagent, fork, and background — the incident-commander's live moves. Lane two, from a script or CI, holds headless, workflow, and routine — the reproducible unattended shapes. Lane three, as a programmatic library, holds the Agent SDK.">
     <!-- lane 1: interactive session (green = live) -->
     <g filter="url(#rough)" fill="var(--p-green)" stroke="none"><rect x="50" y="70" width="320" height="220" rx="14"/></g>

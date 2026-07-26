@@ -138,7 +138,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section data-auto-animate>
   <p class="kicker">MODULE 2 &nbsp;·&nbsp; Agentic DevOps with Claude Code</p>
   <h2 class="t" style="font-size:2.3em">Install, Permission Postures &amp; Sandboxing</h2>
-  <p class="s" style="font-size:1.2em">Last module you decided, task by task, how much to hand the agent. This module turns that judgment into configuration — the rules, flags, and walls that decide what the agent may do before it does anything.</p>
+  <p class="s" style="font-size:1.2em">judgment becomes configuration</p>
   <svg viewBox="0 0 1100 300" role="img" aria-label="An agent box sits inside a dashed boundary wall, fanning out to three gates named availability, permissions, and sandbox.">
     <!-- dashed boundary wall -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4" stroke-dasharray="9 7" stroke-linecap="round">
@@ -173,7 +173,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 2 — install ≠ authenticated ============ -->
 <section>
   <h2 class="t">The binary is inert until you hand it a key</h2>
-  <p class="s">Installing Claude Code is like installing kubectl; authenticating it is like giving it a kubeconfig. The command exists, but which credential you attach decides what it can reach — and who pays for it.</p>
+  <p class="s">install is the binary, auth is the key</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A claude binary box connects through a drawn key to three authentication lanes: subscription login, API key, and enterprise Bedrock or Vertex.">
     <!-- binary box (neutral / the thing itself) -->
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round">
@@ -212,7 +212,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 3 — three install paths (3 fragments) ============ -->
 <section>
   <h2 class="t">Three install paths — the machine decides, not taste</h2>
-  <p class="s">How you get Claude Code onto a machine is an operational choice. A laptop wants a self-updating binary. A Node shop already has npm. A CI runner wants an exact pinned version — a tool that auto-updates inside a pipeline is a supply-chain surprise.</p>
+  <p class="s">laptop, npm shop, or pinned CI version</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="One source, getting claude onto a machine, fans out to three install paths chosen by the machine's role: laptop to native, Node shop to npm, CI to a pinned version.">
     <!-- source -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round">
@@ -257,7 +257,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 4 — auth is who; permissions are what-here ============ -->
 <section>
   <h2 class="t">Auth is <em>who</em>; permissions are <em>what, here</em></h2>
-  <p class="s">Keep these two apart in your head. Authentication is machine-level, set once — it is who the agent is. Permissions are per-project and per-invocation — what that identity may do in this repo. Enterprise auth is exactly where the managed policy at the top of the hierarchy is born.</p>
+  <p class="s">machine identity vs. per-project rules</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="Two panels: the left panel is authentication, machine-level and set once; the right is permissions, per-project. An arrow runs from enterprise auth up to a managed-policy box.">
     <!-- left: AUTH -->
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="2.8"><rect x="60" y="90" width="440" height="180" rx="12"/></g>
@@ -284,7 +284,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 5 — the boundary is the product (THESIS) ============ -->
 <section>
   <h2 class="t">You set a role once, then you stop watching</h2>
-  <p class="s">You don't read every command over a new engineer's shoulder — you give them a role and trust the boundary. An agent needs the same, for a sharper reason: it runs at machine speed and never hesitates near the end of a long task. The boundary isn't an add-on. It <em>is</em> the safety model.</p>
+  <p class="s">the boundary <em>is</em> the safety model</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="On the left, a new engineer inside a dashed role box listing read prod, write staging, no billing. On the right, a fast agent that confidently runs the command with no pause.">
     <!-- left: new engineer in a role box -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4" stroke-dasharray="9 7"><rect x="60" y="70" width="440" height="230" rx="14"/></g>
@@ -309,7 +309,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 6 — three boundaries ============ -->
 <section>
   <h2 class="t">Three boundaries — and confusing them is the trap</h2>
-  <p class="s">Before the mechanism, name the three independent questions. What tools does the agent even have? What can it do without asking you? What is its shell physically prevented from touching? Different mechanisms answer each. Mixing them up is the single most common way people get this wrong.</p>
+  <p class="s">availability, permission, sandbox — not one thing</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Three numbered rows: availability, auto-approval, and sandbox — each a separate independent question about the agent.">
     <!-- row 1 -->
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6"><circle cx="110" cy="70" r="26"/></g>
@@ -333,7 +333,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 7 — the hierarchy (staircase) ============ -->
 <section>
   <h2 class="t">Whose rule wins — a fixed precedence stack</h2>
-  <p class="s">Permissions work like IAM or firewall policy: not one flat list, but layers with a precedence order. Rules come from several places and stack. Enterprise managed policy sits on top precisely so that no project file and no flag a developer types can punch a hole in it — the same reason an org SCP beats an account admin.</p>
+  <p class="s">layered like IAM — managed policy always wins</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A five-rung staircase from top to bottom: enterprise managed policy wins over CLI flags, over settings.local.json, over settings.json, over user settings. Higher wins.">
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="3"><rect x="80" y="40" width="620" height="52" rx="9"/></g>
     <text x="120" y="72" class="lbl-b" text-anchor="start">enterprise managed policy</text>
@@ -364,7 +364,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 8 — deny beats ask beats allow (3 fragments) ============ -->
 <section>
   <h2 class="t">deny beats ask beats allow — every time</h2>
-  <p class="s">Inside any one settings file, permissions are three arrays with their own precedence. If a command matches a deny rule, it is refused — even if it also matches an allow. That ordering is the whole game: it lets you hand out a broad allow for convenience and still be certain a deny on rm or on reading .env can never be overridden.</p>
+  <p class="s">deny always beats a matching allow</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A git push token is tested against three lanes: it matches allow, but drops through to deny and is refused, showing deny overrides a matching allow.">
     <!-- token -->
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.8"><rect x="60" y="150" width="200" height="70" rx="10"/></g>
@@ -405,7 +405,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 9 — a rule is a prefix ============ -->
 <section>
   <h2 class="t">A rule is a prefix, not a regex</h2>
-  <p class="s">The part before the colon is matched literally against the start of the command; the star means "and any arguments after that." So Bash(git status:*) catches git status and git status -s, but never git push. Write deny rules against the capability, not the phrasing — deny curl doesn't stop wget.</p>
+  <p class="s">a prefix match, not a regex</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="Anatomy of the rule Bash(git status:*): the git-status part is a literal prefix, the star tail means any arguments. It matches git status -s but not git push. A side note: deny curl does not stop wget.">
     <!-- rule anatomy -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="3"><rect x="240" y="40" width="620" height="80" rx="12"/></g>
@@ -433,7 +433,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 10 — posture ladder ============ -->
 <section>
   <h2 class="t">Posture — same rules, different eagerness</h2>
-  <p class="s">The rules say what is allowed; the posture says how eagerly the agent proceeds through what would otherwise prompt you. It's the driver-assistance ladder from Module 1 made concrete: cruise control still obeys the speed limit — what changes is how much it does before it asks you to take over.</p>
+  <p class="s">same rules, different eagerness to act</p>
   <svg viewBox="0 0 1100 320" role="img" aria-label="A five-rung ladder of permission modes from plan on the left to bypassPermissions on the right, labelled asks about everything to asks about nothing.">
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.6"><rect x="40" y="150" width="180" height="70" rx="10"/></g>
     <text x="130" y="185" text-anchor="middle" class="lbl-b">plan</text>
@@ -466,7 +466,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 11 — read the ladder rung by rung ============ -->
 <section>
   <h2 class="t">Each rung: what it auto-approves, what it still gates</h2>
-  <p class="s">Map these straight back to Module 1's ladder. Plan and default keep you in the loop on each new action — that's agentic. From auto onward the agent acts without asking — that's autonomous. Pick the posture by how much can go wrong on <em>this</em> task, not by how capable the agent is.</p>
+  <p class="s">pick posture by risk, not by capability</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A table of five postures, each showing what it auto-approves versus what it still gates, with an agentic bracket over plan and default and an autonomous bracket over auto, dontAsk, and bypassPermissions.">
     <!-- agentic bracket -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M60,40 L60,150 M60,40 L520,40 M520,40 L520,150"/></g>
@@ -503,7 +503,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 12 — deny holds under bypass (2 fragments) ============ -->
 <section>
   <h2 class="t">deny holds — even under bypassPermissions</h2>
-  <p class="s">Here's the subtle part, and you'll verify it in the lab. All the autonomous modes still honor deny. A deny on rm holds even under bypassPermissions. What bypass removes is every <em>other</em> check — the allow gate, the ask gate, the trust prompts — so the agent runs anything you didn't explicitly deny.</p>
+  <p class="s">bypass removes every gate except deny</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Under bypassPermissions the allow, ask, and trust-prompt gates are crossed out, but a solid deny wall stays standing. deny holds.">
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="3"><rect x="60" y="40" width="980" height="260" rx="14"/></g>
     <text x="90" y="76" class="lbl-b" text-anchor="start">bypassPermissions</text>
@@ -536,7 +536,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 13 — why bypass is still dangerous ============ -->
 <section>
   <h2 class="t">…which is exactly why bypass is still dangerous</h2>
-  <p class="s">Don't conclude "deny still works, so bypass is fine." deny only protects the commands you <em>anticipated</em>. You cannot enumerate every dangerous command in advance — that's why you keep the allow and ask gates. Under bypass, the only thing between the agent and a command is whether you happened to list it in deny first.</p>
+  <p class="s">deny only covers what you anticipated</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A stream of commands hits the deny wall: the anticipated destructive ones bounce off, but an unanticipated destructive command sails through the gap.">
     <!-- deny wall with a gap -->
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="3"><rect x="520" y="40" width="70" height="110" rx="6"/><rect x="520" y="210" width="70" height="110" rx="6"/></g>
@@ -561,7 +561,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 14 — available vs auto-approved (the trap) ============ -->
 <section>
   <h2 class="t">--allowedTools opens a fast lane — it doesn't close the others</h2>
-  <p class="s">Two independent questions: is the tool available at all, and is it auto-approved? --allowedTools Read,Edit answers the second — "auto-approve these." It does not remove Bash. Bash is still there; it just prompts first. To actually take a tool away you use --disallowedTools or a deny rule. That closes the lane.</p>
+  <p class="s">allowedTools speeds up, doesn't remove</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="An airport analogy: allowedTools opens a fast-pass lane for Read and Edit, but the Bash lane stays open with a checkpoint that prompts. Closing a lane needs disallowedTools or deny.">
     <!-- fast lane -->
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.6"><rect x="70" y="50" width="600" height="64" rx="10"/></g>
@@ -587,7 +587,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 15 — the three-gate composition (3 fragments) ============ -->
 <section>
   <h2 class="t">Every action passes three gates, in order</h2>
-  <p class="s">Now put it together. Availability decides the toolbox. Permissions decide the paperwork. The sandbox decides the physics. Each gate is independent, and any one of them can stop the action. A safe configuration sets all three deliberately — the failure is setting one and assuming it covered the others.</p>
+  <p class="s">toolbox, paperwork, physics — three gates</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A pipeline: an action passes gate one availability, gate two permission and posture, gate three sandbox, each with its own stop branch, before it runs.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.8"><rect x="40" y="140" width="150" height="70" rx="10"/></g>
     <text x="115" y="172" text-anchor="middle" class="lbl-b">action</text>
@@ -627,7 +627,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 16 — the sandbox (airlock) ============ -->
 <section>
   <h2 class="t">The sandbox is the airlock, not the sign on the door</h2>
-  <p class="s">A deny rule is a sign that says "don't remove samples" — it depends on everyone obeying it. The sandbox is an airlock that physically prevents anything from leaving. It restricts Bash at the OS level: no network — and "network" includes localhost — no writes outside the project. And if it can't apply, it denies: fail-closed.</p>
+  <p class="s">a sign vs. a physical airlock</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A sandbox box wraps a shell. Reads and writes inside the project are allowed; network egress hits a proxy 403; writes to ~/.ssh, /etc, ~/.aws are blocked. Fail-closed: no sandbox, no command.">
     <!-- sandbox box -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="3" stroke-dasharray="4 6"><rect x="60" y="60" width="360" height="220" rx="14"/></g>
@@ -657,7 +657,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 17 — closing ============ -->
 <section>
   <h2 class="t">Set all three — deliberately</h2>
-  <p class="s">Five things to carry into the lab, where you'll make every one of these real against the Northstar Commerce workspace — and then choose the posture each Module 1 follow-on task earns.</p>
+  <p class="s">five gates to carry into the lab</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Five numbered takeaways: install and authenticate, deny wins, posture per task, allowedTools is not removal, and the sandbox fails closed.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6"><circle cx="90" cy="50" r="24"/></g>
     <text x="90" y="58" text-anchor="middle" class="num">1</text>

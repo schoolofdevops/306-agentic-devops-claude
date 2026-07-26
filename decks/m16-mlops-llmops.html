@@ -138,7 +138,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section data-auto-animate>
   <p class="kicker">MODULE 16 &nbsp;·&nbsp; AGENTIC DEVOPS WITH CLAUDE CODE</p>
   <h2 class="t" style="font-size:2.3em">Optional Overlay: MLOps &amp; LLMOps</h2>
-  <p class="s" style="font-size:1.2em">The LLM features your product ships to customers are part of your estate now — and they fail in ways your Prometheus dashboard was never built to see.</p>
+  <p class="s" style="font-size:1.2em">LLM features fail in ways Prometheus can't see</p>
   <svg viewBox="0 0 1100 300" role="img" aria-label="Two healthy service boxes drawn in green beside a blank LLM feature box in orange with a question-mark gauge, showing the un-instrumented surface.">
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round">
       <rect x="70" y="95" width="200" height="90" rx="12"/>
@@ -163,7 +163,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ 02 — the incident ============ -->
 <section>
   <h2 class="t">Everything succeeded — and the day still broke</h2>
-  <p class="s">The support queue backs up. Agents say the draft button spins forever. Finance flags the model bill running ten times normal. Yet every request returns 200, and every draft is fine when it finally arrives.</p>
+  <p class="s">every request returns 200 — the bill is 10x</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A support queue backing up on the left, a green 200 OK stamp in the middle showing every request succeeded, and a red cost meter climbing on the right.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round">
       <rect x="60" y="70" width="150" height="40" rx="8"/>
@@ -187,7 +187,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ 03 — config not service ============ -->
 <section>
   <h2 class="t">The break was one line in a config, not a service</h2>
-  <p class="s">Your Module 14 observability stack shows orders-api and inventory-api perfectly healthy — because they are. The thing that broke is a routing decision: a single word in a config file, and nothing in your SRE toolkit was pointed at it.</p>
+  <p class="s">one word in a config, and no dashboard watching</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Left panel shows healthy green service dashboards. Right panel shows a config file with the word fast changed to deep, marked in red as the real break.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-dasharray="5 5"><rect x="40" y="60" width="470" height="230" rx="12"/></g>
     <text x="275" y="90" text-anchor="middle" class="lbl-g">SRE dashboards — all green</text>
@@ -214,7 +214,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ 04 — two jobs, two signal sets ============ -->
 <section>
   <h2 class="t">Two ML jobs, two signal sets — don't confuse them</h2>
-  <p class="s">"The ML stuff" is not one job. Think of a bakery that produces pastries versus a coffee shop that buys and serves them. The bakery's signals are about making the thing; the coffee shop's are about delivery and cost. Neither dashboard reads the other's problem.</p>
+  <p class="s">the bakery that makes it, the shop that serves</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Left: a bakery labelled produce, with gauges for oven temp, dough, reject rate. Right: a coffee shop labelled serve, with gauges for stock, price, line, happiness.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6"><rect x="50" y="55" width="440" height="90" rx="12"/></g>
     <text x="270" y="95" text-anchor="middle" class="lbl-b">bakery — you PRODUCE</text>
@@ -241,7 +241,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ 05 — MLOps is the bakery ============ -->
 <section>
   <h2 class="t">MLOps is the bakery — you produce the model</h2>
-  <p class="s">MLOps is producing and serving your own models: training pipelines, model versioning, the serving infrastructure you host, drift and accuracy against ground truth. If your team fine-tunes or serves an in-house recommender, this is your world.</p>
+  <p class="s">MLOps: you train it, host it, own its drift</p>
   <svg viewBox="0 0 1100 320" role="img" aria-label="A bakery frame containing a pipeline: training pipeline to model versioning to your serving infra to drift and accuracy.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-dasharray="5 5"><rect x="30" y="55" width="1040" height="210" rx="14"/></g>
     <text x="60" y="85" text-anchor="start" class="lbl-g">the bakery</text>
@@ -271,7 +271,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ 06 — LLMOps is the coffee shop ============ -->
 <section>
   <h2 class="t">LLMOps is the coffee shop — you operate a bought model</h2>
-  <p class="s">LLMOps is operating features built on hosted models you did not train. You call an API. You don't own the weights, the training, or the hardware. Your operation is the layer around the call: which model you route to, what it costs, the rate limits, the quality.</p>
+  <p class="s">LLMOps: you own the layer around the API call</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="A pipeline: prompt plus routing config to a gateway to a hosted provider API. A dials cluster of latency, cost, rate limits and quality branches off the gateway.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6">
       <rect x="40" y="70" width="210" height="90" rx="12"/>
@@ -298,7 +298,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ 07 — you inherit LLMOps first ============ -->
 <section>
   <h2 class="t">You inherit LLMOps first, and often unknowingly</h2>
-  <p class="s">You almost never wake up owning a training pipeline. You wake up owning a feature that "just calls the AI" — which means you own its latency, its bill, its rate limits, and its output quality, whether or not anyone told you so.</p>
+  <p class="s">"just calls the AI" still means you own the bill</p>
   <svg viewBox="0 0 1100 320" role="img" aria-label="A large front step labelled LLMOps day one, with a faded MLOps later step drawn behind it.">
     <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2.2" stroke-dasharray="9 7"><rect x="470" y="70" width="360" height="120" rx="12"/></g>
     <text x="650" y="120" text-anchor="middle" class="lbl-g">MLOps</text>
@@ -313,7 +313,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ 08 — governance transfers ============ -->
 <section>
   <h2 class="t">Every governance idea you own transfers</h2>
-  <p class="s">You are not learning a new discipline from scratch. A routing config is a reviewed artifact like a Terraform plan. The four dials are golden signals like the ones you read first in an incident. A prompt regression suite is a CI gate like your release gates.</p>
+  <p class="s">not a new discipline — the same governance, new surface</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="A hub labelled governance you already have, with three spokes to routing artifact tagged M11, four dials tagged M14, and prompt gate tagged M13.">
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="3"><circle cx="550" cy="165" r="95"/></g>
     <text x="550" y="155" text-anchor="middle" class="lbl-b">governance</text>
@@ -341,7 +341,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ 09 — gateway is the switchboard ============ -->
 <section>
   <h2 class="t">The gateway is the switchboard — routing is a decision</h2>
-  <p class="s">The gateway doesn't answer calls; it decides which desk each call goes to. Changing one routing rule is a single plug on the board, and it looks trivial. But that one switch can flood an expensive team with high-volume traffic and blow the budget.</p>
+  <p class="s">one routing switch can blow the whole budget</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="A call-routing switchboard with plugs; one plug is being moved, sending a flood arrow into an expensive premium desk.">
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="2.8"><rect x="60" y="70" width="360" height="200" rx="12"/></g>
     <text x="240" y="105" text-anchor="middle" class="lbl-b">switchboard</text>
@@ -363,7 +363,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ 10 — three traffic classes ============ -->
 <section>
   <h2 class="t">Three traffic classes, each wants a different corner</h2>
-  <p class="s">The config declares, for each traffic class, which model tier serves it. Support is high-volume and latency-sensitive. Incident is low-volume and quality-critical. Batch has no human waiting, so cost is the only dial that matters.</p>
+  <p class="s">each traffic class gets its own model tier</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="A gateway box containing three labelled rows: support maps to fast, incident maps to deep, batch maps to cost-only.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="3"><rect x="80" y="55" width="940" height="230" rx="14"/></g>
     <text x="130" y="90" text-anchor="start" class="lbl-b">gateway routing</text>
@@ -386,7 +386,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ 11 — split decision from facts ============ -->
 <section>
   <h2 class="t">Split the decision from the facts</h2>
-  <p class="s">Routing and the provider map are two files for the same reason a Helm values file is split from the chart. The decision — "support runs on fast" — lives in one reviewable place; the facts — "fast costs \$0.80 per million and runs at 900ms" — live one lookup away.</p>
+  <p class="s">the decision and the facts live in separate files</p>
   <svg viewBox="0 0 1100 320" role="img" aria-label="Two boxes: a routing box holding the decision support runs on fast, and a provider-map box holding the facts fast equals 80 cents per million tokens at 900ms, joined by a lookup arrow.">
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="3"><rect x="70" y="80" width="380" height="150" rx="12"/></g>
     <text x="260" y="120" text-anchor="middle" class="lbl-b">routing</text>
@@ -406,7 +406,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ 12 — the regression (3 fragments) ============ -->
 <section>
   <h2 class="t">One word flipped support into the wrong corner</h2>
-  <p class="s">The regression at the heart of this module is exactly one line of the routing file: someone changed support from fast to deep. To a plain git diff it is one word. To the workload it is a latency event, a cost event, and a rate-limit event, all at once.</p>
+  <p class="s">one word in a diff, three incidents in production</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="The line support fast struck through, replaced by support deep boxed in red, with three payoff tags revealed: slower, costlier, throttled.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4"><rect x="120" y="70" width="380" height="90" rx="10"/></g>
     <text x="180" y="122" text-anchor="start" class="lbl">support:</text>
@@ -433,7 +433,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ 13 — four dials ============ -->
 <section>
   <h2 class="t">Four dials are the golden signals of an LLM feature</h2>
-  <p class="s">An LLM feature can go wrong a hundred ways, and the temptation is to look at everything. The discipline is not to. Four gauges tell you whether the feature is in trouble and why: latency, token cost, rate limits, quality. Read those four first.</p>
+  <p class="s">four gauges: latency, cost, rate limits, quality</p>
   <svg viewBox="0 0 1100 320" role="img" aria-label="A dashboard with four gauges labelled latency, token cost, rate limits, and quality.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8"><rect x="60" y="60" width="980" height="200" rx="14"/></g>
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.4">
@@ -453,7 +453,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ 14 — dials trade off ============ -->
 <section>
   <h2 class="t">The four dials trade off — pick the corner per class</h2>
-  <p class="s">A deeper model buys quality and costs you latency, cost, and rate-limit headroom. There is no setting that wins on all four — only the right one for this class. Support wants the fast, cheap corner. The regression dragged it into the deep, slow corner.</p>
+  <p class="s">no setting wins all four — only the right one</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A trade-off diagram with four axes: quality, latency, cost, headroom. Support is pinned in green at the fast-cheap corner; the regressed setting is pinned in red at the deep-slow corner.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2" stroke-linecap="round">
       <line x1="550" y1="60" x2="550" y2="290"/><line x1="230" y1="175" x2="870" y2="175"/>
@@ -473,7 +473,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ 15 — provider vs application (kitchen vs waiter) ============ -->
 <section>
   <h2 class="t">Latency is either the provider or you — opposite fixes</h2>
-  <p class="s">A dish is late to the table. Either the kitchen is slow — the dish itself takes 40 minutes — or the service is slow: the food is ready under the heat lamp while the waiter is stuck. Same symptom, opposite fix. Yell at the chef when it's the waiter and you've fixed nothing.</p>
+  <p class="s">same symptom, opposite fix: kitchen slow or waiter stuck</p>
   <svg viewBox="0 0 1100 320" role="img" aria-label="Two panels. Left: a slow kitchen labelled provider latency, fix the route. Right: a stuck waiter with food under a heat lamp labelled application latency, fix the code.">
     <g filter="url(#rough)" fill="#fef3c7" stroke="#1e1e1e" stroke-width="2.8"><rect x="60" y="65" width="450" height="200" rx="12"/></g>
     <text x="285" y="105" text-anchor="middle" class="lbl-b">kitchen = provider</text>
@@ -492,7 +492,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ 16 — split the trace (2 fragments) ============ -->
 <section>
   <h2 class="t">Split the trace before you assign blame</h2>
-  <p class="s">Each span in the trace is tagged provider or application. Summing them tells you which half is the problem. In the support incident the provider half utterly dominates — proof the fix belongs in the routing file, not the application code.</p>
+  <p class="s">the provider half dominates — fix routing, not app</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="A total request of 8.7 seconds splits into a provider half of about 8.4 seconds pointing to fix the route, and an application half of about 0.34 seconds pointing to fix the code.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="3"><rect x="410" y="60" width="280" height="80" rx="12"/></g>
     <text x="550" y="95" text-anchor="middle" class="lbl-b">support request</text>
@@ -516,7 +516,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ 17 — prompts in Git + regression gate (2 fragments) ============ -->
 <section>
   <h2 class="t">Prompts and a regression suite make quality a gate</h2>
-  <p class="s">A prompt is a standard operating procedure you put under version control, next to the routing config. And a Promptfoo-style suite pins the behaviors that matter as assertions — has the order ID, no invented refund, under the length limit — that run on every change.</p>
+  <p class="s">a prompt is an SOP, pinned with assertions</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="A prompt file in Git with three assertions revealed, then a regressed set tripping a red CI check.">
     <g class="fragment" data-fragment-index="0">
       <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="3"><rect x="60" y="70" width="330" height="200" rx="12"/></g>
@@ -545,7 +545,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section>
   <p class="kicker">MODULE 16 &nbsp;·&nbsp; WHERE THIS LEAVES YOU</p>
   <h2 class="t">Five disciplines, one surface you already knew how to govern</h2>
-  <p class="s">Every one is a governance idea you already own, pointed at a new surface. Diagnose the support incident end to end — flag the flip, price it, prove the latency is the provider's, deliver the revert through the gate.</p>
+  <p class="s">flag it, price it, prove it, revert through the gate</p>
   <svg viewBox="0 0 1100 300" role="img" aria-label="Five numbered rows: gateway is a reviewed artifact, four dials are golden signals, provider is not application, prompts live in Git, a regression suite is a CI gate.">
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="2.2">
       <circle cx="120" cy="55" r="20"/><circle cx="120" cy="105" r="20"/><circle cx="120" cy="155" r="20"/><circle cx="120" cy="205" r="20"/><circle cx="120" cy="255" r="20"/>

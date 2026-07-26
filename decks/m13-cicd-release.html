@@ -138,7 +138,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section data-auto-animate>
   <p class="kicker">MODULE 13 &nbsp;·&nbsp; AGENTIC DEVOPS WITH CLAUDE CODE</p>
   <h2 class="t" style="font-size:2.3em">CI/CD &amp; Release Engineering</h2>
-  <p class="s" style="font-size:1.2em">Module 12 built the golden path by hand. Now the pipeline runs the checks, invokes the agent for judgment, and gates — while keeping the one property that made it safe: the agent proposes and analyzes, it never deploys.</p>
+  <p class="s" style="font-size:1.2em">the pipeline gates; the agent never deploys</p>
   <svg viewBox="0 0 1100 300" role="img" aria-label="A release candidate flows into an inspector agent that signs a verdict, then a green check exits the pipeline; the agent never touches the deploy step.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round">
       <path d="M70,150 L250,150" marker-end="url(#ahg)"/>
@@ -171,7 +171,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 2 — Automate the checks, keep the one safe property ============ -->
 <section>
   <h2 class="t">Automate the checks, keep the one safe property</h2>
-  <p class="s">In Module 12 a person drove every step. The pipeline now runs the same battery of checks every time, identically — but the agent still only proposes and analyzes. Put it in CI for its judgment; structurally deny it the ability to act on that judgment.</p>
+  <p class="s">judgment in CI, never the power to act</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="Left panel shows a person manually driving each step; right panel shows the pipeline driving the checks while the agent stays analysis-only with its write path crossed out.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4">
       <rect x="55" y="70" width="440" height="250" rx="14" stroke-dasharray="9 7"/>
@@ -212,7 +212,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 3 — bonded courier chain ============ -->
 <section>
   <h2 class="t">A release moves like a bonded courier chain</h2>
-  <p class="s">A high-value shipment is never carried by one person. An inspector opens it and signs a report; a supervisor reads that report and releases or holds; a driver moves it; a receiver confirms it arrived intact. Four roles, because the one who inspects must not decide, and neither may drive.</p>
+  <p class="s">four roles: inspect, decide, drive, receive</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A sealed package is handed along four figures — inspector, supervisor, driver, receiver — each holding a signed slip they pass to the next.">
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.6">
       <rect x="60" y="150" width="90" height="70" rx="8"/>
@@ -254,14 +254,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="940" y="278">signed slip</text>
     </g>
   </svg>
-  <p class="takeaway">Four roles, four signatures — the one who inspects must not decide, and neither may drive.</p>
   <div class="pageno">M13·03</div>
 </section>
 
 <!-- ============ SLIDE 4 — agent is the inspector (4 fragments) ============ -->
 <section>
   <h2 class="t">The agent is the inspector — never the driver</h2>
-  <p class="s">Map the chain onto your pipeline. The agent opens the release candidate, reads the diff, the Terraform plan, the rendered manifest, and signs a verdict. It does not gate and it does not deploy — separate roles do that.</p>
+  <p class="s">the agent inspects and signs — never gates or deploys</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="The release candidate flows through four pipeline stages built up one at a time: inspector agent, supervisor review plus human, reconciler driver, canary receiver.">
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.6">
       <rect x="40" y="150" width="120" height="80" rx="10"/>
@@ -295,14 +294,13 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="295" y="285" text-anchor="middle" style="fill:#2e7d32" class="lbl-sm">reads, signs, stops — never deploys</text>
   </svg>
-  <p class="takeaway">The agent opens the box and signs the report; a separate identity decides, and only the reconciler drives.</p>
   <div class="pageno">M13·04</div>
 </section>
 
 <!-- ============ SLIDE 5 — rental car ============ -->
 <section>
   <h2 class="t">A CI runner is a rental car, not your garage</h2>
-  <p class="s">Start with the threat, because it dictates every choice after it. The runner is ephemeral — spun up for one job, destroyed after. It holds shared keys any step can read. And it runs code you did not fully write. You would not leave your keys and bank card in a rental car's glovebox.</p>
+  <p class="s">shared keys, unreviewed code, in a rental car</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A rental car with the glovebox open showing registry credentials, a cloud token and a kubeconfig, while a stranger's code runs the engine.">
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
       <path d="M180,230 L230,160 L560,160 L640,230 Z"/>
@@ -325,14 +323,13 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="410" y="320" text-anchor="middle" style="fill:#c62828" class="lbl-sm">runs code you did not write</text>
   </svg>
-  <p class="takeaway">The runner is ephemeral, shared, and runs code you did not write — treat it as untrusted.</p>
   <div class="pageno">M13·05</div>
 </section>
 
 <!-- ============ SLIDE 6 — three dangers (numbered rows) ============ -->
 <section>
   <h2 class="t">Three things make the runner dangerous</h2>
-  <p class="s">That threat model has three consequences for an agent running in CI. Name them precisely, because each one dictates a design choice — and together they mean a compromised step inherits every permission the job holds.</p>
+  <p class="s">one compromised step inherits every permission</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="Three numbered rows: ephemeral and shared credentials, secrets in log blast radius, and the dependency supply chain as untrusted input.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6"><circle cx="90" cy="80" r="26"/></g>
     <text x="90" y="88" text-anchor="middle" class="num">1</text>
@@ -349,14 +346,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="135" y="272" class="lbl-b">Supply chain is an input</text>
     <text x="135" y="300" class="lbl-g">every dependency the build pulls is untrusted — including what the agent reads</text>
   </svg>
-  <p class="takeaway">A compromised step inherits every permission the job holds — so the job should hold as little as possible.</p>
   <div class="pageno">M13·06</div>
 </section>
 
 <!-- ============ SLIDE 7 — least privilege ============ -->
 <section>
   <h2 class="t">Least privilege: the agent gets read-only</h2>
-  <p class="s">The design answer defaults to read-only. The agent gets exactly what its analysis needs — read the repo, run helm template, read-only terraform and kubectl — and nothing that writes. Write authority lives in specific, separately-credentialed steps, not in the agent's identity.</p>
+  <p class="s">default to read-only; write lives elsewhere</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="Left, the read-only agent identity holding analysis tools; a wall separates it from the right, the separately-credentialed deploy steps holding push and apply.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8"><rect x="55" y="70" width="410" height="250" rx="14"/></g>
     <text x="260" y="105" text-anchor="middle" class="lbl-b">AGENT identity</text>
@@ -386,14 +382,13 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="840" y="298" text-anchor="middle" class="lbl-g">separate identities · separate scopes</text>
   </svg>
-  <p class="takeaway">The agent's identity holds no write path — write is a different step with a different scope.</p>
   <div class="pageno">M13·07</div>
 </section>
 
 <!-- ============ SLIDE 8 — OIDC keycard ============ -->
 <section>
   <h2 class="t">Long-lived key is a copied house key; OIDC is a keycard</h2>
-  <p class="s">Instead of storing a long-lived cloud key as a CI secret, the CI provider vouches for the specific job and the cloud mints a short-lived, narrowly-scoped credential on the spot — bound to this repo, this branch, this job, and expiring in minutes.</p>
+  <p class="s">short-lived credentials, minted per job</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="Left, a copied house key that opens the door forever no matter who holds it; right, a hotel keycard scoped to one guest, one room, one stay, expiring at checkout.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><rect x="55" y="80" width="440" height="230" rx="14"/></g>
     <text x="275" y="115" text-anchor="middle" class="lbl-b">stored long-lived key</text>
@@ -412,14 +407,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="825" y="225" text-anchor="middle" class="lbl-g">this repo · branch · job</text>
     <text x="825" y="290" text-anchor="middle" style="fill:#2e7d32" class="lbl-sm">expires at checkout · found later, opens nothing</text>
   </svg>
-  <p class="takeaway">OIDC scopes the credential in time and scope — a stolen token is already expiring and opens one job.</p>
   <div class="pageno">M13·08</div>
 </section>
 
 <!-- ============ SLIDE 9 — headless as a pipeline stage ============ -->
 <section>
   <h2 class="t">Headless Claude: the agent as a pipeline stage</h2>
-  <p class="s">An interactive session is a conversation. A pipeline stage is not — it takes an input, produces an output, and exits with a status code the next stage reads. To put the agent in CI you run it headless: one prompt in, one structured result out.</p>
+  <p class="s">headless: one prompt in, one result out</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="Left, interactive Claude as a chat at a desk with speech bubbles; right, headless Claude as a filled standardized form dropped in a tray.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4" stroke-dasharray="9 7"><rect x="55" y="80" width="440" height="230" rx="14"/></g>
     <text x="275" y="115" text-anchor="middle" class="lbl-b" style="fill:#757575">interactive — a chat at the desk</text>
@@ -439,14 +433,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="825" y="172" text-anchor="middle" class="lbl-g">verdict:</text>
     <text x="825" y="330" text-anchor="middle" style="fill:#2e7d32" class="lbl-sm">one prompt in · one structured result out</text>
   </svg>
-  <p class="takeaway">The pipeline wants a filled form it can file and act on mechanically, not a conversation.</p>
   <div class="pageno">M13·09</div>
 </section>
 
 <!-- ============ SLIDE 10 — one call (3 fragments) ============ -->
 <section>
   <h2 class="t">One call: a form request with a deadline and a status code</h2>
-  <p class="s">A CI invocation of the agent is <code>claude -p</code> with a JSON envelope, a schema-constrained verdict, and a wall-clock timeout around it. The pipeline parses the envelope with jq and branches on the exit code.</p>
+  <p class="s"><code>claude -p</code>: JSON in, schema-constrained verdict out</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A pipeline built up in three steps: prompt plus evidence into a timeout wrapper, into the claude print call with JSON and schema, into a validate-and-exit branch that gates or fails closed.">
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.6"><rect x="40" y="150" width="150" height="80" rx="10"/></g>
     <text x="115" y="185" text-anchor="middle" class="lbl-sm">prompt +</text>
@@ -473,14 +466,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="805" y="237" text-anchor="middle" class="lbl-sm">else → block</text>
     </g>
   </svg>
-  <p class="takeaway"><code>-p</code> + JSON + <code>--json-schema</code> make the answer your JSON; timeout + exit code make it gradeable.</p>
   <div class="pageno">M13·10</div>
 </section>
 
 <!-- ============ SLIDE 11 — fail closed ============ -->
 <section>
   <h2 class="t">Fail closed: an analysis you cannot trust is not a pass</h2>
-  <p class="s">The stage's exit status is what CI branches on. The discipline is fail-closed: if the invocation errors, times out, or returns something that does not validate against the schema, the stage treats it as block — never approve.</p>
+  <p class="s">fail-closed: any error defaults to block</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="Three failure inputs — errors, times out, off-schema — all funnel into one red BLOCK box, while only a clean run with a valid verdict reaches the green gate.">
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.4">
       <rect x="55" y="70" width="230" height="52" rx="8"/>
@@ -506,14 +498,13 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.8"><rect x="740" y="230" width="280" height="70" rx="10"/></g>
     <text x="880" y="273" text-anchor="middle" class="lbl-b" style="fill:#2e7d32">read .verdict → gate</text>
   </svg>
-  <p class="takeaway">If you could not trust the run, treat the release as blocked — never approve on a broken analysis.</p>
   <div class="pageno">M13·11</div>
 </section>
 
 <!-- ============ SLIDE 12 — two auditors ============ -->
 <section>
   <h2 class="t">Two auditors: the stranger and the insider</h2>
-  <p class="s">A hermetic auditor walks in knowing nothing, reads only the ledger in front of them, applies standard rules — two of them reach the same verdict. A project-aware auditor knows the company's history: richer judgment, but entangled with context another auditor does not share, and easier to lead astray.</p>
+  <p class="s">hermetic auditors agree; context-aware ones can drift</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="Left, a hermetic auditor reading only the ledger, producing the same verdict every time; right, an insider auditor surrounded by history and internal docs, richer but steerable.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8"><rect x="55" y="80" width="440" height="240" rx="14"/></g>
     <text x="275" y="115" text-anchor="middle" class="lbl-b">hermetic auditor</text>
@@ -535,14 +526,13 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="825" y="290" text-anchor="middle" style="fill:#c62828" class="lbl-sm">richer — but can be led by a stale doc</text>
   </svg>
-  <p class="takeaway">Hermetic = reproducible and uninfluenced; project-aware = richer but entangled with context.</p>
   <div class="pageno">M13·12</div>
 </section>
 
 <!-- ============ SLIDE 13 — --bare mechanic ============ -->
 <section>
   <h2 class="t"><code>--bare</code> runs the hermetic auditor</h2>
-  <p class="s">In Claude Code, <code>claude -p --bare</code> runs in minimal mode: it skips hooks, LSP, plugins, and the project's operating layer. The agent sees the prompt and the files you point it at, nothing else — no CLAUDE.md shaping its priorities, no skills nudging its approach.</p>
+  <p class="s"><code>--bare</code> strips hooks, plugins, CLAUDE.md</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A project-context box holding CLAUDE.md, hooks, skills and plugins is struck through by --bare, leaving only prompt-and-files as the agent's input.">
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="2.6"><rect x="80" y="90" width="440" height="200" rx="14"/></g>
     <text x="300" y="125" text-anchor="middle" class="lbl-b">project context (default)</text>
@@ -566,14 +556,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="830" y="180" text-anchor="middle" class="lbl-b">prompt + files only</text>
     <text x="830" y="212" text-anchor="middle" class="lbl-g">the evidence, nothing else</text>
   </svg>
-  <p class="takeaway"><code>--bare</code> strips the operating layer so the verdict depends on the evidence, not the machine.</p>
   <div class="pageno">M13·13</div>
 </section>
 
 <!-- ============ SLIDE 14 — hermetic for judging ============ -->
 <section>
   <h2 class="t">Hermetic for judging, project-aware for building</h2>
-  <p class="s">The rule to carry. The pipeline's analysis gate runs <code>--bare</code> so its verdict is reproducible and cannot be quietly steered by a local file. The agent that implements a change runs project-aware, because it needs context to do the work well. Mixing them up is how a verdict becomes non-reproducible.</p>
+  <p class="s">gates run bare; implementers run project-aware</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="Left, the gate runs bare and hermetic for the same verdict every run; right, the implementer runs project-aware to do the work; a gate that loads context is marked wrong.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8"><rect x="55" y="80" width="440" height="200" rx="14"/></g>
     <text x="275" y="118" text-anchor="middle" class="lbl-b">GATE → --bare</text>
@@ -590,14 +579,13 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="2.6" stroke-dasharray="6 6"><rect x="330" y="300" width="440" height="46" rx="8"/></g>
     <text x="550" y="330" text-anchor="middle" style="fill:#c62828" class="lbl-sm">a gate that loads project context = non-reproducible</text>
   </svg>
-  <p class="takeaway">A release verdict must not depend on whose laptop ran it — judge bare, build with context.</p>
   <div class="pageno">M13·14</div>
 </section>
 
 <!-- ============ SLIDE 15 — proposer never approver ============ -->
 <section>
   <h2 class="t">The proposer is never the approver</h2>
-  <p class="s">The agent that proposes a change must not be the agent that approves it. This is the two-signature rule on a large cheque. If one identity both authors and blesses a change, there is no review — there is one actor wearing two hats, and the second hat is decorative.</p>
+  <p class="s">the proposer must not be the approver</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A large cheque with two distinct signature lines; a single figure trying to sign both lines is crossed out, showing the independence is the control.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.8"><rect x="200" y="90" width="700" height="180" rx="12"/></g>
     <text x="250" y="140" text-anchor="start" class="lbl-b">Release</text>
@@ -612,14 +600,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="300" y="222" text-anchor="middle" class="lbl-sm" style="fill:#c62828">one</text>
     <text x="300" y="320" text-anchor="middle" style="fill:#c62828" class="lbl-sm">one actor can't sign both lines</text>
   </svg>
-  <p class="takeaway">The independence is the control — the moment the reviewer can edit the change, the review is decorative.</p>
   <div class="pageno">M13·15</div>
 </section>
 
 <!-- ============ SLIDE 16 — enforce by identity (3 fragments) ============ -->
 <section>
   <h2 class="t">Enforce it by the shape of the identity, not the prompt</h2>
-  <p class="s">Northstar encodes this as distinct identities with distinct tool bundles. The proposer can Edit but is Git-only; the reviewer has no write tool at all — read-only by construction; a human approval gate sits after the reviewer for anything touching production.</p>
+  <p class="s">distinct identities, distinct tool bundles</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A hub-and-spoke: the platform-engineer proposer with Edit and git, the change-reviewer with no Edit tool circled as structural, and a human approval gate, revealed one at a time.">
     <g class="fragment">
       <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="2.8"><rect x="60" y="130" width="280" height="110" rx="12"/></g>
@@ -644,14 +631,13 @@ footer, header, hgroup, main, menu, nav, section {
       <path d="M695,185 L755,185" marker-end="url(#ahg)"/>
     </g>
   </svg>
-  <p class="takeaway">Give the reviewer no write tool and it cannot become the author — enforcement over intent.</p>
   <div class="pageno">M13·16</div>
 </section>
 
 <!-- ============ SLIDE 17 — canary food taster ============ -->
 <section>
   <h2 class="t">Canary: the food taster before the banquet</h2>
-  <p class="s">A deploy that applied cleanly is not the same as a deploy that is healthy. Before you promote to all traffic, route a slice to the new version and watch it against your SLOs — a small, sacrificial portion goes first, and you watch it.</p>
+  <p class="s">applied cleanly is not the same as healthy</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A taster samples one plate before the full banquet table; the signals watched are error rate, p95 latency, and replicas Ready.">
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
       <circle cx="200" cy="180" r="60"/>
@@ -678,7 +664,6 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="910" y="170" text-anchor="middle" class="lbl">full banquet</text>
     <text x="910" y="200" text-anchor="middle" class="lbl-g">all traffic</text>
   </svg>
-  <p class="takeaway">A canary fails cheaply on a slice instead of expensively on everyone — the taster decides before the table eats.</p>
   <div class="pageno">M13·17</div>
 </section>
 
@@ -686,7 +671,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section data-auto-animate>
   <p class="kicker">MODULE 13 &nbsp;·&nbsp; CI/CD &amp; RELEASE ENGINEERING</p>
   <h2 class="t">Any breach → rollback; all clear → promote</h2>
-  <p class="s">The agent reads the canary's signals and produces a structured verdict — promote or rollback — with reasons. It does not act; a human or the reconciler does. Fail-closed the same way: incomplete signals mean do not promote.</p>
+  <p class="s">the agent verdicts the canary; it never promotes</p>
   <svg viewBox="0 0 1100 300" role="img" aria-label="Three SLO signals feed a decision: all within budget and replicas Ready yields promote; any one breached yields rollback.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.4">
       <rect x="40" y="60" width="300" height="46" rx="8"/>

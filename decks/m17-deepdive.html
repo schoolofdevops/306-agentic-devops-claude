@@ -200,7 +200,6 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="830" y="230" text-anchor="middle" class="lbl">both see the name un-crossed</text>
     <text x="830" y="263" text-anchor="middle" class="lbl-g">both let a copy in</text>
   </svg>
-  <p class="takeaway">Dedup handles the duplicate that arrives after the first was recorded — it is blind to the one that arrives before.</p>
   <div class="pageno">M17-DD·02</div>
 </section>
 
@@ -248,7 +247,6 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="890" y="242" text-anchor="middle" class="lbl-sm" style="fill:#c62828">rejected, not queued</text>
     <text x="700" y="320" text-anchor="middle" class="lbl-g">different correlation_id → locks independently (unrelated incidents run in parallel)</text>
   </svg>
-  <p class="takeaway">One turnstile, mkdir-atomic: N simultaneous triggers for one incident, exactly one does the work.</p>
   <div class="pageno">M17-DD·03</div>
 </section>
 
@@ -280,7 +278,6 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="550" y="317" text-anchor="middle" class="lbl">production order: acquire → check → work → record → release</text>
   </svg>
-  <p class="takeaway">The lock covers the window between check and record; the ledger covers everything after it — keep both.</p>
   <div class="pageno">M17-DD·04</div>
 </section>
 
@@ -320,7 +317,6 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="830" y="313" text-anchor="middle" class="lbl-sm" style="fill:#c62828">never wire a preview trigger straight into a write path</text>
   </svg>
-  <p class="takeaway">Put a production-ready claude -p seam between any preview trigger and any real action — the contract absorbs double-fires.</p>
   <div class="pageno">M17-DD·05</div>
 </section>
 
@@ -361,7 +357,6 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="997" y="188" text-anchor="middle" class="lbl-sm" style="fill:#2e7d32">acquire · contend</text>
     <text x="997" y="214" text-anchor="middle" class="lbl-sm" style="fill:#2e7d32">race · grade</text>
   </svg>
-  <p class="takeaway">Default to the stateless loop — it makes idempotency and clean exit nearly free; earn the resident only for real cross-event memory. Now to the terminal.</p>
   <div class="pageno">M17-DD·06</div>
 </section>
 

@@ -140,7 +140,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section data-auto-animate>
   <p class="kicker">MODULE 8 &nbsp;·&nbsp; AGENTIC DEVOPS WITH CLAUDE CODE</p>
   <h2 class="t" style="font-size:2.15em">Hooks, Policy, GitOps &amp; the Environment Contract</h2>
-  <p class="s" style="font-size:1.15em">Build the control layer that holds <em>even when the model misreads the ticket</em> — a script, a read-only credential, and a reconciler that don't depend on the agent's judgment.</p>
+  <p class="s" style="font-size:1.15em">holds <em>even when the model misreads</em> the ticket</p>
   <svg viewBox="0 0 1100 300" role="img" aria-label="An agent's terraform-apply-to-production arrow is stopped dead at a wobbly gate before it can reach the production cluster.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
       <rect x="70" y="110" width="200" height="90" rx="12"/>
@@ -173,7 +173,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 2 — intent controls: the agent chooses ============ -->
 <section>
   <h2 class="t">Every control so far asked the agent to <em>choose</em> right</h2>
-  <p class="s">CLAUDE.md rules, permission settings, skills, typed tools — all of them work the same way: they get the model to pick the right action. That is fine, until the moment it isn't.</p>
+  <p class="s">all get the model to pick the right action</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="Four intent controls all funnel into a single decision diamond labelled the agent decides, with an annotation that interpreting can go wrong.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.4">
       <rect x="60" y="40" width="220" height="60" rx="10"/>
@@ -206,14 +206,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="990" y="192" text-anchor="middle" class="lbl-g" fill="#c62828">can go wrong</text>
     </g>
   </svg>
-  <p class="takeaway">Up to now, every safety was a rule the model was <em>interpreting</em> — and interpreting can go wrong.</p>
   <div class="pageno">M8·02</div>
 </section>
 
 <!-- ============ SLIDE 3 — the ambiguous ticket ============ -->
 <section>
   <h2 class="t">"Fix production" — the ticket that breaks an interpreted rule</h2>
-  <p class="s">An incident ticket lands. Your CLAUDE.md says "never apply to prod directly." Real rule, usually followed. But under time pressure the model can read "fix production" as "run the apply."</p>
+  <p class="s">"fix production" can be misread as "run the apply"</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="An incident ticket flows to the agent, which forks into a safe reading that proposes a change and a dangerous red reading that applies directly to production.">
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.6">
       <rect x="60" y="130" width="230" height="100" rx="10"/>
@@ -248,14 +247,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="920" y="292" text-anchor="middle" class="lbl-g" fill="#c62828">apply → production</text>
     </g>
   </svg>
-  <p class="takeaway">Under pressure, an ambiguous instruction plus an interpreted rule is a destructive apply waiting to happen.</p>
   <div class="pageno">M8·03</div>
 </section>
 
 <!-- ============ SLIDE 4 — two kinds of control fail in opposite ways ============ -->
 <section>
   <h2 class="t">Two kinds of control fail in opposite ways</h2>
-  <p class="s">This is the hinge of the module. An intent control fails when the model <em>misinterprets</em> — silent and plausible. An enforcement control fails only when it is <em>misconfigured</em> — loud and testable.</p>
+  <p class="s">intent fails silent; enforcement fails loud</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A two-panel comparison: intent controls fail by misinterpretation, silently and plausibly; enforcement controls fail by misconfiguration, loudly and testably.">
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.6">
       <rect x="50" y="40" width="470" height="280" rx="14"/>
@@ -275,14 +273,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="815" y="235" text-anchor="middle" class="lbl-b" fill="#2e7d32">fails only when MISCONFIGURED</text>
     <text x="815" y="272" text-anchor="middle" class="lbl-g" fill="#2e7d32">loud · structural · you can test it</text>
   </svg>
-  <p class="takeaway">Intent fails silently and plausibly; enforcement fails loudly and structurally — put the destructive stuff behind enforcement.</p>
   <div class="pageno">M8·04</div>
 </section>
 
 <!-- ============ SLIDE 5 — sign vs badge reader ============ -->
 <section>
   <h2 class="t">The sign on the door vs the badge reader</h2>
-  <p class="s">A sign that says "Authorized only" works on people who read it and choose to comply — and fails the moment someone is in a hurry. A badge reader does not care about your reason; the door does not open.</p>
+  <p class="s">a sign asks nicely; a badge reader doesn't care</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A scene contrasting a door with an ignorable authorized-only sign against a door with a badge reader that will not open without a badge.">
     <!-- sign door -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4" stroke-dasharray="9 7">
@@ -309,14 +306,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="800" y="228" text-anchor="middle" class="lbl-b">READER</text>
     <text x="800" y="330" text-anchor="middle" class="lbl-g" fill="#2e7d32">no badge → won't open</text>
   </svg>
-  <p class="takeaway">Keep the sign for the honest majority — but on the door that matters, add the badge reader.</p>
   <div class="pageno">M8·05</div>
 </section>
 
 <!-- ============ SLIDE 6 — layers, not alternatives ============ -->
 <section>
   <h2 class="t">Intent and enforcement are layers, not alternatives</h2>
-  <p class="s">You do not remove the sign — it sets expectations and handles the honest majority cheaply. Enforcement sits <em>underneath</em> intent as the floor: the thing that catches what intent missed.</p>
+  <p class="s">enforcement is the floor under intent</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A staircase where the intent layer sits on top and the enforcement floor sits beneath it, catching a missed action that fell through the intent layer.">
     <!-- intent layer (top, dashed = permeable) -->
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.4" stroke-dasharray="9 7">
@@ -336,14 +332,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="550" y="280" text-anchor="middle" class="lbl-b">ENFORCEMENT floor — catches what intent missed</text>
     <text x="550" y="307" text-anchor="middle" class="lbl-g" fill="#2e7d32">holds even when the model's judgment doesn't</text>
   </svg>
-  <p class="takeaway">You keep every intent control; enforcement is the floor beneath them, not a replacement.</p>
   <div class="pageno">M8·06</div>
 </section>
 
 <!-- ============ SLIDE 7 — four threat shapes ============ -->
 <section>
   <h2 class="t">Model the threat surface first — four shapes</h2>
-  <p class="s">Name what you defend against. It is not "the model is evil" — it is far more mundane: the model does something reasonable given how it read the situation that turns out to be destructive. Four shapes cover most of it.</p>
+  <p class="s">reasonable-seeming, but destructive — four shapes</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A two-by-two grid of four threat shapes: wrong target, excess blast radius, irreversible destruction, and data leakage, each with its reasonable-but-wrong reading.">
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.6">
       <rect x="50" y="45" width="490" height="130" rx="12"/>
@@ -367,14 +362,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="805" y="278" text-anchor="middle" class="lbl-g">"check the DB config"</text>
     <text x="805" y="302" text-anchor="middle" class="lbl-g">dumps a Secret's decoded value</text>
   </svg>
-  <p class="takeaway">None of these need a malicious model — each is a plausible misreading, which is exactly why "don't do that" is weak.</p>
   <div class="pageno">M8·07</div>
 </section>
 
 <!-- ============ SLIDE 8 — a hook is deterministic code ============ -->
 <section>
   <h2 class="t">A hook is deterministic code, not a model</h2>
-  <p class="s">A <code>PreToolUse</code> hook is a shell script that runs <em>around</em> a Bash call — before it runs. It gets the proposed tool call as JSON on stdin, and it does not reason or get talked out of its decision. Same input, same verdict, every time.</p>
+  <p class="s">same input, same verdict, every time</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A sequence: the agent proposes a Bash command, Claude Code hands it to the change-gate hook which runs deterministic rules with no model, and only then does Bash run or get blocked.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6">
       <rect x="40" y="120" width="180" height="90" rx="10"/>
@@ -413,14 +407,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="975" y="188" text-anchor="middle" class="lbl-g">runs (or not)</text>
     </g>
   </svg>
-  <p class="takeaway">A hook is ordinary, testable software inserted between the model's intent and the command running.</p>
   <div class="pageno">M8·08</div>
 </section>
 
 <!-- ============ SLIDE 9 — fail-closed ============ -->
 <section>
   <h2 class="t">Fail-closed: "can't decide" must equal "deny"</h2>
-  <p class="s">The defining design rule. If the hook itself errors — jq missing, malformed input, an unhandled case — it must <em>block</em>, not allow. A gate that cannot evaluate a command has no business letting it through.</p>
+  <p class="s">a hook that errors must <em>block</em>, not allow</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="The hook has a safe path that leads to allow, but both an error path and an uncertain path land on the same closed, denied door.">
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="3">
       <rect x="60" y="120" width="200" height="100" rx="12"/>
@@ -451,14 +444,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="745" y="292" text-anchor="middle" class="lbl-g">the closed door</text>
     </g>
   </svg>
-  <p class="takeaway">A gate that opens when it is confused is not a control — uncertainty resolves to closed.</p>
   <div class="pageno">M8·09</div>
 </section>
 
 <!-- ============ SLIDE 10 — airport checkpoint ============ -->
 <section>
   <h2 class="t">The airport checkpoint runs the same rules every time</h2>
-  <p class="s">A checkpoint applies fixed rules to what the scanner sees — it does not decide who looks trustworthy. And when the scanner glitches or the operator can't tell what an object is, the rule is HALT, not wave-through.</p>
+  <p class="s">when unsure, the rule is HALT, not wave-through</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A security checkpoint lane feeds a scanner; a clear read passes, but a glitch or unclear read halts the passenger rather than waving them through.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6">
       <rect x="60" y="130" width="180" height="90" rx="10"/>
@@ -488,14 +480,13 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.8"><rect x="845" y="228" width="160" height="60" rx="8"/></g>
     <text x="925" y="265" text-anchor="middle" class="lbl-b" fill="#c62828">stopped</text>
   </svg>
-  <p class="takeaway">Deterministic procedure, closed on doubt — that is the operating rule of your hook.</p>
   <div class="pageno">M8·10</div>
 </section>
 
 <!-- ============ SLIDE 11 — the Change Gate denials ============ -->
 <section>
   <h2 class="t">The Change Gate encodes the threat table directly</h2>
-  <p class="s">The hook you build denies, deterministically, five dangerous command shapes — one per threat shape from the table. Each denial returns a <em>reason</em> the agent sees, so it can correct course instead of just hitting a wall.</p>
+  <p class="s">every denial returns a <em>reason</em>, not a wall</p>
   <svg viewBox="0 0 1100 380" role="img" aria-label="The change-gate hook at the centre fans out to five red deny rules: production apply, protected-namespace delete, all-namespaces mutation, secret output, and docker push, each tagged with its threat shape.">
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="3">
       <rect x="440" y="160" width="220" height="80" rx="12"/>
@@ -533,14 +524,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="935" y="356" text-anchor="middle" class="lbl-g">images ship via CI, not the agent</text>
     </g>
   </svg>
-  <p class="takeaway">Five deny rules, one per dangerous shape, each with a reason the agent sees so it can correct course.</p>
   <div class="pageno">M8·11</div>
 </section>
 
 <!-- ============ SLIDE 12 — narrowness ============ -->
 <section>
   <h2 class="t">A gate that blocks investigation is a broken gate</h2>
-  <p class="s">The whole point is to stop the four dangerous shapes while leaving the agent free to do its job. The gate is <em>narrow</em>: safe, read-only, and dev-scoped work passes straight through.</p>
+  <p class="s">narrow gate: block danger, pass everything else</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A two-panel comparison: the denied panel lists the five dangerous shapes in red, and the allowed panel lists terraform plan, a dev apply, a read-only kubectl get, and a Secret referenced by name in green.">
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.6"><rect x="50" y="45" width="480" height="270" rx="14"/></g>
     <text x="290" y="90" text-anchor="middle" class="lbl-b" fill="#c62828">DENIED — the 5 shapes</text>
@@ -562,14 +552,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="615" y="292">✓ investigate freely</text>
     </g>
   </svg>
-  <p class="takeaway">Stop the four dangerous shapes; leave the agent free to work. A gate that blocks reading is broken.</p>
   <div class="pageno">M8·12</div>
 </section>
 
 <!-- ============ SLIDE 13 — test it like code ============ -->
 <section>
   <h2 class="t">A hook is code — so you test it like code</h2>
-  <p class="s">You cannot write a unit test for "the model will interpret this rule correctly." You absolutely can write one for "this exact command produces exit code 2." Drive the gate with real deny inputs, real allow inputs, and bad input.</p>
+  <p class="s">you can test exit codes, not model interpretation</p>
   <svg viewBox="0 0 1100 320" role="img" aria-label="A test table: dangerous inputs assert exit code 2, safe inputs assert exit code 0, and bad input asserts a deny, each row marked with a green check.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.4"><rect x="120" y="40" width="860" height="60" rx="8"/></g>
     <text x="290" y="78" text-anchor="middle" class="lbl-b">input</text>
@@ -591,14 +580,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="620" y="275" text-anchor="middle" class="lbl">fail-closed</text>
     <text x="880" y="275" text-anchor="middle" class="lbl-b" fill="#2e7d32">✓ denied</text>
   </svg>
-  <p class="takeaway">An enforcement control you have <em>tested</em> beats an intent control you are <em>hoping</em> about.</p>
   <div class="pageno">M8·13</div>
 </section>
 
 <!-- ============ SLIDE 14 — target layer / RBAC ============ -->
 <section>
   <h2 class="t">The target layer: least privilege at the identity</h2>
-  <p class="s">Underneath the hook sits a stronger layer: what the agent's <em>identity</em> is even allowed to do — enforced by the target system, not your script. If the kubeconfig is bound to a read-only role, the agent <em>cannot</em> write.</p>
+  <p class="s">a read-only role means the agent <em>cannot</em> write</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A layered stack: the hook checks the command text on top; beneath it the RBAC identity check rejects any write from a read-only credential at the API server.">
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="2.6" stroke-dasharray="9 7"><rect x="120" y="40" width="860" height="70" rx="10"/></g>
     <text x="550" y="72" text-anchor="middle" class="lbl-b">HOOK — checks the command TEXT</text>
@@ -614,14 +602,13 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.6"><rect x="330" y="275" width="440" height="55" rx="10"/></g>
     <text x="550" y="310" text-anchor="middle" class="lbl-b" fill="#c62828">API server rejects the write — full stop</text>
   </svg>
-  <p class="takeaway">RBAC checks the <em>identity</em>, not the command spelling — a credential with no write verb cannot write.</p>
   <div class="pageno">M8·14</div>
 </section>
 
 <!-- ============ SLIDE 15 — bouncer vs vault ============ -->
 <section>
   <h2 class="t">The bouncer and the vault</h2>
-  <p class="s">The bouncer (your hook) checks each person against a list — fast, helpful, and only as good as the list. The vault (the read-only identity, RBAC, admission) does not check a list; it simply cannot be opened without the right key.</p>
+  <p class="s">the bouncer checks a list; the vault has no key</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A scene: a bouncer at a door checking a list beside a vault door that cannot be opened without a key, illustrating command-layer versus target-layer controls.">
     <!-- bouncer -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><rect x="70" y="70" width="180" height="220" rx="8"/></g>
@@ -640,14 +627,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="985" y="212" text-anchor="middle" class="lbl-g" fill="#2e7d32">= no entry</text>
     <text x="800" y="325" text-anchor="middle" class="lbl-g">holds when the list has a gap</text>
   </svg>
-  <p class="takeaway">The bouncer for the fast friendly first pass; the vault for the guarantee that holds when the list has a gap.</p>
   <div class="pageno">M8·15</div>
 </section>
 
 <!-- ============ SLIDE 16 — GitOps reconciler-only ============ -->
 <section>
   <h2 class="t">GitOps: the reconciler is the only writer</h2>
-  <p class="s">If the agent can't write staging or prod, how do changes happen? The desired state lives in Git. The agent proposes on a branch and stops. A reconciler — the <em>only</em> identity with cluster write — applies merged Git state.</p>
+  <p class="s">agent proposes on a branch; reconciler applies</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A pipeline: the read-only agent proposes on a branch, a human reviews, the change merges to main, and only then the reconciler applies to the cluster; a dashed line shows the agent has no direct write path to the cluster.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6"><rect x="30" y="40" width="180" height="80" rx="10"/></g>
     <text x="120" y="75" text-anchor="middle" class="lbl-b">agent</text>
@@ -684,14 +670,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="70" y="300" text-anchor="start" class="lbl-g" fill="#c62828">agent has no direct write path ✕</text>
     </g>
   </svg>
-  <p class="takeaway">The agent's job ends at "propose"; every real change flows through a reviewed Git merge the reconciler applies.</p>
   <div class="pageno">M8·16</div>
 </section>
 
 <!-- ============ SLIDE 17 — Environment Contract ============ -->
 <section>
   <h2 class="t">The Environment Contract names the target in booleans</h2>
-  <p class="s">Each environment is a <em>bundle</em>: context, identity, backend, and three hard booleans. Dev is the only bundle whose identity can write. A fail-closed check compares declared vs effective — a mismatch is a block, not a warning.</p>
+  <p class="s">declared vs. effective — mismatch is a block</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="Three environment bundle cards: dev is a green writer with allow-apply true; staging and production are read-only with allow-apply false. An env-check script compares the declared environment to the effective context and blocks on mismatch.">
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.8"><rect x="40" y="40" width="300" height="150" rx="12"/></g>
     <text x="190" y="78" text-anchor="middle" class="lbl-b" fill="#2e7d32">dev</text>
@@ -716,14 +701,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="550" y="302" text-anchor="middle" class="lbl-g">declared env == effective context?</text>
     <text x="550" y="328" text-anchor="middle" class="lbl-g" fill="#c62828">mismatch → BLOCK (not a warning)</text>
   </svg>
-  <p class="takeaway">"Which environment am I in" becomes a row in a file, not a memory — and a mismatch is a block.</p>
   <div class="pageno">M8·17</div>
 </section>
 
 <!-- ============ SLIDE 18 — CLOSING ============ -->
 <section>
   <h2 class="t" style="font-size:1.7em">Don't make destruction depend on the agent choosing not to</h2>
-  <p class="s">Four layers, each covering the failure mode of the one above. Even if every control above had a gap, the agent's credential cannot write staging or prod, and the only write path is a reviewed Git merge.</p>
+  <p class="s">four layers; only a reviewed merge writes prod</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="Five numbered rows summarising the defense-in-depth stack: intent controls, the change-gate hook, the environment-contract check, read-only identities plus GitOps, and the tested floor.">
     <g class="fragment"><g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.4"><circle cx="120" cy="55" r="24"/></g>
       <text x="120" y="63" text-anchor="middle" class="num">1</text>

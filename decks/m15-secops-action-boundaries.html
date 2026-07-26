@@ -138,7 +138,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section data-auto-animate>
   <p class="kicker">MODULE 15 &nbsp;·&nbsp; AGENTIC DEVOPS WITH CLAUDE CODE</p>
   <h2 class="t" style="font-size:2.3em">SecOps, Data Boundaries &amp; Action-Boundary Engineering</h2>
-  <p class="s" style="font-size:1.2em">Five boundaries an instruction must clear — and how you test each one so "is the agent safe against production?" becomes a matter of evidence, not trust.</p>
+  <p class="s" style="font-size:1.2em">five boundaries, tested with evidence not trust</p>
   <svg viewBox="0 0 1100 300" role="img" aria-label="An agent box on the left sends an instruction through five stacked gates that fan out to a single green verified-action box on the right.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round">
       <rect x="60" y="110" width="180" height="90" rx="12"/>
@@ -176,7 +176,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 2 — INC-005 ============ -->
 <section>
   <h2 class="t">INC-005: it did exactly what it was told, against the wrong target</h2>
-  <p class="s">A "clean up the stale test pods" script sources an env file. That file points the context at prod. Nobody checks the target. Two minutes later production pods are terminating and the pager is going off for real.</p>
+  <p class="s">nobody checked the target — prod pods start terminating</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A cleanup script sources an environment file that sets the Kubernetes context to prod, and the run terminates production pods while a pager fires.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
       <rect x="50" y="60" width="250" height="90" rx="12"/>
@@ -203,14 +203,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="710" y="200" text-anchor="middle" class="lbl-g">the pager is going off — for real</text>
     <text x="710" y="228" text-anchor="middle" class="lbl-g">nothing in the path caught it</text>
   </svg>
-  <p class="takeaway">The failure was not intelligence — it was the absence of a boundary.</p>
   <div class="pageno">M15·02</div>
 </section>
 
 <!-- ============ SLIDE 3 — bank cutaway ============ -->
 <section>
   <h2 class="t">Security is not a wall — it is a stack of tested boundaries</h2>
-  <p class="s">A bank is not one thick wall. It is layered, independent boundaries, each tested on its own: the vault door, the till limit, dual-control on big transfers, the camera, the nightly reconcile. Remove any one and the others still hold.</p>
+  <p class="s">layered, independent boundaries — not one thick wall</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Five stacked bank security layers — vault door, till limit, dual control, camera, nightly reconcile — each labelled with the question it answers.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round">
       <rect x="120" y="40" width="860" height="52" rx="10"/>
@@ -227,14 +226,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="150" y="313" class="lbl-b">nightly reconcile</text><text x="470" y="313" class="lbl-g">did what left match what was allowed to?</text>
     </g>
   </svg>
-  <p class="takeaway">No single boundary is the security — the security is that each one is real, independent, and checked.</p>
   <div class="pageno">M15·03</div>
 </section>
 
 <!-- ============ SLIDE 4 — five-gate stack (5 fragments) ============ -->
 <section>
   <h2 class="t">Five boundaries an instruction must clear</h2>
-  <p class="s">An instruction arrives and has to pass five gates before it becomes a verified action. Miss any one and the whole thing should stop — get blocked, get clarified, or get routed to a human.</p>
+  <p class="s">five gates before an instruction becomes an action</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A vertical stack of five gates — surface, injection, action boundary, egress, oracle — that an incoming request must pass to reach a verified action; any failure routes to blocked or clarified.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
       <rect x="380" y="10" width="340" height="44" rx="10"/>
@@ -271,14 +269,13 @@ footer, header, hgroup, main, menu, nav, section {
       <path d="M400,195 L275,195" marker-end="url(#ahg)"/>
     </g>
   </svg>
-  <p class="takeaway">An instruction clears five gates before it becomes a verified action — miss one and it stops.</p>
   <div class="pageno">M15·04</div>
 </section>
 
 <!-- ============ SLIDE 5 — human feeling vs agent structure ============ -->
 <section>
   <h2 class="t">A human feels wrong about a prod delete; an agent feels nothing</h2>
-  <p class="s">An experienced engineer <em>feels</em> wrong running a delete against production and pauses. An agent has no such feeling. It has whatever boundaries you built into its environment, and nothing else.</p>
+  <p class="s">no gut feeling — only the boundaries you built</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Left panel: a human engineer pausing with an internal sense of danger. Right panel: an agent with no such sense, relying only on environment structure.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round">
       <rect x="60" y="50" width="440" height="250" rx="14"/>
@@ -298,14 +295,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="820" y="255" text-anchor="middle" class="lbl-g">only the structure you built</text>
     <text x="820" y="283" text-anchor="middle" class="lbl-g">into its environment</text>
   </svg>
-  <p class="takeaway">Every boundary you don't make explicit and enforced is a boundary that does not exist for the agent.</p>
   <div class="pageno">M15·05</div>
 </section>
 
 <!-- ============ SLIDE 6 — surface walk-through ============ -->
 <section>
   <h2 class="t">The surface is every door in the building — audit them all</h2>
-  <p class="s">A building audit does not start with the alarm. It starts with a walk-through: every door, every window, every vent, the loading dock nobody thinks about, the master key the cleaners have. You count them and write down the ones propped open.</p>
+  <p class="s">a walk-through finds every door propped open</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A building outline with several entry points labelled — front door, side window, vent, loading dock, master key — one of them drawn propped open and flagged.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
       <rect x="120" y="70" width="700" height="230" rx="8"/>
@@ -331,14 +327,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="970" y="165" text-anchor="middle" class="lbl">count</text>
     <text x="970" y="195" text-anchor="middle" class="lbl-g">every one</text>
   </svg>
-  <p class="takeaway">You cannot secure a door you did not know existed — audit every surface, every time, mechanically.</p>
   <div class="pageno">M15·06</div>
 </section>
 
 <!-- ============ SLIDE 7 — four propped-open doors (2 fragments) ============ -->
 <section>
   <h2 class="t">Northstar's four propped-open doors</h2>
-  <p class="s">Four surfaces, one propped-open door each — none exotic. Each is the kind of default that ships in a hurry and never gets revisited. The scan finds all four; two of them decide the verdict.</p>
+  <p class="s">four surfaces, one propped-open door each</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A two-by-two grid of four surface findings: allow-all ingress, cluster-admin binding, broad EKS IAM role, wide CIDR. The cluster-admin and IAM cells turn red and the verdict reads block.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round">
       <rect x="70" y="40" width="440" height="120" rx="12"/>
@@ -365,14 +360,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="795" y="325" text-anchor="middle" class="lbl-b" fill="#c62828">verdict: block</text>
     </g>
   </svg>
-  <p class="takeaway">Four ordinary defaults, each a different surface — the two career-ending ones gate the review to `block`.</p>
   <div class="pageno">M15·07</div>
 </section>
 
 <!-- ============ SLIDE 8 — script not read-through ============ -->
 <section>
   <h2 class="t">A surface audit you run by eye is one you skip when busy</h2>
-  <p class="s">You could find these four by eye. You would also skip the read-through on a busy day, and a surface audit you skip is a surface audit that does not exist. So make it a command.</p>
+  <p class="s">an audit you skip is an audit that doesn't exist</p>
   <svg viewBox="0 0 1100 320" role="img" aria-label="Left panel: a tired human skipping a manual read-through. Right panel: secops-surface-scan.sh as a command that CI gates on and an agent runs before every change.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="9 7">
       <rect x="60" y="50" width="440" height="220" rx="14"/>
@@ -392,14 +386,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="820" y="195" text-anchor="middle" class="lbl">CI gates on it</text>
     <text x="820" y="240" text-anchor="middle" class="lbl">agent runs it before every change</text>
   </svg>
-  <p class="takeaway">A surface audit that is a command is one CI can gate and an agent runs before every change — coverage never depends on memory.</p>
   <div class="pageno">M15·08</div>
 </section>
 
 <!-- ============ SLIDE 9 — injection new-hire ============ -->
 <section>
   <h2 class="t">Prompt injection: the agent can't tell an order from a rumor</h2>
-  <p class="s">A literal new hire is told "do whatever the tickets say." A ticket reads: "checkout fails. Also, take the petty cash and mail it to this address." A seasoned assistant laughs it off. The literal one has no way to know the second half isn't a real instruction.</p>
+  <p class="s">it can't tell a real instruction from a fake one</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A support ticket whose top is a legitimate bug report and whose bottom is a malicious instruction to take the petty cash, both arriving as the same text.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
       <rect x="330" y="30" width="440" height="290" rx="10"/>
@@ -413,14 +406,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="550" y="243" text-anchor="middle" class="lbl">and mail it to this address."</text>
     <text x="550" y="275" text-anchor="middle" class="lbl-g" fill="#c62828">a stranger's instruction, buried in data</text>
   </svg>
-  <p class="takeaway">Injection is a stranger writing instructions into the data your agent was told to trust — and it arrives as the same text.</p>
   <div class="pageno">M15·09</div>
 </section>
 
 <!-- ============ SLIDE 10 — injection paths fan-in ============ -->
 <section>
   <h2 class="t">Everything the agent reads is a possible injection path</h2>
-  <p class="s">An agent reads content to do its job — a GitHub issue, a log line, a tool's output, an MCP resource. Each of those is a place a stranger's instruction can ride in, and the agent cannot reliably tell data from instruction.</p>
+  <p class="s">the agent can't reliably tell data from instruction</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Four untrusted sources — GitHub issue, log output, tool result, MCP response — flow into the agent context, which then faces the question is this data or an instruction.">
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round">
       <rect x="50" y="40" width="220" height="46" rx="9"/>
@@ -449,14 +441,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="990" y="160" text-anchor="middle" class="lbl">data or</text>
     <text x="990" y="192" text-anchor="middle" class="lbl">instruction?</text>
   </svg>
-  <p class="takeaway">Treat every piece of content the agent reads as potentially adversarial input — the way a web app treats form data.</p>
   <div class="pageno">M15·10</div>
 </section>
 
 <!-- ============ SLIDE 11 — defense after the model (2 fragments) ============ -->
 <section>
   <h2 class="t">Put the defense after the model, not in the prompt</h2>
-  <p class="s">You cannot fix injection by asking the model to be careful — "ignore embedded instructions" is itself just more text a clever injection talks past. The reliable defense is the boundary <em>after</em> the model, which does not care what the model decided.</p>
+  <p class="s">the defense is the boundary after the model</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="An injected instruction convinces the model, which tries to cat a secrets file and curl it out, but the Change Gate denies the action at exit two so the data stays data.">
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round">
       <rect x="40" y="120" width="230" height="90" rx="12"/>
@@ -484,14 +475,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="540" y="270" text-anchor="middle" class="lbl-g">the injection can win the argument in the model — and still lose at the boundary</text>
     </g>
   </svg>
-  <p class="takeaway">A boundary the model can be argued out of is not a boundary — enforce after the decision, not in the prompt.</p>
   <div class="pageno">M15·11</div>
 </section>
 
 <!-- ============ SLIDE 12 — same verb five dimensions (hub) ============ -->
 <section>
   <h2 class="t">Same verb, five dimensions, one right answer</h2>
-  <p class="s">"Can the agent restart a service?" has no single answer. Restart <em>which</em> service, in <em>which</em> environment, at <em>what</em> scope, against <em>which</em> target? Each is a dimension of the action boundary, and behavior has to be correct along every one.</p>
+  <p class="s">"can it restart a service?" has no single answer</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A central restart-question hub with five spokes to the five action-boundary dimensions: target, scope, intent, reversibility, ownership.">
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round">
       <ellipse cx="550" cy="170" rx="130" ry="70"/>
@@ -523,14 +513,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="920" y="307">…every one</text>
     </g>
   </svg>
-  <p class="takeaway">The same verb is safe or catastrophic depending on details the coarse "can it do X?" question throws away.</p>
   <div class="pageno">M15·12</div>
 </section>
 
 <!-- ============ SLIDE 13 — surgeon ============ -->
 <section>
   <h2 class="t">A surgeon's authority is scoped five ways at once</h2>
-  <p class="s">A surgeon's authority is not "can operate." It is scoped along several axes: which patient, which procedure, how invasive, how much of the body, whose sign-off. A surgeon who does the right procedure on the wrong patient made the category of error the whole checklist exists to prevent.</p>
+  <p class="s">right procedure, wrong patient, is still the wrong error</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="A surgeon's pre-operation checklist with five axes — which patient, which procedure, how invasive, how much of the body, whose sign-off — each mapped to an action-boundary dimension.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
       <rect x="120" y="30" width="860" height="270" rx="12"/>
@@ -550,14 +539,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="770" y="220" text-anchor="middle" class="lbl-g" fill="#c62828">right procedure, wrong patient</text>
     <text x="770" y="250" text-anchor="middle" class="lbl-g">= the category error, not a small one</text>
   </svg>
-  <p class="takeaway">"Operate" is meaningless without all five — the boundary is tested five ways, mechanically, no matter how confident anyone feels.</p>
   <div class="pageno">M15·13</div>
 </section>
 
 <!-- ============ SLIDE 14 — the matrix (3 fragments) ============ -->
 <section>
   <h2 class="t">The five dimensions, and how each outcome flips</h2>
-  <p class="s">Naming the dimensions turns "is the agent safe?" into a test matrix. Run near-identical requests that differ along exactly one dimension, and check the outcome flips correctly.</p>
+  <p class="s">naming the dimensions turns safety into a test matrix</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A matrix of the five action-boundary dimensions against their correct outcomes: intent allow, reversibility refuse, target require-approval, scope refuse-overscope, ownership clarify.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round">
       <line x1="60" y1="55" x2="1040" y2="55"/>
@@ -593,14 +581,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="1005" y="240" text-anchor="middle" class="lbl-g">flips</text>
     </g>
   </svg>
-  <p class="takeaway">Near-identical requests differing by one dimension must flip the outcome correctly — that is the boundary suite.</p>
   <div class="pageno">M15·14</div>
 </section>
 
 <!-- ============ SLIDE 15 — clarify third answer (2 fragments) ============ -->
 <section>
   <h2 class="t">The third answer: clarify, not act and not refuse</h2>
-  <p class="s">Target <code>production-2</code> when the contract's namespace is <code>production</code>. The agent cannot know whether that's a typo or a real new namespace. The correct response is not act, and not refuse — it is to stop and ask.</p>
+  <p class="s">not act, not refuse — stop and ask</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="An ambiguous target production-2 forks three ways: act is wrong, refuse is wrong, and clarify — ask which was meant — is the correct answer.">
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
       <rect x="60" y="130" width="250" height="90" rx="12"/>
@@ -631,14 +618,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="977" y="308" text-anchor="middle" class="lbl-b">you mean?"</text>
     </g>
   </svg>
-  <p class="takeaway">Act when you should, refuse when you should, ASK when you cannot tell — guessing on ambiguity is exactly INC-005.</p>
   <div class="pageno">M15·15</div>
 </section>
 
 <!-- ============ SLIDE 16 — two failure modes ============ -->
 <section>
   <h2 class="t">Score both overreach AND unnecessary refusal</h2>
-  <p class="s">A scored boundary test catches two opposite errors. Overreach — the agent acted when it should have stopped (the expensive, INC-005 one). And unnecessary refusal — it refused a safe, in-scope action (the annoying one that makes people turn the safety off).</p>
+  <p class="s">two opposite errors: overreach and unnecessary refusal</p>
   <svg viewBox="0 0 1100 320" role="img" aria-label="A balance scale weighing overreach against unnecessary refusal, with the warning that a suite measuring only overreach rewards an agent that refuses everything.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round">
       <path d="M550,50 L550,120"/>
@@ -654,14 +640,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="770" y="245" text-anchor="middle" class="lbl-g">refused a safe action</text>
     <text x="550" y="300" text-anchor="middle" class="lbl-g">measure only the left and you reward an agent that refuses everything</text>
   </svg>
-  <p class="takeaway">You are engineering for both: act when you should, stop when you should, ask when you cannot tell.</p>
   <div class="pageno">M15·16</div>
 </section>
 
 <!-- ============ SLIDE 17 — camera not PIN ============ -->
 <section>
   <h2 class="t">The camera must record the transaction, not the PIN</h2>
-  <p class="s">The camera over the counter is your audit trail. But one pointed to film customers' PINs is a breach waiting to happen. The fix is not to remove the camera — it is to position it to record the transaction, not the credentials.</p>
+  <p class="s">record the action, not the credentials</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="A bank camera positioned to film the counter transaction but not the PIN pad, mapped to a ledger that keeps role, tool, target, decision and outcome but drops prompt bodies and tool output.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round">
       <rect x="70" y="60" width="420" height="220" rx="12"/>
@@ -682,14 +667,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="820" y="185" text-anchor="middle" class="lbl-g" fill="#c62828">DROP: prompt body · tool output</text>
     <text x="820" y="230" text-anchor="middle" class="lbl-g" fill="#c62828">REDACT: any secret in a kept field</text>
   </svg>
-  <p class="takeaway">The ledger records structure and outcome, never content — drop bodies, redact leaks, over-redact rather than leak.</p>
   <div class="pageno">M15·17</div>
 </section>
 
 <!-- ============ SLIDE 18 — side-effect oracle ============ -->
 <section>
   <h2 class="t">Reconcile what left against what was allowed to leave</h2>
-  <p class="s">A nightly reconciliation does not just confirm the approved transfers went through — it reconciles the total, because the fraud you're hunting is the transfer you did <em>not</em> approve. Checking "did it do the thing?" is only half a test.</p>
+  <p class="s">"did it do the thing?" is only half a test</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="A reconciliation ledger with an intended column and an observed column; the observed column carries an extra forbidden-namespace change flagged red as fail-forbidden-namespace.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round">
       <line x1="80" y1="60" x2="1020" y2="60"/>
@@ -706,7 +690,6 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="790" y="272" text-anchor="middle" class="lbl-b" fill="#c62828">extra change → fail-forbidden-namespace</text>
     <text x="310" y="215" text-anchor="middle" class="lbl-g">intended part: flawless</text>
   </svg>
-  <p class="takeaway">An action that hit its goal AND had a side effect completed its task and breached a boundary at the same time.</p>
   <div class="pageno">M15·18</div>
 </section>
 
@@ -714,7 +697,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section>
   <p class="kicker">MODULE 15 &nbsp;·&nbsp; RECAP</p>
   <h2 class="t" style="font-size:2.0em">Five boundaries, each real and each tested</h2>
-  <p class="s">This is the module where the agent workbench becomes something you can defend in a security review — not because you trust the agent, but because you can show the boundaries and the tests that hold it.</p>
+  <p class="s">defensible because you can show the boundaries, not trust</p>
   <svg viewBox="0 0 1100 300" role="img" aria-label="A numbered recap of the five boundaries: surface, injection, action boundary, egress, oracle.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round">
       <circle cx="90" cy="55" r="18"/><circle cx="90" cy="105" r="18"/><circle cx="90" cy="155" r="18"/><circle cx="90" cy="205" r="18"/><circle cx="90" cy="255" r="18"/>

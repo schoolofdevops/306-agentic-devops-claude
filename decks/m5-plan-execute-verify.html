@@ -141,7 +141,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section>
   <p class="kicker">MODULE 5 &nbsp;·&nbsp; THE PLAN &rarr; EXECUTE &rarr; VERIFY &rarr; GOAL LOOP</p>
   <h2 class="t" style="font-size:1.7em">The same loop as Module 1 — made rigorous enough to trust a system you can't break</h2>
-  <p class="s" style="font-size:1.15em">Module 1's loop was loose because you were watching every step. Give the agent autonomy and step away, and "loose" stops being enough.</p>
+  <p class="s" style="font-size:1.15em">autonomy breaks the loose loop</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="On the left, a small loose loop labelled diagnose, change, verify from Module 1. An arrow leads right to a hardened four-part procedure: contract, plan, isolate, verify, drawn as a firmer boxed chain. Below, a gray footline fans to three on-call questions: did it understand, did it stay in the lines, is done a fact. Credit line: Gourav Shah, School of DevOps and AI.">
     <!-- M1 loose loop -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="9 7">
@@ -186,7 +186,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 2 — THREE QUESTIONS (the hinge) ============ -->
 <section>
   <h2 class="t">The instant the agent has autonomy, three questions become load-bearing</h2>
-  <p class="s">Babysitting one small fix hides them — you read each step yourself. Hand a task to an agent and walk away, and all three come due at once.</p>
+  <p class="s">walk away, and three risks come due at once</p>
   <svg viewBox="0 0 1100 350" role="img" aria-label="On the left, a box reading hand task to agent, then step away, with a fast-forward mark meaning it runs quickly without you. Three gray arrows fan out to three question boxes: did it understand what it was actually asked, did it stay inside the lines, and is done a fact or the agent's opinion. A red note underneath reads a loose loop answers none of these.">
     <!-- source -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="3">
@@ -213,14 +213,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="175" y="252" text-anchor="middle" class="lbl-bad">a loose loop</text>
     <text x="175" y="278" text-anchor="middle" class="lbl-g">answers none of these</text>
   </svg>
-  <p class="takeaway">This module turns each question into a written, checkable artifact — so the loop holds even when you're not watching.</p>
   <div class="pageno">M5·02</div>
 </section>
 
 <!-- ============ SLIDE 3 — FOUR ARTIFACTS (map, fragments) ============ -->
 <section>
   <h2 class="t">Four artifacts hold the loop when you are not watching every step</h2>
-  <p class="s">Each of the three questions gets an answer you can write down and check. Together they turn "watch the agent" into an auditable procedure.</p>
+  <p class="s">three questions, each with a checkable answer</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Four numbered rows appearing in order. One, a task contract, a written statement of intent, scope and acceptance. Two, plan mode, review the approach before any edit. Three, an isolated workspace, run it off the branch that matters. Four, repository-owned verification, the repo decides done, not the agent. Each row is tagged to the question it answers.">
     <!-- row 1 -->
     <g class="fragment">
@@ -251,14 +250,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="122" y="304" text-anchor="start" class="lbl-g">the repo decides "done", not the agent &nbsp;·&nbsp; answers "fact or opinion?"</text>
     </g>
   </svg>
-  <p class="takeaway">Four written, checkable artifacts — the rest of the deck builds them one at a time.</p>
   <div class="pageno">M5·03</div>
 </section>
 
 <!-- ============ SLIDE 4 — WRITE IT DOWN FIRST ============ -->
 <section>
   <h2 class="t">Write the task down before the agent runs — not "fix the thing"</h2>
-  <p class="s">The agent does exactly what it inferred you meant, fast, with no pause where a colleague would ask "wait, do you really want me touching production for this?"</p>
+  <p class="s">fast, and no pause to ask "are you sure?"</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="On the left, a crossed-out vague ticket reading fix the thing. An arrow leads to a boxed, structured task contract with labelled fields intent, target, actions, acceptance. Above the contract a small clock is stamped changing your mind is free here. A gray band underneath reads the cheapest place to catch I thought you meant staging is before anyone opens an editor.">
     <!-- crossed-out vague -->
     <g filter="url(#rough)" stroke="#757575" stroke-width="2.4" stroke-dasharray="9 7"><rect x="60" y="120" width="230" height="86" rx="11" class="f-red"/></g>
@@ -285,14 +283,13 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-dasharray="9 7"><rect x="120" y="286" width="860" height="40" rx="10"/></g>
     <text x="550" y="312" text-anchor="middle" class="lbl-g">the cheapest place to catch <tspan class="lbl-b">"I thought you meant staging"</tspan> is before anyone opens an editor</text>
   </svg>
-  <p class="takeaway">Front-load the agreement into a contract — while changing your mind still costs nothing.</p>
   <div class="pageno">M5·04</div>
 </section>
 
 <!-- ============ SLIDE 5 — FLIGHT PLAN (scene) ============ -->
 <section>
   <h2 class="t">A task contract is a flight plan filed before takeoff</h2>
-  <p class="s">A pilot doesn't improvise the route mid-air. The plan is filed on the ground where changing it is free, then flown against — and a deviation is a visible, deliberate act, not a drift nobody noticed.</p>
+  <p class="s">file the flight plan before takeoff</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="On the left, on the ground, a filed flight plan card listing destination, corridor, fuel, alternates and abort conditions, stamped reviewed on the ground, changing it is free. A dashed runway line leads up to the right where a small plane in the air references the same plan. A gray label by the plane reads deviation is visible. A band reads agreed before the work, referenced during it.">
     <!-- ground: filed plan -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="70" y="96" width="300" height="176" rx="12" class="f-green"/></g>
@@ -317,14 +314,13 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-dasharray="9 7"><rect x="150" y="290" width="800" height="38" rx="10"/></g>
     <text x="550" y="315" text-anchor="middle" class="lbl-g">the contract is the filed plan: <tspan class="lbl-b">agreed before the work, referenced during it</tspan></text>
   </svg>
-  <p class="takeaway">Once airborne, a deviation from the plan is something you can see — not a drift nobody noticed.</p>
   <div class="pageno">M5·05</div>
 </section>
 
 <!-- ============ SLIDE 6 — CONTRACT ANATOMY (big-box) ============ -->
 <section>
   <h2 class="t">Six fields — each answering where autonomous runs go wrong</h2>
-  <p class="s">None of them tell the agent how to write the code — that's its job. Every field constrains the boundary and defines success, which is yours.</p>
+  <p class="s">the contract sets the boundary, not the code</p>
   <svg viewBox="0 0 1100 350" role="img" aria-label="One outer contract box holding six inner field boxes. Intent: keeps the agent solving the right problem. Target and actions: the leash from Module 2, restated per task. Acceptance: what precisely makes this done. Stop conditions: the moments to stop, not push through. Rollback: the undo, written while calm. Each field is paired with the question it answers.">
     <!-- outer -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="3"><rect x="52" y="40" width="996" height="292" rx="14"/></g>
@@ -366,14 +362,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="874" y="266" text-anchor="middle" class="lbl-g">the undo, written</text>
     <text x="874" y="292" text-anchor="middle" class="lbl-g">while you're calm</text>
   </svg>
-  <p class="takeaway">The boundary and the definition of success are yours; the how is the agent's.</p>
   <div class="pageno">M5·06</div>
 </section>
 
 <!-- ============ SLIDE 7 — CONTRACT vs SETTINGS (nested) ============ -->
 <section>
   <h2 class="t">The contract tightens the session settings — it never loosens them</h2>
-  <p class="s">Module 2's settings.json is a standing boundary for every run. The task contract is narrower and sharper: the boundary and success for this one task. They stack.</p>
+  <p class="s">standing boundary plus a per-task boundary</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="An outer purple box labelled settings.json, standing boundary, every run, Module 2. Inside it a smaller box labelled task contract, this task only. A one-way arrow points inward only, labelled can tighten, never loosen. To the right, an analogy: the outer box is the building's locked doors, the inner box is the room you're authorized in today.">
     <!-- outer settings -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="3"><rect x="70" y="60" width="560" height="220" rx="14" class="f-purple"/></g>
@@ -394,14 +389,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="860" y="226" text-anchor="middle" class="lbl-g">settings = the building's locked doors</text>
     <text x="860" y="254" text-anchor="middle" class="lbl-g">contract = the room you work in today</text>
   </svg>
-  <p class="takeaway">A per-task contract inside per-session settings — the contract can only narrow what settings already allow.</p>
   <div class="pageno">M5·07</div>
 </section>
 
 <!-- ============ SLIDE 8 — PLAN MODE: THINK vs ACT (two-panel) ============ -->
 <section>
   <h2 class="t">Plan mode separates thinking from acting</h2>
-  <p class="s">In a loose loop the agent reasons and edits in one motion — you learn what it decided by watching diffs appear. Fine for a one-word fix; not fine when a wrong whole strategy is expensive to unwind.</p>
+  <p class="s">fine for a typo, not fine for a wrong strategy</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Two panels. On the left, the loose loop: reason and edit fused into one box, drawn in red, with diffs appearing as the only signal. On the right, plan mode: a read-and-reason box that explicitly cannot edit files or run mutating commands, followed by a gate before any edit is allowed. A caption reads plan mode catches the wrong approach, not the wrong line.">
     <!-- left: fused -->
     <g filter="url(#rough)" stroke="#c62828" stroke-width="2.6"><rect x="70" y="90" width="420" height="150" rx="12" class="f-red"/></g>
@@ -423,14 +417,13 @@ footer, header, hgroup, main, menu, nav, section {
     <!-- caption -->
     <text x="550" y="288" text-anchor="middle" class="lbl-g">plan mode catches the wrong <tspan class="lbl-b">approach</tspan> — a whole strategy, not a typo</text>
   </svg>
-  <p class="takeaway">Cheap to fix in a plan, expensive to fix in a diff.</p>
   <div class="pageno">M5·08</div>
 </section>
 
 <!-- ============ SLIDE 9 — SURGEON BRIEFING (scene) ============ -->
 <section>
   <h2 class="t">Plan mode is the surgeon's pre-op briefing</h2>
-  <p class="s">Before the first incision the surgeon walks the team through it: this is what we'll do, in this order, these are the structures we avoid, here's where we expect trouble. The point is that it happens while the patient is still closed.</p>
+  <p class="s">the surgeon briefs the team before the incision</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="A briefing board on the left listing the procedure: this order, avoid these structures, expect trouble here. A surgical team stands at the board. To the right, a patient still closed on the table, drawn in gray with a dashed outline meaning nothing has been cut yet. A green label reads objections are cheap here. A crossed-out alternative below reads cutting first is not braver.">
     <!-- briefing board -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="70" y="70" width="360" height="180" rx="12" class="f-blue"/></g>
@@ -452,14 +445,13 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="2.2" stroke-linecap="round"><path d="M80,282 L470,272"/></g>
     <text x="270" y="300" text-anchor="middle" class="lbl-g">cutting first isn't braver — it just moves the bad plan to the worst time</text>
   </svg>
-  <p class="takeaway">Plan mode is that briefing: the agent produces the procedure and you approve it before any edit.</p>
   <div class="pageno">M5·09</div>
 </section>
 
 <!-- ============ SLIDE 10 — REVIEW PLAN vs CONTRACT (flow) ============ -->
 <section>
   <h2 class="t">Read the plan against the contract before any edit</h2>
-  <p class="s">Plan mode produces a plan: here's what I found, here's what I'll change, here's the order. You review it against your contract — and only when it's right do you switch to execution.</p>
+  <p class="s">review the plan against the contract, then execute</p>
   <svg viewBox="0 0 1100 320" role="img" aria-label="A left-to-right flow. The task contract feeds plan mode, which reads and reasons and produces a plan. An arrow leads to a review diamond asking does the plan match the contract: does the approach match intent, stay in target, trip any stop condition. A no branch, labelled wrong approach, loops back to plan mode. A yes branch leads to execute, where the agent edits inside target.">
     <!-- contract -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="40" y="118" width="150" height="84" rx="11" class="f-blue"/></g>
@@ -488,14 +480,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="904" y="152" text-anchor="middle" class="lbl-b">execute</text>
     <text x="904" y="180" text-anchor="middle" class="lbl-g">edit inside target</text>
   </svg>
-  <p class="takeaway">You approve the approach against the contract before a single file changes.</p>
   <div class="pageno">M5·10</div>
 </section>
 
 <!-- ============ SLIDE 11 — REHEARSAL STAGE (scene) ============ -->
 <section>
   <h2 class="t">A worktree is a rehearsal stage built off to the side</h2>
-  <p class="s">You don't rehearse a risky new number on the main stage with the audience seated. You build an identical stage in the wings, rehearse as roughly as you need, and only bring it over once it's good.</p>
+  <p class="s">rehearse in the wings, not on the main stage</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="On the left, the main stage with an audience seated, drawn in green and labelled main branch, the real show, never rehearsed on. On the right in the wings, a side stage drawn in orange, labelled worktree, rehearse here, fail here. A dashed arrow brings a good number from the side stage to the main stage. A note reads if the rehearsal is a disaster, strike the side stage and the main stage never knew.">
     <!-- main stage -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="3"><rect x="70" y="80" width="380" height="150" rx="12" class="f-green"/></g>
@@ -515,14 +506,13 @@ footer, header, hgroup, main, menu, nav, section {
     <!-- note -->
     <text x="550" y="284" text-anchor="middle" class="lbl-g">disaster in rehearsal? <tspan class="lbl-b">strike the side stage</tspan> — the main stage never knew it happened</text>
   </svg>
-  <p class="takeaway">The agent works on a disposable copy; the original is out of reach entirely.</p>
   <div class="pageno">M5·11</div>
 </section>
 
 <!-- ============ SLIDE 12 — WORKTREE MECHANISM (flow) ============ -->
 <section>
   <h2 class="t">main is protected; the worktree is disposable — merge good, delete bad</h2>
-  <p class="s">One command creates a separate working directory on its own branch, sharing the same repository. If the change is good you merge it back; if it's bad you delete the worktree and there's nothing to clean up.</p>
+  <p class="s">a separate directory, its own branch, same repo</p>
   <svg viewBox="0 0 1100 320" role="img" aria-label="A flow from the top. Main branch, protected and never edited directly, drawn in green. A git worktree add arrow leads to a worktree, an isolated directory on its own branch. The agent executes there. A good decision branches to merge back to main. A bad decision branches to delete the worktree, with main untouched, drawn in red as the disposal.">
     <!-- main -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="3"><rect x="410" y="30" width="280" height="66" rx="11" class="f-green"/></g>
@@ -547,14 +537,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="860" y="286" text-anchor="middle" class="lbl-bad">bad? delete it</text>
     <text x="860" y="308" text-anchor="middle" class="lbl-g">main untouched, nothing to clean</text>
   </svg>
-  <p class="takeaway">The strongest boundary: not "allowed to edit these files" but "editing a disposable copy."</p>
   <div class="pageno">M5·12</div>
 </section>
 
 <!-- ============ SLIDE 13 — THREE DEPTHS (staircase, fragments) ============ -->
 <section>
   <h2 class="t">Three depths of the same instinct — reach for the one that fits the risk</h2>
-  <p class="s">Rewind undoes one step. A checkpoint returns you to one saved moment. A worktree keeps the whole experiment off the branch that matters. Same instinct, three depths.</p>
+  <p class="s">rewind, checkpoint, worktree — three depths</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="A staircase of three steps rising. The lowest and lightest step is rewind, roll back one agent action, the undo for the last move. The middle step is checkpoint, commit or stash before a risky step, a named point to return to. The highest and firmest step is worktree, the whole experiment off the branch that matters. An arrow on the side rises from small risk to large risk.">
     <!-- step 1 rewind (fragment) -->
     <g class="fragment">
@@ -578,14 +567,13 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M960,290 L960,90" marker-end="url(#ahg)"/></g>
     <text x="982" y="280" text-anchor="start" class="lbl-g" transform="rotate(90 982 280)">small risk &rarr; large risk</text>
   </svg>
-  <p class="takeaway">Rewind for one step, a checkpoint for one moment, a worktree for the whole experiment.</p>
   <div class="pageno">M5·13</div>
 </section>
 
 <!-- ============ SLIDE 14 — TWO ANSWERS TO "IS IT DONE?" (two-panel) ============ -->
 <section>
   <h2 class="t">"Is it done?" has two very different answers</h2>
-  <p class="s">Ask the agent and you get inference — the same model that wrote the change also judges it. Ask the repository and you get evidence — a check written independently of this run.</p>
+  <p class="s">the grader proves the fix, not the agent</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Two panels. On the left in orange, ask the agent: it looks complete to me, an inference, with a red note that the same understanding that wrote it now judges it, a shared blind spot. On the right in green, ask the repository: tests, lint and grade decide, an external check with a note that it has no opinion and no blind spot aligned with the agent's.">
     <!-- left: ask agent -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="80" width="440" height="180" rx="12" class="f-orange"/></g>
@@ -604,14 +592,13 @@ footer, header, hgroup, main, menu, nav, section {
     <!-- vs -->
     <text x="550" y="176" text-anchor="middle" class="lbl-b">vs</text>
   </svg>
-  <p class="takeaway">Any blind spot in the doing is a blind spot in the self-checking — that's the structural flaw.</p>
   <div class="pageno">M5·14</div>
 </section>
 
 <!-- ============ SLIDE 15 — GRADED EXAM (scene) ============ -->
 <section>
   <h2 class="t">The graded exam beats the student's hunch</h2>
-  <p class="s">"Yeah, I'm pretty sure I passed" is not worthless — but you don't register them for the next course on the strength of it. You wait for the graded result, because the grade is external.</p>
+  <p class="s">"pretty sure I passed" is not the same as graded</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="On the left, a student with a speech bubble saying pretty sure I passed, drawn in orange as a self-assessment, with a note self-set, same person being graded. On the right, a graded exam paper coming back with a big tick and a score, drawn in green, with a note external, rubric fixed in advance, catches what confidence missed. An arrow of trust points to the graded paper, not the hunch.">
     <!-- student hunch -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="70" y="96" width="380" height="150" rx="12" class="f-orange"/></g>
@@ -629,14 +616,13 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><path d="M458,170 L644,170" marker-end="url(#ah)"/></g>
     <text x="550" y="156" text-anchor="middle" class="lbl-g">trust the grade</text>
   </svg>
-  <p class="takeaway">Repository-owned verification is the graded exam; agent self-assessment is the student's hunch.</p>
   <div class="pageno">M5·15</div>
 </section>
 
 <!-- ============ SLIDE 16 — ACCEPTANCE → CHECKS (flow, fragments) ============ -->
 <section>
   <h2 class="t">Acceptance criteria become automated checks — green is the definition of done</h2>
-  <p class="s">The acceptance lines in your contract map to checks that live in the repo and don't care what the agent thinks. You run them. Green is done, red is not.</p>
+  <p class="s">green is done, red is not</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="A left-to-right flow. The contract's acceptance field feeds a set of repo checks: the existing suite, a new test, and grade.sh. The checks produce a verdict: green equals done, red equals not done. Three properties are labelled below the checks: reproducible, does not hallucinate, catches regressions the agent's self-assessment misses.">
     <!-- acceptance -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="40" y="110" width="200" height="90" rx="11" class="f-blue"/></g>
@@ -671,14 +657,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="920" y="176" text-anchor="middle" class="lbl-g">repo, not the</text>
     <text x="920" y="202" text-anchor="middle" class="lbl-g">agent</text>
   </svg>
-  <p class="takeaway">The agent's self-assessment is demoted from the verdict to a hint on the way to it.</p>
   <div class="pageno">M5·16</div>
 </section>
 
 <!-- ============ SLIDE 17 — DONE = 5 ELEMENTS (big-box) ============ -->
 <section>
   <h2 class="t">"Done" is a logbook entry — five parts, not a thumbs-up</h2>
-  <p class="s">"The tests pass" is necessary but not the whole story for a task you might have to defend in a review or a postmortem. Three parts are objective; two are where judgment lives.</p>
+  <p class="s">tests passing is necessary, not sufficient</p>
   <svg viewBox="0 0 1100 350" role="img" aria-label="Five rows in a box. Tests pass: does it work and did it break anything. Evidence: the diff and the verification output. Rollback: the undo from the contract. These three are tagged fact and drawn in green. Residual risk: what the checks don't cover. Cost receipt: the run ledger from Module 4. These two are tagged judgment and drawn in orange.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8"><rect x="60" y="34" width="980" height="300" rx="13"/></g>
     <!-- fact rows -->
@@ -702,14 +687,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="360" y="313" text-anchor="start" class="lbl-g">the Agent Run Ledger row (Module 4)</text>
     <text x="932" y="288" text-anchor="middle" class="lbl-b">JUDGMENT</text>
   </svg>
-  <p class="takeaway">The split between "it's done" and "it's done, and here's exactly what we're still trusting."</p>
   <div class="pageno">M5·17</div>
 </section>
 
 <!-- ============ SLIDE 18 — LOGBOOK (scene) ============ -->
 <section>
   <h2 class="t">A logbook makes the task accountable, not just successful</h2>
-  <p class="s">A pilot who lands doesn't just say "we made it." The logbook records the flight, the fuel burned, anything odd, and the state for the next crew. That record is what makes the operation accountable.</p>
+  <p class="s">the logbook is what makes it accountable</p>
   <svg viewBox="0 0 1100 320" role="img" aria-label="On the left, an open logbook with entries: the flight, fuel burned, anything that behaved oddly, and the state for the next crew, drawn in green as the accountable record. On the right, a bare thumbs-up crossed out in red, labelled we made it, not enough. A gray note reads the next crew trusts the aircraft because the last flight is documented, not because someone vouched for it.">
     <!-- logbook -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="70" y="70" width="440" height="180" rx="12" class="f-green"/></g>
@@ -727,14 +711,13 @@ footer, header, hgroup, main, menu, nav, section {
     <!-- note -->
     <text x="550" y="288" text-anchor="middle" class="lbl-g">the next crew trusts the aircraft because the flight is <tspan class="lbl-b">documented</tspan> — not vouched for</text>
   </svg>
-  <p class="takeaway">A finished task is a logbook entry: what it did, proof, the undo, what's uncertain, what it cost.</p>
   <div class="pageno">M5·18</div>
 </section>
 
 <!-- ============ SLIDE 19 — WHOLE LOOP (pipeline, fragments) ============ -->
 <section>
   <h2 class="t">The whole procedure, end to end — main untouched throughout</h2>
-  <p class="s">Module 1 taught the loop as a habit. Here it is as an auditable procedure: a contract agreed before, a plan approved before, an isolated place, a repo that decides done, and a record you can defend after.</p>
+  <p class="s">from a habit to an auditable procedure</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="A pipeline of six stages assembling left to right: write the contract, create a worktree, run plan mode, execute inside target, let the repository verify, and write the done record. Below the pipeline a green rail labelled main runs the whole length untouched, showing the entire procedure happened on a disposable copy.">
     <!-- pipeline nodes -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="40" y="96" width="150" height="80" rx="11" class="f-blue"/></g>
@@ -775,7 +758,6 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="550" y="238" text-anchor="middle" class="lbl-good">main — untouched the whole time</text>
     <text x="550" y="286" text-anchor="middle" class="lbl-g">every stage ran on a disposable copy; the original was out of reach</text>
   </svg>
-  <p class="takeaway">Module 1 was the loop as a habit; this is the loop as an auditable procedure.</p>
   <div class="pageno">M5·19</div>
 </section>
 
@@ -783,7 +765,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section>
   <p class="kicker">MODULE 5 &nbsp;·&nbsp; THE PLAN &rarr; EXECUTE &rarr; VERIFY &rarr; GOAL LOOP</p>
   <h2 class="t" style="font-size:1.95em">Four artifacts, and the loop holds even when you're not watching every step</h2>
-  <p class="s">The change was small; everything around it was formalized. Four things go with you into the lab.</p>
+  <p class="s">small change, formalized process</p>
   <svg viewBox="0 0 1100 300" role="img" aria-label="Four numbered takeaways. One, task contract, agreed before the work: intent, boundary, acceptance, stop, rollback. Two, plan mode, approve the approach before any edit. Three, worktree, run it on a disposable copy, main never at risk. Four, repository-owned done, green is the verdict, not the agent's opinion, plus a logbook you can defend. A footline hands off to the lab and teases the deep dive on inference and goal.">
     <!-- row 1 -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><circle cx="80" cy="52" r="22" class="f-purple"/></g>

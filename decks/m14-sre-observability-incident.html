@@ -138,7 +138,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section data-auto-animate>
   <p class="kicker">MODULE 14 &nbsp;·&nbsp; AGENTIC DEVOPS WITH CLAUDE CODE</p>
   <h2 class="t" style="font-size:2.3em">SRE, Observability &amp; Incident Response</h2>
-  <p class="s" style="font-size:1.2em">The pager is going off and someone has to decide what to look at first. Increasingly that someone is an agent working next to you — and the failure mode is specific and expensive.</p>
+  <p class="s" style="font-size:1.2em">the pager fires — where does the agent look first?</p>
   <svg viewBox="0 0 1100 300" role="img" aria-label="An alert bell leads to a set of four gauges, which lead to a green diagnosed check mark.">
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round">
       <path d="M150,150 a45,45 0 0 1 90,0 c0,30 12,42 12,42 h-114 c0,0 12,-12 12,-42 z"/>
@@ -177,7 +177,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 2 — firehose vs aimed stream ============ -->
 <section>
   <h2 class="t">Observability without discipline is a firehose</h2>
-  <p class="s">Hand an agent an incident and a metrics stack and it does what an inexperienced responder does: pull everything, correlate everything, and arrive forty minutes later with a confident story that happens to be wrong.</p>
+  <p class="s">pull everything, correlate everything, arrive wrong</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="Left panel: a firehose blasts a tiny context-window box and overflows it, marked bad. Right panel: a thin aimed stream hits a small target, marked good.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2" stroke-dasharray="5 5"><line x1="550" y1="40" x2="550" y2="330"/></g>
 
@@ -202,14 +202,13 @@ footer, header, hgroup, main, menu, nav, section {
     <circle cx="895" cy="177" r="9" fill="#2e7d32" stroke="none"/>
     <text x="820" y="290" text-anchor="middle" class="lbl-g" fill="#2e7d32">signal up · blast radius down</text>
   </svg>
-  <p class="takeaway">Telemetry is not evidence until you bound it — everything else is a firehose pointed at your context window.</p>
   <div class="pageno">M14·02</div>
 </section>
 
 <!-- ============ SLIDE 3 — the incident you're building toward ============ -->
 <section>
   <h2 class="t">The incident you're building toward</h2>
-  <p class="s">Northstar's orders-api starts throwing errors during a busy period. p95 climbs from under 200ms to 28 seconds, error rate crosses 30%, two Prometheus alerts fire, and the dashboard is a wall of red.</p>
+  <p class="s">p95 to 28s, errors past 30%, a wall of red</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="An orders-api box with a latency line climbing steeply, an error-rate tag, two alert bells, and a grid of red sparklines. Below, three ordered questions to answer.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.8"><rect x="60" y="60" width="180" height="70" rx="12"/></g>
     <text x="150" y="103" text-anchor="middle" class="lbl-b">orders-api</text>
@@ -243,14 +242,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="770" y="288" text-anchor="start" class="lbl-b">3 · what changed?</text>
     <text x="770" y="318" text-anchor="start" class="lbl-g">the causal event, not a guess</text>
   </svg>
-  <p class="takeaway">Answer the three questions in order — get the order wrong and you spend the window scaling CPU for a problem that was never about CPU.</p>
   <div class="pageno">M14·03</div>
 </section>
 
 <!-- ============ SLIDE 4 — SLO is the speed limit ============ -->
 <section>
   <h2 class="t">The SLO is the speed limit</h2>
-  <p class="s">A speed limit is not a description of how fast cars go — it is a commitment about what's acceptable, set deliberately, that everyone can check against. Without it "you were going too fast" is an argument; with it "90 in a 65" is a fact.</p>
+  <p class="s">a speed limit turns an argument into a fact</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A road with a 65 speed-limit sign; a car travelling above the posted limit, with the gap between actual speed and the limit labelled.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4"><line x1="60" y1="250" x2="1040" y2="250"/><line x1="60" y1="300" x2="1040" y2="300"/></g>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2" stroke-dasharray="30 24"><line x1="60" y1="275" x2="1040" y2="275"/></g>
@@ -269,14 +267,13 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="2.4" stroke-linecap="round"><path d="M300,180 C480,180 560,200 690,215" marker-end="url(#ah)"/></g>
     <text x="500" y="170" text-anchor="middle" class="lbl-g" fill="#c62828">the gap you can measure</text>
   </svg>
-  <p class="takeaway">An SLO is a commitment about what's acceptable, set deliberately — not a description of how the system happens to behave.</p>
   <div class="pageno">M14·04</div>
 </section>
 
 <!-- ============ SLIDE 5 — error budget is the fine ============ -->
 <section>
   <h2 class="t">The error budget is the fine you can afford</h2>
-  <p class="s">You're not required to drive at exactly the limit at all times. You have a margin — a few percent over a rolling window — and as long as you stay inside it you're fine. Burn the whole margin in one reckless afternoon and the consequence is automatic.</p>
+  <p class="s">a rolling margin, burned by one bad afternoon</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A fuel-bar style meter showing a one-percent error budget tank, partly drained, with a burn-rate arrow indicating how fast the remaining budget is being spent.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8"><rect x="140" y="120" width="700" height="90" rx="10"/></g>
     <g filter="url(#rough)" fill="#f8cecc" stroke="none"><rect x="145" y="125" width="420" height="80" rx="8"/></g>
@@ -290,14 +287,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="915" y="145" text-anchor="middle" class="lbl-g">burn rate</text>
     <text x="490" y="270" text-anchor="middle" class="lbl-g">how much left · how fast am I spending it right now</text>
   </svg>
-  <p class="takeaway">Reliability stops being a feeling ("seems healthy") and becomes accounting: budget left, and burn rate right now.</p>
   <div class="pageno">M14·05</div>
 </section>
 
 <!-- ============ SLIDE 6 — two objectives as rules ============ -->
 <section>
   <h2 class="t">orders-api's two objectives, written as rules</h2>
-  <p class="s">Northstar commits to two objectives, encoded as real Prometheus recording rules — not aspirations in a wiki. Encoding them makes the objective computable: a query a machine evaluates continuously, and an agent can evaluate against a named number.</p>
+  <p class="s">SLOs as recording rules, not wiki aspirations</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Two boxed objectives, availability and latency, each with its rule expression and threshold, stamped computable.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.8"><rect x="70" y="70" width="440" height="180" rx="12"/></g>
     <text x="290" y="110" text-anchor="middle" class="lbl-b">Availability</text>
@@ -314,14 +310,13 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.4"><rect x="410" y="278" width="280" height="46" rx="20"/></g>
     <text x="550" y="307" text-anchor="middle" class="lbl-b" fill="#2e7d32">computable, not eyeballed</text>
   </svg>
-  <p class="takeaway">A recording rule makes the objective computable — a machine evaluates it continuously, and that's exactly what you can safely delegate.</p>
   <div class="pageno">M14·06</div>
 </section>
 
 <!-- ============ SLIDE 7 — breach vs page ============ -->
 <section>
   <h2 class="t">A breach is not the same as a page</h2>
-  <p class="s">Responders constantly conflate two things: the SLO breach — you crossed the line you promised not to cross — and the page, the thing severe enough to wake someone. Northstar wires them as two separate thresholds.</p>
+  <p class="s">the SLO breach and the page aren't the same</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Two lanes: a warning-severity SLO error-budget-burn alert at one percent, and a separate critical high-error-rate alert at five percent that routes as a real page.">
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.6"><rect x="70" y="70" width="440" height="200" rx="12"/></g>
     <text x="290" y="110" text-anchor="middle" class="lbl-b">SLOErrorBudgetBurn</text>
@@ -337,14 +332,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="810" y="202" text-anchor="middle" class="lbl-sm">routes as a real page</text>
     <text x="810" y="248" text-anchor="middle" class="lbl-g" fill="#c62828">drop everything — the page</text>
   </svg>
-  <p class="takeaway">The budget tells you *how bad*; the page tells you *drop what you're doing* — different thresholds, different jobs.</p>
   <div class="pageno">M14·07</div>
 </section>
 
 <!-- ============ SLIDE 8 — golden signals: four gauges ============ -->
 <section>
   <h2 class="t">The golden signals are four gauges you read first</h2>
-  <p class="s">A modern car exposes thousands of sensor values over its diagnostic bus, but the dashboard shows four things while you drive: speed, fuel, engine temperature, the oil light. The minimal set that tells you keep driving, slow down, or pull over now.</p>
+  <p class="s">thousands of sensors, four gauges on the dash</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A car dashboard drawn large with four gauges, against a greyed background labelled thousands of sensors on the diagnostic bus.">
     <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="1.6" stroke-dasharray="4 5"><rect x="40" y="40" width="1020" height="120" rx="10"/></g>
     <text x="550" y="65" text-anchor="middle" class="lbl-g">thousands of sensors on the bus — you do not read these while driving</text>
@@ -361,14 +355,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="680" y="320" text-anchor="middle" class="lbl-sm">temp</text>
     <text x="920" y="320" text-anchor="middle" class="lbl-sm">oil light</text>
   </svg>
-  <p class="takeaway">Read the four gauges first — you earn every deeper query by reading these; everything else is a follow-up.</p>
   <div class="pageno">M14·08</div>
 </section>
 
 <!-- ============ SLIDE 9 — the four signals named ============ -->
 <section>
   <h2 class="t">Latency · Traffic · Errors · Saturation</h2>
-  <p class="s">Those four gauges have names, and each maps to one orders-api metric. This is the bounded evidence set: when the pager fires the first move is not "show me all metrics" — it is "read these four."</p>
+  <p class="s">the bounded evidence set: read these four first</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A big outer box holding four inner boxes: Latency, Traffic, Errors, and Saturation, each with the question it answers and the orders-api metric behind it.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4"><rect x="40" y="40" width="1020" height="300" rx="14"/></g>
 
@@ -392,14 +385,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="630" y="270" text-anchor="start" class="lbl-g">how full is the system?</text>
     <text x="630" y="300" text-anchor="start" class="lbl-sm">CPU/mem · queue depth · upstream_retries</text>
   </svg>
-  <p class="takeaway">These four, read first, tell you *where* the trouble is before you run a single deep query.</p>
   <div class="pageno">M14·09</div>
 </section>
 
 <!-- ============ SLIDE 10 — the pattern names the cause-class ============ -->
 <section>
   <h2 class="t">The pattern across the gauges names the cause</h2>
-  <p class="s">The four gauges read together point at a class of cause before you've run a single deep query. It's the pattern, not any single gauge, that tells you which hood to pop.</p>
+  <p class="s">the pattern, not one gauge, names the hood to pop</p>
   <svg viewBox="0 0 1100 350" role="img" aria-label="Three gauge-cluster patterns, each with the reading of latency, errors, traffic and saturation, and the verdict it points to: internal fault, overwhelmed, or about to fall over.">
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.6"><rect x="50" y="60" width="300" height="230" rx="12"/></g>
     <text x="200" y="98" text-anchor="middle" class="lbl-b">something broke</text>
@@ -422,14 +414,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="900" y="255" text-anchor="middle" class="lbl-g">not failing yet →</text>
     <text x="900" y="278" text-anchor="middle" class="lbl-g">act before it tips</text>
   </svg>
-  <p class="takeaway">Four reads and you know which hood to pop — the pattern is the diagnosis, not any single gauge.</p>
   <div class="pageno">M14·10</div>
 </section>
 
 <!-- ============ SLIDE 11 — four telemetry jobs (doctor) ============ -->
 <section>
   <h2 class="t">Metrics, logs, events, traces — four evidence jobs</h2>
-  <p class="s">Think of a doctor. Vital signs are cheap and continuous but say nothing about why. The patient's account is rich but you can't read every word they ever spoke. The chart says what was done and when. A full workup traces one sample end to end.</p>
+  <p class="s">vitals, history, chart, workup — in that order</p>
   <svg viewBox="0 0 1100 350" role="img" aria-label="Four boxes mapping the doctor analogy: metrics are vital signs, logs are the patient's own account, events are chart annotations, traces are one sample's full path through the lab.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6"><rect x="40" y="70" width="240" height="210" rx="12"/></g>
     <text x="160" y="108" text-anchor="middle" class="lbl-b">METRICS</text>
@@ -455,14 +446,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="940" y="205" text-anchor="middle" class="lbl-g">the full workup on</text>
     <text x="940" y="232" text-anchor="middle" class="lbl-g">one representative case</text>
   </svg>
-  <p class="takeaway">Metrics say *that* and *how much*; events say *what changed*; logs and traces say *why*, on a narrow slice.</p>
   <div class="pageno">M14·11</div>
 </section>
 
 <!-- ============ SLIDE 12 — escalation order (FRAGMENTS) ============ -->
 <section>
   <h2 class="t">Escalate cheap-to-expensive, in that order</h2>
-  <p class="s">A good doctor reads vitals first, asks pointed questions, checks what changed, then orders a full workup on one case — in that order. The failure the agent must avoid is inverting it: "grep all the logs" or "trace everything" first.</p>
+  <p class="s">don't invert the order: no "grep everything" first</p>
   <svg viewBox="0 0 1100 350" role="img" aria-label="A pipeline building left to right: metrics, then events and logs, then traces, arriving at an evidence-backed hypothesis, with a cost arrow running cheap-and-broad to expensive-and-narrow.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.8"><rect x="40" y="90" width="200" height="90" rx="10"/></g>
     <text x="140" y="128" text-anchor="middle" class="lbl-b">1 · METRICS</text>
@@ -493,14 +483,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="200" y="288" text-anchor="middle" class="lbl-g">cheap · broad</text>
     <text x="920" y="288" text-anchor="middle" class="lbl-g">expensive · narrow</text>
   </svg>
-  <p class="takeaway">Reach for the expensive tools last, aimed at the smallest slice — read the effect, not everything.</p>
   <div class="pageno">M14·12</div>
 </section>
 
 <!-- ============ SLIDE 13 — bounded query is a warrant ============ -->
 <section>
   <h2 class="t">A bounded query is a warrant, not a fishing trip</h2>
-  <p class="s">A warrant names a place, a time, and a thing to look for — "the garage, on the night of the 3rd, for a red toolbox." Specificity is what makes the search legitimate and fast: you know when you're done. A fishing expedition guarantees a plausible-but-wrong correlation.</p>
+  <p class="s">a warrant names a place, a time, a thing</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Left: a fishing net dragging up everything, marked bad. Right: a warrant naming a place, a time, and a thing, marked good.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2" stroke-dasharray="5 5"><line x1="550" y1="40" x2="550" y2="310"/></g>
 
@@ -521,14 +510,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="820" y="212" text-anchor="middle" class="lbl">thing · a red toolbox</text>
     <text x="820" y="300" text-anchor="middle" class="lbl-g" fill="#2e7d32">specific · fast · you know when you're done</text>
   </svg>
-  <p class="takeaway">A bounded query is a question with an answer you can act on; a dump is where an hour of the incident goes to waste.</p>
   <div class="pageno">M14·13</div>
 </section>
 
 <!-- ============ SLIDE 14 — three bounds ============ -->
 <section>
   <h2 class="t">Every query carries three bounds</h2>
-  <p class="s">The warrant names a place, a time, and a thing — and so does every observability query. Three limits, baked in. Miss any one and the query returns so much that the responder, or the agent's context window, drowns.</p>
+  <p class="s">every query needs the same three limits</p>
   <svg viewBox="0 0 1100 350" role="img" aria-label="A central query box with three clamps around it: a time window, a metric scope, and a cardinality limit through aggregation.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="3"><rect x="410" y="150" width="280" height="90" rx="12"/></g>
     <text x="550" y="188" text-anchor="middle" class="lbl-b">the query</text>
@@ -549,14 +537,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="550" y="333" text-anchor="middle" class="lbl-g">sum(...) by (le) · aggregate first</text>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round"><path d="M550,275 L550,245" marker-end="url(#ah)"/></g>
   </svg>
-  <p class="takeaway">Window (when) · scope (thing) · aggregation (place) — miss any one and it's a firehose with a tight collar.</p>
   <div class="pageno">M14·14</div>
 </section>
 
 <!-- ============ SLIDE 15 — falsify the hypothesis ============ -->
 <section>
   <h2 class="t">Form a hypothesis, then try to break it</h2>
-  <p class="s">A good and a bad detective both name a suspect early. The bad one looks for evidence that fits and stops. The good one takes the leading hypothesis and actively tries to rule it out — "if it was the retry config, the retry counter should climb and CPU stay normal; does that hold?"</p>
+  <p class="s">a good detective tries to rule the suspect out</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Two detectives: one collecting only confirming clues, greyed; one running a falsifying prediction that either kills or corroborates the hypothesis.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2" stroke-dasharray="5 5"><line x1="550" y1="40" x2="550" y2="310"/></g>
 
@@ -572,14 +559,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="820" y="175" text-anchor="middle" class="lbl-g">check it — if it breaks, X is dead</text>
     <text x="820" y="290" text-anchor="middle" class="lbl-g" fill="#2e7d32">survives → a conclusion you can act on</text>
   </svg>
-  <p class="takeaway">A hypothesis you only confirm is a bias with a badge; one you fail to *break* is a conclusion you can act on.</p>
   <div class="pageno">M14·15</div>
 </section>
 
 <!-- ============ SLIDE 16 — consensus theater ============ -->
 <section>
   <h2 class="t">Independent investigators, not consensus theater</h2>
-  <p class="s">Fan an incident out to three investigators and the value is that they reason independently. The failure mode is consensus theater: three agents that each read the others' answers and "agree" — three echoes of one guess, worth nothing.</p>
+  <p class="s">independent reasoning, not consensus theater</p>
   <svg viewBox="0 0 1100 350" role="img" aria-label="Left: three investigators each reasoning from their own sources converge on one root cause, accepted. Right: three investigators anchored on a peer's conclusion, rejected.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2" stroke-dasharray="5 5"><line x1="550" y1="40" x2="550" y2="320"/></g>
 
@@ -610,14 +596,13 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="2.6"><rect x="720" y="245" width="200" height="45" rx="10"/></g>
     <text x="820" y="274" text-anchor="middle" class="lbl-b" fill="#c62828">rejected</text>
   </svg>
-  <p class="takeaway">Convergence counts only when each source is independent — synthesize-hypotheses.sh rejects a peer-derived packet.</p>
   <div class="pageno">M14·16</div>
 </section>
 
 <!-- ============ SLIDE 17 — investigator diagnoses, cannot fix ============ -->
 <section>
   <h2 class="t">The investigator diagnoses; it cannot fix</h2>
-  <p class="s">The sre-investigator agent has no Edit or Write tool at all. It produces a structured evidence packet — hypothesis, confidence, sources, and an honest list of what it did not check — and stops. Every claim traces to a source it actually ran or read.</p>
+  <p class="s">read-only: a structured evidence packet, not a fix</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="An investigator box with no edit tool produces an evidence packet listing hypothesis, sources, and out-of-scope items, then hands off to a separate role that can act.">
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="2.8"><rect x="50" y="110" width="240" height="120" rx="12"/></g>
     <text x="170" y="155" text-anchor="middle" class="lbl-b">sre-investigator</text>
@@ -638,14 +623,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="950" y="155" text-anchor="middle" class="lbl-b">a role that acts</text>
     <text x="950" y="192" text-anchor="middle" class="lbl-g">via GitOps, on a branch</text>
   </svg>
-  <p class="takeaway">Every claim traces to a source the agent actually ran — no source, no claim — and the finder is deliberately unable to apply the fix.</p>
   <div class="pageno">M14·17</div>
 </section>
 
 <!-- ============ SLIDE 18 — retry storm (CLOSING) ============ -->
 <section>
   <h2 class="t">The retry storm: the obvious fix is wrong</h2>
-  <p class="s">Retry count goes 3 → 10, timeout 5s → 30s, and an upstream gets slow. Now one slow call becomes eleven, workers pile up, retries amplify load on the already-slow upstream. The dashboard shows high CPU, so the obvious hypothesis is "add CPU." It's plausible, it fits the graph, and it's wrong.</p>
+  <p class="s">retries amplify load — "add CPU" is plausible and wrong</p>
   <svg viewBox="0 0 1100 320" role="img" aria-label="One slow upstream call fans into eleven retries that amplify load back onto the upstream. The add-CPU fix is crossed out; the retry-config change is boxed as the real cause.">
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="120" width="150" height="70" rx="10"/></g>
     <text x="135" y="150" text-anchor="middle" class="lbl-sm">1 slow call</text>

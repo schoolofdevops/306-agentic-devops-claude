@@ -148,7 +148,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section data-auto-animate>
   <p class="kicker">MODULE 6 &nbsp;·&nbsp; SKILLS — RUNBOOKS TO REUSABLE PROCEDURES</p>
   <h2 class="t" style="font-size:1.5em">A runbook you can't test is one you're hoping is still right</h2>
-  <p class="s" style="font-size:1.15em">A procedure you run more than once should be a named, versioned, testable artifact — not prose you re-type.</p>
+  <p class="s" style="font-size:1.15em">a procedure worth naming, versioning, testing</p>
   <svg viewBox="0 0 1100 320" role="img" aria-label="On the left a dog-eared runbooks doc with a curling corner labelled prose rots. A gray arrow points right to a clean card labelled .claude/skills/ stamped executed and tested. A thin gray footline reads prose rots, a skill fails loud.">
     <!-- old runbook, dog-eared -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4">
@@ -184,7 +184,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 2 — PROSE ROTS / SKILL FAILS LOUD ============ -->
 <section>
   <h2 class="t">Prose rots silently; a skill fails loud</h2>
-  <p class="s">The stale runbook sends you to a dead endpoint mid-incident — and nothing warned you.</p>
+  <p class="s">a stale runbook fails silently, mid-incident</p>
   <svg viewBox="0 0 1100 380" role="img" aria-label="Top row: a prose runbook, a dashed gray arrow labelled endpoint moved slash api slash v1 slash status to slash healthz, a red doc labelled doc never updated, and a confused engineer mid-incident. Bottom green panel: a skill that is executed so a wrong command errors, and tested so drift shows as a red check.">
     <!-- top row: the rot -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4">
@@ -236,14 +236,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="560" y="308" text-anchor="middle" class="lbl">drift shows as a <tspan class="lbl-good">red check</tspan></text>
     </g>
   </svg>
-  <p class="takeaway">A prose runbook has no way to fail loudly when it drifts — a skill does, because it is executed and tested.</p>
   <div class="pageno">M6·02</div>
 </section>
 
 <!-- ============ SLIDE 3 — PICK THE PRIMITIVE (KITCHEN) ============ -->
 <section>
   <h2 class="t">Before a skill, pick the primitive</h2>
-  <p class="s">A kitchen encodes knowledge five ways — the recipe card is the one that is a skill.</p>
+  <p class="s">the recipe card is the one that's a skill</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A kitchen scene with five ways to encode knowledge: a rule taped to the wall reading wash hands, a recipe card in a box highlighted as skill, a note to one cook tonight reading go easy on salt as a prompt, a grill specialist handed a station as a subagent, and the oven itself as a tool.">
     <!-- rule on the wall -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2">
@@ -285,14 +284,13 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="550" y="285" text-anchor="middle" class="lbl">match the knowledge to its encoding — the wrong one is the most common mistake here</text>
   </svg>
-  <p class="takeaway">Reaching for the wrong primitive is the most common mistake in this whole area.</p>
   <div class="pageno">M6·03</div>
 </section>
 
 <!-- ============ SLIDE 4 — THE DECISION FLOW ============ -->
 <section>
   <h2 class="t">The decision, as one flow</h2>
-  <p class="s">Run it top to bottom — the rule-versus-skill fork is the one that catches people.</p>
+  <p class="s">rule vs. skill is the fork that catches people</p>
   <svg viewBox="0 0 1100 380" role="img" aria-label="A decision flow: from I want the agent to do X, first ask always true every run which leads to CLAUDE.md rule. Otherwise ask run more than once; no leads to prompt. If yes ask a procedure with steps; no leads to subagent. If yes ask needs a capability it lacks; yes leads to MCP tool, no leads to the skill, which is boxed as the module's subject.">
     <!-- start -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6">
@@ -381,14 +379,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="245" y="355" text-anchor="middle" class="lbl-b">SKILL</text>
     </g>
   </svg>
-  <p class="takeaway">A rule is a fact the agent always holds; a skill is a procedure it runs when asked — steps plus invocation.</p>
   <div class="pageno">M6·04</div>
 </section>
 
 <!-- ============ SLIDE 5 — A DIRECTORY WITH A SKILL.md ============ -->
 <section>
   <h2 class="t">A skill is a directory with a SKILL.md</h2>
-  <p class="s">A folder under .claude/skills/ — the SKILL.md is frontmatter plus a body.</p>
+  <p class="s">frontmatter plus a body, in one folder</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A folder named .claude/skills/service-health opens to a SKILL.md card split into a top frontmatter band and a lower body band. Beside it, dashed boxes for a scripts folder and a templates folder, optional detail the procedure may reference.">
     <!-- folder -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6">
@@ -427,14 +424,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="895" y="210" text-anchor="middle" class="lbl-sm">templates/</text>
     <text x="895" y="234" text-anchor="middle" class="lbl-g">optional</text>
   </svg>
-  <p class="takeaway">A skill is a folder with a SKILL.md — frontmatter says when it applies, the body is the procedure.</p>
   <div class="pageno">M6·05</div>
 </section>
 
 <!-- ============ SLIDE 6 — DESCRIPTION IS A TRIGGER ============ -->
 <section>
   <h2 class="t">The description is a trigger, not a label</h2>
-  <p class="s">Claude Code reads it to decide, in one glance, whether the skill is relevant now.</p>
+  <p class="s">one glance decides if the skill is relevant</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A reader glance question at the top asks should I use this now. Below, two description cards. The left card reads checks health, in red, labelled never auto-selected. The right card reads Use when before a deploy, during triage, on a health complaint, in green, labelled fires at the right moment.">
     <!-- reader glance -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2">
@@ -460,14 +456,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="820" y="222" text-anchor="middle" class="lbl-sm">during triage, on a complaint"</text>
     <text x="820" y="258" text-anchor="middle" class="lbl-good">fires at the right moment</text>
   </svg>
-  <p class="takeaway">Write the description for a reader deciding in one glance — precise "Use when…" triggers get picked.</p>
   <div class="pageno">M6·06</div>
 </section>
 
 <!-- ============ SLIDE 7 — TABLE OF CONTENTS ============ -->
 <section>
   <h2 class="t">The SKILL.md is a table of contents</h2>
-  <p class="s">Short and always loaded — it points at the heavy chapters, it does not reproduce them.</p>
+  <p class="s">short, always loaded, points at the heavy parts</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A short table of contents page on the left, in green, listing detect replace, cost delta, write report. Dashed arrows point from each line to fat chapter volumes on a shelf, in blue, labelled chapter 7 and chapter 12 — you turn there only when the problem is a chapter-7 problem.">
     <!-- table of contents -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="3">
@@ -498,14 +493,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="900" y="210" text-anchor="middle" class="lbl-sm">every chapter would</text>
     <text x="900" y="235" text-anchor="middle" class="lbl-sm">be useless</text>
   </svg>
-  <p class="takeaway">The SKILL.md is the table of contents: short, always loaded, enough to route — detail lives behind pointers.</p>
   <div class="pageno">M6·07</div>
 </section>
 
 <!-- ============ SLIDE 8 — LOAD THE SCRIPT ON DEMAND ============ -->
 <section>
   <h2 class="t">Load the script only when the step runs</h2>
-  <p class="s">Each pointer is followed on demand — not read every run.</p>
+  <p class="s">followed on demand, not read every run</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A green box SKILL.md always loaded fans out with three dashed arrows. Only when reviewing replacements points to scripts slash detect-replace.sh. Only when a cost estimate exists points to scripts slash cost-delta.sh. Only when writing the report points to templates slash review.md. The three targets are blue, the deferred detail.">
     <!-- SKILL.md source -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="3">
@@ -532,14 +526,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="800" y="183" text-anchor="middle" class="lbl">scripts/cost-delta.sh</text>
     <text x="800" y="291" text-anchor="middle" class="lbl">templates/review.md</text>
   </svg>
-  <p class="takeaway">Keep the always-loaded surface small; follow the pointer to a script only when the run reaches that step.</p>
   <div class="pageno">M6·08</div>
 </section>
 
 <!-- ============ SLIDE 9 — LAB AND DOCTOR ============ -->
 <section>
   <h2 class="t">Two zones: the lab and the doctor</h2>
-  <p class="s">A hospital keeps them apart so the lab can be verified mechanically — it does no interpreting.</p>
+  <p class="s">the lab is verified mechanically, no interpreting</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="On the left a lab machine, in blue, draws blood so the same sample gives the same numbers and can be calibrated against a known sample. A dashed wall separates it from the right, where a doctor, in orange, reads those numbers to form a diagnosis that varies with the case.">
     <!-- lab machine -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8">
@@ -570,14 +563,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="850" y="230" text-anchor="middle" class="lbl-g">judgment —</text>
     <text x="850" y="254" text-anchor="middle" class="lbl-g">varies with the case</text>
   </svg>
-  <p class="takeaway">You can verify the machine mechanically only because it does no interpreting — that is the wall.</p>
   <div class="pageno">M6·09</div>
 </section>
 
 <!-- ============ SLIDE 10 — TWO-ZONE PIPELINE ============ -->
 <section>
   <h2 class="t">Deterministic zone → evidence → reasoning zone</h2>
-  <p class="s">Collection is a function you can test; reasoning is judgment downstream of the evidence.</p>
+  <p class="s">collection is testable; reasoning is judgment</p>
   <svg viewBox="0 0 1100 320" role="img" aria-label="A left-to-right pipeline. The deterministic zone, in blue, runs curl, jq, kubectl with same input to same output and is mechanically testable. It produces captured raw evidence. That flows into the reasoning zone, in orange, which interprets, diagnoses and recommends by judgment. It emits an output schema, in green.">
     <!-- deterministic zone (fragment 1) -->
     <g class="fragment" data-fragment-index="1">
@@ -623,14 +615,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="985" y="182" text-anchor="middle" class="lbl">schema</text>
     </g>
   </svg>
-  <p class="takeaway">Collection is deterministic and testable; reasoning is judgment — evidence is what flows between them.</p>
   <div class="pageno">M6·10</div>
 </section>
 
 <!-- ============ SLIDE 11 — TANGLE vs SEPARATE ============ -->
 <section>
   <h2 class="t">Tangle them and you can't test</h2>
-  <p class="s">A test needs a fixed input and a checkable output — tangling the zones gives you neither.</p>
+  <p class="s">tangling the zones gives you neither</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Two panels. Left, tangled, in red: curl and interpret in one blob, with no clean input and no clean output. Right, separated, in green: a script takes a fixed fixture and you assert one finding, so collection becomes a function you can feed a fixture and check.">
     <!-- tangled panel -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8">
@@ -656,14 +647,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="880" y="170" text-anchor="middle" class="lbl-sm">fixture</text>
     <text x="825" y="238" text-anchor="middle" class="lbl-good">feed a fixture · assert one finding</text>
   </svg>
-  <p class="takeaway">If collection and reasoning are tangled you cannot test the skill — pull collection into a script and it becomes a function.</p>
   <div class="pageno">M6·11</div>
 </section>
 
 <!-- ============ SLIDE 12 — WHO CAN TRIGGER IT ============ -->
 <section>
   <h2 class="t">Who can trigger it — and where it runs</h2>
-  <p class="s">The one question that decides invocation: does the skill change state?</p>
+  <p class="s">does the skill change state?</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A decision: does the skill change state. The no, observes-only branch leads to auto invocation, in green, fires when relevant, for service-health and k8s-diagnose. The yes, mutates branch leads to human-only, in red, runs on an explicit slash skill-name, for a restart or an apply, with a hand pulling the trigger.">
     <!-- question -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8">
@@ -693,14 +683,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="860" y="228" text-anchor="middle" class="lbl-sm">explicit /skill-name</text>
     <text x="860" y="266" text-anchor="middle" class="lbl-bad">a restart · an apply</text>
   </svg>
-  <p class="takeaway">Observers can auto-invoke; anything that mutates state is human-only — the trigger for a side effect is a human's choice.</p>
   <div class="pageno">M6·12</div>
 </section>
 
 <!-- ============ SLIDE 13 — context: fork ============ -->
 <section>
   <h2 class="t">context: fork keeps the main thread clean</h2>
-  <p class="s">The M5 worktree idea, applied to context instead of the filesystem.</p>
+  <p class="s">worktree isolation, applied to context</p>
   <svg viewBox="0 0 1100 320" role="img" aria-label="A forked skill box swallows fifty log lines and twenty kubectl outputs, shown gray and dashed on the left, and returns only a three-line verdict, in green, to a clean main conversation panel, in blue, on the right.">
     <!-- noisy inputs -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2" stroke-dasharray="5 5">
@@ -738,14 +727,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="965" y="140" text-anchor="middle" class="lbl-b">main</text>
     <text x="965" y="168" text-anchor="middle" class="lbl-sm">conversation</text>
   </svg>
-  <p class="takeaway">A skill that reads a lot to say a little should fork — return the verdict, keep the noise out of the main thread.</p>
   <div class="pageno">M6·13</div>
 </section>
 
 <!-- ============ SLIDE 14 — HUMAN-ONLY ≠ AROUND PERMISSIONS ============ -->
 <section>
   <h2 class="t">Human-only is not a way around your permissions</h2>
-  <p class="s">Two gates in series — invisibility stops the auto-fire; the policy floor stops the action.</p>
+  <p class="s">two gates in series, each stopping one failure</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A human slash invoke passes gate one, invisibility, in orange, which blocks automatic invocation. It then hits gate two, the policy floor of deny rules and sandbox, in blue. A red stamp reads no override — the skill has no exception. The dashed auto-invocation path is stopped at gate one.">
     <!-- human invoke -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8">
@@ -788,14 +776,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="990" y="166" text-anchor="middle" class="lbl-bad">no override</text>
     </g>
   </svg>
-  <p class="takeaway">Human-only controls WHO triggers; it grants no authority to step outside the environment's permission policy.</p>
   <div class="pageno">M6·14</div>
 </section>
 
 <!-- ============ SLIDE 15 — SMOKE DETECTOR ============ -->
 <section>
   <h2 class="t">Test a skill like a smoke detector</h2>
-  <p class="s">Three tests, not one — press the button, wave clean air, and try a wisp of steam.</p>
+  <p class="s">three tests, not one</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="A smoke detector on a ceiling, tested three ways. A finger presses the test button and it beeps, in green, the positive test. Clean air is waved and it stays silent, in green, the negative test. A wisp of shower steam makes it hesitate, in orange, the ambiguous test.">
     <!-- detector -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8">
@@ -825,14 +812,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="885" y="248" text-anchor="middle" class="lbl">hesitates</text>
     <text x="885" y="278" text-anchor="middle" class="lbl-g">ambiguous — signals doubt</text>
   </svg>
-  <p class="takeaway">Proving a skill makes noise proves little until it also catches the bad case and hesitates on the unclear one.</p>
   <div class="pageno">M6·15</div>
 </section>
 
 <!-- ============ SLIDE 16 — NEGATIVE TEST HAS TEETH ============ -->
 <section>
   <h2 class="t">The negative test is the one with teeth</h2>
-  <p class="s">A skill that always says "looks healthy" passes every positive test and is worthless.</p>
+  <p class="s">"always healthy" passes tests and is worthless</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="Three test rows. Positive, in green: a known-good input, and it reports fine. Negative, in red and boxed heavier: the plan-stateful-replace fixture that destroys the prod DB, and it must catch the replace. Ambiguous, in orange: a service unreachable, and it says so and stops.">
     <!-- positive row -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4">
@@ -857,14 +843,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="490" y="268" text-anchor="middle" class="lbl">service unreachable</text>
     <text x="820" y="268" text-anchor="middle" class="lbl">→ say so &amp; stop</text>
   </svg>
-  <p class="takeaway">The negative test proves the skill can tell good from bad — always saying "healthy" passes every positive test and is useless.</p>
   <div class="pageno">M6·16</div>
 </section>
 
 <!-- ============ SLIDE 17 — FIVE SKILLS, ONE SHAPE ============ -->
 <section>
   <h2 class="t">Five skills, one shape</h2>
-  <p class="s">Each carries inputs, two zones, an output schema and stop conditions — one auto, one human-only.</p>
+  <p class="s">inputs, two zones, a schema, stop conditions</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Five numbered runbook cards in green, each stamped two zones, schema, stops: service-health, terraform-plan-review, k8s-diagnose, release-check, incident-triage. A sixth card, service-restart, is set apart in red and stamped human-only.">
     <!-- five cards -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4">
@@ -895,7 +880,6 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="220" y="285" text-anchor="middle" class="lbl-g">the observers →</text>
     <text x="880" y="285" text-anchor="middle" class="lbl-g">← the one mutator</text>
   </svg>
-  <p class="takeaway">You build five skills to one shape and see the difference between an auto observer and a human-only mutator.</p>
   <div class="pageno">M6·17</div>
 </section>
 

@@ -138,7 +138,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section data-auto-animate>
   <p class="kicker">MODULE 18 &nbsp;·&nbsp; AGENTIC DEVOPS WITH CLAUDE CODE</p>
   <h2 class="t" style="font-size:2.3em">Observe, Evaluate &amp; Control the Agents</h2>
-  <p class="s" style="font-size:1.2em">Earlier modules pointed an agent at a problem. This one judges whether it did the problem justice — with numbers, not a gut feeling.</p>
+  <p class="s" style="font-size:1.2em">judge the agent with numbers, not a gut feeling</p>
   <svg viewBox="0 0 1100 300" role="img" aria-label="A small agent figure with a green checkmark above it, and a gray magnifying glass turned back onto the agent itself.">
     <!-- agent box (neutral, the thing being studied) -->
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round">
@@ -168,7 +168,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 2 — THE CONFIDENT WRONG ANSWER ============ -->
 <section>
   <h2 class="t">A confident, plausible, wrong answer</h2>
-  <p class="s">The agent blames the 500s and restarts the service. The ticket closes. Six weeks later the same incident is back — because the real cause was an unbounded retry, never touched.</p>
+  <p class="s">the ticket closes, the real cause doesn't</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A timeline: the agent's claim leads to a closed ticket with a green check, then six weeks later the same incident returns in red, with the real cause labelled unbounded retries beneath.">
     <!-- agent claim -->
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
@@ -210,14 +210,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="932" y="278" text-anchor="middle" class="lbl-b">REAL cause: unbounded retries</text>
     <text x="932" y="305" text-anchor="middle" class="lbl-g">a blip turned into a self-feeding storm</text>
   </svg>
-  <p class="takeaway">A confident wrong answer closed the ticket; the real cause survived to recur.</p>
   <div class="pageno">M18·02</div>
 </section>
 
 <!-- ============ SLIDE 3 — CANNOT TELL BY LOOKING ============ -->
 <section>
   <h2 class="t">You cannot tell them apart by looking</h2>
-  <p class="s">Same tone, same structure, same green check. A confidently-wrong run is identical to a correct one on the surface. Eyeballing fails — you have to evaluate.</p>
+  <p class="s">wrong and correct look identical on the surface</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="Two identical-looking agent packets side by side, one labelled RIGHT and one CONFIDENTLY WRONG, with a gray question which is which between them.">
     <!-- left packet -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
@@ -244,14 +243,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="550" y="200" text-anchor="middle" class="lbl-g">which is</text>
     <text x="550" y="225" text-anchor="middle" class="lbl-g">which?</text>
   </svg>
-  <p class="takeaway">Right and confidently-wrong look identical — you cannot eyeball it, you evaluate it.</p>
   <div class="pageno">M18·03</div>
 </section>
 
 <!-- ============ SLIDE 4 — TWO INSTRUMENTS (driving test) ============ -->
 <section>
   <h2 class="t">Two instruments, because you watch two things</h2>
-  <p class="s">On a driving test the examiner needs two streams. The car's own dashboard tells you about the machine. The examiner's clipboard tells you about the driver.</p>
+  <p class="s">the dashboard watches the car, the clipboard the driver</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A driving-test scene: a car dashboard with speedometer, fuel and temperature on the left, and an examiner holding a clipboard watching the driver on the right.">
     <!-- dashboard (blue, the machine) -->
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
@@ -285,14 +283,13 @@ footer, header, hgroup, main, menu, nav, section {
       <path d="M760,175 C780,175 785,180 798,185" marker-end="url(#ahg)"/>
     </g>
   </svg>
-  <p class="takeaway">The dashboard watches the machine; the clipboard watches the operator — you need both.</p>
   <div class="pageno">M18·04</div>
 </section>
 
 <!-- ============ SLIDE 5 — TARGET-SYSTEM PLANE ============ -->
 <section>
   <h2 class="t">Target-system plane: the car's dashboard</h2>
-  <p class="s">Prometheus metrics, app logs, traces from orders-api and inventory-api. It watches the system the agent works on. You built this back in Module 14.</p>
+  <p class="s">watches the system the agent works on</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A blue TARGET-SYSTEM plane box holding Prometheus metrics, logs and traces, with an arrow to a stack of questions it can answer: is it healthy, what is p95, what is the error rate.">
     <!-- plane box (blue) -->
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round">
@@ -321,14 +318,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="675" y="220">what is the error rate?</text>
     </g>
   </svg>
-  <p class="takeaway">Target-system telemetry watches the service — is it healthy, what is p95.</p>
   <div class="pageno">M18·05</div>
 </section>
 
 <!-- ============ SLIDE 6 — AGENT-HARNESS PLANE ============ -->
 <section>
   <h2 class="t">Agent-harness plane: the examiner's clipboard</h2>
-  <p class="s">Claude Code's own OpenTelemetry export — OTel. Turns, tokens, cost, which tools it called, and whether it tried a write it wasn't allowed. It watches the agent itself.</p>
+  <p class="s">watches the agent itself, via OTel</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="An orange AGENT-HARNESS plane box holding the Claude Code OTel export, with an arrow to a stack of questions it can answer: how many turns, how many tokens and dollars, did it overstep its authority.">
     <!-- plane box (orange) -->
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round">
@@ -356,14 +352,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="675" y="220">did it overstep authority?</text>
     </g>
   </svg>
-  <p class="takeaway">Harness telemetry watches the agent itself — turns, tokens, cost, oversteps.</p>
   <div class="pageno">M18·06</div>
 </section>
 
 <!-- ============ SLIDE 7 — EACH PLANE ANSWERS WHAT THE OTHER CANNOT ============ -->
 <section>
   <h2 class="t">Each plane answers what the other cannot</h2>
-  <p class="s">"Is orders-api healthy?" — only Prometheus knows. "Did it overstep and try a write?" — only the harness trace knows. A denied write never touched orders-api.</p>
+  <p class="s">a denied write never touched orders-api</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="Two planes with a crossed-out arrow between them: a health question routes only into the blue target plane, an authority question routes only into the orange harness plane, with a red note that a denied write never touched orders-api.">
     <!-- target plane -->
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
@@ -400,14 +395,13 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="550" y="340" text-anchor="middle" class="lbl-g">a denied write never touched orders-api — Prometheus is silent</text>
   </svg>
-  <p class="takeaway">Ask an agent-plane question of Prometheus and you get silence — mistaken for "nothing wrong."</p>
   <div class="pageno">M18·07</div>
 </section>
 
 <!-- ============ SLIDE 8 — WHAT THE HARNESS TRACE HOLDS ============ -->
 <section>
   <h2 class="t">What the harness trace actually holds</h2>
-  <p class="s">A span per turn, carrying tokens and the model. Tool calls hang under it as child spans, each with the tool, its target, and the permission decision. The one that matters is decision = deny.</p>
+  <p class="s">the span that matters says decision = deny</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A trace tree: a turn span at the top carrying token and model attributes, three tool child spans below it carrying tool, target and decision, with the last child span highlighted red for decision equals deny.">
     <!-- turn span -->
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round">
@@ -443,14 +437,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="935" y="270" text-anchor="middle" class="lbl-g" fill="#c62828">the one</text>
     <text x="935" y="330" text-anchor="middle" class="lbl-g" fill="#c62828">that matters</text>
   </svg>
-  <p class="takeaway">Turn spans carry tokens; tool child spans carry the decision — the deny is the one that matters.</p>
   <div class="pageno">M18·08</div>
 </section>
 
 <!-- ============ SLIDE 9 — FIVE QUESTIONS (medical board) ============ -->
 <section>
   <h2 class="t">Five questions, not one outcome</h2>
-  <p class="s">A medical board does not judge a diagnosis by the outcome alone. A doctor who guesses right is lucky, not good. So the board asks five separate questions.</p>
+  <p class="s">a lucky guess isn't a good diagnosis</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A doctor facing a board of five examiners, each holding one question card: correct diagnosis, right tests, honest confidence, cause versus symptom, and in your lane.">
     <!-- doctor -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round">
@@ -480,14 +473,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="660" y="255" text-anchor="middle" class="lbl-g">a right outcome from wrong reasoning is a near-miss, not a success</text>
     <text x="660" y="300" text-anchor="middle" class="lbl-g" fill="#c62828">"it's a virus, go rest" — right this time, but a lucky doctor, not a good one</text>
   </svg>
-  <p class="takeaway">A right outcome from wrong reasoning is a near-miss — grade the reasoning, dimension by dimension.</p>
   <div class="pageno">M18·09</div>
 </section>
 
 <!-- ============ SLIDE 10 — THE FIVE DIMENSIONS ============ -->
 <section>
   <h2 class="t">The five dimensions</h2>
-  <p class="s">The rubric the whole lab is built on. Each dimension asks one question, and each has its own way of failing.</p>
+  <p class="s">five dimensions, five ways to fail</p>
   <svg viewBox="0 0 1100 370" role="img" aria-label="A rubric box holding five stacked rows: correctness, evidence coverage, uncertainty, causal diagnosis, and authority compliance, each with the failure it catches noted in gray.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round">
       <rect x="55" y="45" width="1000" height="315" rx="14"/>
@@ -514,14 +506,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="400" y="333">failure: tried a write under a read-only identity</text>
     </g>
   </svg>
-  <p class="takeaway">Five dimensions, each a separate question the agent has to pass.</p>
   <div class="pageno">M18·10</div>
 </section>
 
 <!-- ============ SLIDE 11 — 0.1 vs 1.0 ============ -->
 <section>
   <h2 class="t">Score all five separately: 0.1 versus 1.0</h2>
-  <p class="s">The composite is just the mean of the five. Score them separately because they fail independently and each has a different fix. Same incident, two runs.</p>
+  <p class="s">score separately — they fail independently</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="Two score cards side by side: the generalist with four red rows and a composite of 0.1, and the governed team with five green rows and a composite of 1.0.">
     <!-- generalist card -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
@@ -563,14 +554,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="970" y="318" text-anchor="end" class="lbl-b" fill="#2e7d32">PASS</text>
     <text x="550" y="200" text-anchor="middle" class="lbl-g" style="font-size:26px">vs</text>
   </svg>
-  <p class="takeaway">Collapse five into one number and you throw away the fix — 0.1 vs 1.0 on the same incident.</p>
   <div class="pageno">M18·11</div>
 </section>
 
 <!-- ============ SLIDE 12 — THE QUIET FAILURE ============ -->
 <section>
   <h2 class="t">The quiet failure is the expensive one</h2>
-  <p class="s">A crash is loud — you notice it. The expensive failure is quiet: a confident misdiagnosis that closes the ticket, so the real cause survives. The five-dimension score makes it visible.</p>
+  <p class="s">a confident misdiagnosis is the quiet failure</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="Two failures side by side: a crashed agent that is loud and noticed on the left, and a calm agent quietly closing a ticket that nobody notices on the right, with a recurring incident behind it.">
     <!-- loud crash (red) -->
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round">
@@ -595,14 +585,13 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="830" y="290" text-anchor="middle" class="lbl-g" fill="#c62828">the failure this module is built to catch</text>
   </svg>
-  <p class="takeaway">Build the evaluation so the quiet failure becomes visible, not so you apologize for it later.</p>
   <div class="pageno">M18·12</div>
 </section>
 
 <!-- ============ SLIDE 13 — ONE RUN IS A COIN FLIP ============ -->
 <section>
   <h2 class="t">One run is a single coin flip</h2>
-  <p class="s">Agents are nondeterministic — the same prompt gives a thorough run one time and a thin one the next. You would never call a coin fair from a single flip.</p>
+  <p class="s">never call a coin fair from one flip</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A hand flipping one coin showing heads with a gray is-it-fair question, beside a faded distribution curve of a hundred flips.">
     <!-- single flip -->
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round">
@@ -630,14 +619,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="840" y="130" text-anchor="middle" class="lbl-g">a hundred flips</text>
     <text x="840" y="285" text-anchor="middle" class="lbl-b">the spread — the honest answer</text>
   </svg>
-  <p class="takeaway">One run is an anecdote — "it worked once" is not "it works."</p>
   <div class="pageno">M18·13</div>
 </section>
 
 <!-- ============ SLIDE 14 — TRUST THE BAND ============ -->
 <section>
   <h2 class="t">Trust the band, not the run</h2>
-  <p class="s">Run the same scenario N times and report a distribution: a pass-rate with a spread. The governed team replays to a tight band that never drops below the bar.</p>
+  <p class="s">a tight band that never drops below the bar</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A fan-out from same-scenario to N trials scoring around 0.95 to 1.0, converging into a distribution box showing min 0.95, mean 0.985, max 1.0 and pass-rate ten out of ten.">
     <!-- source -->
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
@@ -672,14 +660,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="850" y="205" text-anchor="middle" class="lbl-b" fill="#2e7d32">pass-rate 10 / 10</text>
     <text x="850" y="238" text-anchor="middle" class="lbl-g">some wobble — but always above the bar</text>
   </svg>
-  <p class="takeaway">Report the band, not a point — the single number was a lie of omission.</p>
   <div class="pageno">M18·14</div>
 </section>
 
 <!-- ============ SLIDE 15 — QUALITY IS CODE, CODE REGRESSES ============ -->
 <section>
   <h2 class="t">Quality is code, and code regresses</h2>
-  <p class="s">A prompt edited to be "more concise" quietly stops checking the retry config. The YAML still parses, the script still runs — behaviour degraded with nothing failing to compile. Like a yearly emissions test.</p>
+  <p class="s">behavior degrades with nothing failing to compile</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A car at an emissions station with its exhaust feeding a meter that has a red legal-limit line; the engine still starts but the meter needle reads over the line.">
     <!-- car -->
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
@@ -710,14 +697,13 @@ footer, header, hgroup, main, menu, nav, section {
     <circle cx="720" cy="270" r="7" fill="#1e1e1e"/>
     <text x="720" y="305" text-anchor="middle" class="lbl-b" fill="#c62828">over the line — quietly</text>
   </svg>
-  <p class="takeaway">Behaviour degrades without a line failing to compile — you need a standing test with a hard line.</p>
   <div class="pageno">M18·15</div>
 </section>
 
 <!-- ============ SLIDE 16 — THE GATE FAILS THE BUILD (2 fragments) ============ -->
 <section>
   <h2 class="t">The gate fails the build</h2>
-  <p class="s">The regression gate scores a run against the answer key and exits non-zero — turning CI red — if the composite drops below threshold or an authority boundary is crossed. It runs on every change.</p>
+  <p class="s">drop below threshold, turn CI red</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A pipeline: a run scored 0.1 enters a regression gate with a threshold of 0.80, and the pipeline turns red with exit 2 and merge blocked.">
     <!-- scored run -->
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
@@ -752,7 +738,6 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="540" y="290" text-anchor="middle" class="lbl-g" fill="#c62828">a gate you can ignore is not a gate — below the bar, the build is red, full stop</text>
     </g>
   </svg>
-  <p class="takeaway">A gate you can ignore is not a gate — below the bar the build is red, full stop.</p>
   <div class="pageno">M18·16</div>
 </section>
 
@@ -760,7 +745,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section data-auto-animate>
   <p class="kicker">MODULE 18 &nbsp;·&nbsp; OBSERVE, EVALUATE &amp; CONTROL</p>
   <h2 class="t" style="font-size:2.1em">See it, score it five ways, replay it, gate it</h2>
-  <p class="s">The whole frame in four moves — then the deep dive adds the fifth number: cost.</p>
+  <p class="s">four moves, then a fifth: cost</p>
   <svg viewBox="0 0 1100 320" role="img" aria-label="Four numbered takeaways: two telemetry planes, five dimensions not one check, replay for the band, gate on regression.">
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="2.6">
       <circle cx="95" cy="70" r="26"/><circle cx="95" cy="140" r="26"/>

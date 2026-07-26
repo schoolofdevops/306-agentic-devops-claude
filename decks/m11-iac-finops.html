@@ -140,7 +140,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section data-auto-animate>
   <p class="kicker">MODULE 11 &nbsp;·&nbsp; AGENTIC DEVOPS WITH CLAUDE CODE</p>
   <h2 class="t" style="font-size:2.3em">AI-Augmented IaC &amp; FinOps</h2>
-  <p class="s" style="font-size:1.2em">An agent can author the campaign Terraform change. But "the agent authored it" and "it is safe to apply to production" are two different claims — and the gap between them is this whole module.</p>
+  <p class="s" style="font-size:1.2em">authored is not the same as safe to apply</p>
   <svg viewBox="0 0 1100 300" role="img" aria-label="A worktree box fans out to a green safe plan operation and a red gated apply operation, showing the central distinction of the module.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round">
       <rect x="440" y="40" width="220" height="90" rx="12"/>
@@ -169,7 +169,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 2 — STAKES ============ -->
 <section>
   <h2 class="t">App code fails cheap; infra code fails forever</h2>
-  <p class="s">When an agent gets application code wrong, a test fails and you fix it. When an agent gets infrastructure code wrong, the failure mode is a database recreated from empty, a service oversized into a five-figure bill, or a datastore opened to the internet — found after the change reached production.</p>
+  <p class="s">code bugs are cheap; infra bugs are permanent</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A two-panel comparison: an application change is orange and revertable, an infrastructure change is red with three irreversible outcomes listed.">
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round">
       <rect x="70" y="70" width="420" height="230" rx="14"/>
@@ -193,14 +193,13 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="820" y="278" text-anchor="middle" class="lbl-g">found after it reached production</text>
   </svg>
-  <p class="takeaway">Infrastructure code has a property application code does not — a large fraction of its operations are irreversible.</p>
   <div class="pageno">M11·02</div>
 </section>
 
 <!-- ============ SLIDE 3 — HINGE: plan vs apply ============ -->
 <section>
   <h2 class="t">Planning reads the scan; applying makes the incision</h2>
-  <p class="s">Reading a scan — studying it, measuring, arguing the approach — is completely safe; you can do it a hundred times and the patient is untouched. The incision is the irreversible act: once, deliberately, with the team signed off, never as an improvisation mid-discussion.</p>
+  <p class="s">plan reads the scan; apply makes the incision</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="The surgeon analogy: reading a scan is green and repeatable, making an incision is red and one-way.">
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
       <rect x="90" y="90" width="380" height="180" rx="14"/>
@@ -223,14 +222,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="820" y="244" text-anchor="middle" class="lbl-g">happens once · never on prod alone</text>
     <text x="820" y="322" text-anchor="middle" class="lbl-g" style="fill:#c62828">one-way — the one op the agent must never do on prod</text>
   </svg>
-  <p class="takeaway">Reading the scan is free and repeatable; the incision happens once, with sign-off — never as an improvisation.</p>
   <div class="pageno">M11·03</div>
 </section>
 
 <!-- ============ SLIDE 4 — mutation is separate authority ============ -->
 <section>
   <h2 class="t">Mutation is a separate authority</h2>
-  <p class="s">The Change Gate you built in Module 8 denies a production <code>terraform apply</code> from an agent identity. The agent can plan all day; the moment it reaches for apply on production, the gate denies it and routes the change the only safe way. The agent proposes; a human — or a pipeline a human configured — disposes.</p>
+  <p class="s">the agent proposes; a human disposes</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A pipeline where the agent can plan (allowed, green) but an apply is blocked by a purple gate and rerouted through branch, pull request, approval, and a reconciler apply.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
       <rect x="50" y="150" width="170" height="80" rx="12"/>
@@ -265,14 +263,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="860" y="182" text-anchor="middle" class="lbl">branch → PR → approval</text>
     <text x="860" y="212" text-anchor="middle" class="lbl-g">→ reconciler / CI applies</text>
   </svg>
-  <p class="takeaway">The agent can plan all day; the moment it reaches for apply on production, the gate denies it.</p>
   <div class="pageno">M11·04</div>
 </section>
 
 <!-- ============ SLIDE 5 — gate discrimination (3 fragments) ============ -->
 <section>
   <h2 class="t">A good boundary: permissive on safe, absolute on irreversible</h2>
-  <p class="s">The gate does not deny "Terraform commands" — that would stop the agent doing its job. It denies precisely <code>apply</code> and <code>destroy</code> when the target is production, and lets <code>plan</code>, <code>validate</code>, and <code>fmt</code> through untouched.</p>
+  <p class="s">block apply and destroy, not the whole toolchain</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="One gate: plan, validate, and fmt pass through it in green; apply and destroy bounce off it in red.">
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round">
       <rect x="470" y="60" width="160" height="240" rx="12"/>
@@ -322,14 +319,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="720" y="332" text-anchor="middle" class="lbl-g" style="fill:#c62828">bounce off on prod ✗</text>
     </g>
   </svg>
-  <p class="takeaway">Maximally permissive on the safe operations, absolute on the irreversible one — anything else is theater, or no gate at all.</p>
   <div class="pageno">M11·05</div>
 </section>
 
 <!-- ============ SLIDE 6 — review the plan JSON (2 fragments) ============ -->
 <section>
   <h2 class="t">You review the plan JSON, not the HCL</h2>
-  <p class="s">The shift that makes agentic IaC review possible: you review neither the HCL the agent wrote nor the human-readable plan output. <code>terraform show -json tfplan</code> emits a structured document — every resource, its exact action, the full before-and-after. It is the plan as data.</p>
+  <p class="s">review the plan as structured data, not prose</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A pipeline: HCL flows to a saved plan, then terraform show minus json produces a blue plan-JSON document with structured fields.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round">
       <rect x="50" y="120" width="180" height="90" rx="12"/>
@@ -362,14 +358,13 @@ footer, header, hgroup, main, menu, nav, section {
       </g>
     </g>
   </svg>
-  <p class="takeaway">The reviewable artifact is the plan as data — every resource, its exact action, the full before-and-after.</p>
   <div class="pageno">M11·06</div>
 </section>
 
 <!-- ============ SLIDE 7 — blood panel analogy ============ -->
 <section>
   <h2 class="t">The plan JSON is the blood panel</h2>
-  <p class="s">The plan's prose output is a narrative — "I feel a bit off" — useful, but you cannot compute on it, set a threshold against it, or diff this week's against last week's. The blood panel is structured: every marker has a name and a number, so a rule can say "flag any value above this line."</p>
+  <p class="s">structured data lets rules threshold and diff it</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A two-panel comparison: on the left a gray prose bubble that cannot be computed on, on the right a blue structured panel of named and numbered markers with a red threshold line.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4" stroke-dasharray="9 7" stroke-linecap="round">
       <path d="M70,120 q0,-40 60,-40 h240 q60,0 60,40 v70 q0,40 -60,40 h-140 l-30,45 l-5,-45 h-65 q-60,0 -60,-40 z"/>
@@ -392,14 +387,13 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="830" y="268" text-anchor="middle" class="lbl-g" style="fill:#c62828">a rule flags anything past this line</text>
   </svg>
-  <p class="takeaway">Because it's structured, every review becomes a fixed query against the same document — not a judgment call over prose.</p>
   <div class="pageno">M11·07</div>
 </section>
 
 <!-- ============ SLIDE 8 — model authors, tools decide ============ -->
 <section>
   <h2 class="t">The model writes the change; deterministic tools decide it's safe</h2>
-  <p class="s">Every specialist check is a deterministic read of the plan JSON — no model is in the loop for the check. The model authored the change; deterministic tools review it. Same principle as Module 9's read-only reviewers.</p>
+  <p class="s">the model writes it; deterministic tools grade it</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A purple model-authors box hands off a blue plan JSON to three gray deterministic script boxes that read it.">
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
       <rect x="60" y="120" width="200" height="100" rx="12"/>
@@ -426,14 +420,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="625" y="262">cost-compare.sh — spend</text>
     </g>
   </svg>
-  <p class="takeaway">The thing that writes the change is not the thing that decides it is safe.</p>
   <div class="pageno">M11·08</div>
 </section>
 
 <!-- ============ SLIDE 9 — where the agent earns its keep authoring ============ -->
 <section>
   <h2 class="t">Where an agent earns its keep authoring HCL</h2>
-  <p class="s">Three Terraform tasks are tedious for a human and well-suited to an agent that holds the whole module tree in context. It writes the HCL; <code>validate</code>, <code>fmt</code>, and the plan check its work.</p>
+  <p class="s">tedious for humans, well-suited to an agent</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Three numbered rows: refactoring HCL across files, import planning where the plan must be a no-op, and design-alternative analysis producing a priced menu.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round">
       <circle cx="110" cy="70" r="26"/>
@@ -454,14 +447,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="165" y="290">lay out the options with cost + blast-radius attached — a priced menu</text>
     </g>
   </svg>
-  <p class="takeaway">The agent's advantage is holding the whole module tree in context; the plan proves the effect.</p>
   <div class="pageno">M11·09</div>
 </section>
 
 <!-- ============ SLIDE 10 — four questions hub ============ -->
 <section>
   <h2 class="t">A plan review is four questions, not one</h2>
-  <p class="s">A plan review is not one question — it is four, and each maps to a specialist and a control you can run. No single question is the review.</p>
+  <p class="s">four questions, four specialists, one verdict</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A purple plan-review hub in the center with four gray spokes to the four questions: replacements, blast radius, drift, and cost.">
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round">
       <rect x="440" y="150" width="220" height="90" rx="14"/>
@@ -489,14 +481,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="915" y="326">Q4 · cost</text>
     </g>
   </svg>
-  <p class="takeaway">A change can pass three questions and still destroy a database or open a port — the review is all four.</p>
   <div class="pageno">M11·10</div>
 </section>
 
 <!-- ============ SLIDE 11 — Q1 stateful replace ============ -->
 <section>
   <h2 class="t">Q1 — what's being replaced, and is it stateful?</h2>
-  <p class="s">A replacement is <code>["delete","create"]</code>: Terraform destroys the resource and builds a new one. For a load balancer, a brief blip. For a database, an EBS volume, an S3 bucket — a stateful resource — it is data loss. Any stateful replacement is a block.</p>
+  <p class="s">replacing a stateful resource means data loss</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A plan row showing delete-then-create on an aws_db_instance highlighted red, next to a note that a one-line replace plan is more dangerous than a fifty-resource create plan.">
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round">
       <rect x="60" y="90" width="520" height="90" rx="12"/>
@@ -519,14 +510,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="850" y="240" text-anchor="middle" class="lbl-g">the rule is exact: any stateful replace blocks,</text>
     <text x="850" y="268" text-anchor="middle" class="lbl-g">regardless of how routine the rest looks</text>
   </svg>
-  <p class="takeaway">A one-line plan that replaces the orders database is more dangerous than a fifty-resource plan of pure creates.</p>
   <div class="pageno">M11·11</div>
 </section>
 
 <!-- ============ SLIDE 12 — Q2 blast radius ============ -->
 <section>
   <h2 class="t">Q2 — blast radius is destruction, not diff size</h2>
-  <p class="s">Not "is the diff big" but "how many real resources does this touch, and how many does it destroy." A plan that creates thirty and destroys none is low blast radius even though it is large. A plan that destroys one is higher — destruction is the irreversible direction.</p>
+  <p class="s">blast radius is destruction, not diff size</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A two-panel comparison: thirty green create boxes are low blast radius, one red destroy box is higher blast radius.">
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round">
       <rect x="60" y="70" width="34" height="34" rx="5"/><rect x="104" y="70" width="34" height="34" rx="5"/><rect x="148" y="70" width="34" height="34" rx="5"/><rect x="192" y="70" width="34" height="34" rx="5"/><rect x="236" y="70" width="34" height="34" rx="5"/>
@@ -543,14 +533,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="830" y="235" text-anchor="middle" class="lbl-b">1 destroy</text>
     <text x="830" y="268" text-anchor="middle" class="lbl-g" style="fill:#c62828">HIGHER — the irreversible direction</text>
   </svg>
-  <p class="takeaway">Blast radius is about the irreversible direction — destruction — not how big the diff looks.</p>
   <div class="pageno">M11·12</div>
 </section>
 
 <!-- ============ SLIDE 13 — Q3 drift ============ -->
 <section>
   <h2 class="t">Q3 — drift diffs the candidate against a known-good baseline</h2>
-  <p class="s">The change was authored against one environment; does it introduce something the known-good baseline does not have? Diffing candidate against baseline surfaces exactly what drifted in — a new resource, and most importantly a new <code>0.0.0.0/0</code> rule that was not there before.</p>
+  <p class="s">diff against baseline to catch what drifted in</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A blue baseline plan and an orange candidate plan overlaid, with the delta isolated in red: a new zero-zero-zero-zero rule that drifted in.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round">
       <rect x="70" y="80" width="240" height="160" rx="12"/>
@@ -578,14 +567,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="890" y="200" text-anchor="middle" class="lbl-g" style="fill:#c62828">new 0.0.0.0/0 rule</text>
     <text x="555" y="290" text-anchor="middle" class="lbl-g">review the two-line delta, not 1,400 lines of JSON</text>
   </svg>
-  <p class="takeaway">Drift is how you catch the exposure that slipped in under cover of an otherwise-legitimate change.</p>
   <div class="pageno">M11·13</div>
 </section>
 
 <!-- ============ SLIDE 14 — Q4 cost ============ -->
 <section>
   <h2 class="t">Q4 — the plan says nothing about money</h2>
-  <p class="s"><code>terraform plan</code> prices nothing. A cost estimate reduces the change to a delta and a multiple: this change is +$X/month, and this specific resource grew Y times its current size. The FinOps rule flags any single resource that grows past a threshold — 2x by default.</p>
+  <p class="s">the plan says nothing about money — cost it</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A plan flows into a cost tool that outputs a plus 2847 dollar per month delta and a red 16x multiple on one resource resized from large to 4xlarge.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round">
       <rect x="60" y="120" width="160" height="90" rx="12"/>
@@ -608,14 +596,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="780" y="205" text-anchor="middle" class="lbl-g">db.r6g.large → db.r6g.4xlarge</text>
     <text x="780" y="245" text-anchor="middle" class="lbl-b" style="fill:#c62828">16x  ·  past the 2x threshold</text>
   </svg>
-  <p class="takeaway">A database quietly resized to 4xlarge is a legitimate-looking one-line diff carrying a $2,800/month price tag.</p>
   <div class="pageno">M11·14</div>
 </section>
 
 <!-- ============ SLIDE 15 — the chain (4 fragments) ============ -->
 <section>
   <h2 class="t">The specialist handoff chain</h2>
-  <p class="s">The four checks are a pipeline topology (Module 10): IaC Engineer → Security Reviewer → FinOps Analyst → Change Reviewer, each producing a structured evidence packet the next consumes, joined into one verdict. Like the approval chain on a mortgage — four specialists, four risks, one dissent stops the deal.</p>
+  <p class="s">one dissent in the chain stops the deal</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A pipeline of four reviewer boxes passing a growing evidence packet from IaC Engineer through Security and FinOps to the Change Reviewer, which joins them into one verdict.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
       <rect x="40" y="110" width="180" height="90" rx="12"/>
@@ -658,14 +645,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="555" y="260" text-anchor="middle" class="lbl-g">the evidence packet grows one field per hop — any block stops the change</text>
     </g>
   </svg>
-  <p class="takeaway">Four reviewers, four kinds of infrastructure risk, one verdict — and any one block stops the change.</p>
   <div class="pageno">M11·15</div>
 </section>
 
 <!-- ============ SLIDE 16 — reviewers read-only + right-sized ============ -->
 <section>
   <h2 class="t">Reviewers are read-only, and each runs a right-sized model</h2>
-  <p class="s">Two properties from Module 9. Only the IaC Engineer carries a write tool — authoring HCL is its job; every reviewer after it has no Edit or Write. And each role runs a right-sized model: Opus where a missed subtlety is most expensive, Haiku for the bounded compare, Sonnet for capable authoring.</p>
+  <p class="s">only the author writes; reviewers just read</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="The four chain roles annotated with their tools and models: IaC Engineer has write and Sonnet, Security is read-only on Opus, FinOps is read-only on Haiku, Change Reviewer is read-only on Opus. A red cross marks that reviewers cannot write.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
       <rect x="40" y="90" width="230" height="130" rx="12"/>
@@ -694,14 +680,13 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="550" y="270" text-anchor="middle" class="lbl-g">a reviewer that could patch the change it reviews has stopped being a reviewer</text>
   </svg>
-  <p class="takeaway">Independence is structural, not a promise — the reviewers literally have no write tool in their bundle.</p>
   <div class="pageno">M11·16</div>
 </section>
 
 <!-- ============ SLIDE 17 — FinOps on the agents ============ -->
 <section>
   <h2 class="t">FinOps applies to the agents, too</h2>
-  <p class="s">The FinOps idea turned on the reviewers: right-size the model to the role, don't pay for judgment the task doesn't need. You would not send a cardiac surgeon to take a blood-pressure reading — running the FinOps analyst on Opus is exactly that.</p>
+  <p class="s">right-size the model to the role's judgment</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A two-panel comparison: an Opus surgeon doing a nurse's blood-pressure task is red waste, while a Haiku nurse doing the same bounded task is the right-sized green choice, with a cost receipt showing the mixed chain is cheaper.">
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round">
       <rect x="60" y="70" width="440" height="120" rx="12"/>
@@ -720,14 +705,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="550" y="245" text-anchor="middle" class="lbl">agent-run cost receipt:  mixed chain $1.78  &lt;  all-Opus $2.48</text>
     <text x="550" y="285" text-anchor="middle" class="lbl-g">"which model does this role need" is a cost decision you can measure and defend</text>
   </svg>
-  <p class="takeaway">Recognizing that waste is itself a FinOps decision — right-size the model to the role, like the instance to the service.</p>
   <div class="pageno">M11·17</div>
 </section>
 
 <!-- ============ SLIDE 18 — worktree biosafety lab ============ -->
 <section>
   <h2 class="t">The worktree is the biosafety lab</h2>
-  <p class="s">You don't study a novel pathogen on the open bench; you study it in a sealed, negative-pressure room, and nothing leaves until it's cleared. The agent authors the campaign change in a git worktree — its own branch — so <code>main</code> stays clean the entire time the change is reviewed.</p>
+  <p class="s">nothing leaves the worktree until cleared</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A purple sealed room with a dashed boundary holds the change and the review chain; a gray main branch sits untouched outside, and a green merge arrow crosses only after approval.">
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="3" stroke-dasharray="8 6" stroke-linecap="round">
       <rect x="60" y="60" width="560" height="230" rx="16"/>
@@ -754,7 +738,6 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="680" y="240" text-anchor="middle" class="lbl-g" style="fill:#2e7d32">every stage approves</text>
     <text x="340" y="322" text-anchor="middle" class="lbl-g" style="fill:#c62828">if the review blocks, throw the worktree away — nothing was contaminated</text>
   </svg>
-  <p class="takeaway">The change stays quarantined until it clears; if the review blocks, it never touched the trunk.</p>
   <div class="pageno">M11·18</div>
 </section>
 
@@ -762,7 +745,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section>
   <p class="kicker">MODULE 11 &nbsp;·&nbsp; AI-AUGMENTED IAC &amp; FINOPS</p>
   <h2 class="t" style="font-size:2em">Syntax is not safety; safety is composition</h2>
-  <p class="s">In the lab you take Northstar's campaign change through the full gate — and prove every control holds as a test, not a hope.</p>
+  <p class="s">prove every control holds as a test, not a hope</p>
   <svg viewBox="0 0 1100 300" role="img" aria-label="Five numbered rows summarizing what the lab proves: state safety, plan analysis, security and drift, cost, and the handoff chain plus cost receipt.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round">
       <circle cx="90" cy="45" r="24"/>

@@ -177,7 +177,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 2 · BLAST RADIUS — every pod at once ═══════════════ -->
 <section>
   <h2 class="t">A deploy mistake reaches every pod at once</h2>
-  <p class="s">A wrong Terraform change might recreate one database. A wrong deploy change can take every pod behind the load balancer unready at the same moment — and the first anyone hears is checkout timing out.</p>
+  <p class="s">a deploy mistake hits every pod at once</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Two panels. Left: a Terraform slip recreates a single database, contained. Right: a deploy slip leaves all three pods unready at once and a customer's checkout page times out.">
     <!-- left: terraform, contained -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="70" width="420" height="220" rx="14"/></g>
@@ -203,7 +203,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 3 · THE SEALED SHIPPING CONTAINER (analogy) ═══════════════ -->
 <section>
   <h2 class="t">The image is a sealed shipping container</h2>
-  <p class="s">The steel box is sealed at origin and arrives identical whether it went by truck, train, or ship. Nobody opens it to check. That trust is what makes it fast — and what makes a bad packing job travel the whole way, unopened.</p>
+  <p class="s">sealed at origin, trusted all the way down</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A sealed steel shipping container at origin travels along a route drawn as truck, then train, then ship, and arrives identical at the destination port, still sealed, never opened along the way.">
     <!-- origin container, sealed -->
     <g filter="url(#rough)" fill="var(--p-blue)" stroke="none"><rect x="60" y="120" width="180" height="120" rx="8"/></g>
@@ -232,7 +232,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 4 · THE PACKING-LIST REVIEW (5 fragments) ═══════════════ -->
 <section>
   <h2 class="t">So the review is a packing-list review — five questions</h2>
-  <p class="s">Nobody opens the box downstream, so the whole review happens once, at origin. Five questions, and each maps to a property that will haunt you later if it is wrong.</p>
+  <p class="s">five questions, asked once, at origin</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A central container box with five numbered tags hanging off it, revealed one at a time: reproducible, small, non-root, declares health, and no secrets in the layers.">
     <!-- central box -->
     <g filter="url(#rough)" fill="var(--p-blue)" stroke="none"><rect x="440" y="130" width="220" height="130" rx="10"/></g>
@@ -275,7 +275,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 5 · REPRODUCIBLE — latest is a change you didn't make ═══════════════ -->
 <section>
   <h2 class="t">"latest" is a change you didn't make</h2>
-  <p class="s">A pinned base builds the same box every time. A base that floats on "latest" quietly ships a different build than the one you tested — a change applied at a time you did not choose.</p>
+  <p class="s">pin the base, or "latest" changes it for you</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="Two panels. Left: a pinned base python 3.12-slim builds two identical boxes, marked good. Right: a floating latest base builds two different boxes, marked bad.">
     <!-- left: pinned -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="60" width="420" height="230" rx="14"/></g>
@@ -302,7 +302,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 6 · SMALL — multi-stage ships the meal not the kitchen ═══════════════ -->
 <section>
   <h2 class="t">A multi-stage build ships the meal, not the kitchen</h2>
-  <p class="s">The fat builder stage compiles with every tool; the slim runtime stage copies only the finished artifact. A 1.2 GB image pulls slowly on every node and carries every build tool an attacker would love to find installed.</p>
+  <p class="s">ship the meal, not the whole kitchen</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="A pipeline: a fat builder box full of tools compiles, one artifact is copied out, into a small slim runtime box. A 1.2 GB label on the builder is crossed out; the small runtime box is marked good.">
     <!-- fat builder -->
     <g filter="url(#rough)" fill="var(--p-orange)" stroke="none"><rect x="60" y="80" width="300" height="190" rx="12"/></g>
@@ -332,7 +332,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 7 · NON-ROOT — root in the box is root on the node ═══════════════ -->
 <section>
   <h2 class="t">Root in the box is root on the node</h2>
-  <p class="s">A container that runs as root runs as root on the node if it escapes its namespace. The packing-list question: is there a USER directive dropping to an unprivileged account, or does this box arrive with the keys still in it?</p>
+  <p class="s">root in the box is root on the node</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="Two boxes. Left: a box arriving with a key still in its lock, labelled runs as root, marked bad. Right: a box with a closed padlock and a USER app tag, marked good.">
     <!-- left: keys in it -->
     <g filter="url(#rough)" fill="var(--p-red)" stroke="none"><rect x="120" y="90" width="300" height="170" rx="12"/></g>
@@ -355,7 +355,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 8 · SECRETS IN A LAYER SHIP FOREVER ═══════════════ -->
 <section>
   <h2 class="t">A secret in a layer ships forever</h2>
-  <p class="s">A COPY . . that sweeps a .env into a layer, or an ARG that bakes a token into image history, ships that credential to every environment inside the sealed box. Image layers are not scratch space — they are permanent and inspectable.</p>
+  <p class="s">a secret baked into a layer ships forever</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="A container image cut open into horizontal layers stacked like a cake; one middle layer is tinted red and holds a .env file and a token, with a magnifying glass over it showing the secret is permanent and inspectable.">
     <!-- stacked layers -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8"><rect x="300" y="70" width="360" height="42" rx="6"/></g>
@@ -377,7 +377,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 9 · KIND IS THE FLIGHT SIMULATOR ═══════════════ -->
 <section>
   <h2 class="t">Kind is the flight simulator for your cluster</h2>
-  <p class="s">Kind — Kubernetes in Docker — runs the same API server, scheduler, and kubelet as production, the way a simulator runs the same avionics as the real aircraft. What it gives you is the freedom to crash: deploy a broken probe, watch every pod go unready, and nobody is hurt.</p>
+  <p class="s">same avionics, freedom to crash safely</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A flight-simulator cockpit labelled real kind cluster, wired to the same API server, scheduler and kubelet as production. A loop arrow reads crash and reset in ninety seconds, nobody hurt.">
     <!-- cockpit / cluster -->
     <g filter="url(#rough)" fill="var(--p-blue)" stroke="none"><rect x="90" y="80" width="360" height="200" rx="16"/></g>
@@ -402,7 +402,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 10 · PROFILE CHANGES THE TOPOLOGY ═══════════════ -->
 <section>
   <h2 class="t">The profile changes the topology, not just the size</h2>
-  <p class="s">The standard profile is two nodes — control plane plus a worker, production-like. The lean profile shares one node to fit an 8 GB laptop. A change validated on one is not automatically valid on the other.</p>
+  <p class="s">the profile changes topology, not just size</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Two panels. Left: the standard profile with a separate control-plane node and worker node, sixteen gigabytes. Right: the lean profile with a single node holding both roles, eight gigabytes.">
     <!-- standard -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="70" width="420" height="230" rx="14"/></g>
@@ -430,7 +430,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 11 · HELM = FORM LETTER (analogy, hinge) ═══════════════ -->
 <section>
   <h2 class="t">A Helm chart is a form letter, not the letter</h2>
-  <p class="s">"Dear ⟨name⟩, your ⟨plan⟩ renews on ⟨date⟩" is not the letter anyone receives — it is the template. values.yaml is the mail-merge spreadsheet. The letter that lands in a mailbox exists only after the merge fills every blank.</p>
+  <p class="s">a chart is the template, not the letter</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A form letter with fill-in-the-blank fields plus a mail-merge spreadsheet combine through a merge step into an actual posted letter with all blanks filled in.">
     <!-- form letter template -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8"><rect x="70" y="70" width="230" height="200" rx="8"/></g>
@@ -461,7 +461,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 12 · REVIEW THE RENDER (pipeline, 3 fragments) ═══════════════ -->
 <section>
   <h2 class="t">Review what it rendered, not what you wrote</h2>
-  <p class="s">helm template runs the chart through the engine and emits the exact YAML that would apply. From there every review is a query against that output — and the diff against running state is the sync's blast radius.</p>
+  <p class="s">review the rendered YAML, not the source</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A pipeline: values.yaml and chart templates feed helm template, which emits a rendered manifest, which is diffed against the running cluster state to reveal the sync's blast radius that the reviewer approves.">
     <!-- inputs -->
     <g filter="url(#rough)" fill="var(--p-blue)" stroke="none"><rect x="50" y="80" width="140" height="60" rx="8"/></g>
@@ -503,7 +503,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 13 · THE DEFECT IS IN THE RENDER — INCLUDING WHAT'S ABSENT ═══════════════ -->
 <section>
   <h2 class="t">Review the render for what's wrong — and what's missing</h2>
-  <p class="s">The defect that takes down a service lives in the rendered manifest: a probe pointing at a path the app does not serve. And a missing block — no resources set — is invisible in a template but has consequences you can name in the render.</p>
+  <p class="s">check the render for what's wrong and missing</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="A rendered manifest document with two problems flagged in red: a readiness probe path pointing at slash-health, and an empty gap where the resources block should be, marked no requests, no limits.">
     <!-- manifest -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="3"><rect x="250" y="50" width="440" height="250" rx="10"/></g>
@@ -526,7 +526,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 14 · RBAC — WHAT AN IDENTITY CANNOT DO ═══════════════ -->
 <section>
   <h2 class="t">RBAC is what an identity <em>cannot</em> do</h2>
-  <p class="s">Every pod runs as a service account, and its Role bindings define what it can touch. Northstar's read-only kubeconfig binds the verbs get, list, watch — and nothing else. Read the actual verbs, and the actual network policy, not the reassuring name.</p>
+  <p class="s">RBAC is what an identity cannot do</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="An identity badge stamped with the verbs get, list and watch in green, next to a locked door labelled create, update, delete in red that the identity cannot open.">
     <!-- badge -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8"><rect x="90" y="90" width="300" height="180" rx="12"/><circle cx="240" cy="140" r="24"/></g>
@@ -555,7 +555,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 15 · ADMISSION — REFUSED AT CREATION ═══════════════ -->
 <section>
   <h2 class="t">The cluster refuses the object, no matter who sent it</h2>
-  <p class="s">The northstar namespace carries Pod Security labels. A pod that violates the baseline standard is rejected at creation by the API server, before it ever schedules. This is enforcement in its purest form — the cluster refuses the object.</p>
+  <p class="s">the cluster refuses the object outright</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="An API-server gate. A pod that violates the baseline pod security standard is bounced back at the gate in red before scheduling, while a compliant pod passes through in green to the node.">
     <!-- gate -->
     <g filter="url(#rough)" fill="var(--p-purple)" stroke="none"><rect x="470" y="70" width="160" height="200" rx="8"/></g>
@@ -584,7 +584,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 16 · THE VAULT WITH ONE KEY (golden-path analogy) ═══════════════ -->
 <section>
   <h2 class="t">The vault has one key, and the agent isn't holding it</h2>
-  <p class="s">Think of the cluster as a bank vault with exactly one key, held by an automated system — not a person, not an agent. You submit a signed transfer slip; the system executes it and logs every move. The agent can propose any change and physically cannot open the vault.</p>
+  <p class="s">one key to the vault, and it isn't the agent's</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A bank vault with a single key held by a reconciler robot labelled Argo CD. An agent stands at the counter holding a transfer slip but has no key, marked with a red no-key note. Only the robot's arrow reaches the vault.">
     <!-- agent at counter with slip, no key -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><circle cx="130" cy="130" r="28"/><line x1="130" y1="158" x2="130" y2="200"/></g>
@@ -613,7 +613,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 17 · THE FIVE STOPS (pipeline, 4 fragments) ═══════════════ -->
 <section>
   <h2 class="t">Candidate → approval → merge → sync → verify</h2>
-  <p class="s">Five stops, and the agent's authority ends at the second. It edits desired state and stops; a human approves the rendered diff; the change merges; Argo CD reconciles — the only write to the cluster; the rollout is verified healthy.</p>
+  <p class="s">the agent's authority ends at step two</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A five-stop pipeline: candidate by the agent, approval by a human, merge to main, sync by Argo CD which is the only write, and verify. A bracket marks that the agent's authority ends after the candidate stop.">
     <!-- stop 1 candidate (always visible) -->
     <g filter="url(#rough)" fill="var(--p-blue)" stroke="none"><rect x="40" y="120" width="170" height="90" rx="10"/></g>
@@ -663,7 +663,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 18 · WHY THE CEREMONY IS WORTH IT ═══════════════ -->
 <section>
   <h2 class="t">The worst the agent can do is propose a bad PR</h2>
-  <p class="s">There is no kubectl apply for the agent to fat-finger, no helm upgrade for a runaway loop to run against the wrong context. And if anyone hand-edits the live cluster, the reconciler pulls it straight back — Git is the source of truth.</p>
+  <p class="s">worst case: the agent proposes a bad PR</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="Two panels. Left: the agent has no cluster-write path, so its worst action is a pull request a human reads and can reject, marked good. Right: a hand-edit to the live cluster is reverted by Argo's selfHeal because Git still holds the truth, marked bad.">
     <!-- left: bounded to a PR -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="70" width="440" height="220" rx="14"/></g>
