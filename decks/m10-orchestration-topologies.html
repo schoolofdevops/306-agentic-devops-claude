@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agentic DevOps with Claude Code — Module 10: Orchestration Topologies Without Chaos</title>
+<title>Module 10: Orchestration Topologies Without Chaos &middot; Agentic DevOps with Claude Code</title>
 
 <!-- ============================================================
      CourseSmith whiteboard deck skeleton (self-contained).
@@ -135,9 +135,9 @@ footer, header, hgroup, main, menu, nav, section {
 <div class="reveal"><div class="slides">
 <!-- ═══════════════ SLIDE 1 · TITLE — commander routes the bridge call ═══════════════ -->
 <section>
-  <p class="kicker">MODULE 10 &nbsp;·&nbsp; ORCHESTRATION — RUNNING THE TEAM</p>
+  <p class="kicker">MODULE 10 &nbsp;·&nbsp; ORCHESTRATION: RUNNING THE TEAM</p>
   <h2 class="t" style="font-size:2.15em">You have the players. Now run the play.</h2>
-  <svg viewBox="0 0 1100 360" role="img" aria-label="An incident commander stands at a bridge-call console and routes three arrows outward to three worker figures — one arrow labelled wait, one labelled fan-out, one labelled background. The commander's own hands are empty; they route, they do not do the work.">
+  <svg viewBox="0 0 1100 360" role="img" aria-label="An incident commander stands at a bridge-call console and routes three arrows outward to three worker figures: one arrow labelled wait, one labelled fan-out, one labelled background. The commander's own hands are empty; they route, they do not do the work.">
     <!-- commander at console (purple = management/control) -->
     <g filter="url(#rough)" fill="var(--p-purple)" stroke="none"><rect x="80" y="150" width="150" height="120" rx="14"/></g>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round">
@@ -174,9 +174,14 @@ footer, header, hgroup, main, menu, nav, section {
 
 <!-- ═══════════════ SLIDE 2 · You have the players, not the play ═══════════════ -->
 <section>
+  <h2 class="t" style="font-size:2.2em">Orchestration Topologies Without Chaos</h2>
+  <div class="pageno">M10·02</div>
+</section>
+
+<section>
   <h2 class="t">You have the players, not the play</h2>
-  <p class="s">specialists are ready — the play isn't written</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="Six labelled role-pieces sit in a row on a board like chess pieces that have not been given any moves. A hand hovers above them and a faint question mark floats over the board — the players are ready but no play is drawn.">
+  <p class="s">specialists are ready: the play isn't written</p>
+  <svg viewBox="0 0 1100 340" role="img" aria-label="Six labelled role-pieces sit in a row on a board like chess pieces that have not been given any moves. A hand hovers above them and a faint question mark floats over the board: the players are ready but no play is drawn.">
     <!-- board line -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4"><line x1="70" y1="250" x2="1030" y2="250"/></g>
     <!-- six pieces (blue = the things being studied, neutral) -->
@@ -206,18 +211,18 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="540" y="80" text-anchor="middle" class="lbl-b" style="font-size:52px">?</text>
     <text x="540" y="120" text-anchor="middle" class="lbl-g">no moves drawn yet</text>
   </svg>
-  <div class="pageno">M10·02</div>
+  <div class="pageno">M10·03</div>
 </section>
 
 <!-- ═══════════════ SLIDE 3 · One incident, two different shapes ═══════════════ -->
 <section>
   <h2 class="t">Two jobs, two completely different shapes</h2>
   <p class="s">same team, different coordination shape</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="A two-panel comparison. Left: a burning incident with one source fanning out to three parallel investigators — the fan-out shape. Right: an assembly line of four inspection stations feeding a merge gate — the reproducible workflow shape.">
+  <svg viewBox="0 0 1100 340" role="img" aria-label="A two-panel comparison. Left: a burning incident with one source fanning out to three parallel investigators, the fan-out shape. Right: an assembly line of four inspection stations feeding a merge gate, the reproducible workflow shape.">
     <!-- divider -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-dasharray="9 7"><line x1="550" y1="40" x2="550" y2="320"/></g>
     <!-- LEFT: incident fan-out -->
-    <text x="270" y="60" text-anchor="middle" class="lbl-b">incident — fan out &amp; steer</text>
+    <text x="270" y="60" text-anchor="middle" class="lbl-b">incident: fan out &amp; steer</text>
     <g filter="url(#rough)" fill="var(--p-red)" stroke="none"><circle cx="120" cy="180" r="34"/></g>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8"><circle cx="120" cy="180" r="34"/></g>
     <text x="120" y="240" text-anchor="middle" class="lbl-g">erroring</text>
@@ -228,7 +233,7 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4"><rect x="440" y="90" width="70" height="40" rx="8"/><rect x="440" y="160" width="70" height="40" rx="8"/><rect x="440" y="230" width="70" height="40" rx="8"/></g>
     <!-- RIGHT: reproducible workflow -->
-    <text x="820" y="60" text-anchor="middle" class="lbl-b">audit — same way, every time</text>
+    <text x="820" y="60" text-anchor="middle" class="lbl-b">audit: same way, every time</text>
     <g filter="url(#rough)" fill="var(--p-blue)" stroke="none"><rect x="600" y="150" width="60" height="60" rx="8"/><rect x="680" y="150" width="60" height="60" rx="8"/><rect x="760" y="150" width="60" height="60" rx="8"/><rect x="840" y="150" width="60" height="60" rx="8"/></g>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4"><rect x="600" y="150" width="60" height="60" rx="8"/><rect x="680" y="150" width="60" height="60" rx="8"/><rect x="760" y="150" width="60" height="60" rx="8"/><rect x="840" y="150" width="60" height="60" rx="8"/></g>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><line x1="660" y1="180" x2="680" y2="180"/><line x1="740" y1="180" x2="760" y2="180"/><line x1="820" y1="180" x2="840" y2="180"/></g>
@@ -237,14 +242,19 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4"><rect x="972" y="158" width="46" height="46" rx="8"/></g>
     <text x="750" y="245" text-anchor="middle" class="lbl-g">same stations · same report → merge gate</text>
   </svg>
-  <div class="pageno">M10·03</div>
+  <div class="pageno">M10·04</div>
 </section>
 
 <!-- ═══════════════ SLIDE 4 · The wrong shape is a slow, expensive failure ═══════════════ -->
 <section>
+  <h2 class="t" style="font-size:2.2em">1 &middot; Why the shape is the decision</h2>
+  <div class="pageno">M10·05</div>
+</section>
+
+<section>
   <h2 class="t">The wrong shape is a slow, expensive failure</h2>
   <p class="s">wrong shape wastes an incident's worth of time</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="A two-panel comparison. Left: three investigations run single-file in a queue behind a burning clock, taking fifteen minutes — the wrong shape. Right: the same three run in a wide parallel fan finishing in five minutes — the right shape.">
+  <svg viewBox="0 0 1100 340" role="img" aria-label="A two-panel comparison. Left: three investigations run single-file in a queue behind a burning clock, taking fifteen minutes, the wrong shape. Right: the same three run in a wide parallel fan finishing in five minutes, the right shape.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-dasharray="9 7"><line x1="550" y1="40" x2="550" y2="320"/></g>
     <!-- LEFT: serial queue, red clock -->
     <text x="270" y="60" text-anchor="middle" class="lbl-b">serial when it should fan out</text>
@@ -254,13 +264,13 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><circle cx="270" cy="270" r="26"/><line x1="270" y1="270" x2="270" y2="252"/><line x1="270" y1="270" x2="284" y2="278"/></g>
     <text x="330" y="276" text-anchor="start" class="lbl-b" style="fill:#c62828">15 min · burning</text>
     <!-- RIGHT: parallel fan, faster -->
-    <text x="820" y="60" text-anchor="middle" class="lbl-b">parallel — the right shape</text>
+    <text x="820" y="60" text-anchor="middle" class="lbl-b">parallel: the right shape</text>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><circle cx="620" cy="180" r="22"/></g>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4"><path d="M642,168 C720,130 780,128 830,125" marker-end="url(#ah)"/><path d="M642,180 C740,180 790,180 830,180" marker-end="url(#ah)"/><path d="M642,192 C720,230 780,232 830,235" marker-end="url(#ah)"/></g>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4"><rect x="838" y="105" width="80" height="42" rx="8"/><rect x="838" y="160" width="80" height="42" rx="8"/><rect x="838" y="215" width="80" height="42" rx="8"/></g>
     <text x="770" y="300" text-anchor="middle" class="lbl-b" style="fill:#2e7d32">5 min · done</text>
   </svg>
-  <div class="pageno">M10·04</div>
+  <div class="pageno">M10·06</div>
 </section>
 
 <!-- ═══════════════ SLIDE 5 · The incident commander routes, doesn't do ═══════════════ -->
@@ -280,7 +290,7 @@ footer, header, hgroup, main, menu, nav, section {
     <!-- spoke 2: fan out (bottom-left) -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4"><path d="M500,240 C420,290 340,300 270,300" marker-end="url(#ah)"/></g>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.2"><rect x="90" y="275" width="180" height="52" rx="10"/></g>
-    <text x="180" y="298" text-anchor="middle" class="lbl-sm">"you three — go,</text><text x="180" y="318" text-anchor="middle" class="lbl-g" style="font-size:14px">all of you, now"</text>
+    <text x="180" y="298" text-anchor="middle" class="lbl-sm">"you three: go,</text><text x="180" y="318" text-anchor="middle" class="lbl-g" style="font-size:14px">all of you, now"</text>
     <!-- spoke 3: background (top-right) -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4" stroke-dasharray="5 5"><path d="M600,140 C680,90 760,80 830,80" marker-end="url(#ahg)"/></g>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-dasharray="5 5"><rect x="830" y="55" width="180" height="52" rx="10"/></g>
@@ -288,16 +298,21 @@ footer, header, hgroup, main, menu, nav, section {
     <!-- spoke 4: standing procedure (bottom-right) -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4" stroke-dasharray="5 5"><path d="M600,240 C680,290 760,300 830,300" marker-end="url(#ahg)"/></g>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-dasharray="5 5"><rect x="830" y="275" width="180" height="52" rx="10"/></g>
-    <text x="920" y="298" text-anchor="middle" class="lbl-sm">nightly backup —</text><text x="920" y="318" text-anchor="middle" class="lbl-g" style="font-size:14px">runs itself, same way</text>
+    <text x="920" y="298" text-anchor="middle" class="lbl-sm">nightly backup:</text><text x="920" y="318" text-anchor="middle" class="lbl-g" style="font-size:14px">runs itself, same way</text>
   </svg>
-  <div class="pageno">M10·05</div>
+  <div class="pageno">M10·07</div>
 </section>
 
 <!-- ═══════════════ SLIDE 6 · Eight shapes worth knowing ═══════════════ -->
 <section>
+  <h2 class="t" style="font-size:2.2em">2 &middot; The orchestration decision table</h2>
+  <div class="pageno">M10·08</div>
+</section>
+
+<section>
   <h2 class="t">Eight shapes worth knowing</h2>
   <p class="s">eight shapes, four questions apart</p>
-  <svg viewBox="0 0 1100 350" role="img" aria-label="A table-card listing the eight orchestration topologies as rows: skill, subagent, fork, background session, workflow, team, headless, routine — each with a one-line shape. The live-session shapes are tinted green, the scripted shapes blue.">
+  <svg viewBox="0 0 1100 350" role="img" aria-label="A table-card listing the eight orchestration topologies as rows: skill, subagent, fork, background session, workflow, team, headless, routine: each with a one-line shape. The live-session shapes are tinted green, the scripted shapes blue.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="30" width="980" height="300" rx="14"/></g>
     <!-- row backgrounds: green = live session moves; blue = scripted -->
     <g filter="url(#rough)" fill="var(--p-green)" stroke="none"><rect x="72" y="42" width="472" height="140" rx="8"/></g>
@@ -318,14 +333,14 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="550" y="285" text-anchor="middle" class="lbl-g">who is waiting? · what runs at once? · reproducible? · outlives the turn?</text>
     <text x="550" y="315" text-anchor="middle" class="lbl-g" style="font-size:15px">get the row right = clean orchestration instead of chaos</text>
   </svg>
-  <div class="pageno">M10·06</div>
+  <div class="pageno">M10·09</div>
 </section>
 
 <!-- ═══════════════ SLIDE 7 · Four axes decide the row (decision tree, 4 fragments) ═══════════════ -->
 <section>
   <h2 class="t">Four axes route every job to one shape</h2>
   <p class="s">four gates, one topology, no guessing</p>
-  <svg viewBox="0 0 1100 380" role="img" aria-label="A decision tree. A job enters and passes through four diamond gates — reproducible, then parallel, then human-waiting, then outlives-turn — routing to leaf boxes: workflow, routine, headless, fork, background, subagent, team, skill. Scripted leaves are blue, live-session leaves are green.">
+  <svg viewBox="0 0 1100 380" role="img" aria-label="A decision tree. A job enters and passes through four diamond gates, reproducible, then parallel, then human-waiting, then outlives-turn, routing to leaf boxes: workflow, routine, headless, fork, background, subagent, team, skill. Scripted leaves are blue, live-session leaves are green.">
     <!-- entry -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><rect x="470" y="20" width="160" height="44" rx="10"/></g>
     <text x="550" y="48" text-anchor="middle" class="lbl-sm">a job to route</text>
@@ -371,10 +386,15 @@ footer, header, hgroup, main, menu, nav, section {
       <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><path d="M925,220 L900,250" marker-end="url(#ahg)"/></g>
     </g>
   </svg>
-  <div class="pageno">M10·07</div>
+  <div class="pageno">M10·10</div>
 </section>
 
 <!-- ═══════════════ SLIDE 8 · The Ops Lead is the general contractor ═══════════════ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">3 &middot; The interactive parent: the Ops Lead pattern</h2>
+  <div class="pageno">M10·11</div>
+</section>
+
 <section>
   <h2 class="t">The Ops Lead is the general contractor</h2>
   <p class="s">the Ops Lead holds the plan, never the trowel</p>
@@ -400,15 +420,15 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="670" y="284" text-anchor="middle" class="lbl">plumber</text>
     <text x="900" y="180" text-anchor="middle" class="lbl-b">the trades</text>
     <text x="900" y="206" text-anchor="middle" class="lbl-g" style="font-size:15px">do the real work</text>
-    <text x="900" y="232" text-anchor="middle" class="lbl-g" style="font-size:15px">— never the contractor</text>
+    <text x="900" y="232" text-anchor="middle" class="lbl-g" style="font-size:15px">not the contractor</text>
   </svg>
-  <div class="pageno">M10·08</div>
+  <div class="pageno">M10·12</div>
 </section>
 
 <!-- ═══════════════ SLIDE 9 · Sequential delegation (sequence diagram, 4 fragments) ═══════════════ -->
 <section>
   <h2 class="t">Sequential delegation: one job, wait, decide</h2>
-  <p class="s">one job, wait, decide — then the next step</p>
+  <p class="s">one job, wait, decide: then the next step</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A sequence diagram with four lifelines: Human, Ops Lead, SRE investigator, and Reviewer. The human reports the incident; the Ops Lead delegates to the SRE and receives an evidence packet; synthesizes; delegates to the reviewer and receives a verdict; then answers the human.">
     <!-- lifelines -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2" stroke-dasharray="4 6">
@@ -447,12 +467,17 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="275" y="323" text-anchor="middle" class="lbl-b" style="font-size:16px">diagnosis + decision</text>
     </g>
   </svg>
-  <div class="pageno">M10·09</div>
+  <div class="pageno">M10·13</div>
 </section>
 
 <!-- ═══════════════ SLIDE 10 · Independent causes want a different shape ═══════════════ -->
 <section>
-  <h2 class="t">Three independent causes — a different shape</h2>
+  <h2 class="t" style="font-size:2.2em">4 &middot; Parallel hypotheses: fan out, then synthesize honestly</h2>
+  <div class="pageno">M10·14</div>
+</section>
+
+<section>
+  <h2 class="t">Three independent causes: a different shape</h2>
   <p class="s">three independent hypotheses, three dimensions</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Three independent hypothesis cards side by side, each drawn as a separate blue card with its own evidence icon and no arrows connecting them: application-retry an app-layer cause, platform-resource an infra-layer cause, and recent-change a timeline cause.">
     <!-- three separate blue cards, deliberately NO arrows between them -->
@@ -474,9 +499,9 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="885" y="230" text-anchor="middle" class="lbl-g" style="font-size:15px">a deploy in the last day</text>
     <text x="885" y="252" text-anchor="middle" class="lbl-g" style="font-size:13px">timeline</text>
     <!-- caption -->
-    <text x="550" y="308" text-anchor="middle" class="lbl-g">genuinely independent — no arrows between them</text>
+    <text x="550" y="308" text-anchor="middle" class="lbl-g">genuinely independent: no arrows between them</text>
   </svg>
-  <div class="pageno">M10·10</div>
+  <div class="pageno">M10·15</div>
 </section>
 
 <!-- ═══════════════ SLIDE 11 · Fan out, then synthesize (fan-out, 3 fragments) ═══════════════ -->
@@ -500,9 +525,9 @@ footer, header, hgroup, main, menu, nav, section {
     <g class="fragment" data-fragment-index="1">
       <g filter="url(#rough)" fill="var(--p-blue)" stroke="none"><rect x="480" y="55" width="220" height="54" rx="10"/><rect x="480" y="143" width="220" height="54" rx="10"/><rect x="480" y="231" width="220" height="54" rx="10"/></g>
       <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4"><rect x="480" y="55" width="220" height="54" rx="10"/><rect x="480" y="143" width="220" height="54" rx="10"/><rect x="480" y="231" width="220" height="54" rx="10"/></g>
-      <text x="590" y="80" text-anchor="middle" class="lbl-sm">app/retry — own evidence</text>
-      <text x="590" y="168" text-anchor="middle" class="lbl-sm">platform — own evidence</text>
-      <text x="590" y="256" text-anchor="middle" class="lbl-sm">recent-change — own</text>
+      <text x="590" y="80" text-anchor="middle" class="lbl-sm">app/retry: own evidence</text>
+      <text x="590" y="168" text-anchor="middle" class="lbl-sm">platform: own evidence</text>
+      <text x="590" y="256" text-anchor="middle" class="lbl-sm">recent-change: own</text>
       <text x="590" y="98" text-anchor="middle" class="lbl-g" style="font-size:13px">blind to the others</text>
       <text x="590" y="186" text-anchor="middle" class="lbl-g" style="font-size:13px">blind to the others</text>
       <text x="590" y="274" text-anchor="middle" class="lbl-g" style="font-size:13px">blind to the others</text>
@@ -520,7 +545,7 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="975" y="192" text-anchor="middle" class="lbl-g" style="font-size:14px">compare, then judge</text>
     </g>
   </svg>
-  <div class="pageno">M10·11</div>
+  <div class="pageno">M10·16</div>
 </section>
 
 <!-- ═══════════════ SLIDE 12 · Triple-blind study, not a group chat (two-panel, EMOTIONAL PEAK) ═══════════════ -->
@@ -540,7 +565,7 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><rect x="150" y="215" width="240" height="56" rx="12"/></g>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><path d="M120,160 L230,215"/><path d="M270,160 L270,215"/><path d="M420,160 L310,215"/></g>
     <text x="270" y="250" text-anchor="middle" class="lbl-sm">one guess ×3</text>
-    <text x="270" y="300" text-anchor="middle" class="lbl-b" style="fill:#c62828;font-size:18px">looks certain — isn't</text>
+    <text x="270" y="300" text-anchor="middle" class="lbl-b" style="fill:#c62828;font-size:18px">looks certain: isn't</text>
     <!-- RIGHT: triple-blind (green) -->
     <text x="820" y="62" text-anchor="middle" class="lbl-b">triple-blind</text>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><circle cx="670" cy="130" r="30"/><circle cx="820" cy="130" r="30"/><circle cx="970" cy="130" r="30"/></g>
@@ -553,7 +578,7 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4"><rect x="700" y="262" width="240" height="40" rx="10"/></g>
     <text x="820" y="288" text-anchor="middle" class="lbl-b" style="fill:#2e7d32">then compare → real corroboration</text>
   </svg>
-  <div class="pageno">M10·12</div>
+  <div class="pageno">M10·17</div>
 </section>
 
 <!-- ═══════════════ SLIDE 13 · Synthesis has three honest jobs (numbered rows, 3 fragments) ═══════════════ -->
@@ -586,10 +611,15 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="165" y="290" text-anchor="start" class="lbl-g">inconclusive or a named gap → withhold the verdict, ask again · guards <tspan style="fill:#c62828">partial data</tspan></text>
     </g>
   </svg>
-  <div class="pageno">M10·13</div>
+  <div class="pageno">M10·18</div>
 </section>
 
 <!-- ═══════════════ SLIDE 14 · The four orchestration anti-patterns (big-box anatomy) ═══════════════ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">5 &middot; The four anti-patterns</h2>
+  <div class="pageno">M10·19</div>
+</section>
+
 <section>
   <h2 class="t">The four ways orchestration goes wrong</h2>
   <p class="s">four ways orchestration goes wrong, by name</p>
@@ -608,13 +638,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="790" y="245" text-anchor="middle" class="lbl-b">Duplication</text>
     <text x="790" y="275" text-anchor="middle" class="lbl-g">overlapping work, no partition</text>
   </svg>
-  <div class="pageno">M10·14</div>
+  <div class="pageno">M10·20</div>
 </section>
 
 <!-- ═══════════════ SLIDE 15 · Each anti-pattern has a control (mapping, 4 fragments) ═══════════════ -->
 <section>
   <h2 class="t">Each anti-pattern has a control</h2>
-  <p class="s">structure over hope — except one, and it bites</p>
+  <p class="s">structure over hope: except one, and it bites</p>
   <svg viewBox="0 0 1100 350" role="img" aria-label="Four anti-patterns on the left in red map by arrows to four controls on the right in green: consensus theater to blind fan-out plus reject peer-derived claims; hidden assumptions to delegate the question not the answer; runaway concurrency to a max-parallel cap; and duplication to partition plus coverage assertion.">
     <text x="250" y="45" text-anchor="middle" class="lbl-b">anti-pattern</text>
     <text x="850" y="45" text-anchor="middle" class="lbl-b">control</text>
@@ -655,24 +685,29 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="850" y="294" text-anchor="middle" class="lbl-sm">partition +</text><text x="850" y="312" text-anchor="middle" class="lbl-g" style="font-size:14px">coverage assertion at the join</text>
     </g>
   </svg>
-  <div class="pageno">M10·15</div>
+  <div class="pageno">M10·21</div>
 </section>
 
 <!-- ═══════════════ SLIDE 16 · The reproducible audit is an inspection line (two-panel) ═══════════════ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">6 &middot; The reproducible audit: a workflow, not a conversation</h2>
+  <div class="pageno">M10·22</div>
+</section>
+
 <section>
   <h2 class="t">The audit is an inspection line, not an interview</h2>
   <p class="s">the audit is an inspection line, not an interview</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A two-panel comparison. Left, a detective interview: a detective and a witness with a branching question tree that adapts live. Right, an assembly-line inspection: four identical stations in a fixed line each producing the same-shape record.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-dasharray="9 7"><line x1="550" y1="40" x2="550" y2="320"/></g>
     <!-- LEFT: detective interview (adaptive) -->
-    <text x="270" y="62" text-anchor="middle" class="lbl-b">detective interview — adaptive</text>
+    <text x="270" y="62" text-anchor="middle" class="lbl-b">detective interview: adaptive</text>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><circle cx="120" cy="150" r="26"/><circle cx="120" cy="240" r="26"/></g>
     <text x="120" y="200" text-anchor="middle" class="lbl-g" style="font-size:14px">?</text>
     <!-- branching question tree -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4"><path d="M150,150 L230,120" marker-end="url(#ah)"/><path d="M230,120 L320,95" marker-end="url(#ah)"/><path d="M230,120 L320,150" marker-end="url(#ah)"/><path d="M150,240 L230,240" marker-end="url(#ah)"/><path d="M230,240 L320,215" marker-end="url(#ah)"/><path d="M230,240 L320,270" marker-end="url(#ah)"/></g>
     <text x="270" y="300" text-anchor="middle" class="lbl-g">next question depends on the last answer</text>
     <!-- RIGHT: assembly line inspection -->
-    <text x="820" y="62" text-anchor="middle" class="lbl-b">assembly-line inspection — fixed</text>
+    <text x="820" y="62" text-anchor="middle" class="lbl-b">assembly-line inspection: fixed</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4"><line x1="600" y1="180" x2="1030" y2="180"/></g>
     <g filter="url(#rough)" fill="var(--p-blue)" stroke="none"><rect x="610" y="140" width="80" height="80" rx="8"/><rect x="710" y="140" width="80" height="80" rx="8"/><rect x="810" y="140" width="80" height="80" rx="8"/><rect x="910" y="140" width="80" height="80" rx="8"/></g>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4"><rect x="610" y="140" width="80" height="80" rx="8"/><rect x="710" y="140" width="80" height="80" rx="8"/><rect x="810" y="140" width="80" height="80" rx="8"/><rect x="910" y="140" width="80" height="80" rx="8"/></g>
@@ -682,14 +717,14 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="950" y="185" text-anchor="middle" class="lbl-g" style="font-size:14px">same</text>
     <text x="820" y="300" text-anchor="middle" class="lbl-g">same stations, same order, same-shape report</text>
   </svg>
-  <div class="pageno">M10·16</div>
+  <div class="pageno">M10·23</div>
 </section>
 
 <!-- ═══════════════ SLIDE 17 · Determinism is what makes it CI-able (scene, 3 fragments) ═══════════════ -->
 <section>
-  <h2 class="t">Same answer at width 1, 2, or 4 — that's the gate</h2>
-  <p class="s">same answer at any width — that's the gate</p>
-  <svg viewBox="0 0 1100 350" role="img" aria-label="A pipeline. Four infrastructure modules — networking, database, compute, storage — are partitioned to bounded workers under a max-parallel cap, which feed one normalized join report. A green stamp reads same answer at one, two, or four.">
+  <h2 class="t">Same answer at width 1, 2, or 4: that's the gate</h2>
+  <p class="s">same answer at any width: that's the gate</p>
+  <svg viewBox="0 0 1100 350" role="img" aria-label="A pipeline. Four infrastructure modules, networking, database, compute, storage, are partitioned to bounded workers under a max-parallel cap, which feed one normalized join report. A green stamp reads same answer at one, two, or four.">
     <!-- partition: 4 modules (fragment 1) -->
     <g class="fragment" data-fragment-index="0">
       <g filter="url(#rough)" fill="var(--p-blue)" stroke="none"><rect x="60" y="70" width="150" height="46" rx="9"/><rect x="60" y="128" width="150" height="46" rx="9"/><rect x="60" y="186" width="150" height="46" rx="9"/><rect x="60" y="244" width="150" height="46" rx="9"/></g>
@@ -698,7 +733,7 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="135" y="157" text-anchor="middle" class="lbl-sm">database</text>
       <text x="135" y="215" text-anchor="middle" class="lbl-sm">compute</text>
       <text x="135" y="273" text-anchor="middle" class="lbl-sm">storage</text>
-      <text x="135" y="320" text-anchor="middle" class="lbl-g">partition — one each</text>
+      <text x="135" y="320" text-anchor="middle" class="lbl-g">partition: one each</text>
     </g>
     <!-- bounded workers (fragment 2) -->
     <g class="fragment" data-fragment-index="1">
@@ -707,7 +742,7 @@ footer, header, hgroup, main, menu, nav, section {
       <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><rect x="425" y="130" width="150" height="100" rx="12"/></g>
       <text x="500" y="172" text-anchor="middle" class="lbl-b">workers</text>
       <text x="500" y="198" text-anchor="middle" class="lbl-g" style="font-size:14px">--max-parallel cap</text>
-      <text x="500" y="300" text-anchor="middle" class="lbl-g">bounded — no runaway</text>
+      <text x="500" y="300" text-anchor="middle" class="lbl-g">bounded: no runaway</text>
     </g>
     <!-- normalized join + stamp (fragment 3) -->
     <g class="fragment" data-fragment-index="2">
@@ -722,32 +757,37 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="945" y="203" text-anchor="middle" class="lbl-sm">at 1 · 2 · 4</text>
     </g>
   </svg>
-  <div class="pageno">M10·17</div>
+  <div class="pageno">M10·24</div>
 </section>
 
 <!-- ═══════════════ SLIDE 18 · Where each topology lives (three-lane grouping) ═══════════════ -->
 <section>
+  <h2 class="t" style="font-size:2.2em">7 &middot; Where each topology actually lives</h2>
+  <div class="pageno">M10·25</div>
+</section>
+
+<section>
   <h2 class="t">Sort them by where they live</h2>
   <p class="s">sort them by where they live</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="Three lanes. Lane one, inside an interactive session, holds subagent, fork, and background — the incident-commander's live moves. Lane two, from a script or CI, holds headless, workflow, and routine — the reproducible unattended shapes. Lane three, as a programmatic library, holds the Agent SDK.">
+  <svg viewBox="0 0 1100 340" role="img" aria-label="Three lanes. Lane one, inside an interactive session, holds subagent, fork, and background, the incident-commander's live moves. Lane two, from a script or CI, holds headless, workflow, and routine, the reproducible unattended shapes. Lane three, as a programmatic library, holds the Agent SDK.">
     <!-- lane 1: interactive session (green = live) -->
     <g filter="url(#rough)" fill="var(--p-green)" stroke="none"><rect x="50" y="70" width="320" height="220" rx="14"/></g>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><rect x="50" y="70" width="320" height="220" rx="14"/></g>
     <text x="210" y="105" text-anchor="middle" class="lbl-b">inside a session</text>
     <text x="210" y="130" text-anchor="middle" class="lbl-g" style="font-size:14px">the live moves</text>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.2"><rect x="80" y="150" width="260" height="38" rx="8"/><rect x="80" y="196" width="260" height="38" rx="8"/><rect x="80" y="242" width="260" height="38" rx="8"/></g>
-    <text x="210" y="175" text-anchor="middle" class="lbl-sm">subagent — delegate &amp; wait</text>
-    <text x="210" y="221" text-anchor="middle" class="lbl-sm">fork — parallel, keep chatting</text>
-    <text x="210" y="267" text-anchor="middle" class="lbl-sm">background — non-blocking</text>
+    <text x="210" y="175" text-anchor="middle" class="lbl-sm">subagent: delegate &amp; wait</text>
+    <text x="210" y="221" text-anchor="middle" class="lbl-sm">fork: parallel, keep chatting</text>
+    <text x="210" y="267" text-anchor="middle" class="lbl-sm">background: non-blocking</text>
     <!-- lane 2: script / CI (blue = scripted) -->
     <g filter="url(#rough)" fill="var(--p-blue)" stroke="none"><rect x="390" y="70" width="320" height="220" rx="14"/></g>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><rect x="390" y="70" width="320" height="220" rx="14"/></g>
     <text x="550" y="105" text-anchor="middle" class="lbl-b">from a script / CI</text>
     <text x="550" y="130" text-anchor="middle" class="lbl-g" style="font-size:14px">reproducible, unattended</text>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.2"><rect x="420" y="150" width="260" height="38" rx="8"/><rect x="420" y="196" width="260" height="38" rx="8"/><rect x="420" y="242" width="260" height="38" rx="8"/></g>
-    <text x="550" y="175" text-anchor="middle" class="lbl-sm">headless — claude -p, one shot</text>
-    <text x="550" y="221" text-anchor="middle" class="lbl-sm">workflow — orchestrate -p calls</text>
-    <text x="550" y="267" text-anchor="middle" class="lbl-sm">routine — workflow on a schedule</text>
+    <text x="550" y="175" text-anchor="middle" class="lbl-sm">headless: claude -p, one shot</text>
+    <text x="550" y="221" text-anchor="middle" class="lbl-sm">workflow: orchestrate -p calls</text>
+    <text x="550" y="267" text-anchor="middle" class="lbl-sm">routine: workflow on a schedule</text>
     <!-- lane 3: SDK (purple = special/meta) -->
     <g filter="url(#rough)" fill="var(--p-purple)" stroke="none"><rect x="730" y="70" width="320" height="220" rx="14"/></g>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><rect x="730" y="70" width="320" height="220" rx="14"/></g>
@@ -758,7 +798,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="890" y="228" text-anchor="middle" class="lbl-g" style="font-size:14px">explicit concurrency + cost</text>
     <text x="890" y="248" text-anchor="middle" class="lbl-g" style="font-size:13px">→ the Deep Dive</text>
   </svg>
-  <div class="pageno">M10·18</div>
+  <div class="pageno">M10·26</div>
+</section>
+
+<!-- ═══════════════ DIVIDER · SECTION 8 ═══════════════ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">8 &middot; What you'll do in the lab</h2>
+  <div class="pageno">M10·27</div>
 </section>
 
 <!-- ═══════════════ SLIDE 19 · CLOSING — choose the shape before you build it ═══════════════ -->
@@ -774,14 +820,14 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="95" y="185" text-anchor="middle" class="num">3</text>
     <text x="95" y="243" text-anchor="middle" class="num">4</text>
     <text x="95" y="301" text-anchor="middle" class="num">5</text>
-    <text x="140" y="68" text-anchor="start" class="lbl">Run the decision table — four facts route each job to one topology, fail-closed on ambiguity</text>
-    <text x="140" y="126" text-anchor="start" class="lbl">Fan out the retry storm — three blind hypotheses, then synthesize honestly</text>
-    <text x="140" y="184" text-anchor="start" class="lbl">Name the four anti-patterns — and prove the control for each</text>
-    <text x="140" y="242" text-anchor="start" class="lbl">Run the reproducible audit — identical answer at max-parallel 1, 2, 4</text>
-    <text x="140" y="300" text-anchor="start" class="lbl">Deep Dive: rebuild the audit as an Agent SDK fan-out — behavior, tokens, latency</text>
+    <text x="140" y="68" text-anchor="start" class="lbl">Run the decision table: four facts route each job to one topology, fail-closed on ambiguity</text>
+    <text x="140" y="126" text-anchor="start" class="lbl">Fan out the retry storm: three blind hypotheses, then synthesize honestly</text>
+    <text x="140" y="184" text-anchor="start" class="lbl">Name the four anti-patterns: and prove the control for each</text>
+    <text x="140" y="242" text-anchor="start" class="lbl">Run the reproducible audit: identical answer at max-parallel 1, 2, 4</text>
+    <text x="140" y="300" text-anchor="start" class="lbl">Deep Dive: rebuild the audit as an Agent SDK fan-out: behavior, tokens, latency</text>
   </svg>
   <p class="credit">Now open <b>Module 10 · Lab</b>. &nbsp;·&nbsp; <b>Gourav Shah</b> &nbsp;·&nbsp; School of DevOps &amp; AI</p>
-  <div class="pageno">M10·19</div>
+  <div class="pageno">M10·28</div>
 </section>
 </div></div>
 

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agentic DevOps with Claude Code — Module 14: SRE, Observability &amp; Incident Response</title>
+<title>Module 14: SRE, Observability &amp; Incident Response &middot; Agentic DevOps with Claude Code</title>
 
 <!-- ============================================================
      CourseSmith whiteboard deck skeleton (self-contained).
@@ -138,7 +138,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section data-auto-animate>
   <p class="kicker">MODULE 14 &nbsp;·&nbsp; AGENTIC DEVOPS WITH CLAUDE CODE</p>
   <h2 class="t" style="font-size:2.3em">SRE, Observability &amp; Incident Response</h2>
-  <p class="s" style="font-size:1.2em">the pager fires — where does the agent look first?</p>
+  <p class="s" style="font-size:1.2em">the pager fires: where does the agent look first?</p>
   <svg viewBox="0 0 1100 300" role="img" aria-label="An alert bell leads to a set of four gauges, which lead to a green diagnosed check mark.">
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round">
       <path d="M150,150 a45,45 0 0 1 90,0 c0,30 12,42 12,42 h-114 c0,0 12,-12 12,-42 z"/>
@@ -174,6 +174,12 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M14·01</div>
 </section>
 
+<!-- ============ DIVIDER — intro ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">SRE, Observability &amp; Incident Response</h2>
+  <div class="pageno">M14·02</div>
+</section>
+
 <!-- ============ SLIDE 2 — firehose vs aimed stream ============ -->
 <section>
   <h2 class="t">Observability without discipline is a firehose</h2>
@@ -202,7 +208,7 @@ footer, header, hgroup, main, menu, nav, section {
     <circle cx="895" cy="177" r="9" fill="#2e7d32" stroke="none"/>
     <text x="820" y="290" text-anchor="middle" class="lbl-g" fill="#2e7d32">signal up · blast radius down</text>
   </svg>
-  <div class="pageno">M14·02</div>
+  <div class="pageno">M14·03</div>
 </section>
 
 <!-- ============ SLIDE 3 — the incident you're building toward ============ -->
@@ -242,7 +248,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="770" y="288" text-anchor="start" class="lbl-b">3 · what changed?</text>
     <text x="770" y="318" text-anchor="start" class="lbl-g">the causal event, not a guess</text>
   </svg>
-  <div class="pageno">M14·03</div>
+  <div class="pageno">M14·04</div>
+</section>
+
+<!-- ============ DIVIDER — section 1 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">1 &middot; The SLO is the speed limit, and the error budget is the fine you can afford</h2>
+  <div class="pageno">M14·05</div>
 </section>
 
 <!-- ============ SLIDE 4 — SLO is the speed limit ============ -->
@@ -257,7 +269,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="195" y="140" text-anchor="middle" class="lbl-g">SPEED LIMIT</text>
     <text x="195" y="200" text-anchor="middle" class="lbl-b" style="font-size:40px">65</text>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.2"><line x1="195" y1="240" x2="195" y2="250"/></g>
-    <text x="195" y="330" text-anchor="middle" class="lbl-g">the objective — written down</text>
+    <text x="195" y="330" text-anchor="middle" class="lbl-g">the objective, written down</text>
 
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.8">
       <path d="M700,270 h150 l-25,-45 h-100 z"/>
@@ -267,7 +279,7 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="2.4" stroke-linecap="round"><path d="M300,180 C480,180 560,200 690,215" marker-end="url(#ah)"/></g>
     <text x="500" y="170" text-anchor="middle" class="lbl-g" fill="#c62828">the gap you can measure</text>
   </svg>
-  <div class="pageno">M14·04</div>
+  <div class="pageno">M14·06</div>
 </section>
 
 <!-- ============ SLIDE 5 — error budget is the fine ============ -->
@@ -281,13 +293,13 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2" stroke-dasharray="6 6"><line x1="565" y1="120" x2="565" y2="210"/></g>
     <text x="355" y="172" text-anchor="middle" class="lbl-b" fill="#c62828">spent</text>
     <text x="700" y="172" text-anchor="middle" class="lbl-b" fill="#2e7d32">remaining</text>
-    <text x="490" y="100" text-anchor="middle" class="lbl-g">the 1% budget — your whole tank of allowed failure</text>
+    <text x="490" y="100" text-anchor="middle" class="lbl-g">the 1% budget: your whole tank of allowed failure</text>
 
     <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="3" stroke-linecap="round"><path d="M840,165 C910,165 930,165 985,165" marker-end="url(#ah)"/></g>
     <text x="915" y="145" text-anchor="middle" class="lbl-g">burn rate</text>
     <text x="490" y="270" text-anchor="middle" class="lbl-g">how much left · how fast am I spending it right now</text>
   </svg>
-  <div class="pageno">M14·05</div>
+  <div class="pageno">M14·07</div>
 </section>
 
 <!-- ============ SLIDE 6 — two objectives as rules ============ -->
@@ -310,7 +322,7 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.4"><rect x="410" y="278" width="280" height="46" rx="20"/></g>
     <text x="550" y="307" text-anchor="middle" class="lbl-b" fill="#2e7d32">computable, not eyeballed</text>
   </svg>
-  <div class="pageno">M14·06</div>
+  <div class="pageno">M14·08</div>
 </section>
 
 <!-- ============ SLIDE 7 — breach vs page ============ -->
@@ -323,16 +335,22 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="290" y="150" text-anchor="middle" class="lbl">fires at 1%</text>
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2"><rect x="200" y="175" width="180" height="40" rx="16"/></g>
     <text x="290" y="202" text-anchor="middle" class="lbl-sm">severity: warning</text>
-    <text x="290" y="248" text-anchor="middle" class="lbl-g" fill="#e65100">how bad — the budget</text>
+    <text x="290" y="248" text-anchor="middle" class="lbl-g" fill="#e65100">how bad: the budget</text>
 
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="3"><rect x="590" y="70" width="440" height="200" rx="12"/></g>
     <text x="810" y="110" text-anchor="middle" class="lbl-b">HighErrorRate</text>
     <text x="810" y="150" text-anchor="middle" class="lbl">fires at 5%</text>
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.2"><rect x="700" y="175" width="220" height="40" rx="16"/></g>
     <text x="810" y="202" text-anchor="middle" class="lbl-sm">routes as a real page</text>
-    <text x="810" y="248" text-anchor="middle" class="lbl-g" fill="#c62828">drop everything — the page</text>
+    <text x="810" y="248" text-anchor="middle" class="lbl-g" fill="#c62828">drop everything: the page</text>
   </svg>
-  <div class="pageno">M14·07</div>
+  <div class="pageno">M14·09</div>
+</section>
+
+<!-- ============ DIVIDER — section 2 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">2 &middot; The golden signals are the four gauges you read first</h2>
+  <div class="pageno">M14·10</div>
 </section>
 
 <!-- ============ SLIDE 8 — golden signals: four gauges ============ -->
@@ -341,7 +359,7 @@ footer, header, hgroup, main, menu, nav, section {
   <p class="s">thousands of sensors, four gauges on the dash</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A car dashboard drawn large with four gauges, against a greyed background labelled thousands of sensors on the diagnostic bus.">
     <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="1.6" stroke-dasharray="4 5"><rect x="40" y="40" width="1020" height="120" rx="10"/></g>
-    <text x="550" y="65" text-anchor="middle" class="lbl-g">thousands of sensors on the bus — you do not read these while driving</text>
+    <text x="550" y="65" text-anchor="middle" class="lbl-g">thousands of sensors on the bus, you do not read these while driving</text>
 
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.8">
       <circle cx="200" cy="235" r="55"/><circle cx="440" cy="235" r="55"/><circle cx="680" cy="235" r="55"/><circle cx="920" cy="235" r="55"/>
@@ -355,7 +373,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="680" y="320" text-anchor="middle" class="lbl-sm">temp</text>
     <text x="920" y="320" text-anchor="middle" class="lbl-sm">oil light</text>
   </svg>
-  <div class="pageno">M14·08</div>
+  <div class="pageno">M14·11</div>
 </section>
 
 <!-- ============ SLIDE 9 — the four signals named ============ -->
@@ -385,7 +403,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="630" y="270" text-anchor="start" class="lbl-g">how full is the system?</text>
     <text x="630" y="300" text-anchor="start" class="lbl-sm">CPU/mem · queue depth · upstream_retries</text>
   </svg>
-  <div class="pageno">M14·09</div>
+  <div class="pageno">M14·12</div>
 </section>
 
 <!-- ============ SLIDE 10 — the pattern names the cause-class ============ -->
@@ -414,13 +432,19 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="900" y="255" text-anchor="middle" class="lbl-g">not failing yet →</text>
     <text x="900" y="278" text-anchor="middle" class="lbl-g">act before it tips</text>
   </svg>
-  <div class="pageno">M14·10</div>
+  <div class="pageno">M14·13</div>
+</section>
+
+<!-- ============ DIVIDER — section 3 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">3 &middot; Metrics, logs, events, and traces are evidence, with different jobs</h2>
+  <div class="pageno">M14·14</div>
 </section>
 
 <!-- ============ SLIDE 11 — four telemetry jobs (doctor) ============ -->
 <section>
-  <h2 class="t">Metrics, logs, events, traces — four evidence jobs</h2>
-  <p class="s">vitals, history, chart, workup — in that order</p>
+  <h2 class="t">Metrics, logs, events, traces: four evidence jobs</h2>
+  <p class="s">vitals, history, chart, workup, in that order</p>
   <svg viewBox="0 0 1100 350" role="img" aria-label="Four boxes mapping the doctor analogy: metrics are vital signs, logs are the patient's own account, events are chart annotations, traces are one sample's full path through the lab.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6"><rect x="40" y="70" width="240" height="210" rx="12"/></g>
     <text x="160" y="108" text-anchor="middle" class="lbl-b">METRICS</text>
@@ -446,7 +470,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="940" y="205" text-anchor="middle" class="lbl-g">the full workup on</text>
     <text x="940" y="232" text-anchor="middle" class="lbl-g">one representative case</text>
   </svg>
-  <div class="pageno">M14·11</div>
+  <div class="pageno">M14·15</div>
 </section>
 
 <!-- ============ SLIDE 12 — escalation order (FRAGMENTS) ============ -->
@@ -483,7 +507,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="200" y="288" text-anchor="middle" class="lbl-g">cheap · broad</text>
     <text x="920" y="288" text-anchor="middle" class="lbl-g">expensive · narrow</text>
   </svg>
-  <div class="pageno">M14·12</div>
+  <div class="pageno">M14·16</div>
+</section>
+
+<!-- ============ DIVIDER — section 4 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">4 &middot; Anti-firehose: a bounded query is a question, not a dump</h2>
+  <div class="pageno">M14·17</div>
 </section>
 
 <!-- ============ SLIDE 13 — bounded query is a warrant ============ -->
@@ -510,7 +540,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="820" y="212" text-anchor="middle" class="lbl">thing · a red toolbox</text>
     <text x="820" y="300" text-anchor="middle" class="lbl-g" fill="#2e7d32">specific · fast · you know when you're done</text>
   </svg>
-  <div class="pageno">M14·13</div>
+  <div class="pageno">M14·18</div>
 </section>
 
 <!-- ============ SLIDE 14 — three bounds ============ -->
@@ -523,21 +553,27 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="550" y="218" text-anchor="middle" class="lbl-g">orders_api:error_rate:5m</text>
 
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.4"><rect x="120" y="40" width="280" height="80" rx="10"/></g>
-    <text x="260" y="72" text-anchor="middle" class="lbl-b">time window — when</text>
+    <text x="260" y="72" text-anchor="middle" class="lbl-b">time window: when</text>
     <text x="260" y="102" text-anchor="middle" class="lbl-g">rate(...[5m]) · not all history</text>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round"><path d="M320,120 C380,140 420,150 448,162" marker-end="url(#ah)"/></g>
 
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.4"><rect x="700" y="40" width="290" height="80" rx="10"/></g>
-    <text x="845" y="72" text-anchor="middle" class="lbl-b">metric scope — thing</text>
+    <text x="845" y="72" text-anchor="middle" class="lbl-b">metric scope: thing</text>
     <text x="845" y="102" text-anchor="middle" class="lbl-g">orders_api_requests_total · not .*</text>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round"><path d="M780,120 C720,140 680,150 652,162" marker-end="url(#ah)"/></g>
 
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.4"><rect x="410" y="275" width="280" height="70" rx="10"/></g>
-    <text x="550" y="305" text-anchor="middle" class="lbl-b">cardinality — place</text>
+    <text x="550" y="305" text-anchor="middle" class="lbl-b">cardinality: place</text>
     <text x="550" y="333" text-anchor="middle" class="lbl-g">sum(...) by (le) · aggregate first</text>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round"><path d="M550,275 L550,245" marker-end="url(#ah)"/></g>
   </svg>
-  <div class="pageno">M14·14</div>
+  <div class="pageno">M14·19</div>
+</section>
+
+<!-- ============ DIVIDER — section 5 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">5 &middot; Hypothesis-driven incident response: form, then try to falsify</h2>
+  <div class="pageno">M14·20</div>
 </section>
 
 <!-- ============ SLIDE 15 — falsify the hypothesis ============ -->
@@ -556,10 +592,10 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="820" y="70" text-anchor="middle" class="lbl-b">try to falsify it</text>
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.8"><rect x="640" y="100" width="360" height="130" rx="12"/></g>
     <text x="820" y="140" text-anchor="middle" class="lbl">"if X, then Y should hold"</text>
-    <text x="820" y="175" text-anchor="middle" class="lbl-g">check it — if it breaks, X is dead</text>
+    <text x="820" y="175" text-anchor="middle" class="lbl-g">check it: if it breaks, X is dead</text>
     <text x="820" y="290" text-anchor="middle" class="lbl-g" fill="#2e7d32">survives → a conclusion you can act on</text>
   </svg>
-  <div class="pageno">M14·15</div>
+  <div class="pageno">M14·21</div>
 </section>
 
 <!-- ============ SLIDE 16 — consensus theater ============ -->
@@ -596,7 +632,7 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="2.6"><rect x="720" y="245" width="200" height="45" rx="10"/></g>
     <text x="820" y="274" text-anchor="middle" class="lbl-b" fill="#c62828">rejected</text>
   </svg>
-  <div class="pageno">M14·16</div>
+  <div class="pageno">M14·22</div>
 </section>
 
 <!-- ============ SLIDE 17 — investigator diagnoses, cannot fix ============ -->
@@ -623,13 +659,19 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="950" y="155" text-anchor="middle" class="lbl-b">a role that acts</text>
     <text x="950" y="192" text-anchor="middle" class="lbl-g">via GitOps, on a branch</text>
   </svg>
-  <div class="pageno">M14·17</div>
+  <div class="pageno">M14·23</div>
+</section>
+
+<!-- ============ DIVIDER — section 6 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">6 &middot; The retry storm: why the obvious fix is the wrong one</h2>
+  <div class="pageno">M14·24</div>
 </section>
 
 <!-- ============ SLIDE 18 — retry storm (CLOSING) ============ -->
 <section>
   <h2 class="t">The retry storm: the obvious fix is wrong</h2>
-  <p class="s">retries amplify load — "add CPU" is plausible and wrong</p>
+  <p class="s">retries amplify load, "add CPU" is plausible and wrong</p>
   <svg viewBox="0 0 1100 320" role="img" aria-label="One slow upstream call fans into eleven retries that amplify load back onto the upstream. The add-CPU fix is crossed out; the retry-config change is boxed as the real cause.">
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="120" width="150" height="70" rx="10"/></g>
     <text x="135" y="150" text-anchor="middle" class="lbl-sm">1 slow call</text>
@@ -647,14 +689,14 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4"><rect x="560" y="70" width="220" height="70" rx="10"/></g>
     <text x="670" y="112" text-anchor="middle" class="lbl">add CPU / replicas</text>
     <path d="M570,80 l200,55 M770,80 l-200,55" stroke="#c62828" stroke-width="2.4" fill="none"/>
-    <text x="670" y="165" text-anchor="middle" class="lbl-g" fill="#c62828">treats a symptom — makes it worse</text>
+    <text x="670" y="165" text-anchor="middle" class="lbl-g" fill="#c62828">treats a symptom, makes it worse</text>
 
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="3"><rect x="560" y="205" width="450" height="70" rx="10"/></g>
     <text x="785" y="238" text-anchor="middle" class="lbl-b">the causal change: retry config</text>
     <text x="785" y="264" text-anchor="middle" class="lbl-g" fill="#2e7d32">retries ↑ · traffic flat → load is self-inflicted</text>
   </svg>
   <p class="credit">Now open <b>Module 14 · Lab</b>. &nbsp;·&nbsp; <b>Gourav Shah</b> &nbsp;·&nbsp; School of DevOps &amp; AI</p>
-  <div class="pageno">M14·18</div>
+  <div class="pageno">M14·25</div>
 </section>
 </div></div>
 

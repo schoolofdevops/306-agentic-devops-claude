@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agentic DevOps with Claude Code — Module 7: Tool Interface Engineering: CLI First, MCP When It Earns the Boundary</title>
+<title>Module 16: Optional Overlay: MLOps &amp; LLMOps &middot; Agentic DevOps with Claude Code</title>
 
 <!-- ============================================================
      CourseSmith whiteboard deck skeleton (self-contained).
      Style contract: templates/deck/whiteboard-style-guide.md
-     Tokens: Agentic DevOps with Claude Code 7 Tool Interface Engineering: CLI First, MCP When It Earns the Boundary
-             The same task, four surfaces — and they are not equal in risk. M7 (e.g. M1)
+     Course: Agentic DevOps with Claude Code · Module 16 (M16)
+             Optional Overlay: MLOps & LLMOps
      Zero external requests: reveal.js 5.x runtime + Patrick Hand
      woff2 are inlined below. Keep it that way.
      ============================================================ -->
@@ -160,10 +160,16 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M16·01</div>
 </section>
 
+<!-- ============ DIVIDER — intro ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">Optional Overlay: MLOps &amp; LLMOps</h2>
+  <div class="pageno">M16·02</div>
+</section>
+
 <!-- ============ 02 — the incident ============ -->
 <section>
-  <h2 class="t">Everything succeeded — and the day still broke</h2>
-  <p class="s">every request returns 200 — the bill is 10x</p>
+  <h2 class="t">Everything succeeded, and the day still broke</h2>
+  <p class="s">every request returns 200, the bill is 10x</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A support queue backing up on the left, a green 200 OK stamp in the middle showing every request succeeded, and a red cost meter climbing on the right.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round">
       <rect x="60" y="70" width="150" height="40" rx="8"/>
@@ -181,7 +187,7 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="2.8" stroke-linecap="round"><path d="M790,190 L870,160 L950,120" marker-end="url(#ah)"/></g>
     <text x="890" y="255" text-anchor="middle" class="lbl-g">cost climbing</text>
   </svg>
-  <p class="pageno">M16·02</p>
+  <p class="pageno">M16·03</p>
 </section>
 
 <!-- ============ 03 — config not service ============ -->
@@ -190,7 +196,7 @@ footer, header, hgroup, main, menu, nav, section {
   <p class="s">one word in a config, and no dashboard watching</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Left panel shows healthy green service dashboards. Right panel shows a config file with the word fast changed to deep, marked in red as the real break.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-dasharray="5 5"><rect x="40" y="60" width="470" height="230" rx="12"/></g>
-    <text x="275" y="90" text-anchor="middle" class="lbl-g">SRE dashboards — all green</text>
+    <text x="275" y="90" text-anchor="middle" class="lbl-g">SRE dashboards: all green</text>
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.4">
       <rect x="80" y="115" width="180" height="55" rx="8"/>
       <rect x="290" y="115" width="180" height="55" rx="8"/>
@@ -206,18 +212,24 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="700" y="175" text-anchor="start" class="lbl">support:</text>
     <text x="820" y="175" text-anchor="start" class="lbl-g" text-decoration="line-through">fast</text>
     <text x="900" y="175" text-anchor="start" class="lbl-b" fill="#c62828">→ deep</text>
-    <text x="830" y="225" text-anchor="middle" class="lbl-g">one word — never instrumented</text>
+    <text x="830" y="225" text-anchor="middle" class="lbl-g">one word, never instrumented</text>
   </svg>
-  <p class="pageno">M16·03</p>
+  <p class="pageno">M16·04</p>
+</section>
+
+<!-- ============ DIVIDER — section 1 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">1 &middot; MLOps and LLMOps are two different jobs with two different signal sets</h2>
+  <div class="pageno">M16·05</div>
 </section>
 
 <!-- ============ 04 — two jobs, two signal sets ============ -->
 <section>
-  <h2 class="t">Two ML jobs, two signal sets — don't confuse them</h2>
+  <h2 class="t">Two ML jobs, two signal sets: don't confuse them</h2>
   <p class="s">the bakery that makes it, the shop that serves</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Left: a bakery labelled produce, with gauges for oven temp, dough, reject rate. Right: a coffee shop labelled serve, with gauges for stock, price, line, happiness.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6"><rect x="50" y="55" width="440" height="90" rx="12"/></g>
-    <text x="270" y="95" text-anchor="middle" class="lbl-b">bakery — you PRODUCE</text>
+    <text x="270" y="95" text-anchor="middle" class="lbl-b">bakery: you PRODUCE</text>
     <text x="270" y="125" text-anchor="middle" class="lbl-g">flour, ovens, the recipe</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2">
       <circle cx="110" cy="215" r="30"/><circle cx="210" cy="215" r="30"/><circle cx="310" cy="215" r="30"/><circle cx="410" cy="215" r="30"/>
@@ -226,7 +238,7 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="110" y="270">oven temp</text><text x="210" y="270">dough</text><text x="310" y="270">reject rate</text><text x="410" y="270">accuracy</text>
     </g>
     <g filter="url(#rough)" fill="#ecfdf5" stroke="#1e1e1e" stroke-width="2.6"><rect x="610" y="55" width="440" height="90" rx="12"/></g>
-    <text x="830" y="95" text-anchor="middle" class="lbl-b">coffee shop — you SERVE</text>
+    <text x="830" y="95" text-anchor="middle" class="lbl-b">coffee shop: you SERVE</text>
     <text x="830" y="125" text-anchor="middle" class="lbl-g">buys the pastries, sells them</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2">
       <circle cx="670" cy="215" r="30"/><circle cx="770" cy="215" r="30"/><circle cx="870" cy="215" r="30"/><circle cx="970" cy="215" r="30"/>
@@ -235,12 +247,12 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="670" y="270">stock</text><text x="770" y="270">price</text><text x="870" y="270">line</text><text x="970" y="270">happy</text>
     </g>
   </svg>
-  <p class="pageno">M16·04</p>
+  <p class="pageno">M16·06</p>
 </section>
 
 <!-- ============ 05 — MLOps is the bakery ============ -->
 <section>
-  <h2 class="t">MLOps is the bakery — you produce the model</h2>
+  <h2 class="t">MLOps is the bakery: you produce the model</h2>
   <p class="s">MLOps: you train it, host it, own its drift</p>
   <svg viewBox="0 0 1100 320" role="img" aria-label="A bakery frame containing a pipeline: training pipeline to model versioning to your serving infra to drift and accuracy.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-dasharray="5 5"><rect x="30" y="55" width="1040" height="210" rx="14"/></g>
@@ -265,12 +277,12 @@ footer, header, hgroup, main, menu, nav, section {
       <path d="M800,165 L870,165" marker-end="url(#ah)"/>
     </g>
   </svg>
-  <p class="pageno">M16·05</p>
+  <p class="pageno">M16·07</p>
 </section>
 
 <!-- ============ 06 — LLMOps is the coffee shop ============ -->
 <section>
-  <h2 class="t">LLMOps is the coffee shop — you operate a bought model</h2>
+  <h2 class="t">LLMOps is the coffee shop: you operate a bought model</h2>
   <p class="s">LLMOps: you own the layer around the API call</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="A pipeline: prompt plus routing config to a gateway to a hosted provider API. A dials cluster of latency, cost, rate limits and quality branches off the gateway.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6">
@@ -292,7 +304,7 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.4"><rect x="300" y="230" width="360" height="60" rx="10"/></g>
     <text x="480" y="267" text-anchor="middle" class="lbl-sm">latency · cost · rate limits · quality</text>
   </svg>
-  <p class="pageno">M16·06</p>
+  <p class="pageno">M16·08</p>
 </section>
 
 <!-- ============ 07 — you inherit LLMOps first ============ -->
@@ -302,18 +314,18 @@ footer, header, hgroup, main, menu, nav, section {
   <svg viewBox="0 0 1100 320" role="img" aria-label="A large front step labelled LLMOps day one, with a faded MLOps later step drawn behind it.">
     <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2.2" stroke-dasharray="9 7"><rect x="470" y="70" width="360" height="120" rx="12"/></g>
     <text x="650" y="120" text-anchor="middle" class="lbl-g">MLOps</text>
-    <text x="650" y="152" text-anchor="middle" class="lbl-g">later — training, serving, drift</text>
+    <text x="650" y="152" text-anchor="middle" class="lbl-g">later: training, serving, drift</text>
     <g filter="url(#rough)" fill="#ecfdf5" stroke="#1e1e1e" stroke-width="3"><rect x="120" y="140" width="440" height="140" rx="14"/></g>
-    <text x="340" y="200" text-anchor="middle" class="lbl-b">LLMOps — day one</text>
+    <text x="340" y="200" text-anchor="middle" class="lbl-b">LLMOps: day one</text>
     <text x="340" y="240" text-anchor="middle" class="lbl-g">the feature that "just calls the AI"</text>
   </svg>
-  <p class="pageno">M16·07</p>
+  <p class="pageno">M16·09</p>
 </section>
 
 <!-- ============ 08 — governance transfers ============ -->
 <section>
   <h2 class="t">Every governance idea you own transfers</h2>
-  <p class="s">not a new discipline — the same governance, new surface</p>
+  <p class="s">not a new discipline, the same governance, new surface</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="A hub labelled governance you already have, with three spokes to routing artifact tagged M11, four dials tagged M14, and prompt gate tagged M13.">
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="3"><circle cx="550" cy="165" r="95"/></g>
     <text x="550" y="155" text-anchor="middle" class="lbl-b">governance</text>
@@ -335,12 +347,18 @@ footer, header, hgroup, main, menu, nav, section {
       <path d="M810,170 L645,168" marker-end="url(#ahg)"/>
     </g>
   </svg>
-  <p class="pageno">M16·08</p>
+  <p class="pageno">M16·10</p>
+</section>
+
+<!-- ============ DIVIDER — section 2 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">2 &middot; The model gateway is the reviewed artifact: routing is a decision, not a detail</h2>
+  <div class="pageno">M16·11</div>
 </section>
 
 <!-- ============ 09 — gateway is the switchboard ============ -->
 <section>
-  <h2 class="t">The gateway is the switchboard — routing is a decision</h2>
+  <h2 class="t">The gateway is the switchboard: routing is a decision</h2>
   <p class="s">one routing switch can blow the whole budget</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="A call-routing switchboard with plugs; one plug is being moved, sending a flood arrow into an expensive premium desk.">
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="2.8"><rect x="60" y="70" width="360" height="200" rx="12"/></g>
@@ -357,7 +375,7 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="3" stroke-linecap="round"><path d="M430,175 C560,175 600,175 715,175" marker-end="url(#ah)"/></g>
     <text x="575" y="160" text-anchor="middle" class="lbl-g">flood</text>
   </svg>
-  <p class="pageno">M16·09</p>
+  <p class="pageno">M16·12</p>
 </section>
 
 <!-- ============ 10 — three traffic classes ============ -->
@@ -380,7 +398,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="420" y="250" text-anchor="start" class="lbl-b">→ cost</text>
     <text x="600" y="250" text-anchor="start" class="lbl-g">no human waiting · cost is the only dial</text>
   </svg>
-  <p class="pageno">M16·10</p>
+  <p class="pageno">M16·13</p>
 </section>
 
 <!-- ============ 11 — split decision from facts ============ -->
@@ -400,7 +418,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="550" y="140" text-anchor="middle" class="lbl-g">lookup</text>
     <text x="550" y="285" text-anchor="middle" class="lbl-g">review can price the decision immediately</text>
   </svg>
-  <p class="pageno">M16·11</p>
+  <p class="pageno">M16·14</p>
 </section>
 
 <!-- ============ 12 — the regression (3 fragments) ============ -->
@@ -427,7 +445,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="830" y="258" text-anchor="middle" class="lbl-b">throttled</text>
     </g>
   </svg>
-  <p class="pageno">M16·12</p>
+  <p class="pageno">M16·15</p>
+</section>
+
+<!-- ============ DIVIDER — section 3 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">3 &middot; The four dials are the golden signals of an LLM feature</h2>
+  <div class="pageno">M16·16</div>
 </section>
 
 <!-- ============ 13 — four dials ============ -->
@@ -447,13 +471,13 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="550" y="295" text-anchor="middle" class="lbl-g">the pattern across the four points at a cause before any deep query</text>
   </svg>
-  <p class="pageno">M16·13</p>
+  <p class="pageno">M16·17</p>
 </section>
 
 <!-- ============ 14 — dials trade off ============ -->
 <section>
-  <h2 class="t">The four dials trade off — pick the corner per class</h2>
-  <p class="s">no setting wins all four — only the right one</p>
+  <h2 class="t">The four dials trade off: pick the corner per class</h2>
+  <p class="s">no setting wins all four, only the right one</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A trade-off diagram with four axes: quality, latency, cost, headroom. Support is pinned in green at the fast-cheap corner; the regressed setting is pinned in red at the deep-slow corner.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2" stroke-linecap="round">
       <line x1="550" y1="60" x2="550" y2="290"/><line x1="230" y1="175" x2="870" y2="175"/>
@@ -467,12 +491,18 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.6"><circle cx="440" cy="105" r="16"/></g>
     <text x="410" y="95" text-anchor="middle" class="lbl-b" fill="#c62828">regressed ✗</text>
   </svg>
-  <p class="pageno">M16·14</p>
+  <p class="pageno">M16·18</p>
+</section>
+
+<!-- ============ DIVIDER — section 4 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">4 &middot; Provider latency and application latency are different problems with different fixes</h2>
+  <div class="pageno">M16·19</div>
 </section>
 
 <!-- ============ 15 — provider vs application (kitchen vs waiter) ============ -->
 <section>
-  <h2 class="t">Latency is either the provider or you — opposite fixes</h2>
+  <h2 class="t">Latency is either the provider or you: opposite fixes</h2>
   <p class="s">same symptom, opposite fix: kitchen slow or waiter stuck</p>
   <svg viewBox="0 0 1100 320" role="img" aria-label="Two panels. Left: a slow kitchen labelled provider latency, fix the route. Right: a stuck waiter with food under a heat lamp labelled application latency, fix the code.">
     <g filter="url(#rough)" fill="#fef3c7" stroke="#1e1e1e" stroke-width="2.8"><rect x="60" y="65" width="450" height="200" rx="12"/></g>
@@ -486,13 +516,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="815" y="185" text-anchor="middle" class="lbl-g">food ready, sitting under the lamp</text>
     <text x="815" y="235" text-anchor="middle" class="lbl-b" fill="#4338ca">→ fix the CODE</text>
   </svg>
-  <p class="pageno">M16·15</p>
+  <p class="pageno">M16·20</p>
 </section>
 
 <!-- ============ 16 — split the trace (2 fragments) ============ -->
 <section>
   <h2 class="t">Split the trace before you assign blame</h2>
-  <p class="s">the provider half dominates — fix routing, not app</p>
+  <p class="s">the provider half dominates, fix routing, not app</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="A total request of 8.7 seconds splits into a provider half of about 8.4 seconds pointing to fix the route, and an application half of about 0.34 seconds pointing to fix the code.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="3"><rect x="410" y="60" width="280" height="80" rx="12"/></g>
     <text x="550" y="95" text-anchor="middle" class="lbl-b">support request</text>
@@ -510,7 +540,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="850" y="283" text-anchor="middle" class="lbl-b" fill="#4338ca">→ fix the CODE</text>
     </g>
   </svg>
-  <p class="pageno">M16·16</p>
+  <p class="pageno">M16·21</p>
+</section>
+
+<!-- ============ DIVIDER — section 5 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">5 &middot; Prompts and model config belong in Git, reviewed like code</h2>
+  <div class="pageno">M16·22</div>
 </section>
 
 <!-- ============ 17 — prompts in Git + regression gate (2 fragments) ============ -->
@@ -520,7 +556,7 @@ footer, header, hgroup, main, menu, nav, section {
   <svg viewBox="0 0 1100 330" role="img" aria-label="A prompt file in Git with three assertions revealed, then a regressed set tripping a red CI check.">
     <g class="fragment" data-fragment-index="0">
       <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="3"><rect x="60" y="70" width="330" height="200" rx="12"/></g>
-      <text x="225" y="108" text-anchor="middle" class="lbl-b">prompt.md — in Git</text>
+      <text x="225" y="108" text-anchor="middle" class="lbl-b">prompt.md, in Git</text>
       <text x="225" y="150" text-anchor="middle" class="lbl-g">an SOP with a history</text>
       <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.2">
         <rect x="90" y="170" width="270" height="30" rx="6"/>
@@ -538,7 +574,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="820" y="210" text-anchor="middle" class="lbl-sm">dropped the order ID</text>
     </g>
   </svg>
-  <p class="pageno">M16·17</p>
+  <p class="pageno">M16·23</p>
+</section>
+
+<!-- ============ DIVIDER — section 7 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">7 &middot; Where this leaves you</h2>
+  <div class="pageno">M16·24</div>
 </section>
 
 <!-- ============ 18 — CLOSING ============ -->
@@ -552,15 +594,15 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <g class="num" text-anchor="middle"><text x="120" y="63">1</text><text x="120" y="113">2</text><text x="120" y="163">3</text><text x="120" y="213">4</text><text x="120" y="263">5</text></g>
     <g class="lbl" text-anchor="start">
-      <text x="165" y="63">The gateway config is a reviewed artifact — a route change is priced before it merges.</text>
-      <text x="165" y="113">The four dials are golden signals — latency, cost, rate limits, quality, read together.</text>
-      <text x="165" y="163">Provider latency is not application latency — split the trace before you assign blame.</text>
-      <text x="165" y="213">Prompts and model config live in Git — reviewed like code, with a rollback.</text>
-      <text x="165" y="263">A regression suite is a CI gate — quality is a checked number that blocks the build.</text>
+      <text x="165" y="63">The gateway config is a reviewed artifact: a route change is priced before it merges.</text>
+      <text x="165" y="113">The four dials are golden signals: latency, cost, rate limits, quality, read together.</text>
+      <text x="165" y="163">Provider latency is not application latency: split the trace before you assign blame.</text>
+      <text x="165" y="213">Prompts and model config live in Git: reviewed like code, with a rollback.</text>
+      <text x="165" y="263">A regression suite is a CI gate: quality is a checked number that blocks the build.</text>
     </g>
   </svg>
   <p class="credit">Now open <b>Module 16 · Lab</b>. &nbsp;·&nbsp; <b>Gourav Shah</b> &nbsp;·&nbsp; School of DevOps &amp; AI</p>
-  <div class="pageno">M16·18</div>
+  <div class="pageno">M16·25</div>
 </section>
 
 </div></div>

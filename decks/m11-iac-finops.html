@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agentic DevOps with Claude Code — Module 11: AI-Augmented IaC &amp; FinOps</title>
+<title>Agentic DevOps with Claude Code: Module 11: AI-Augmented IaC &amp; FinOps</title>
 
 <!-- ============================================================
      CourseSmith whiteboard deck skeleton (self-contained).
      Style contract: templates/deck/whiteboard-style-guide.md
      Tokens: Agentic DevOps with Claude Code 11 AI-Augmented IaC &amp; FinOps
-             Author infrastructure with an agent, then gate it — plan vs. apply, the plan JSON as the reviewable artifact, and the specialist chain. M11 (e.g. M1)
+             Author infrastructure with an agent, then gate it: plan vs. apply, the plan JSON as the reviewable artifact, and the specialist chain. M11 (e.g. M1)
      Zero external requests: reveal.js 5.x runtime + Patrick Hand
      woff2 are inlined below. Keep it that way.
      ============================================================ -->
@@ -168,6 +168,11 @@ footer, header, hgroup, main, menu, nav, section {
 
 <!-- ============ SLIDE 2 — STAKES ============ -->
 <section>
+  <h2 class="t" style="font-size:2.2em">AI-Augmented IaC &amp; FinOps</h2>
+  <div class="pageno">M11·02</div>
+</section>
+
+<section>
   <h2 class="t">App code fails cheap; infra code fails forever</h2>
   <p class="s">code bugs are cheap; infra bugs are permanent</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A two-panel comparison: an application change is orange and revertable, an infrastructure change is red with three irreversible outcomes listed.">
@@ -193,10 +198,15 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="820" y="278" text-anchor="middle" class="lbl-g">found after it reached production</text>
   </svg>
-  <div class="pageno">M11·02</div>
+  <div class="pageno">M11·03</div>
 </section>
 
 <!-- ============ SLIDE 3 — HINGE: plan vs apply ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">1 &middot; Why planning is safe and applying is not</h2>
+  <div class="pageno">M11·04</div>
+</section>
+
 <section>
   <h2 class="t">Planning reads the scan; applying makes the incision</h2>
   <p class="s">plan reads the scan; apply makes the incision</p>
@@ -211,7 +221,7 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#2e7d32" stroke-width="2.4" stroke-linecap="round">
       <path d="M150,285 C120,315 440,315 410,287" marker-end="url(#ah)"/>
     </g>
-    <text x="280" y="330" text-anchor="middle" class="lbl-g" style="fill:#2e7d32">repeatable — a hundred times, from a hundred angles</text>
+    <text x="280" y="330" text-anchor="middle" class="lbl-g" style="fill:#2e7d32">repeatable: a hundred times, from a hundred angles</text>
 
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round">
       <rect x="630" y="90" width="380" height="180" rx="14"/>
@@ -220,9 +230,9 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="820" y="178" text-anchor="middle" class="lbl">= the incision</text>
     <text x="820" y="214" text-anchor="middle" class="lbl-g">mutates real infrastructure</text>
     <text x="820" y="244" text-anchor="middle" class="lbl-g">happens once · never on prod alone</text>
-    <text x="820" y="322" text-anchor="middle" class="lbl-g" style="fill:#c62828">one-way — the one op the agent must never do on prod</text>
+    <text x="820" y="322" text-anchor="middle" class="lbl-g" style="fill:#c62828">one-way: the one op the agent must never do on prod</text>
   </svg>
-  <div class="pageno">M11·03</div>
+  <div class="pageno">M11·05</div>
 </section>
 
 <!-- ============ SLIDE 4 — mutation is separate authority ============ -->
@@ -263,7 +273,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="860" y="182" text-anchor="middle" class="lbl">branch → PR → approval</text>
     <text x="860" y="212" text-anchor="middle" class="lbl-g">→ reconciler / CI applies</text>
   </svg>
-  <div class="pageno">M11·04</div>
+  <div class="pageno">M11·06</div>
 </section>
 
 <!-- ============ SLIDE 5 — gate discrimination (3 fragments) ============ -->
@@ -319,10 +329,15 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="720" y="332" text-anchor="middle" class="lbl-g" style="fill:#c62828">bounce off on prod ✗</text>
     </g>
   </svg>
-  <div class="pageno">M11·05</div>
+  <div class="pageno">M11·07</div>
 </section>
 
 <!-- ============ SLIDE 6 — review the plan JSON (2 fragments) ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">2 &middot; The plan JSON is the artifact you review</h2>
+  <div class="pageno">M11·08</div>
+</section>
+
 <section>
   <h2 class="t">You review the plan JSON, not the HCL</h2>
   <p class="s">review the plan as structured data, not prose</p>
@@ -358,7 +373,7 @@ footer, header, hgroup, main, menu, nav, section {
       </g>
     </g>
   </svg>
-  <div class="pageno">M11·06</div>
+  <div class="pageno">M11·09</div>
 </section>
 
 <!-- ============ SLIDE 7 — blood panel analogy ============ -->
@@ -387,7 +402,7 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="830" y="268" text-anchor="middle" class="lbl-g" style="fill:#c62828">a rule flags anything past this line</text>
   </svg>
-  <div class="pageno">M11·07</div>
+  <div class="pageno">M11·10</div>
 </section>
 
 <!-- ============ SLIDE 8 — model authors, tools decide ============ -->
@@ -415,12 +430,12 @@ footer, header, hgroup, main, menu, nav, section {
       <path d="M492,180 C540,180 560,255 596,255" marker-end="url(#ahg)"/>
     </g>
     <g class="lbl" text-anchor="start">
-      <text x="625" y="92">plan-analyze.sh — structure</text>
-      <text x="625" y="177">tf-security-scan.sh — exposure</text>
-      <text x="625" y="262">cost-compare.sh — spend</text>
+      <text x="625" y="92">plan-analyze.sh: structure</text>
+      <text x="625" y="177">tf-security-scan.sh: exposure</text>
+      <text x="625" y="262">cost-compare.sh: spend</text>
     </g>
   </svg>
-  <div class="pageno">M11·08</div>
+  <div class="pageno">M11·11</div>
 </section>
 
 <!-- ============ SLIDE 9 — where the agent earns its keep authoring ============ -->
@@ -443,14 +458,19 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <g class="lbl-g" text-anchor="start">
       <text x="165" y="90">extract a module, thread a variable across 3 envs, rename consistently</text>
-      <text x="165" y="190">write HCL to match a hand-made resource — the plan must be a NO-OP</text>
-      <text x="165" y="290">lay out the options with cost + blast-radius attached — a priced menu</text>
+      <text x="165" y="190">write HCL to match a hand-made resource: the plan must be a NO-OP</text>
+      <text x="165" y="290">lay out the options with cost + blast-radius attached: a priced menu</text>
     </g>
   </svg>
-  <div class="pageno">M11·09</div>
+  <div class="pageno">M11·12</div>
 </section>
 
 <!-- ============ SLIDE 10 — four questions hub ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">3 &middot; The four questions a plan review answers</h2>
+  <div class="pageno">M11·13</div>
+</section>
+
 <section>
   <h2 class="t">A plan review is four questions, not one</h2>
   <p class="s">four questions, four specialists, one verdict</p>
@@ -481,12 +501,12 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="915" y="326">Q4 · cost</text>
     </g>
   </svg>
-  <div class="pageno">M11·10</div>
+  <div class="pageno">M11·14</div>
 </section>
 
 <!-- ============ SLIDE 11 — Q1 stateful replace ============ -->
 <section>
-  <h2 class="t">Q1 — what's being replaced, and is it stateful?</h2>
+  <h2 class="t">Q1: what's being replaced, and is it stateful?</h2>
   <p class="s">replacing a stateful resource means data loss</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A plan row showing delete-then-create on an aws_db_instance highlighted red, next to a note that a one-line replace plan is more dangerous than a fifty-resource create plan.">
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round">
@@ -510,12 +530,12 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="850" y="240" text-anchor="middle" class="lbl-g">the rule is exact: any stateful replace blocks,</text>
     <text x="850" y="268" text-anchor="middle" class="lbl-g">regardless of how routine the rest looks</text>
   </svg>
-  <div class="pageno">M11·11</div>
+  <div class="pageno">M11·15</div>
 </section>
 
 <!-- ============ SLIDE 12 — Q2 blast radius ============ -->
 <section>
-  <h2 class="t">Q2 — blast radius is destruction, not diff size</h2>
+  <h2 class="t">Q2: blast radius is destruction, not diff size</h2>
   <p class="s">blast radius is destruction, not diff size</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A two-panel comparison: thirty green create boxes are low blast radius, one red destroy box is higher blast radius.">
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round">
@@ -524,21 +544,21 @@ footer, header, hgroup, main, menu, nav, section {
       <rect x="60" y="158" width="34" height="34" rx="5"/><rect x="104" y="158" width="34" height="34" rx="5"/><rect x="148" y="158" width="34" height="34" rx="5"/><rect x="192" y="158" width="34" height="34" rx="5"/><rect x="236" y="158" width="34" height="34" rx="5"/>
     </g>
     <text x="165" y="235" text-anchor="middle" class="lbl-b">30 creates, 0 destroys</text>
-    <text x="165" y="268" text-anchor="middle" class="lbl-g" style="fill:#2e7d32">LOW blast radius — large but safe</text>
+    <text x="165" y="268" text-anchor="middle" class="lbl-g" style="fill:#2e7d32">LOW blast radius: large but safe</text>
 
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round">
       <rect x="720" y="90" width="220" height="100" rx="12"/>
     </g>
     <text x="830" y="150" text-anchor="middle" class="lbl-b">1 destroy</text>
     <text x="830" y="235" text-anchor="middle" class="lbl-b">1 destroy</text>
-    <text x="830" y="268" text-anchor="middle" class="lbl-g" style="fill:#c62828">HIGHER — the irreversible direction</text>
+    <text x="830" y="268" text-anchor="middle" class="lbl-g" style="fill:#c62828">HIGHER: the irreversible direction</text>
   </svg>
-  <div class="pageno">M11·12</div>
+  <div class="pageno">M11·16</div>
 </section>
 
 <!-- ============ SLIDE 13 — Q3 drift ============ -->
 <section>
-  <h2 class="t">Q3 — drift diffs the candidate against a known-good baseline</h2>
+  <h2 class="t">Q3: drift diffs the candidate against a known-good baseline</h2>
   <p class="s">diff against baseline to catch what drifted in</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A blue baseline plan and an orange candidate plan overlaid, with the delta isolated in red: a new zero-zero-zero-zero rule that drifted in.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round">
@@ -567,13 +587,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="890" y="200" text-anchor="middle" class="lbl-g" style="fill:#c62828">new 0.0.0.0/0 rule</text>
     <text x="555" y="290" text-anchor="middle" class="lbl-g">review the two-line delta, not 1,400 lines of JSON</text>
   </svg>
-  <div class="pageno">M11·13</div>
+  <div class="pageno">M11·17</div>
 </section>
 
 <!-- ============ SLIDE 14 — Q4 cost ============ -->
 <section>
-  <h2 class="t">Q4 — the plan says nothing about money</h2>
-  <p class="s">the plan says nothing about money — cost it</p>
+  <h2 class="t">Q4: the plan says nothing about money</h2>
+  <p class="s">the plan says nothing about money: cost it</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A plan flows into a cost tool that outputs a plus 2847 dollar per month delta and a red 16x multiple on one resource resized from large to 4xlarge.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round">
       <rect x="60" y="120" width="160" height="90" rx="12"/>
@@ -596,10 +616,15 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="780" y="205" text-anchor="middle" class="lbl-g">db.r6g.large → db.r6g.4xlarge</text>
     <text x="780" y="245" text-anchor="middle" class="lbl-b" style="fill:#c62828">16x  ·  past the 2x threshold</text>
   </svg>
-  <div class="pageno">M11·14</div>
+  <div class="pageno">M11·18</div>
 </section>
 
 <!-- ============ SLIDE 15 — the chain (4 fragments) ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">4 &middot; The specialist handoff chain</h2>
+  <div class="pageno">M11·19</div>
+</section>
+
 <section>
   <h2 class="t">The specialist handoff chain</h2>
   <p class="s">one dissent in the chain stops the deal</p>
@@ -642,10 +667,10 @@ footer, header, hgroup, main, menu, nav, section {
       </g>
       <text x="1000" y="148" text-anchor="middle" class="lbl-b">JOIN</text>
       <text x="1000" y="178" text-anchor="middle" class="lbl-g">one verdict</text>
-      <text x="555" y="260" text-anchor="middle" class="lbl-g">the evidence packet grows one field per hop — any block stops the change</text>
+      <text x="555" y="260" text-anchor="middle" class="lbl-g">the evidence packet grows one field per hop: any block stops the change</text>
     </g>
   </svg>
-  <div class="pageno">M11·15</div>
+  <div class="pageno">M11·20</div>
 </section>
 
 <!-- ============ SLIDE 16 — reviewers read-only + right-sized ============ -->
@@ -680,10 +705,15 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="550" y="270" text-anchor="middle" class="lbl-g">a reviewer that could patch the change it reviews has stopped being a reviewer</text>
   </svg>
-  <div class="pageno">M11·16</div>
+  <div class="pageno">M11·21</div>
 </section>
 
 <!-- ============ SLIDE 17 — FinOps on the agents ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">5 &middot; FinOps applies to the agents, too</h2>
+  <div class="pageno">M11·22</div>
+</section>
+
 <section>
   <h2 class="t">FinOps applies to the agents, too</h2>
   <p class="s">right-size the model to the role's judgment</p>
@@ -693,22 +723,27 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="280" y="108" text-anchor="middle" class="lbl-b">Opus on the FinOps compare</text>
     <text x="280" y="142" text-anchor="middle" class="lbl-g">a surgeon taking the blood pressure</text>
-    <text x="280" y="172" text-anchor="middle" class="lbl-g" style="fill:#c62828">correct, but waste — $0.90 for a $0.012 task</text>
+    <text x="280" y="172" text-anchor="middle" class="lbl-g" style="fill:#c62828">correct, but waste: $0.90 for a $0.012 task</text>
 
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round">
       <rect x="600" y="70" width="440" height="120" rx="12"/>
     </g>
     <text x="820" y="108" text-anchor="middle" class="lbl-b">Haiku on the FinOps compare</text>
-    <text x="820" y="142" text-anchor="middle" class="lbl-g">the nurse — reads a plan, checks a threshold</text>
+    <text x="820" y="142" text-anchor="middle" class="lbl-g">the nurse: reads a plan, checks a threshold</text>
     <text x="820" y="172" text-anchor="middle" class="lbl-g" style="fill:#2e7d32">right-sized · a fortieth of the cost</text>
 
     <text x="550" y="245" text-anchor="middle" class="lbl">agent-run cost receipt:  mixed chain $1.78  &lt;  all-Opus $2.48</text>
     <text x="550" y="285" text-anchor="middle" class="lbl-g">"which model does this role need" is a cost decision you can measure and defend</text>
   </svg>
-  <div class="pageno">M11·17</div>
+  <div class="pageno">M11·23</div>
 </section>
 
 <!-- ============ SLIDE 18 — worktree biosafety lab ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">6 &middot; Worktree isolation: the change stays quarantined until it clears</h2>
+  <div class="pageno">M11·24</div>
+</section>
+
 <section>
   <h2 class="t">The worktree is the biosafety lab</h2>
   <p class="s">nothing leaves the worktree until cleared</p>
@@ -716,7 +751,7 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="3" stroke-dasharray="8 6" stroke-linecap="round">
       <rect x="60" y="60" width="560" height="230" rx="16"/>
     </g>
-    <text x="340" y="95" text-anchor="middle" class="lbl-b">worktree — the sealed room</text>
+    <text x="340" y="95" text-anchor="middle" class="lbl-b">worktree: the sealed room</text>
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round">
       <rect x="100" y="130" width="200" height="120" rx="10"/>
       <rect x="360" y="130" width="220" height="120" rx="10"/>
@@ -736,13 +771,18 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="680" y="158" text-anchor="middle" class="lbl-g" style="fill:#2e7d32">merge ONLY after</text>
     <text x="680" y="240" text-anchor="middle" class="lbl-g" style="fill:#2e7d32">every stage approves</text>
-    <text x="340" y="322" text-anchor="middle" class="lbl-g" style="fill:#c62828">if the review blocks, throw the worktree away — nothing was contaminated</text>
+    <text x="340" y="322" text-anchor="middle" class="lbl-g" style="fill:#c62828">if the review blocks, throw the worktree away: nothing was contaminated</text>
   </svg>
-  <div class="pageno">M11·18</div>
+  <div class="pageno">M11·25</div>
 </section>
 
 <!-- ============ SLIDE 19 — CLOSING ============ -->
 <section>
+  <h2 class="t" style="font-size:2.2em">7 &middot; What you'll do in the lab</h2>
+  <div class="pageno">M11·26</div>
+</section>
+
+<section data-auto-animate>
   <p class="kicker">MODULE 11 &nbsp;·&nbsp; AI-AUGMENTED IAC &amp; FINOPS</p>
   <h2 class="t" style="font-size:2em">Syntax is not safety; safety is composition</h2>
   <p class="s">prove every control holds as a test, not a hope</p>
@@ -760,15 +800,15 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="90" y="249" text-anchor="middle" class="num">4</text>
     <text x="620" y="54" text-anchor="middle" class="num">5</text>
     <g class="lbl" text-anchor="start">
-      <text x="130" y="53">State safety — the gate denies apply, allows plan</text>
-      <text x="130" y="118">Plan analysis — replacements + blast radius</text>
-      <text x="130" y="183">Security + drift — the 0.0.0.0/0 that opens Postgres</text>
-      <text x="130" y="248">Cost — the +$2,847/mo, 16x budget decision</text>
+      <text x="130" y="53">State safety: the gate denies apply, allows plan</text>
+      <text x="130" y="118">Plan analysis: replacements + blast radius</text>
+      <text x="130" y="183">Security + drift: the 0.0.0.0/0 that opens Postgres</text>
+      <text x="130" y="248">Cost: the +$2,847/mo, 16x budget decision</text>
       <text x="660" y="53">Full chain + agent-run cost receipt</text>
     </g>
   </svg>
   <p class="credit">Now open <b>Module 11 · Lab</b>. &nbsp;·&nbsp; <b>Gourav Shah</b> &nbsp;·&nbsp; School of DevOps &amp; AI</p>
-  <div class="pageno">M11·19</div>
+  <div class="pageno">M11·27</div>
 </section>
 
 </div></div>

@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agentic DevOps with Claude Code — Module 7: Tool Interface Engineering: CLI First, MCP When It Earns the Boundary</title>
+<title>Module 15: SecOps, Data Boundaries &amp; Action-Boundary Engineering &middot; Agentic DevOps with Claude Code</title>
 
 <!-- ============================================================
      CourseSmith whiteboard deck skeleton (self-contained).
      Style contract: templates/deck/whiteboard-style-guide.md
-     Tokens: Agentic DevOps with Claude Code 7 Tool Interface Engineering: CLI First, MCP When It Earns the Boundary
-             The same task, four surfaces — and they are not equal in risk. M7 (e.g. M1)
+     Course: Agentic DevOps with Claude Code · Module 15 (M15)
+             SecOps, Data Boundaries & Action-Boundary Engineering
      Zero external requests: reveal.js 5.x runtime + Patrick Hand
      woff2 are inlined below. Keep it that way.
      ============================================================ -->
@@ -173,10 +173,16 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M15·01</div>
 </section>
 
+<!-- ============ DIVIDER — intro ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">SecOps, Data Boundaries &amp; Action-Boundary Engineering</h2>
+  <div class="pageno">M15·02</div>
+</section>
+
 <!-- ============ SLIDE 2 — INC-005 ============ -->
 <section>
   <h2 class="t">INC-005: it did exactly what it was told, against the wrong target</h2>
-  <p class="s">nobody checked the target — prod pods start terminating</p>
+  <p class="s">nobody checked the target, prod pods start terminating</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A cleanup script sources an environment file that sets the Kubernetes context to prod, and the run terminates production pods while a pager fires.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
       <rect x="50" y="60" width="250" height="90" rx="12"/>
@@ -200,17 +206,23 @@ footer, header, hgroup, main, menu, nav, section {
       <rect x="560" y="120" width="300" height="130" rx="12"/>
     </g>
     <text x="710" y="165" text-anchor="middle" class="lbl-b">production pods terminating</text>
-    <text x="710" y="200" text-anchor="middle" class="lbl-g">the pager is going off — for real</text>
+    <text x="710" y="200" text-anchor="middle" class="lbl-g">the pager is going off, for real</text>
     <text x="710" y="228" text-anchor="middle" class="lbl-g">nothing in the path caught it</text>
   </svg>
-  <div class="pageno">M15·02</div>
+  <div class="pageno">M15·03</div>
+</section>
+
+<!-- ============ DIVIDER — section 1 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">1 &middot; Security is not a feature you add: it is a set of boundaries you test</h2>
+  <div class="pageno">M15·04</div>
 </section>
 
 <!-- ============ SLIDE 3 — bank cutaway ============ -->
 <section>
-  <h2 class="t">Security is not a wall — it is a stack of tested boundaries</h2>
-  <p class="s">layered, independent boundaries — not one thick wall</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="Five stacked bank security layers — vault door, till limit, dual control, camera, nightly reconcile — each labelled with the question it answers.">
+  <h2 class="t">Security is not a wall: it is a stack of tested boundaries</h2>
+  <p class="s">layered, independent boundaries, not one thick wall</p>
+  <svg viewBox="0 0 1100 340" role="img" aria-label="Five stacked bank security layers, vault door, till limit, dual control, camera, nightly reconcile, each labelled with the question it answers.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round">
       <rect x="120" y="40" width="860" height="52" rx="10"/>
       <rect x="120" y="100" width="860" height="52" rx="10"/>
@@ -226,14 +238,14 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="150" y="313" class="lbl-b">nightly reconcile</text><text x="470" y="313" class="lbl-g">did what left match what was allowed to?</text>
     </g>
   </svg>
-  <div class="pageno">M15·03</div>
+  <div class="pageno">M15·05</div>
 </section>
 
 <!-- ============ SLIDE 4 — five-gate stack (5 fragments) ============ -->
 <section>
   <h2 class="t">Five boundaries an instruction must clear</h2>
   <p class="s">five gates before an instruction becomes an action</p>
-  <svg viewBox="0 0 1100 360" role="img" aria-label="A vertical stack of five gates — surface, injection, action boundary, egress, oracle — that an incoming request must pass to reach a verified action; any failure routes to blocked or clarified.">
+  <svg viewBox="0 0 1100 360" role="img" aria-label="A vertical stack of five gates, surface, injection, action boundary, egress, oracle, that an incoming request must pass to reach a verified action; any failure routes to blocked or clarified.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
       <rect x="380" y="10" width="340" height="44" rx="10"/>
     </g>
@@ -241,11 +253,11 @@ footer, header, hgroup, main, menu, nav, section {
 
     <g class="fragment">
       <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6"><rect x="400" y="66" width="300" height="42" rx="9"/></g>
-      <text x="550" y="93" text-anchor="middle" class="lbl">1 · SURFACE — what can it reach?</text>
+      <text x="550" y="93" text-anchor="middle" class="lbl">1 · SURFACE: what can it reach?</text>
     </g>
     <g class="fragment">
       <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6"><rect x="400" y="120" width="300" height="42" rx="9"/></g>
-      <text x="550" y="147" text-anchor="middle" class="lbl">2 · INJECTION — who's giving the order?</text>
+      <text x="550" y="147" text-anchor="middle" class="lbl">2 · INJECTION: who's giving the order?</text>
     </g>
     <g class="fragment">
       <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="3"><rect x="400" y="174" width="300" height="42" rx="9"/></g>
@@ -253,11 +265,11 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <g class="fragment">
       <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6"><rect x="400" y="228" width="300" height="42" rx="9"/></g>
-      <text x="550" y="255" text-anchor="middle" class="lbl">4 · EGRESS — what gets recorded?</text>
+      <text x="550" y="255" text-anchor="middle" class="lbl">4 · EGRESS: what gets recorded?</text>
     </g>
     <g class="fragment">
       <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6"><rect x="400" y="282" width="300" height="42" rx="9"/></g>
-      <text x="550" y="309" text-anchor="middle" class="lbl">5 · ORACLE — did it do ONLY that?</text>
+      <text x="550" y="309" text-anchor="middle" class="lbl">5 · ORACLE: did it do ONLY that?</text>
       <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.8"><rect x="770" y="282" width="230" height="42" rx="9"/></g>
       <text x="885" y="309" text-anchor="middle" class="lbl-b">verified action</text>
     </g>
@@ -269,13 +281,13 @@ footer, header, hgroup, main, menu, nav, section {
       <path d="M400,195 L275,195" marker-end="url(#ahg)"/>
     </g>
   </svg>
-  <div class="pageno">M15·04</div>
+  <div class="pageno">M15·06</div>
 </section>
 
 <!-- ============ SLIDE 5 — human feeling vs agent structure ============ -->
 <section>
   <h2 class="t">A human feels wrong about a prod delete; an agent feels nothing</h2>
-  <p class="s">no gut feeling — only the boundaries you built</p>
+  <p class="s">no gut feeling, only the boundaries you built</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Left panel: a human engineer pausing with an internal sense of danger. Right panel: an agent with no such sense, relying only on environment structure.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round">
       <rect x="60" y="50" width="440" height="250" rx="14"/>
@@ -284,7 +296,7 @@ footer, header, hgroup, main, menu, nav, section {
     <circle cx="200" cy="180" r="34" fill="none" stroke="#757575" stroke-width="2.4" filter="url(#rough)"/>
     <text x="280" y="175" text-anchor="middle" class="lbl-g">"...this is prod.</text>
     <text x="280" y="205" text-anchor="middle" class="lbl-g">something feels off."</text>
-    <text x="280" y="270" text-anchor="middle" class="lbl">pauses — carries the boundary inside</text>
+    <text x="280" y="270" text-anchor="middle" class="lbl">pauses, carries the boundary inside</text>
 
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
       <rect x="600" y="50" width="440" height="250" rx="14"/>
@@ -295,14 +307,20 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="820" y="255" text-anchor="middle" class="lbl-g">only the structure you built</text>
     <text x="820" y="283" text-anchor="middle" class="lbl-g">into its environment</text>
   </svg>
-  <div class="pageno">M15·05</div>
+  <div class="pageno">M15·07</div>
+</section>
+
+<!-- ============ DIVIDER — section 2 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">2 &middot; The DevSecOps surface is every door in the building: audit them all</h2>
+  <div class="pageno">M15·08</div>
 </section>
 
 <!-- ============ SLIDE 6 — surface walk-through ============ -->
 <section>
-  <h2 class="t">The surface is every door in the building — audit them all</h2>
+  <h2 class="t">The surface is every door in the building: audit them all</h2>
   <p class="s">a walk-through finds every door propped open</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="A building outline with several entry points labelled — front door, side window, vent, loading dock, master key — one of them drawn propped open and flagged.">
+  <svg viewBox="0 0 1100 340" role="img" aria-label="A building outline with several entry points labelled: front door, side window, vent, loading dock, master key, one of them drawn propped open and flagged.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
       <rect x="120" y="70" width="700" height="230" rx="8"/>
     </g>
@@ -327,7 +345,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="970" y="165" text-anchor="middle" class="lbl">count</text>
     <text x="970" y="195" text-anchor="middle" class="lbl-g">every one</text>
   </svg>
-  <div class="pageno">M15·06</div>
+  <div class="pageno">M15·09</div>
 </section>
 
 <!-- ============ SLIDE 7 — four propped-open doors (2 fragments) ============ -->
@@ -340,7 +358,7 @@ footer, header, hgroup, main, menu, nav, section {
       <rect x="70" y="180" width="440" height="120" rx="12"/>
     </g>
     <text x="290" y="80" text-anchor="middle" class="lbl-b">allow-all ingress</text>
-    <text x="290" y="112" text-anchor="middle" class="lbl-g">empty rule { } — traffic from anywhere</text>
+    <text x="290" y="112" text-anchor="middle" class="lbl-g">empty rule { }, traffic from anywhere</text>
     <text x="290" y="140" text-anchor="middle" class="lbl-g">network-policies.yaml</text>
     <text x="290" y="220" text-anchor="middle" class="lbl-b">0.0.0.0/0 CIDR</text>
     <text x="290" y="252" text-anchor="middle" class="lbl-g">the whole internet, from IaC</text>
@@ -360,7 +378,7 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="795" y="325" text-anchor="middle" class="lbl-b" fill="#c62828">verdict: block</text>
     </g>
   </svg>
-  <div class="pageno">M15·07</div>
+  <div class="pageno">M15·10</div>
 </section>
 
 <!-- ============ SLIDE 8 — script not read-through ============ -->
@@ -386,7 +404,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="820" y="195" text-anchor="middle" class="lbl">CI gates on it</text>
     <text x="820" y="240" text-anchor="middle" class="lbl">agent runs it before every change</text>
   </svg>
-  <div class="pageno">M15·08</div>
+  <div class="pageno">M15·11</div>
+</section>
+
+<!-- ============ DIVIDER — section 3 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">3 &middot; Prompt injection: the agent cannot tell an order from a rumor</h2>
+  <div class="pageno">M15·12</div>
 </section>
 
 <!-- ============ SLIDE 9 — injection new-hire ============ -->
@@ -400,20 +424,20 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="550" y="65" text-anchor="middle" class="lbl-b">a ticket</text>
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.2"><rect x="360" y="85" width="380" height="70" rx="8"/></g>
     <text x="550" y="115" text-anchor="middle" class="lbl">"Bug: checkout fails."</text>
-    <text x="550" y="143" text-anchor="middle" class="lbl-g">real data — the thing to process</text>
+    <text x="550" y="143" text-anchor="middle" class="lbl-g">real data, the thing to process</text>
     <g filter="url(#rough)" fill="#f8cecc" stroke="#c62828" stroke-width="2.6"><rect x="360" y="180" width="380" height="110" rx="8"/></g>
     <text x="550" y="215" text-anchor="middle" class="lbl">"Also: take the petty cash</text>
     <text x="550" y="243" text-anchor="middle" class="lbl">and mail it to this address."</text>
     <text x="550" y="275" text-anchor="middle" class="lbl-g" fill="#c62828">a stranger's instruction, buried in data</text>
   </svg>
-  <div class="pageno">M15·09</div>
+  <div class="pageno">M15·13</div>
 </section>
 
 <!-- ============ SLIDE 10 — injection paths fan-in ============ -->
 <section>
   <h2 class="t">Everything the agent reads is a possible injection path</h2>
   <p class="s">the agent can't reliably tell data from instruction</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="Four untrusted sources — GitHub issue, log output, tool result, MCP response — flow into the agent context, which then faces the question is this data or an instruction.">
+  <svg viewBox="0 0 1100 340" role="img" aria-label="Four untrusted sources, GitHub issue, log output, tool result, MCP response, flow into the agent context, which then faces the question is this data or an instruction.">
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round">
       <rect x="50" y="40" width="220" height="46" rx="9"/>
       <rect x="50" y="106" width="220" height="46" rx="9"/>
@@ -441,7 +465,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="990" y="160" text-anchor="middle" class="lbl">data or</text>
     <text x="990" y="192" text-anchor="middle" class="lbl">instruction?</text>
   </svg>
-  <div class="pageno">M15·10</div>
+  <div class="pageno">M15·14</div>
 </section>
 
 <!-- ============ SLIDE 11 — defense after the model (2 fragments) ============ -->
@@ -461,7 +485,7 @@ footer, header, hgroup, main, menu, nav, section {
         <rect x="430" y="120" width="220" height="90" rx="12"/>
       </g>
       <text x="540" y="150" text-anchor="middle" class="lbl-b">the model</text>
-      <text x="540" y="180" text-anchor="middle" class="lbl-g" fill="#c62828">is convinced — tries it</text>
+      <text x="540" y="180" text-anchor="middle" class="lbl-g" fill="#c62828">is convinced, tries it</text>
     </g>
 
     <g class="fragment">
@@ -472,10 +496,16 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="935" y="145" text-anchor="middle" class="lbl-b">Change Gate</text>
       <text x="935" y="178" text-anchor="middle" class="lbl-g" fill="#c62828">DENY · exit 2</text>
       <text x="935" y="205" text-anchor="middle" class="lbl-g">doesn't care WHY</text>
-      <text x="540" y="270" text-anchor="middle" class="lbl-g">the injection can win the argument in the model — and still lose at the boundary</text>
+      <text x="540" y="270" text-anchor="middle" class="lbl-g">the injection can win the argument in the model, and still lose at the boundary</text>
     </g>
   </svg>
-  <div class="pageno">M15·11</div>
+  <div class="pageno">M15·15</div>
+</section>
+
+<!-- ============ DIVIDER — section 4 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">4 &middot; The Action Boundary: same verb, five dimensions, one right answer</h2>
+  <div class="pageno">M15·16</div>
 </section>
 
 <!-- ============ SLIDE 12 — same verb five dimensions (hub) ============ -->
@@ -513,18 +543,18 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="920" y="307">…every one</text>
     </g>
   </svg>
-  <div class="pageno">M15·12</div>
+  <div class="pageno">M15·17</div>
 </section>
 
 <!-- ============ SLIDE 13 — surgeon ============ -->
 <section>
   <h2 class="t">A surgeon's authority is scoped five ways at once</h2>
   <p class="s">right procedure, wrong patient, is still the wrong error</p>
-  <svg viewBox="0 0 1100 330" role="img" aria-label="A surgeon's pre-operation checklist with five axes — which patient, which procedure, how invasive, how much of the body, whose sign-off — each mapped to an action-boundary dimension.">
+  <svg viewBox="0 0 1100 330" role="img" aria-label="A surgeon's pre-operation checklist with five axes, which patient, which procedure, how invasive, how much of the body, whose sign-off, each mapped to an action-boundary dimension.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
       <rect x="120" y="30" width="860" height="270" rx="12"/>
     </g>
-    <text x="550" y="62" text-anchor="middle" class="lbl-b">before the first incision — checked five ways, every time</text>
+    <text x="550" y="62" text-anchor="middle" class="lbl-b">before the first incision, checked five ways, every time</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round">
       <circle cx="180" cy="120" r="16"/><circle cx="180" cy="165" r="16"/><circle cx="180" cy="210" r="16"/><circle cx="180" cy="255" r="16"/>
       <circle cx="600" cy="120" r="16"/>
@@ -539,7 +569,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="770" y="220" text-anchor="middle" class="lbl-g" fill="#c62828">right procedure, wrong patient</text>
     <text x="770" y="250" text-anchor="middle" class="lbl-g">= the category error, not a small one</text>
   </svg>
-  <div class="pageno">M15·13</div>
+  <div class="pageno">M15·18</div>
 </section>
 
 <!-- ============ SLIDE 14 — the matrix (3 fragments) ============ -->
@@ -581,14 +611,14 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="1005" y="240" text-anchor="middle" class="lbl-g">flips</text>
     </g>
   </svg>
-  <div class="pageno">M15·14</div>
+  <div class="pageno">M15·19</div>
 </section>
 
 <!-- ============ SLIDE 15 — clarify third answer (2 fragments) ============ -->
 <section>
   <h2 class="t">The third answer: clarify, not act and not refuse</h2>
-  <p class="s">not act, not refuse — stop and ask</p>
-  <svg viewBox="0 0 1100 330" role="img" aria-label="An ambiguous target production-2 forks three ways: act is wrong, refuse is wrong, and clarify — ask which was meant — is the correct answer.">
+  <p class="s">not act, not refuse, stop and ask</p>
+  <svg viewBox="0 0 1100 330" role="img" aria-label="An ambiguous target production-2 forks three ways: act is wrong, refuse is wrong, and clarify (ask which was meant) is the correct answer.">
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
       <rect x="60" y="130" width="250" height="90" rx="12"/>
     </g>
@@ -602,9 +632,9 @@ footer, header, hgroup, main, menu, nav, section {
         <path d="M315,200 L430,285" marker-end="url(#ahg)"/>
       </g>
       <g filter="url(#rough)" fill="#f8cecc" stroke="#c62828" stroke-width="2.6"><rect x="445" y="40" width="230" height="60" rx="10"/></g>
-      <text x="560" y="77" text-anchor="middle" class="lbl">ACT — guess prod (INC-005)</text>
+      <text x="560" y="77" text-anchor="middle" class="lbl">ACT: guess prod (INC-005)</text>
       <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4" stroke-dasharray="9 7"><rect x="445" y="145" width="230" height="60" rx="10"/></g>
-      <text x="560" y="182" text-anchor="middle" class="lbl-g">REFUSE — uselessly timid</text>
+      <text x="560" y="182" text-anchor="middle" class="lbl-g">REFUSE: uselessly timid</text>
       <g filter="url(#rough)" fill="#ffe6cc" stroke="#e65100" stroke-width="3"><rect x="445" y="255" width="230" height="60" rx="10"/></g>
       <text x="560" y="292" text-anchor="middle" class="lbl-b" fill="#e65100">CLARIFY</text>
     </g>
@@ -618,7 +648,7 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="977" y="308" text-anchor="middle" class="lbl-b">you mean?"</text>
     </g>
   </svg>
-  <div class="pageno">M15·15</div>
+  <div class="pageno">M15·20</div>
 </section>
 
 <!-- ============ SLIDE 16 — two failure modes ============ -->
@@ -640,7 +670,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="770" y="245" text-anchor="middle" class="lbl-g">refused a safe action</text>
     <text x="550" y="300" text-anchor="middle" class="lbl-g">measure only the left and you reward an agent that refuses everything</text>
   </svg>
-  <div class="pageno">M15·16</div>
+  <div class="pageno">M15·21</div>
+</section>
+
+<!-- ============ DIVIDER — section 5 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">5 &middot; Data egress and telemetry privacy: the camera must not record the PINs</h2>
+  <div class="pageno">M15·22</div>
 </section>
 
 <!-- ============ SLIDE 17 — camera not PIN ============ -->
@@ -667,7 +703,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="820" y="185" text-anchor="middle" class="lbl-g" fill="#c62828">DROP: prompt body · tool output</text>
     <text x="820" y="230" text-anchor="middle" class="lbl-g" fill="#c62828">REDACT: any secret in a kept field</text>
   </svg>
-  <div class="pageno">M15·17</div>
+  <div class="pageno">M15·23</div>
+</section>
+
+<!-- ============ DIVIDER — section 6 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">6 &middot; The side-effect oracle: reconcile what left against what was supposed to leave</h2>
+  <div class="pageno">M15·24</div>
 </section>
 
 <!-- ============ SLIDE 18 — side-effect oracle ============ -->
@@ -690,7 +732,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="790" y="272" text-anchor="middle" class="lbl-b" fill="#c62828">extra change → fail-forbidden-namespace</text>
     <text x="310" y="215" text-anchor="middle" class="lbl-g">intended part: flawless</text>
   </svg>
-  <div class="pageno">M15·18</div>
+  <div class="pageno">M15·25</div>
+</section>
+
+<!-- ============ DIVIDER — section 7 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">7 &middot; Where this leaves you</h2>
+  <div class="pageno">M15·26</div>
 </section>
 
 <!-- ============ SLIDE 19 — CLOSING ============ -->
@@ -704,15 +752,15 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <g text-anchor="middle" class="num"><text x="90" y="63">1</text><text x="90" y="113">2</text><text x="90" y="163">3</text><text x="90" y="213">4</text><text x="90" y="263">5</text></g>
     <g text-anchor="start">
-      <text x="130" y="63" class="lbl-b">SURFACE</text><text x="380" y="63" class="lbl-g">audit every door — coverage, not cleverness</text>
+      <text x="130" y="63" class="lbl-b">SURFACE</text><text x="380" y="63" class="lbl-g">audit every door, coverage, not cleverness</text>
       <text x="130" y="113" class="lbl-b">INJECTION</text><text x="380" y="113" class="lbl-g">defend after the model, not in the prompt</text>
       <text x="130" y="163" class="lbl-b">ACTION BOUNDARY</text><text x="380" y="163" class="lbl-g">five dimensions; score both failure modes</text>
       <text x="130" y="213" class="lbl-b">EGRESS</text><text x="380" y="213" class="lbl-g">keep the record clean of content</text>
-      <text x="130" y="263" class="lbl-b">ORACLE</text><text x="380" y="263" class="lbl-g">reconcile — did it do ONLY what it should</text>
+      <text x="130" y="263" class="lbl-b">ORACLE</text><text x="380" y="263" class="lbl-g">reconcile, did it do ONLY what it should</text>
     </g>
   </svg>
   <p class="credit">Now open <b>Module 15 · Lab</b>. &nbsp;·&nbsp; <b>Gourav Shah</b> &nbsp;·&nbsp; School of DevOps &amp; AI</p>
-  <div class="pageno">M15·19</div>
+  <div class="pageno">M15·27</div>
 </section>
 
 

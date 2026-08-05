@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agentic DevOps with Claude Code — Module 12: Containers, Kubernetes &amp; GitOps</title>
+<title>Agentic DevOps with Claude Code: Module 12: Containers, Kubernetes &amp; GitOps</title>
 
 <!-- ============================================================
-     CourseSmith whiteboard deck — M12 · Containers, Kubernetes & GitOps (self-contained).
+     CourseSmith whiteboard deck: M12 · Containers, Kubernetes & GitOps (self-contained).
      Style contract: planning/decks/whiteboard-style-guide.md
      Sequence spec: planning/decks/m12-sequence.md
      Zero external requests: reveal.js 5.x runtime + Patrick Hand
@@ -176,6 +176,11 @@ footer, header, hgroup, main, menu, nav, section {
 
 <!-- ═══════════════ SLIDE 2 · BLAST RADIUS — every pod at once ═══════════════ -->
 <section>
+  <h2 class="t" style="font-size:2.2em">Containers, Kubernetes &amp; GitOps</h2>
+  <div class="pageno">M12·02</div>
+</section>
+
+<section>
   <h2 class="t">A deploy mistake reaches every pod at once</h2>
   <p class="s">a deploy mistake hits every pod at once</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Two panels. Left: a Terraform slip recreates a single database, contained. Right: a deploy slip leaves all three pods unready at once and a customer's checkout page times out.">
@@ -197,10 +202,15 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="955" y="192" text-anchor="middle" class="lbl-g" style="font-size:15px">checkout</text>
     <text x="955" y="240" text-anchor="middle" class="lbl-bad">timing out</text>
   </svg>
-  <div class="pageno">M12·02</div>
+  <div class="pageno">M12·03</div>
 </section>
 
 <!-- ═══════════════ SLIDE 3 · THE SEALED SHIPPING CONTAINER (analogy) ═══════════════ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">1 &middot; The container is a shipping container, and the review is the packing list</h2>
+  <div class="pageno">M12·04</div>
+</section>
+
 <section>
   <h2 class="t">The image is a sealed shipping container</h2>
   <p class="s">sealed at origin, trusted all the way down</p>
@@ -226,12 +236,12 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="2.6"><circle cx="860" cy="180" r="14"/></g>
     <text x="950" y="270" text-anchor="middle" class="lbl-g">arrives identical · still sealed</text>
   </svg>
-  <div class="pageno">M12·03</div>
+  <div class="pageno">M12·05</div>
 </section>
 
 <!-- ═══════════════ SLIDE 4 · THE PACKING-LIST REVIEW (5 fragments) ═══════════════ -->
 <section>
-  <h2 class="t">So the review is a packing-list review — five questions</h2>
+  <h2 class="t">So the review is a packing-list review: five questions</h2>
   <p class="s">five questions, asked once, at origin</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A central container box with five numbered tags hanging off it, revealed one at a time: reproducible, small, non-root, declares health, and no secrets in the layers.">
     <!-- central box -->
@@ -269,7 +279,7 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="915" y="276" text-anchor="middle" class="lbl-sm">no secrets?</text>
     </g>
   </svg>
-  <div class="pageno">M12·04</div>
+  <div class="pageno">M12·06</div>
 </section>
 
 <!-- ═══════════════ SLIDE 5 · REPRODUCIBLE — latest is a change you didn't make ═══════════════ -->
@@ -296,7 +306,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="915" y="206" text-anchor="middle" class="lbl">shipped</text>
     <text x="795" y="278" text-anchor="middle" class="lbl-bad">silently different builds</text>
   </svg>
-  <div class="pageno">M12·05</div>
+  <div class="pageno">M12·07</div>
 </section>
 
 <!-- ═══════════════ SLIDE 6 · SMALL — multi-stage ships the meal not the kitchen ═══════════════ -->
@@ -326,7 +336,7 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2" stroke-dasharray="5 5"><path d="M780,120 C830,120 830,230 780,230"/></g>
     <text x="900" y="160" text-anchor="middle" class="lbl-g">pulls fast<tspan x="900" dy="26">smaller attack</tspan><tspan x="900" dy="26">surface</tspan></text>
   </svg>
-  <div class="pageno">M12·06</div>
+  <div class="pageno">M12·08</div>
 </section>
 
 <!-- ═══════════════ SLIDE 7 · NON-ROOT — root in the box is root on the node ═══════════════ -->
@@ -349,7 +359,7 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><rect x="748" y="180" width="44" height="40" rx="6"/><path d="M756,180 C756,158 784,158 784,180"/></g>
     <text x="770" y="286" text-anchor="middle" class="lbl-good">unprivileged · locked</text>
   </svg>
-  <div class="pageno">M12·07</div>
+  <div class="pageno">M12·09</div>
 </section>
 
 <!-- ═══════════════ SLIDE 8 · SECRETS IN A LAYER SHIP FOREVER ═══════════════ -->
@@ -371,10 +381,15 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="880" y="128" text-anchor="middle" class="lbl-bad">permanent</text>
     <text x="880" y="156" text-anchor="middle" class="lbl-g">&amp; inspectable</text>
   </svg>
-  <div class="pageno">M12·08</div>
+  <div class="pageno">M12·10</div>
 </section>
 
 <!-- ═══════════════ SLIDE 9 · KIND IS THE FLIGHT SIMULATOR ═══════════════ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">2 &middot; Kind is the flight simulator for your cluster</h2>
+  <div class="pageno">M12·11</div>
+</section>
+
 <section>
   <h2 class="t">Kind is the flight simulator for your cluster</h2>
   <p class="s">same avionics, freedom to crash safely</p>
@@ -396,7 +411,7 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#2e7d32" stroke-width="2.8"><path d="M900,120 C980,120 980,240 900,240 C860,240 850,210 855,190" marker-end="url(#ah)"/></g>
     <text x="935" y="185" text-anchor="middle" class="lbl-good">crash &amp; reset<tspan x="935" dy="24">in 90s</tspan></text>
   </svg>
-  <div class="pageno">M12·09</div>
+  <div class="pageno">M12·12</div>
 </section>
 
 <!-- ═══════════════ SLIDE 10 · PROFILE CHANGES THE TOPOLOGY ═══════════════ -->
@@ -424,10 +439,15 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="795" y="216" text-anchor="middle" class="lbl-sm">one shared node</text>
     <text x="795" y="286" text-anchor="middle" class="lbl-g">hides node-boundary bugs</text>
   </svg>
-  <div class="pageno">M12·10</div>
+  <div class="pageno">M12·13</div>
 </section>
 
 <!-- ═══════════════ SLIDE 11 · HELM = FORM LETTER (analogy, hinge) ═══════════════ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">3 &middot; Helm renders; you review what it rendered, not what you wrote</h2>
+  <div class="pageno">M12·14</div>
+</section>
+
 <section>
   <h2 class="t">A Helm chart is a form letter, not the letter</h2>
   <p class="s">a chart is the template, not the letter</p>
@@ -455,7 +475,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="795" y="248" text-anchor="middle" class="lbl-good">the letter you get</text>
     <text x="1000" y="172" text-anchor="middle" class="lbl-g">this is<tspan x="1000" dy="24">what</tspan><tspan x="1000" dy="24">ships</tspan></text>
   </svg>
-  <div class="pageno">M12·11</div>
+  <div class="pageno">M12·15</div>
 </section>
 
 <!-- ═══════════════ SLIDE 12 · REVIEW THE RENDER (pipeline, 3 fragments) ═══════════════ -->
@@ -497,12 +517,12 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="850" y="316" text-anchor="middle" class="lbl-g" style="font-size:15px">what the reviewer approves</text>
     </g>
   </svg>
-  <div class="pageno">M12·12</div>
+  <div class="pageno">M12·16</div>
 </section>
 
 <!-- ═══════════════ SLIDE 13 · THE DEFECT IS IN THE RENDER — INCLUDING WHAT'S ABSENT ═══════════════ -->
 <section>
-  <h2 class="t">Review the render for what's wrong — and what's missing</h2>
+  <h2 class="t">Review the render for what's wrong: and what's missing</h2>
   <p class="s">check the render for what's wrong and missing</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="A rendered manifest document with two problems flagged in red: a readiness probe path pointing at slash-health, and an empty gap where the resources block should be, marked no requests, no limits.">
     <!-- manifest -->
@@ -520,10 +540,15 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="720" y="224" text-anchor="start" class="lbl-bad">absent field</text>
     <text x="880" y="200" text-anchor="middle" class="lbl-g">no requests<tspan x="880" dy="26">no limits →</tspan><tspan x="880" dy="26">OOM under load</tspan></text>
   </svg>
-  <div class="pageno">M12·13</div>
+  <div class="pageno">M12·17</div>
 </section>
 
 <!-- ═══════════════ SLIDE 14 · RBAC — WHAT AN IDENTITY CANNOT DO ═══════════════ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">4 &middot; RBAC and policy are the enforcement under the intent</h2>
+  <div class="pageno">M12·18</div>
+</section>
+
 <section>
   <h2 class="t">RBAC is what an identity <em>cannot</em> do</h2>
   <p class="s">RBAC is what an identity cannot do</p>
@@ -549,7 +574,7 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="3"><line x1="500" y1="160" x2="530" y2="200"/><line x1="530" y1="160" x2="500" y2="200"/></g>
     <text x="515" y="146" text-anchor="middle" class="lbl-bad">cannot, not "will not"</text>
   </svg>
-  <div class="pageno">M12·14</div>
+  <div class="pageno">M12·19</div>
 </section>
 
 <!-- ═══════════════ SLIDE 15 · ADMISSION — REFUSED AT CREATION ═══════════════ -->
@@ -578,7 +603,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="780" y="238" text-anchor="middle" class="lbl-sm">node</text>
     <text x="470" y="248" text-anchor="middle" class="lbl-good" style="font-size:15px">passes</text>
   </svg>
-  <div class="pageno">M12·15</div>
+  <div class="pageno">M12·20</div>
 </section>
 
 <!-- ═══════════════ SLIDE 16 · THE VAULT WITH ONE KEY (golden-path analogy) ═══════════════ -->
@@ -607,10 +632,15 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="910" y="70" text-anchor="middle" class="lbl-b">the cluster · vault</text>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8"><line x1="720" y1="150" x2="796" y2="150" marker-end="url(#ah)"/></g>
   </svg>
-  <div class="pageno">M12·16</div>
+  <div class="pageno">M12·21</div>
 </section>
 
 <!-- ═══════════════ SLIDE 17 · THE FIVE STOPS (pipeline, 4 fragments) ═══════════════ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">5 &middot; The golden path: the reconciler is the only writer</h2>
+  <div class="pageno">M12·22</div>
+</section>
+
 <section>
   <h2 class="t">Candidate → approval → merge → sync → verify</h2>
   <p class="s">the agent's authority ends at step two</p>
@@ -657,7 +687,7 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="975" y="188" text-anchor="middle" class="lbl-good" style="font-size:15px">pods ready</text>
     </g>
   </svg>
-  <div class="pageno">M12·17</div>
+  <div class="pageno">M12·23</div>
 </section>
 
 <!-- ═══════════════ SLIDE 18 · WHY THE CEREMONY IS WORTH IT ═══════════════ -->
@@ -684,11 +714,16 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="900" y="200" text-anchor="middle" class="lbl-bad">selfHeal<tspan x="900" dy="24">reverts it</tspan></text>
     <text x="795" y="278" text-anchor="middle" class="lbl-g">Git still says the old value</text>
   </svg>
-  <div class="pageno">M12·18</div>
+  <div class="pageno">M12·24</div>
 </section>
 
 <!-- ═══════════════ SLIDE 19 · CLOSING — carried ideas + bridge to Deep Dive ═══════════════ -->
 <section>
+  <h2 class="t" style="font-size:2.2em">6 &middot; What you will carry out of this module</h2>
+  <div class="pageno">M12·25</div>
+</section>
+
+<section data-auto-animate>
   <p class="kicker">MODULE 12 &nbsp;·&nbsp; CONTAINERS, KUBERNETES &amp; GITOPS</p>
   <h2 class="t" style="font-size:1.9em">Containerized, clustered, and on the golden path</h2>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Five carried ideas as numbered rows: seal the box, crash safely on kind, review the render, read the enforcement, and the reconciler is the only writer. A bridge arrow points to a Deep Dive door showing a stuck rollout at zero of one ready.">
@@ -699,8 +734,8 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="90" y="197" text-anchor="middle" class="num">3</text>
     <text x="90" y="257" text-anchor="middle" class="num">4</text>
     <text x="90" y="317" text-anchor="middle" class="num">5</text>
-    <text x="130" y="77" text-anchor="start" class="lbl">seal the box — review the packing list at origin</text>
-    <text x="130" y="137" text-anchor="start" class="lbl">crash safely — kind is the flight simulator</text>
+    <text x="130" y="77" text-anchor="start" class="lbl">seal the box: review the packing list at origin</text>
+    <text x="130" y="137" text-anchor="start" class="lbl">crash safely: kind is the flight simulator</text>
     <text x="130" y="197" text-anchor="start" class="lbl">review the render, never just the template</text>
     <text x="130" y="257" text-anchor="start" class="lbl">read the enforcement that bounds every identity</text>
     <text x="130" y="317" text-anchor="start" class="lbl">the reconciler is the only writer</text>
@@ -713,7 +748,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="965" y="292" text-anchor="middle" class="lbl-g">the failed rollout</text>
   </svg>
   <p class="credit">Now open <b>Module 12 · Lab</b>. &nbsp;·&nbsp; then the <b>Deep Dive</b>: a rollout that stalls with misleading symptoms &nbsp;·&nbsp; <b>Gourav Shah</b> &nbsp;·&nbsp; School of DevOps &amp; AI</p>
-  <div class="pageno">M12·19</div>
+  <div class="pageno">M12·26</div>
 </section>
 </div></div>
 <script>/* reveal.js 5.x (inlined) */

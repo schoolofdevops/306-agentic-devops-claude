@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agentic DevOps with Claude Code — Module 13: CI/CD &amp; Release Engineering</title>
+<title>Module 13: CI/CD &amp; Release Engineering &middot; Agentic DevOps with Claude Code</title>
 
 <!-- ============================================================
      CourseSmith whiteboard deck skeleton (self-contained).
      Style contract: templates/deck/whiteboard-style-guide.md
-     Course: Agentic DevOps with Claude Code · Module 1 (M1)
-             First Win: Diagnose, Change & Verify Northstar
+     Course: Agentic DevOps with Claude Code · Module 13 (M13)
+             CI/CD & Release Engineering
      Zero external requests: reveal.js 5.x runtime + Patrick Hand
      woff2 are inlined below. Keep it that way.
      ============================================================ -->
@@ -168,6 +168,12 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M13·01</div>
 </section>
 
+<!-- ============ DIVIDER — intro ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">CI/CD &amp; Release Engineering</h2>
+  <div class="pageno">M13·02</div>
+</section>
+
 <!-- ============ SLIDE 2 — Automate the checks, keep the one safe property ============ -->
 <section>
   <h2 class="t">Automate the checks, keep the one safe property</h2>
@@ -206,14 +212,20 @@ footer, header, hgroup, main, menu, nav, section {
       <path d="M888,158 L1002,232"/><path d="M1002,158 L888,232"/>
     </g>
   </svg>
-  <div class="pageno">M13·02</div>
+  <div class="pageno">M13·03</div>
+</section>
+
+<!-- ============ DIVIDER — section 1 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">1 &middot; The pipeline is a bonded courier chain, and the agent is the inspector, never the driver</h2>
+  <div class="pageno">M13·04</div>
 </section>
 
 <!-- ============ SLIDE 3 — bonded courier chain ============ -->
 <section>
   <h2 class="t">A release moves like a bonded courier chain</h2>
   <p class="s">four roles: inspect, decide, drive, receive</p>
-  <svg viewBox="0 0 1100 360" role="img" aria-label="A sealed package is handed along four figures — inspector, supervisor, driver, receiver — each holding a signed slip they pass to the next.">
+  <svg viewBox="0 0 1100 360" role="img" aria-label="A sealed package is handed along four figures, inspector, supervisor, driver, receiver, each holding a signed slip they pass to the next.">
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.6">
       <rect x="60" y="150" width="90" height="70" rx="8"/>
     </g>
@@ -254,13 +266,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="940" y="278">signed slip</text>
     </g>
   </svg>
-  <div class="pageno">M13·03</div>
+  <div class="pageno">M13·05</div>
 </section>
 
 <!-- ============ SLIDE 4 — agent is the inspector (4 fragments) ============ -->
 <section>
-  <h2 class="t">The agent is the inspector — never the driver</h2>
-  <p class="s">the agent inspects and signs — never gates or deploys</p>
+  <h2 class="t">The agent is the inspector, never the driver</h2>
+  <p class="s">the agent inspects and signs, never gates or deploys</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="The release candidate flows through four pipeline stages built up one at a time: inspector agent, supervisor review plus human, reconciler driver, canary receiver.">
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.6">
       <rect x="40" y="150" width="120" height="80" rx="10"/>
@@ -292,9 +304,15 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="955" y="183" text-anchor="middle" class="lbl-b">RECEIVER</text>
       <text x="955" y="210" text-anchor="middle" class="lbl-g">canary verify</text>
     </g>
-    <text x="295" y="285" text-anchor="middle" style="fill:#2e7d32" class="lbl-sm">reads, signs, stops — never deploys</text>
+    <text x="295" y="285" text-anchor="middle" style="fill:#2e7d32" class="lbl-sm">reads, signs, stops, never deploys</text>
   </svg>
-  <div class="pageno">M13·04</div>
+  <div class="pageno">M13·06</div>
+</section>
+
+<!-- ============ DIVIDER — section 2 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">2 &middot; The CI environment is untrusted, so the agent gets least privilege</h2>
+  <div class="pageno">M13·07</div>
 </section>
 
 <!-- ============ SLIDE 5 — rental car ============ -->
@@ -323,7 +341,7 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="410" y="320" text-anchor="middle" style="fill:#c62828" class="lbl-sm">runs code you did not write</text>
   </svg>
-  <div class="pageno">M13·05</div>
+  <div class="pageno">M13·08</div>
 </section>
 
 <!-- ============ SLIDE 6 — three dangers (numbered rows) ============ -->
@@ -334,19 +352,19 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6"><circle cx="90" cy="80" r="26"/></g>
     <text x="90" y="88" text-anchor="middle" class="num">1</text>
     <text x="135" y="72" class="lbl-b">Ephemeral &amp; shared</text>
-    <text x="135" y="100" class="lbl-g">creds outlive the run and cross jobs — a poisoned step inherits them</text>
+    <text x="135" y="100" class="lbl-g">creds outlive the run and cross jobs: a poisoned step inherits them</text>
 
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6"><circle cx="90" cy="180" r="26"/></g>
     <text x="90" y="188" text-anchor="middle" class="num">2</text>
     <text x="135" y="172" class="lbl-b">Secrets in blast radius</text>
-    <text x="135" y="200" class="lbl-g">transcript, logs, tool output pass through — CI logs persist and fan out</text>
+    <text x="135" y="200" class="lbl-g">transcript, logs, tool output pass through: CI logs persist and fan out</text>
 
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6"><circle cx="90" cy="280" r="26"/></g>
     <text x="90" y="288" text-anchor="middle" class="num">3</text>
     <text x="135" y="272" class="lbl-b">Supply chain is an input</text>
-    <text x="135" y="300" class="lbl-g">every dependency the build pulls is untrusted — including what the agent reads</text>
+    <text x="135" y="300" class="lbl-g">every dependency the build pulls is untrusted, including what the agent reads</text>
   </svg>
-  <div class="pageno">M13·06</div>
+  <div class="pageno">M13·09</div>
 </section>
 
 <!-- ============ SLIDE 7 — least privilege ============ -->
@@ -382,7 +400,7 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="840" y="298" text-anchor="middle" class="lbl-g">separate identities · separate scopes</text>
   </svg>
-  <div class="pageno">M13·07</div>
+  <div class="pageno">M13·10</div>
 </section>
 
 <!-- ============ SLIDE 8 — OIDC keycard ============ -->
@@ -407,7 +425,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="825" y="225" text-anchor="middle" class="lbl-g">this repo · branch · job</text>
     <text x="825" y="290" text-anchor="middle" style="fill:#2e7d32" class="lbl-sm">expires at checkout · found later, opens nothing</text>
   </svg>
-  <div class="pageno">M13·08</div>
+  <div class="pageno">M13·11</div>
+</section>
+
+<!-- ============ DIVIDER — section 3 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">3 &middot; Headless Claude Code: the agent as a pipeline stage</h2>
+  <div class="pageno">M13·12</div>
 </section>
 
 <!-- ============ SLIDE 9 — headless as a pipeline stage ============ -->
@@ -416,7 +440,7 @@ footer, header, hgroup, main, menu, nav, section {
   <p class="s">headless: one prompt in, one result out</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="Left, interactive Claude as a chat at a desk with speech bubbles; right, headless Claude as a filled standardized form dropped in a tray.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4" stroke-dasharray="9 7"><rect x="55" y="80" width="440" height="230" rx="14"/></g>
-    <text x="275" y="115" text-anchor="middle" class="lbl-b" style="fill:#757575">interactive — a chat at the desk</text>
+    <text x="275" y="115" text-anchor="middle" class="lbl-b" style="fill:#757575">interactive: a chat at the desk</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4">
       <rect x="90" y="150" width="200" height="60" rx="30"/>
       <rect x="230" y="225" width="200" height="60" rx="30"/>
@@ -425,7 +449,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="330" y="263" text-anchor="middle" class="lbl-g">it replies…</text>
 
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8"><rect x="605" y="80" width="440" height="230" rx="14"/></g>
-    <text x="825" y="115" text-anchor="middle" class="lbl-b">headless — a form in the tray</text>
+    <text x="825" y="115" text-anchor="middle" class="lbl-b">headless: a form in the tray</text>
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6">
       <rect x="700" y="145" width="250" height="140" rx="8"/>
     </g>
@@ -433,7 +457,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="825" y="172" text-anchor="middle" class="lbl-g">verdict:</text>
     <text x="825" y="330" text-anchor="middle" style="fill:#2e7d32" class="lbl-sm">one prompt in · one structured result out</text>
   </svg>
-  <div class="pageno">M13·09</div>
+  <div class="pageno">M13·13</div>
 </section>
 
 <!-- ============ SLIDE 10 — one call (3 fragments) ============ -->
@@ -466,14 +490,14 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="805" y="237" text-anchor="middle" class="lbl-sm">else → block</text>
     </g>
   </svg>
-  <div class="pageno">M13·10</div>
+  <div class="pageno">M13·14</div>
 </section>
 
 <!-- ============ SLIDE 11 — fail closed ============ -->
 <section>
   <h2 class="t">Fail closed: an analysis you cannot trust is not a pass</h2>
   <p class="s">fail-closed: any error defaults to block</p>
-  <svg viewBox="0 0 1100 360" role="img" aria-label="Three failure inputs — errors, times out, off-schema — all funnel into one red BLOCK box, while only a clean run with a valid verdict reaches the green gate.">
+  <svg viewBox="0 0 1100 360" role="img" aria-label="Three failure inputs, errors, times out, off-schema, all funnel into one red BLOCK box, while only a clean run with a valid verdict reaches the green gate.">
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.4">
       <rect x="55" y="70" width="230" height="52" rx="8"/>
       <rect x="55" y="145" width="230" height="52" rx="8"/>
@@ -498,7 +522,13 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.8"><rect x="740" y="230" width="280" height="70" rx="10"/></g>
     <text x="880" y="273" text-anchor="middle" class="lbl-b" style="fill:#2e7d32">read .verdict → gate</text>
   </svg>
-  <div class="pageno">M13·11</div>
+  <div class="pageno">M13·15</div>
+</section>
+
+<!-- ============ DIVIDER — section 4 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">4 &middot; Hermetic <code>--bare</code> analysis vs project-aware execution</h2>
+  <div class="pageno">M13·16</div>
 </section>
 
 <!-- ============ SLIDE 12 — two auditors ============ -->
@@ -524,9 +554,9 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="910" y="180">internal docs</text>
       <text x="815" y="240">quirks &amp; culture</text>
     </g>
-    <text x="825" y="290" text-anchor="middle" style="fill:#c62828" class="lbl-sm">richer — but can be led by a stale doc</text>
+    <text x="825" y="290" text-anchor="middle" style="fill:#c62828" class="lbl-sm">richer, but can be led by a stale doc</text>
   </svg>
-  <div class="pageno">M13·12</div>
+  <div class="pageno">M13·17</div>
 </section>
 
 <!-- ============ SLIDE 13 — --bare mechanic ============ -->
@@ -556,7 +586,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="830" y="180" text-anchor="middle" class="lbl-b">prompt + files only</text>
     <text x="830" y="212" text-anchor="middle" class="lbl-g">the evidence, nothing else</text>
   </svg>
-  <div class="pageno">M13·13</div>
+  <div class="pageno">M13·18</div>
 </section>
 
 <!-- ============ SLIDE 14 — hermetic for judging ============ -->
@@ -579,7 +609,13 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="2.6" stroke-dasharray="6 6"><rect x="330" y="300" width="440" height="46" rx="8"/></g>
     <text x="550" y="330" text-anchor="middle" style="fill:#c62828" class="lbl-sm">a gate that loads project context = non-reproducible</text>
   </svg>
-  <div class="pageno">M13·14</div>
+  <div class="pageno">M13·19</div>
+</section>
+
+<!-- ============ DIVIDER — section 5 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">5 &middot; Separation of duties: the proposer is never the approver</h2>
+  <div class="pageno">M13·20</div>
 </section>
 
 <!-- ============ SLIDE 15 — proposer never approver ============ -->
@@ -590,8 +626,8 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.8"><rect x="200" y="90" width="700" height="180" rx="12"/></g>
     <text x="250" y="140" text-anchor="start" class="lbl-b">Release</text>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2"><path d="M540,200 L860,200 M540,245 L860,245"/></g>
-    <text x="540" y="228" text-anchor="start" class="lbl-g">signed — proposer</text>
-    <text x="540" y="273" text-anchor="start" class="lbl-g">signed — approver</text>
+    <text x="540" y="228" text-anchor="start" class="lbl-g">signed: proposer</text>
+    <text x="540" y="273" text-anchor="start" class="lbl-g">signed: approver</text>
 
     <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="3" stroke-linecap="round">
       <circle cx="300" cy="215" r="30"/>
@@ -600,7 +636,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="300" y="222" text-anchor="middle" class="lbl-sm" style="fill:#c62828">one</text>
     <text x="300" y="320" text-anchor="middle" style="fill:#c62828" class="lbl-sm">one actor can't sign both lines</text>
   </svg>
-  <div class="pageno">M13·15</div>
+  <div class="pageno">M13·21</div>
 </section>
 
 <!-- ============ SLIDE 16 — enforce by identity (3 fragments) ============ -->
@@ -619,7 +655,7 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="550" y="170" text-anchor="middle" class="lbl-b">change-reviewer</text>
       <text x="550" y="200" text-anchor="middle" class="lbl-g">reads diff · verdict</text>
       <g filter="url(#rough)" fill="none" stroke="#2e7d32" stroke-width="2.6"><ellipse cx="550" cy="222" rx="120" ry="18"/></g>
-      <text x="550" y="228" text-anchor="middle" style="fill:#2e7d32" class="lbl-sm">NO write tool — structural</text>
+      <text x="550" y="228" text-anchor="middle" style="fill:#2e7d32" class="lbl-sm">NO write tool: structural</text>
     </g>
     <g class="fragment">
       <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.8"><rect x="760" y="130" width="280" height="110" rx="12"/></g>
@@ -631,7 +667,13 @@ footer, header, hgroup, main, menu, nav, section {
       <path d="M695,185 L755,185" marker-end="url(#ahg)"/>
     </g>
   </svg>
-  <div class="pageno">M13·16</div>
+  <div class="pageno">M13·22</div>
+</section>
+
+<!-- ============ DIVIDER — section 6 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">6 &middot; Canary verification: confirm the shipment arrived healthy</h2>
+  <div class="pageno">M13·23</div>
 </section>
 
 <!-- ============ SLIDE 17 — canary food taster ============ -->
@@ -664,7 +706,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="910" y="170" text-anchor="middle" class="lbl">full banquet</text>
     <text x="910" y="200" text-anchor="middle" class="lbl-g">all traffic</text>
   </svg>
-  <div class="pageno">M13·17</div>
+  <div class="pageno">M13·24</div>
+</section>
+
+<!-- ============ DIVIDER — section 7 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">7 &middot; What you will carry out of this module</h2>
+  <div class="pageno">M13·25</div>
 </section>
 
 <!-- ============ SLIDE 18 — verdict + closing ============ -->
@@ -696,7 +744,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="640" y="188" text-anchor="middle" class="lbl-g">any no</text>
   </svg>
   <p class="credit">The agent signs the verdict; a human or the reconciler acts. &nbsp;·&nbsp; Now open <b>Module 13 · Lab</b>. &nbsp;·&nbsp; <b>Gourav Shah</b> · School of DevOps &amp; AI</p>
-  <div class="pageno">M13·18</div>
+  <div class="pageno">M13·26</div>
 </section>
 
 </div></div>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agentic DevOps with Claude Code — Module 19: Capstone: Campaign Incident, Packaging &amp; Rollout</title>
+<title>Module 19: Capstone: Campaign Incident, Packaging &amp; Rollout &middot; Agentic DevOps with Claude Code</title>
 
 <!-- ============================================================
      CourseSmith whiteboard deck skeleton (self-contained).
@@ -174,6 +174,12 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M19·01</div>
 </section>
 
+<!-- ============ DIVIDER — section 1 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">1 &middot; The analogy: the final checkride</h2>
+  <div class="pageno">M19·02</div>
+</section>
+
 <!-- ============ SLIDE 2 — THE CHECKRIDE ============ -->
 <section>
   <h2 class="t">The capstone is a checkride, not another lesson</h2>
@@ -208,7 +214,13 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="620" y="335" text-anchor="middle" class="lbl-b">the RIGHT procedure, in the RIGHT order</text>
   </svg>
-  <div class="pageno">M19·02</div>
+  <div class="pageno">M19·03</div>
+</section>
+
+<!-- ============ DIVIDER — section 2 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">2 &middot; INC-006: five failures at once</h2>
+  <div class="pageno">M19·04</div>
 </section>
 
 <!-- ============ SLIDE 3 — INC-006 FIVE FAILURES ============ -->
@@ -239,7 +251,7 @@ footer, header, hgroup, main, menu, nav, section {
     <g class="lbl" text-anchor="start">
       <text x="340" y="66">orders-api retry storm</text>
       <text x="340" y="130">plan: r6g.4xlarge + 0.0.0.0/0</text>
-      <text x="340" y="194">no resource requests — HPA can't scale</text>
+      <text x="340" y="194">no resource requests, HPA can't scale</text>
       <text x="340" y="258">3 alerts fire at once</text>
       <text x="340" y="322">runbook curls a dead endpoint</text>
     </g>
@@ -251,7 +263,7 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="1000" y="322">M13</text>
     </g>
   </svg>
-  <div class="pageno">M19·03</div>
+  <div class="pageno">M19·05</div>
 </section>
 
 <!-- ============ SLIDE 4 — DO NOT GRAB THE LOUDEST ============ -->
@@ -300,7 +312,13 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="820" y="352" text-anchor="middle" class="lbl-g" style="fill:#2e7d32">none dropped</text>
   </svg>
-  <div class="pageno">M19·04</div>
+  <div class="pageno">M19·06</div>
+</section>
+
+<!-- ============ DIVIDER — section 3 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">3 &middot; The 14-step operational workflow</h2>
+  <div class="pageno">M19·07</div>
 </section>
 
 <!-- ============ SLIDE 5 — THE 14-STEP WORKFLOW (5 fragments) ============ -->
@@ -344,7 +362,7 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="946" y="178" text-anchor="middle" class="lbl-g">incident</text>
     </g>
   </svg>
-  <div class="pageno">M19·05</div>
+  <div class="pageno">M19·08</div>
 </section>
 
 <!-- ============ SLIDE 6 — LOCK BEFORE YOU LOOK ============ -->
@@ -385,7 +403,7 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="#f8cecc" stroke="#c62828" stroke-width="2.4"><rect x="885" y="230" width="170" height="60" rx="10"/></g>
     <text x="970" y="267" text-anchor="middle" class="lbl-sm" style="fill:#c62828">contender rejected</text>
   </svg>
-  <div class="pageno">M19·06</div>
+  <div class="pageno">M19·09</div>
 </section>
 
 <!-- ============ SLIDE 7 — EVIDENCE BEFORE HYPOTHESIS ============ -->
@@ -409,9 +427,9 @@ footer, header, hgroup, main, menu, nav, section {
       <path d="M560,255 l-160,0" marker-end="url(#ahg)"/>
     </g>
     <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="2.6" stroke-linecap="round"><path d="M455,235 l50,40"/></g>
-    <text x="480" y="300" text-anchor="middle" class="lbl-g" style="fill:#c62828">hypothesis-first — wrong</text>
+    <text x="480" y="300" text-anchor="middle" class="lbl-g" style="fill:#c62828">hypothesis-first: wrong</text>
   </svg>
-  <div class="pageno">M19·07</div>
+  <div class="pageno">M19·10</div>
 </section>
 
 <!-- ============ SLIDE 8 — DELEGATE TO SPECIALIST (4 fragments) ============ -->
@@ -451,13 +469,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="960" y="192" text-anchor="middle" class="lbl-g">each: own</text>
     <text x="960" y="218" text-anchor="middle" class="lbl-g">authority bundle</text>
   </svg>
-  <div class="pageno">M19·08</div>
+  <div class="pageno">M19·11</div>
 </section>
 
 <!-- ============ SLIDE 9 — PARALLEL, INDEPENDENT ============ -->
 <section>
   <h2 class="t">Phase two: three tracks reason in parallel</h2>
-  <p class="s">no arrows between tracks — that's the value</p>
+  <p class="s">no arrows between tracks: that's the value</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="Three tracks SRE, IaC and Platform run side by side, each with its own evidence stack, with a visible gap and no arrows between them labelled independent.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.8">
       <rect x="70" y="70" width="270" height="180" rx="12"/>
@@ -482,7 +500,7 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="550" y="315" text-anchor="middle" class="lbl-g" style="fill:#c62828">no arrows between them · independent</text>
   </svg>
-  <div class="pageno">M19·09</div>
+  <div class="pageno">M19·12</div>
 </section>
 
 <!-- ============ SLIDE 10 — RECONCILE, NOT AVERAGE (2 fragments) ============ -->
@@ -514,14 +532,14 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <!-- anti-pattern (red, static) -->
     <g filter="url(#rough)" fill="#f8cecc" stroke="#c62828" stroke-width="2.2" stroke-dasharray="8 6"><rect x="405" y="255" width="525" height="60" rx="10"/></g>
-    <text x="667" y="291" text-anchor="middle" class="lbl-sm" style="fill:#c62828">anchoring: 3 agents echo 1 guess — not agreement</text>
+    <text x="667" y="291" text-anchor="middle" class="lbl-sm" style="fill:#c62828">anchoring: 3 agents echo 1 guess, not agreement</text>
   </svg>
-  <div class="pageno">M19·10</div>
+  <div class="pageno">M19·13</div>
 </section>
 
 <!-- ============ SLIDE 11 — PROPOSE, REVIEW, GATE (5 fragments) ============ -->
 <section>
-  <h2 class="t">Phase three: propose, review, gate — never direct apply</h2>
+  <h2 class="t">Phase three: propose, review, gate, never direct apply</h2>
   <p class="s">one dissent stops the line</p>
   <svg viewBox="0 0 1100 300" role="img" aria-label="A repair proposal runs through IaC, security and FinOps reviews to a change-reviewer join verdict and a writers-only approval gate; one dissent halts the line.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.8"><rect x="20" y="110" width="130" height="80" rx="10"/></g>
@@ -559,7 +577,7 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="2.4" stroke-linecap="round"><path d="M409,115 l0,-35" marker-end="url(#ah)"/></g>
     <text x="470" y="68" text-anchor="middle" class="lbl-g" style="fill:#c62828">one DISSENT stops the line</text>
   </svg>
-  <div class="pageno">M19·11</div>
+  <div class="pageno">M19·14</div>
 </section>
 
 <!-- ============ SLIDE 12 — DEPLOY + CANARY (2 fragments) ============ -->
@@ -588,7 +606,7 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="840" y="238" text-anchor="middle" class="lbl-b" style="fill:#c62828">ROLLBACK</text>
     </g>
   </svg>
-  <div class="pageno">M19·12</div>
+  <div class="pageno">M19·15</div>
 </section>
 
 <!-- ============ SLIDE 13 — PHASE 5 SCORE ============ -->
@@ -615,14 +633,14 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="550" y="262" text-anchor="middle" class="lbl-g">feeds the next incident</text>
   </svg>
-  <div class="pageno">M19·13</div>
+  <div class="pageno">M19·16</div>
 </section>
 
 <!-- ============ SLIDE 14 — WHY THE ORDER IS THE POINT ============ -->
 <section>
   <h2 class="t">Why the order is the point</h2>
   <p class="s">each gate is a precondition for the next</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="A staircase of five gated steps rising — lock, evidence, reconcile, review, verify; a red arrow tries to skip a rung and hits a wall.">
+  <svg viewBox="0 0 1100 340" role="img" aria-label="A staircase of five gated steps rising: lock, evidence, reconcile, review, verify; a red arrow tries to skip a rung and hits a wall.">
     <!-- staircase (rising rungs) -->
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6">
       <rect x="60" y="250" width="170" height="56" rx="8"/>
@@ -644,7 +662,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="960" y="180" text-anchor="start" class="lbl-g">each rung =</text>
     <text x="960" y="208" text-anchor="start" class="lbl-g">a precondition</text>
   </svg>
-  <div class="pageno">M19·14</div>
+  <div class="pageno">M19·17</div>
+</section>
+
+<!-- ============ DIVIDER — section 4 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">4 &middot; Packaging the operating layer as a starter</h2>
+  <div class="pageno">M19·18</div>
 </section>
 
 <!-- ============ SLIDE 15 — HAND-WIRED HOUSE VS CODE ============ -->
@@ -675,7 +699,7 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="825" y="295" text-anchor="middle" class="lbl-g" style="fill:#2e7d32">install &amp; extend safely</text>
   </svg>
-  <div class="pageno">M19·15</div>
+  <div class="pageno">M19·19</div>
 </section>
 
 <!-- ============ SLIDE 16 — WHAT SHIPS IN THE STARTER (6 fragments) ============ -->
@@ -718,7 +742,7 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="550" y="290" text-anchor="middle" class="lbl-g">reusable because it encodes authority boundaries, not one project's business logic</text>
   </svg>
-  <div class="pageno">M19·16</div>
+  <div class="pageno">M19·20</div>
 </section>
 
 <!-- ============ SLIDE 17 — WHAT STAYS OUT ============ -->
@@ -752,7 +776,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="835" y="137">incident tickets</text><text x="835" y="187">fault fixtures</text><text x="835" y="237">answer keys</text>
     </g>
   </svg>
-  <div class="pageno">M19·17</div>
+  <div class="pageno">M19·21</div>
+</section>
+
+<!-- ============ DIVIDER — section 5 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">5 &middot; The adoption ladder</h2>
+  <div class="pageno">M19·22</div>
 </section>
 
 <!-- ============ SLIDE 18 — THE ADOPTION LADDER (4 fragments) ============ -->
@@ -787,7 +817,7 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="986" y="103" text-anchor="middle" class="lbl-g">bounded loop</text>
     </g>
   </svg>
-  <div class="pageno">M19·18</div>
+  <div class="pageno">M19·23</div>
 </section>
 
 <!-- ============ SLIDE 19 — THE INVARIANT ============ -->
@@ -818,7 +848,13 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="380" y="330" text-anchor="middle" class="lbl-g" style="fill:#c62828">every rung is reversible</text>
   </svg>
-  <div class="pageno">M19·19</div>
+  <div class="pageno">M19·24</div>
+</section>
+
+<!-- ============ DIVIDER — section 6 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">6 &middot; What the capstone actually scores</h2>
+  <div class="pageno">M19·25</div>
 </section>
 
 <!-- ============ SLIDE 20 — WHAT THE CAPSTONE SCORES ============ -->
@@ -853,7 +889,7 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="1040" y="323">packaging</text>
     </g>
   </svg>
-  <div class="pageno">M19·20</div>
+  <div class="pageno">M19·26</div>
 </section>
 
 <!-- ============ SLIDE 21 — CLOSING ============ -->
@@ -880,7 +916,7 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
   </svg>
   <p class="credit">Now open <b>Module 19 · Lab</b> and run the checkride. &nbsp;·&nbsp; <b>Gourav Shah</b> &nbsp;·&nbsp; School of DevOps &amp; AI</p>
-  <div class="pageno">M19·21</div>
+  <div class="pageno">M19·27</div>
 </section>
 
 </div></div>

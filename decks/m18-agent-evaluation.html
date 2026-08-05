@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agentic DevOps with Claude Code — Module 18: Observe, Evaluate &amp; Control the Agents</title>
+<title>Module 18: Observe, Evaluate &amp; Control the Agents &middot; Agentic DevOps with Claude Code</title>
 
 <!-- ============================================================
      CourseSmith whiteboard deck skeleton (self-contained).
@@ -165,6 +165,12 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M18·01</div>
 </section>
 
+<!-- ============ DIVIDER — intro ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">Judging agents with numbers, not a gut feeling</h2>
+  <div class="pageno">M18·02</div>
+</section>
+
 <!-- ============ SLIDE 2 — THE CONFIDENT WRONG ANSWER ============ -->
 <section>
   <h2 class="t">A confident, plausible, wrong answer</h2>
@@ -210,7 +216,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="932" y="278" text-anchor="middle" class="lbl-b">REAL cause: unbounded retries</text>
     <text x="932" y="305" text-anchor="middle" class="lbl-g">a blip turned into a self-feeding storm</text>
   </svg>
-  <div class="pageno">M18·02</div>
+  <div class="pageno">M18·03</div>
 </section>
 
 <!-- ============ SLIDE 3 — CANNOT TELL BY LOOKING ============ -->
@@ -243,7 +249,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="550" y="200" text-anchor="middle" class="lbl-g">which is</text>
     <text x="550" y="225" text-anchor="middle" class="lbl-g">which?</text>
   </svg>
-  <div class="pageno">M18·03</div>
+  <div class="pageno">M18·04</div>
+</section>
+
+<!-- ============ DIVIDER — section 1 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">1 &middot; The two telemetry planes</h2>
+  <div class="pageno">M18·05</div>
 </section>
 
 <!-- ============ SLIDE 4 — TWO INSTRUMENTS (driving test) ============ -->
@@ -283,7 +295,7 @@ footer, header, hgroup, main, menu, nav, section {
       <path d="M760,175 C780,175 785,180 798,185" marker-end="url(#ahg)"/>
     </g>
   </svg>
-  <div class="pageno">M18·04</div>
+  <div class="pageno">M18·06</div>
 </section>
 
 <!-- ============ SLIDE 5 — TARGET-SYSTEM PLANE ============ -->
@@ -318,7 +330,7 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="675" y="220">what is the error rate?</text>
     </g>
   </svg>
-  <div class="pageno">M18·05</div>
+  <div class="pageno">M18·07</div>
 </section>
 
 <!-- ============ SLIDE 6 — AGENT-HARNESS PLANE ============ -->
@@ -352,7 +364,7 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="675" y="220">did it overstep authority?</text>
     </g>
   </svg>
-  <div class="pageno">M18·06</div>
+  <div class="pageno">M18·08</div>
 </section>
 
 <!-- ============ SLIDE 7 — EACH PLANE ANSWERS WHAT THE OTHER CANNOT ============ -->
@@ -393,9 +405,9 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.4" stroke-dasharray="4 6" stroke-linecap="round">
       <rect x="330" y="315" width="440" height="38" rx="9"/>
     </g>
-    <text x="550" y="340" text-anchor="middle" class="lbl-g">a denied write never touched orders-api — Prometheus is silent</text>
+    <text x="550" y="340" text-anchor="middle" class="lbl-g">a denied write never touched orders-api, Prometheus is silent</text>
   </svg>
-  <div class="pageno">M18·07</div>
+  <div class="pageno">M18·09</div>
 </section>
 
 <!-- ============ SLIDE 8 — WHAT THE HARNESS TRACE HOLDS ============ -->
@@ -437,7 +449,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="935" y="270" text-anchor="middle" class="lbl-g" fill="#c62828">the one</text>
     <text x="935" y="330" text-anchor="middle" class="lbl-g" fill="#c62828">that matters</text>
   </svg>
-  <div class="pageno">M18·08</div>
+  <div class="pageno">M18·10</div>
+</section>
+
+<!-- ============ DIVIDER — section 2 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">2 &middot; Evaluation is five dimensions, not one checkmark</h2>
+  <div class="pageno">M18·11</div>
 </section>
 
 <!-- ============ SLIDE 9 — FIVE QUESTIONS (medical board) ============ -->
@@ -469,11 +487,11 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="825" y="108">cause vs</text><text x="825" y="132">symptom?</text>
       <text x="990" y="108">in your</text><text x="990" y="132">lane?</text>
     </g>
-    <text x="660" y="215" text-anchor="middle" class="lbl-b">the BOARD — five separate questions</text>
+    <text x="660" y="215" text-anchor="middle" class="lbl-b">the BOARD: five separate questions</text>
     <text x="660" y="255" text-anchor="middle" class="lbl-g">a right outcome from wrong reasoning is a near-miss, not a success</text>
-    <text x="660" y="300" text-anchor="middle" class="lbl-g" fill="#c62828">"it's a virus, go rest" — right this time, but a lucky doctor, not a good one</text>
+    <text x="660" y="300" text-anchor="middle" class="lbl-g" fill="#c62828">"it's a virus, go rest": right this time, but a lucky doctor, not a good one</text>
   </svg>
-  <div class="pageno">M18·09</div>
+  <div class="pageno">M18·12</div>
 </section>
 
 <!-- ============ SLIDE 10 — THE FIVE DIMENSIONS ============ -->
@@ -506,13 +524,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="400" y="333">failure: tried a write under a read-only identity</text>
     </g>
   </svg>
-  <div class="pageno">M18·10</div>
+  <div class="pageno">M18·13</div>
 </section>
 
 <!-- ============ SLIDE 11 — 0.1 vs 1.0 ============ -->
 <section>
   <h2 class="t">Score all five separately: 0.1 versus 1.0</h2>
-  <p class="s">score separately — they fail independently</p>
+  <p class="s">score separately, they fail independently</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="Two score cards side by side: the generalist with four red rows and a composite of 0.1, and the governed team with five green rows and a composite of 1.0.">
     <!-- generalist card -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
@@ -554,7 +572,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="970" y="318" text-anchor="end" class="lbl-b" fill="#2e7d32">PASS</text>
     <text x="550" y="200" text-anchor="middle" class="lbl-g" style="font-size:26px">vs</text>
   </svg>
-  <div class="pageno">M18·11</div>
+  <div class="pageno">M18·14</div>
 </section>
 
 <!-- ============ SLIDE 12 — THE QUIET FAILURE ============ -->
@@ -568,7 +586,7 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="270" y="130" text-anchor="middle" class="lbl-b">the agent CRASHES</text>
     <text x="270" y="170" text-anchor="middle" class="lbl-g">loud · red · obvious</text>
-    <text x="270" y="205" text-anchor="middle" class="lbl-g" fill="#2e7d32">you notice — you fix it</text>
+    <text x="270" y="205" text-anchor="middle" class="lbl-g" fill="#2e7d32">you notice, you fix it</text>
     <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="3" stroke-linecap="round">
       <path d="M120,230 L150,245"/><path d="M180,228 L205,248"/><path d="M240,232 L268,246"/>
     </g>
@@ -579,13 +597,19 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="830" y="130" text-anchor="middle" class="lbl-b">confident misdiagnosis</text>
     <text x="830" y="170" text-anchor="middle" class="lbl-g">calm · closes the ticket</text>
-    <text x="830" y="205" text-anchor="middle" class="lbl-g" fill="#c62828">nobody notices — it recurs</text>
+    <text x="830" y="205" text-anchor="middle" class="lbl-g" fill="#c62828">nobody notices, it recurs</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-dasharray="4 6" stroke-linecap="round">
       <path d="M830,262 C910,300 750,300 830,262"/>
     </g>
     <text x="830" y="290" text-anchor="middle" class="lbl-g" fill="#c62828">the failure this module is built to catch</text>
   </svg>
-  <div class="pageno">M18·12</div>
+  <div class="pageno">M18·15</div>
+</section>
+
+<!-- ============ DIVIDER — section 3 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">3 &middot; Nondeterminism: one run is an anecdote</h2>
+  <div class="pageno">M18·16</div>
 </section>
 
 <!-- ============ SLIDE 13 — ONE RUN IS A COIN FLIP ============ -->
@@ -617,9 +641,9 @@ footer, header, hgroup, main, menu, nav, section {
       <rect x="880" y="185" width="60" height="65" rx="4"/>
     </g>
     <text x="840" y="130" text-anchor="middle" class="lbl-g">a hundred flips</text>
-    <text x="840" y="285" text-anchor="middle" class="lbl-b">the spread — the honest answer</text>
+    <text x="840" y="285" text-anchor="middle" class="lbl-b">the spread: the honest answer</text>
   </svg>
-  <div class="pageno">M18·13</div>
+  <div class="pageno">M18·17</div>
 </section>
 
 <!-- ============ SLIDE 14 — TRUST THE BAND ============ -->
@@ -658,9 +682,15 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="850" y="130" text-anchor="middle" class="lbl-b">DISTRIBUTION</text>
     <text x="850" y="168" text-anchor="middle" class="lbl">min 0.95 · mean 0.985 · max 1.0</text>
     <text x="850" y="205" text-anchor="middle" class="lbl-b" fill="#2e7d32">pass-rate 10 / 10</text>
-    <text x="850" y="238" text-anchor="middle" class="lbl-g">some wobble — but always above the bar</text>
+    <text x="850" y="238" text-anchor="middle" class="lbl-g">some wobble, but always above the bar</text>
   </svg>
-  <div class="pageno">M18·14</div>
+  <div class="pageno">M18·18</div>
+</section>
+
+<!-- ============ DIVIDER — section 4 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">4 &middot; Regression gates: quality is code, and code regresses</h2>
+  <div class="pageno">M18·19</div>
 </section>
 
 <!-- ============ SLIDE 15 — QUALITY IS CODE, CODE REGRESSES ============ -->
@@ -695,9 +725,9 @@ footer, header, hgroup, main, menu, nav, section {
       <path d="M720,270 L845,150" marker-end="url(#ah)"/>
     </g>
     <circle cx="720" cy="270" r="7" fill="#1e1e1e"/>
-    <text x="720" y="305" text-anchor="middle" class="lbl-b" fill="#c62828">over the line — quietly</text>
+    <text x="720" y="305" text-anchor="middle" class="lbl-b" fill="#c62828">over the line, quietly</text>
   </svg>
-  <div class="pageno">M18·15</div>
+  <div class="pageno">M18·20</div>
 </section>
 
 <!-- ============ SLIDE 16 — THE GATE FAILS THE BUILD (2 fragments) ============ -->
@@ -735,10 +765,16 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="940" y="150" text-anchor="middle" class="lbl-b" fill="#c62828">CI RED</text>
       <text x="940" y="188" text-anchor="middle" class="lbl">exit 2</text>
       <text x="940" y="216" text-anchor="middle" class="lbl-g">merge blocked</text>
-      <text x="540" y="290" text-anchor="middle" class="lbl-g" fill="#c62828">a gate you can ignore is not a gate — below the bar, the build is red, full stop</text>
+      <text x="540" y="290" text-anchor="middle" class="lbl-g" fill="#c62828">a gate you can ignore is not a gate: below the bar, the build is red, full stop</text>
     </g>
   </svg>
-  <div class="pageno">M18·16</div>
+  <div class="pageno">M18·21</div>
+</section>
+
+<!-- ============ DIVIDER — section 5 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">5 &middot; Where this leaves you</h2>
+  <div class="pageno">M18·22</div>
 </section>
 
 <!-- ============ SLIDE 17 — CLOSING ============ -->
@@ -756,14 +792,14 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="95" y="219">3</text><text x="95" y="289">4</text>
     </g>
     <g class="lbl" text-anchor="start">
-      <text x="145" y="78">Two telemetry planes — target (what you fix) + harness (how it behaved)</text>
-      <text x="145" y="148">Five dimensions, not one check — they fail separately, so score them separately</text>
-      <text x="145" y="218">Replay for the band — one run is an anecdote; trust the distribution</text>
-      <text x="145" y="288">Gate on regression — quality is code; fail the build when it degrades</text>
+      <text x="145" y="78">Two telemetry planes: target (what you fix) + harness (how it behaved)</text>
+      <text x="145" y="148">Five dimensions, not one check: they fail separately, so score them separately</text>
+      <text x="145" y="218">Replay for the band: one run is an anecdote; trust the distribution</text>
+      <text x="145" y="288">Gate on regression: quality is code; fail the build when it degrades</text>
     </g>
   </svg>
   <p class="credit">Now open <b>Module 18 · Lab</b>. &nbsp;·&nbsp; <b>Gourav Shah</b> &nbsp;·&nbsp; School of DevOps &amp; AI</p>
-  <div class="pageno">M18·17</div>
+  <div class="pageno">M18·23</div>
 </section>
 </div></div>
 

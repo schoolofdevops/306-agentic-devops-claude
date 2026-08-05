@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agentic DevOps with Claude Code &mdash; Module 5: The Plan &rarr; Execute &rarr; Verify &rarr; Goal Loop</title>
+<title>Module 5: The Plan &rarr; Execute &rarr; Verify &rarr; Goal Loop &middot; Agentic DevOps with Claude Code</title>
 
 <!-- ============================================================
      CourseSmith whiteboard deck — M5 · The Plan → Execute → Verify → Goal Loop (self-contained).
      Style contract: planning/decks/whiteboard-style-guide.md
-     Sequence spec: planning/decks/m12-sequence.md
+     Sequence spec: planning/decks/m5-sequence.md
      Zero external requests: reveal.js 5.x runtime + Patrick Hand
      woff2 are inlined below. Keep it that way.
      ============================================================ -->
@@ -140,7 +140,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 1 — TITLE ============ -->
 <section>
   <p class="kicker">MODULE 5 &nbsp;·&nbsp; THE PLAN &rarr; EXECUTE &rarr; VERIFY &rarr; GOAL LOOP</p>
-  <h2 class="t" style="font-size:1.7em">The same loop as Module 1 — made rigorous enough to trust a system you can't break</h2>
+  <h2 class="t" style="font-size:1.7em">The same loop as Module 1: made rigorous enough to trust a system you can't break</h2>
   <p class="s" style="font-size:1.15em">autonomy breaks the loose loop</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="On the left, a small loose loop labelled diagnose, change, verify from Module 1. An arrow leads right to a hardened four-part procedure: contract, plan, isolate, verify, drawn as a firmer boxed chain. Below, a gray footline fans to three on-call questions: did it understand, did it stay in the lines, is done a fact. Credit line: Gourav Shah, School of DevOps and AI.">
     <!-- M1 loose loop -->
@@ -183,6 +183,12 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M5·01</div>
 </section>
 
+<!-- ============ DIVIDER — intro ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">The Plan &rarr; Execute &rarr; Verify &rarr; Goal Loop</h2>
+  <div class="pageno">M5&middot;02</div>
+</section>
+
 <!-- ============ SLIDE 2 — THREE QUESTIONS (the hinge) ============ -->
 <section>
   <h2 class="t">The instant the agent has autonomy, three questions become load-bearing</h2>
@@ -213,7 +219,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="175" y="252" text-anchor="middle" class="lbl-bad">a loose loop</text>
     <text x="175" y="278" text-anchor="middle" class="lbl-g">answers none of these</text>
   </svg>
-  <div class="pageno">M5·02</div>
+  <div class="pageno">M5·03</div>
 </section>
 
 <!-- ============ SLIDE 3 — FOUR ARTIFACTS (map, fragments) ============ -->
@@ -226,7 +232,7 @@ footer, header, hgroup, main, menu, nav, section {
       <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><circle cx="80" cy="56" r="22" class="f-purple"/></g>
       <text x="80" y="65" text-anchor="middle" class="num">1</text>
       <text x="122" y="50" text-anchor="start" class="lbl-b">TASK CONTRACT</text>
-      <text x="122" y="76" text-anchor="start" class="lbl-g">intent, scope, acceptance — agreed before the work &nbsp;·&nbsp; answers "understood?"</text>
+      <text x="122" y="76" text-anchor="start" class="lbl-g">intent, scope, acceptance: agreed before the work &nbsp;·&nbsp; answers "understood?"</text>
     </g>
     <!-- row 2 -->
     <g class="fragment">
@@ -250,12 +256,18 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="122" y="304" text-anchor="start" class="lbl-g">the repo decides "done", not the agent &nbsp;·&nbsp; answers "fact or opinion?"</text>
     </g>
   </svg>
-  <div class="pageno">M5·03</div>
+  <div class="pageno">M5·04</div>
+</section>
+
+<!-- ============ DIVIDER — section 1 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">1 &middot; Why you write the task down before the agent runs</h2>
+  <div class="pageno">M5&middot;05</div>
 </section>
 
 <!-- ============ SLIDE 4 — WRITE IT DOWN FIRST ============ -->
 <section>
-  <h2 class="t">Write the task down before the agent runs — not "fix the thing"</h2>
+  <h2 class="t">Write the task down before the agent runs: not "fix the thing"</h2>
   <p class="s">fast, and no pause to ask "are you sure?"</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="On the left, a crossed-out vague ticket reading fix the thing. An arrow leads to a boxed, structured task contract with labelled fields intent, target, actions, acceptance. Above the contract a small clock is stamped changing your mind is free here. A gray band underneath reads the cheapest place to catch I thought you meant staging is before anyone opens an editor.">
     <!-- crossed-out vague -->
@@ -283,7 +295,7 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-dasharray="9 7"><rect x="120" y="286" width="860" height="40" rx="10"/></g>
     <text x="550" y="312" text-anchor="middle" class="lbl-g">the cheapest place to catch <tspan class="lbl-b">"I thought you meant staging"</tspan> is before anyone opens an editor</text>
   </svg>
-  <div class="pageno">M5·04</div>
+  <div class="pageno">M5·06</div>
 </section>
 
 <!-- ============ SLIDE 5 — FLIGHT PLAN (scene) ============ -->
@@ -293,11 +305,11 @@ footer, header, hgroup, main, menu, nav, section {
   <svg viewBox="0 0 1100 340" role="img" aria-label="On the left, on the ground, a filed flight plan card listing destination, corridor, fuel, alternates and abort conditions, stamped reviewed on the ground, changing it is free. A dashed runway line leads up to the right where a small plane in the air references the same plan. A gray label by the plane reads deviation is visible. A band reads agreed before the work, referenced during it.">
     <!-- ground: filed plan -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="70" y="96" width="300" height="176" rx="12" class="f-green"/></g>
-    <text x="220" y="128" text-anchor="middle" class="lbl-b">FLIGHT PLAN — filed</text>
+    <text x="220" y="128" text-anchor="middle" class="lbl-b">FLIGHT PLAN: filed</text>
     <text x="96" y="160" text-anchor="start" class="lbl-g">destination &middot; corridor</text>
     <text x="96" y="188" text-anchor="start" class="lbl-g">fuel &middot; alternates</text>
     <text x="96" y="216" text-anchor="start" class="lbl-g">abort conditions</text>
-    <text x="220" y="250" text-anchor="middle" class="lbl-sm">reviewed on the ground — cheap to change</text>
+    <text x="220" y="250" text-anchor="middle" class="lbl-sm">reviewed on the ground: cheap to change</text>
     <!-- runway dashed up -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-dasharray="5 5" stroke-linecap="round">
       <path d="M380,240 C560,220 700,150 860,110" marker-end="url(#ahg)"/>
@@ -314,12 +326,12 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-dasharray="9 7"><rect x="150" y="290" width="800" height="38" rx="10"/></g>
     <text x="550" y="315" text-anchor="middle" class="lbl-g">the contract is the filed plan: <tspan class="lbl-b">agreed before the work, referenced during it</tspan></text>
   </svg>
-  <div class="pageno">M5·05</div>
+  <div class="pageno">M5·07</div>
 </section>
 
 <!-- ============ SLIDE 6 — CONTRACT ANATOMY (big-box) ============ -->
 <section>
-  <h2 class="t">Six fields — each answering where autonomous runs go wrong</h2>
+  <h2 class="t">Six fields: each answering where autonomous runs go wrong</h2>
   <p class="s">the contract sets the boundary, not the code</p>
   <svg viewBox="0 0 1100 350" role="img" aria-label="One outer contract box holding six inner field boxes. Intent: keeps the agent solving the right problem. Target and actions: the leash from Module 2, restated per task. Acceptance: what precisely makes this done. Stop conditions: the moments to stop, not push through. Rollback: the undo, written while calm. Each field is paired with the question it answers.">
     <!-- outer -->
@@ -362,12 +374,12 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="874" y="266" text-anchor="middle" class="lbl-g">the undo, written</text>
     <text x="874" y="292" text-anchor="middle" class="lbl-g">while you're calm</text>
   </svg>
-  <div class="pageno">M5·06</div>
+  <div class="pageno">M5·08</div>
 </section>
 
 <!-- ============ SLIDE 7 — CONTRACT vs SETTINGS (nested) ============ -->
 <section>
-  <h2 class="t">The contract tightens the session settings — it never loosens them</h2>
+  <h2 class="t">The contract tightens the session settings. It never loosens them</h2>
   <p class="s">standing boundary plus a per-task boundary</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="An outer purple box labelled settings.json, standing boundary, every run, Module 2. Inside it a smaller box labelled task contract, this task only. A one-way arrow points inward only, labelled can tighten, never loosen. To the right, an analogy: the outer box is the building's locked doors, the inner box is the room you're authorized in today.">
     <!-- outer settings -->
@@ -377,7 +389,7 @@ footer, header, hgroup, main, menu, nav, section {
     <!-- inner contract -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="160" y="150" width="380" height="102" rx="11" class="f-blue"/></g>
     <text x="350" y="188" text-anchor="middle" class="lbl-b">task contract &nbsp;·&nbsp; THIS task only</text>
-    <text x="350" y="220" text-anchor="middle" class="lbl-g">narrower &amp; sharper — one run's boundary + success</text>
+    <text x="350" y="220" text-anchor="middle" class="lbl-g">narrower &amp; sharper: one run's boundary + success</text>
     <!-- one-way arrow inward -->
     <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="2.4" stroke-linecap="round">
       <path d="M700,150 L568,180" marker-end="url(#ah)"/>
@@ -389,7 +401,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="860" y="226" text-anchor="middle" class="lbl-g">settings = the building's locked doors</text>
     <text x="860" y="254" text-anchor="middle" class="lbl-g">contract = the room you work in today</text>
   </svg>
-  <div class="pageno">M5·07</div>
+  <div class="pageno">M5·09</div>
+</section>
+
+<!-- ============ DIVIDER — section 2 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">2 &middot; Plan mode: separate thinking from acting</h2>
+  <div class="pageno">M5&middot;10</div>
 </section>
 
 <!-- ============ SLIDE 8 — PLAN MODE: THINK vs ACT (two-panel) ============ -->
@@ -400,7 +418,7 @@ footer, header, hgroup, main, menu, nav, section {
     <!-- left: fused -->
     <g filter="url(#rough)" stroke="#c62828" stroke-width="2.6"><rect x="70" y="90" width="420" height="150" rx="12" class="f-red"/></g>
     <text x="280" y="82" text-anchor="middle" class="lbl-b">loose loop</text>
-    <text x="280" y="140" text-anchor="middle" class="lbl-b">reason + edit — FUSED</text>
+    <text x="280" y="140" text-anchor="middle" class="lbl-b">reason + edit: FUSED</text>
     <text x="280" y="176" text-anchor="middle" class="lbl-g">one motion; you find out</text>
     <text x="280" y="202" text-anchor="middle" class="lbl-g">by watching diffs appear</text>
     <!-- right: split -->
@@ -415,9 +433,9 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="969" y="160" text-anchor="middle" class="lbl-b">gate</text>
     <text x="969" y="186" text-anchor="middle" class="lbl-g">then edit</text>
     <!-- caption -->
-    <text x="550" y="288" text-anchor="middle" class="lbl-g">plan mode catches the wrong <tspan class="lbl-b">approach</tspan> — a whole strategy, not a typo</text>
+    <text x="550" y="288" text-anchor="middle" class="lbl-g">plan mode catches the wrong <tspan class="lbl-b">approach</tspan>: a whole strategy, not a typo</text>
   </svg>
-  <div class="pageno">M5·08</div>
+  <div class="pageno">M5·11</div>
 </section>
 
 <!-- ============ SLIDE 9 — SURGEON BRIEFING (scene) ============ -->
@@ -436,16 +454,16 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round"><path d="M436,160 L520,160" marker-end="url(#ahg)"/></g>
     <!-- patient closed -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4" stroke-dasharray="9 7"><rect x="524" y="112" width="300" height="96" rx="14"/></g>
-    <text x="674" y="150" text-anchor="middle" class="lbl">patient — still closed</text>
+    <text x="674" y="150" text-anchor="middle" class="lbl">patient: still closed</text>
     <text x="674" y="182" text-anchor="middle" class="lbl-g">nothing has been cut yet</text>
     <!-- green label -->
     <text x="920" y="150" text-anchor="middle" class="lbl-good">objections</text>
     <text x="920" y="176" text-anchor="middle" class="lbl-good">are cheap here</text>
     <!-- crossed alt -->
     <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="2.2" stroke-linecap="round"><path d="M80,282 L470,272"/></g>
-    <text x="270" y="300" text-anchor="middle" class="lbl-g">cutting first isn't braver — it just moves the bad plan to the worst time</text>
+    <text x="270" y="300" text-anchor="middle" class="lbl-g">cutting first isn't braver: it just moves the bad plan to the worst time</text>
   </svg>
-  <div class="pageno">M5·09</div>
+  <div class="pageno">M5·12</div>
 </section>
 
 <!-- ============ SLIDE 10 — REVIEW PLAN vs CONTRACT (flow) ============ -->
@@ -472,7 +490,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="600" y="176" text-anchor="middle" class="lbl-b">contract?</text>
     <!-- no loop back -->
     <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="2.4" stroke-linecap="round"><path d="M600,226 C440,290 340,250 340,212" marker-end="url(#ah)"/></g>
-    <text x="470" y="284" text-anchor="middle" class="lbl-bad">no — wrong approach</text>
+    <text x="470" y="284" text-anchor="middle" class="lbl-bad">no, wrong approach</text>
     <!-- yes to execute -->
     <g filter="url(#rough)" fill="none" stroke="#2e7d32" stroke-width="2.6" stroke-linecap="round"><path d="M706,160 L790,160" marker-end="url(#ah)"/></g>
     <text x="748" y="146" text-anchor="middle" class="lbl-good">yes</text>
@@ -480,7 +498,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="904" y="152" text-anchor="middle" class="lbl-b">execute</text>
     <text x="904" y="180" text-anchor="middle" class="lbl-g">edit inside target</text>
   </svg>
-  <div class="pageno">M5·10</div>
+  <div class="pageno">M5·13</div>
+</section>
+
+<!-- ============ DIVIDER — section 3 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">3 &middot; Isolate the work: worktrees, checkpoints, rewind</h2>
+  <div class="pageno">M5&middot;14</div>
 </section>
 
 <!-- ============ SLIDE 11 — REHEARSAL STAGE (scene) ============ -->
@@ -504,26 +528,26 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="5 5"><path d="M636,140 L456,140" marker-end="url(#ah)"/></g>
     <text x="546" y="126" text-anchor="middle" class="lbl-g">bring over only when good</text>
     <!-- note -->
-    <text x="550" y="284" text-anchor="middle" class="lbl-g">disaster in rehearsal? <tspan class="lbl-b">strike the side stage</tspan> — the main stage never knew it happened</text>
+    <text x="550" y="284" text-anchor="middle" class="lbl-g">disaster in rehearsal? <tspan class="lbl-b">strike the side stage</tspan>: the main stage never knew it happened</text>
   </svg>
-  <div class="pageno">M5·11</div>
+  <div class="pageno">M5·15</div>
 </section>
 
 <!-- ============ SLIDE 12 — WORKTREE MECHANISM (flow) ============ -->
 <section>
-  <h2 class="t">main is protected; the worktree is disposable — merge good, delete bad</h2>
+  <h2 class="t">main is protected; the worktree is disposable: merge good, delete bad</h2>
   <p class="s">a separate directory, its own branch, same repo</p>
   <svg viewBox="0 0 1100 320" role="img" aria-label="A flow from the top. Main branch, protected and never edited directly, drawn in green. A git worktree add arrow leads to a worktree, an isolated directory on its own branch. The agent executes there. A good decision branches to merge back to main. A bad decision branches to delete the worktree, with main untouched, drawn in red as the disposal.">
     <!-- main -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="3"><rect x="410" y="30" width="280" height="66" rx="11" class="f-green"/></g>
     <text x="550" y="60" text-anchor="middle" class="lbl-b">main branch</text>
-    <text x="550" y="84" text-anchor="middle" class="lbl-g">protected — never edited directly</text>
+    <text x="550" y="84" text-anchor="middle" class="lbl-g">protected, never edited directly</text>
     <!-- arrow -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round"><path d="M550,98 L550,140" marker-end="url(#ah)"/></g>
     <text x="640" y="124" text-anchor="middle" class="lbl-g">git worktree add</text>
     <!-- worktree -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="400" y="144" width="300" height="70" rx="11" class="f-orange"/></g>
-    <text x="550" y="176" text-anchor="middle" class="lbl-b">worktree — isolated dir, own branch</text>
+    <text x="550" y="176" text-anchor="middle" class="lbl-b">worktree: isolated dir, own branch</text>
     <text x="550" y="202" text-anchor="middle" class="lbl-g">agent executes here</text>
     <!-- good / bad split -->
     <g filter="url(#rough)" fill="none" stroke="#2e7d32" stroke-width="2.4" stroke-linecap="round"><path d="M470,216 C400,250 320,250 300,258" marker-end="url(#ah)"/></g>
@@ -537,13 +561,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="860" y="286" text-anchor="middle" class="lbl-bad">bad? delete it</text>
     <text x="860" y="308" text-anchor="middle" class="lbl-g">main untouched, nothing to clean</text>
   </svg>
-  <div class="pageno">M5·12</div>
+  <div class="pageno">M5·16</div>
 </section>
 
 <!-- ============ SLIDE 13 — THREE DEPTHS (staircase, fragments) ============ -->
 <section>
-  <h2 class="t">Three depths of the same instinct — reach for the one that fits the risk</h2>
-  <p class="s">rewind, checkpoint, worktree — three depths</p>
+  <h2 class="t">Three depths of the same instinct: reach for the one that fits the risk</h2>
+  <p class="s">rewind, checkpoint, worktree: three depths</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="A staircase of three steps rising. The lowest and lightest step is rewind, roll back one agent action, the undo for the last move. The middle step is checkpoint, commit or stash before a risky step, a named point to return to. The highest and firmest step is worktree, the whole experiment off the branch that matters. An arrow on the side rises from small risk to large risk.">
     <!-- step 1 rewind (fragment) -->
     <g class="fragment">
@@ -555,7 +579,7 @@ footer, header, hgroup, main, menu, nav, section {
     <g class="fragment">
       <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="300" y="150" width="300" height="66" rx="10" class="f-orange"/></g>
       <text x="450" y="182" text-anchor="middle" class="lbl-b">checkpoint</text>
-      <text x="450" y="206" text-anchor="middle" class="lbl-g">commit / stash — one saved moment</text>
+      <text x="450" y="206" text-anchor="middle" class="lbl-g">commit / stash: one saved moment</text>
     </g>
     <!-- step 3 worktree (fragment) -->
     <g class="fragment">
@@ -567,7 +591,13 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M960,290 L960,90" marker-end="url(#ahg)"/></g>
     <text x="982" y="280" text-anchor="start" class="lbl-g" transform="rotate(90 982 280)">small risk &rarr; large risk</text>
   </svg>
-  <div class="pageno">M5·13</div>
+  <div class="pageno">M5·17</div>
+</section>
+
+<!-- ============ DIVIDER — section 4 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">4 &middot; Verification the repository owns, not the agent infers</h2>
+  <div class="pageno">M5&middot;18</div>
 </section>
 
 <!-- ============ SLIDE 14 — TWO ANSWERS TO "IS IT DONE?" (two-panel) ============ -->
@@ -579,20 +609,20 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="80" width="440" height="180" rx="12" class="f-orange"/></g>
     <text x="280" y="116" text-anchor="middle" class="lbl-b">ask the AGENT</text>
     <text x="280" y="150" text-anchor="middle" class="lbl">"looks complete to me"</text>
-    <text x="280" y="182" text-anchor="middle" class="lbl-g">inference — a prediction, not a check</text>
+    <text x="280" y="182" text-anchor="middle" class="lbl-g">inference: a prediction, not a check</text>
     <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="2.2" stroke-dasharray="9 7"><rect x="90" y="200" width="380" height="46" rx="9"/></g>
     <text x="280" y="228" text-anchor="middle" class="lbl-bad">same understanding grades its own work</text>
     <!-- right: ask repo -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="3"><rect x="600" y="80" width="440" height="180" rx="12" class="f-green"/></g>
     <text x="820" y="116" text-anchor="middle" class="lbl-b">ask the REPOSITORY</text>
     <text x="820" y="150" text-anchor="middle" class="lbl">tests &middot; lint &middot; grade.sh decide</text>
-    <text x="820" y="182" text-anchor="middle" class="lbl-g">an external check — runs the code</text>
+    <text x="820" y="182" text-anchor="middle" class="lbl-g">an external check: runs the code</text>
     <g filter="url(#rough)" fill="none" stroke="#2e7d32" stroke-width="2.2" stroke-dasharray="9 7"><rect x="630" y="200" width="380" height="46" rx="9"/></g>
     <text x="820" y="228" text-anchor="middle" class="lbl-good">no opinion, no blind spot aligned with the agent's</text>
     <!-- vs -->
     <text x="550" y="176" text-anchor="middle" class="lbl-b">vs</text>
   </svg>
-  <div class="pageno">M5·14</div>
+  <div class="pageno">M5·19</div>
 </section>
 
 <!-- ============ SLIDE 15 — GRADED EXAM (scene) ============ -->
@@ -605,7 +635,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="260" y="132" text-anchor="middle" class="lbl-b">"pretty sure I passed"</text>
     <text x="260" y="168" text-anchor="middle" class="lbl-g">the student's self-assessment</text>
     <text x="260" y="204" text-anchor="middle" class="lbl-g">same person being graded</text>
-    <text x="260" y="232" text-anchor="middle" class="lbl-sm">a useful gut-check — never the verdict</text>
+    <text x="260" y="232" text-anchor="middle" class="lbl-sm">a useful gut-check: never the verdict</text>
     <!-- graded paper -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="3"><rect x="650" y="96" width="380" height="150" rx="12" class="f-green"/></g>
     <text x="840" y="132" text-anchor="middle" class="lbl-b">the GRADED exam</text>
@@ -616,12 +646,12 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><path d="M458,170 L644,170" marker-end="url(#ah)"/></g>
     <text x="550" y="156" text-anchor="middle" class="lbl-g">trust the grade</text>
   </svg>
-  <div class="pageno">M5·15</div>
+  <div class="pageno">M5·20</div>
 </section>
 
 <!-- ============ SLIDE 16 — ACCEPTANCE → CHECKS (flow, fragments) ============ -->
 <section>
-  <h2 class="t">Acceptance criteria become automated checks — green is the definition of done</h2>
+  <h2 class="t">Acceptance criteria become automated checks: green is the definition of done</h2>
   <p class="s">green is done, red is not</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="A left-to-right flow. The contract's acceptance field feeds a set of repo checks: the existing suite, a new test, and grade.sh. The checks produce a verdict: green equals done, red equals not done. Three properties are labelled below the checks: reproducible, does not hallucinate, catches regressions the agent's self-assessment misses.">
     <!-- acceptance -->
@@ -657,12 +687,18 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="920" y="176" text-anchor="middle" class="lbl-g">repo, not the</text>
     <text x="920" y="202" text-anchor="middle" class="lbl-g">agent</text>
   </svg>
-  <div class="pageno">M5·16</div>
+  <div class="pageno">M5·21</div>
+</section>
+
+<!-- ============ DIVIDER — section 5 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">5 &middot; What "done" actually means</h2>
+  <div class="pageno">M5&middot;22</div>
 </section>
 
 <!-- ============ SLIDE 17 — DONE = 5 ELEMENTS (big-box) ============ -->
 <section>
-  <h2 class="t">"Done" is a logbook entry — five parts, not a thumbs-up</h2>
+  <h2 class="t">"Done" is a logbook entry: five parts, not a thumbs-up</h2>
   <p class="s">tests passing is necessary, not sufficient</p>
   <svg viewBox="0 0 1100 350" role="img" aria-label="Five rows in a box. Tests pass: does it work and did it break anything. Evidence: the diff and the verification output. Rollback: the undo from the contract. These three are tagged fact and drawn in green. Residual risk: what the checks don't cover. Cost receipt: the run ledger from Module 4. These two are tagged judgment and drawn in orange.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8"><rect x="60" y="34" width="980" height="300" rx="13"/></g>
@@ -687,7 +723,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="360" y="313" text-anchor="start" class="lbl-g">the Agent Run Ledger row (Module 4)</text>
     <text x="932" y="288" text-anchor="middle" class="lbl-b">JUDGMENT</text>
   </svg>
-  <div class="pageno">M5·17</div>
+  <div class="pageno">M5·23</div>
 </section>
 
 <!-- ============ SLIDE 18 — LOGBOOK (scene) ============ -->
@@ -698,9 +734,9 @@ footer, header, hgroup, main, menu, nav, section {
     <!-- logbook -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="70" y="70" width="440" height="180" rx="12" class="f-green"/></g>
     <text x="290" y="104" text-anchor="middle" class="lbl-b">LOGBOOK</text>
-    <text x="96" y="140" text-anchor="start" class="lbl-g">&bull; the flight — what it did</text>
-    <text x="96" y="170" text-anchor="start" class="lbl-g">&bull; fuel burned — the cost</text>
-    <text x="96" y="200" text-anchor="start" class="lbl-g">&bull; anything odd — residual risk</text>
+    <text x="96" y="140" text-anchor="start" class="lbl-g">&bull; the flight: what it did</text>
+    <text x="96" y="170" text-anchor="start" class="lbl-g">&bull; fuel burned: the cost</text>
+    <text x="96" y="200" text-anchor="start" class="lbl-g">&bull; anything odd: residual risk</text>
     <text x="96" y="230" text-anchor="start" class="lbl-g">&bull; state for the next crew</text>
     <!-- thumbs up crossed -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.6"><rect x="640" y="110" width="330" height="96" rx="12"/></g>
@@ -709,14 +745,20 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="2.6" stroke-linecap="round"><path d="M652,200 L958,116"/></g>
     <text x="805" y="234" text-anchor="middle" class="lbl-bad">not enough</text>
     <!-- note -->
-    <text x="550" y="288" text-anchor="middle" class="lbl-g">the next crew trusts the aircraft because the flight is <tspan class="lbl-b">documented</tspan> — not vouched for</text>
+    <text x="550" y="288" text-anchor="middle" class="lbl-g">the next crew trusts the aircraft because the flight is <tspan class="lbl-b">documented</tspan>, not vouched for</text>
   </svg>
-  <div class="pageno">M5·18</div>
+  <div class="pageno">M5·24</div>
+</section>
+
+<!-- ============ DIVIDER — section 6 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">6 &middot; What you'll do in the lab</h2>
+  <div class="pageno">M5&middot;25</div>
 </section>
 
 <!-- ============ SLIDE 19 — WHOLE LOOP (pipeline, fragments) ============ -->
 <section>
-  <h2 class="t">The whole procedure, end to end — main untouched throughout</h2>
+  <h2 class="t">The whole procedure, end to end: main untouched throughout</h2>
   <p class="s">from a habit to an auditable procedure</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="A pipeline of six stages assembling left to right: write the contract, create a worktree, run plan mode, execute inside target, let the repository verify, and write the done record. Below the pipeline a green rail labelled main runs the whole length untouched, showing the entire procedure happened on a disposable copy.">
     <!-- pipeline nodes -->
@@ -755,10 +797,10 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <!-- main rail untouched -->
     <g filter="url(#rough)" fill="none" stroke="#2e7d32" stroke-width="2.8" stroke-dasharray="5 5" stroke-linecap="round"><path d="M40,250 L1070,250"/></g>
-    <text x="550" y="238" text-anchor="middle" class="lbl-good">main — untouched the whole time</text>
+    <text x="550" y="238" text-anchor="middle" class="lbl-good">main: untouched the whole time</text>
     <text x="550" y="286" text-anchor="middle" class="lbl-g">every stage ran on a disposable copy; the original was out of reach</text>
   </svg>
-  <div class="pageno">M5·19</div>
+  <div class="pageno">M5·26</div>
 </section>
 
 <!-- ============ SLIDE 20 — CLOSING ============ -->
@@ -771,25 +813,25 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><circle cx="80" cy="52" r="22" class="f-purple"/></g>
     <text x="80" y="61" text-anchor="middle" class="num">1</text>
     <text x="120" y="46" text-anchor="start" class="lbl-b">TASK CONTRACT</text>
-    <text x="120" y="74" text-anchor="start" class="lbl-g">intent, boundary, acceptance, stop, rollback — agreed before the work</text>
+    <text x="120" y="74" text-anchor="start" class="lbl-g">intent, boundary, acceptance, stop, rollback: agreed before the work</text>
     <!-- row 2 -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><circle cx="80" cy="118" r="22" class="f-blue"/></g>
     <text x="80" y="127" text-anchor="middle" class="num">2</text>
     <text x="120" y="112" text-anchor="start" class="lbl-b">PLAN MODE</text>
-    <text x="120" y="140" text-anchor="start" class="lbl-g">approve the approach before any edit — think, then act</text>
+    <text x="120" y="140" text-anchor="start" class="lbl-g">approve the approach before any edit: think, then act</text>
     <!-- row 3 -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><circle cx="80" cy="184" r="22" class="f-orange"/></g>
     <text x="80" y="193" text-anchor="middle" class="num">3</text>
     <text x="120" y="178" text-anchor="start" class="lbl-b">WORKTREE</text>
-    <text x="120" y="206" text-anchor="start" class="lbl-g">run it on a disposable copy — main is never at risk</text>
+    <text x="120" y="206" text-anchor="start" class="lbl-g">run it on a disposable copy: main is never at risk</text>
     <!-- row 4 -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><circle cx="80" cy="250" r="22" class="f-green"/></g>
     <text x="80" y="259" text-anchor="middle" class="num">4</text>
     <text x="120" y="244" text-anchor="start" class="lbl-b">REPOSITORY-OWNED "DONE"</text>
-    <text x="120" y="272" text-anchor="start" class="lbl-g">green is the verdict, not the agent's opinion — plus a logbook you can defend</text>
+    <text x="120" y="272" text-anchor="start" class="lbl-g">green is the verdict, not the agent's opinion, plus a logbook you can defend</text>
   </svg>
   <p class="credit">Now open <b>Module 5 · Lab</b>. &nbsp;·&nbsp; <b>Gourav Shah</b> &nbsp;·&nbsp; School of DevOps &amp; AI</p>
-  <div class="pageno">M5·20</div>
+  <div class="pageno">M5·27</div>
 </section>
 </div></div>
 <script>/* reveal.js 5.x (inlined) */

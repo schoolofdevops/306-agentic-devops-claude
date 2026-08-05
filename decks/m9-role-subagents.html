@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agentic DevOps with Claude Code — Module 9: Role-Specific DevOps Subagents</title>
+<title>Agentic DevOps with Claude Code: Module 9: Role-Specific DevOps Subagents</title>
 
 <!-- ============================================================
      CourseSmith whiteboard deck skeleton (self-contained).
@@ -137,7 +137,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 1 · TITLE ═══════════════ -->
 <section data-auto-animate>
   <p class="kicker">MODULE 9 &nbsp;·&nbsp; ROLE-SPECIFIC DEVOPS SUBAGENTS</p>
-  <h2 class="t" style="font-size:2.05em">Stop correcting one generalist — provision a team</h2>
+  <h2 class="t" style="font-size:2.05em">Stop correcting one generalist: provision a team</h2>
   <p class="s" style="font-size:1.15em">one tool set per job, not per agent</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="On the left, one over-tooled agent holding an Edit tool during an incident, drawn red as the danger. On the right, a hinted team of specialists, each with a scoped badge, drawn green. An arrow moves from the one to the team.">
     <!-- LEFT: one over-tooled agent -->
@@ -164,11 +164,17 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M9·01</div>
 </section>
 
+<!-- ═══════════════ DIVIDER · INTRO ═══════════════ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">Role-Specific DevOps Subagents</h2>
+  <div class="pageno">M9·02</div>
+</section>
+
 <!-- ═══════════════ SLIDE 2 · THE GENERALIST HAS EDIT THE WHOLE TIME ═══════════════ -->
 <section>
   <h2 class="t">The generalist has Edit in its hand the whole time</h2>
   <p class="s">one agent, every tool, even the wrong one</p>
-  <svg viewBox="0 0 1100 350" role="img" aria-label="One agent box in the center wears four job hats fanning out: investigate, author, review, price. Below it, a tool belt shows Read, Grep, Bash in ink and Edit and Write drawn red — the write tools it carries into an incident. A band reads please do not modify anything is a rule it interprets, not a capability it lacks.">
+  <svg viewBox="0 0 1100 350" role="img" aria-label="One agent box in the center wears four job hats fanning out: investigate, author, review, price. Below it, a tool belt shows Read, Grep, Bash in ink and Edit and Write drawn red: the write tools it carries into an incident. A band reads please do not modify anything is a rule it interprets, not a capability it lacks.">
     <!-- four job hats fan out from the agent -->
     <text x="220" y="60" text-anchor="middle" class="lbl-g">investigate</text>
     <text x="430" y="44" text-anchor="middle" class="lbl-g">author HCL</text>
@@ -195,13 +201,18 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-dasharray="9 7"><rect x="150" y="304" width="800" height="40" rx="10"/></g>
     <text x="550" y="330" text-anchor="middle" class="lbl-g">&#8220;please don&#8217;t modify anything while you investigate&#8221; is a rule it <tspan class="lbl-b">interprets</tspan>, not a capability it <tspan class="lbl-b">lacks</tspan></text>
   </svg>
-  <div class="pageno">M9·02</div>
+  <div class="pageno">M9·03</div>
 </section>
 
 <!-- ═══════════════ SLIDE 3 · A TEAM BEATS A GENERALIST ═══════════════ -->
 <section>
+  <h2 class="t" style="font-size:2.2em">1 &middot; Why a team beats a generalist</h2>
+  <div class="pageno">M9·04</div>
+</section>
+
+<section>
   <h2 class="t">Real ops teams are not one person with every key</h2>
-  <p class="s">different people, different access — on purpose</p>
+  <p class="s">different people, different access: on purpose</p>
   <svg viewBox="0 0 1100 350" role="img" aria-label="Two panels. Left, one person holding a full ring of keys, drawn red: can accidentally deploy while investigating. Right, three people each holding one scoped key, drawn green: the investigator cannot deploy, the reviewer did not write. A band reads collapse them into one generalist and you lose every one of those properties at once.">
     <!-- LEFT: one person, all keys -->
     <text x="270" y="40" text-anchor="middle" class="lbl-b">ONE PERSON, ALL KEYS</text>
@@ -222,14 +233,14 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-dasharray="9 7"><rect x="120" y="304" width="860" height="40" rx="10"/></g>
     <text x="550" y="330" text-anchor="middle" class="lbl-g">collapse them into one generalist and you lose <tspan class="lbl-b">every one of those properties at once</tspan></text>
   </svg>
-  <div class="pageno">M9·03</div>
+  <div class="pageno">M9·05</div>
 </section>
 
 <!-- ═══════════════ SLIDE 4 · ONBOARDING = PROVISIONING, NOT A TITLE ═══════════════ -->
 <section>
   <h2 class="t">Onboarding a specialist is provisioning, not a title</h2>
   <p class="s">a badge that opens some doors, not all of them</p>
-  <svg viewBox="0 0 1100 350" role="img" aria-label="A new hire receives a badge in the center. The badge opens three rooms drawn green — audit logs read, staging read — and is refused at two rooms drawn red — production database write, secrets. A reporting line runs from the hire to the person they hand findings to. A band reads the job title is the last and least important part; the bundle of access is what makes it real.">
+<svg viewBox="0 0 1100 350" role="img" aria-label="A new hire receives a badge in the center. The badge opens three rooms drawn green (audit logs read, staging read) and is refused at two rooms drawn red (production database write, secrets). A reporting line runs from the hire to the person they hand findings to. A band reads the job title is the last and least important part; the bundle of access is what makes it real.">
     <!-- the hire + badge -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8"><circle cx="150" cy="150" r="34"/></g>
     <text x="150" y="215" text-anchor="middle" class="lbl">new specialist</text>
@@ -255,10 +266,15 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-dasharray="9 7"><rect x="120" y="304" width="860" height="40" rx="10"/></g>
     <text x="550" y="330" text-anchor="middle" class="lbl-g">the job title is the <tspan class="lbl-b">last</tspan> part; the <tspan class="lbl-b">bundle of access</tspan> is what makes the title mean anything</text>
   </svg>
-  <div class="pageno">M9·04</div>
+  <div class="pageno">M9·06</div>
 </section>
 
 <!-- ═══════════════ SLIDE 5 · WHAT A ROLE BUNDLE IS (5 fragments) ═══════════════ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">2 &middot; What a Role Bundle actually is</h2>
+  <div class="pageno">M9·07</div>
+</section>
+
 <section>
   <h2 class="t">A Role Bundle is the agent file plus everything around it</h2>
   <p class="s">the agent file is the tip, not the bundle</p>
@@ -302,14 +318,14 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-dasharray="5 5"><rect x="420" y="300" width="260" height="46" rx="10"/></g>
     <text x="550" y="330" text-anchor="middle" class="lbl-g">= a coherent specialist role</text>
   </svg>
-  <div class="pageno">M9·05</div>
+  <div class="pageno">M9·08</div>
 </section>
 
 <!-- ═══════════════ SLIDE 6 · THE TOOL SET IS LOAD-BEARING ═══════════════ -->
 <section>
   <h2 class="t">The tool set is the load-bearing part of the bundle</h2>
   <p class="s">no Edit in the tool set means it cannot edit</p>
-  <svg viewBox="0 0 1100 330" role="img" aria-label="A tool belt for the SRE investigator. Read, Grep, Glob and Bash sit in ink as tools it carries. Edit, Write, MultiEdit and NotebookEdit are drawn greyed and crossed out — removed from the bundle. A band reads a role without a write tool in its bundle cannot write; the harness will not hand it one.">
+  <svg viewBox="0 0 1100 330" role="img" aria-label="A tool belt for the SRE investigator. Read, Grep, Glob and Bash sit in ink as tools it carries. Edit, Write, MultiEdit and NotebookEdit are drawn greyed and crossed out: removed from the bundle. A band reads a role without a write tool in its bundle cannot write; the harness will not hand it one.">
     <!-- the role -->
     <g filter="url(#rough)" fill="var(--p-green)" stroke="#1e1e1e" stroke-width="3"><rect x="70" y="120" width="220" height="90" rx="12"/></g>
     <text x="180" y="158" text-anchor="middle" class="lbl-b">sre-investigator</text>
@@ -338,19 +354,24 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-dasharray="5 5" stroke-linecap="round"><path d="M296,175 C330,210 340,222 356,232"/></g>
     <!-- band -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-dasharray="9 7"><rect x="150" y="286" width="800" height="38" rx="10"/></g>
-    <text x="550" y="311" text-anchor="middle" class="lbl-g">the harness will not hand the subagent a tool that isn&#8217;t in its bundle — <tspan class="lbl-b">the easy path is closed</tspan></text>
+    <text x="550" y="311" text-anchor="middle" class="lbl-g">the harness will not hand the subagent a tool that isn&#8217;t in its bundle: <tspan class="lbl-b">the easy path is closed</tspan></text>
   </svg>
-  <div class="pageno">M9·06</div>
+  <div class="pageno">M9·09</div>
 </section>
 
 <!-- ═══════════════ SLIDE 7 · NOT A SECURITY BOUNDARY ═══════════════ -->
 <section>
+  <h2 class="t" style="font-size:2.2em">3 &middot; Why an agent file is not a security boundary</h2>
+  <div class="pageno">M9·10</div>
+</section>
+
+<section>
   <h2 class="t">An agent file is a job description, not a wall</h2>
   <p class="s">the harness enforces intent, not the target system</p>
-  <svg viewBox="0 0 1100 350" role="img" aria-label="Two stacked layers. The top layer, drawn as intent: a job description and a coded badge saying read-only on production. The bottom layer, drawn as enforcement: the database's own permission system — the RBAC role, the read-only credential, the admission controller, the Change Gate hook. An arrow shows the top says what the role is supposed to do; the bottom is what actually stops the write.">
+  <svg viewBox="0 0 1100 350" role="img" aria-label="Two stacked layers. The top layer, drawn as intent: a job description and a coded badge saying read-only on production. The bottom layer, drawn as enforcement: the database's own permission system: the RBAC role, the read-only credential, the admission controller, the Change Gate hook. An arrow shows the top says what the role is supposed to do; the bottom is what actually stops the write.">
     <!-- TOP: intent layer -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4" stroke-dasharray="9 7"><rect x="120" y="52" width="860" height="118" rx="12"/></g>
-    <text x="180" y="44" text-anchor="start" class="lbl-b">INTENT &#8212; what the harness applies</text>
+    <text x="180" y="44" text-anchor="start" class="lbl-b">INTENT: what the harness applies</text>
     <g filter="url(#rough)" fill="var(--p-orange)" stroke="#1e1e1e" stroke-width="2.6"><rect x="160" y="80" width="360" height="72" rx="10"/></g>
     <text x="340" y="112" text-anchor="middle" class="lbl-b">job description</text>
     <text x="340" y="138" text-anchor="middle" class="lbl-g">&#8220;you are read-only on prod&#8221;</text>
@@ -362,7 +383,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="700" y="192" text-anchor="middle" class="lbl-g">neither one physically stops the write</text>
     <!-- BOTTOM: enforcement layer -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="3"><rect x="120" y="208" width="860" height="96" rx="12"/></g>
-    <text x="180" y="200" text-anchor="start" class="lbl-b">ENFORCEMENT &#8212; what the target does (Module 8)</text>
+    <text x="180" y="200" text-anchor="start" class="lbl-b">ENFORCEMENT: what the target does (Module 8)</text>
     <g filter="url(#rough)" fill="var(--p-blue)" stroke="#1e1e1e" stroke-width="2.6">
       <rect x="150" y="230" width="190" height="58" rx="9"/>
       <rect x="356" y="230" width="190" height="58" rx="9"/>
@@ -375,9 +396,9 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="859" y="264" text-anchor="middle" class="lbl">Change Gate</text>
     <!-- band -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-dasharray="9 7"><rect x="150" y="316" width="800" height="30" rx="9"/></g>
-    <text x="550" y="337" text-anchor="middle" class="lbl-g">you need <tspan class="lbl-b">both</tspan> — and you must not mistake the job description for the permission system</text>
+    <text x="550" y="337" text-anchor="middle" class="lbl-g">you need <tspan class="lbl-b">both</tspan>: and you must not mistake the job description for the permission system</text>
   </svg>
-  <div class="pageno">M9·07</div>
+  <div class="pageno">M9·11</div>
 </section>
 
 <!-- ═══════════════ SLIDE 8 · THE BADGE + THE READER ON THE DOOR (3 fragments) ═══════════════ -->
@@ -412,14 +433,19 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-dasharray="9 7"><rect x="150" y="288" width="800" height="36" rx="10"/></g>
     <text x="550" y="312" text-anchor="middle" class="lbl-g">the bundle expresses <tspan class="lbl-b">intent</tspan>; the M8 enforcement layer makes the boundary <tspan class="lbl-b">hold</tspan></text>
   </svg>
-  <div class="pageno">M9·08</div>
+  <div class="pageno">M9·12</div>
 </section>
 
 <!-- ═══════════════ SLIDE 9 · RIGHT-SIZE THE MODEL ═══════════════ -->
 <section>
+  <h2 class="t" style="font-size:2.2em">4 &middot; Right-sizing the model: effort as a role decision</h2>
+  <div class="pageno">M9·13</div>
+</section>
+
+<section>
   <h2 class="t">Match the model to the hardest decision the role makes</h2>
   <p class="s">strongest-model-everywhere wastes money and hides risk</p>
-  <svg viewBox="0 0 1100 320" role="img" aria-label="A gauge running from haiku on the left, cheap and mechanical, to opus on the right, for the hardest judgment, with sonnet as the balanced middle. Above it, the wrong instinct — run everything on opus — is drawn crossed out. The reading is a per-role decision about where judgment is worth paying for.">
+  <svg viewBox="0 0 1100 320" role="img" aria-label="A gauge running from haiku on the left, cheap and mechanical, to opus on the right, for the hardest judgment, with sonnet as the balanced middle. Above it, the wrong instinct, run everything on opus, is drawn crossed out. The reading is a per-role decision about where judgment is worth paying for.">
     <!-- the crossed-out wrong instinct -->
     <g filter="url(#rough)" fill="var(--p-red)" stroke="#757575" stroke-width="2.4" stroke-dasharray="9 7"><rect x="330" y="52" width="440" height="52" rx="10"/></g>
     <text x="550" y="84" text-anchor="middle" class="lbl-g">&#8220;run everything on the strongest model, to be safe&#8221;</text>
@@ -437,9 +463,9 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="905" y="256" text-anchor="middle" class="lbl-g">hardest judgment</text>
     <!-- band -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-dasharray="9 7"><rect x="150" y="278" width="800" height="34" rx="9"/></g>
-    <text x="550" y="300" text-anchor="middle" class="lbl-g">model is a <tspan class="lbl-b">per-role decision</tspan> about where judgment is worth paying for — not a global setting</text>
+    <text x="550" y="300" text-anchor="middle" class="lbl-g">model is a <tspan class="lbl-b">per-role decision</tspan> about where judgment is worth paying for: not a global setting</text>
   </svg>
-  <div class="pageno">M9·09</div>
+  <div class="pageno">M9·14</div>
 </section>
 
 <!-- ═══════════════ SLIDE 10 · THE MODEL TABLE AS A STAIRCASE (3 fragments) ═══════════════ -->
@@ -470,15 +496,20 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-dasharray="5 5" stroke-linecap="round"><path d="M300,250 L330,200"/><path d="M770,170 L800,120"/></g>
     <!-- band -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-dasharray="9 7"><rect x="120" y="306" width="860" height="32" rx="9"/></g>
-    <text x="550" y="328" text-anchor="middle" class="lbl-g">FinOps runs haiku on purpose; the reviewers run opus on purpose — <tspan class="lbl-b">both are right-sizing</tspan></text>
+    <text x="550" y="328" text-anchor="middle" class="lbl-g">FinOps runs haiku on purpose; the reviewers run opus on purpose: <tspan class="lbl-b">both are right-sizing</tspan></text>
   </svg>
-  <div class="pageno">M9·10</div>
+  <div class="pageno">M9·15</div>
 </section>
 
 <!-- ═══════════════ SLIDE 11 · TURN BUDGET = TRIAGE TIME-BOX ═══════════════ -->
 <section>
+  <h2 class="t" style="font-size:2.2em">5 &middot; Turn budgets and worktree isolation: bounding the runaway</h2>
+  <div class="pageno">M9·16</div>
+</section>
+
+<section>
   <h2 class="t">A turn budget is the time-box on triage</h2>
-  <p class="s">8 turns, then checkpoint — no endless investigating</p>
+  <p class="s">8 turns, then checkpoint: no endless investigating</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="A triage clock. Within an 8-turn window the SRE reaches a working hypothesis, checkpoints, and hands off, drawn green. Outside the window, spinning to gather a tenth log line is drawn red and crossed out. A band reads past a point, more assessment is worse than acting on a good-enough one.">
     <!-- the clock / window -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="3"><circle cx="230" cy="165" r="90"/></g>
@@ -498,7 +529,7 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-dasharray="9 7"><rect x="150" y="288" width="800" height="34" rx="9"/></g>
     <text x="550" y="310" text-anchor="middle" class="lbl-g">past a point, <tspan class="lbl-b">more assessment is worse</tspan> than acting on a good-enough one</text>
   </svg>
-  <div class="pageno">M9·11</div>
+  <div class="pageno">M9·17</div>
 </section>
 
 <!-- ═══════════════ SLIDE 12 · WORKTREE ISOLATION ═══════════════ -->
@@ -526,16 +557,21 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="880" y="180" text-anchor="middle" class="lbl-g">until reviewed</text>
     <!-- band -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-dasharray="9 7"><rect x="150" y="300" width="800" height="30" rx="9"/></g>
-    <text x="550" y="321" text-anchor="middle" class="lbl-g">changes <tspan class="lbl-b">never collide before review</tspan> — the discipline that matters most when you orchestrate in parallel (M10)</text>
+    <text x="550" y="321" text-anchor="middle" class="lbl-g">changes <tspan class="lbl-b">never collide before review</tspan>: the discipline that matters most when you orchestrate in parallel (M10)</text>
   </svg>
-  <div class="pageno">M9·12</div>
+  <div class="pageno">M9·18</div>
 </section>
 
 <!-- ═══════════════ SLIDE 13 · PROSE HANDOFFS FORCE RE-INVESTIGATION ═══════════════ -->
 <section>
+  <h2 class="t" style="font-size:2.2em">6 &middot; Structured handoffs: the interface between roles</h2>
+  <div class="pageno">M9·19</div>
+</section>
+
+<section>
   <h2 class="t">Prose handoffs force the next role to re-investigate</h2>
   <p class="s">prose handoffs force the next role to re-investigate</p>
-  <svg viewBox="0 0 1100 320" role="img" aria-label="On the left, the SRE investigator passes a vague hallway whisper: probably the readiness probe, maybe fix the path. On the right, the next role, drawn red, has to redo all the work — re-check health, re-read the code, re-run the tests — because the whisper is not actionable. A band reads a prose handoff defeats the whole point of having a specialist investigate.">
+  <svg viewBox="0 0 1100 320" role="img" aria-label="On the left, the SRE investigator passes a vague hallway whisper: probably the readiness probe, maybe fix the path. On the right, the next role, drawn red, has to redo all the work, re-check health, re-read the code, re-run the tests, because the whisper is not actionable. A band reads a prose handoff defeats the whole point of having a specialist investigate.">
     <!-- SRE + whisper -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8"><rect x="60" y="120" width="200" height="80" rx="11"/></g>
     <text x="160" y="156" text-anchor="middle" class="lbl-b">sre-investigator</text>
@@ -555,7 +591,7 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-dasharray="9 7"><rect x="150" y="270" width="800" height="38" rx="10"/></g>
     <text x="550" y="295" text-anchor="middle" class="lbl-g">a prose handoff <tspan class="lbl-b">defeats the whole point</tspan> of having a specialist do the investigating</text>
   </svg>
-  <div class="pageno">M9·13</div>
+  <div class="pageno">M9·20</div>
 </section>
 
 <!-- ═══════════════ SLIDE 14 · THE HANDOFF IS A LAB REPORT ═══════════════ -->
@@ -589,25 +625,30 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="871" y="258" text-anchor="middle" class="lbl-g">what it deliberately skipped</text>
     <!-- band -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-dasharray="9 7"><rect x="120" y="314" width="860" height="32" rx="9"/></g>
-    <text x="550" y="336" text-anchor="middle" class="lbl-g">structured, sourced, honest about scope — so the next role <tspan class="lbl-b">acts</tspan> instead of re-investigates</text>
+    <text x="550" y="336" text-anchor="middle" class="lbl-g">structured, sourced, honest about scope: so the next role <tspan class="lbl-b">acts</tspan> instead of re-investigates</text>
   </svg>
-  <div class="pageno">M9·14</div>
+  <div class="pageno">M9·21</div>
 </section>
 
 <!-- ═══════════════ SLIDE 15 · PROVENANCE OR IT DOESN'T GET CARRIED ═══════════════ -->
 <section>
+  <h2 class="t" style="font-size:2.2em">7 &middot; Memory, provenance, and contamination control</h2>
+  <div class="pageno">M9·22</div>
+</section>
+
+<section>
   <h2 class="t">Provenance or it doesn&#8217;t get carried forward</h2>
   <p class="s">unsourced context is contamination, not a shortcut</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="Two panels. Left, a sourced claim drawn green: the orders-api readiness probe was misconfigured, carrying health.py:25 and the date verified — safe to remember. Right, an unsourced impression drawn red: the orders-api is probably fine — not safe to remember at all, it will mislead the next incident. A band reads a retained claim must keep its source, or it does not get carried forward.">
+  <svg viewBox="0 0 1100 340" role="img" aria-label="Two panels. Left, a sourced claim drawn green: the orders-api readiness probe was misconfigured, carrying health.py:25 and the date verified, safe to remember. Right, an unsourced impression drawn red: the orders-api is probably fine, not safe to remember at all, it will mislead the next incident. A band reads a retained claim must keep its source, or it does not get carried forward.">
     <!-- LEFT: sourced (green) -->
-    <text x="290" y="40" text-anchor="middle" class="lbl-b">SOURCED &#8212; SAFE TO REMEMBER</text>
+    <text x="290" y="40" text-anchor="middle" class="lbl-b">SOURCED: SAFE TO REMEMBER</text>
     <g filter="url(#rough)" fill="var(--p-green)" stroke="#1e1e1e" stroke-width="3"><rect x="80" y="60" width="420" height="180" rx="12"/></g>
     <text x="290" y="108" text-anchor="middle" class="lbl-b">&#8220;readiness probe was misconfigured&#8221;</text>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4"><rect x="120" y="132" width="340" height="42" rx="8"/></g>
     <text x="290" y="159" text-anchor="middle" class="lbl">+ health.py:25 &#183; verified 2026-07</text>
-    <text x="290" y="212" text-anchor="middle" class="lbl-g">traceable &#8212; a verifiable fact</text>
+    <text x="290" y="212" text-anchor="middle" class="lbl-g">traceable, a verifiable fact</text>
     <!-- RIGHT: unsourced (red) -->
-    <text x="810" y="40" text-anchor="middle" class="lbl-b">UNSOURCED &#8212; DON&#8217;T REMEMBER</text>
+    <text x="810" y="40" text-anchor="middle" class="lbl-b">UNSOURCED: DON&#8217;T REMEMBER</text>
     <g filter="url(#rough)" fill="var(--p-red)" stroke="#1e1e1e" stroke-width="3"><rect x="600" y="60" width="420" height="180" rx="12"/></g>
     <text x="810" y="118" text-anchor="middle" class="lbl-b">&#8220;the orders-api is probably fine&#8221;</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-dasharray="9 7"><rect x="640" y="140" width="340" height="42" rx="8"/></g>
@@ -617,14 +658,19 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-dasharray="9 7"><rect x="120" y="298" width="860" height="34" rx="9"/></g>
     <text x="550" y="320" text-anchor="middle" class="lbl-g">a retained claim must <tspan class="lbl-b">keep its source</tspan>, or it does not get carried forward</text>
   </svg>
-  <div class="pageno">M9·15</div>
+  <div class="pageno">M9·23</div>
 </section>
 
 <!-- ═══════════════ SLIDE 16 · SIX ROLES, ONE TEAM (3 fragments) ═══════════════ -->
 <section>
-  <h2 class="t">Six roles, one team — four read, two write</h2>
+  <h2 class="t" style="font-size:2.2em">8 &middot; The six roles, as a team</h2>
+  <div class="pageno">M9·24</div>
+</section>
+
+<section>
+  <h2 class="t">Six roles, one team: four read, two write</h2>
   <p class="s">an independent verdict from someone who wrote nothing</p>
-  <svg viewBox="0 0 1100 350" role="img" aria-label="Four read-only roles drawn green — sre-investigator, security-reviewer, finops-analyst — and two authoring roles drawn blue — iac-engineer, platform-engineer. Every role sends a structured packet to the change-reviewer in the center, which emits a verdict to ops-lead and merge. The read-only roles carry no write tool; the authoring roles only propose on a branch.">
+<svg viewBox="0 0 1100 350" role="img" aria-label="Four read-only roles drawn green (sre-investigator, security-reviewer, finops-analyst) and two authoring roles drawn blue (iac-engineer, platform-engineer). Every role sends a structured packet to the change-reviewer in the center, which emits a verdict to ops-lead and merge. The read-only roles carry no write tool; the authoring roles only propose on a branch.">
     <g class="fragment">
       <!-- read-only roles (green) -->
       <g filter="url(#rough)" fill="var(--p-green)" stroke="#1e1e1e" stroke-width="2.6">
@@ -666,14 +712,19 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="961" y="174" text-anchor="middle" class="lbl-g">ops-lead</text>
     </g>
   </svg>
-  <div class="pageno">M9·16</div>
+  <div class="pageno">M9·25</div>
 </section>
 
 <!-- ═══════════════ SLIDE 17 · AUTHORITY REGRESSION (2 fragments) ═══════════════ -->
 <section>
-  <h2 class="t">Assert it can — assert it cannot: authority regression</h2>
+  <h2 class="t" style="font-size:2.2em">9 &middot; Testing the roles: authority regression</h2>
+  <div class="pageno">M9·26</div>
+</section>
+
+<section>
+  <h2 class="t">Assert it can, assert it cannot: authority regression</h2>
   <p class="s">test what a role can do, and what it cannot</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="A verdict grid for role-authority-check. In the read column every role returns YES, drawn green — they all need to see the world. In the write column the four read-only roles return NO, drawn red, and the two authoring roles return YES, drawn blue. Below, an unknown role returns fail-closed. A change that grants the SRE an Edit tool flips a cell and fails the build.">
+  <svg viewBox="0 0 1100 340" role="img" aria-label="A verdict grid for role-authority-check. In the read column every role returns YES, drawn green: they all need to see the world. In the write column the four read-only roles return NO, drawn red, and the two authoring roles return YES, drawn blue. Below, an unknown role returns fail-closed. A change that grants the SRE an Edit tool flips a cell and fails the build.">
     <!-- column headers -->
     <text x="470" y="52" text-anchor="middle" class="lbl-b">read?</text>
     <text x="700" y="52" text-anchor="middle" class="lbl-b">write?</text>
@@ -711,10 +762,15 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-dasharray="9 7"><rect x="120" y="298" width="860" height="34" rx="9"/></g>
     <text x="550" y="320" text-anchor="middle" class="lbl-g">a change that grants the SRE an <tspan class="lbl-b">Edit</tspan> tool flips a cell and <tspan class="lbl-b">fails the build</tspan></text>
   </svg>
-  <div class="pageno">M9·17</div>
+  <div class="pageno">M9·27</div>
 </section>
 
-<!-- ═══════════════ SLIDE 18 · CLOSING ═══════════════ -->
+<!-- ═══════════════ DIVIDER · SECTION 10 ═══════════════ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">10 &middot; What you'll do in the lab</h2>
+  <div class="pageno">M9·28</div>
+</section>
+
 <section data-auto-animate>
   <p class="kicker">MODULE 9 &nbsp;·&nbsp; ROLE-SPECIFIC DEVOPS SUBAGENTS</p>
   <h2 class="t" style="font-size:2.0em">You provisioned a team once, instead of correcting a generalist forever</h2>
@@ -722,22 +778,22 @@ footer, header, hgroup, main, menu, nav, section {
   <svg viewBox="0 0 1100 300" role="img" aria-label="Five numbered takeaways: read the four shipped agent files as bundles, build the two missing roles finops and change-reviewer, run the authority regression for every role, validate a structured handoff with a sourced and an unsourced packet, and let the repository certify the team with grade.sh m9.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4"><circle cx="120" cy="60" r="20"/></g>
     <text x="120" y="68" text-anchor="middle" class="num">1</text>
-    <text x="156" y="68" text-anchor="start" class="lbl">Read the four shipped agent files as <tspan class="lbl-b">Role Bundles</tspan> — prompt, tools, model, budget, handoff.</text>
+    <text x="156" y="68" text-anchor="start" class="lbl">Read the four shipped agent files as <tspan class="lbl-b">Role Bundles</tspan>: prompt, tools, model, budget, handoff.</text>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4"><circle cx="120" cy="112" r="20"/></g>
     <text x="120" y="120" text-anchor="middle" class="num">2</text>
-    <text x="156" y="120" text-anchor="start" class="lbl">Build the two missing roles — <tspan class="lbl-b">finops-analyst</tspan> (haiku) and <tspan class="lbl-b">change-reviewer</tspan> (opus).</text>
+    <text x="156" y="120" text-anchor="start" class="lbl">Build the two missing roles: <tspan class="lbl-b">finops-analyst</tspan> (haiku) and <tspan class="lbl-b">change-reviewer</tspan> (opus).</text>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4"><circle cx="120" cy="164" r="20"/></g>
     <text x="120" y="172" text-anchor="middle" class="num">3</text>
-    <text x="156" y="172" text-anchor="start" class="lbl">Run the <tspan class="lbl-b">authority regression</tspan> — read-only roles cannot write, authoring roles can, unknown fails closed.</text>
+    <text x="156" y="172" text-anchor="start" class="lbl">Run the <tspan class="lbl-b">authority regression</tspan>: read-only roles cannot write, authoring roles can, unknown fails closed.</text>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4"><circle cx="120" cy="216" r="20"/></g>
     <text x="120" y="224" text-anchor="middle" class="num">4</text>
-    <text x="156" y="224" text-anchor="start" class="lbl">Validate a <tspan class="lbl-b">structured handoff</tspan> — a sourced packet passes, an unsourced one is rejected as contamination.</text>
+    <text x="156" y="224" text-anchor="start" class="lbl">Validate a <tspan class="lbl-b">structured handoff</tspan>: a sourced packet passes, an unsourced one is rejected as contamination.</text>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4"><circle cx="120" cy="268" r="20"/></g>
     <text x="120" y="276" text-anchor="middle" class="num">5</text>
-    <text x="156" y="276" text-anchor="start" class="lbl">Let the repository certify the team &#8212; <tspan class="lbl-b">grade.sh m9</tspan> runs the whole authority-and-handoff matrix.</text>
+    <text x="156" y="276" text-anchor="start" class="lbl">Let the repository certify the team: <tspan class="lbl-b">grade.sh m9</tspan> runs the whole authority-and-handoff matrix.</text>
   </svg>
   <p class="credit">Now open <b>Module 9 · Lab</b>. &nbsp;·&nbsp; <b>Gourav Shah</b> &nbsp;·&nbsp; School of DevOps &amp; AI</p>
-  <div class="pageno">M9·18</div>
+  <div class="pageno">M9·29</div>
 </section>
 </div></div>
 

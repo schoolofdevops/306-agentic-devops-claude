@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agentic DevOps with Claude Code — Module 3: Context Engineering, Evidence &amp; Operational Memory</title>
+<title>Module 3: Context Engineering, Evidence &amp; Operational Memory &middot; Agentic DevOps with Claude Code</title>
 
 <!-- ============================================================
      CourseSmith whiteboard deck skeleton (self-contained).
@@ -150,7 +150,7 @@ footer, header, hgroup, main, menu, nav, section {
       <circle cx="550" cy="150" r="20"/>
       <path d="M550,170 L550,200 M550,182 L525,196 M550,182 L575,196"/>
     </g>
-    <text x="550" y="240" text-anchor="middle" class="lbl-g">the agent — allowed to act</text>
+    <text x="550" y="240" text-anchor="middle" class="lbl-g">the agent, allowed to act</text>
     <!-- gray thought bubble pointing in -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-dasharray="5 5" stroke-linecap="round">
       <ellipse cx="200" cy="130" rx="120" ry="55"/>
@@ -163,7 +163,13 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M3·01</div>
 </section>
 
-<!-- ============ SLIDE 2 — boundary safe vs context correct ============ -->
+<!-- ============ DIVIDER — intro ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">Context Engineering, Evidence &amp; Operational Memory</h2>
+  <div class="pageno">M3·02</div>
+</section>
+
+<!-- ============ SLIDE — boundary safe vs context correct ============ -->
 <section>
   <h2 class="t">The boundary keeps it safe; context makes it correct</h2>
   <p class="s">permission is <em>allowed</em>; context is <em>right</em></p>
@@ -177,7 +183,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="365" y="120" text-anchor="middle" class="lbl-g">agent</text>
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="210" width="360" height="80" rx="12"/></g>
     <text x="240" y="245" text-anchor="middle" class="lbl-b">safe but WRONG change</text>
-    <text x="240" y="273" text-anchor="middle" class="lbl-g" fill="#c62828">no damage — but the wrong fix</text>
+    <text x="240" y="273" text-anchor="middle" class="lbl-g" fill="#c62828">no damage, but the wrong fix</text>
     <!-- divider -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="1.8" stroke-dasharray="4 6"><path d="M550,55 L550,300"/></g>
     <!-- RIGHT panel: boundary + context -->
@@ -189,12 +195,18 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round"><path d="M730,130 C730,155 835,155 835,175" marker-end="url(#ah)"/><path d="M940,130 C940,155 845,155 845,175" marker-end="url(#ah)"/></g>
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="3"><rect x="700" y="210" width="360" height="80" rx="12"/></g>
     <text x="880" y="245" text-anchor="middle" class="lbl-b">safe AND right</text>
-    <text x="880" y="273" text-anchor="middle" class="lbl-g" fill="#2e7d32">no damage — and the correct fix</text>
+    <text x="880" y="273" text-anchor="middle" class="lbl-g" fill="#2e7d32">no damage, and the correct fix</text>
   </svg>
-  <div class="pageno">M3·02</div>
+  <div class="pageno">M3·03</div>
 </section>
 
-<!-- ============ SLIDE 3 — context is a budget (the hinge) ============ -->
+<!-- ============ DIVIDER — section 1 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">1 &middot; Why context is a budget, not a bucket</h2>
+  <div class="pageno">M3·04</div>
+</section>
+
+<!-- ============ SLIDE — context is a budget (the hinge) ============ -->
 <section>
   <h2 class="t">Context is a budget, not a bucket</h2>
   <p class="s">one finite window, shared by everything it knows</p>
@@ -208,9 +220,9 @@ footer, header, hgroup, main, menu, nav, section {
       <rect x="145" y="155" width="590" height="70" rx="10"/>
       <rect x="145" y="235" width="590" height="70" rx="10"/>
     </g>
-    <text x="440" y="118" text-anchor="middle" class="lbl">System + CLAUDE.md — your operating contract</text>
-    <text x="440" y="198" text-anchor="middle" class="lbl">Conversation so far — prompts + agent reasoning</text>
-    <text x="440" y="278" text-anchor="middle" class="lbl">Evidence collected — command output, file reads</text>
+    <text x="440" y="118" text-anchor="middle" class="lbl">System + CLAUDE.md: your operating contract</text>
+    <text x="440" y="198" text-anchor="middle" class="lbl">Conversation so far: prompts + agent reasoning</text>
+    <text x="440" y="278" text-anchor="middle" class="lbl">Evidence collected: command output, file reads</text>
     <!-- room-left gauge -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4"><rect x="810" y="55" width="70" height="270" rx="10"/></g>
     <g filter="url(#rough)" fill="#ffe6cc" stroke="none"><rect x="815" y="240" width="60" height="80" rx="6"/></g>
@@ -219,7 +231,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="960" y="202" text-anchor="middle" class="lbl">next step?</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M905,200 C920,220 905,270 890,285" marker-end="url(#ahg)"/></g>
   </svg>
-  <div class="pageno">M3·03</div>
+  <div class="pageno">M3·05</div>
 </section>
 
 <!-- ============ SLIDE 4 — carry-on, not shipping container ============ -->
@@ -243,7 +255,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="760" y="215" text-anchor="middle" class="lbl-g">"just in case"</text>
     <text x="760" y="320" text-anchor="middle" class="lbl-g" fill="#c62828">essentials buried under padding</text>
   </svg>
-  <div class="pageno">M3·04</div>
+  <div class="pageno">M3·06</div>
 </section>
 
 <!-- ============ SLIDE 5 — spend the budget on signal ============ -->
@@ -268,7 +280,13 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#2e7d32" stroke-width="2.6" stroke-linecap="round"><path d="M925,95 C965,80 985,70 1000,60" marker-end="url(#ah)"/></g>
     <text x="985" y="45" text-anchor="middle" class="lbl-g" fill="#2e7d32">room to reason</text>
   </svg>
-  <div class="pageno">M3·05</div>
+  <div class="pageno">M3·07</div>
+</section>
+
+<!-- ============ DIVIDER — section 2 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">2 &middot; The operating contract: CLAUDE.md</h2>
+  <div class="pageno">M3·08</div>
 </section>
 
 <!-- ============ SLIDE 6 — CLAUDE.md is the operating contract ============ -->
@@ -298,22 +316,22 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="790" y="276" text-anchor="middle" class="lbl-sm">call before electrical</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2" stroke-dasharray="5 5" stroke-linecap="round"><path d="M590,175 C640,120 660,110 700,110" marker-end="url(#ahg)"/></g>
   </svg>
-  <div class="pageno">M3·06</div>
+  <div class="pageno">M3·09</div>
 </section>
 
 <!-- ============ SLIDE 7 — belongs vs bloat ============ -->
 <section>
   <h2 class="t">The test for every line: would the agent get it wrong?</h2>
-  <p class="s">non-obvious <em>and</em> stable — or it doesn't belong</p>
+  <p class="s">non-obvious <em>and</em> stable, or it doesn't belong</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="Left green panel lists what belongs in CLAUDE.md; right red panel lists what is bloat and does not belong.">
     <!-- LEFT: belongs (green) -->
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.8"><rect x="70" y="60" width="440" height="270" rx="14"/></g>
     <text x="290" y="95" text-anchor="middle" class="lbl-b">BELONGS</text>
     <g class="lbl" text-anchor="start">
-      <text x="100" y="140">• the service map — names, ports, langs</text>
+      <text x="100" y="140">• the service map: names, ports, langs</text>
       <text x="100" y="180">• how to run, test, check health</text>
       <text x="100" y="220">• the non-obvious rules (/healthz trap)</text>
-      <text x="100" y="260">• where to find the rest — pointers</text>
+      <text x="100" y="260">• where to find the rest: pointers</text>
     </g>
     <text x="290" y="308" text-anchor="middle" class="lbl-g" fill="#2e7d32">non-obvious AND stable</text>
     <!-- RIGHT: bloat (red) -->
@@ -327,7 +345,7 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="810" y="308" text-anchor="middle" class="lbl-g" fill="#c62828">budget spent for nothing</text>
   </svg>
-  <div class="pageno">M3·07</div>
+  <div class="pageno">M3·10</div>
 </section>
 
 <!-- ============ SLIDE 8 — /init surveys, you draw the blueprint (3 fragments) ============ -->
@@ -364,7 +382,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="995" y="215" text-anchor="middle" class="lbl-g">contract</text>
     </g>
   </svg>
-  <div class="pageno">M3·08</div>
+  <div class="pageno">M3·11</div>
+</section>
+
+<!-- ============ DIVIDER — section 3 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">3 &middot; Directory-scoped rules: the right rule in the right place</h2>
+  <div class="pageno">M3·12</div>
 </section>
 
 <!-- ============ SLIDE 9 — root file scaling problem ============ -->
@@ -374,7 +398,7 @@ footer, header, hgroup, main, menu, nav, section {
   <svg viewBox="0 0 1100 360" role="img" aria-label="An overloaded front-gate sign crammed with rules for four different rooms, marked red and cluttered, with a confused figure scanning it for the one relevant line.">
     <!-- overloaded sign (red, cluttered) -->
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="3"><rect x="120" y="55" width="520" height="260" rx="12"/></g>
-    <text x="380" y="90" text-anchor="middle" class="lbl-b">/CLAUDE.md — ALL rules, everywhere</text>
+    <text x="380" y="90" text-anchor="middle" class="lbl-b">/CLAUDE.md: ALL rules, everywhere</text>
     <g class="lbl-sm" text-anchor="start">
       <text x="150" y="130">run pytest · ruff format · FastAPI patterns</text>
       <text x="150" y="160">go test ./... · gofmt · chi router conventions</text>
@@ -390,7 +414,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="830" y="281" text-anchor="middle" class="lbl-g" fill="#c62828">to where I am?</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-dasharray="5 5" stroke-linecap="round"><path d="M800,150 C720,150 680,150 645,155" marker-end="url(#ahg)"/></g>
   </svg>
-  <div class="pageno">M3·09</div>
+  <div class="pageno">M3·13</div>
 </section>
 
 <!-- ============ SLIDE 10 — post the rule where it applies (4 fragments) ============ -->
@@ -435,7 +459,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="945" y="306" text-anchor="middle" class="lbl-g">prod approval</text>
     </g>
   </svg>
-  <div class="pageno">M3·10</div>
+  <div class="pageno">M3·14</div>
+</section>
+
+<!-- ============ DIVIDER — section 4 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">4 &middot; Evidence contracts: knowing where a fact came from</h2>
+  <div class="pageno">M3·15</div>
 </section>
 
 <!-- ============ SLIDE 11 — a fact with no provenance is a rumor ============ -->
@@ -465,7 +495,7 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="810" y="262" text-anchor="middle" class="lbl-b" fill="#2e7d32">EVIDENCE</text>
   </svg>
-  <div class="pageno">M3·11</div>
+  <div class="pageno">M3·16</div>
 </section>
 
 <!-- ============ SLIDE 12 — evidence packet is a chain-of-custody label ============ -->
@@ -499,7 +529,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="850" y="196" text-anchor="middle" class="lbl-sm">collected_at + ttl → staleness visible</text>
     <text x="850" y="268" text-anchor="middle" class="lbl-sm">trust → poison kept out</text>
   </svg>
-  <div class="pageno">M3·12</div>
+  <div class="pageno">M3·17</div>
+</section>
+
+<!-- ============ DIVIDER — section 5 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">5 &middot; Bounded queries: collecting evidence without drowning the budget</h2>
+  <div class="pageno">M3·18</div>
 </section>
 
 <!-- ============ SLIDE 13 — bounded queries (4 fragments) ============ -->
@@ -540,7 +576,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="170" y="318" text-anchor="middle" class="lbl-b" fill="#2e7d32">the 10 lines that matter</text>
     </g>
   </svg>
-  <div class="pageno">M3·13</div>
+  <div class="pageno">M3·19</div>
+</section>
+
+<!-- ============ DIVIDER — section 6 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">6 &middot; Compaction and memory: when context outlives the window</h2>
+  <div class="pageno">M3·20</div>
 </section>
 
 <!-- ============ SLIDE 14 — compaction is the meeting minutes (2 fragments) ============ -->
@@ -571,13 +613,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="835" y="312" text-anchor="middle" class="lbl-g" fill="#c62828">exact strings blur</text>
     </g>
   </svg>
-  <div class="pageno">M3·14</div>
+  <div class="pageno">M3·21</div>
 </section>
 
 <!-- ============ SLIDE 15 — memory persists, so does the wrong thing ============ -->
 <section>
-  <h2 class="t">Memory persists — so does the wrong thing</h2>
-  <p class="s">memory persists — so does the wrong thing</p>
+  <h2 class="t">Memory persists, so does the wrong thing</h2>
+  <p class="s">memory persists, so does the wrong thing</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A red untrusted ticket string climbs a staircase of steps read, summarized, remembered, and acted; a green provenance gate blocks the climb, but without it the string reaches the top.">
     <!-- staircase of promotion steps -->
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.4">
@@ -599,7 +641,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="780" y="274" text-anchor="middle" class="lbl-g" fill="#2e7d32">untrusted → quarantined</text>
     <g filter="url(#rough)" fill="none" stroke="#2e7d32" stroke-width="2.6" stroke-linecap="round"><path d="M660,175 C700,195 720,205 730,213" marker-end="url(#ah)"/></g>
   </svg>
-  <div class="pageno">M3·15</div>
+  <div class="pageno">M3·22</div>
 </section>
 
 <!-- ============ SLIDE 16 — CLOSING ============ -->
@@ -623,15 +665,15 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="120" y="283">5</text>
     </g>
     <g class="lbl" text-anchor="start">
-      <text x="165" y="63">Spend the budget on signal — the window is finite.</text>
-      <text x="165" y="118">Curate the contract — non-obvious and stable only.</text>
-      <text x="165" y="173">Scope the rules — the right rule in the right place.</text>
-      <text x="165" y="228">Label your evidence — a claim always carries its source.</text>
+      <text x="165" y="63">Spend the budget on signal: the window is finite.</text>
+      <text x="165" y="118">Curate the contract: non-obvious and stable only.</text>
+      <text x="165" y="173">Scope the rules: the right rule in the right place.</text>
+      <text x="165" y="228">Label your evidence: a claim always carries its source.</text>
       <text x="165" y="283">Provenance keeps the poison out of memory.</text>
     </g>
   </svg>
   <p class="credit">Now open <b>Module 3 · Lab</b>. &nbsp;·&nbsp; <b>Gourav Shah</b> &nbsp;·&nbsp; School of DevOps &amp; AI</p>
-  <div class="pageno">M3·16</div>
+  <div class="pageno">M3·23</div>
 </section>
 
 </div></div>

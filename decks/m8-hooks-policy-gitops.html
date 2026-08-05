@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agentic DevOps with Claude Code — Module 8: Hooks, Policy, GitOps &amp; the Environment Contract</title>
+<title>Module 8: Hooks, Policy, GitOps &amp; the Environment Contract &middot; Agentic DevOps with Claude Code</title>
 
 <!-- ============================================================
      CourseSmith whiteboard deck skeleton (self-contained).
@@ -170,6 +170,12 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M8·01</div>
 </section>
 
+<!-- ============ DIVIDER — intro ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">Hooks, Policy, GitOps &amp; the Environment Contract</h2>
+  <div class="pageno">M8&middot;02</div>
+</section>
+
 <!-- ============ SLIDE 2 — intent controls: the agent chooses ============ -->
 <section>
   <h2 class="t">Every control so far asked the agent to <em>choose</em> right</h2>
@@ -206,12 +212,12 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="990" y="192" text-anchor="middle" class="lbl-g" fill="#c62828">can go wrong</text>
     </g>
   </svg>
-  <div class="pageno">M8·02</div>
+  <div class="pageno">M8·03</div>
 </section>
 
 <!-- ============ SLIDE 3 — the ambiguous ticket ============ -->
 <section>
-  <h2 class="t">"Fix production" — the ticket that breaks an interpreted rule</h2>
+  <h2 class="t">"Fix production": the ticket that breaks an interpreted rule</h2>
   <p class="s">"fix production" can be misread as "run the apply"</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="An incident ticket flows to the agent, which forks into a safe reading that proposes a change and a dangerous red reading that applies directly to production.">
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.6">
@@ -247,10 +253,15 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="920" y="292" text-anchor="middle" class="lbl-g" fill="#c62828">apply → production</text>
     </g>
   </svg>
-  <div class="pageno">M8·03</div>
+  <div class="pageno">M8·04</div>
 </section>
 
 <!-- ============ SLIDE 4 — two kinds of control fail in opposite ways ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">1 &middot; Why this is a different kind of control</h2>
+  <div class="pageno">M8&middot;05</div>
+</section>
+
 <section>
   <h2 class="t">Two kinds of control fail in opposite ways</h2>
   <p class="s">intent fails silent; enforcement fails loud</p>
@@ -273,7 +284,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="815" y="235" text-anchor="middle" class="lbl-b" fill="#2e7d32">fails only when MISCONFIGURED</text>
     <text x="815" y="272" text-anchor="middle" class="lbl-g" fill="#2e7d32">loud · structural · you can test it</text>
   </svg>
-  <div class="pageno">M8·04</div>
+  <div class="pageno">M8·06</div>
 </section>
 
 <!-- ============ SLIDE 5 — sign vs badge reader ============ -->
@@ -306,7 +317,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="800" y="228" text-anchor="middle" class="lbl-b">READER</text>
     <text x="800" y="330" text-anchor="middle" class="lbl-g" fill="#2e7d32">no badge → won't open</text>
   </svg>
-  <div class="pageno">M8·05</div>
+  <div class="pageno">M8·07</div>
 </section>
 
 <!-- ============ SLIDE 6 — layers, not alternatives ============ -->
@@ -318,7 +329,7 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.4" stroke-dasharray="9 7">
       <rect x="120" y="60" width="860" height="80" rx="10"/>
     </g>
-    <text x="550" y="95" text-anchor="middle" class="lbl-b">INTENT controls — cheap, handle the common case</text>
+    <text x="550" y="95" text-anchor="middle" class="lbl-b">INTENT controls: cheap, handle the common case</text>
     <text x="550" y="122" text-anchor="middle" class="lbl-g">a rule the model interprets · permeable</text>
     <!-- the missed action falling through -->
     <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="2.6" stroke-linecap="round">
@@ -329,16 +340,21 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="3">
       <rect x="120" y="245" width="860" height="80" rx="10"/>
     </g>
-    <text x="550" y="280" text-anchor="middle" class="lbl-b">ENFORCEMENT floor — catches what intent missed</text>
+    <text x="550" y="280" text-anchor="middle" class="lbl-b">ENFORCEMENT floor: catches what intent missed</text>
     <text x="550" y="307" text-anchor="middle" class="lbl-g" fill="#2e7d32">holds even when the model's judgment doesn't</text>
   </svg>
-  <div class="pageno">M8·06</div>
+  <div class="pageno">M8·08</div>
 </section>
 
 <!-- ============ SLIDE 7 — four threat shapes ============ -->
 <section>
-  <h2 class="t">Model the threat surface first — four shapes</h2>
-  <p class="s">reasonable-seeming, but destructive — four shapes</p>
+  <h2 class="t" style="font-size:2.2em">2 &middot; Model the threat surface first</h2>
+  <div class="pageno">M8&middot;09</div>
+</section>
+
+<section>
+  <h2 class="t">Model the threat surface first: four shapes</h2>
+  <p class="s">reasonable-seeming, but destructive: four shapes</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A two-by-two grid of four threat shapes: wrong target, excess blast radius, irreversible destruction, and data leakage, each with its reasonable-but-wrong reading.">
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.6">
       <rect x="50" y="45" width="490" height="130" rx="12"/>
@@ -347,7 +363,7 @@ footer, header, hgroup, main, menu, nav, section {
       <rect x="560" y="195" width="490" height="130" rx="12"/>
     </g>
     <text x="295" y="90" text-anchor="middle" class="lbl-b">wrong target</text>
-    <text x="295" y="128" text-anchor="middle" class="lbl-g">"fix the deployment" —</text>
+    <text x="295" y="128" text-anchor="middle" class="lbl-g">"fix the deployment"</text>
     <text x="295" y="152" text-anchor="middle" class="lbl-g">pointed at prod, thought staging</text>
 
     <text x="805" y="90" text-anchor="middle" class="lbl-b">excess blast radius</text>
@@ -362,10 +378,15 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="805" y="278" text-anchor="middle" class="lbl-g">"check the DB config"</text>
     <text x="805" y="302" text-anchor="middle" class="lbl-g">dumps a Secret's decoded value</text>
   </svg>
-  <div class="pageno">M8·07</div>
+  <div class="pageno">M8·10</div>
 </section>
 
 <!-- ============ SLIDE 8 — a hook is deterministic code ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">3 &middot; The command layer: deterministic hooks</h2>
+  <div class="pageno">M8&middot;11</div>
+</section>
+
 <section>
   <h2 class="t">A hook is deterministic code, not a model</h2>
   <p class="s">same input, same verdict, every time</p>
@@ -407,7 +428,7 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="975" y="188" text-anchor="middle" class="lbl-g">runs (or not)</text>
     </g>
   </svg>
-  <div class="pageno">M8·08</div>
+  <div class="pageno">M8·12</div>
 </section>
 
 <!-- ============ SLIDE 9 — fail-closed ============ -->
@@ -444,7 +465,7 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="745" y="292" text-anchor="middle" class="lbl-g">the closed door</text>
     </g>
   </svg>
-  <div class="pageno">M8·09</div>
+  <div class="pageno">M8·13</div>
 </section>
 
 <!-- ============ SLIDE 10 — airport checkpoint ============ -->
@@ -480,7 +501,7 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.8"><rect x="845" y="228" width="160" height="60" rx="8"/></g>
     <text x="925" y="265" text-anchor="middle" class="lbl-b" fill="#c62828">stopped</text>
   </svg>
-  <div class="pageno">M8·10</div>
+  <div class="pageno">M8·14</div>
 </section>
 
 <!-- ============ SLIDE 11 — the Change Gate denials ============ -->
@@ -524,7 +545,7 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="935" y="356" text-anchor="middle" class="lbl-g">images ship via CI, not the agent</text>
     </g>
   </svg>
-  <div class="pageno">M8·11</div>
+  <div class="pageno">M8·15</div>
 </section>
 
 <!-- ============ SLIDE 12 — narrowness ============ -->
@@ -533,7 +554,7 @@ footer, header, hgroup, main, menu, nav, section {
   <p class="s">narrow gate: block danger, pass everything else</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A two-panel comparison: the denied panel lists the five dangerous shapes in red, and the allowed panel lists terraform plan, a dev apply, a read-only kubectl get, and a Secret referenced by name in green.">
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.6"><rect x="50" y="45" width="480" height="270" rx="14"/></g>
-    <text x="290" y="90" text-anchor="middle" class="lbl-b" fill="#c62828">DENIED — the 5 shapes</text>
+    <text x="290" y="90" text-anchor="middle" class="lbl-b" fill="#c62828">DENIED: the 5 shapes</text>
     <g class="lbl" text-anchor="start">
       <text x="95" y="140">✕ terraform apply → production</text>
       <text x="95" y="178">✕ delete a protected namespace</text>
@@ -543,7 +564,7 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
 
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.6"><rect x="570" y="45" width="480" height="270" rx="14"/></g>
-    <text x="810" y="90" text-anchor="middle" class="lbl-b" fill="#2e7d32">ALLOWED — do your job</text>
+    <text x="810" y="90" text-anchor="middle" class="lbl-b" fill="#2e7d32">ALLOWED: do your job</text>
     <g class="lbl" text-anchor="start">
       <text x="615" y="140">✓ terraform plan</text>
       <text x="615" y="178">✓ apply in dev</text>
@@ -552,12 +573,12 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="615" y="292">✓ investigate freely</text>
     </g>
   </svg>
-  <div class="pageno">M8·12</div>
+  <div class="pageno">M8·16</div>
 </section>
 
 <!-- ============ SLIDE 13 — test it like code ============ -->
 <section>
-  <h2 class="t">A hook is code — so you test it like code</h2>
+  <h2 class="t">A hook is code, so you test it like code</h2>
   <p class="s">you can test exit codes, not model interpretation</p>
   <svg viewBox="0 0 1100 320" role="img" aria-label="A test table: dangerous inputs assert exit code 2, safe inputs assert exit code 0, and bad input asserts a deny, each row marked with a green check.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.4"><rect x="120" y="40" width="860" height="60" rx="8"/></g>
@@ -580,29 +601,34 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="620" y="275" text-anchor="middle" class="lbl">fail-closed</text>
     <text x="880" y="275" text-anchor="middle" class="lbl-b" fill="#2e7d32">✓ denied</text>
   </svg>
-  <div class="pageno">M8·13</div>
+  <div class="pageno">M8·17</div>
 </section>
 
 <!-- ============ SLIDE 14 — target layer / RBAC ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">4 &middot; The target layer: least privilege at the identity</h2>
+  <div class="pageno">M8&middot;18</div>
+</section>
+
 <section>
   <h2 class="t">The target layer: least privilege at the identity</h2>
   <p class="s">a read-only role means the agent <em>cannot</em> write</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A layered stack: the hook checks the command text on top; beneath it the RBAC identity check rejects any write from a read-only credential at the API server.">
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="2.6" stroke-dasharray="9 7"><rect x="120" y="40" width="860" height="70" rx="10"/></g>
-    <text x="550" y="72" text-anchor="middle" class="lbl-b">HOOK — checks the command TEXT</text>
+    <text x="550" y="72" text-anchor="middle" class="lbl-b">HOOK: checks the command TEXT</text>
     <text x="550" y="98" text-anchor="middle" class="lbl-g">your code · can be too narrow · a shape may slip through</text>
 
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="3"><rect x="120" y="130" width="860" height="90" rx="10"/></g>
-    <text x="550" y="165" text-anchor="middle" class="lbl-b">RBAC / IDENTITY — checks the CREDENTIAL</text>
+    <text x="550" y="165" text-anchor="middle" class="lbl-b">RBAC / IDENTITY: checks the CREDENTIAL</text>
     <text x="550" y="195" text-anchor="middle" class="lbl-g">the cluster checks the identity · no write verb = cannot write</text>
 
     <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="2.8" stroke-linecap="round">
       <path d="M550,225 L550,270" marker-end="url(#ah)"/>
     </g>
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.6"><rect x="330" y="275" width="440" height="55" rx="10"/></g>
-    <text x="550" y="310" text-anchor="middle" class="lbl-b" fill="#c62828">API server rejects the write — full stop</text>
+    <text x="550" y="310" text-anchor="middle" class="lbl-b" fill="#c62828">API server rejects the write, full stop</text>
   </svg>
-  <div class="pageno">M8·14</div>
+  <div class="pageno">M8·19</div>
 </section>
 
 <!-- ============ SLIDE 15 — bouncer vs vault ============ -->
@@ -627,10 +653,15 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="985" y="212" text-anchor="middle" class="lbl-g" fill="#2e7d32">= no entry</text>
     <text x="800" y="325" text-anchor="middle" class="lbl-g">holds when the list has a gap</text>
   </svg>
-  <div class="pageno">M8·15</div>
+  <div class="pageno">M8·20</div>
 </section>
 
 <!-- ============ SLIDE 16 — GitOps reconciler-only ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">5 &middot; The change path: GitOps and the reconciler-only writer</h2>
+  <div class="pageno">M8&middot;21</div>
+</section>
+
 <section>
   <h2 class="t">GitOps: the reconciler is the only writer</h2>
   <p class="s">agent proposes on a branch; reconciler applies</p>
@@ -670,13 +701,18 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="70" y="300" text-anchor="start" class="lbl-g" fill="#c62828">agent has no direct write path ✕</text>
     </g>
   </svg>
-  <div class="pageno">M8·16</div>
+  <div class="pageno">M8·22</div>
 </section>
 
 <!-- ============ SLIDE 17 — Environment Contract ============ -->
 <section>
+  <h2 class="t" style="font-size:2.2em">6 &middot; The Environment Contract: making the target explicit</h2>
+  <div class="pageno">M8&middot;23</div>
+</section>
+
+<section>
   <h2 class="t">The Environment Contract names the target in booleans</h2>
-  <p class="s">declared vs. effective — mismatch is a block</p>
+  <p class="s">declared vs. effective: mismatch is a block</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="Three environment bundle cards: dev is a green writer with allow-apply true; staging and production are read-only with allow-apply false. An env-check script compares the declared environment to the effective context and blocks on mismatch.">
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.8"><rect x="40" y="40" width="300" height="150" rx="12"/></g>
     <text x="190" y="78" text-anchor="middle" class="lbl-b" fill="#2e7d32">dev</text>
@@ -697,14 +733,19 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="910" y="170" text-anchor="middle" class="lbl-g">require_approval: true</text>
 
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="3"><rect x="300" y="230" width="500" height="110" rx="12"/></g>
-    <text x="550" y="270" text-anchor="middle" class="lbl-b">env-check.sh — fail-closed</text>
+    <text x="550" y="270" text-anchor="middle" class="lbl-b">env-check.sh: fail-closed</text>
     <text x="550" y="302" text-anchor="middle" class="lbl-g">declared env == effective context?</text>
     <text x="550" y="328" text-anchor="middle" class="lbl-g" fill="#c62828">mismatch → BLOCK (not a warning)</text>
   </svg>
-  <div class="pageno">M8·17</div>
+  <div class="pageno">M8·24</div>
 </section>
 
 <!-- ============ SLIDE 18 — CLOSING ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">7 &middot; How the layers compose</h2>
+  <div class="pageno">M8&middot;25</div>
+</section>
+
 <section>
   <h2 class="t" style="font-size:1.7em">Don't make destruction depend on the agent choosing not to</h2>
   <p class="s">four layers; only a reviewed merge writes prod</p>
@@ -712,7 +753,7 @@ footer, header, hgroup, main, menu, nav, section {
     <g class="fragment"><g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.4"><circle cx="120" cy="55" r="24"/></g>
       <text x="120" y="63" text-anchor="middle" class="num">1</text>
       <text x="165" y="50" text-anchor="start" class="lbl-b">Intent controls</text>
-      <text x="165" y="76" text-anchor="start" class="lbl-g">CLAUDE.md · skills — handle the honest common case cheaply</text></g>
+      <text x="165" y="76" text-anchor="start" class="lbl-g">CLAUDE.md · skills: handle the honest common case cheaply</text></g>
     <g class="fragment"><g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="2.4"><circle cx="120" cy="125" r="24"/></g>
       <text x="120" y="133" text-anchor="middle" class="num">2</text>
       <text x="165" y="120" text-anchor="start" class="lbl-b">The Change Gate hook</text>
@@ -724,14 +765,14 @@ footer, header, hgroup, main, menu, nav, section {
     <g class="fragment"><g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.8"><circle cx="120" cy="265" r="24"/></g>
       <text x="120" y="273" text-anchor="middle" class="num">4</text>
       <text x="165" y="260" text-anchor="start" class="lbl-b">Read-only identities + GitOps</text>
-      <text x="165" y="286" text-anchor="start" class="lbl-g">the structural backstop — reconciler is the only writer</text></g>
+      <text x="165" y="286" text-anchor="start" class="lbl-g">the structural backstop: reconciler is the only writer</text></g>
     <g class="fragment"><g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.8"><circle cx="120" cy="335" r="24"/></g>
       <text x="120" y="343" text-anchor="middle" class="num">5</text>
       <text x="165" y="330" text-anchor="start" class="lbl-b">A tested floor</text>
       <text x="165" y="356" text-anchor="start" class="lbl-g">"did the safety hold?" is a question you answer with a test, not a hope</text></g>
   </svg>
-  <p class="credit">Now open <b>Module 8 · Lab</b> — build the Change Gate + Environment Contract. &nbsp;·&nbsp; <b>Gourav Shah</b> · School of DevOps &amp; AI</p>
-  <div class="pageno">M8·18</div>
+  <p class="credit">Now open <b>Module 8 · Lab</b>, build the Change Gate + Environment Contract. &nbsp;·&nbsp; <b>Gourav Shah</b> · School of DevOps &amp; AI</p>
+  <div class="pageno">M8·26</div>
 </section>
 
 </div></div>

@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agentic DevOps with Claude Code — Module 6: Skills: Runbooks → Reusable Procedures</title>
+<title>Module 6: Skills: Runbooks &rarr; Reusable Procedures &middot; Agentic DevOps with Claude Code</title>
 
 <!-- ============================================================
-     CourseSmith whiteboard deck — M6 · Fine-Tuning: Synthetic Data, LoRA & QLoRA (self-contained).
+     CourseSmith whiteboard deck: M6 · Skills: Runbooks → Reusable Procedures (self-contained).
      Style contract: planning/decks/whiteboard-style-guide.md
      Sequence spec: planning/decks/m6-sequence.md
      Zero external requests: reveal.js 5.x runtime + Patrick Hand
@@ -146,7 +146,7 @@ footer, header, hgroup, main, menu, nav, section {
 <div class="reveal"><div class="slides">
 <!-- ============ SLIDE 1 — TITLE ============ -->
 <section data-auto-animate>
-  <p class="kicker">MODULE 6 &nbsp;·&nbsp; SKILLS — RUNBOOKS TO REUSABLE PROCEDURES</p>
+  <p class="kicker">MODULE 6 &nbsp;·&nbsp; SKILLS: RUNBOOKS TO REUSABLE PROCEDURES</p>
   <h2 class="t" style="font-size:1.5em">A runbook you can't test is one you're hoping is still right</h2>
   <p class="s" style="font-size:1.15em">a procedure worth naming, versioning, testing</p>
   <svg viewBox="0 0 1100 320" role="img" aria-label="On the left a dog-eared runbooks doc with a curling corner labelled prose rots. A gray arrow points right to a clean card labelled .claude/skills/ stamped executed and tested. A thin gray footline reads prose rots, a skill fails loud.">
@@ -179,6 +179,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="870" y="170" text-anchor="middle" class="lbl-g">a skill fails loud</text>
   </svg>
   <p class="credit"><b>Gourav Shah</b> · School of DevOps &amp; AI · Lesson + Lab + Quiz</p>
+  <div class="pageno">M6&middot;01</div>
+</section>
+
+<!-- ============ DIVIDER — intro ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">Skills: Runbooks &rarr; Reusable Procedures</h2>
+  <div class="pageno">M6&middot;02</div>
 </section>
 
 <!-- ============ SLIDE 2 — PROSE ROTS / SKILL FAILS LOUD ============ -->
@@ -236,7 +243,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="560" y="308" text-anchor="middle" class="lbl">drift shows as a <tspan class="lbl-good">red check</tspan></text>
     </g>
   </svg>
-  <div class="pageno">M6·02</div>
+  <div class="pageno">M6·03</div>
+</section>
+
+<!-- ============ DIVIDER — section 1 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">1 &middot; The primitive question: skill, or something else?</h2>
+  <div class="pageno">M6&middot;04</div>
 </section>
 
 <!-- ============ SLIDE 3 — PICK THE PRIMITIVE (KITCHEN) ============ -->
@@ -282,9 +295,9 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="1.8" stroke-dasharray="4 6">
       <path d="M120,230 L980,230"/>
     </g>
-    <text x="550" y="285" text-anchor="middle" class="lbl">match the knowledge to its encoding — the wrong one is the most common mistake here</text>
+    <text x="550" y="285" text-anchor="middle" class="lbl">match the knowledge to its encoding, the wrong one is the most common mistake here</text>
   </svg>
-  <div class="pageno">M6·03</div>
+  <div class="pageno">M6·05</div>
 </section>
 
 <!-- ============ SLIDE 4 — THE DECISION FLOW ============ -->
@@ -379,7 +392,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="245" y="355" text-anchor="middle" class="lbl-b">SKILL</text>
     </g>
   </svg>
-  <div class="pageno">M6·04</div>
+  <div class="pageno">M6·06</div>
+</section>
+
+<!-- ============ DIVIDER — section 2 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">2 &middot; What a skill actually is</h2>
+  <div class="pageno">M6&middot;07</div>
 </section>
 
 <!-- ============ SLIDE 5 — A DIRECTORY WITH A SKILL.md ============ -->
@@ -424,7 +443,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="895" y="210" text-anchor="middle" class="lbl-sm">templates/</text>
     <text x="895" y="234" text-anchor="middle" class="lbl-g">optional</text>
   </svg>
-  <div class="pageno">M6·05</div>
+  <div class="pageno">M6·08</div>
 </section>
 
 <!-- ============ SLIDE 6 — DESCRIPTION IS A TRIGGER ============ -->
@@ -447,7 +466,7 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="285" y="205" text-anchor="middle" class="lbl-b">"checks health"</text>
     <text x="285" y="245" text-anchor="middle" class="lbl-bad">never auto-selected</text>
-    <text x="285" y="275" text-anchor="middle" class="lbl-g">vague — the agent can't tell</text>
+    <text x="285" y="275" text-anchor="middle" class="lbl-g">vague, the agent can't tell</text>
     <!-- precise card (green) -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="3">
       <rect x="640" y="160" width="360" height="130" rx="12" class="f-green"/>
@@ -456,14 +475,20 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="820" y="222" text-anchor="middle" class="lbl-sm">during triage, on a complaint"</text>
     <text x="820" y="258" text-anchor="middle" class="lbl-good">fires at the right moment</text>
   </svg>
-  <div class="pageno">M6·06</div>
+  <div class="pageno">M6·09</div>
+</section>
+
+<!-- ============ DIVIDER — section 3 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">3 &middot; Progressive disclosure: the skill is a table of contents</h2>
+  <div class="pageno">M6&middot;10</div>
 </section>
 
 <!-- ============ SLIDE 7 — TABLE OF CONTENTS ============ -->
 <section>
   <h2 class="t">The SKILL.md is a table of contents</h2>
   <p class="s">short, always loaded, points at the heavy parts</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="A short table of contents page on the left, in green, listing detect replace, cost delta, write report. Dashed arrows point from each line to fat chapter volumes on a shelf, in blue, labelled chapter 7 and chapter 12 — you turn there only when the problem is a chapter-7 problem.">
+  <svg viewBox="0 0 1100 340" role="img" aria-label="A short table of contents page on the left, in green, listing detect replace, cost delta, write report. Dashed arrows point from each line to fat chapter volumes on a shelf, in blue, labelled chapter 7 and chapter 12, you turn there only when the problem is a chapter-7 problem.">
     <!-- table of contents -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="3">
       <rect x="90" y="70" width="270" height="200" rx="10" class="f-green"/>
@@ -493,7 +518,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="900" y="210" text-anchor="middle" class="lbl-sm">every chapter would</text>
     <text x="900" y="235" text-anchor="middle" class="lbl-sm">be useless</text>
   </svg>
-  <div class="pageno">M6·07</div>
+  <div class="pageno">M6·11</div>
 </section>
 
 <!-- ============ SLIDE 8 — LOAD THE SCRIPT ON DEMAND ============ -->
@@ -526,7 +551,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="800" y="183" text-anchor="middle" class="lbl">scripts/cost-delta.sh</text>
     <text x="800" y="291" text-anchor="middle" class="lbl">templates/review.md</text>
   </svg>
-  <div class="pageno">M6·08</div>
+  <div class="pageno">M6·12</div>
+</section>
+
+<!-- ============ DIVIDER — section 4 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">4 &middot; Two zones: separate collecting from reasoning</h2>
+  <div class="pageno">M6&middot;13</div>
 </section>
 
 <!-- ============ SLIDE 9 — LAB AND DOCTOR ============ -->
@@ -560,10 +591,10 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="850" y="118" text-anchor="middle" class="lbl-b">the doctor</text>
     <text x="850" y="160" text-anchor="middle" class="lbl-sm">reads the numbers,</text>
     <text x="850" y="186" text-anchor="middle" class="lbl-sm">forms a diagnosis</text>
-    <text x="850" y="230" text-anchor="middle" class="lbl-g">judgment —</text>
+    <text x="850" y="230" text-anchor="middle" class="lbl-g">judgment</text>
     <text x="850" y="254" text-anchor="middle" class="lbl-g">varies with the case</text>
   </svg>
-  <div class="pageno">M6·09</div>
+  <div class="pageno">M6·14</div>
 </section>
 
 <!-- ============ SLIDE 10 — TWO-ZONE PIPELINE ============ -->
@@ -615,7 +646,7 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="985" y="182" text-anchor="middle" class="lbl">schema</text>
     </g>
   </svg>
-  <div class="pageno">M6·10</div>
+  <div class="pageno">M6·15</div>
 </section>
 
 <!-- ============ SLIDE 11 — TANGLE vs SEPARATE ============ -->
@@ -647,12 +678,18 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="880" y="170" text-anchor="middle" class="lbl-sm">fixture</text>
     <text x="825" y="238" text-anchor="middle" class="lbl-good">feed a fixture · assert one finding</text>
   </svg>
-  <div class="pageno">M6·11</div>
+  <div class="pageno">M6·16</div>
+</section>
+
+<!-- ============ DIVIDER — section 5 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">5 &middot; Invocation: who can trigger this skill, and where it runs</h2>
+  <div class="pageno">M6&middot;17</div>
 </section>
 
 <!-- ============ SLIDE 12 — WHO CAN TRIGGER IT ============ -->
 <section>
-  <h2 class="t">Who can trigger it — and where it runs</h2>
+  <h2 class="t">Who can trigger it, and where it runs</h2>
   <p class="s">does the skill change state?</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A decision: does the skill change state. The no, observes-only branch leads to auto invocation, in green, fires when relevant, for service-health and k8s-diagnose. The yes, mutates branch leads to human-only, in red, runs on an explicit slash skill-name, for a restart or an apply, with a hand pulling the trigger.">
     <!-- question -->
@@ -683,7 +720,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="860" y="228" text-anchor="middle" class="lbl-sm">explicit /skill-name</text>
     <text x="860" y="266" text-anchor="middle" class="lbl-bad">a restart · an apply</text>
   </svg>
-  <div class="pageno">M6·12</div>
+  <div class="pageno">M6·18</div>
 </section>
 
 <!-- ============ SLIDE 13 — context: fork ============ -->
@@ -727,14 +764,14 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="965" y="140" text-anchor="middle" class="lbl-b">main</text>
     <text x="965" y="168" text-anchor="middle" class="lbl-sm">conversation</text>
   </svg>
-  <div class="pageno">M6·13</div>
+  <div class="pageno">M6·19</div>
 </section>
 
 <!-- ============ SLIDE 14 — HUMAN-ONLY ≠ AROUND PERMISSIONS ============ -->
 <section>
   <h2 class="t">Human-only is not a way around your permissions</h2>
   <p class="s">two gates in series, each stopping one failure</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="A human slash invoke passes gate one, invisibility, in orange, which blocks automatic invocation. It then hits gate two, the policy floor of deny rules and sandbox, in blue. A red stamp reads no override — the skill has no exception. The dashed auto-invocation path is stopped at gate one.">
+  <svg viewBox="0 0 1100 340" role="img" aria-label="A human slash invoke passes gate one, invisibility, in orange, which blocks automatic invocation. It then hits gate two, the policy floor of deny rules and sandbox, in blue. A red stamp reads no override, the skill has no exception. The dashed auto-invocation path is stopped at gate one.">
     <!-- human invoke -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8">
       <rect x="60" y="120" width="180" height="80" rx="10"/>
@@ -776,7 +813,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="990" y="166" text-anchor="middle" class="lbl-bad">no override</text>
     </g>
   </svg>
-  <div class="pageno">M6·14</div>
+  <div class="pageno">M6·20</div>
+</section>
+
+<!-- ============ DIVIDER — section 6 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">6 &middot; Testing a skill: positive, negative, ambiguous</h2>
+  <div class="pageno">M6&middot;21</div>
 </section>
 
 <!-- ============ SLIDE 15 — SMOKE DETECTOR ============ -->
@@ -796,23 +839,23 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="215" y="216" text-anchor="middle" class="lbl-b">press the button</text>
     <text x="215" y="248" text-anchor="middle" class="lbl-good">beeps</text>
-    <text x="215" y="278" text-anchor="middle" class="lbl-g">positive — does it fire?</text>
+    <text x="215" y="278" text-anchor="middle" class="lbl-g">positive: does it fire?</text>
     <!-- negative -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6">
       <rect x="405" y="180" width="290" height="110" rx="12" class="f-green"/>
     </g>
     <text x="550" y="216" text-anchor="middle" class="lbl-b">wave clean air</text>
     <text x="550" y="248" text-anchor="middle" class="lbl-good">silent</text>
-    <text x="550" y="278" text-anchor="middle" class="lbl-g">negative — does it stay quiet?</text>
+    <text x="550" y="278" text-anchor="middle" class="lbl-g">negative: does it stay quiet?</text>
     <!-- ambiguous -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6">
       <rect x="740" y="180" width="290" height="110" rx="12" class="f-orange"/>
     </g>
     <text x="885" y="216" text-anchor="middle" class="lbl-b">a wisp of steam</text>
     <text x="885" y="248" text-anchor="middle" class="lbl">hesitates</text>
-    <text x="885" y="278" text-anchor="middle" class="lbl-g">ambiguous — signals doubt</text>
+    <text x="885" y="278" text-anchor="middle" class="lbl-g">ambiguous: signals doubt</text>
   </svg>
-  <div class="pageno">M6·15</div>
+  <div class="pageno">M6·22</div>
 </section>
 
 <!-- ============ SLIDE 16 — NEGATIVE TEST HAS TEETH ============ -->
@@ -833,7 +876,7 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="200" y="172" text-anchor="middle" class="lbl-b">NEGATIVE</text>
     <text x="200" y="198" text-anchor="middle" class="lbl-g">teeth</text>
-    <text x="520" y="180" text-anchor="middle" class="lbl-sm">plan-stateful-replace — destroys the prod DB</text>
+    <text x="520" y="180" text-anchor="middle" class="lbl-sm">plan-stateful-replace: destroys the prod DB</text>
     <text x="820" y="188" text-anchor="middle" class="lbl-bad">→ CATCH the replace</text>
     <!-- ambiguous row -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4">
@@ -843,7 +886,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="490" y="268" text-anchor="middle" class="lbl">service unreachable</text>
     <text x="820" y="268" text-anchor="middle" class="lbl">→ say so &amp; stop</text>
   </svg>
-  <div class="pageno">M6·16</div>
+  <div class="pageno">M6·23</div>
+</section>
+
+<!-- ============ DIVIDER — section 7 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">7 &middot; What you'll do in the lab</h2>
+  <div class="pageno">M6&middot;24</div>
 </section>
 
 <!-- ============ SLIDE 17 — FIVE SKILLS, ONE SHAPE ============ -->
@@ -880,13 +929,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="220" y="285" text-anchor="middle" class="lbl-g">the observers →</text>
     <text x="880" y="285" text-anchor="middle" class="lbl-g">← the one mutator</text>
   </svg>
-  <div class="pageno">M6·17</div>
+  <div class="pageno">M6·25</div>
 </section>
 
 <!-- ============ SLIDE 18 — CLOSING ============ -->
 <section data-auto-animate>
   <p class="kicker">MODULE 6 &nbsp;·&nbsp; TAKEAWAYS</p>
-  <h2 class="t" style="font-size:1.5em">Named, versioned, testable — the operating layer begins</h2>
+  <h2 class="t" style="font-size:1.5em">Named, versioned, testable: the operating layer begins</h2>
   <svg viewBox="0 0 1100 320" role="img" aria-label="Three numbered takeaways: one, pick the primitive, in purple. Two, two zones make a skill testable, in blue. Three, invocation is who triggers it plus the policy floor, shown as a green auto and red human-only pair. Below, a hand-off to the Module 6 lab.">
     <!-- 1 -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6">
@@ -908,7 +957,7 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="130" y="270" text-anchor="middle" class="num">3</text>
     <text x="190" y="252" text-anchor="start" class="lbl-b">Invocation + the floor</text>
-    <text x="190" y="282" text-anchor="start" class="lbl-g">who triggers it — and permissions still bind</text>
+    <text x="190" y="282" text-anchor="start" class="lbl-g">who triggers it, and permissions still bind</text>
     <!-- hand-off panel -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-dasharray="5 5">
       <rect x="760" y="120" width="280" height="110" rx="12"/>
@@ -917,6 +966,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="900" y="198" text-anchor="middle" class="lbl-g">build the five skills</text>
   </svg>
   <p class="credit">Now open <b>Module 6 · Lab</b>. · <b>Gourav Shah</b> · School of DevOps &amp; AI</p>
+  <div class="pageno">M6·26</div>
 </section>
 
 </div></div>

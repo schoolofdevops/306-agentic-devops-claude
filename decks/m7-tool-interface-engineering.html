@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agentic DevOps with Claude Code — Module 7: Tool Interface Engineering: CLI First, MCP When It Earns the Boundary</title>
+<title>Module 7: Tool Interface Engineering &middot; Agentic DevOps with Claude Code</title>
 
 <!-- ============================================================
      CourseSmith whiteboard deck skeleton (self-contained).
@@ -137,7 +137,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 1 · TITLE ═══════════════ -->
 <section data-auto-animate>
   <p class="kicker">MODULE 7 &nbsp;·&nbsp; AGENTIC DEVOPS WITH CLAUDE CODE</p>
-  <h2 class="t" style="font-size:1.5em">The same task, four surfaces — and they are not equal in risk</h2>
+  <h2 class="t" style="font-size:1.5em">The same task, four surfaces: and they are not equal in risk</h2>
   <p class="s" style="font-size:1.15em">four surfaces, one high-leverage choice</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="One ticket, orders-api readyz failing, forks into four surfaces: raw CLI drawn red, wrapper script orange, skill orange, and MCP server green. An arrow across the bottom reads authority narrows, structure increases, from left to right.">
     <!-- the ticket -->
@@ -176,11 +176,17 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M7·01</div>
 </section>
 
+<!-- ============ DIVIDER — intro ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">Tool Interface Engineering</h2>
+  <div class="pageno">M7&middot;02</div>
+</section>
+
 <!-- ═══════════════ SLIDE 2 · YOU ALREADY CHOSE — BY HABIT ═══════════════ -->
 <section>
-  <h2 class="t">You already chose an interface — you just did it by habit</h2>
+  <h2 class="t">You already chose an interface: you just did it by habit</h2>
   <p class="s">every skill runs a real tool underneath</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="Three M6 skills sit in a row: service-health, k8s-diagnose, terraform-plan-review. Each drops through an arrow to a CLI tool underneath it: curl, kubectl, and a jq script. A gray band reads underneath every skill is a tool — and you picked it without thinking.">
+  <svg viewBox="0 0 1100 340" role="img" aria-label="Three M6 skills sit in a row: service-health, k8s-diagnose, terraform-plan-review. Each drops through an arrow to a CLI tool underneath it: curl, kubectl, and a jq script. A gray band reads underneath every skill is a tool, and you picked it without thinking.">
     <!-- three skill boxes -->
     <g filter="url(#rough)" fill="var(--p-purple)" stroke="#1e1e1e" stroke-width="2.8">
       <rect x="70" y="66" width="290" height="66" rx="10"/>
@@ -190,7 +196,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="215" y="106" text-anchor="middle" class="lbl-b">service-health</text>
     <text x="550" y="106" text-anchor="middle" class="lbl-b">k8s-diagnose</text>
     <text x="885" y="106" text-anchor="middle" class="lbl-b">terraform-plan-review</text>
-    <text x="550" y="52" text-anchor="middle" class="lbl-g">M6 skills — the runbooks you built</text>
+    <text x="550" y="52" text-anchor="middle" class="lbl-g">M6 skills, the runbooks you built</text>
     <!-- arrows down -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round">
       <path d="M215,132 L215,184" marker-end="url(#ah)"/>
@@ -210,14 +216,14 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-dasharray="9 7">
       <rect x="150" y="286" width="800" height="44" rx="10"/>
     </g>
-    <text x="550" y="314" text-anchor="middle" class="lbl-g">underneath every skill is a <tspan class="lbl-b">tool</tspan> — and you picked it without thinking</text>
+    <text x="550" y="314" text-anchor="middle" class="lbl-g">underneath every skill is a <tspan class="lbl-b">tool</tspan>, and you picked it without thinking</text>
   </svg>
-  <div class="pageno">M7·02</div>
+  <div class="pageno">M7·03</div>
 </section>
 
 <!-- ═══════════════ SLIDE 3 · ONE TICKET, TWO WAYS ═══════════════ -->
 <section>
-  <h2 class="t">Both solve the ticket — they are not remotely equal in risk</h2>
+  <h2 class="t">Both solve the ticket, they are not remotely equal in risk</h2>
   <p class="s">bash can do anything; a typed call does one thing</p>
   <svg viewBox="0 0 1100 350" role="img" aria-label="Two panels answer the same ticket. Left, drawn red, Bash with curl, grep, and jq can run anything, including docker compose down. Right, drawn green, a typed get_readiness returns exactly one object and cannot do anything else.">
     <!-- LEFT: Bash -->
@@ -245,12 +251,17 @@ footer, header, hgroup, main, menu, nav, section {
     <!-- same ticket label -->
     <text x="550" y="308" text-anchor="middle" class="lbl-g">same ticket &nbsp;·&nbsp; same answer &nbsp;·&nbsp; wildly different <tspan class="lbl-b">blast radius</tspan></text>
   </svg>
-  <div class="pageno">M7·03</div>
+  <div class="pageno">M7·04</div>
 </section>
 
 <!-- ═══════════════ SLIDE 4 · TWO OPPOSITE FAILURE MODES ═══════════════ -->
 <section>
-  <h2 class="t">Pick by habit and you pay — in incidents or in wasted work</h2>
+  <h2 class="t">1 &middot; Why this is a real decision, not a preference</h2>
+  <div class="pageno">M7&middot;05</div>
+</section>
+
+<section>
+  <h2 class="t">Pick by habit and you pay: in incidents or in wasted work</h2>
   <p class="s">the wrong interface fails two opposite ways</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Two rocks bracket the correct path. Left, over-privileging, drawn red: Bash handed to a prod database operation, now it can run anything. Right, over-engineering, drawn orange: a two-day typed server built to answer a question one curl would have answered.">
     <!-- LEFT rock: over-privilege -->
@@ -259,7 +270,7 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="280" y="112" text-anchor="middle" class="lbl-b">OVER-PRIVILEGING</text>
     <text x="280" y="150" text-anchor="middle" class="lbl">CLI when the stakes screamed MCP</text>
-    <text x="280" y="184" text-anchor="middle" class="lbl-g">Bash on a prod DB op —</text>
+    <text x="280" y="184" text-anchor="middle" class="lbl-g">Bash on a prod DB op:</text>
     <text x="280" y="210" text-anchor="middle" class="lbl-g">now it can run anything</text>
     <!-- RIGHT rock: over-engineer -->
     <g filter="url(#rough)" fill="var(--p-orange)" stroke="#1e1e1e" stroke-width="3">
@@ -267,7 +278,7 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="820" y="112" text-anchor="middle" class="lbl-b">OVER-ENGINEERING</text>
     <text x="820" y="150" text-anchor="middle" class="lbl">MCP when it was a one-off read</text>
-    <text x="820" y="184" text-anchor="middle" class="lbl-g">two days building a server —</text>
+    <text x="820" y="184" text-anchor="middle" class="lbl-g">two days building a server:</text>
     <text x="820" y="210" text-anchor="middle" class="lbl-g">one curl would have answered</text>
     <!-- the strait between -->
     <text x="550" y="150" text-anchor="middle" class="lbl-b">⟷</text>
@@ -277,12 +288,12 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="550" y="304" text-anchor="middle" class="lbl-g">the criteria exist to keep you off <tspan class="lbl-b">both rocks</tspan></text>
   </svg>
-  <div class="pageno">M7·04</div>
+  <div class="pageno">M7·06</div>
 </section>
 
 <!-- ═══════════════ SLIDE 5 · THE PHARMACY ═══════════════ -->
 <section>
-  <h2 class="t">The pharmacy hands out access four ways — by how dangerous it is</h2>
+  <h2 class="t">The pharmacy hands out access four ways: by how dangerous it is</h2>
   <p class="s">master key vs. one drawer vs. one product</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Four ways to hand out pharmacy access, arranged as a descending staircase from most to least dangerous: a general key drawn red, a requisition form orange, an automated dispensing cabinet yellow-orange, and a lobby vending machine green. An arrow underneath reads danger drops, restriction is built in, from left to right.">
     <!-- four steps -->
@@ -304,12 +315,17 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="540" y="288" text-anchor="middle" class="lbl-g">danger drops &nbsp;·&nbsp; restriction moves from a rule into the machine</text>
   </svg>
-  <div class="pageno">M7·05</div>
+  <div class="pageno">M7·07</div>
 </section>
 
 <!-- ═══════════════ SLIDE 6 · THE FOUR INTERFACES SPECTRUM (4 fragments) ═══════════════ -->
 <section>
-  <h2 class="t">Four surfaces — authority narrows, structure increases</h2>
+  <h2 class="t" style="font-size:2.2em">2 &middot; The four interfaces</h2>
+  <div class="pageno">M7&middot;08</div>
+</section>
+
+<section>
+  <h2 class="t">Four surfaces: authority narrows, structure increases</h2>
   <p class="s">authority narrows left to right, across four</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A staircase of four interface boxes revealed left to right. Raw CLI Bash, drawn red, runs anything with raw text out. Wrapper script, orange, runs what you wrote with shaped output. Skill, orange, a guided procedure with schema output. MCP server, green, only the typed tools it exposes with typed JSON out. An arrow reads authority narrows, structure increases.">
     <g class="fragment" data-fragment-index="0">
@@ -342,14 +358,14 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="300" y="222" text-anchor="middle" class="lbl-g">authority narrows →</text>
     <text x="820" y="222" text-anchor="middle" class="lbl-g">→ structure increases</text>
-    <text x="550" y="286" text-anchor="middle" class="lbl-g">neither end is "correct" — the engineering is knowing which task sits where</text>
+    <text x="550" y="286" text-anchor="middle" class="lbl-g">neither end is "correct", the engineering is knowing which task sits where</text>
   </svg>
-  <div class="pageno">M7·06</div>
+  <div class="pageno">M7·09</div>
 </section>
 
 <!-- ═══════════════ SLIDE 7 · RAW CLI ═══════════════ -->
 <section>
-  <h2 class="t">Raw CLI is a general capability — you rein it in after</h2>
+  <h2 class="t">Raw CLI is a general capability: you rein it in after</h2>
   <p class="s">zero setup, total reach, authority after the fact</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A Bash box connects to the whole PATH, curl, kubectl, jq, and anything. Two red cost tags hang off it: authority, constrained only after the fact by deny rules and sandbox; and tokens, because raw text output must be read and parsed by the agent.">
     <!-- Bash box -->
@@ -376,15 +392,15 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="900" y="114" text-anchor="middle" class="lbl-b" fill="#c62828">cost: authority</text>
     <text x="900" y="140" text-anchor="middle" class="lbl-g">deny rules only AFTER the fact</text>
     <text x="900" y="216" text-anchor="middle" class="lbl-b" fill="#c62828">cost: tokens</text>
-    <text x="900" y="242" text-anchor="middle" class="lbl-g">raw text — agent parses it all</text>
-    <text x="550" y="300" text-anchor="middle" class="lbl-g">right for open-ended exploration — wrong for anything you must guarantee</text>
+    <text x="900" y="242" text-anchor="middle" class="lbl-g">raw text, agent parses it all</text>
+    <text x="550" y="300" text-anchor="middle" class="lbl-g">right for open-ended exploration, wrong for anything you must guarantee</text>
   </svg>
-  <div class="pageno">M7·07</div>
+  <div class="pageno">M7·10</div>
 </section>
 
 <!-- ═══════════════ SLIDE 8 · WRAPPER SCRIPT ═══════════════ -->
 <section>
-  <h2 class="t">A wrapper script narrows what you typically do — not what you can</h2>
+  <h2 class="t">A wrapper script narrows what you typically do, not what you can</h2>
   <p class="s">a script shapes output, but bash is still there</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A pipeline: the agent runs one command, check-health.sh orders-api, which returns three clean lines drawn green instead of three hundred. Below, a gray dashed note shows the script still runs through Bash, so the Bash floor remains.">
     <!-- agent -->
@@ -399,28 +415,28 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><path d="M580,131 L636,131" marker-end="url(#ah)"/></g>
     <g filter="url(#rough)" fill="var(--p-green)" stroke="#1e1e1e" stroke-width="2.8"><rect x="640" y="96" width="410" height="70" rx="10"/></g>
     <text x="845" y="130" text-anchor="middle" class="lbl-b">3 clean lines</text>
-    <text x="845" y="156" text-anchor="middle" class="lbl-g">not 300 — output shaped for you</text>
+    <text x="845" y="156" text-anchor="middle" class="lbl-g">not 300, output shaped for you</text>
     <!-- Bash floor -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4" stroke-dasharray="9 7">
       <rect x="260" y="210" width="320" height="60" rx="10"/>
     </g>
     <text x="420" y="246" text-anchor="middle" class="lbl-g">still runs <tspan class="lbl-b">through Bash</tspan></text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M420,166 L420,206" marker-end="url(#ahg)"/></g>
-    <text x="550" y="310" text-anchor="middle" class="lbl-g">M6 progressive disclosure at the tool boundary — surface shrinks, tokens drop, floor stays</text>
+    <text x="550" y="310" text-anchor="middle" class="lbl-g">M6 progressive disclosure at the tool boundary: surface shrinks, tokens drop, floor stays</text>
   </svg>
-  <div class="pageno">M7·08</div>
+  <div class="pageno">M7·11</div>
 </section>
 
 <!-- ═══════════════ SLIDE 9 · SKILL ═══════════════ -->
 <section>
-  <h2 class="t">A skill shapes behaviour and output — it removes no capability</h2>
+  <h2 class="t">A skill shapes behaviour and output, it removes no capability</h2>
   <p class="s">a skill guides strongly, but takes nothing away</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A big box labelled SKILL.md holds three inner boxes: instructions, output schema, and stop conditions. The whole skill box sits on top of a gray Bash floor, showing the skill shapes behaviour but the capability underneath is unchanged.">
     <!-- outer skill box -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8">
       <rect x="150" y="56" width="800" height="150" rx="13"/>
     </g>
-    <text x="550" y="88" text-anchor="middle" class="lbl-b">SKILL.md — shapes behaviour + output</text>
+    <text x="550" y="88" text-anchor="middle" class="lbl-b">SKILL.md: shapes behaviour + output</text>
     <!-- three inner -->
     <g filter="url(#rough)" fill="var(--p-purple)" stroke="#1e1e1e" stroke-width="2.6">
       <rect x="180" y="110" width="240" height="72" rx="9"/>
@@ -437,10 +453,10 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4" stroke-dasharray="9 7">
       <rect x="150" y="230" width="800" height="56" rx="10"/>
     </g>
-    <text x="550" y="266" text-anchor="middle" class="lbl-g">runs on the <tspan class="lbl-b">Bash</tspan> floor — same capability underneath</text>
+    <text x="550" y="266" text-anchor="middle" class="lbl-g">runs on the <tspan class="lbl-b">Bash</tspan> floor, same capability underneath</text>
     <text x="550" y="318" text-anchor="middle" class="lbl-g">its authority control is the instructions and the permission floor, not a smaller tool surface</text>
   </svg>
-  <div class="pageno">M7·09</div>
+  <div class="pageno">M7·12</div>
 </section>
 
 <!-- ═══════════════ SLIDE 10 · MCP SERVER ═══════════════ -->
@@ -470,15 +486,20 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="805" y="216" text-anchor="middle" class="lbl-b">delete</text>
     <!-- cross-out -->
     <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="3" stroke-linecap="round"><path d="M700,196 L910,236"/></g>
-    <text x="805" y="256" text-anchor="middle" class="lbl-g" fill="#c62828">does not exist —</text>
+    <text x="805" y="256" text-anchor="middle" class="lbl-g" fill="#c62828">does not exist</text>
     <text x="805" y="282" text-anchor="middle" class="lbl-g" fill="#c62828">not "denied", absent</text>
   </svg>
-  <div class="pageno">M7·10</div>
+  <div class="pageno">M7·13</div>
 </section>
 
 <!-- ═══════════════ SLIDE 11 · FIVE CRITERIA (5 fragments) ═══════════════ -->
 <section>
-  <h2 class="t">Five criteria route the task — you don't choose by taste</h2>
+  <h2 class="t" style="font-size:2.2em">3 &middot; The decision framework: five criteria</h2>
+  <div class="pageno">M7&middot;14</div>
+</section>
+
+<section>
+  <h2 class="t">Five criteria route the task, you don't choose by taste</h2>
   <p class="s">a bank routes differently by transaction type</p>
   <svg viewBox="0 0 1100 350" role="img" aria-label="Five numbered criteria rows, each with a lean toward CLI or MCP. One, authority: low stakes lean CLI, must-guarantee-no-writes lean MCP. Two, ambiguity: simple output CLI, complex output MCP. Three, output shape: a human reads once CLI, another step consumes it MCP. Four, authentication: env vars CLI, server holds creds MCP. Five, cost and frequency: one-off CLI, repeated or huge output MCP.">
     <g class="fragment" data-fragment-index="0"><g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><circle cx="70" cy="52" r="20"/></g><text x="70" y="60" text-anchor="middle" class="num">1</text>
@@ -497,7 +518,7 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="104" y="286" text-anchor="start" class="lbl-b">cost &amp; frequency</text><text x="104" y="310" text-anchor="start" class="lbl-g">how often, how heavy?</text>
       <text x="720" y="286" text-anchor="start" class="lbl-g" fill="#c62828">one-off / small → CLI</text><text x="720" y="310" text-anchor="start" class="lbl-g" fill="#2e7d32">repeated / huge → MCP</text></g>
   </svg>
-  <div class="pageno">M7·11</div>
+  <div class="pageno">M7·15</div>
 </section>
 
 <!-- ═══════════════ SLIDE 12 · DECISION TREE (4 fragments) ═══════════════ -->
@@ -545,10 +566,15 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="785" y="324" text-anchor="middle" class="lbl">quick read → raw CLI (Bash)</text>
     </g>
   </svg>
-  <div class="pageno">M7·12</div>
+  <div class="pageno">M7·16</div>
 </section>
 
 <!-- ═══════════════ SLIDE 13 · CAPABILITY THAT DOESN'T EXIST ═══════════════ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">4 &middot; The read-only observer: a capability that does not exist cannot be misused</h2>
+  <div class="pageno">M7&middot;17</div>
+</section>
+
 <section>
   <h2 class="t">A capability that does not exist cannot be misused</h2>
   <p class="s">a guard can be fooled; a missing slot can't</p>
@@ -574,14 +600,14 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.2" stroke-linecap="round"><path d="M810,168 L810,196" marker-end="url(#ah)"/></g>
     <g filter="url(#rough)" fill="none" stroke="#2e7d32" stroke-width="2.6" stroke-dasharray="6 6"><rect x="610" y="198" width="400" height="90" rx="10"/></g>
     <text x="810" y="234" text-anchor="middle" class="lbl-b" fill="#2e7d32">no write tool exists</text>
-    <text x="810" y="266" text-anchor="middle" class="lbl-g">nothing to call — the capability is absent</text>
+    <text x="810" y="266" text-anchor="middle" class="lbl-g">nothing to call, the capability is absent</text>
   </svg>
-  <div class="pageno">M7·13</div>
+  <div class="pageno">M7·18</div>
 </section>
 
 <!-- ═══════════════ SLIDE 14 · PROSE VS TOOL SET ═══════════════ -->
 <section>
-  <h2 class="t">Prose asks nicely — the tool surface makes it structural</h2>
+  <h2 class="t">Prose asks nicely, the tool surface makes it structural</h2>
   <p class="s">read-only as instruction vs. read-only as fact</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Two panels. Left, a SKILL.md that says never mutates, drawn orange, sits on a Bash floor that can still mutate if the instruction is ignored. Right, an observer tool surface, drawn green, where read-only is a property of which tools exist and there is no mutate path at all.">
     <!-- LEFT -->
@@ -599,14 +625,19 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#2e7d32" stroke-width="2.4"><rect x="620" y="152" width="390" height="44" rx="9"/></g>
     <text x="815" y="180" text-anchor="middle" class="lbl">get_health · get_readiness · get_info</text>
     <text x="815" y="230" text-anchor="middle" class="lbl-b" fill="#2e7d32">no mutate path to get wrong</text>
-    <text x="550" y="308" text-anchor="middle" class="lbl-g">in the lab you'll try to make an observer write — and watch it fail because there's nothing to call</text>
+    <text x="550" y="308" text-anchor="middle" class="lbl-g">in the lab you'll try to make an observer write, and watch it fail because there's nothing to call</text>
   </svg>
-  <div class="pageno">M7·14</div>
+  <div class="pageno">M7·19</div>
 </section>
 
 <!-- ═══════════════ SLIDE 15 · DECLARE + SCOPE MCP ═══════════════ -->
 <section>
-  <h2 class="t">Declare it in config — the credential lives with the server</h2>
+  <h2 class="t" style="font-size:2.2em">5 &middot; Configuring and scoping MCP in Claude Code</h2>
+  <div class="pageno">M7&middot;20</div>
+</section>
+
+<section>
+  <h2 class="t">Declare it in config, the credential lives with the server</h2>
   <p class="s">a read-only kubeconfig the agent never holds</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A settings block declaring a k8s-observer server with a command, args, and an env holding a read-only kubeconfig drawn purple. An arrow shows Claude Code launching it and discovering its tools, which appear to the agent as mcp underscore k8s-observer underscore get_pods and get_events.">
     <!-- settings block -->
@@ -618,7 +649,7 @@ footer, header, hgroup, main, menu, nav, section {
     <!-- env highlighted purple -->
     <g filter="url(#rough)" fill="var(--p-purple)" stroke="#1e1e1e" stroke-width="2.4"><rect x="96" y="206" width="368" height="52" rx="9"/></g>
     <text x="280" y="230" text-anchor="middle" class="lbl">env: KUBECONFIG = readonly.yaml</text>
-    <text x="280" y="250" text-anchor="middle" class="lbl-g" fill="#2e7d32">creds live here — agent never holds them</text>
+    <text x="280" y="250" text-anchor="middle" class="lbl-g" fill="#2e7d32">creds live here, agent never holds them</text>
     <!-- arrow -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><path d="M490,170 L560,170" marker-end="url(#ah)"/></g>
     <text x="525" y="158" text-anchor="middle" class="lbl-g">launch + discover</text>
@@ -629,7 +660,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="811" y="214" text-anchor="middle" class="lbl">mcp__k8s-observer__get_events</text>
     <text x="550" y="312" text-anchor="middle" class="lbl-g">the mcp__server__tool name is how you refer to it in allow / deny lists</text>
   </svg>
-  <div class="pageno">M7·15</div>
+  <div class="pageno">M7·21</div>
 </section>
 
 <!-- ═══════════════ SLIDE 16 · ROLES → TOOL SETS ═══════════════ -->
@@ -662,20 +693,25 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="820" y="250" text-anchor="middle" class="lbl">one or two audited write tools</text>
     <text x="820" y="284" text-anchor="middle" class="lbl-g" fill="#c62828">gated human-only</text>
   </svg>
-  <div class="pageno">M7·16</div>
+  <div class="pageno">M7·22</div>
 </section>
 
 <!-- ═══════════════ SLIDE 17 · HASHICORP WORKED CASE ═══════════════ -->
 <section>
-  <h2 class="t">Same Terraform, opposite answers — decided by the criteria</h2>
+  <h2 class="t" style="font-size:2.2em">6 &middot; Worked comparison: HashiCorp Agent Skills vs Terraform MCP</h2>
+  <div class="pageno">M7&middot;23</div>
+</section>
+
+<section>
+  <h2 class="t">Same Terraform, opposite answers, decided by the criteria</h2>
   <p class="s">skill for exploring, server for CI plan-review</p>
   <svg viewBox="0 0 1100 350" role="img" aria-label="Two panels compare HashiCorp Agent Skills against the Terraform MCP server. Skills, drawn orange: authority is instructions plus permission floor on Bash, high transparency, low setup, best when you want control and CLI you trust. MCP server, drawn green: authority is the exposed tool set with no apply tool, typed JSON, a hard boundary, best for a repeated prod op. Two verdict tags: explore interactively leans skill, plan-review on every PR leans MCP.">
     <!-- LEFT: skills -->
     <g filter="url(#rough)" fill="var(--p-orange)" stroke="#1e1e1e" stroke-width="2.8"><rect x="40" y="56" width="500" height="180" rx="13"/></g>
     <text x="290" y="88" text-anchor="middle" class="lbl-b">HashiCorp Agent Skills</text>
     <text x="290" y="122" text-anchor="middle" class="lbl-g">authority = instructions + floor (Bash under)</text>
-    <text x="290" y="152" text-anchor="middle" class="lbl-g">high transparency — you read the steps</text>
-    <text x="290" y="182" text-anchor="middle" class="lbl-g">low setup — drop in a skill</text>
+    <text x="290" y="152" text-anchor="middle" class="lbl-g">high transparency, you read the steps</text>
+    <text x="290" y="182" text-anchor="middle" class="lbl-g">low setup, drop in a skill</text>
     <text x="290" y="216" text-anchor="middle" class="lbl">read-only is prose, not structure</text>
     <!-- RIGHT: MCP -->
     <g filter="url(#rough)" fill="var(--p-green)" stroke="#1e1e1e" stroke-width="3"><rect x="560" y="56" width="500" height="180" rx="13"/></g>
@@ -692,33 +728,38 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="810" y="292" text-anchor="middle" class="lbl">plan-review on every PR in CI (high, repeated)</text>
     <text x="810" y="316" text-anchor="middle" class="lbl-b" fill="#2e7d32">→ the MCP server wins</text>
   </svg>
-  <div class="pageno">M7·17</div>
+  <div class="pageno">M7·24</div>
 </section>
 
 <!-- ═══════════════ SLIDE 18 · THE THREE-WAY SHOOTOUT (closing, 3 fragments) ═══════════════ -->
 <section>
+  <h2 class="t" style="font-size:2.2em">7 &middot; What you'll do in the lab</h2>
+  <div class="pageno">M7&middot;25</div>
+</section>
+
+<section data-auto-animate>
   <p class="kicker">MODULE 7 &nbsp;·&nbsp; TO THE LAB</p>
-  <h2 class="t">The three-way shootout — one ticket, three surfaces, one ledger</h2>
+  <h2 class="t">The three-way shootout: one ticket, three surfaces, one ledger</h2>
   <p class="s">same ticket, three interfaces, one verdict</p>
   <svg viewBox="0 0 1100 300" role="img" aria-label="Three numbered runs of the same ticket. One, filtered CLI: Bash with curl, grep, jq. Two, skill with wrappers: the service-health skill from M6. Three, read-only MCP observer: three typed tools and no write tool, then a note to try to make it write and watch it fail.">
     <g class="fragment" data-fragment-index="0">
       <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><circle cx="80" cy="52" r="21"/></g><text x="80" y="61" text-anchor="middle" class="num">1</text>
       <g filter="url(#rough)" fill="var(--p-red)" stroke="#1e1e1e" stroke-width="2.6"><rect x="120" y="26" width="900" height="52" rx="10"/></g>
-      <text x="150" y="59" text-anchor="start" class="lbl"><tspan class="lbl-b">filtered CLI</tspan> — hand it Bash with curl · grep · jq, let it diagnose</text>
+      <text x="150" y="59" text-anchor="start" class="lbl"><tspan class="lbl-b">filtered CLI</tspan>: hand it Bash with curl · grep · jq, let it diagnose</text>
     </g>
     <g class="fragment" data-fragment-index="1">
       <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><circle cx="80" cy="132" r="21"/></g><text x="80" y="141" text-anchor="middle" class="num">2</text>
       <g filter="url(#rough)" fill="var(--p-orange)" stroke="#1e1e1e" stroke-width="2.6"><rect x="120" y="106" width="900" height="52" rx="10"/></g>
-      <text x="150" y="139" text-anchor="start" class="lbl"><tspan class="lbl-b">skill with wrappers</tspan> — the service-health skill you built in M6</text>
+      <text x="150" y="139" text-anchor="start" class="lbl"><tspan class="lbl-b">skill with wrappers</tspan>: the service-health skill you built in M6</text>
     </g>
     <g class="fragment" data-fragment-index="2">
       <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><circle cx="80" cy="212" r="21"/></g><text x="80" y="221" text-anchor="middle" class="num">3</text>
       <g filter="url(#rough)" fill="var(--p-green)" stroke="#1e1e1e" stroke-width="2.8"><rect x="120" y="186" width="900" height="52" rx="10"/></g>
-      <text x="150" y="219" text-anchor="start" class="lbl"><tspan class="lbl-b">read-only MCP observer</tspan> — 3 typed tools, no write tool · then try to make it write</text>
+      <text x="150" y="219" text-anchor="start" class="lbl"><tspan class="lbl-b">read-only MCP observer</tspan>: 3 typed tools, no write tool · then try to make it write</text>
     </g>
   </svg>
   <p class="credit">Now open <b>Module 7 · Lab</b>. &nbsp;·&nbsp; <b>Gourav Shah</b> &nbsp;·&nbsp; School of DevOps &amp; AI</p>
-  <div class="pageno">M7·18</div>
+  <div class="pageno">M7·26</div>
 </section>
 
 </div></div>

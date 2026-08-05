@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agentic DevOps with Claude Code — Module 2: Install, Permission Postures &amp; Sandboxing</title>
+<title>Module 2: Install, Permission Postures &amp; Sandboxing &middot; Agentic DevOps with Claude Code</title>
 
 <!-- ============================================================
      CourseSmith whiteboard deck skeleton (self-contained).
@@ -162,15 +162,21 @@ footer, header, hgroup, main, menu, nav, section {
       <rect x="530" y="132" width="430" height="52" rx="10"/>
       <rect x="530" y="202" width="430" height="52" rx="10"/>
     </g>
-    <text x="745" y="95" text-anchor="middle" class="lbl">1 · availability — what tools it has</text>
-    <text x="745" y="165" text-anchor="middle" class="lbl">2 · permissions — what runs without asking</text>
-    <text x="745" y="235" text-anchor="middle" class="lbl">3 · sandbox — what it physically can't touch</text>
+    <text x="745" y="95" text-anchor="middle" class="lbl">1 · availability: what tools it has</text>
+    <text x="745" y="165" text-anchor="middle" class="lbl">2 · permissions: what runs without asking</text>
+    <text x="745" y="235" text-anchor="middle" class="lbl">3 · sandbox: what it physically can't touch</text>
   </svg>
   <p class="credit"><b>Gourav Shah</b> &nbsp;·&nbsp; School of DevOps &amp; AI &nbsp;·&nbsp; Lesson + Lab + Quiz</p>
   <div class="pageno">M2·01</div>
 </section>
 
-<!-- ============ SLIDE 2 — install ≠ authenticated ============ -->
+<!-- ============ DIVIDER — section 1 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">1 &middot; Install and authenticate: the part you do once</h2>
+  <div class="pageno">M2·02</div>
+</section>
+
+<!-- ============ SLIDE — install ≠ authenticated ============ -->
 <section>
   <h2 class="t">The binary is inert until you hand it a key</h2>
   <p class="s">install is the binary, auth is the key</p>
@@ -206,12 +212,12 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="810" y="272" text-anchor="middle" class="lbl-b">enterprise · Bedrock / Vertex</text>
     <text x="810" y="295" text-anchor="middle" class="lbl-g">traffic stays in your cloud + audit</text>
   </svg>
-  <div class="pageno">M2·02</div>
+  <div class="pageno">M2·03</div>
 </section>
 
 <!-- ============ SLIDE 3 — three install paths (3 fragments) ============ -->
 <section>
-  <h2 class="t">Three install paths — the machine decides, not taste</h2>
+  <h2 class="t">Three install paths: the machine decides, not taste</h2>
   <p class="s">laptop, npm shop, or pinned CI version</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="One source, getting claude onto a machine, fans out to three install paths chosen by the machine's role: laptop to native, Node shop to npm, CI to a pinned version.">
     <!-- source -->
@@ -251,7 +257,7 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="770" y="318" text-anchor="middle" class="lbl-g">never floating "latest" · verify: claude doctor</text>
     </g>
   </svg>
-  <div class="pageno">M2·03</div>
+  <div class="pageno">M2·04</div>
 </section>
 
 <!-- ============ SLIDE 4 — auth is who; permissions are what-here ============ -->
@@ -261,13 +267,13 @@ footer, header, hgroup, main, menu, nav, section {
   <svg viewBox="0 0 1100 360" role="img" aria-label="Two panels: the left panel is authentication, machine-level and set once; the right is permissions, per-project. An arrow runs from enterprise auth up to a managed-policy box.">
     <!-- left: AUTH -->
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="2.8"><rect x="60" y="90" width="440" height="180" rx="12"/></g>
-    <text x="280" y="128" text-anchor="middle" class="lbl-b">AUTH — who the agent is</text>
+    <text x="280" y="128" text-anchor="middle" class="lbl-b">AUTH: who the agent is</text>
     <text x="280" y="168" text-anchor="middle" class="lbl-g">machine-level · set once</text>
     <text x="280" y="200" text-anchor="middle" class="lbl-g">subscription · API key · enterprise</text>
     <text x="280" y="240" text-anchor="middle" class="lbl-g">you do NOT re-auth per project</text>
     <!-- right: PERMISSIONS -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8"><rect x="600" y="90" width="440" height="180" rx="12"/></g>
-    <text x="820" y="128" text-anchor="middle" class="lbl-b">PERMISSIONS — what, here</text>
+    <text x="820" y="128" text-anchor="middle" class="lbl-b">PERMISSIONS: what, here</text>
     <text x="820" y="168" text-anchor="middle" class="lbl-g">per-project · per-invocation</text>
     <text x="820" y="200" text-anchor="middle" class="lbl-g">allow · ask · deny · posture · sandbox</text>
     <text x="820" y="240" text-anchor="middle" class="lbl-g">configured fresh in each repo</text>
@@ -278,10 +284,16 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.4"><rect x="560" y="14" width="300" height="52" rx="10"/></g>
     <text x="710" y="46" text-anchor="middle" class="lbl">enterprise auth ⇒ managed policy</text>
   </svg>
-  <div class="pageno">M2·04</div>
+  <div class="pageno">M2·05</div>
 </section>
 
-<!-- ============ SLIDE 5 — the boundary is the product (THESIS) ============ -->
+<!-- ============ DIVIDER — section 2 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">2 &middot; Why the boundary is the product</h2>
+  <div class="pageno">M2·06</div>
+</section>
+
+<!-- ============ SLIDE — the boundary is the product (THESIS) ============ -->
 <section>
   <h2 class="t">You set a role once, then you stop watching</h2>
   <p class="s">the boundary <em>is</em> the safety model</p>
@@ -303,37 +315,43 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M505,185 L590,185" marker-end="url(#ahg)"/></g>
     <text x="548" y="170" text-anchor="middle" class="lbl-g">needs it more</text>
   </svg>
-  <div class="pageno">M2·05</div>
+  <div class="pageno">M2·07</div>
 </section>
 
-<!-- ============ SLIDE 6 — three boundaries ============ -->
+<!-- ============ DIVIDER — section 3 ============ -->
 <section>
-  <h2 class="t">Three boundaries — and confusing them is the trap</h2>
-  <p class="s">availability, permission, sandbox — not one thing</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="Three numbered rows: availability, auto-approval, and sandbox — each a separate independent question about the agent.">
+  <h2 class="t" style="font-size:2.2em">3 &middot; The permission hierarchy: whose rule wins</h2>
+  <div class="pageno">M2·08</div>
+</section>
+
+<!-- ============ SLIDE — three boundaries ============ -->
+<section>
+  <h2 class="t">Three boundaries, and confusing them is the trap</h2>
+  <p class="s">availability, permission, sandbox: not one thing</p>
+  <svg viewBox="0 0 1100 340" role="img" aria-label="Three numbered rows: availability, auto-approval, and sandbox, each a separate independent question about the agent.">
     <!-- row 1 -->
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6"><circle cx="110" cy="70" r="26"/></g>
     <text x="110" y="78" text-anchor="middle" class="num">1</text>
     <text x="160" y="62" class="lbl-b" text-anchor="start">Availability</text>
-    <text x="160" y="90" class="lbl-g" text-anchor="start">what tools it even HAS — can it use them at all?</text>
+    <text x="160" y="90" class="lbl-g" text-anchor="start">what tools it even HAS: can it use them at all?</text>
     <!-- row 2 -->
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.6"><circle cx="110" cy="170" r="26"/></g>
     <text x="110" y="178" text-anchor="middle" class="num">2</text>
     <text x="160" y="162" class="lbl-b" text-anchor="start">Auto-approval</text>
-    <text x="160" y="190" class="lbl-g" text-anchor="start">what it does WITHOUT asking you — the permission rules</text>
+    <text x="160" y="190" class="lbl-g" text-anchor="start">what it does WITHOUT asking you: the permission rules</text>
     <!-- row 3 -->
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.6"><circle cx="110" cy="270" r="26"/></g>
     <text x="110" y="278" text-anchor="middle" class="num">3</text>
     <text x="160" y="262" class="lbl-b" text-anchor="start">Sandbox</text>
     <text x="160" y="290" class="lbl-g" text-anchor="start">what the shell is PHYSICALLY prevented from touching</text>
   </svg>
-  <div class="pageno">M2·06</div>
+  <div class="pageno">M2·09</div>
 </section>
 
 <!-- ============ SLIDE 7 — the hierarchy (staircase) ============ -->
 <section>
-  <h2 class="t">Whose rule wins — a fixed precedence stack</h2>
-  <p class="s">layered like IAM — managed policy always wins</p>
+  <h2 class="t">Whose rule wins: a fixed precedence stack</h2>
+  <p class="s">layered like IAM, managed policy always wins</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A five-rung staircase from top to bottom: enterprise managed policy wins over CLI flags, over settings.local.json, over settings.json, over user settings. Higher wins.">
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="3"><rect x="80" y="40" width="620" height="52" rx="9"/></g>
     <text x="120" y="72" class="lbl-b" text-anchor="start">enterprise managed policy</text>
@@ -358,12 +376,12 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><path d="M950,320 L950,60" marker-end="url(#ah)"/></g>
     <text x="985" y="195" text-anchor="middle" class="lbl-b" transform="rotate(90 985 195)">higher wins</text>
   </svg>
-  <div class="pageno">M2·07</div>
+  <div class="pageno">M2·10</div>
 </section>
 
 <!-- ============ SLIDE 8 — deny beats ask beats allow (3 fragments) ============ -->
 <section>
-  <h2 class="t">deny beats ask beats allow — every time</h2>
+  <h2 class="t">deny beats ask beats allow, every time</h2>
   <p class="s">deny always beats a matching allow</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A git push token is tested against three lanes: it matches allow, but drops through to deny and is refused, showing deny overrides a matching allow.">
     <!-- token -->
@@ -373,7 +391,7 @@ footer, header, hgroup, main, menu, nav, section {
     <!-- allow lane -->
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.6"><rect x="360" y="40" width="380" height="72" rx="10"/></g>
     <text x="410" y="72" class="lbl-b" text-anchor="start">allow</text>
-    <text x="410" y="98" class="lbl-g" text-anchor="start">Bash(git:*) — matches!</text>
+    <text x="410" y="98" class="lbl-g" text-anchor="start">Bash(git:*): matches!</text>
     <!-- ask lane -->
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.6"><rect x="360" y="144" width="380" height="72" rx="10"/></g>
     <text x="410" y="176" class="lbl-b" text-anchor="start">ask</text>
@@ -399,7 +417,7 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="900" y="308" text-anchor="middle" class="lbl-g">allow can't override it</text>
     </g>
   </svg>
-  <div class="pageno">M2·08</div>
+  <div class="pageno">M2·11</div>
 </section>
 
 <!-- ============ SLIDE 9 — a rule is a prefix ============ -->
@@ -427,12 +445,18 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="800" y="284" text-anchor="middle" class="lbl-g">deny curl ↛ wget, nc, python -c …</text>
     <text x="800" y="310" text-anchor="middle" class="lbl-g">deny lists are a backstop, not the control</text>
   </svg>
-  <div class="pageno">M2·09</div>
+  <div class="pageno">M2·12</div>
 </section>
 
-<!-- ============ SLIDE 10 — posture ladder ============ -->
+<!-- ============ DIVIDER — section 4 ============ -->
 <section>
-  <h2 class="t">Posture — same rules, different eagerness</h2>
+  <h2 class="t" style="font-size:2.2em">4 &middot; Permission postures: matching the ask to the task</h2>
+  <div class="pageno">M2·13</div>
+</section>
+
+<!-- ============ SLIDE — posture ladder ============ -->
+<section>
+  <h2 class="t">Posture: same rules, different eagerness</h2>
   <p class="s">same rules, different eagerness to act</p>
   <svg viewBox="0 0 1100 320" role="img" aria-label="A five-rung ladder of permission modes from plan on the left to bypassPermissions on the right, labelled asks about everything to asks about nothing.">
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.6"><rect x="40" y="150" width="180" height="70" rx="10"/></g>
@@ -458,9 +482,9 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round"><path d="M60,110 L1020,110" marker-end="url(#ahg)"/></g>
     <text x="150" y="98" text-anchor="middle" class="lbl-g">asks about everything</text>
     <text x="940" y="98" text-anchor="middle" class="lbl-g">asks about nothing</text>
-    <text x="540" y="280" text-anchor="middle" class="lbl-g">cruise control still obeys the speed limit — the rules don't change</text>
+    <text x="540" y="280" text-anchor="middle" class="lbl-g">cruise control still obeys the speed limit, the rules don't change</text>
   </svg>
-  <div class="pageno">M2·10</div>
+  <div class="pageno">M2·14</div>
 </section>
 
 <!-- ============ SLIDE 11 — read the ladder rung by rung ============ -->
@@ -470,14 +494,14 @@ footer, header, hgroup, main, menu, nav, section {
   <svg viewBox="0 0 1100 340" role="img" aria-label="A table of five postures, each showing what it auto-approves versus what it still gates, with an agentic bracket over plan and default and an autonomous bracket over auto, dontAsk, and bypassPermissions.">
     <!-- agentic bracket -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M60,40 L60,150 M60,40 L520,40 M520,40 L520,150"/></g>
-    <text x="290" y="30" text-anchor="middle" class="lbl-b">agentic — you stay in the loop</text>
+    <text x="290" y="30" text-anchor="middle" class="lbl-b">agentic: you stay in the loop</text>
     <!-- autonomous bracket -->
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="6 5"><path d="M540,40 L540,150 M540,40 L1040,40 M1040,40 L1040,150"/></g>
-    <text x="790" y="30" text-anchor="middle" class="lbl-b">autonomous — acts without asking</text>
+    <text x="790" y="30" text-anchor="middle" class="lbl-b">autonomous: acts without asking</text>
 
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.4"><rect x="70" y="56" width="210" height="86" rx="9"/></g>
     <text x="175" y="86" text-anchor="middle" class="lbl-b">plan</text>
-    <text x="175" y="114" text-anchor="middle" class="lbl-g">nothing — scoping only</text>
+    <text x="175" y="114" text-anchor="middle" class="lbl-g">nothing: scoping only</text>
 
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.4"><rect x="300" y="56" width="210" height="86" rx="9"/></g>
     <text x="405" y="86" text-anchor="middle" class="lbl-b">default</text>
@@ -493,16 +517,16 @@ footer, header, hgroup, main, menu, nav, section {
 
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.8"><rect x="300" y="200" width="730" height="120" rx="10"/></g>
     <text x="665" y="240" text-anchor="middle" class="lbl-b">bypassPermissions</text>
-    <text x="665" y="274" text-anchor="middle" class="lbl-g">everything not on the deny list — including the destructive thing you never denied</text>
+    <text x="665" y="274" text-anchor="middle" class="lbl-g">everything not on the deny list, including the destructive thing you never denied</text>
     <text x="665" y="304" text-anchor="middle" style="fill:#c62828" class="lbl">almost never · disposable sandboxes only</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M180,150 C180,260 295,260 295,260" marker-end="url(#ahg)"/></g>
   </svg>
-  <div class="pageno">M2·11</div>
+  <div class="pageno">M2·15</div>
 </section>
 
 <!-- ============ SLIDE 12 — deny holds under bypass (2 fragments) ============ -->
 <section>
-  <h2 class="t">deny holds — even under bypassPermissions</h2>
+  <h2 class="t">deny holds, even under bypassPermissions</h2>
   <p class="s">bypass removes every gate except deny</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Under bypassPermissions the allow, ask, and trust-prompt gates are crossed out, but a solid deny wall stays standing. deny holds.">
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="3"><rect x="60" y="40" width="980" height="260" rx="14"/></g>
@@ -530,7 +554,7 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="967" y="308" text-anchor="middle" style="fill:#2e7d32" class="lbl">holds</text>
     </g>
   </svg>
-  <div class="pageno">M2·12</div>
+  <div class="pageno">M2·16</div>
 </section>
 
 <!-- ============ SLIDE 13 — why bypass is still dangerous ============ -->
@@ -555,39 +579,51 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="240" y="164" class="lbl" text-anchor="start" style="fill:#c62828">some destructive command you never thought to deny</text>
     <text x="820" y="216" text-anchor="middle" style="fill:#c62828" class="lbl-b">sails through</text>
   </svg>
-  <div class="pageno">M2·13</div>
+  <div class="pageno">M2·17</div>
 </section>
 
-<!-- ============ SLIDE 14 — available vs auto-approved (the trap) ============ -->
+<!-- ============ DIVIDER — section 5 ============ -->
 <section>
-  <h2 class="t">--allowedTools opens a fast lane — it doesn't close the others</h2>
+  <h2 class="t" style="font-size:2.2em">5 &middot; Availability vs. auto-approval: the misconception that bites</h2>
+  <div class="pageno">M2·18</div>
+</section>
+
+<!-- ============ SLIDE — available vs auto-approved (the trap) ============ -->
+<section>
+  <h2 class="t">--allowedTools opens a fast lane, it doesn't close the others</h2>
   <p class="s">allowedTools speeds up, doesn't remove</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="An airport analogy: allowedTools opens a fast-pass lane for Read and Edit, but the Bash lane stays open with a checkpoint that prompts. Closing a lane needs disallowedTools or deny.">
     <!-- fast lane -->
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.6"><rect x="70" y="50" width="600" height="64" rx="10"/></g>
-    <text x="100" y="90" class="lbl-b" text-anchor="start">Read, Edit — fast-pass lane (--allowedTools)</text>
+    <text x="100" y="90" class="lbl-b" text-anchor="start">Read, Edit: fast-pass lane (--allowedTools)</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M680,82 L1010,82" marker-end="url(#ahg)"/></g>
     <text x="850" y="70" text-anchor="middle" style="fill:#2e7d32" class="lbl-g">runs, no prompt</text>
     <!-- bash lane still open, with checkpoint -->
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.6"><rect x="70" y="140" width="600" height="64" rx="10"/></g>
-    <text x="100" y="180" class="lbl-b" text-anchor="start">Bash — lane still OPEN</text>
+    <text x="100" y="180" class="lbl-b" text-anchor="start">Bash: lane still OPEN</text>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><rect x="500" y="150" width="120" height="44" rx="6"/></g>
     <text x="560" y="178" text-anchor="middle" class="lbl-g">checkpoint</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M680,172 L1010,172" marker-end="url(#ahg)"/></g>
-    <text x="850" y="160" text-anchor="middle" style="fill:#f57c00" class="lbl-g">prompts you — still available</text>
+    <text x="850" y="160" text-anchor="middle" style="fill:#f57c00" class="lbl-g">prompts you, still available</text>
     <!-- closed lane -->
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.6"><rect x="70" y="230" width="600" height="64" rx="10"/></g>
-    <text x="100" y="270" class="lbl-b" text-anchor="start">--disallowedTools / deny — lane CLOSED</text>
+    <text x="100" y="270" class="lbl-b" text-anchor="start">--disallowedTools / deny: lane CLOSED</text>
     <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="3" stroke-linecap="round"><path d="M690,240 L760,290 M690,290 L760,240"/></g>
-    <text x="880" y="270" text-anchor="middle" style="fill:#c62828" class="lbl-g">unavailable — a real boundary</text>
+    <text x="880" y="270" text-anchor="middle" style="fill:#c62828" class="lbl-g">unavailable, a real boundary</text>
   </svg>
-  <div class="pageno">M2·14</div>
+  <div class="pageno">M2·19</div>
 </section>
 
-<!-- ============ SLIDE 15 — the three-gate composition (3 fragments) ============ -->
+<!-- ============ DIVIDER — section 6 (deck order: "putting together" precedes "sandbox" in this deck's narrative) ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">6 &middot; Putting the three boundaries together</h2>
+  <div class="pageno">M2·20</div>
+</section>
+
+<!-- ============ SLIDE — the three-gate composition (3 fragments) ============ -->
 <section>
   <h2 class="t">Every action passes three gates, in order</h2>
-  <p class="s">toolbox, paperwork, physics — three gates</p>
+  <p class="s">toolbox, paperwork, physics: three gates</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A pipeline: an action passes gate one availability, gate two permission and posture, gate three sandbox, each with its own stop branch, before it runs.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.8"><rect x="40" y="140" width="150" height="70" rx="10"/></g>
     <text x="115" y="172" text-anchor="middle" class="lbl-b">action</text>
@@ -621,10 +657,16 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="1035" y="180" text-anchor="middle" style="fill:#2e7d32" class="lbl-b">runs</text>
     </g>
   </svg>
-  <div class="pageno">M2·15</div>
+  <div class="pageno">M2·21</div>
 </section>
 
-<!-- ============ SLIDE 16 — the sandbox (airlock) ============ -->
+<!-- ============ DIVIDER — section 7 (deck order) ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">7 &middot; The sandbox: stopping the capability, not the spelling</h2>
+  <div class="pageno">M2·22</div>
+</section>
+
+<!-- ============ SLIDE — the sandbox (airlock) ============ -->
 <section>
   <h2 class="t">The sandbox is the airlock, not the sign on the door</h2>
   <p class="s">a sign vs. a physical airlock</p>
@@ -651,12 +693,12 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="2.6"><rect x="710" y="248" width="330" height="52" rx="9"/></g>
     <text x="875" y="280" text-anchor="middle" class="lbl-b">fail-closed: no sandbox, no command</text>
   </svg>
-  <div class="pageno">M2·16</div>
+  <div class="pageno">M2·23</div>
 </section>
 
 <!-- ============ SLIDE 17 — closing ============ -->
 <section>
-  <h2 class="t">Set all three — deliberately</h2>
+  <h2 class="t">Set all three, deliberately</h2>
   <p class="s">five gates to carry into the lab</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Five numbered takeaways: install and authenticate, deny wins, posture per task, allowedTools is not removal, and the sandbox fails closed.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6"><circle cx="90" cy="50" r="24"/></g>
@@ -665,7 +707,7 @@ footer, header, hgroup, main, menu, nav, section {
 
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.6"><circle cx="90" cy="115" r="24"/></g>
     <text x="90" y="123" text-anchor="middle" class="num">2</text>
-    <text x="135" y="123" class="lbl" text-anchor="start">deny beats ask beats allow — a broad allow is safe behind a narrow deny.</text>
+    <text x="135" y="123" class="lbl" text-anchor="start">deny beats ask beats allow: a broad allow is safe behind a narrow deny.</text>
 
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.6"><circle cx="90" cy="180" r="24"/></g>
     <text x="90" y="188" text-anchor="middle" class="num">3</text>
@@ -673,14 +715,14 @@ footer, header, hgroup, main, menu, nav, section {
 
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="2.6"><circle cx="90" cy="245" r="24"/></g>
     <text x="90" y="253" text-anchor="middle" class="num">4</text>
-    <text x="135" y="253" class="lbl" text-anchor="start">--allowedTools is a convenience, not a restriction — Bash is still there.</text>
+    <text x="135" y="253" class="lbl" text-anchor="start">--allowedTools is a convenience, not a restriction, Bash is still there.</text>
 
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.6"><circle cx="90" cy="310" r="24"/></g>
     <text x="90" y="318" text-anchor="middle" class="num">5</text>
-    <text x="135" y="318" class="lbl" text-anchor="start">The sandbox stops the capability, fail-closed — the airlock, not the sign.</text>
+    <text x="135" y="318" class="lbl" text-anchor="start">The sandbox stops the capability, fail-closed: the airlock, not the sign.</text>
   </svg>
   <p class="credit">Now open <b>Module 2 · Lab</b>. &nbsp;·&nbsp; <b>Gourav Shah</b> &nbsp;·&nbsp; School of DevOps &amp; AI</p>
-  <div class="pageno">M2·17</div>
+  <div class="pageno">M2·24</div>
 </section>
 
 </div></div>

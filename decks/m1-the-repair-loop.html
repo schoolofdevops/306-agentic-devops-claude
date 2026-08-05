@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agentic DevOps with Claude Code — Module 1: The Repair Loop — Manual Baseline</title>
+<title>Module 1: The Repair Loop &middot; Agentic DevOps with Claude Code</title>
 
 <!-- ============================================================
      CourseSmith whiteboard deck skeleton (self-contained).
      Style contract: templates/deck/whiteboard-style-guide.md
      Course: Agentic DevOps with Claude Code · Module 1 (M1)
-             First Win: Diagnose, Change & Verify Northstar
+             The Repair Loop: Diagnose, Change & Verify Northstar
      Zero external requests: reveal.js 5.x runtime + Patrick Hand
      woff2 are inlined below. Keep it that way.
      ============================================================ -->
@@ -137,7 +137,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 1 — TITLE ============ -->
 <section data-auto-animate>
   <p class="kicker">MODULE 1 &nbsp;·&nbsp; AGENTIC DEVOPS WITH CLAUDE CODE</p>
-  <h2 class="t" style="font-size:2.3em">First Win: Diagnose, Change &amp; Verify</h2>
+  <h2 class="t" style="font-size:2.3em">The Repair Loop: Diagnose, Change &amp; Verify</h2>
   <p class="s" style="font-size:1.2em">fixed like a technician, not a tinkerer</p>
   <svg viewBox="0 0 1100 300" role="img" aria-label="A small broken service box runs through a loop and comes out as a green check mark, with two arrows fanning down to diagnose and verify.">
     <!-- broken box -->
@@ -174,7 +174,13 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M1·01</div>
 </section>
 
-<!-- ============ SLIDE 2 — bug tiny, loop is the point ============ -->
+<!-- ============ DIVIDER — section 1 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">1 &middot; Why this loop, and why now</h2>
+  <div class="pageno">M1·02</div>
+</section>
+
+<!-- ============ SLIDE — bug tiny, loop is the point ============ -->
 <section>
   <h2 class="t">The bug is tiny; the loop around it is the point</h2>
   <p class="s">tiny bug, repeatable method</p>
@@ -192,7 +198,7 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round">
       <rect x="520" y="70" width="510" height="230" rx="14"/>
     </g>
-    <text x="775" y="110" text-anchor="middle" class="lbl-b">the method — the loop</text>
+    <text x="775" y="110" text-anchor="middle" class="lbl-b">the method, the loop</text>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round">
       <rect x="555" y="150" width="130" height="60" rx="9"/>
       <rect x="710" y="150" width="130" height="60" rx="9"/>
@@ -207,7 +213,7 @@ footer, header, hgroup, main, menu, nav, section {
       <path d="M400,190 C455,190 475,187 515,185" marker-end="url(#ahg)"/>
     </g>
   </svg>
-  <div class="pageno">M1·02</div>
+  <div class="pageno">M1·03</div>
 </section>
 
 <!-- ============ SLIDE 3 — change is free, ends carry the weight (2 fragments) ============ -->
@@ -251,7 +257,7 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="510" y="325" text-anchor="middle" class="lbl-g">the bottleneck moved to the two ends</text>
   </svg>
-  <div class="pageno">M1·03</div>
+  <div class="pageno">M1·04</div>
 </section>
 
 <!-- ============ SLIDE 4 — the tinkerer ============ -->
@@ -283,7 +289,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="900" y="220" text-anchor="middle" class="lbl-g">nobody knows</text>
     <text x="295" y="300" text-anchor="middle" class="lbl-g">two of the "fixes" are now just extra risk</text>
   </svg>
-  <div class="pageno">M1·04</div>
+  <div class="pageno">M1·05</div>
 </section>
 
 <!-- ============ SLIDE 5 — the technician ============ -->
@@ -306,14 +312,14 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="200" y="310">5</text>
     </g>
     <g class="lbl" text-anchor="start">
-      <text x="250" y="78">Read the fault — what is it actually telling you?</text>
+      <text x="250" y="78">Read the fault: what is it actually telling you?</text>
       <text x="250" y="136">Reproduce the symptom on the live system</text>
       <text x="250" y="194">Form one hypothesis, not five</text>
       <text x="250" y="252">Change one thing</text>
       <text x="250" y="310">Confirm the symptom is gone</text>
     </g>
   </svg>
-  <div class="pageno">M1·05</div>
+  <div class="pageno">M1·06</div>
 </section>
 
 <!-- ============ SLIDE 6 — AI is a fast tinkerer ============ -->
@@ -349,13 +355,19 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="850" y="240" text-anchor="middle" class="lbl-sm">one change</text>
     <text x="850" y="280" text-anchor="middle" class="lbl-sm">then verify</text>
   </svg>
-  <div class="pageno">M1·06</div>
+  <div class="pageno">M1·07</div>
 </section>
 
-<!-- ============ SLIDE 7 — the loop, not a line (3 fragments) ============ -->
+<!-- ============ DIVIDER — section 2 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">2 &middot; The diagnose &rarr; change &rarr; verify loop</h2>
+  <div class="pageno">M1·08</div>
+</section>
+
+<!-- ============ SLIDE — the loop, not a line (3 fragments) ============ -->
 <section>
   <h2 class="t">Diagnose → Change → Verify is a loop, not a line</h2>
-  <p class="s">observe, diagnose, change, verify — repeat</p>
+  <p class="s">observe, diagnose, change, verify, repeat</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A four-node loop revealed step by step: Observe leads to Diagnose, Diagnose to Change, Change to Verify, and a green pass exit from Verify.">
     <!-- Observe (pre-fragment) -->
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
@@ -401,7 +413,7 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="720" y="300" text-anchor="middle" class="lbl-g">green → done, keep the diff</text>
     </g>
   </svg>
-  <div class="pageno">M1·07</div>
+  <div class="pageno">M1·09</div>
 </section>
 
 <!-- ============ SLIDE 8 — red goes back to diagnose ============ -->
@@ -443,7 +455,7 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="550" y="264" text-anchor="middle" class="lbl-g">stack a 2nd change</text>
   </svg>
-  <div class="pageno">M1·08</div>
+  <div class="pageno">M1·10</div>
 </section>
 
 <!-- ============ SLIDE 9 — seal the room ============ -->
@@ -478,7 +490,7 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="810" y="310" text-anchor="middle" class="lbl-g">noise that hides the answer</text>
   </svg>
-  <div class="pageno">M1·09</div>
+  <div class="pageno">M1·11</div>
 </section>
 
 <!-- ============ SLIDE 10 — two pieces of evidence ============ -->
@@ -517,7 +529,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="665" y="205" text-anchor="middle" class="lbl-g">the one file</text>
     <text x="550" y="300" text-anchor="middle" class="lbl-g">signal up · blast radius down</text>
   </svg>
-  <div class="pageno">M1·10</div>
+  <div class="pageno">M1·12</div>
 </section>
 
 <!-- ============ SLIDE 11 — repair in a theatre ============ -->
@@ -547,9 +559,9 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="890" y="200" text-anchor="middle" class="lbl-g" fill="#2e7d32">merge only when green</text>
     <!-- scissors / revert -->
-    <text x="665" y="300" text-anchor="middle" class="lbl-g">or throw it all away — one command</text>
+    <text x="665" y="300" text-anchor="middle" class="lbl-g">or throw it all away, one command</text>
   </svg>
-  <div class="pageno">M1·11</div>
+  <div class="pageno">M1·13</div>
 </section>
 
 <!-- ============ SLIDE 12 — branch = approval boundary ============ -->
@@ -587,7 +599,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="870" y="205" text-anchor="middle" class="lbl-g">you read</text>
     <text x="810" y="270" text-anchor="middle" class="lbl" fill="#2e7d32">you approve what it did</text>
   </svg>
-  <div class="pageno">M1·12</div>
+  <div class="pageno">M1·14</div>
 </section>
 
 <!-- ============ SLIDE 13 — vibe vs number ============ -->
@@ -618,7 +630,7 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="810" y="258" text-anchor="middle" class="lbl" fill="#2e7d32">a fact you can act on</text>
   </svg>
-  <div class="pageno">M1·13</div>
+  <div class="pageno">M1·15</div>
 </section>
 
 <!-- ============ SLIDE 14 — grader flips red to green (1 fragment) ============ -->
@@ -651,13 +663,13 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="800" y="285" text-anchor="middle" class="lbl" fill="#2e7d32">RESULT: PASS (4 passed)</text>
     </g>
   </svg>
-  <div class="pageno">M1·14</div>
+  <div class="pageno">M1·16</div>
 </section>
 
 <!-- ============ SLIDE 15 — vibes fail both ways ============ -->
 <section>
-  <h2 class="t">Vibes fail both ways — and an agent amplifies both</h2>
-  <p class="s">false confidence, false alarm — the grader kills both</p>
+  <h2 class="t">Vibes fail both ways, and an agent amplifies both</h2>
+  <p class="s">false confidence, false alarm: the grader kills both</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Two panels of failure. Left, false confidence: an agent claims fixed while the endpoint is still broken. Right, false alarm: a working fix is wrongly distrusted.">
     <!-- left: false confidence -->
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round">
@@ -673,7 +685,7 @@ footer, header, hgroup, main, menu, nav, section {
       <path d="M270,185 L318,185" marker-end="url(#ah)"/>
     </g>
     <text x="395" y="192" text-anchor="middle" class="lbl-sm">still broken</text>
-    <text x="290" y="270" text-anchor="middle" class="lbl-g">says done — it is not</text>
+    <text x="290" y="270" text-anchor="middle" class="lbl-g">says done, but it is not</text>
 
     <!-- right: false alarm -->
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round">
@@ -691,10 +703,16 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="915" y="192" text-anchor="middle" class="lbl-sm">you distrust it</text>
     <text x="810" y="270" text-anchor="middle" class="lbl-g">throws away a good fix</text>
   </svg>
-  <div class="pageno">M1·15</div>
+  <div class="pageno">M1·17</div>
 </section>
 
-<!-- ============ SLIDE 16 — autonomy ladder (3 fragments) ============ -->
+<!-- ============ DIVIDER — section 3 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">3 &middot; The autonomy ladder: matching trust to risk</h2>
+  <div class="pageno">M1·18</div>
+</section>
+
+<!-- ============ SLIDE — autonomy ladder (3 fragments) ============ -->
 <section>
   <h2 class="t">Autonomy is a dial you set by risk</h2>
   <p class="s">set the dial by risk, not by capability</p>
@@ -731,12 +749,18 @@ footer, header, hgroup, main, menu, nav, section {
       <path d="M650,170 L650,120"/>
     </g>
   </svg>
-  <div class="pageno">M1·16</div>
+  <div class="pageno">M1·19</div>
 </section>
 
-<!-- ============ SLIDE 17 — CLOSING ============ -->
+<!-- ============ DIVIDER — section 4 ============ -->
 <section>
-  <p class="kicker">MODULE 1 &nbsp;·&nbsp; FIRST WIN</p>
+  <h2 class="t" style="font-size:2.2em">4 &middot; What you'll do in the lab</h2>
+  <div class="pageno">M1·20</div>
+</section>
+
+<!-- ============ SLIDE — CLOSING ============ -->
+<section>
+  <p class="kicker">MODULE 1 &nbsp;·&nbsp; THE REPAIR LOOP</p>
   <h2 class="t" style="font-size:2.1em">One small change, made like a technician</h2>
   <p class="s">the whole course, in miniature</p>
   <svg viewBox="0 0 1100 300" role="img" aria-label="Four numbered takeaways: bound the evidence, change on a branch, verify with the grader, and match autonomy to risk.">
@@ -753,14 +777,14 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="150" y="258">4</text>
     </g>
     <g class="lbl" text-anchor="start">
-      <text x="200" y="78">Bound the evidence — smallest set that holds the answer</text>
-      <text x="200" y="138">Change on a branch — a reviewable, revertable proposal</text>
-      <text x="200" y="198">Verify with the grader — red to green, deterministically</text>
-      <text x="200" y="258">Match autonomy to risk — how bad, how fast, how undo</text>
+      <text x="200" y="78">Bound the evidence: smallest set that holds the answer</text>
+      <text x="200" y="138">Change on a branch: a reviewable, revertable proposal</text>
+      <text x="200" y="198">Verify with the grader: red to green, deterministically</text>
+      <text x="200" y="258">Match autonomy to risk: how bad, how fast, how undo</text>
     </g>
   </svg>
   <p class="credit">Now open <b>Module 1 · Lab</b>. &nbsp;·&nbsp; <b>Gourav Shah</b> &nbsp;·&nbsp; School of DevOps &amp; AI</p>
-  <div class="pageno">M1·17</div>
+  <div class="pageno">M1·21</div>
 </section>
 
 </div></div>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agentic DevOps with Claude Code — Module 17: Reliable Automation, Events &amp; Always-On Patterns</title>
+<title>Module 17: Reliable Automation, Events &amp; Always-On Patterns &middot; Agentic DevOps with Claude Code</title>
 
 <!-- ============================================================
      CourseSmith whiteboard deck skeleton (self-contained).
@@ -148,7 +148,7 @@ footer, header, hgroup, main, menu, nav, section {
       <path d="M150,235 C150,300 260,300 260,235"/>
     </g>
     <text x="205" y="130" text-anchor="middle" class="lbl-g">screen</text>
-    <text x="205" y="300" text-anchor="middle" class="lbl-g">empty chair — nobody watching</text>
+    <text x="205" y="300" text-anchor="middle" class="lbl-g">empty chair, nobody watching</text>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round">
       <path d="M470,90 L540,150 L500,150 L560,230" marker-end="url(#ah)"/>
     </g>
@@ -163,11 +163,17 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M17·01</div>
 </section>
 
+<!-- ============ DIVIDER — intro ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">Taking the operator out of the chair</h2>
+  <div class="pageno">M17·02</div>
+</section>
+
 <!-- ============ SLIDE 2 — the quiet operator work ============ -->
 <section>
   <h2 class="t">The operator was doing quiet work you never wrote down</h2>
   <p class="s">remove the person, remove four safeties</p>
-  <svg viewBox="0 0 1100 360" role="img" aria-label="An operator at a desk with four thought bubbles — seen this alert already, this run is stuck stop it, never deploy mid-triage, getting bored just stop; then the chair empties and the four bubbles pop, marked as lost.">
+  <svg viewBox="0 0 1100 360" role="img" aria-label="An operator at a desk with four thought bubbles: seen this alert already, this run is stuck stop it, never deploy mid-triage, getting bored just stop; then the chair empties and the four bubbles pop, marked as lost.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round">
       <circle cx="150" cy="250" r="34"/>
       <path d="M110,320 C110,270 190,270 190,320"/>
@@ -181,9 +187,9 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <g text-anchor="middle" class="lbl">
       <text x="445" y="63">"seen this alert already"</text>
-      <text x="445" y="131">"this run is stuck — stop it"</text>
+      <text x="445" y="131">"this run is stuck, stop it"</text>
       <text x="445" y="199">"never deploy mid-triage"</text>
-      <text x="445" y="267">"getting bored — just stop"</text>
+      <text x="445" y="267">"getting bored, just stop"</text>
     </g>
     <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="2.6" stroke-linecap="round">
       <path d="M700,56 L760,42 M700,56 L760,70"/>
@@ -194,18 +200,24 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="890" y="150" text-anchor="middle" class="lbl-b" style="fill:#c62828">chair empties</text>
     <text x="890" y="185" text-anchor="middle" class="lbl-g" style="fill:#c62828">all four safeties gone</text>
   </svg>
-  <div class="pageno">M17·02</div>
+  <div class="pageno">M17·03</div>
+</section>
+
+<!-- ============ DIVIDER — section 1 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">1 &middot; Interactive versus unattended: two different reliability problems</h2>
+  <div class="pageno">M17·04</div>
 </section>
 
 <!-- ============ SLIDE 3 — chef vs vending machine ============ -->
 <section>
   <h2 class="t">The chef corrects by being there; the machine is safe by design</h2>
   <p class="s">unattended means structure, not attention</p>
-  <svg viewBox="0 0 1100 360" role="img" aria-label="Two panels. Left, a chef at a counter asking how spicy, tasting and adjusting. Right, a vending machine with rules — one coin one action, press twice dispenses once, jam then refund, right slot only.">
+  <svg viewBox="0 0 1100 360" role="img" aria-label="Two panels. Left, a chef at a counter asking how spicy, tasting and adjusting. Right, a vending machine with rules: one coin one action, press twice dispenses once, jam then refund, right slot only.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2" stroke-linecap="round">
       <line x1="550" y1="20" x2="550" y2="340" stroke-dasharray="4 6"/>
     </g>
-    <text x="270" y="40" text-anchor="middle" class="lbl-b">CHEF — interactive</text>
+    <text x="270" y="40" text-anchor="middle" class="lbl-b">CHEF: interactive</text>
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round">
       <circle cx="270" cy="130" r="34"/>
       <rect x="150" y="200" width="240" height="120" rx="12"/>
@@ -213,7 +225,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="270" y="240" text-anchor="middle" class="lbl">"how spicy?"</text>
     <text x="270" y="272" text-anchor="middle" class="lbl-g">tastes · adjusts</text>
     <text x="270" y="300" text-anchor="middle" class="lbl-g">catches the wrong order</text>
-    <text x="820" y="40" text-anchor="middle" class="lbl-b">VENDING MACHINE — unattended</text>
+    <text x="820" y="40" text-anchor="middle" class="lbl-b">VENDING MACHINE: unattended</text>
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round">
       <rect x="700" y="70" width="240" height="250" rx="12"/>
       <rect x="720" y="90" width="140" height="90" rx="8"/>
@@ -227,7 +239,7 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="820" y="305">only the slot you asked for</text>
     </g>
   </svg>
-  <div class="pageno">M17·03</div>
+  <div class="pageno">M17·05</div>
 </section>
 
 <!-- ============ SLIDE 4 — the decision line ============ -->
@@ -260,7 +272,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="810" y="285" text-anchor="middle" class="lbl-sm">get it wrong: confident wrong deploy</text>
     <text x="810" y="312" text-anchor="middle" class="lbl-sm">at machine speed</text>
   </svg>
-  <div class="pageno">M17·04</div>
+  <div class="pageno">M17·06</div>
+</section>
+
+<!-- ============ DIVIDER — section 2 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">2 &middot; The automation reliability contract: six properties, all testable</h2>
+  <div class="pageno">M17·07</div>
 </section>
 
 <!-- ============ SLIDE 5 — the ATM ============ -->
@@ -287,7 +305,7 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="410" y="285">lets you cancel and walk away clean</text>
     </g>
   </svg>
-  <div class="pageno">M17·05</div>
+  <div class="pageno">M17·08</div>
 </section>
 
 <!-- ============ SLIDE 6 — the six-property contract ============ -->
@@ -321,7 +339,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="985" y="185" text-anchor="middle" class="lbl-sm" style="fill:#2e7d32">each one is a</text>
     <text x="985" y="212" text-anchor="middle" class="lbl-sm" style="fill:#2e7d32">yes / no test</text>
   </svg>
-  <div class="pageno">M17·06</div>
+  <div class="pageno">M17·09</div>
 </section>
 
 <!-- ============ SLIDE 7 — correlation ID / hospital chart ============ -->
@@ -365,7 +383,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="900" y="185" text-anchor="middle" class="lbl-sm" style="fill:#c62828">no case number →</text>
     <text x="900" y="212" text-anchor="middle" class="lbl-sm" style="fill:#c62828">a pile of loose paper</text>
   </svg>
-  <div class="pageno">M17·07</div>
+  <div class="pageno">M17·10</div>
+</section>
+
+<!-- ============ DIVIDER — section 3 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">3 &middot; Events are the trigger, and an untrusted trigger is an untrusted instruction</h2>
+  <div class="pageno">M17·11</div>
 </section>
 
 <!-- ============ SLIDE 8 — the dispatcher ============ -->
@@ -404,7 +428,7 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="910" y="270" text-anchor="middle" class="lbl" style="fill:#c62828">rejected → no truck</text>
   </svg>
-  <div class="pageno">M17·08</div>
+  <div class="pageno">M17·12</div>
 </section>
 
 <!-- ============ SLIDE 9 — the envelope, fails closed ============ -->
@@ -440,7 +464,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="935" y="242" text-anchor="middle" class="lbl" style="fill:#c62828">empty required field</text>
     <text x="935" y="268" text-anchor="middle" class="lbl-sm" style="fill:#c62828">→ rejected</text>
   </svg>
-  <div class="pageno">M17·09</div>
+  <div class="pageno">M17·13</div>
 </section>
 
 <!-- ============ SLIDE 10 — untrusted trigger = untrusted instruction ============ -->
@@ -476,7 +500,13 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="905" y="236" text-anchor="middle" class="lbl-sm">same shape as the M15 GitHub issue</text>
   </svg>
-  <div class="pageno">M17·10</div>
+  <div class="pageno">M17·14</div>
+</section>
+
+<!-- ============ DIVIDER — section 4 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">4 &middot; Read-only triage: the safe shape for unattended work</h2>
+  <div class="pageno">M17·15</div>
 </section>
 
 <!-- ============ SLIDE 11 — read-only triage / security guard ============ -->
@@ -513,13 +543,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="550" y="126" text-anchor="middle" class="lbl-sm" style="fill:#c62828">no write verb</text>
     <text x="550" y="330" text-anchor="middle" class="lbl-g" style="fill:#2e7d32">real value · zero blast radius</text>
   </svg>
-  <div class="pageno">M17·11</div>
+  <div class="pageno">M17·16</div>
 </section>
 
 <!-- ============ SLIDE 12 — the loop end to end ============ -->
 <section>
   <h2 class="t">The whole lab in one flow</h2>
-  <p class="s">validate, dedup, collect, record — in order</p>
+  <p class="s">validate, dedup, collect, record, in order</p>
   <svg viewBox="0 0 1100 380" role="img" aria-label="A pipeline. Event with correlation ID goes to envelope valid; no fails closed; yes goes to seen this correlation ID; yes returns deduplicated; no collects read-only evidence bounded by timeout and retry budget, writes one packet keyed by correlation ID, and records it in the ledger so the next delivery is a no-op. A dashed branch from collect to an action boundary ends in refused-deploy.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
       <rect x="30" y="150" width="150" height="70" rx="10"/>
@@ -539,7 +569,7 @@ footer, header, hgroup, main, menu, nav, section {
       <path d="M302,222 L322,276" marker-end="url(#ah)"/>
     </g>
     <text x="342" y="255" text-anchor="middle" class="lbl-sm" style="fill:#c62828">no</text>
-    <text x="342" y="308" text-anchor="middle" class="lbl-sm" style="fill:#c62828">fail closed —</text>
+    <text x="342" y="308" text-anchor="middle" class="lbl-sm" style="fill:#c62828">fail closed:</text>
     <text x="342" y="330" text-anchor="middle" class="lbl-sm" style="fill:#c62828">no run</text>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round">
       <path d="M374,185 L420,185" marker-end="url(#ah)"/>
@@ -586,7 +616,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="716" y="330" text-anchor="middle" class="lbl-sm" style="fill:#c62828">action boundary →</text>
     <text x="716" y="352" text-anchor="middle" class="lbl-sm" style="fill:#c62828">refused-deploy</text>
   </svg>
-  <div class="pageno">M17·12</div>
+  <div class="pageno">M17·17</div>
+</section>
+
+<!-- ============ DIVIDER — section 5 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">5 &middot; Control loops with structured results</h2>
+  <div class="pageno">M17·18</div>
 </section>
 
 <!-- ============ SLIDE 13 — forms vs voicemail ============ -->
@@ -629,7 +665,7 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="550" y="345" text-anchor="middle" class="lbl-g">a fixed vocabulary → composable</text>
   </svg>
-  <div class="pageno">M17·13</div>
+  <div class="pageno">M17·19</div>
 </section>
 
 <!-- ============ SLIDE 14 — the quiet failure ============ -->
@@ -646,8 +682,8 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="245" y="150" text-anchor="middle" class="lbl-b" style="fill:#c62828">CRASH</text>
     <text x="245" y="200" text-anchor="middle" class="lbl">loud</text>
-    <text x="245" y="232" text-anchor="middle" class="lbl-g">you notice — it's fine</text>
-    <text x="720" y="60" text-anchor="middle" class="lbl-b">the QUIET failure — nobody notices</text>
+    <text x="245" y="232" text-anchor="middle" class="lbl-g">you notice, it's fine</text>
+    <text x="720" y="60" text-anchor="middle" class="lbl-b">the QUIET failure: nobody notices</text>
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round">
       <rect x="490" y="95" width="470" height="50" rx="9"/>
       <rect x="490" y="160" width="470" height="50" rx="9"/>
@@ -660,7 +696,13 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="720" y="312" text-anchor="middle" class="lbl-g" style="fill:#c62828">each = a missing property · invisible until it happens</text>
   </svg>
-  <div class="pageno">M17·14</div>
+  <div class="pageno">M17·20</div>
+</section>
+
+<!-- ============ DIVIDER — section 6 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">6 &middot; One incident, one delivery timeline</h2>
+  <div class="pageno">M17·21</div>
 </section>
 
 <!-- ============ SLIDE 15 — one incident timeline ============ -->
@@ -694,7 +736,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="1000" y="296" text-anchor="end" class="lbl-b" style="fill:#2e7d32">cancelled</text>
     <text x="180" y="320" text-anchor="start" class="lbl-g">no half-written packet · no ledger entry · incident left clean</text>
   </svg>
-  <div class="pageno">M17·15</div>
+  <div class="pageno">M17·22</div>
+</section>
+
+<!-- ============ DIVIDER — section 7 ============ -->
+<section>
+  <h2 class="t" style="font-size:2.2em">7 &middot; Where this leaves you</h2>
+  <div class="pageno">M17·23</div>
 </section>
 
 <!-- ============ SLIDE 16 — closing ============ -->
@@ -708,15 +756,15 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <g text-anchor="middle" class="num"><text x="130" y="63">1</text><text x="130" y="123">2</text><text x="130" y="183">3</text><text x="130" y="243">4</text><text x="130" y="303">5</text></g>
     <g text-anchor="start" class="lbl">
-      <text x="180" y="62">The decision line — will a human review this action before it takes effect?</text>
-      <text x="180" y="122">The six-property contract — ID · idempotency · dedup · timeout · retry · cancel.</text>
-      <text x="180" y="182">Events are the trigger — validated like an untrusted request; correlation ID load-bearing.</text>
-      <text x="180" y="242">Read-only triage — collect, one packet, route every write to the boundary.</text>
-      <text x="180" y="302">Structured results — a fixed outcome vocabulary, so the loop composes.</text>
+      <text x="180" y="62">The decision line: will a human review this action before it takes effect?</text>
+      <text x="180" y="122">The six-property contract: ID · idempotency · dedup · timeout · retry · cancel.</text>
+      <text x="180" y="182">Events are the trigger: validated like an untrusted request; correlation ID load-bearing.</text>
+      <text x="180" y="242">Read-only triage: collect, one packet, route every write to the boundary.</text>
+      <text x="180" y="302">Structured results: a fixed outcome vocabulary, so the loop composes.</text>
     </g>
   </svg>
   <p class="credit">Now open <b>Module 17 · Lab</b>. &nbsp;·&nbsp; <b>Gourav Shah</b> &nbsp;·&nbsp; School of DevOps &amp; AI</p>
-  <div class="pageno">M17·16</div>
+  <div class="pageno">M17·24</div>
 </section>
 
 </div></div>
