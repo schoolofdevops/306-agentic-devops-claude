@@ -101,6 +101,8 @@ footer, header, hgroup, main, menu, nav, section {
   .reveal .credit{ order:4; font-size:.85em; color:var(--gray); margin-top:16px; }
   .reveal .credit b{ color:var(--ink); font-weight:700; }
   .reveal .pageno{ position:absolute; bottom:14px; right:22px; font-size:.6em; color:#bdbdbd; }
+  .reveal .slides section.divider{ justify-content:center; align-items:center; }
+  .reveal .slides section.divider h2.t{ order:0; font-size:2.2em; max-width:88%; }
   .reveal .slide-number{ font-family:'Patrick Hand',cursive; }
   .reveal code{ font-family:'Patrick Hand',cursive; color:var(--ink); }
   .reveal em{ font-style:italic; }
@@ -177,7 +179,7 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — intro ============ -->
-<section>
+<section class="divider">
   <h2 class="t" style="font-size:2.2em">Tool Interface Engineering</h2>
   <div class="pageno">M7&middot;02</div>
 </section>
@@ -255,8 +257,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ═══════════════ SLIDE 4 · TWO OPPOSITE FAILURE MODES ═══════════════ -->
-<section>
-  <h2 class="t">1 &middot; Why this is a real decision, not a preference</h2>
+<section class="divider">
+  <h2 class="t">Why Choosing Bash, a Skill, or MCP Is Not Just a Preference</h2>
   <div class="pageno">M7&middot;05</div>
 </section>
 
@@ -295,32 +297,15 @@ footer, header, hgroup, main, menu, nav, section {
 <section>
   <h2 class="t">The pharmacy hands out access four ways: by how dangerous it is</h2>
   <p class="s">master key vs. one drawer vs. one product</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="Four ways to hand out pharmacy access, arranged as a descending staircase from most to least dangerous: a general key drawn red, a requisition form orange, an automated dispensing cabinet yellow-orange, and a lobby vending machine green. An arrow underneath reads danger drops, restriction is built in, from left to right.">
-    <!-- four steps -->
-    <g filter="url(#rough)" fill="var(--p-red)" stroke="#1e1e1e" stroke-width="2.8"><rect x="50" y="70" width="230" height="90" rx="11"/></g>
-    <g filter="url(#rough)" fill="var(--p-orange)" stroke="#1e1e1e" stroke-width="2.6"><rect x="300" y="106" width="230" height="90" rx="11"/></g>
-    <g filter="url(#rough)" fill="var(--p-orange)" stroke="#1e1e1e" stroke-width="2.6"><rect x="550" y="142" width="230" height="90" rx="11"/></g>
-    <g filter="url(#rough)" fill="var(--p-green)" stroke="#1e1e1e" stroke-width="2.8"><rect x="800" y="178" width="250" height="90" rx="11"/></g>
-    <text x="165" y="108" text-anchor="middle" class="lbl-b">general key</text>
-    <text x="165" y="138" text-anchor="middle" class="lbl-g">opens everything</text>
-    <text x="415" y="144" text-anchor="middle" class="lbl-b">requisition form</text>
-    <text x="415" y="174" text-anchor="middle" class="lbl-g">scoped, with judgment</text>
-    <text x="665" y="180" text-anchor="middle" class="lbl-b">dispensing cabinet</text>
-    <text x="665" y="210" text-anchor="middle" class="lbl-g">only your drawers open</text>
-    <text x="925" y="216" text-anchor="middle" class="lbl-b">vending machine</text>
-    <text x="925" y="246" text-anchor="middle" class="lbl-g">one product, by build</text>
-    <!-- descending arrow -->
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round">
-      <path d="M110,296 C400,296 700,296 1000,296" marker-end="url(#ah)"/>
-    </g>
-    <text x="540" y="288" text-anchor="middle" class="lbl-g">danger drops &nbsp;·&nbsp; restriction moves from a rule into the machine</text>
+  <svg viewBox="0 0 1600 900" role="img" aria-label="Four pharmacy access methods left to right: a single master key, a clipboard requisition form being handed over, an automated dispensing cabinet with one drawer open, and a small vending machine with one product slot.">
+    <image href="../img/decks/m7/pharmacy-four-tiers.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
   </svg>
   <div class="pageno">M7·07</div>
 </section>
 
 <!-- ═══════════════ SLIDE 6 · THE FOUR INTERFACES SPECTRUM (4 fragments) ═══════════════ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">2 &middot; The four interfaces</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">CLI, Wrapper Script, Skill, or MCP? The Four Claude Code Tool Interfaces</h2>
   <div class="pageno">M7&middot;08</div>
 </section>
 
@@ -493,8 +478,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ═══════════════ SLIDE 11 · FIVE CRITERIA (5 fragments) ═══════════════ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">3 &middot; The decision framework: five criteria</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">Five Criteria for Choosing Between CLI and MCP in Claude Code</h2>
   <div class="pageno">M7&middot;14</div>
 </section>
 
@@ -570,8 +555,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ═══════════════ SLIDE 13 · CAPABILITY THAT DOESN'T EXIST ═══════════════ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">4 &middot; The read-only observer: a capability that does not exist cannot be misused</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">What Is a Read-Only MCP Observer, and Why Is It Safer Than a Deny Rule?</h2>
   <div class="pageno">M7&middot;17</div>
 </section>
 
@@ -631,8 +616,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ═══════════════ SLIDE 15 · DECLARE + SCOPE MCP ═══════════════ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">5 &middot; Configuring and scoping MCP in Claude Code</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">How to Configure and Scope MCP Servers in Claude Code</h2>
   <div class="pageno">M7&middot;20</div>
 </section>
 
@@ -697,8 +682,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ═══════════════ SLIDE 17 · HASHICORP WORKED CASE ═══════════════ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">6 &middot; Worked comparison: HashiCorp Agent Skills vs Terraform MCP</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">HashiCorp Agent Skills vs Terraform MCP: Which Should You Use?</h2>
   <div class="pageno">M7&middot;23</div>
 </section>
 
@@ -732,7 +717,7 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ═══════════════ SLIDE 18 · THE THREE-WAY SHOOTOUT (closing, 3 fragments) ═══════════════ -->
-<section>
+<section class="divider">
   <h2 class="t" style="font-size:2.2em">7 &middot; What you'll do in the lab</h2>
   <div class="pageno">M7&middot;25</div>
 </section>

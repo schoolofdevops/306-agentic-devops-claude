@@ -101,6 +101,10 @@ footer, header, hgroup, main, menu, nav, section {
   .reveal .credit{ order:4; font-size:.85em; color:var(--gray); margin-top:16px; }
   .reveal .credit b{ color:var(--ink); font-weight:700; }
   .reveal .pageno{ position:absolute; bottom:14px; right:22px; font-size:.6em; color:#bdbdbd; }
+  .reveal .slides section.divider{ justify-content:center; align-items:center; }
+  .reveal .slides section.divider h2.t{ order:0; font-size:2.2em; max-width:88%; }
+  .reveal .slides section.divider.has-image h2.t{ order:2; font-size:1.1em; max-width:76%; }
+  .reveal .slides section.divider.has-image svg{ order:1; }
   .reveal .slide-number{ font-family:'Patrick Hand',cursive; }
   .reveal code{ font-family:'Patrick Hand',cursive; color:var(--ink); }
   .reveal em{ font-style:italic; }
@@ -171,8 +175,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — section 1 ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">1 &middot; Install and authenticate: the part you do once</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">How Do You Install and Authenticate Claude Code?</h2>
   <div class="pageno">M2·02</div>
 </section>
 
@@ -288,8 +292,11 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — section 2 ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">2 &middot; Why the boundary is the product</h2>
+<section class="divider has-image">
+  <h2 class="t">Why Is the Permission Boundary the Real Product?</h2>
+  <svg viewBox="0 0 1600 900" role="img" aria-label="A manager hands an ID badge to a new employee at a desk, then walks away while the employee works independently, representing setting a role once and no longer supervising every action.">
+    <image href="../img/decks/m2/manager-hands-badge.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
+  </svg>
   <div class="pageno">M2·06</div>
 </section>
 
@@ -319,8 +326,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — section 3 ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">3 &middot; The permission hierarchy: whose rule wins</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">How Does Claude Code's Permission Hierarchy Work?</h2>
   <div class="pageno">M2·08</div>
 </section>
 
@@ -449,8 +456,11 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — section 4 ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">4 &middot; Permission postures: matching the ask to the task</h2>
+<section class="divider has-image">
+  <h2 class="t">What Are Claude Code's Permission Postures?</h2>
+  <svg viewBox="0 0 1600 900" role="img" aria-label="A driver sits calmly with hands lightly on the wheel of a car on an open highway, dashboard showing a row of gauges of increasing size, suggesting graduated levels of automation.">
+    <image href="../img/decks/m2/driver-dashboard-highway.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
+  </svg>
   <div class="pageno">M2·13</div>
 </section>
 
@@ -583,8 +593,11 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — section 5 ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">5 &middot; Availability vs. auto-approval: the misconception that bites</h2>
+<section class="divider has-image">
+  <h2 class="t">What's the Difference Between Tool Availability and Auto-Approval?</h2>
+  <svg viewBox="0 0 1600 900" role="img" aria-label="At an airport, one traveler strolls through an open fast lane while a crowd of other travelers wait in a checkpoint queue where an agent inspects bags, contrasting speeding through versus actually being stopped.">
+    <image href="../img/decks/m2/airport-fast-lane.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
+  </svg>
   <div class="pageno">M2·18</div>
 </section>
 
@@ -615,8 +628,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — section 6 (deck order: "putting together" precedes "sandbox" in this deck's narrative) ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">6 &middot; Putting the three boundaries together</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">How Do the Three Permission Gates Work Together?</h2>
   <div class="pageno">M2·20</div>
 </section>
 
@@ -661,8 +674,11 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — section 7 (deck order) ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">7 &middot; The sandbox: stopping the capability, not the spelling</h2>
+<section class="divider has-image">
+  <h2 class="t">What Does the Claude Code Sandbox Actually Block?</h2>
+  <svg viewBox="0 0 1600 900" role="img" aria-label="A person in a full cleanroom hazmat suit stands inside a small sealed airlock chamber between two heavy round-window doors, physically isolating the lab from the outside corridor.">
+    <image href="../img/decks/m2/biosafety-airlock.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
+  </svg>
   <div class="pageno">M2·22</div>
 </section>
 
@@ -761,7 +777,7 @@ footer, header, hgroup, main, menu, nav, section {
       if(!sec) return;
       var svg = sec.querySelector('svg');
       if(!svg) return;
-      var mh = 58;
+      var mh = sec.classList.contains('divider') ? 80 : 58;
       svg.style.maxHeight = mh + '%';
       var guard = 0;
       while (sec.scrollHeight > sec.clientHeight + 2 && mh > 18 && guard++ < 20){

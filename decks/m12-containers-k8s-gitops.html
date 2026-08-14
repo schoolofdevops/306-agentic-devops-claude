@@ -101,6 +101,8 @@ footer, header, hgroup, main, menu, nav, section {
   .reveal .credit{ order:4; font-size:.85em; color:var(--gray); margin-top:16px; }
   .reveal .credit b{ color:var(--ink); font-weight:700; }
   .reveal .pageno{ position:absolute; bottom:14px; right:22px; font-size:.6em; color:#bdbdbd; }
+  .reveal .slides section.divider{ justify-content:center; align-items:center; }
+  .reveal .slides section.divider h2.t{ order:0; font-size:2.2em; max-width:88%; }
   .reveal .slide-number{ font-family:'Patrick Hand',cursive; }
   .reveal code{ font-family:'Patrick Hand',cursive; color:var(--ink); }
   .reveal em{ font-style:italic; }
@@ -175,7 +177,7 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ═══════════════ SLIDE 2 · BLAST RADIUS — every pod at once ═══════════════ -->
-<section>
+<section class="divider">
   <h2 class="t" style="font-size:2.2em">Containers, Kubernetes &amp; GitOps</h2>
   <div class="pageno">M12·02</div>
 </section>
@@ -206,35 +208,16 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ═══════════════ SLIDE 3 · THE SEALED SHIPPING CONTAINER (analogy) ═══════════════ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">1 &middot; The container is a shipping container, and the review is the packing list</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">Why Is a Container Image Reviewed Like a Packing List?</h2>
   <div class="pageno">M12·04</div>
 </section>
 
 <section>
   <h2 class="t">The image is a sealed shipping container</h2>
   <p class="s">sealed at origin, trusted all the way down</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="A sealed steel shipping container at origin travels along a route drawn as truck, then train, then ship, and arrives identical at the destination port, still sealed, never opened along the way.">
-    <!-- origin container, sealed -->
-    <g filter="url(#rough)" fill="var(--p-blue)" stroke="none"><rect x="60" y="120" width="180" height="120" rx="8"/></g>
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="3"><rect x="60" y="120" width="180" height="120" rx="8"/><line x1="100" y1="120" x2="100" y2="240"/><line x1="150" y1="120" x2="150" y2="240"/><line x1="200" y1="120" x2="200" y2="240"/></g>
-    <text x="150" y="110" text-anchor="middle" class="lbl-g">sealed at origin</text>
-    <!-- seal mark -->
-    <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="2.6"><circle cx="240" cy="180" r="14"/></g>
-    <text x="150" y="270" text-anchor="middle" class="lbl-b">image</text>
-    <!-- route: truck -> train -> ship -->
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4" stroke-dasharray="4 6"><line x1="270" y1="180" x2="820" y2="180" marker-end="url(#ahg)"/></g>
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4"><rect x="360" y="150" width="60" height="30" rx="4"/><circle cx="372" cy="186" r="7"/><circle cx="408" cy="186" r="7"/></g>
-    <text x="390" y="132" text-anchor="middle" class="lbl-g" style="font-size:15px">truck</text>
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4"><rect x="520" y="150" width="70" height="30" rx="4"/><circle cx="535" cy="186" r="6"/><circle cx="575" cy="186" r="6"/></g>
-    <text x="555" y="132" text-anchor="middle" class="lbl-g" style="font-size:15px">train</text>
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4"><path d="M680,170 L760,170 L748,192 L692,192 Z"/></g>
-    <text x="720" y="132" text-anchor="middle" class="lbl-g" style="font-size:15px">ship</text>
-    <!-- arrives identical -->
-    <g filter="url(#rough)" fill="var(--p-blue)" stroke="none"><rect x="860" y="120" width="180" height="120" rx="8"/></g>
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="3"><rect x="860" y="120" width="180" height="120" rx="8"/><line x1="900" y1="120" x2="900" y2="240"/><line x1="950" y1="120" x2="950" y2="240"/><line x1="1000" y1="120" x2="1000" y2="240"/></g>
-    <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="2.6"><circle cx="860" cy="180" r="14"/></g>
-    <text x="950" y="270" text-anchor="middle" class="lbl-g">arrives identical · still sealed</text>
+  <svg viewBox="0 0 1600 900" role="img" aria-label="A sealed steel shipping container with a visible tamper seal at its origin dock, traveling by truck, then train, then cargo ship, and arriving at the destination port still sealed, the exact same container, untouched.">
+    <image href="../img/decks/m12/sealed-container-journey.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
   </svg>
   <div class="pageno">M12·05</div>
 </section>
@@ -385,8 +368,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ═══════════════ SLIDE 9 · KIND IS THE FLIGHT SIMULATOR ═══════════════ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">2 &middot; Kind is the flight simulator for your cluster</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">Why Is Kind the Flight Simulator for Your Cluster?</h2>
   <div class="pageno">M12·11</div>
 </section>
 
@@ -443,8 +426,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ═══════════════ SLIDE 11 · HELM = FORM LETTER (analogy, hinge) ═══════════════ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">3 &middot; Helm renders; you review what it rendered, not what you wrote</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">Why Do You Review What Helm Renders, Not What You Wrote?</h2>
   <div class="pageno">M12·14</div>
 </section>
 
@@ -544,8 +527,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ═══════════════ SLIDE 14 · RBAC — WHAT AN IDENTITY CANNOT DO ═══════════════ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">4 &middot; RBAC and policy are the enforcement under the intent</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">How Do RBAC and Policy Enforce What Intent Cannot?</h2>
   <div class="pageno">M12·18</div>
 </section>
 
@@ -636,8 +619,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ═══════════════ SLIDE 17 · THE FIVE STOPS (pipeline, 4 fragments) ═══════════════ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">5 &middot; The golden path: the reconciler is the only writer</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">What Is the Golden Path Where Only the Reconciler Writes?</h2>
   <div class="pageno">M12·22</div>
 </section>
 
@@ -718,11 +701,6 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ═══════════════ SLIDE 19 · CLOSING — carried ideas + bridge to Deep Dive ═══════════════ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">6 &middot; What you will carry out of this module</h2>
-  <div class="pageno">M12·25</div>
-</section>
-
 <section data-auto-animate>
   <p class="kicker">MODULE 12 &nbsp;·&nbsp; CONTAINERS, KUBERNETES &amp; GITOPS</p>
   <h2 class="t" style="font-size:1.9em">Containerized, clustered, and on the golden path</h2>
@@ -748,7 +726,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="965" y="292" text-anchor="middle" class="lbl-g">the failed rollout</text>
   </svg>
   <p class="credit">Now open <b>Module 12 · Lab</b>. &nbsp;·&nbsp; then the <b>Deep Dive</b>: a rollout that stalls with misleading symptoms &nbsp;·&nbsp; <b>Gourav Shah</b> &nbsp;·&nbsp; School of DevOps &amp; AI</p>
-  <div class="pageno">M12·26</div>
+  <div class="pageno">M12·25</div>
 </section>
 </div></div>
 <script>/* reveal.js 5.x (inlined) */

@@ -101,6 +101,10 @@ footer, header, hgroup, main, menu, nav, section {
   .reveal .credit{ order:4; font-size:.85em; color:var(--gray); margin-top:16px; }
   .reveal .credit b{ color:var(--ink); font-weight:700; }
   .reveal .pageno{ position:absolute; bottom:14px; right:22px; font-size:.6em; color:#bdbdbd; }
+  .reveal .slides section.divider{ justify-content:center; align-items:center; }
+  .reveal .slides section.divider h2.t{ order:0; font-size:2.2em; max-width:88%; }
+  .reveal .slides section.divider.has-image h2.t{ order:2; font-size:1.1em; max-width:76%; }
+  .reveal .slides section.divider.has-image svg{ order:1; }
   .reveal .slide-number{ font-family:'Patrick Hand',cursive; }
   .reveal code{ font-family:'Patrick Hand',cursive; color:var(--ink); }
   .reveal em{ font-style:italic; }
@@ -165,8 +169,11 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ═══════════════ DIVIDER · INTRO ═══════════════ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">Role-Specific DevOps Subagents</h2>
+<section class="divider has-image">
+  <h2 class="t">Role-Specific DevOps Subagents</h2>
+  <svg viewBox="0 0 1600 900" role="img" aria-label="One overwhelmed person wearing a hard hat and stethoscope, holding a wrench and magnifying glass, surrounded by scattered tools of many different trades, trying to do every job at once.">
+    <image href="../img/decks/m9/generalist-every-tool.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
+  </svg>
   <div class="pageno">M9·02</div>
 </section>
 
@@ -205,8 +212,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ═══════════════ SLIDE 3 · A TEAM BEATS A GENERALIST ═══════════════ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">1 &middot; Why a team beats a generalist</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">Why Does a Team of Specialists Beat One Generalist?</h2>
   <div class="pageno">M9·04</div>
 </section>
 
@@ -270,8 +277,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ═══════════════ SLIDE 5 · WHAT A ROLE BUNDLE IS (5 fragments) ═══════════════ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">2 &middot; What a Role Bundle actually is</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">What Is a Role Bundle in Claude Code?</h2>
   <div class="pageno">M9·07</div>
 </section>
 
@@ -360,8 +367,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ═══════════════ SLIDE 7 · NOT A SECURITY BOUNDARY ═══════════════ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">3 &middot; Why an agent file is not a security boundary</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">Why Isn't an Agent File a Security Boundary?</h2>
   <div class="pageno">M9·10</div>
 </section>
 
@@ -437,8 +444,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ═══════════════ SLIDE 9 · RIGHT-SIZE THE MODEL ═══════════════ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">4 &middot; Right-sizing the model: effort as a role decision</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">How Do You Right-Size the Model for Each Role?</h2>
   <div class="pageno">M9·13</div>
 </section>
 
@@ -502,8 +509,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ═══════════════ SLIDE 11 · TURN BUDGET = TRIAGE TIME-BOX ═══════════════ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">5 &middot; Turn budgets and worktree isolation: bounding the runaway</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">What Are Turn Budgets and Worktree Isolation For?</h2>
   <div class="pageno">M9·16</div>
 </section>
 
@@ -563,8 +570,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ═══════════════ SLIDE 13 · PROSE HANDOFFS FORCE RE-INVESTIGATION ═══════════════ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">6 &middot; Structured handoffs: the interface between roles</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">What Is a Structured Handoff Between Agent Roles?</h2>
   <div class="pageno">M9·19</div>
 </section>
 
@@ -631,8 +638,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ═══════════════ SLIDE 15 · PROVENANCE OR IT DOESN'T GET CARRIED ═══════════════ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">7 &middot; Memory, provenance, and contamination control</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">How Do You Keep Agent Memory From Getting Contaminated?</h2>
   <div class="pageno">M9·22</div>
 </section>
 
@@ -662,8 +669,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ═══════════════ SLIDE 16 · SIX ROLES, ONE TEAM (3 fragments) ═══════════════ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">8 &middot; The six roles, as a team</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">What Does the Six-Role Specialist Team Look Like?</h2>
   <div class="pageno">M9·24</div>
 </section>
 
@@ -716,8 +723,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ═══════════════ SLIDE 17 · AUTHORITY REGRESSION (2 fragments) ═══════════════ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">9 &middot; Testing the roles: authority regression</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">What Is an Authority Regression Test?</h2>
   <div class="pageno">M9·26</div>
 </section>
 
@@ -765,12 +772,6 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M9·27</div>
 </section>
 
-<!-- ═══════════════ DIVIDER · SECTION 10 ═══════════════ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">10 &middot; What you'll do in the lab</h2>
-  <div class="pageno">M9·28</div>
-</section>
-
 <section data-auto-animate>
   <p class="kicker">MODULE 9 &nbsp;·&nbsp; ROLE-SPECIFIC DEVOPS SUBAGENTS</p>
   <h2 class="t" style="font-size:2.0em">You provisioned a team once, instead of correcting a generalist forever</h2>
@@ -793,7 +794,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="156" y="276" text-anchor="start" class="lbl">Let the repository certify the team: <tspan class="lbl-b">grade.sh m9</tspan> runs the whole authority-and-handoff matrix.</text>
   </svg>
   <p class="credit">Now open <b>Module 9 · Lab</b>. &nbsp;·&nbsp; <b>Gourav Shah</b> &nbsp;·&nbsp; School of DevOps &amp; AI</p>
-  <div class="pageno">M9·29</div>
+  <div class="pageno">M9·28</div>
 </section>
 </div></div>
 
@@ -831,7 +832,7 @@ footer, header, hgroup, main, menu, nav, section {
       if(!sec) return;
       var svg = sec.querySelector('svg');
       if(!svg) return;
-      var mh = 58;
+      var mh = sec.classList.contains('divider') ? 80 : 58;
       svg.style.maxHeight = mh + '%';
       var guard = 0;
       while (sec.scrollHeight > sec.clientHeight + 2 && mh > 18 && guard++ < 20){

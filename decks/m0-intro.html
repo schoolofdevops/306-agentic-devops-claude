@@ -101,6 +101,10 @@ footer, header, hgroup, main, menu, nav, section {
   .reveal .credit{ order:4; font-size:.85em; color:var(--gray); margin-top:16px; }
   .reveal .credit b{ color:var(--ink); font-weight:700; }
   .reveal .pageno{ position:absolute; bottom:14px; right:22px; font-size:.6em; color:#bdbdbd; }
+  .reveal .slides section.divider{ justify-content:center; align-items:center; }
+  .reveal .slides section.divider h2.t{ order:0; font-size:2.2em; max-width:88%; }
+  .reveal .slides section.divider.has-image h2.t{ order:2; font-size:1.1em; max-width:76%; }
+  .reveal .slides section.divider.has-image svg{ order:1; }
   .reveal .slide-number{ font-family:'Patrick Hand',cursive; }
   .reveal code{ font-family:'Patrick Hand',cursive; color:var(--ink); }
   .reveal em{ font-style:italic; }
@@ -170,8 +174,11 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — section 1 ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">1 &middot; What is Agentic DevOps</h2>
+<section class="divider has-image">
+  <h2 class="t">What Is Agentic DevOps?</h2>
+  <svg viewBox="0 0 1600 900" role="img" aria-label="A person and a friendly robot stand side by side at a workbench, the person holding a wrench, the robot pointing at an open laptop between them, working together.">
+    <image href="../img/decks/m0/human-agent-workbench.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
+  </svg>
   <div class="pageno">M0·02</div>
 </section>
 
@@ -327,8 +334,11 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — section 2 ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">2 &middot; Five operational modes</h2>
+<section class="divider has-image">
+  <h2 class="t">What Are the Five Operational Modes for AI Agents?</h2>
+  <svg viewBox="0 0 1600 900" role="img" aria-label="A close-up of a hand turning a large dial mounted on a control panel, mid-turn, choosing a position on the dial.">
+    <image href="../img/decks/m0/hand-turning-dial.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
+  </svg>
   <div class="pageno">M0·05</div>
 </section>
 
@@ -453,8 +463,11 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — section 3 ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">3 &middot; The finished system</h2>
+<section class="divider has-image">
+  <h2 class="t">What Will You Build in This Course?</h2>
+  <svg viewBox="0 0 1600 900" role="img" aria-label="A person stands at a workbench holding a rolled-up blueprint, one hand resting on a small building-block structure, tools hanging on a pegboard behind them.">
+    <image href="../img/decks/m0/builder-with-blueprint.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
+  </svg>
   <div class="pageno">M0·08</div>
 </section>
 
@@ -776,7 +789,7 @@ footer, header, hgroup, main, menu, nav, section {
       if(!sec) return;
       var svg = sec.querySelector('svg');
       if(!svg) return;
-      var mh = 58;
+      var mh = sec.classList.contains('divider') ? 80 : 58;
       svg.style.maxHeight = mh + '%';
       var guard = 0;
       while (sec.scrollHeight > sec.clientHeight + 2 && mh > 18 && guard++ < 20){

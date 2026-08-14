@@ -102,6 +102,10 @@ footer, header, hgroup, main, menu, nav, section {
   .reveal .credit{ order:4; font-size:.85em; color:var(--gray); margin-top:16px; }
   .reveal .credit b{ color:var(--ink); font-weight:700; }
   .reveal .pageno{ position:absolute; bottom:14px; right:22px; font-size:.6em; color:#bdbdbd; }
+  .reveal .slides section.divider{ justify-content:center; align-items:center; }
+  .reveal .slides section.divider h2.t{ order:0; font-size:2.2em; max-width:88%; }
+  .reveal .slides section.divider.has-image h2.t{ order:2; font-size:1.1em; max-width:76%; }
+  .reveal .slides section.divider.has-image svg{ order:1; }
   .reveal .slide-number{ font-family:'Patrick Hand',cursive; }
   .reveal code{ font-family:'Patrick Hand',cursive; color:var(--ink); }
   .reveal em{ font-style:italic; }
@@ -183,8 +187,11 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — intro ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">Skills: Runbooks &rarr; Reusable Procedures</h2>
+<section class="divider has-image">
+  <h2 class="t">Skills: Runbooks &rarr; Reusable Procedures</h2>
+  <svg viewBox="0 0 1600 900" role="img" aria-label="A sheet of prose transforms mid-air into a small structured checklist card with a gear icon, connected by a swirling arrow.">
+    <image href="../img/decks/m6/runbook-to-skill.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
+  </svg>
   <div class="pageno">M6&middot;02</div>
 </section>
 
@@ -247,8 +254,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — section 1 ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">1 &middot; The primitive question: skill, or something else?</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">Rule, Skill, Prompt, or Subagent? How to Pick the Right Claude Code Primitive</h2>
   <div class="pageno">M6&middot;04</div>
 </section>
 
@@ -256,46 +263,8 @@ footer, header, hgroup, main, menu, nav, section {
 <section>
   <h2 class="t">Before a skill, pick the primitive</h2>
   <p class="s">the recipe card is the one that's a skill</p>
-  <svg viewBox="0 0 1100 360" role="img" aria-label="A kitchen scene with five ways to encode knowledge: a rule taped to the wall reading wash hands, a recipe card in a box highlighted as skill, a note to one cook tonight reading go easy on salt as a prompt, a grill specialist handed a station as a subagent, and the oven itself as a tool.">
-    <!-- rule on the wall -->
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2">
-      <rect x="50" y="60" width="150" height="70" rx="6"/>
-    </g>
-    <text x="125" y="95" text-anchor="middle" class="lbl-b">wash hands</text>
-    <text x="125" y="150" text-anchor="middle" class="lbl-g">rule (on the wall)</text>
-    <!-- recipe card = skill (purple, selected) -->
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="3">
-      <rect x="250" y="55" width="160" height="80" rx="8" class="f-purple"/>
-    </g>
-    <text x="330" y="90" text-anchor="middle" class="lbl-b">recipe card</text>
-    <text x="330" y="118" text-anchor="middle" class="lbl">in a box</text>
-    <text x="330" y="155" text-anchor="middle" class="lbl-g">skill</text>
-    <!-- prompt = note to one cook -->
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-dasharray="5 5">
-      <rect x="460" y="60" width="160" height="70" rx="6"/>
-    </g>
-    <text x="540" y="92" text-anchor="middle" class="lbl-sm">"go easy on salt,</text>
-    <text x="540" y="116" text-anchor="middle" class="lbl-sm">tonight only"</text>
-    <text x="540" y="150" text-anchor="middle" class="lbl-g">prompt</text>
-    <!-- subagent = grill specialist -->
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6">
-      <rect x="670" y="60" width="150" height="70" rx="8"/>
-      <circle cx="710" cy="95" r="14"/>
-    </g>
-    <text x="770" y="90" text-anchor="middle" class="lbl-sm">runs the</text>
-    <text x="770" y="114" text-anchor="middle" class="lbl-sm">grill</text>
-    <text x="745" y="150" text-anchor="middle" class="lbl-g">subagent</text>
-    <!-- tool = the oven -->
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6">
-      <rect x="870" y="60" width="150" height="70" rx="8"/>
-      <circle cx="945" cy="95" r="16"/>
-    </g>
-    <text x="945" y="150" text-anchor="middle" class="lbl-g">tool (the oven)</text>
-    <!-- payoff band -->
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="1.8" stroke-dasharray="4 6">
-      <path d="M120,230 L980,230"/>
-    </g>
-    <text x="550" y="285" text-anchor="middle" class="lbl">match the knowledge to its encoding, the wrong one is the most common mistake here</text>
+  <svg viewBox="0 0 1600 900" role="img" aria-label="A kitchen counter showing five ways knowledge is kept: a sign taped to the wall, a recipe card in a box (the largest and most prominent item, representing a skill), a scribbled note, a chef at a grill station, and an oven in the background.">
+    <image href="../img/decks/m6/kitchen-five-primitives.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
   </svg>
   <div class="pageno">M6·05</div>
 </section>
@@ -396,8 +365,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — section 2 ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">2 &middot; What a skill actually is</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">What Is a Claude Code Skill? SKILL.md Explained</h2>
   <div class="pageno">M6&middot;07</div>
 </section>
 
@@ -479,8 +448,11 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — section 3 ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">3 &middot; Progressive disclosure: the skill is a table of contents</h2>
+<section class="divider has-image">
+  <h2 class="t">What Is Progressive Disclosure in Claude Code Skills?</h2>
+  <svg viewBox="0 0 1600 900" role="img" aria-label="A person holds one thin small booklet in one hand while pointing toward a tall bookshelf packed with thick heavy volumes.">
+    <image href="../img/decks/m6/booklet-vs-shelf.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
+  </svg>
   <div class="pageno">M6&middot;10</div>
 </section>
 
@@ -555,8 +527,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — section 4 ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">4 &middot; Two zones: separate collecting from reasoning</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">Why Skills Need a Deterministic Zone and a Reasoning Zone</h2>
   <div class="pageno">M6&middot;13</div>
 </section>
 
@@ -564,35 +536,8 @@ footer, header, hgroup, main, menu, nav, section {
 <section>
   <h2 class="t">Two zones: the lab and the doctor</h2>
   <p class="s">the lab is verified mechanically, no interpreting</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="On the left a lab machine, in blue, draws blood so the same sample gives the same numbers and can be calibrated against a known sample. A dashed wall separates it from the right, where a doctor, in orange, reads those numbers to form a diagnosis that varies with the case.">
-    <!-- lab machine -->
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8">
-      <rect x="90" y="80" width="330" height="190" rx="12" class="f-blue"/>
-    </g>
-    <text x="255" y="118" text-anchor="middle" class="lbl-b">the lab</text>
-    <text x="255" y="158" text-anchor="middle" class="lbl-sm">same sample →</text>
-    <text x="255" y="184" text-anchor="middle" class="lbl-sm">same numbers</text>
-    <text x="255" y="228" text-anchor="middle" class="lbl-g">calibrate against</text>
-    <text x="255" y="252" text-anchor="middle" class="lbl-g">a known sample</text>
-    <!-- wall -->
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4" stroke-dasharray="9 7">
-      <path d="M550,60 L550,290"/>
-    </g>
-    <text x="550" y="45" text-anchor="middle" class="lbl-g">the wall</text>
-    <!-- numbers hop -->
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round">
-      <path d="M420,175 L680,175" marker-end="url(#ah)"/>
-    </g>
-    <text x="600" y="160" text-anchor="middle" class="lbl-g">the numbers</text>
-    <!-- doctor -->
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8">
-      <rect x="690" y="80" width="320" height="190" rx="12" class="f-orange"/>
-    </g>
-    <text x="850" y="118" text-anchor="middle" class="lbl-b">the doctor</text>
-    <text x="850" y="160" text-anchor="middle" class="lbl-sm">reads the numbers,</text>
-    <text x="850" y="186" text-anchor="middle" class="lbl-sm">forms a diagnosis</text>
-    <text x="850" y="230" text-anchor="middle" class="lbl-g">judgment</text>
-    <text x="850" y="254" text-anchor="middle" class="lbl-g">varies with the case</text>
+  <svg viewBox="0 0 1600 900" role="img" aria-label="A two-part scene divided by a wall. On the left a lab technician operates a blood-testing machine, mechanical and repeatable. On the right, separated by the wall, a doctor studies a chart thoughtfully, forming a diagnosis that varies with the case.">
+    <image href="../img/decks/m6/lab-and-doctor.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
   </svg>
   <div class="pageno">M6·14</div>
 </section>
@@ -682,8 +627,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — section 5 ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">5 &middot; Invocation: who can trigger this skill, and where it runs</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">Auto-Invocation vs Human-Only: How Claude Code Skills Get Triggered</h2>
   <div class="pageno">M6&middot;17</div>
 </section>
 
@@ -817,8 +762,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — section 6 ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">6 &middot; Testing a skill: positive, negative, ambiguous</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">How to Test a Claude Code Skill: Positive, Negative, and Ambiguous Cases</h2>
   <div class="pageno">M6&middot;21</div>
 </section>
 
@@ -826,34 +771,8 @@ footer, header, hgroup, main, menu, nav, section {
 <section>
   <h2 class="t">Test a skill like a smoke detector</h2>
   <p class="s">three tests, not one</p>
-  <svg viewBox="0 0 1100 330" role="img" aria-label="A smoke detector on a ceiling, tested three ways. A finger presses the test button and it beeps, in green, the positive test. Clean air is waved and it stays silent, in green, the negative test. A wisp of shower steam makes it hesitate, in orange, the ambiguous test.">
-    <!-- detector -->
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8">
-      <ellipse cx="550" cy="70" rx="70" ry="26"/>
-      <circle cx="550" cy="70" r="8"/>
-    </g>
-    <text x="550" y="120" text-anchor="middle" class="lbl-g">one detector</text>
-    <!-- positive -->
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6">
-      <rect x="70" y="180" width="290" height="110" rx="12" class="f-green"/>
-    </g>
-    <text x="215" y="216" text-anchor="middle" class="lbl-b">press the button</text>
-    <text x="215" y="248" text-anchor="middle" class="lbl-good">beeps</text>
-    <text x="215" y="278" text-anchor="middle" class="lbl-g">positive: does it fire?</text>
-    <!-- negative -->
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6">
-      <rect x="405" y="180" width="290" height="110" rx="12" class="f-green"/>
-    </g>
-    <text x="550" y="216" text-anchor="middle" class="lbl-b">wave clean air</text>
-    <text x="550" y="248" text-anchor="middle" class="lbl-good">silent</text>
-    <text x="550" y="278" text-anchor="middle" class="lbl-g">negative: does it stay quiet?</text>
-    <!-- ambiguous -->
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6">
-      <rect x="740" y="180" width="290" height="110" rx="12" class="f-orange"/>
-    </g>
-    <text x="885" y="216" text-anchor="middle" class="lbl-b">a wisp of steam</text>
-    <text x="885" y="248" text-anchor="middle" class="lbl">hesitates</text>
-    <text x="885" y="278" text-anchor="middle" class="lbl-g">ambiguous: signals doubt</text>
+  <svg viewBox="0 0 1600 900" role="img" aria-label="A smoke detector mounted on a ceiling, a hand reaching up from a step stool to press its test button, with a wisp of steam curling toward it from an unseen shower nearby.">
+    <image href="../img/decks/m6/smoke-detector-test.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
   </svg>
   <div class="pageno">M6·22</div>
 </section>
@@ -890,7 +809,7 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — section 7 ============ -->
-<section>
+<section class="divider">
   <h2 class="t" style="font-size:2.2em">7 &middot; What you'll do in the lab</h2>
   <div class="pageno">M6&middot;24</div>
 </section>
@@ -998,7 +917,7 @@ footer, header, hgroup, main, menu, nav, section {
       if(!sec) return;
       var svg = sec.querySelector('svg');
       if(!svg) return;
-      var mh = 58;
+      var mh = sec.classList.contains('divider') ? 80 : 58;
       svg.style.maxHeight = mh + '%';
       var guard = 0;
       while (sec.scrollHeight > sec.clientHeight + 2 && mh > 18 && guard++ < 20){

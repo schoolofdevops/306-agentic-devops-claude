@@ -101,6 +101,8 @@ footer, header, hgroup, main, menu, nav, section {
   .reveal .credit{ order:4; font-size:.85em; color:var(--gray); margin-top:16px; }
   .reveal .credit b{ color:var(--ink); font-weight:700; }
   .reveal .pageno{ position:absolute; bottom:14px; right:22px; font-size:.6em; color:#bdbdbd; }
+  .reveal .slides section.divider{ justify-content:center; align-items:center; }
+  .reveal .slides section.divider h2.t{ order:0; font-size:2.2em; max-width:88%; }
   .reveal .slide-number{ font-family:'Patrick Hand',cursive; }
   .reveal code{ font-family:'Patrick Hand',cursive; color:var(--ink); }
   .reveal em{ font-style:italic; }
@@ -169,7 +171,7 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — intro ============ -->
-<section>
+<section class="divider">
   <h2 class="t" style="font-size:2.2em">CI/CD &amp; Release Engineering</h2>
   <div class="pageno">M13·02</div>
 </section>
@@ -216,8 +218,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — section 1 ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">1 &middot; The pipeline is a bonded courier chain, and the agent is the inspector, never the driver</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">The Bonded-Courier Pattern for AI Agents in a Release Pipeline</h2>
   <div class="pageno">M13·04</div>
 </section>
 
@@ -225,46 +227,8 @@ footer, header, hgroup, main, menu, nav, section {
 <section>
   <h2 class="t">A release moves like a bonded courier chain</h2>
   <p class="s">four roles: inspect, decide, drive, receive</p>
-  <svg viewBox="0 0 1100 360" role="img" aria-label="A sealed package is handed along four figures, inspector, supervisor, driver, receiver, each holding a signed slip they pass to the next.">
-    <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.6">
-      <rect x="60" y="150" width="90" height="70" rx="8"/>
-    </g>
-    <text x="105" y="140" text-anchor="middle" class="lbl-g">sealed package</text>
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round">
-      <path d="M155,185 L215,185" marker-end="url(#ah)"/>
-      <path d="M370,185 L430,185" marker-end="url(#ah)"/>
-      <path d="M585,185 L645,185" marker-end="url(#ah)"/>
-      <path d="M800,185 L860,185" marker-end="url(#ah)"/>
-    </g>
-    <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.8">
-      <rect x="220" y="150" width="150" height="70" rx="10"/>
-    </g>
-    <text x="295" y="192" text-anchor="middle" class="lbl-b">inspector</text>
-    <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="2.8">
-      <rect x="435" y="150" width="150" height="70" rx="10"/>
-    </g>
-    <text x="510" y="192" text-anchor="middle" class="lbl-b">supervisor</text>
-    <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="2.8">
-      <rect x="650" y="150" width="150" height="70" rx="10"/>
-    </g>
-    <text x="725" y="192" text-anchor="middle" class="lbl-b">driver</text>
-    <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.8">
-      <rect x="865" y="150" width="150" height="70" rx="10"/>
-    </g>
-    <text x="940" y="192" text-anchor="middle" class="lbl-b">receiver</text>
-
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2" stroke-dasharray="4 5">
-      <rect x="240" y="250" width="110" height="46" rx="6"/>
-      <rect x="455" y="250" width="110" height="46" rx="6"/>
-      <rect x="670" y="250" width="110" height="46" rx="6"/>
-      <rect x="885" y="250" width="110" height="46" rx="6"/>
-    </g>
-    <g class="lbl-g" text-anchor="middle">
-      <text x="295" y="278">signed slip</text>
-      <text x="510" y="278">signed slip</text>
-      <text x="725" y="278">signed slip</text>
-      <text x="940" y="278">signed slip</text>
-    </g>
+  <svg viewBox="0 0 1600 900" role="img" aria-label="A sealed package passed hand to hand along four people: an inspector examining it with a loupe, a supervisor signing a clipboard, a driver holding it near a delivery van, and a receiver accepting it at a doorway.">
+    <image href="../img/decks/m13/bonded-courier-chain.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
   </svg>
   <div class="pageno">M13·05</div>
 </section>
@@ -310,8 +274,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — section 2 ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">2 &middot; The CI environment is untrusted, so the agent gets least privilege</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">Least Privilege and OIDC for AI Agents Running in CI</h2>
   <div class="pageno">M13·07</div>
 </section>
 
@@ -429,8 +393,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — section 3 ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">3 &middot; Headless Claude Code: the agent as a pipeline stage</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">How Headless Claude Code Works as a CI Pipeline Stage</h2>
   <div class="pageno">M13·12</div>
 </section>
 
@@ -526,8 +490,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — section 4 ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">4 &middot; Hermetic <code>--bare</code> analysis vs project-aware execution</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">Hermetic vs Project-Aware: Claude Code's <code>--bare</code> Flag Explained</h2>
   <div class="pageno">M13·16</div>
 </section>
 
@@ -613,8 +577,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — section 5 ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">5 &middot; Separation of duties: the proposer is never the approver</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">Separation of Duties for an AI Agent in Code Review</h2>
   <div class="pageno">M13·20</div>
 </section>
 
@@ -671,8 +635,8 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — section 6 ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">6 &middot; Canary verification: confirm the shipment arrived healthy</h2>
+<section class="divider">
+  <h2 class="t" style="font-size:2.2em">Canary Deployments: How an AI Agent Verifies a Release</h2>
   <div class="pageno">M13·23</div>
 </section>
 
@@ -709,12 +673,6 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M13·24</div>
 </section>
 
-<!-- ============ DIVIDER — section 7 ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">7 &middot; What you will carry out of this module</h2>
-  <div class="pageno">M13·25</div>
-</section>
-
 <!-- ============ SLIDE 18 — verdict + closing ============ -->
 <section data-auto-animate>
   <p class="kicker">MODULE 13 &nbsp;·&nbsp; CI/CD &amp; RELEASE ENGINEERING</p>
@@ -744,7 +702,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="640" y="188" text-anchor="middle" class="lbl-g">any no</text>
   </svg>
   <p class="credit">The agent signs the verdict; a human or the reconciler acts. &nbsp;·&nbsp; Now open <b>Module 13 · Lab</b>. &nbsp;·&nbsp; <b>Gourav Shah</b> · School of DevOps &amp; AI</p>
-  <div class="pageno">M13·26</div>
+  <div class="pageno">M13·25</div>
 </section>
 
 </div></div>

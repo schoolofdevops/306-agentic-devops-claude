@@ -101,6 +101,10 @@ footer, header, hgroup, main, menu, nav, section {
   .reveal .credit{ order:4; font-size:.85em; color:var(--gray); margin-top:16px; }
   .reveal .credit b{ color:var(--ink); font-weight:700; }
   .reveal .pageno{ position:absolute; bottom:14px; right:22px; font-size:.6em; color:#bdbdbd; }
+  .reveal .slides section.divider{ justify-content:center; align-items:center; }
+  .reveal .slides section.divider h2.t{ order:0; font-size:2.2em; max-width:88%; }
+  .reveal .slides section.divider.has-image h2.t{ order:2; font-size:1.1em; max-width:76%; }
+  .reveal .slides section.divider.has-image svg{ order:1; }
   .reveal .slide-number{ font-family:'Patrick Hand',cursive; }
   .reveal code{ font-family:'Patrick Hand',cursive; color:var(--ink); }
   .reveal em{ font-style:italic; }
@@ -166,8 +170,11 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — intro ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">Judging agents with numbers, not a gut feeling</h2>
+<section class="divider has-image">
+  <h2 class="t">Judging agents with numbers, not a gut feeling</h2>
+  <svg viewBox="0 0 1600 900" role="img" aria-label="A robot figure gives a confident thumbs up while a magnifying glass hovers over it and a question mark floats above, suggesting scrutiny of a confident claim.">
+    <image href="../img/decks/m18/robot-confident-scrutiny.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
+  </svg>
   <div class="pageno">M18·02</div>
 </section>
 
@@ -253,8 +260,11 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — section 1 ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">1 &middot; The two telemetry planes</h2>
+<section class="divider has-image">
+  <h2 class="t">The Two Telemetry Planes: Watching the System vs Watching the Agent</h2>
+  <svg viewBox="0 0 1600 900" role="img" aria-label="A driving examiner sits in the passenger seat with a clipboard, watching the driver at the wheel who checks the side mirror.">
+    <image href="../img/decks/m18/driving-test-examiner.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
+  </svg>
   <div class="pageno">M18·05</div>
 </section>
 
@@ -453,8 +463,11 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — section 2 ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">2 &middot; Evaluation is five dimensions, not one checkmark</h2>
+<section class="divider has-image">
+  <h2 class="t">Evaluation Is Five Dimensions, Not One Checkmark</h2>
+  <svg viewBox="0 0 1600 900" role="img" aria-label="A panel of three doctors in white coats reviews a patient chart together, one pointing at it while the others lean in.">
+    <image href="../img/decks/m18/medical-board-review.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
+  </svg>
   <div class="pageno">M18·11</div>
 </section>
 
@@ -607,8 +620,11 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — section 3 ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">3 &middot; Nondeterminism: one run is an anecdote</h2>
+<section class="divider has-image">
+  <h2 class="t">Why One Agent Run Is an Anecdote: Nondeterminism in Evaluation</h2>
+  <svg viewBox="0 0 1600 900" role="img" aria-label="A hand tosses a coin high in the air, with a faint trail of ghosted repeated coin positions showing multiple flips over time.">
+    <image href="../img/decks/m18/coin-flip-repeated.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
+  </svg>
   <div class="pageno">M18·16</div>
 </section>
 
@@ -688,8 +704,11 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <!-- ============ DIVIDER — section 4 ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">4 &middot; Regression gates: quality is code, and code regresses</h2>
+<section class="divider has-image">
+  <h2 class="t">Regression Gates: Why Agent Quality Is Code, and Code Regresses</h2>
+  <svg viewBox="0 0 1600 900" role="img" aria-label="A mechanic attaches an emissions testing hose to a car's exhaust pipe in an inspection garage, reading a handheld meter.">
+    <image href="../img/decks/m18/emissions-test-garage.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
+  </svg>
   <div class="pageno">M18·19</div>
 </section>
 
@@ -771,13 +790,7 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M18·21</div>
 </section>
 
-<!-- ============ DIVIDER — section 5 ============ -->
-<section>
-  <h2 class="t" style="font-size:2.2em">5 &middot; Where this leaves you</h2>
-  <div class="pageno">M18·22</div>
-</section>
-
-<!-- ============ SLIDE 17 — CLOSING ============ -->
+<!-- ============ SLIDE 17 — CLOSING (no divider — section 5 "Where this leaves you" has zero dedicated content slides; this closing slide's kicker + lab-pointer credit already perform the hand-off) ============ -->
 <section data-auto-animate>
   <p class="kicker">MODULE 18 &nbsp;·&nbsp; OBSERVE, EVALUATE &amp; CONTROL</p>
   <h2 class="t" style="font-size:2.1em">See it, score it five ways, replay it, gate it</h2>
@@ -799,7 +812,7 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
   </svg>
   <p class="credit">Now open <b>Module 18 · Lab</b>. &nbsp;·&nbsp; <b>Gourav Shah</b> &nbsp;·&nbsp; School of DevOps &amp; AI</p>
-  <div class="pageno">M18·23</div>
+  <div class="pageno">M18·22</div>
 </section>
 </div></div>
 
@@ -837,7 +850,7 @@ footer, header, hgroup, main, menu, nav, section {
       if(!sec) return;
       var svg = sec.querySelector('svg');
       if(!svg) return;
-      var mh = 58;
+      var mh = sec.classList.contains('divider') ? 80 : 58;
       svg.style.maxHeight = mh + '%';
       var guard = 0;
       while (sec.scrollHeight > sec.clientHeight + 2 && mh > 18 && guard++ < 20){
