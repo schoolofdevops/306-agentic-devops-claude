@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agentic DevOps with Claude Code — Module 7: Tool Interface Engineering: CLI First, MCP When It Earns the Boundary</title>
+<title>Agentic DevOps with Claude Code — Module 15 Deep Dive: Red-Teaming the Boundaries and Proving Privacy</title>
 
 <!-- ============================================================
      CourseSmith whiteboard deck skeleton (self-contained).
@@ -92,7 +92,7 @@ footer, header, hgroup, main, menu, nav, section {
     margin:0 0 6px 0;
     line-height:1.15;
   }
-  .reveal h2.t{ order:1; font-size:1.75em; }
+  .reveal h2.t{ order:1; font-size:1.45em; }
   .reveal p{ margin:0; line-height:1.3; }
   .reveal p.s{ order:3; font-size:0.95em; color:var(--gray); margin:0; }
   .reveal .slides section:first-of-type svg{ min-height:32%; }
@@ -213,8 +213,8 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 4 — deny-list is a surface, identity is the backstop ============ -->
 <section>
   <h2 class="t">The deny-list is itself a surface; the read-only identity is the backstop</h2>
-  <p class="s">The gate blocks the known-dangerous shapes — secret reads, exfiltration, wildcard mutations, protected-namespace deletes. It does not "understand" injection. So the red-team's real job is to enumerate the shapes an injection could induce and confirm each is covered.</p>
-  <svg viewBox="0 0 1100 320" role="img" aria-label="Two layers of defense: the Change Gate deny-list covering known-dangerous action shapes, and the read-only agent identity as the backstop when the deny-list has a hole.">
+  <p class="s">The gate blocks the known-dangerous patterns — secret reads, exfiltration, wildcard mutations, protected-namespace deletes. It does not "understand" injection. So the red-team's real job is to enumerate the patterns an injection could induce and confirm each is covered.</p>
+  <svg viewBox="0 0 1100 320" role="img" aria-label="Two layers of defense: the Change Gate deny-list covering known-dangerous action patterns, and the read-only agent identity as the backstop when the deny-list has a hole.">
     <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
       <rect x="90" y="60" width="420" height="210" rx="12"/>
     </g>
@@ -225,7 +225,7 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="300" y="204">wildcard mutations</text>
       <text x="300" y="236">protected-ns deletes</text>
     </g>
-    <text x="300" y="290" text-anchor="middle" class="lbl-g" fill="#e65100">a hole here = an uncovered shape</text>
+    <text x="300" y="290" text-anchor="middle" class="lbl-g" fill="#e65100">a hole here = an uncovered pattern</text>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round">
       <path d="M515,165 C580,165 600,165 655,165" marker-end="url(#ah)"/>
     </g>

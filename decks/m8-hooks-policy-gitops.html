@@ -92,7 +92,7 @@ footer, header, hgroup, main, menu, nav, section {
     margin:0 0 6px 0;
     line-height:1.15;
   }
-  .reveal h2.t{ order:1; font-size:1.75em; }
+  .reveal h2.t{ order:1; font-size:1.45em; }
   .reveal p{ margin:0; line-height:1.3; }
   .reveal p.s{ order:3; font-size:0.95em; color:var(--gray); margin:0; }
   .reveal .slides section:first-of-type svg{ min-height:32%; }
@@ -273,7 +273,7 @@ footer, header, hgroup, main, menu, nav, section {
     </g>
     <text x="285" y="90" text-anchor="middle" class="lbl-b">INTENT control</text>
     <text x="285" y="128" text-anchor="middle" class="lbl-g">CLAUDE.md · skill · permission pref</text>
-    <text x="285" y="170" text-anchor="middle" class="lbl">shapes what the agent <tspan class="lbl-b">tries</tspan> to do</text>
+    <text x="285" y="170" text-anchor="middle" class="lbl">guides what the agent <tspan class="lbl-b">tries</tspan> to do</text>
     <text x="285" y="235" text-anchor="middle" class="lbl-b" fill="#c62828">fails when it MISINTERPRETS</text>
     <text x="285" y="272" text-anchor="middle" class="lbl-g" fill="#c62828">silent · plausible · found out later</text>
 
@@ -291,7 +291,7 @@ footer, header, hgroup, main, menu, nav, section {
 
 <!-- ============ SLIDE 5 — sign vs badge reader ============ -->
 <section>
-  <h2 class="t">The sign on the door vs the badge reader</h2>
+  <h2 class="t">Intent Controls Are a Sign; Enforcement Controls Are a Badge Reader</h2>
   <p class="s">a sign asks nicely; a badge reader doesn't care</p>
   <svg viewBox="0 0 1600 900" role="img" aria-label="Two doors side by side: the left has a paper sign taped to it, the right has an electronic badge reader mounted beside a more solid, secure-looking door.">
     <image href="../img/decks/m8/sign-vs-badge-reader.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
@@ -325,16 +325,16 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M8·08</div>
 </section>
 
-<!-- ============ SLIDE 7 — four threat shapes ============ -->
+<!-- ============ SLIDE 7 — four threat categories ============ -->
 <section class="divider">
-  <h2 class="t" style="font-size:2.2em">Four Threat Shapes Every Agentic Ops Control Must Defend Against</h2>
+  <h2 class="t" style="font-size:2.2em">Four Threat Categories Every Agentic Ops Control Must Defend Against</h2>
   <div class="pageno">M8&middot;09</div>
 </section>
 
 <section>
-  <h2 class="t">Model the threat surface first: four shapes</h2>
-  <p class="s">reasonable-seeming, but destructive: four shapes</p>
-  <svg viewBox="0 0 1100 360" role="img" aria-label="A two-by-two grid of four threat shapes: wrong target, excess blast radius, irreversible destruction, and data leakage, each with its reasonable-but-wrong reading.">
+  <h2 class="t">Model the threat surface first: four categories</h2>
+  <p class="s">reasonable-seeming, but destructive: four categories</p>
+  <svg viewBox="0 0 1100 360" role="img" aria-label="A two-by-two grid of four threat categories: wrong target, excess blast radius, irreversible destruction, and data leakage, each with its reasonable-but-wrong reading.">
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.6">
       <rect x="50" y="45" width="490" height="130" rx="12"/>
       <rect x="560" y="45" width="490" height="130" rx="12"/>
@@ -449,7 +449,7 @@ footer, header, hgroup, main, menu, nav, section {
 
 <!-- ============ SLIDE 10 — airport checkpoint ============ -->
 <section>
-  <h2 class="t">The airport checkpoint runs the same rules every time</h2>
+  <h2 class="t">Fail-Closed Hooks Work Like an Airport Checkpoint</h2>
   <p class="s">when unsure, the rule is HALT, not wave-through</p>
   <svg viewBox="0 0 1600 900" role="img" aria-label="A passenger pulling a suitcase walks through an airport security scanner arch while a security officer watches a screen beside it.">
     <image href="../img/decks/m8/airport-checkpoint.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
@@ -461,7 +461,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section>
   <h2 class="t">The Change Gate encodes the threat table directly</h2>
   <p class="s">every denial returns a <em>reason</em>, not a wall</p>
-  <svg viewBox="0 0 1100 380" role="img" aria-label="The change-gate hook at the centre fans out to five red deny rules: production apply, protected-namespace delete, all-namespaces mutation, secret output, and docker push, each tagged with its threat shape.">
+  <svg viewBox="0 0 1100 380" role="img" aria-label="The change-gate hook at the centre fans out to five red deny rules: production apply, protected-namespace delete, all-namespaces mutation, secret output, and docker push, each tagged with its threat category.">
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="3">
       <rect x="440" y="160" width="220" height="80" rx="12"/>
     </g>
@@ -505,9 +505,9 @@ footer, header, hgroup, main, menu, nav, section {
 <section>
   <h2 class="t">A gate that blocks investigation is a broken gate</h2>
   <p class="s">narrow gate: block danger, pass everything else</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="A two-panel comparison: the denied panel lists the five dangerous shapes in red, and the allowed panel lists terraform plan, a dev apply, a read-only kubectl get, and a Secret referenced by name in green.">
+  <svg viewBox="0 0 1100 340" role="img" aria-label="A two-panel comparison: the denied panel lists the five dangerous command patterns in red, and the allowed panel lists terraform plan, a dev apply, a read-only kubectl get, and a Secret referenced by name in green.">
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.6"><rect x="50" y="45" width="480" height="270" rx="14"/></g>
-    <text x="290" y="90" text-anchor="middle" class="lbl-b" fill="#c62828">DENIED: the 5 shapes</text>
+    <text x="290" y="90" text-anchor="middle" class="lbl-b" fill="#c62828">DENIED: the 5 patterns</text>
     <g class="lbl" text-anchor="start">
       <text x="95" y="140">✕ terraform apply → production</text>
       <text x="95" y="178">✕ delete a protected namespace</text>
@@ -569,7 +569,7 @@ footer, header, hgroup, main, menu, nav, section {
   <svg viewBox="0 0 1100 340" role="img" aria-label="A layered stack: the hook checks the command text on top; beneath it the RBAC identity check rejects any write from a read-only credential at the API server.">
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="2.6" stroke-dasharray="9 7"><rect x="120" y="40" width="860" height="70" rx="10"/></g>
     <text x="550" y="72" text-anchor="middle" class="lbl-b">HOOK: checks the command TEXT</text>
-    <text x="550" y="98" text-anchor="middle" class="lbl-g">your code · can be too narrow · a shape may slip through</text>
+    <text x="550" y="98" text-anchor="middle" class="lbl-g">your code · can be too narrow · a pattern may slip through</text>
 
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="3"><rect x="120" y="130" width="860" height="90" rx="10"/></g>
     <text x="550" y="165" text-anchor="middle" class="lbl-b">RBAC / IDENTITY: checks the CREDENTIAL</text>
@@ -586,7 +586,7 @@ footer, header, hgroup, main, menu, nav, section {
 
 <!-- ============ SLIDE 15 — bouncer vs vault ============ -->
 <section>
-  <h2 class="t">The bouncer and the vault</h2>
+  <h2 class="t">Command-Layer Checks Act Like a Bouncer; Identity-Layer Enforcement Acts Like a Vault</h2>
   <p class="s">the bouncer checks a list; the vault has no key</p>
   <svg viewBox="0 0 1600 900" role="img" aria-label="A two-part scene: a bouncer at a velvet-rope entrance checking a clipboard list, beside a large sealed bank vault door that cannot be opened without the right mechanism.">
     <image href="../img/decks/m8/bouncer-and-vault.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
@@ -695,7 +695,7 @@ footer, header, hgroup, main, menu, nav, section {
     <g class="fragment"><g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="2.4"><circle cx="120" cy="125" r="24"/></g>
       <text x="120" y="133" text-anchor="middle" class="num">2</text>
       <text x="165" y="120" text-anchor="start" class="lbl-b">The Change Gate hook</text>
-      <text x="165" y="146" text-anchor="start" class="lbl-g">deterministically blocks the dangerous command shapes, with reasons</text></g>
+      <text x="165" y="146" text-anchor="start" class="lbl-g">deterministically blocks the dangerous command patterns, with reasons</text></g>
     <g class="fragment"><g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="2.4"><circle cx="120" cy="195" r="24"/></g>
       <text x="120" y="203" text-anchor="middle" class="num">3</text>
       <text x="165" y="190" text-anchor="start" class="lbl-b">The Environment Contract check</text>

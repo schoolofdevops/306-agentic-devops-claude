@@ -92,7 +92,7 @@ footer, header, hgroup, main, menu, nav, section {
     margin:0 0 6px 0;
     line-height:1.15;
   }
-  .reveal h2.t{ order:1; font-size:1.75em; }
+  .reveal h2.t{ order:1; font-size:1.45em; }
   .reveal p{ margin:0; line-height:1.3; }
   .reveal p.s{ order:3; font-size:0.95em; color:var(--gray); margin:0; }
   .reveal .slides section:first-of-type svg{ min-height:32%; }
@@ -175,7 +175,7 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <section>
-  <h2 class="t">App code fails cheap; infra code fails forever</h2>
+  <h2 class="t">Infrastructure Changes Are Harder to Undo Than Application Changes</h2>
   <p class="s">code bugs are cheap; infra bugs are permanent</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A two-panel comparison: an application change is orange and revertable, an infrastructure change is red with three irreversible outcomes listed.">
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round">
@@ -239,7 +239,7 @@ footer, header, hgroup, main, menu, nav, section {
 
 <!-- ============ SLIDE 4 — mutation is separate authority ============ -->
 <section>
-  <h2 class="t">Mutation is a separate authority</h2>
+  <h2 class="t">The Change Gate Blocks Agent-Initiated <code>apply</code> on Production</h2>
   <p class="s">the agent proposes; a human disposes</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A pipeline where the agent can plan (allowed, green) but an apply is blocked by a purple gate and rerouted through branch, pull request, approval, and a reconciler apply.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
@@ -280,7 +280,7 @@ footer, header, hgroup, main, menu, nav, section {
 
 <!-- ============ SLIDE 5 — gate discrimination (3 fragments) ============ -->
 <section>
-  <h2 class="t">A good boundary: permissive on safe, absolute on irreversible</h2>
+  <h2 class="t">The Gate Allows <code>plan</code>/<code>validate</code>/<code>fmt</code>, Blocks <code>apply</code>/<code>destroy</code></h2>
   <p class="s">block apply and destroy, not the whole toolchain</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="One gate: plan, validate, and fmt pass through it in green; apply and destroy bounce off it in red.">
     <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round">
@@ -380,7 +380,7 @@ footer, header, hgroup, main, menu, nav, section {
 
 <!-- ============ SLIDE 7 — blood panel analogy ============ -->
 <section>
-  <h2 class="t">The plan JSON is the blood panel</h2>
+  <h2 class="t">The Plan JSON Is Structured Data You Can Run Threshold Checks Against</h2>
   <p class="s">structured data lets rules threshold and diff it</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A two-panel comparison: on the left a gray prose bubble that cannot be computed on, on the right a blue structured panel of named and numbered markers with a red threshold line.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.4" stroke-dasharray="9 7" stroke-linecap="round">
@@ -781,7 +781,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ SLIDE 19 — CLOSING ============ -->
 <section data-auto-animate>
   <p class="kicker">MODULE 11 &nbsp;·&nbsp; AI-AUGMENTED IAC &amp; FINOPS</p>
-  <h2 class="t" style="font-size:2em">Syntax is not safety; safety is composition</h2>
+  <h2 class="t" style="font-size:2em">Prove Every Control Holds</h2>
   <p class="s">prove every control holds as a test, not a hope</p>
   <svg viewBox="0 0 1100 300" role="img" aria-label="Five numbered rows summarizing what the lab proves: state safety, plan analysis, security and drift, cost, and the handoff chain plus cost receipt.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round">

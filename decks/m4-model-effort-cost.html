@@ -92,7 +92,7 @@ footer, header, hgroup, main, menu, nav, section {
     margin:0 0 6px 0;
     line-height:1.15;
   }
-  .reveal h2.t{ order:1; font-size:1.75em; }
+  .reveal h2.t{ order:1; font-size:1.45em; }
   .reveal p{ margin:0; line-height:1.3; }
   .reveal p.s{ order:3; font-size:0.95em; color:var(--gray); margin:0; }
   .reveal .slides section:first-of-type svg{ min-height:32%; }
@@ -364,7 +364,7 @@ footer, header, hgroup, main, menu, nav, section {
 
 <!-- ═══════════════ SLIDE 7 · TWO DIALS, TOP-RIGHT FAILURE ═══════════════ -->
 <section>
-  <h2 class="t">Two dials, and the failure mode is the top-right corner</h2>
+  <h2 class="t">Running every task at maximum model and effort is unexamined waste</h2>
   <p class="s">two dials, one failure corner</p>
   <svg viewBox="0 0 1100 360" role="img" aria-label="A two-by-two grid with model on one axis and effort on the other. The cheap-plus-low corner is green, the mixed corners are orange, and the expensive-plus-high top-right corner is outlined red and tagged fine sometimes but waste as a default.">
     <!-- axes -->
@@ -458,9 +458,9 @@ footer, header, hgroup, main, menu, nav, section {
 
 <!-- ═══════════════ SLIDE 9 · REVIEWER VS SUMMARIZER ═══════════════ -->
 <section>
-  <h2 class="t">Reviewer and summarizer: same task shape, opposite staffing</h2>
-  <p class="s">same shape, opposite staffing</p>
-  <svg viewBox="0 0 1100 350" role="img" aria-label="Two panels of the same task shape. The reviewer, drawn blue, catches the subtle bug on the top model where underpaying is a false economy. The summarizer, drawn green, restates a diff on the cheapest model where paying more is pure waste.">
+  <h2 class="t">Reviewer and summarizer: same task type, opposite staffing</h2>
+  <p class="s">same task type, opposite staffing</p>
+  <svg viewBox="0 0 1100 350" role="img" aria-label="Two panels of the same task type. The reviewer, drawn blue, catches the subtle bug on the top model where underpaying is a false economy. The summarizer, drawn green, restates a diff on the cheapest model where paying more is pure waste.">
     <!-- reviewer -->
     <g filter="url(#rough)" fill="var(--p-blue)" stroke="#1e1e1e" stroke-width="3">
       <rect x="60" y="60" width="440" height="200" rx="13"/>
@@ -484,7 +484,7 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-dasharray="9 7">
       <rect x="230" y="308" width="640" height="36" rx="9"/>
     </g>
-    <text x="550" y="332" text-anchor="middle" class="lbl-g">same shape · opposite staffing, the <tspan class="lbl-b">failure cost</tspan> decides</text>
+    <text x="550" y="332" text-anchor="middle" class="lbl-g">same task type · opposite staffing, the <tspan class="lbl-b">failure cost</tspan> decides</text>
   </svg>
   <div class="pageno">M4·12</div>
 </section>
@@ -500,7 +500,7 @@ footer, header, hgroup, main, menu, nav, section {
 
 <!-- ═══════════════ SLIDE 10 · THE RUN IS INVISIBLE EVIDENCE ═══════════════ -->
 <section>
-  <h2 class="t">The run is evidence you cannot yet see</h2>
+  <h2 class="t">Every agent run generates cost data that disappears at session end</h2>
   <p class="s">the run is evidence you can't see yet</p>
   <svg viewBox="0 0 1100 350" role="img" aria-label="A finished green wall shows the good work. Beside it, three red dashed papers (invoice, timesheet, materials list) are crossed out, tagged you cannot see any of it. A band reads good work is not the same as accountable work.">
     <!-- the finished wall -->
@@ -574,7 +574,7 @@ footer, header, hgroup, main, menu, nav, section {
 
 <!-- ═══════════════ SLIDE 12 · TURN IT ON — THE PIPELINE ═══════════════ -->
 <section>
-  <h2 class="t">Turn it on, and the run stops being invisible</h2>
+  <h2 class="t">Two environment variables turn on telemetry collection</h2>
   <p class="s">flip it on, the run stops hiding</p>
   <svg viewBox="0 0 1100 330" role="img" aria-label="A pipeline: a Claude Code session emits OTLP metrics and events to a local OpenTelemetry collector that receives and writes to a file, producing a durable, parseable telemetry artifact.">
     <!-- session -->
@@ -671,7 +671,7 @@ footer, header, hgroup, main, menu, nav, section {
 
 <!-- ═══════════════ SLIDE 14 · THREE CONTROLS ═══════════════ -->
 <section>
-  <h2 class="t">Set the expectation in advance</h2>
+  <h2 class="t">The ledger yields three controls: budgets, alerts, and regression checks</h2>
   <p class="s">set the expectation in advance</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Three numbered rows: a per-role budget ceiling, an orange spend alert flagging any run over N tokens, and a blue model regression check where a task that cost ten cents now costs a dollar, with the ledger as the baseline that makes the drift visible.">
     <!-- row 1 -->

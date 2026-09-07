@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agentic DevOps with Claude Code — Module 8: The Destructive Shortcut (Deep Dive)</title>
+<title>Agentic DevOps with Claude Code — Module 8: When an Ambiguous Ticket Leads to a Destructive Command (Deep Dive)</title>
 
 <!-- ============================================================
      CourseSmith whiteboard deck skeleton (self-contained).
      Style contract: templates/deck/whiteboard-style-guide.md
-     Tokens: Agentic DevOps with Claude Code 8 The Destructive Shortcut (Deep Dive)
+     Tokens: Agentic DevOps with Claude Code 8 When an Ambiguous Ticket Leads to a Destructive Command (Deep Dive)
              {{module.subtitle}} M8 (e.g. M1)
      Zero external requests: reveal.js 5.x runtime + Patrick Hand
      woff2 are inlined below. Keep it that way.
@@ -92,7 +92,7 @@ footer, header, hgroup, main, menu, nav, section {
     margin:0 0 6px 0;
     line-height:1.15;
   }
-  .reveal h2.t{ order:1; font-size:1.75em; }
+  .reveal h2.t{ order:1; font-size:1.45em; }
   .reveal p{ margin:0; line-height:1.3; }
   .reveal p.s{ order:3; font-size:0.95em; color:var(--gray); margin:0; }
   .reveal .slides section:first-of-type svg{ min-height:32%; }
@@ -139,7 +139,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ============ DD SLIDE 1 — TITLE ============ -->
 <section data-auto-animate>
   <p class="kicker">MODULE 8 · DEEP DIVE (PART 2)</p>
-  <h2 class="t" style="font-size:2.15em">The Destructive Shortcut</h2>
+  <h2 class="t" style="font-size:2.15em">When an Ambiguous Ticket Leads to a Destructive Command</h2>
   <p class="s" style="font-size:1.15em">One ambiguous, urgent instruction — the most dangerous prompt in the course — fired straight at everything you built. Watch the controls <em>compose</em> and force the safe path.</p>
   <svg viewBox="0 0 1100 300" role="img" aria-label="A single dangerous instruction is fired like an arrow at a stack of enforcement layers and is stopped before it reaches production.">
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.8"><rect x="60" y="115" width="270" height="80" rx="10"/></g>
@@ -165,7 +165,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section>
   <h2 class="t">One instruction, two disasters, zero clarity</h2>
   <p class="s">"Orders are erroring in prod. Clean up the old resources and fix production." Read it the way an eager agent does — a task to complete, fast. It hides two destructive actions and none of the information to do either safely.</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="The instruction splits into two dangerous readings: clean up old resources becomes a wildcard sweep, and fix production becomes a direct apply, each mapping to threat shapes.">
+  <svg viewBox="0 0 1100 340" role="img" aria-label="The instruction splits into two dangerous readings: clean up old resources becomes a wildcard sweep, and fix production becomes a direct apply, each mapping to threat categories.">
     <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.6"><rect x="380" y="30" width="340" height="70" rx="10"/></g>
     <text x="550" y="62" text-anchor="middle" class="lbl-b">"clean up + fix production"</text>
     <text x="550" y="88" text-anchor="middle" class="lbl-g">nothing in it is obviously malicious</text>
@@ -311,10 +311,10 @@ footer, header, hgroup, main, menu, nav, section {
 <section>
   <h2 class="t">The trap: "we have a gate, so prod is safe"</h2>
   <p class="s">The most common mistake after building an enforcement layer is treating it as complete. "We have a gate" answers one question and quietly leaves two open. The full posture is four moves, not one.</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="The full production-safety posture is four moves: gate the shapes, gather evidence before acting, keep proposals small and legible, and pin the agent to a read-only identity. Any one alone is a partial answer.">
+  <svg viewBox="0 0 1100 340" role="img" aria-label="The full production-safety posture is four moves: gate the patterns, gather evidence before acting, keep proposals small and legible, and pin the agent to a read-only identity. Any one alone is a partial answer.">
     <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.6"><rect x="300" y="30" width="500" height="60" rx="10"/></g>
     <text x="550" y="58" text-anchor="middle" class="lbl-b" fill="#c62828">"we have a change gate" — partial answer</text>
-    <text x="550" y="82" text-anchor="middle" class="lbl-g">covers the shapes it matches · nothing more</text>
+    <text x="550" y="82" text-anchor="middle" class="lbl-g">covers the patterns it matches · nothing more</text>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round"><path d="M550,92 L550,130" marker-end="url(#ah)"/></g>
     <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.6">
       <rect x="40" y="140" width="245" height="170" rx="10"/>
@@ -322,7 +322,7 @@ footer, header, hgroup, main, menu, nav, section {
       <rect x="560" y="140" width="245" height="170" rx="10"/>
       <rect x="820" y="140" width="240" height="170" rx="10"/>
     </g>
-    <text x="162" y="200" text-anchor="middle" class="lbl-b">gate the shapes</text>
+    <text x="162" y="200" text-anchor="middle" class="lbl-b">gate the patterns</text>
     <text x="162" y="240" text-anchor="middle" class="lbl-g">enforcement</text>
     <text x="422" y="200" text-anchor="middle" class="lbl-b">evidence first</text>
     <text x="422" y="234" text-anchor="middle" class="lbl-g">catches context-</text>

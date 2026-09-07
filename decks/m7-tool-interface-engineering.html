@@ -92,7 +92,7 @@ footer, header, hgroup, main, menu, nav, section {
     margin:0 0 6px 0;
     line-height:1.15;
   }
-  .reveal h2.t{ order:1; font-size:1.75em; }
+  .reveal h2.t{ order:1; font-size:1.45em; }
   .reveal p{ margin:0; line-height:1.3; }
   .reveal p.s{ order:3; font-size:0.95em; color:var(--gray); margin:0; }
   .reveal .slides section:first-of-type svg{ min-height:32%; }
@@ -223,9 +223,9 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M7·03</div>
 </section>
 
-<!-- ═══════════════ SLIDE 3 · ONE TICKET, TWO WAYS ═══════════════ -->
+<!-- ═══════════════ SLIDE 3 · THE SAME TICKET, TWO TOOL INTERFACES ═══════════════ -->
 <section>
-  <h2 class="t">Both solve the ticket, they are not remotely equal in risk</h2>
+  <h2 class="t">The Same Ticket Gets Answered Two Ways: Bash vs. a Typed MCP Call</h2>
   <p class="s">bash can do anything; a typed call does one thing</p>
   <svg viewBox="0 0 1100 350" role="img" aria-label="Two panels answer the same ticket. Left, drawn red, Bash with curl, grep, and jq can run anything, including docker compose down. Right, drawn green, a typed get_readiness returns exactly one object and cannot do anything else.">
     <!-- LEFT: Bash -->
@@ -386,7 +386,7 @@ footer, header, hgroup, main, menu, nav, section {
 <!-- ═══════════════ SLIDE 8 · WRAPPER SCRIPT ═══════════════ -->
 <section>
   <h2 class="t">A wrapper script narrows what you typically do, not what you can</h2>
-  <p class="s">a script shapes output, but bash is still there</p>
+  <p class="s">a script constrains output, but bash is still there</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A pipeline: the agent runs one command, check-health.sh orders-api, which returns three clean lines drawn green instead of three hundred. Below, a gray dashed note shows the script still runs through Bash, so the Bash floor remains.">
     <!-- agent -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><rect x="50" y="96" width="150" height="70" rx="10"/></g>
@@ -414,14 +414,14 @@ footer, header, hgroup, main, menu, nav, section {
 
 <!-- ═══════════════ SLIDE 9 · SKILL ═══════════════ -->
 <section>
-  <h2 class="t">A skill shapes behaviour and output, it removes no capability</h2>
+  <h2 class="t">A skill constrains behaviour and output, it removes no capability</h2>
   <p class="s">a skill guides strongly, but takes nothing away</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="A big box labelled SKILL.md holds three inner boxes: instructions, output schema, and stop conditions. The whole skill box sits on top of a gray Bash floor, showing the skill shapes behaviour but the capability underneath is unchanged.">
+  <svg viewBox="0 0 1100 340" role="img" aria-label="A big box labelled SKILL.md holds three inner boxes: instructions, output schema, and stop conditions. The whole skill box sits on top of a gray Bash floor, showing the skill constrains behaviour but the capability underneath is unchanged.">
     <!-- outer skill box -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8">
       <rect x="150" y="56" width="800" height="150" rx="13"/>
     </g>
-    <text x="550" y="88" text-anchor="middle" class="lbl-b">SKILL.md: shapes behaviour + output</text>
+    <text x="550" y="88" text-anchor="middle" class="lbl-b">SKILL.md: constrains behaviour + output</text>
     <!-- three inner -->
     <g filter="url(#rough)" fill="var(--p-purple)" stroke="#1e1e1e" stroke-width="2.6">
       <rect x="180" y="110" width="240" height="72" rx="9"/>
@@ -431,7 +431,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="300" y="142" text-anchor="middle" class="lbl">instructions</text>
     <text x="300" y="168" text-anchor="middle" class="lbl-g">collect · reason · report</text>
     <text x="550" y="142" text-anchor="middle" class="lbl">output schema</text>
-    <text x="550" y="168" text-anchor="middle" class="lbl-g">report in this shape</text>
+    <text x="550" y="168" text-anchor="middle" class="lbl-g">report in this format</text>
     <text x="800" y="142" text-anchor="middle" class="lbl">stop conditions</text>
     <text x="800" y="168" text-anchor="middle" class="lbl-g">when to stop</text>
     <!-- Bash floor beneath -->
@@ -486,7 +486,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section>
   <h2 class="t">Five criteria route the task, you don't choose by taste</h2>
   <p class="s">a bank routes differently by transaction type</p>
-  <svg viewBox="0 0 1100 350" role="img" aria-label="Five numbered criteria rows, each with a lean toward CLI or MCP. One, authority: low stakes lean CLI, must-guarantee-no-writes lean MCP. Two, ambiguity: simple output CLI, complex output MCP. Three, output shape: a human reads once CLI, another step consumes it MCP. Four, authentication: env vars CLI, server holds creds MCP. Five, cost and frequency: one-off CLI, repeated or huge output MCP.">
+  <svg viewBox="0 0 1100 350" role="img" aria-label="Five numbered criteria rows, each with a lean toward CLI or MCP. One, authority: low stakes lean CLI, must-guarantee-no-writes lean MCP. Two, ambiguity: simple output CLI, complex output MCP. Three, output format: a human reads once CLI, another step consumes it MCP. Four, authentication: env vars CLI, server holds creds MCP. Five, cost and frequency: one-off CLI, repeated or huge output MCP.">
     <g class="fragment" data-fragment-index="0"><g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><circle cx="70" cy="52" r="20"/></g><text x="70" y="60" text-anchor="middle" class="num">1</text>
       <text x="104" y="46" text-anchor="start" class="lbl-b">authority</text><text x="104" y="70" text-anchor="start" class="lbl-g">damage if it does the wrong thing?</text>
       <text x="720" y="46" text-anchor="start" class="lbl-g" fill="#c62828">low stakes → CLI</text><text x="720" y="70" text-anchor="start" class="lbl-g" fill="#2e7d32">must guarantee no writes → MCP</text></g>
@@ -494,7 +494,7 @@ footer, header, hgroup, main, menu, nav, section {
       <text x="104" y="106" text-anchor="start" class="lbl-b">ambiguity</text><text x="104" y="130" text-anchor="start" class="lbl-g">is the output easy to misread?</text>
       <text x="720" y="106" text-anchor="start" class="lbl-g" fill="#c62828">simple → CLI</text><text x="720" y="130" text-anchor="start" class="lbl-g" fill="#2e7d32">complex → typed contract, MCP</text></g>
     <g class="fragment" data-fragment-index="2"><g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><circle cx="70" cy="172" r="20"/></g><text x="70" y="180" text-anchor="middle" class="num">3</text>
-      <text x="104" y="166" text-anchor="start" class="lbl-b">output shape</text><text x="104" y="190" text-anchor="start" class="lbl-g">need structured data downstream?</text>
+      <text x="104" y="166" text-anchor="start" class="lbl-b">output format</text><text x="104" y="190" text-anchor="start" class="lbl-g">need structured data downstream?</text>
       <text x="720" y="166" text-anchor="start" class="lbl-g" fill="#c62828">a human reads it once → CLI</text><text x="720" y="190" text-anchor="start" class="lbl-g" fill="#2e7d32">a step consumes it → MCP</text></g>
     <g class="fragment" data-fragment-index="3"><g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><circle cx="70" cy="232" r="20"/></g><text x="70" y="240" text-anchor="middle" class="num">4</text>
       <text x="104" y="226" text-anchor="start" class="lbl-b">authentication</text><text x="104" y="250" text-anchor="start" class="lbl-g">who holds the credentials?</text>
@@ -508,7 +508,7 @@ footer, header, hgroup, main, menu, nav, section {
 
 <!-- ═══════════════ SLIDE 12 · DECISION TREE (4 fragments) ═══════════════ -->
 <section>
-  <h2 class="t">CLI for exploration, MCP when the boundary earns its keep</h2>
+  <h2 class="t">The Decision Tree Chooses Between CLI and MCP</h2>
   <p class="s">four questions decide the surface</p>
   <svg viewBox="0 0 1100 350" role="img" aria-label="A decision tree. Start: a task for the agent. Q1 high authority or must guarantee no writes, yes leads to MCP. Q2 output complex or consumed by another step, yes leads to MCP. Q3 runs repeatedly in production, yes leads to MCP. Q4 output heavy or logic non-trivial, yes leads to a wrapper script, no leads to raw CLI.">
     <!-- start -->
@@ -688,7 +688,7 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 
 <section>
-  <h2 class="t">Same Terraform, opposite answers, decided by the criteria</h2>
+  <h2 class="t">The HashiCorp Case Study Compares Agent Skills to Terraform MCP</h2>
   <p class="s">skill for exploring, server for CI plan-review</p>
   <svg viewBox="0 0 1100 350" role="img" aria-label="Two panels compare HashiCorp Agent Skills against the Terraform MCP server. Skills, drawn orange: authority is instructions plus permission floor on Bash, high transparency, low setup, best when you want control and CLI you trust. MCP server, drawn green: authority is the exposed tool set with no apply tool, typed JSON, a hard boundary, best for a repeated prod op. Two verdict tags: explore interactively leans skill, plan-review on every PR leans MCP.">
     <!-- LEFT: skills -->
@@ -716,7 +716,7 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M7·24</div>
 </section>
 
-<!-- ═══════════════ SLIDE 18 · THE THREE-WAY SHOOTOUT (closing, 3 fragments) ═══════════════ -->
+<!-- ═══════════════ SLIDE 18 · CLI, SKILL, AND MCP COMPARED SIDE BY SIDE (closing, 3 fragments) ═══════════════ -->
 <section class="divider">
   <h2 class="t" style="font-size:2.2em">7 &middot; What you'll do in the lab</h2>
   <div class="pageno">M7&middot;25</div>
@@ -724,7 +724,7 @@ footer, header, hgroup, main, menu, nav, section {
 
 <section data-auto-animate>
   <p class="kicker">MODULE 7 &nbsp;·&nbsp; TO THE LAB</p>
-  <h2 class="t">The three-way shootout: one ticket, three surfaces, one ledger</h2>
+  <h2 class="t">Recap: CLI, Skill, and MCP Compared Side by Side</h2>
   <p class="s">same ticket, three interfaces, one verdict</p>
   <svg viewBox="0 0 1100 300" role="img" aria-label="Three numbered runs of the same ticket. One, filtered CLI: Bash with curl, grep, jq. Two, skill with wrappers: the service-health skill from M6. Three, read-only MCP observer: three typed tools and no write tool, then a note to try to make it write and watch it fail.">
     <g class="fragment" data-fragment-index="0">
