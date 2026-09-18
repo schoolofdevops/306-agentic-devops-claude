@@ -172,13 +172,13 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="134" y="110" class="lbl-b">MLOps or LLMOps</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="70" y="180" width="44" height="44" rx="8"/></g>
     <text x="92" y="210" text-anchor="middle" class="lbl-b">2</text>
-    <text x="134" y="210" class="lbl-b">The Gateway Is the Artifact</text>
+    <text x="134" y="210" class="lbl-b">The Model Gateway Config</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="70" y="280" width="44" height="44" rx="8"/></g>
     <text x="92" y="310" text-anchor="middle" class="lbl-b">3</text>
-    <text x="134" y="310" class="lbl-b">The Four Dials</text>
+    <text x="134" y="310" class="lbl-b">Latency, Cost, Rate Limits, Quality</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="600" y="80" width="44" height="44" rx="8"/></g>
     <text x="622" y="110" text-anchor="middle" class="lbl-b">4</text>
-    <text x="664" y="110" class="lbl-b">Whose Latency Is It</text>
+    <text x="664" y="110" class="lbl-b">Provider vs Application Latency</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="600" y="180" width="44" height="44" rx="8"/></g>
     <text x="622" y="210" text-anchor="middle" class="lbl-b">5</text>
     <text x="664" y="210" class="lbl-b">Prompts and the Quality Gate</text>
@@ -310,11 +310,11 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="340" y="200" text-anchor="middle" class="lbl-b">LLMOps: day one</text>
     <text x="340" y="240" text-anchor="middle" class="lbl-g">the feature that "just calls the AI"</text>
   </svg>
-  <p class="recap fragment">Same governance, a new surface. Next: The Gateway Is the Artifact.</p>
+  <p class="recap fragment">Same governance, a new surface. Next: The Model Gateway Config.</p>
   <div class="pageno">M16&middot;08</div>
 </section>
 <section class="divider">
-  <h2 class="t">The Gateway Is the Artifact</h2>
+  <h2 class="t">The Model Gateway Config</h2>
   <p class="s">routing is a decision, not a detail</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A switchboard routing three classes of traffic to three different desks: support traffic to a fast tier, incident traffic to a deep tier, and batch traffic to a cheap tier.">
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="400" y="120" width="300" height="100" rx="12" class="f-purple"/></g>
@@ -405,11 +405,11 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="330" y="310" text-anchor="middle" class="lbl-b">cost delta: +$8,946 / day</text>
     <text x="800" y="310" text-anchor="middle" class="lbl-bad">verdict: review-required</text>
   </svg>
-  <p class="recap fragment">A route change is a priced decision. Next: The Four Dials.</p>
+  <p class="recap fragment">A route change is a priced decision. Next: Latency, Cost, Rate Limits, Quality.</p>
   <div class="pageno">M16&middot;13</div>
 </section>
 <section class="divider">
-  <h2 class="t">The Four Dials</h2>
+  <h2 class="t">Latency, Cost, Rate Limits, Quality</h2>
   <p class="s">the golden signals of an LLM feature</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Four dials for an LLM feature: latency, token cost, rate-limit headroom and quality, read together rather than one at a time.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><circle cx="230" cy="160" r="66"/><circle cx="440" cy="160" r="66"/><circle cx="650" cy="160" r="66"/><circle cx="860" cy="160" r="66"/></g>
@@ -478,11 +478,11 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="760" y="304" text-anchor="middle" class="lbl">unknown &mdash; no gate has run</text>
     <text x="550" y="366" text-anchor="middle" class="lbl-g">an unchanged rate-limit line became a breach the moment the tier moved</text>
   </svg>
-  <p class="recap fragment">A safe number under one tier breaches under another. Next: Whose Latency Is It.</p>
+  <p class="recap fragment">A safe number under one tier breaches under another. Next: Provider vs Application Latency.</p>
   <div class="pageno">M16&middot;17</div>
 </section>
 <section class="divider">
-  <h2 class="t">Whose Latency Is It</h2>
+  <h2 class="t">Provider vs Application Latency</h2>
   <p class="s">same symptom, opposite fix</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A dish taking too long to reach the table has two possible causes: the kitchen is slow, or the waiter is stuck. The symptom is identical and the fixes are completely different.">
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="80" y="90" width="400" height="160" rx="12" class="f-orange"/></g>
