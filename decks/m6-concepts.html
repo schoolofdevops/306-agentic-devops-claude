@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Module 1: The Repair Loop &middot; Agentic DevOps with Claude Code</title>
+<title>Module 6: Agent Skills &middot; Agentic DevOps with Claude Code</title>
 
 <!-- ============================================================
      CourseSmith whiteboard deck skeleton (self-contained).
      Style contract: templates/deck/whiteboard-style-guide.md
-     Course: Agentic DevOps with Claude Code · Module 1 (M1)
-             The Repair Loop: Diagnose, Change & Verify Northstar
+     Course: Agentic DevOps with Claude Code · Module 6 (M6)
+             Agent Skills: Runbooks → Reusable Procedures
      Zero external requests: reveal.js 5.x runtime + Patrick Hand
      woff2 are inlined below. Keep it that way.
      ============================================================ -->
@@ -165,31 +165,31 @@ footer, header, hgroup, main, menu, nav, section {
 <section>
   <h2 class="t">What will you learn?</h2>
   <p class="s">six things, and the lab captures a real one</p>
-  <svg viewBox="0 0 1100 380" role="img" aria-label="A numbered contents list of the six chapters: picking the primitive, what a skill is, progressive disclosure, two zones, invocation, and testing a skill.">
+  <svg viewBox="0 0 1100 380" role="img" aria-label="A numbered contents list of the six chapters: rules skills prompts and subagents, the SKILL.md file, progressive disclosure, deterministic and reasoning zones, auto-invoke and context fork, and skill test cases.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="70" y="70" width="44" height="44" rx="8"/></g>
     <text x="92" y="100" text-anchor="middle" class="lbl-b">1</text>
-    <text x="134" y="100" class="lbl-b">Picking the Primitive</text>
+    <text x="134" y="100" class="lbl-b">Rules, Skills, Prompts, Subagents</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="70" y="170" width="44" height="44" rx="8"/></g>
     <text x="92" y="200" text-anchor="middle" class="lbl-b">2</text>
-    <text x="134" y="200" class="lbl-b">What a Skill Is</text>
+    <text x="134" y="200" class="lbl-b">The SKILL.md File</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="70" y="270" width="44" height="44" rx="8"/></g>
     <text x="92" y="300" text-anchor="middle" class="lbl-b">3</text>
     <text x="134" y="300" class="lbl-b">Progressive Disclosure</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="600" y="70" width="44" height="44" rx="8"/></g>
     <text x="622" y="100" text-anchor="middle" class="lbl-b">4</text>
-    <text x="664" y="100" class="lbl-b">Two Zones</text>
+    <text x="664" y="100" class="lbl-b">Deterministic &amp; Reasoning Zones</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="600" y="170" width="44" height="44" rx="8"/></g>
     <text x="622" y="200" text-anchor="middle" class="lbl-b">5</text>
-    <text x="664" y="200" class="lbl-b">Invocation</text>
+    <text x="664" y="200" class="lbl-b">auto-invoke and context: fork</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="600" y="270" width="44" height="44" rx="8"/></g>
     <text x="622" y="300" text-anchor="middle" class="lbl-b">6</text>
-    <text x="664" y="300" class="lbl-b">Testing a Skill</text>
+    <text x="664" y="300" class="lbl-b">Skill Test Cases</text>
   </svg>
   <div class="pageno">M6&middot;02</div>
 </section>
 <section class="divider">
-  <h2 class="t">Picking the Primitive</h2>
-  <p class="s">rule, skill, prompt or subagent</p>
+  <h2 class="t">Rules, Skills, Prompts, Subagents</h2>
+  <p class="s">which primitive the task belongs in</p>
   <svg viewBox="0 0 1600 900" role="img" aria-label="Illustration: a professional kitchen where a rule is taped to the wall, a recipe card sits on the bench, and a specialist works at their own station.">
     <image href="../img/decks/m6/kitchen-five-primitives.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
   </svg>
@@ -354,8 +354,8 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M6&middot;06</div>
 </section>
 <section class="divider">
-  <h2 class="t">What a Skill Is</h2>
-  <p class="s">a directory, a description, and steps that run</p>
+  <h2 class="t">The SKILL.md File</h2>
+  <p class="s">frontmatter, body, and the scripts beside it</p>
   <svg viewBox="0 0 1600 900" role="img" aria-label="Illustration: a handwritten runbook page being turned into a tidy filed procedure with a label on it.">
     <image href="../img/decks/m6/runbook-to-skill.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
   </svg>
@@ -435,7 +435,7 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M6&middot;09</div>
 </section>
 <section>
-  <h2 class="t">Four parts do the actual work</h2>
+  <h2 class="t">The SKILL.md body has four parts</h2>
   <p class="s">inputs, steps, output schema, stop conditions</p>
   <svg viewBox="0 0 1100 420" role="img" aria-label="A skill file broken into four parts: the inputs it needs, the numbered steps it runs, the output schema it must return, and the stop conditions that make it refuse rather than guess.">
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="50" width="480" height="150" rx="12" class="f-blue"/></g>
@@ -548,8 +548,8 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M6&middot;14</div>
 </section>
 <section>
-  <h2 class="t">What is loaded, and when</h2>
-  <p class="s">the index is always in; the detail is on demand</p>
+  <h2 class="t">Frontmatter in, body and scripts on demand</h2>
+  <p class="s">three load tiers, one context budget</p>
   <svg viewBox="0 0 1100 400" role="img" aria-label="The short skill file is loaded into the window at all times while the scripts and reference files it points to are only read at the moment their step runs.">
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="60" y="60" width="420" height="120" rx="12" class="f-green"/></g>
     <text x="270" y="108" text-anchor="middle" class="lbl-b">SKILL.md</text>
@@ -566,8 +566,8 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M6&middot;15</div>
 </section>
 <section class="divider">
-  <h2 class="t">Two Zones</h2>
-  <p class="s">collecting separated from reasoning</p>
+  <h2 class="t">Deterministic &amp; Reasoning Zones</h2>
+  <p class="s">the two halves of every SKILL.md body</p>
   <svg viewBox="0 0 1600 900" role="img" aria-label="Illustration: a laboratory technician running a sample on one side of a wall and a doctor reading the printed result on the other.">
     <image href="../img/decks/m6/lab-and-doctor.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
   </svg>
@@ -632,8 +632,8 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M6&middot;18</div>
 </section>
 <section>
-  <h2 class="t">The script is what lets a cheap model do it</h2>
-  <p class="s">same verdict, and only one of them is measured</p>
+  <h2 class="t">Same verdict on Haiku: $0.055 vs $0.249</h2>
+  <p class="s">the script did the work, not the model</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Three measured runs of the same question. Skill plus script on Haiku, five and a half cents, correct and measured over a real window. Skill plus script on Sonnet, twenty five cents, the same answer. No script on Haiku, six cents, the right verdict reached by the wrong method, reading cumulative counters as a current rate.">
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4">
       <rect x="60" y="40" width="980" height="70" rx="10" class="f-green"/>
@@ -689,8 +689,8 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M6&middot;20</div>
 </section>
 <section class="divider">
-  <h2 class="t">Invocation</h2>
-  <p class="s">who can trigger it, and where it runs</p>
+  <h2 class="t">auto-invoke and context: fork</h2>
+  <p class="s">who may trigger it, and where it runs</p>
   <svg viewBox="0 0 1200 460" role="img" aria-label="A skill can be triggered automatically by the agent or only by a human, and it can run in the main thread or in a forked context that keeps the main conversation clean.">
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="80" y="70" width="460" height="150" rx="14" class="f-green"/></g>
     <text x="310" y="128" text-anchor="middle" class="lbl-b">auto-invoked</text>
@@ -708,7 +708,7 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M6&middot;21</div>
 </section>
 <section>
-  <h2 class="t">Who can trigger it, and where it runs</h2>
+  <h2 class="t">auto-invoke: false makes it human-only</h2>
   <p class="s">two independent settings on one skill</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A decision: does the skill change state. The no, observes-only branch leads to auto invocation, in green, fires when relevant, for service-health and k8s-diagnose. The yes, mutates branch leads to human-only, in red, runs on an explicit slash skill-name, for a restart or an apply, with a hand pulling the trigger.">
     <!-- question -->
@@ -832,8 +832,8 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M6&middot;24</div>
 </section>
 <section class="divider">
-  <h2 class="t">Testing a Skill</h2>
-  <p class="s">three tests, not one</p>
+  <h2 class="t">Skill Test Cases</h2>
+  <p class="s">three cases, not one</p>
   <svg viewBox="0 0 1600 900" role="img" aria-label="Illustration: someone testing a smoke detector on the ceiling with the test button and with smoke.">
     <image href="../img/decks/m6/smoke-detector-test.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
   </svg>
@@ -848,8 +848,8 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M6&middot;26</div>
 </section>
 <section>
-  <h2 class="t">Positive, negative, ambiguous</h2>
-  <p class="s">three cases, and the middle one is the useful one</p>
+  <h2 class="t">Three fixtures: positive, negative, ambiguous</h2>
+  <p class="s">the middle one is the useful one</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Three test rows. Positive, in green: a known-good input, and it reports fine. Negative, in red and boxed heavier: the plan-stateful-replace fixture that destroys the prod database, and it must catch the replace. Ambiguous, in orange: a service unreachable, and it says so and stops.">
     <!-- positive row -->
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4">
