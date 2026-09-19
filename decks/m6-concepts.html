@@ -165,7 +165,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section>
   <h2 class="t">What will you learn?</h2>
   <p class="s">six things, and the lab captures a real one</p>
-  <svg viewBox="0 0 1100 380" role="img" aria-label="A numbered contents list of the six chapters: rules skills prompts and subagents, the SKILL.md file, progressive disclosure, deterministic and reasoning zones, auto-invoke and context fork, and skill test cases.">
+  <svg viewBox="0 0 1100 380" role="img" aria-label="A numbered contents list of the six chapters: rules skills prompts and subagents, the SKILL.md file, progressive disclosure, deterministic and reasoning zones, disable-model-invocation and context fork, and skill test cases.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="70" y="70" width="44" height="44" rx="8"/></g>
     <text x="92" y="100" text-anchor="middle" class="lbl-b">1</text>
     <text x="134" y="100" class="lbl-b">Rules, Skills, Prompts, Subagents</text>
@@ -175,15 +175,15 @@ footer, header, hgroup, main, menu, nav, section {
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="70" y="270" width="44" height="44" rx="8"/></g>
     <text x="92" y="300" text-anchor="middle" class="lbl-b">3</text>
     <text x="134" y="300" class="lbl-b">Progressive Disclosure</text>
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="600" y="70" width="44" height="44" rx="8"/></g>
-    <text x="622" y="100" text-anchor="middle" class="lbl-b">4</text>
-    <text x="664" y="100" class="lbl-b">Deterministic &amp; Reasoning Zones</text>
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="600" y="170" width="44" height="44" rx="8"/></g>
-    <text x="622" y="200" text-anchor="middle" class="lbl-b">5</text>
-    <text x="664" y="200" class="lbl-b">auto-invoke and context: fork</text>
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="600" y="270" width="44" height="44" rx="8"/></g>
-    <text x="622" y="300" text-anchor="middle" class="lbl-b">6</text>
-    <text x="664" y="300" class="lbl-b">Skill Test Cases</text>
+    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="540" y="70" width="44" height="44" rx="8"/></g>
+    <text x="562" y="100" text-anchor="middle" class="lbl-b">4</text>
+    <text x="604" y="100" class="lbl-b">Deterministic &amp; Reasoning Zones</text>
+    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="540" y="170" width="44" height="44" rx="8"/></g>
+    <text x="562" y="200" text-anchor="middle" class="lbl-b">5</text>
+    <text x="604" y="200" class="lbl-b">disable-model-invocation and context: fork</text>
+    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="540" y="270" width="44" height="44" rx="8"/></g>
+    <text x="562" y="300" text-anchor="middle" class="lbl-b">6</text>
+    <text x="604" y="300" class="lbl-b">Skill Test Cases</text>
   </svg>
   <div class="pageno">M6&middot;02</div>
 </section>
@@ -689,7 +689,7 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M6&middot;20</div>
 </section>
 <section class="divider">
-  <h2 class="t">auto-invoke and context: fork</h2>
+  <h2 class="t">disable-model-invocation and context: fork</h2>
   <p class="s">who may trigger it, and where it runs</p>
   <svg viewBox="0 0 1200 460" role="img" aria-label="A skill can be triggered automatically by the agent or only by a human, and it can run in the main thread or in a forked context that keeps the main conversation clean.">
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="80" y="70" width="460" height="150" rx="14" class="f-green"/></g>
@@ -708,8 +708,8 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M6&middot;21</div>
 </section>
 <section>
-  <h2 class="t">auto-invoke: false makes it human-only</h2>
-  <p class="s">two independent settings on one skill</p>
+  <h2 class="t">disable-model-invocation hides the skill</h2>
+  <p class="s">the slash command still works; the model cannot pick it</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A decision: does the skill change state. The no, observes-only branch leads to auto invocation, in green, fires when relevant, for service-health and k8s-diagnose. The yes, mutates branch leads to human-only, in red, runs on an explicit slash skill-name, for a restart or an apply, with a hand pulling the trigger.">
     <!-- question -->
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8">
@@ -803,7 +803,7 @@ footer, header, hgroup, main, menu, nav, section {
       </g>
       <text x="435" y="150" text-anchor="middle" class="lbl-b">gate 1</text>
       <text x="435" y="180" text-anchor="middle" class="lbl">invisibility</text>
-      <!-- auto-invoke blocked -->
+      <!-- model invocation blocked -->
       <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-dasharray="9 7" stroke-linecap="round">
         <path d="M340,290 L435,215"/>
       </g>
