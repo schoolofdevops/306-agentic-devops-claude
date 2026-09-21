@@ -261,7 +261,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="520" y="130" class="lbl-g">so we can verify with no AWS account</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="60" y="174" width="980" height="62" rx="10"/></g>
     <text x="90" y="202" class="lbl-sm">a git worktree</text>
-    <text x="520" y="202" class="lbl-g">so a bad build never touches main</text>
+    <text x="520" y="202" class="lbl-g">so a bad build never touches main — the harness makes it</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="60" y="246" width="980" height="62" rx="10"/></g>
     <text x="90" y="274" class="lbl-sm">superpowers</text>
     <text x="520" y="274" class="lbl-g">so the agent plans and tests, not just types</text>
@@ -468,13 +468,13 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 <section>
   <h2 class="t">Prompts off is safe because of the worktree</h2>
-  <p class="s">not the flag — the folder you can throw away</p>
+  <p class="s">you ask for it, the harness makes it, then you check</p>
   <svg viewBox="0 0 1100 240" role="img" aria-label="The worktree can simply be deleted if the build goes wrong.">
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="300" y="50" width="500" height="130" rx="14" class="f-blue"/></g>
     <text x="550" y="105" text-anchor="middle" class="lbl-b">worktree</text>
     <text x="550" y="145" text-anchor="middle" class="lbl-sm">if it goes wrong, delete it</text>
   </svg>
-  <p class="recap fragment">The worktree is the risk boundary here. That is what makes bypass mode safe.</p>
+  <p class="recap fragment">Ask for isolation, then run <tt>git worktree list</tt>. Do not assume you got it.</p>
   <div class="pageno">M11&middot;19</div>
 </section>
 <section class="divider">
