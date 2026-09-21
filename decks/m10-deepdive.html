@@ -137,7 +137,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section>
   <p class="kicker">MODULE 10 &nbsp;·&nbsp; DEEP DIVE (PART 2)</p>
   <h2 class="t" style="font-size:2.05em">The same audit, expressed as code</h2>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="Two implementations of one orchestration side by side: a shell workflow drawn as a taped checklist on the left, and an Agent SDK script drawn as a workflow engine on the right, both producing the same estate report in the middle. An equals sign joins their outputs.">
+  <svg viewBox="0 0 1100 340" role="img" aria-label="Two implementations of one orchestration side by side: a shell workflow drawn as a taped checklist on the left, and an Agent SDK script drawn as a workflow engine on the right, both producing the same infrastructure report in the middle. An equals sign joins their outputs.">
     <!-- shell = taped checklist -->
     <g filter="url(#rough)" fill="var(--p-blue)" stroke="none"><rect x="70" y="100" width="230" height="160" rx="10"/></g>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><rect x="70" y="100" width="230" height="160" rx="10"/><line x1="100" y1="140" x2="270" y2="140"/><line x1="100" y1="175" x2="270" y2="175"/><line x1="100" y1="210" x2="270" y2="210"/></g>
@@ -215,7 +215,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section>
   <h2 class="t">Three pieces you can point at</h2>
   <p class="s">The whole audit is a partition with fail-closed guards, a semaphore fan-out capped at max-parallel, and a normalized join with a coverage assertion. In the SDK, each control from the lesson is an explicit line of code you wrote — not a structure you hoped the shell implied.</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="A pipeline. A partition box of deduped existing modules feeds a semaphore gate holding at most max-parallel workers in flight, which run four query() workers for networking, database, compute, and storage, which converge into a join that merges normalized records with a coverage assertion, producing one estate report.">
+  <svg viewBox="0 0 1100 340" role="img" aria-label="A pipeline. A partition box of deduped existing modules feeds a semaphore gate holding at most max-parallel workers in flight, which run four query() workers for networking, database, compute, and storage, which converge into a join that merges normalized records with a coverage assertion, producing one infrastructure report.">
     <!-- partition -->
     <g filter="url(#rough)" fill="var(--p-blue)" stroke="none"><rect x="50" y="130" width="150" height="80" rx="10"/></g>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><rect x="50" y="130" width="150" height="80" rx="10"/></g>
@@ -288,7 +288,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section>
   <h2 class="t">Two engines, one answer — byte-for-byte</h2>
   <p class="s">The <code>--simulate</code> worker is the same deterministic read the shell uses, so the SDK produces byte-identical evidence and verdict to the shell workflow. That equivalence is the deep point: the orchestration pattern is independent of the implementation. Get the pattern right and you can write it in bash or the SDK — the answer is the same.</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="Two boxes, a shell workflow and an SDK fan-out, each emitting the same JSON estate report, joined by a large equals sign and an IDENTICAL stamp. Below, a note reads the choice is not correctness — both are correct — but which expresses your complexity most clearly.">
+  <svg viewBox="0 0 1100 340" role="img" aria-label="Two boxes, a shell workflow and an SDK fan-out, each emitting the same JSON infrastructure report, joined by a large equals sign and an IDENTICAL stamp. Below, a note reads the choice is not correctness — both are correct — but which expresses your complexity most clearly.">
     <!-- shell box -->
     <g filter="url(#rough)" fill="var(--p-blue)" stroke="none"><rect x="60" y="80" width="360" height="130" rx="12"/></g>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="80" width="360" height="130" rx="12"/></g>
@@ -305,7 +305,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="550" y="158" text-anchor="middle" class="lbl-b" style="font-size:56px">=</text>
     <g filter="url(#rough)" fill="var(--p-green)" stroke="none"><rect x="380" y="245" width="340" height="52" rx="12"/></g>
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><rect x="380" y="245" width="340" height="52" rx="12"/></g>
-    <text x="550" y="278" text-anchor="middle" class="lbl-b" style="fill:#2e7d32">IDENTICAL — they agree on the estate</text>
+    <text x="550" y="278" text-anchor="middle" class="lbl-b" style="fill:#2e7d32">IDENTICAL — they agree on the infrastructure</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><path d="M240,210 C300,230 340,240 378,255" marker-end="url(#ahg)"/><path d="M860,210 C800,230 760,240 722,255" marker-end="url(#ahg)"/></g>
   </svg>
   <div class="pageno">M10·DD·06</div>
