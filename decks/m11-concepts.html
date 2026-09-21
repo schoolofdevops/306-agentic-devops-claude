@@ -142,10 +142,11 @@ footer, header, hgroup, main, menu, nav, section {
   </defs>
 </svg>
 
-<div class="reveal"><div class="slides"><section data-auto-animate>
+<div class="reveal"><div class="slides">
+<section data-auto-animate>
   <p class="kicker">MODULE 11 &nbsp;&middot;&nbsp; AGENTIC DEVOPS WITH CLAUDE CODE</p>
   <h2 class="t" style="font-size:2.2em">Agentic IaC and FinOps</h2>
-  <p class="s" style="font-size:1.1em">Build a real Terraform module with Claude, the way you would at work</p>
+  <p class="s" style="font-size:1.1em">Build a real Terraform module with an agent</p>
   <svg viewBox="0 0 1120 340" role="img" aria-label="An agent authoring Terraform on the left, a plan JSON in the middle, three checks on the right, joining into one verdict.">
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="40" y="110" width="230" height="120" rx="12" class="f-blue"/></g>
     <text x="155" y="160" text-anchor="middle" class="lbl-b">the agent authors</text>
@@ -167,41 +168,26 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 <section>
   <h2 class="t">What will you learn?</h2>
-  <p class="s">nine steps, and the lab ships a real module</p>
-  <svg viewBox="0 0 1100 400" role="img" aria-label="A numbered contents list of the nine chapters of this module.">
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="50" y="40" width="38" height="38" rx="7"/></g>
-    <text x="69" y="66" text-anchor="middle" class="lbl-b">1</text>
-    <text x="104" y="67" class="lbl-sm">The Project and the Tools</text>
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="50" y="110" width="38" height="38" rx="7"/></g>
-    <text x="69" y="136" text-anchor="middle" class="lbl-b">2</text>
-    <text x="104" y="137" class="lbl-sm">Write the Spec</text>
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="50" y="180" width="38" height="38" rx="7"/></g>
-    <text x="69" y="206" text-anchor="middle" class="lbl-b">3</text>
-    <text x="104" y="207" class="lbl-sm">The House Style Is a Skill</text>
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="50" y="250" width="38" height="38" rx="7"/></g>
-    <text x="69" y="276" text-anchor="middle" class="lbl-b">4</text>
-    <text x="104" y="277" class="lbl-sm">Build It Test-First</text>
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="50" y="320" width="38" height="38" rx="7"/></g>
-    <text x="69" y="346" text-anchor="middle" class="lbl-b">5</text>
-    <text x="104" y="347" class="lbl-sm">Plan Is Safe. Apply Is Not.</text>
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="580" y="40" width="38" height="38" rx="7"/></g>
-    <text x="599" y="66" text-anchor="middle" class="lbl-b">6</text>
-    <text x="634" y="67" class="lbl-sm">Match the Model to the Job</text>
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="580" y="110" width="38" height="38" rx="7"/></g>
-    <text x="599" y="136" text-anchor="middle" class="lbl-b">7</text>
-    <text x="634" y="137" class="lbl-sm">A Review Chain Checks the Plan</text>
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="580" y="180" width="38" height="38" rx="7"/></g>
-    <text x="599" y="206" text-anchor="middle" class="lbl-b">8</text>
-    <text x="634" y="207" class="lbl-sm">Refactor It Safely</text>
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="580" y="250" width="38" height="38" rx="7"/></g>
-    <text x="599" y="276" text-anchor="middle" class="lbl-b">9</text>
-    <text x="634" y="277" class="lbl-sm">A Good Refusal Is Not a Control</text>
+  <p class="s">three chapters, then you build the thing</p>
+  <svg viewBox="0 0 1100 400" role="img" aria-label="A numbered contents list of the three chapters: the project and who does which part, the five tools and the question each answers, and superpowers, the skills library the agent works through.">
+    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="120" y="90" width="52" height="52" rx="8"/></g>
+    <text x="146" y="125" text-anchor="middle" class="lbl-b">1</text>
+    <text x="200" y="116" class="lbl-b">The Project</text>
+    <text x="200" y="148" class="lbl-sm">what we build, and who does which part</text>
+    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="120" y="190" width="52" height="52" rx="8"/></g>
+    <text x="146" y="225" text-anchor="middle" class="lbl-b">2</text>
+    <text x="200" y="216" class="lbl-b">The Tools</text>
+    <text x="200" y="248" class="lbl-sm">five of them, one question each</text>
+    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="120" y="290" width="52" height="52" rx="8"/></g>
+    <text x="146" y="325" text-anchor="middle" class="lbl-b">3</text>
+    <text x="200" y="316" class="lbl-b">Superpowers</text>
+    <text x="200" y="348" class="lbl-sm">the skills library the agent works through</text>
   </svg>
   <div class="pageno">M11&middot;02</div>
 </section>
 <section class="divider">
-  <h2 class="t">The Project and the Tools</h2>
-  <p class="s">what we are building, and why each tool is here</p>
+  <h2 class="t">The Project</h2>
+  <p class="s">what we are building, and who does which part</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A hand-drawn scene: the orders database with a new read replica beside it, an alarm above it, and a notification going out to an engineer.">
   <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><ellipse cx="140" cy="110" rx="42.0" ry="13" class="f-blue"/><path d="M98.0,110 L98.0,202 A42.0,13 0 0 0 182.0,202 L182.0,110" class="f-blue"/><ellipse cx="140" cy="110" rx="42.0" ry="13" class="f-blue"/></g><text x="140" y="236" text-anchor="middle" class="lbl-sm">orders db</text><text x="140" y="260" text-anchor="middle" class="lbl-g">under read load</text>
   <g fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round"><path d="M200,156 L286,156" marker-end="url(#ah)"/></g>
@@ -216,7 +202,7 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 <section>
   <h2 class="t">The job: read capacity before the campaign</h2>
-  <p class="s">nine days out, and the database is already most of the bill</p>
+  <p class="s">nine days out, and the database is most of the bill</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="The orders database under read load, costing 189 dollars 80 a month out of an infrastructure total of 301 dollars 97, needing a read replica plus an alarm.">
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="80" y="70" width="380" height="190" rx="14" class="f-red"/></g>
     <text x="270" y="130" text-anchor="middle" class="lbl-b">orders database</text>
@@ -250,7 +236,69 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M11&middot;05</div>
 </section>
 <section>
-  <h2 class="t">The tools, and why each one is here</h2>
+  <h2 class="t">How the work flows</h2>
+  <p class="s">spec, build, verify, review, refactor, merge</p>
+  <svg viewBox="0 0 1100 300" role="img" aria-label="The project flow: spec, then test, then the role builds, then verify, then review, then refactor, then merge.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="30" y="60" width="180" height="90" rx="10" class="f-blue"/></g>
+    <text x="120" y="112" text-anchor="middle" class="lbl-sm">you: the brief</text>
+    <g fill="none" stroke="#757575" stroke-width="2" stroke-linecap="round"><path d="M216,105 L244,105" marker-end="url(#ahg)"/></g>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="250" y="60" width="180" height="90" rx="10" class="f-blue"/></g>
+    <text x="340" y="112" text-anchor="middle" class="lbl-sm">harness: test first</text>
+    <g fill="none" stroke="#757575" stroke-width="2" stroke-linecap="round"><path d="M436,105 L464,105" marker-end="url(#ahg)"/></g>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="470" y="60" width="200" height="90" rx="10" class="f-purple"/></g>
+    <text x="570" y="112" text-anchor="middle" class="lbl-sm">the role builds</text>
+    <g fill="none" stroke="#757575" stroke-width="2" stroke-linecap="round"><path d="M676,105 L704,105" marker-end="url(#ahg)"/></g>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="710" y="60" width="180" height="90" rx="10" class="f-green"/></g>
+    <text x="800" y="112" text-anchor="middle" class="lbl-sm">verify + review</text>
+    <g fill="none" stroke="#757575" stroke-width="2" stroke-linecap="round"><path d="M896,105 L924,105" marker-end="url(#ahg)"/></g>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="930" y="60" width="140" height="90" rx="10" class="f-orange"/></g>
+    <text x="1000" y="112" text-anchor="middle" class="lbl-sm">merge</text>
+    <text x="550" y="230" text-anchor="middle" class="lbl-g">the agent never runs apply at any point in this flow</text>
+  </svg>
+  <div class="pageno">M11&middot;06</div>
+</section>
+<section>
+  <h2 class="t">What you own, and what the agent owns</h2>
+  <p class="s">you keep the two parts that govern the outcome</p>
+  <svg viewBox="0 0 1180 400" role="img" aria-label="Two panels. On the left, what you own: the eleven-line brief that says what is needed, and the verification that says whether you got it. On the right, what the agent owns: the design, the plan, the failing test, and the code that passes it.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="50" y="60" width="470" height="280" rx="14" class="f-purple"/></g>
+    <text x="285" y="112" text-anchor="middle" class="lbl-b">you own</text>
+    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="90" y="140" width="390" height="70" rx="10"/><rect x="90" y="232" width="390" height="70" rx="10"/></g>
+    <text x="285" y="172" text-anchor="middle" class="lbl">the brief</text>
+    <text x="285" y="200" text-anchor="middle" class="lbl-sm">eleven lines of what is needed</text>
+    <text x="285" y="264" text-anchor="middle" class="lbl">the verification</text>
+    <text x="285" y="292" text-anchor="middle" class="lbl-sm">whether you actually got it</text>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="660" y="60" width="470" height="280" rx="14" class="f-blue"/></g>
+    <text x="895" y="112" text-anchor="middle" class="lbl-b">the agent owns</text>
+    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="700" y="140" width="180" height="58" rx="10"/><rect x="910" y="140" width="180" height="58" rx="10"/><rect x="700" y="228" width="180" height="58" rx="10"/><rect x="910" y="228" width="180" height="58" rx="10"/></g>
+    <text x="790" y="176" text-anchor="middle" class="lbl">the design</text>
+    <text x="1000" y="176" text-anchor="middle" class="lbl">the plan</text>
+    <text x="790" y="264" text-anchor="middle" class="lbl">the failing test</text>
+    <text x="1000" y="264" text-anchor="middle" class="lbl">the code</text>
+    <g fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round"><path d="M534,200 L646,200" marker-end="url(#ahg)"/></g>
+    <text x="590" y="182" text-anchor="middle" class="lbl-sm">hand off</text>
+  </svg>
+  <p class="recap fragment">Next: the tools &mdash; five of them, and the question each one answers.</p>
+  <div class="pageno">M11&middot;07</div>
+</section>
+<section class="divider">
+  <h2 class="t">The Tools</h2>
+  <p class="s">five of them, and the boundary they add up to</p>
+  <svg viewBox="0 0 1100 340" role="img" aria-label="A hand-drawn scene: on the left an engineer reading a drawing, changing nothing; on the right a digger tearing up real ground.">
+  <g transform="translate(140,160) scale(1.05)" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><circle cx="0" cy="-34" r="14"/><path d="M0,-20 L0,16"/><path d="M0,-10 L-18,6"/><path d="M0,-10 L18,4"/><path d="M0,16 L-13,44"/><path d="M0,16 L13,44"/></g>
+  <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><path d="M230,90 L354,90 L380,116 L380,250 L230,250 Z" class="f-green"/></g><g fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M248,136 L358,136"/><path d="M248,160 L358,160"/><path d="M248,184 L358,184"/><path d="M248,208 L358,208"/></g><text x="305.0" y="280" text-anchor="middle" class="lbl-sm">terraform plan</text>
+  <text x="305" y="296" text-anchor="middle" class="lbl-g">nothing has happened yet</text>
+  <g fill="none" stroke="#757575" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 10"><path d="M550,40 L550,300"/></g>
+  <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="660" y="150" width="150" height="80" rx="8" class="f-red"/><circle cx="700" cy="248" r="26" class="f-red"/><circle cx="790" cy="248" r="26" class="f-red"/></g>
+  <g fill="none" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round"><path d="M810,166 L892,120"/><path d="M892,120 L940,168"/></g>
+  <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><path d="M918,168 L968,168 L980,210 L906,210 Z" class="f-red"/></g>
+  <g fill="none" stroke="#757575" stroke-width="2.6" stroke-linecap="round"><path d="M640,292 L1040,292"/></g>
+  <text x="820" y="322" text-anchor="middle" class="lbl-sm">terraform apply</text>
+</svg>
+  <div class="pageno">M11&middot;08</div>
+</section>
+<section>
+  <h2 class="t">Five tools, one question each</h2>
   <p class="s">every tool answers one question</p>
   <svg viewBox="0 0 1100 400" role="img" aria-label="Five tool choices, each with the question it answers: Terraform module, terraform test with mock provider, git worktree, superpowers, and the iac-engineer role.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="60" y="30" width="980" height="62" rx="10"/></g>
@@ -269,165 +317,136 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="90" y="346" class="lbl-sm">the iac-engineer role</text>
     <text x="520" y="346" class="lbl-g">so it can write HCL and cannot run apply</text>
   </svg>
-  <div class="pageno">M11&middot;06</div>
-</section>
-<section>
-  <h2 class="t">How the work flows</h2>
-  <p class="s">you write the brief; the harness does the rest, and you verify it</p>
-  <svg viewBox="0 0 1100 300" role="img" aria-label="The project flow: spec, then test, then the role builds, then verify, then review, then refactor, then merge.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="30" y="60" width="180" height="90" rx="10" class="f-blue"/></g>
-    <text x="120" y="112" text-anchor="middle" class="lbl-sm">you: the brief</text>
-    <g fill="none" stroke="#757575" stroke-width="2" stroke-linecap="round"><path d="M216,105 L244,105" marker-end="url(#ahg)"/></g>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="250" y="60" width="180" height="90" rx="10" class="f-blue"/></g>
-    <text x="340" y="112" text-anchor="middle" class="lbl-sm">harness: test first</text>
-    <g fill="none" stroke="#757575" stroke-width="2" stroke-linecap="round"><path d="M436,105 L464,105" marker-end="url(#ahg)"/></g>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="470" y="60" width="200" height="90" rx="10" class="f-purple"/></g>
-    <text x="570" y="112" text-anchor="middle" class="lbl-sm">the role builds</text>
-    <g fill="none" stroke="#757575" stroke-width="2" stroke-linecap="round"><path d="M676,105 L704,105" marker-end="url(#ahg)"/></g>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="710" y="60" width="180" height="90" rx="10" class="f-green"/></g>
-    <text x="800" y="112" text-anchor="middle" class="lbl-sm">verify + review</text>
-    <g fill="none" stroke="#757575" stroke-width="2" stroke-linecap="round"><path d="M896,105 L924,105" marker-end="url(#ahg)"/></g>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="930" y="60" width="140" height="90" rx="10" class="f-orange"/></g>
-    <text x="1000" y="112" text-anchor="middle" class="lbl-sm">merge</text>
-    <text x="550" y="230" text-anchor="middle" class="lbl-g">the agent never runs apply at any point in this flow</text>
-  </svg>
-  <p class="recap fragment">You own the brief and the verification. That is what makes the rest reviewable.</p>
-  <div class="pageno">M11&middot;07</div>
-</section>
-<section class="divider">
-  <h2 class="t">Write the Spec, Then Let the Agent Build</h2>
-  <p class="s">you write down what you want, before you ask for it</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="A hand-drawn scene: an engineer writing a short brief on a page, and handing it across to the agent which begins building from it.">
-  <g transform="translate(150,150) scale(1.1)" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><circle cx="0" cy="-34" r="14"/><path d="M0,-20 L0,16"/><path d="M0,-10 L-18,6"/><path d="M0,-10 L18,4"/><path d="M0,16 L-13,44"/><path d="M0,16 L13,44"/></g><text x="150" y="218" text-anchor="middle" class="lbl-sm">you</text>
-  <g fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round"><path d="M212,150 L268,150" marker-end="url(#ah)"/></g>
-  <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><path d="M290,80 L384,80 L410,106 L410,230 L290,230 Z" class="f-blue"/></g><g fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M308,126 L388,126"/><path d="M308,150 L388,150"/><path d="M308,174 L388,174"/><path d="M308,198 L388,198"/></g><text x="350.0" y="260" text-anchor="middle" class="lbl-sm">SPEC.md — eleven lines</text>
-  <g fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round"><path d="M432,155 L520,155" marker-end="url(#ah)"/></g>
-  <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="545" y="88" width="230" height="140" rx="16" class="f-purple"/></g>
-  <text x="660" y="150" text-anchor="middle" class="lbl-b">the agent</text>
-  <text x="660" y="186" text-anchor="middle" class="lbl-sm">reads it, then builds</text>
-  <g fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round"><path d="M788,158 L866,158" marker-end="url(#ahg)"/></g>
-  <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><path d="M880,92 L964,92 L990,118 L990,222 L880,222 Z" class="f-green"/></g><g fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M898,138 L968,138"/><path d="M898,162 L968,162"/><path d="M898,186 L968,186"/></g><text x="935.0" y="252" text-anchor="middle" class="lbl-sm">the module</text>
-</svg>
-  <div class="pageno">M11&middot;08</div>
-</section>
-<section>
-  <h2 class="t">The brief is the real decision</h2>
-  <p class="s">why, what is needed, what is not negotiable — eleven lines</p>
-  <svg viewBox="0 0 1100 360" role="img" aria-label="A spec file listing what the module builds, its variables and outputs, the exact AWS names that are easy to get wrong, and which style skill to follow.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="60" y="50" width="480" height="280" rx="14" class="f-blue"/></g>
-    <text x="300" y="95" text-anchor="middle" class="lbl-b">SPEC.md</text>
-    <text x="100" y="140" class="lbl-sm">- why we need it</text>
-    <text x="100" y="180" class="lbl-sm">- what it must do</text>
-    <text x="100" y="220" class="lbl-sm">- what is not negotiable</text>
-    <text x="100" y="260" class="lbl-sm">- which house-style skill to follow</text>
-    <g fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><path d="M560,190 L660,190" marker-end="url(#ah)"/></g>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="680" y="130" width="340" height="120" rx="12" class="f-purple"/></g>
-    <text x="850" y="200" text-anchor="middle" class="lbl-b">the agent builds it</text>
-  </svg>
   <div class="pageno">M11&middot;09</div>
 </section>
 <section>
-  <h2 class="t">A clear spec means nothing left to decide</h2>
-  <p class="s">thin spec, more questions — clear spec, straight to building</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="A thin spec leads to open questions before starting. A clear spec is called bounded and the agent goes straight to building.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="60" width="440" height="220" rx="12" class="f-red"/></g>
-    <text x="280" y="115" text-anchor="middle" class="lbl-b">thin spec</text>
-    <text x="280" y="165" text-anchor="middle" class="lbl">open questions come back</text>
-    <text x="280" y="200" text-anchor="middle" class="lbl">before anything is built</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="600" y="60" width="440" height="220" rx="12" class="f-green"/></g>
-    <text x="820" y="115" text-anchor="middle" class="lbl-b">clear spec</text>
-    <text x="820" y="165" text-anchor="middle" class="lbl">the agent calls it "bounded"</text>
-    <text x="820" y="200" text-anchor="middle" class="lbl">and goes straight to building</text>
+  <h2 class="t">Test it with no cloud account</h2>
+  <p class="s">the module is verified before it is ever applied</p>
+  <svg viewBox="0 0 1180 400" role="img" aria-label="On the left a real AWS account crossed out. In the middle, terraform test running the module against a mock provider. On the right, four test runs passing, showing the module is verified without any cloud account and without any money spent.">
+    <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2.2" stroke-dasharray="9 7"><rect x="40" y="120" width="250" height="150" rx="12"/></g>
+    <text x="165" y="172" text-anchor="middle" class="lbl-g">a real AWS account</text>
+    <text x="165" y="208" text-anchor="middle" class="lbl-sm">credentials, and a bill</text>
+    <text x="165" y="248" text-anchor="middle" class="lbl-bad">not used, not needed</text>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="360" y="110" width="330" height="170" rx="12" class="f-blue"/></g>
+    <text x="525" y="164" text-anchor="middle" class="lbl-b">terraform test</text>
+    <text x="525" y="206" text-anchor="middle" class="lbl-sm">mock provider</text>
+    <text x="525" y="246" text-anchor="middle" class="lbl-sm">answers as AWS would, for free</text>
+    <g fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round"><path d="M702,195 L778,195" marker-end="url(#ah)"/><path d="M302,195 L348,195" marker-end="url(#ahg)"/></g>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="790" y="86" width="320" height="52" rx="9" class="f-green"/><rect x="790" y="152" width="320" height="52" rx="9" class="f-green"/><rect x="790" y="218" width="320" height="52" rx="9" class="f-green"/><rect x="790" y="284" width="320" height="52" rx="9" class="f-green"/></g>
+    <text x="950" y="120" text-anchor="middle" class="lbl-sm">the replica is created</text>
+    <text x="950" y="186" text-anchor="middle" class="lbl-sm">the alarm watches lag</text>
+    <text x="950" y="252" text-anchor="middle" class="lbl-sm">the email is subscribed</text>
+    <text x="950" y="318" text-anchor="middle" class="lbl-sm">the names interpolate</text>
   </svg>
-  <p class="recap fragment">Write the spec first. Everything after this gets easier.</p>
   <div class="pageno">M11&middot;10</div>
 </section>
-<section class="divider">
-  <h2 class="t">The House Style Is a Skill</h2>
-  <p class="s">one file both the agent and your reviewers read</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="A hand-drawn scene: one rulebook open on a stand, with the agent reading it from one side and a human reviewer reading it from the other.">
-  <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="430" y="70" width="240" height="170" rx="10" class="f-purple"/></g>
-  <g fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><path d="M550,74 L550,236"/></g>
-  <g fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round">
-    <path d="M452,108 L532,108"/><path d="M452,140 L532,140"/><path d="M452,172 L516,172"/>
-    <path d="M568,108 L648,108"/><path d="M568,140 L648,140"/><path d="M568,172 L632,172"/>
-  </g>
-  <text x="550" y="272" text-anchor="middle" class="lbl-sm">terraform-style</text>
-  <text x="550" y="298" text-anchor="middle" class="lbl-g">written down once</text>
-  <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="120" y="105" width="180" height="100" rx="14" class="f-blue"/></g>
-  <text x="210" y="162" text-anchor="middle" class="lbl-sm">the agent</text>
-  <g fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round"><path d="M312,155 L412,155" marker-end="url(#ahg)"/></g>
-  <g fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round"><path d="M688,155 L788,155" marker-end="url(#ahg)"/></g>
-  <g transform="translate(880,150) scale(1.1)" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><circle cx="0" cy="-34" r="14"/><path d="M0,-20 L0,16"/><path d="M0,-10 L-18,6"/><path d="M0,-10 L18,4"/><path d="M0,16 L-13,44"/><path d="M0,16 L13,44"/></g><text x="880" y="218" text-anchor="middle" class="lbl-sm">the reviewer</text>
-</svg>
+<section>
+  <h2 class="t">The worktree is the risk boundary</h2>
+  <p class="s">you ask for it, the harness makes it, then you check</p>
+  <svg viewBox="0 0 1180 400" role="img" aria-label="On the left, your main branch checkout, untouched. A dashed wall separates it from a second checkout on the right, the worktree, where the agent builds with permission prompts turned off. Below the worktree, a note says that if the build goes wrong you delete the folder and nothing real was at risk.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="80" width="420" height="180" rx="14" class="f-green"/></g>
+    <text x="270" y="140" text-anchor="middle" class="lbl-b">your main checkout</text>
+    <text x="270" y="182" text-anchor="middle" class="lbl-sm">the agent never touches it</text>
+    <text x="270" y="220" text-anchor="middle" class="lbl-good">untouched</text>
+    <g fill="none" stroke="#757575" stroke-width="3" stroke-dasharray="12 10"><path d="M560,40 L562,360"/></g>
+    <text x="561" y="386" text-anchor="middle" class="lbl-g">the wall</text>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="650" y="80" width="450" height="180" rx="14" class="f-orange"/></g>
+    <text x="875" y="140" text-anchor="middle" class="lbl-b">the worktree</text>
+    <text x="875" y="182" text-anchor="middle" class="lbl-sm">a second checkout, its own branch</text>
+    <text x="875" y="220" text-anchor="middle" class="lbl-sm">the agent builds here, prompts off</text>
+    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="650" y="292" width="450" height="62" rx="10"/></g>
+    <text x="875" y="330" text-anchor="middle" class="lbl">if it goes wrong, you delete a folder</text>
+  </svg>
   <div class="pageno">M11&middot;11</div>
 </section>
 <section>
-  <h2 class="t">Names are built from a pattern, never typed by hand</h2>
-  <p class="s">so the module still works in the next environment</p>
-  <svg viewBox="0 0 1100 300" role="img" aria-label="A hardcoded resource name is wrong. A name built from project, environment and role variables is correct.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="60" width="440" height="120" rx="12" class="f-red"/></g>
-    <text x="280" y="105" text-anchor="middle" class="lbl-b">wrong</text>
-    <text x="280" y="148" text-anchor="middle" class="lbl-sm">"northstar-prod-db"</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="600" y="60" width="440" height="120" rx="12" class="f-green"/></g>
-    <text x="820" y="105" text-anchor="middle" class="lbl-b">correct</text>
-    <text x="820" y="148" text-anchor="middle" class="lbl-sm">"${var.project}-${var.environment}-db"</text>
-    <text x="550" y="245" text-anchor="middle" class="lbl-g">a hardcoded name is correct exactly once</text>
-  </svg>
-  <div class="pageno">M11&middot;12</div>
-</section>
-<section>
-  <h2 class="t">Some settings are never a caller's choice</h2>
-  <p class="s">encryption on, public access off — hardcoded, not variables</p>
-  <svg viewBox="0 0 1100 280" role="img" aria-label="Two security baselines shown as fixed settings rather than variables a caller could override.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="140" y="60" width="380" height="130" rx="12" class="f-green"/></g>
-    <text x="330" y="132" text-anchor="middle" class="lbl-b">storage_encrypted = true</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="580" y="60" width="380" height="130" rx="12" class="f-green"/></g>
-    <text x="770" y="132" text-anchor="middle" class="lbl-b">publicly_accessible = false</text>
-  </svg>
-  <p class="recap fragment">A guarantee written as a variable is a guarantee someone can turn off.</p>
-  <div class="pageno">M11&middot;13</div>
-</section>
-<section class="divider">
-  <h2 class="t">Build It Test-First, In a Worktree</h2>
-  <p class="s">dispatch the role, red then green, on its own branch</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="A hand-drawn scene: the main branch workspace on the left, and a separate walled-off worktree on the right where the agent builds, with a dashed wall between them.">
-  <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><path d="M90,80 L214,80 L240,106 L240,250 L90,250 Z" class="f-green"/></g><g fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M108,126 L218,126"/><path d="M108,150 L218,150"/><path d="M108,174 L218,174"/><path d="M108,198 L218,198"/></g><text x="165.0" y="280" text-anchor="middle" class="lbl-sm">main — untouched</text>
-  <g fill="none" stroke="#757575" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 10"><path d="M330,40 L330,300"/></g>
-  <text x="330" y="26" text-anchor="middle" class="lbl-g">a wall you can delete</text>
-  <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="400" y="70" width="600" height="190" rx="16" class="f-blue"/></g>
-  <text x="700" y="106" text-anchor="middle" class="lbl-b">the worktree</text>
-  <g transform="translate(500,190) scale(0.95)" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><circle cx="0" cy="-34" r="14"/><path d="M0,-20 L0,16"/><path d="M0,-10 L-18,6"/><path d="M0,-10 L18,4"/><path d="M0,16 L-13,44"/><path d="M0,16 L13,44"/></g>
-  <text x="500" y="250" text-anchor="middle" class="lbl-g">the role</text>
-  <g fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round"><path d="M546,170 L612,170" marker-end="url(#ahg)"/></g>
-  <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><path d="M630,120 L714,120 L740,146 L740,230 L630,230 Z" class="f-red"/></g><g fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M648,166 L718,166"/><path d="M648,190 L718,190"/></g><text x="685.0" y="260" text-anchor="middle" class="lbl-sm">RED</text>
-  <g fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round"><path d="M752,172 L806,172" marker-end="url(#ahg)"/></g>
-  <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><path d="M820,120 L904,120 L930,146 L930,230 L820,230 Z" class="f-green"/></g><g fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M838,166 L908,166"/><path d="M838,190 L908,190"/></g><text x="875.0" y="260" text-anchor="middle" class="lbl-sm">GREEN</text>
-</svg>
-  <div class="pageno">M11&middot;14</div>
-</section>
-<section>
-  <h2 class="t">The harness writes the test. Then makes it pass.</h2>
-  <p class="s">a stronger test than you would have written by hand</p>
-  <svg viewBox="0 0 1100 280" role="img" aria-label="A red box showing the test failing, an arrow to a green box showing just enough code written to pass it.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="80" y="60" width="380" height="150" rx="14" class="f-red"/></g>
-    <text x="270" y="120" text-anchor="middle" class="lbl-b">RED</text>
-    <text x="270" y="158" text-anchor="middle" class="lbl-sm">the test fails</text>
-    <g fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><path d="M470,135 L620,135" marker-end="url(#ah)"/></g>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="640" y="60" width="380" height="150" rx="14" class="f-green"/></g>
-    <text x="830" y="120" text-anchor="middle" class="lbl-b">GREEN</text>
-    <text x="830" y="158" text-anchor="middle" class="lbl-sm">just enough code to pass</text>
-  </svg>
-  <div class="pageno">M11&middot;15</div>
-</section>
-<section>
-  <h2 class="t">Launch as the role, not just a session</h2>
-  <p class="s">claude --agent iac-engineer</p>
+  <h2 class="t">The role writes HCL and cannot apply</h2>
+  <p class="s">plan changes nothing; apply is the one you cannot undo</p>
   <svg viewBox="0 0 1100 300" role="img" aria-label="The iac-engineer role can write under infra and run plan, validate and fmt, but has no way to run apply.">
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="80" y="50" width="940" height="200" rx="14" class="f-blue"/></g>
     <text x="550" y="100" text-anchor="middle" class="lbl-b">iac-engineer</text>
     <text x="550" y="150" text-anchor="middle" class="lbl-sm">can write under infra/ &nbsp;&middot;&nbsp; can run plan, validate, fmt</text>
     <text x="550" y="196" text-anchor="middle" class="lbl-bad">cannot run apply at all</text>
+  </svg>
+  <p class="recap fragment">Next: superpowers &mdash; the skills library the agent works through.</p>
+  <div class="pageno">M11&middot;12</div>
+</section>
+<section class="divider">
+  <h2 class="t">Superpowers</h2>
+  <p class="s">the skills library that turns output into method</p>
+  <svg viewBox="0 0 1180 420" role="img" aria-label="A hand-drawn scene: a shelf holding a row of written method cards, labelled brainstorm, plan, test and verify, with an agent standing beside it reaching up to take one down before starting work.">
+    <g fill="none" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round"><path d="M360,150 L1120,152"/><path d="M360,262 L1120,264"/><path d="M380,150 L380,264"/><path d="M1100,150 L1100,264"/></g>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="410" y="66" width="86" height="82" rx="6" class="f-blue"/><rect x="516" y="60" width="86" height="88" rx="6" class="f-green"/><rect x="622" y="70" width="86" height="78" rx="6" class="f-purple"/><rect x="728" y="62" width="86" height="86" rx="6" class="f-orange"/><rect x="834" y="68" width="86" height="80" rx="6" class="f-blue"/><rect x="940" y="64" width="86" height="84" rx="6" class="f-green"/></g>
+    <text x="453" y="180" text-anchor="middle" class="lbl-sm">brainstorm</text>
+    <text x="559" y="180" text-anchor="middle" class="lbl-sm">plan</text>
+    <text x="665" y="180" text-anchor="middle" class="lbl-sm">test</text>
+    <text x="771" y="180" text-anchor="middle" class="lbl-sm">verify</text>
+    <text x="877" y="180" text-anchor="middle" class="lbl-sm">debug</text>
+    <text x="983" y="180" text-anchor="middle" class="lbl-sm">review</text>
+    <text x="718" y="234" text-anchor="middle" class="lbl-g">fourteen written methods, on a shelf</text>
+    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><circle cx="180" cy="130" r="30"/></g>
+    <g fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><path d="M180,160 L180,268"/><path d="M180,190 L128,238"/><path d="M180,186 L272,146"/><path d="M180,268 L142,346"/><path d="M180,268 L220,346"/></g>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="278" y="112" width="70" height="66" rx="6" class="f-green"/></g>
+    <text x="180" y="392" text-anchor="middle" class="lbl">the agent</text>
+  </svg>
+  <div class="pageno">M11&middot;13</div>
+</section>
+<section>
+  <h2 class="t">What superpowers is</h2>
+  <p class="s">a library of working methods, not more instructions</p>
+  <svg viewBox="0 0 1180 400" role="img" aria-label="Superpowers shown as a Claude Code plugin from the open-source repository obra slash superpowers, installed once earlier in this course. It contains fourteen process skills, one SessionStart hook and zero agents. Named skills include brainstorming, writing plans, test-driven development, using git worktrees, systematic debugging and verification before completion.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="60" y="50" width="1060" height="300" rx="16" class="f-purple"/></g>
+    <text x="590" y="102" text-anchor="middle" class="lbl-b">superpowers &mdash; a Claude Code plugin</text>
+    <text x="590" y="136" text-anchor="middle" class="lbl-sm">open source, github.com/obra/superpowers &nbsp;&middot;&nbsp; installed once, earlier in this course</text>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="110" y="168" width="290" height="70" rx="10" class="f-green"/><rect x="445" y="168" width="290" height="70" rx="10" class="f-blue"/><rect x="780" y="168" width="290" height="70" rx="10" fill="#ffffff"/></g>
+    <text x="255" y="200" text-anchor="middle" class="num">14</text>
+    <text x="255" y="228" text-anchor="middle" class="lbl-sm">process skills</text>
+    <text x="590" y="200" text-anchor="middle" class="num">1</text>
+    <text x="590" y="228" text-anchor="middle" class="lbl-sm">SessionStart hook</text>
+    <text x="925" y="200" text-anchor="middle" class="num">0</text>
+    <text x="925" y="228" text-anchor="middle" class="lbl-sm">agents of its own</text>
+    <text x="590" y="286" text-anchor="middle" class="lbl">brainstorming &nbsp;&middot;&nbsp; writing-plans &nbsp;&middot;&nbsp; test-driven-development</text>
+    <text x="590" y="322" text-anchor="middle" class="lbl">using-git-worktrees &nbsp;&middot;&nbsp; systematic-debugging &nbsp;&middot;&nbsp; and nine more</text>
+  </svg>
+  <div class="pageno">M11&middot;14</div>
+</section>
+<section>
+  <h2 class="t">How it fires</h2>
+  <p class="s">a hook at the start, a skill before the work</p>
+  <svg viewBox="0 0 1180 400" role="img" aria-label="The chain by which superpowers fires. A SessionStart hook loads the using-superpowers skill at the start of every session. That skill makes the agent check for a matching skill before it acts. It then invokes the skill through the Skill tool, which runs brainstorming, then writing plans, then the red and green cycle of test-driven development.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="40" y="70" width="240" height="96" rx="12" class="f-purple"/><rect x="340" y="70" width="240" height="96" rx="12" class="f-purple"/><rect x="640" y="70" width="240" height="96" rx="12" class="f-orange"/></g>
+    <text x="160" y="110" text-anchor="middle" class="lbl-b">SessionStart hook</text>
+    <text x="160" y="142" text-anchor="middle" class="lbl-sm">fires on every session</text>
+    <text x="460" y="110" text-anchor="middle" class="lbl-b">using-superpowers</text>
+    <text x="460" y="142" text-anchor="middle" class="lbl-sm">check for a skill first</text>
+    <text x="760" y="110" text-anchor="middle" class="lbl-b">the Skill tool</text>
+    <text x="760" y="142" text-anchor="middle" class="lbl-sm">this is how one runs</text>
+    <g fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><path d="M292,118 L328,118" marker-end="url(#ah)"/><path d="M592,118 L628,118" marker-end="url(#ah)"/><path d="M760,178 L760,222" marker-end="url(#ah)"/></g>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="230" y="234" width="250" height="66" rx="10" class="f-blue"/><rect x="510" y="234" width="250" height="66" rx="10" class="f-blue"/><rect x="790" y="234" width="250" height="66" rx="10" class="f-green"/></g>
+    <text x="355" y="274" text-anchor="middle" class="lbl">brainstorming</text>
+    <text x="635" y="274" text-anchor="middle" class="lbl">writing-plans</text>
+    <text x="915" y="274" text-anchor="middle" class="lbl">red, then green</text>
+    <g fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M492,267 L500,267" marker-end="url(#ahg)"/><path d="M772,267 L780,267" marker-end="url(#ahg)"/></g>
+    <text x="590" y="348" text-anchor="middle" class="lbl-g">the design comes back to you before any code exists</text>
+  </svg>
+  <div class="pageno">M11&middot;15</div>
+</section>
+<section>
+  <h2 class="t">What you type, and what you check</h2>
+  <p class="s">ask in plain words, then confirm you got it</p>
+  <svg viewBox="0 0 1180 400" role="img" aria-label="On the left, what you type: a plain-words request to brainstorm the design, write a plan and work test-driven, with a note that you never name a skill. On the right, what you check afterwards: run git worktree list to confirm the isolation you asked for actually exists.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="50" y="60" width="500" height="280" rx="14" class="f-blue"/></g>
+    <text x="300" y="112" text-anchor="middle" class="lbl-b">what you type</text>
+    <text x="300" y="164" text-anchor="middle" class="lbl">&ldquo;brainstorm the design,</text>
+    <text x="300" y="200" text-anchor="middle" class="lbl">write a plan,</text>
+    <text x="300" y="236" text-anchor="middle" class="lbl">then work test-driven&rdquo;</text>
+    <text x="300" y="296" text-anchor="middle" class="lbl-g">plain words &mdash; never a skill name</text>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="630" y="60" width="500" height="280" rx="14" class="f-green"/></g>
+    <text x="880" y="112" text-anchor="middle" class="lbl-b">what you check</text>
+    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="680" y="150" width="400" height="66" rx="10"/></g>
+    <text x="880" y="192" text-anchor="middle" class="lbl">git worktree list</text>
+    <text x="880" y="262" text-anchor="middle" class="lbl-sm">it says it made a worktree</text>
+    <text x="880" y="298" text-anchor="middle" class="lbl-g">sometimes it only said so</text>
   </svg>
   <div class="pageno">M11&middot;16</div>
 </section>
@@ -446,343 +465,85 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="820" y="194" text-anchor="middle" class="lbl">with the method attached</text>
     <text x="820" y="240" text-anchor="middle" class="lbl-good">brainstorm, plan, red, green</text></g>
   </svg>
+  <p class="recap fragment">Next: the four things to watch for while you build.</p>
   <div class="pageno">M11&middot;17</div>
 </section>
 <section>
-  <h2 class="t">The harness, running inside the role</h2>
-  <p class="s">four skills fired, in order, before the code was finished</p>
-  <svg viewBox="0 0 1100 260" role="img" aria-label="Four skills fired in sequence: brainstorming, the terraform style skill, writing plans, and test-driven development.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="30" y="70" width="240" height="120" rx="10" class="f-purple"/></g>
-    <text x="150" y="138" text-anchor="middle" class="lbl-sm">brainstorming</text>
-    <g fill="none" stroke="#757575" stroke-width="2" stroke-linecap="round"><path d="M276,130 L300,130" marker-end="url(#ahg)"/></g>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="306" y="70" width="240" height="120" rx="10" class="f-purple"/></g>
-    <text x="426" y="138" text-anchor="middle" class="lbl-sm">terraform-style</text>
-    <g fill="none" stroke="#757575" stroke-width="2" stroke-linecap="round"><path d="M552,130 L576,130" marker-end="url(#ahg)"/></g>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="582" y="70" width="240" height="120" rx="10" class="f-purple"/></g>
-    <text x="702" y="138" text-anchor="middle" class="lbl-sm">writing-plans</text>
-    <g fill="none" stroke="#757575" stroke-width="2" stroke-linecap="round"><path d="M828,130 L852,130" marker-end="url(#ahg)"/></g>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="858" y="70" width="212" height="120" rx="10" class="f-purple"/></g>
-    <text x="964" y="138" text-anchor="middle" class="lbl-sm">test-driven</text>
+  <h2 class="t">What to watch for while you build</h2>
+  <p class="s">four flags, and what each one means</p>
+  <svg viewBox="0 0 1180 400" role="img" aria-label="Four flags revealed one at a time: Skill missing from the role gives you a good module with no method behind it; a worktree that was promised but not made needs one more ask; every test passing after a refactor is not proof the refactor happened; and an agent refusing a bad change is a choice, not a control.">
+    <g class="fragment" data-fragment-index="1">
+      <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.2"><circle cx="90" cy="72" r="22"/></g>
+      <text x="90" y="82" text-anchor="middle" class="lbl-b">1</text>
+      <text x="146" y="68" class="lbl-b">Skill is missing from the role</text>
+      <text x="146" y="102" class="lbl-sm">you get a good module with no method behind it</text>
+    </g>
+    <g class="fragment" data-fragment-index="2">
+      <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.2"><circle cx="90" cy="158" r="22"/></g>
+      <text x="90" y="168" text-anchor="middle" class="lbl-b">2</text>
+      <text x="146" y="154" class="lbl-b">the worktree was promised, not made</text>
+      <text x="146" y="188" class="lbl-sm">ask again; it finishes the job</text>
+    </g>
+    <g class="fragment" data-fragment-index="3">
+      <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.2"><circle cx="90" cy="244" r="22"/></g>
+      <text x="90" y="254" text-anchor="middle" class="lbl-b">3</text>
+      <text x="146" y="240" class="lbl-b">every test passes after a refactor</text>
+      <text x="146" y="274" class="lbl-sm">that is not proof the refactor happened</text>
+    </g>
+    <g class="fragment" data-fragment-index="4">
+      <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.2"><circle cx="90" cy="330" r="22"/></g>
+      <text x="90" y="340" text-anchor="middle" class="lbl-b">4</text>
+      <text x="146" y="326" class="lbl-b">the agent refuses a bad change</text>
+      <text x="146" y="360" class="lbl-sm">a refusal is a choice, not a control</text>
+    </g>
   </svg>
   <div class="pageno">M11&middot;18</div>
 </section>
 <section>
-  <h2 class="t">Prompts off is safe because of the worktree</h2>
-  <p class="s">you ask for it, the harness makes it, then you check</p>
-  <svg viewBox="0 0 1100 240" role="img" aria-label="The worktree can simply be deleted if the build goes wrong.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="300" y="50" width="500" height="130" rx="14" class="f-blue"/></g>
-    <text x="550" y="105" text-anchor="middle" class="lbl-b">worktree</text>
-    <text x="550" y="145" text-anchor="middle" class="lbl-sm">if it goes wrong, delete it</text>
+  <h2 class="t">What you will do as part of the lab</h2>
+  <p class="s">six steps, and a module you can reuse</p>
+  <svg viewBox="0 0 1430 220" role="img" aria-label="Six lab steps revealed one at a time: write the eleven-line brief with no design in it, build in a worktree as the iac-engineer role, watch the failing test go green, run the plan through the four-check review chain, refactor the module and find what stayed green when it should not have, and break it by hand with no model in the loop.">
+    <g class="fragment" data-fragment-index="1" transform="translate(30,0)">
+      <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2" stroke-dasharray="8 7"><rect x="0" y="10" width="140" height="100" rx="10"/></g>
+      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="44" y="24" width="52" height="64" rx="6" class="f-purple"/></g><g fill="none" stroke="#757575" stroke-width="2"><path d="M56,44 L84,44"/><path d="M56,58 L84,58"/><path d="M56,72 L76,72"/></g>
+      <text x="70" y="150" text-anchor="middle" class="lbl-b">write the brief</text>
+      <text x="70" y="182" text-anchor="middle" class="lbl-sm">eleven lines, no design</text>
+    </g>
+    <g class="fragment" data-fragment-index="2" transform="translate(275,0)">
+      <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2" stroke-dasharray="8 7"><rect x="0" y="10" width="140" height="100" rx="10"/></g>
+      <g fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><path d="M40,88 L40,34"/><path d="M40,44 L96,44"/></g><g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><circle cx="100" cy="44" r="12" class="f-green"/></g>
+      <text x="70" y="150" text-anchor="middle" class="lbl-b">build in a worktree</text>
+      <text x="70" y="182" text-anchor="middle" class="lbl-sm">as the iac-engineer role</text>
+    </g>
+    <g class="fragment" data-fragment-index="3" transform="translate(520,0)">
+      <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2" stroke-dasharray="8 7"><rect x="0" y="10" width="140" height="100" rx="10"/></g>
+      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="26" y="34" width="40" height="48" rx="6" class="f-red"/><rect x="76" y="34" width="40" height="48" rx="6" class="f-green"/></g>
+      <text x="70" y="150" text-anchor="middle" class="lbl-b">watch red go green</text>
+      <text x="70" y="182" text-anchor="middle" class="lbl-sm">the harness writes the test</text>
+    </g>
+    <g class="fragment" data-fragment-index="4" transform="translate(765,0)">
+      <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2" stroke-dasharray="8 7"><rect x="0" y="10" width="140" height="100" rx="10"/></g>
+      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="28" y="30" width="84" height="56" rx="6" class="f-blue"/></g><g fill="none" stroke="#757575" stroke-width="2"><path d="M28,58 L112,58"/><path d="M70,30 L70,86"/></g>
+      <text x="70" y="150" text-anchor="middle" class="lbl-b">run the review chain</text>
+      <text x="70" y="182" text-anchor="middle" class="lbl-sm">four checks, one verdict</text>
+    </g>
+    <g class="fragment" data-fragment-index="5" transform="translate(1010,0)">
+      <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2" stroke-dasharray="8 7"><rect x="0" y="10" width="140" height="100" rx="10"/></g>
+      <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4"><rect x="30" y="30" width="54" height="54" rx="8"/><rect x="64" y="52" width="46" height="46" rx="8"/></g>
+      <text x="70" y="150" text-anchor="middle" class="lbl-b">refactor it</text>
+      <text x="70" y="182" text-anchor="middle" class="lbl-sm">and find what stayed green</text>
+    </g>
+    <g class="fragment" data-fragment-index="6" transform="translate(1255,0)">
+      <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2" stroke-dasharray="8 7"><rect x="0" y="10" width="140" height="100" rx="10"/></g>
+      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><path d="M70,26 L106,86 L34,86 Z" class="f-orange"/></g><text x="70" y="78" text-anchor="middle" class="lbl-b">!</text>
+      <text x="70" y="150" text-anchor="middle" class="lbl-b">break it by hand</text>
+      <text x="70" y="182" text-anchor="middle" class="lbl-sm">no model in the loop</text>
+    </g>
   </svg>
-  <p class="recap fragment">Ask for isolation, then run <tt>git worktree list</tt>. Do not assume you got it.</p>
   <div class="pageno">M11&middot;19</div>
 </section>
-<section class="divider">
-  <h2 class="t">Plan Is Safe. Apply Is Not.</h2>
-  <p class="s">one command changes nothing; the other changes everything</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="A hand-drawn scene: on the left an engineer reading a drawing, changing nothing; on the right a digger tearing up real ground.">
-  <g transform="translate(140,160) scale(1.05)" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><circle cx="0" cy="-34" r="14"/><path d="M0,-20 L0,16"/><path d="M0,-10 L-18,6"/><path d="M0,-10 L18,4"/><path d="M0,16 L-13,44"/><path d="M0,16 L13,44"/></g>
-  <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><path d="M230,90 L354,90 L380,116 L380,250 L230,250 Z" class="f-green"/></g><g fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M248,136 L358,136"/><path d="M248,160 L358,160"/><path d="M248,184 L358,184"/><path d="M248,208 L358,208"/></g><text x="305.0" y="280" text-anchor="middle" class="lbl-sm">terraform plan</text>
-  <text x="305" y="296" text-anchor="middle" class="lbl-g">nothing has happened yet</text>
-  <g fill="none" stroke="#757575" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 10"><path d="M550,40 L550,300"/></g>
-  <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="660" y="150" width="150" height="80" rx="8" class="f-red"/><circle cx="700" cy="248" r="26" class="f-red"/><circle cx="790" cy="248" r="26" class="f-red"/></g>
-  <g fill="none" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round"><path d="M810,166 L892,120"/><path d="M892,120 L940,168"/></g>
-  <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><path d="M918,168 L968,168 L980,210 L906,210 Z" class="f-red"/></g>
-  <g fill="none" stroke="#757575" stroke-width="2.6" stroke-linecap="round"><path d="M640,292 L1040,292"/></g>
-  <text x="820" y="322" text-anchor="middle" class="lbl-sm">terraform apply</text>
-</svg>
-  <div class="pageno">M11&middot;20</div>
-</section>
-<section>
-  <h2 class="t">A bad deploy rolls back. A dropped database does not.</h2>
-  <p class="s">infrastructure mistakes are often permanent</p>
-  <svg viewBox="0 0 1100 300" role="img" aria-label="Recreating a web server is a non-event. Recreating a database destroys the data inside it.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="60" width="440" height="180" rx="12" class="f-green"/></g>
-    <text x="280" y="125" text-anchor="middle" class="lbl-b">web server recreated</text>
-    <text x="280" y="168" text-anchor="middle" class="lbl-sm">a non-event</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="3"><rect x="600" y="60" width="440" height="180" rx="12" class="f-red"/></g>
-    <text x="820" y="125" text-anchor="middle" class="lbl-b">database recreated</text>
-    <text x="820" y="168" text-anchor="middle" class="lbl-sm">the data is gone</text>
-  </svg>
-  <div class="pageno">M11&middot;21</div>
-</section>
-<section>
-  <h2 class="t">The gate blocks apply and destroy on production</h2>
-  <p class="s">plan, validate and fmt stay completely free</p>
-  <svg viewBox="0 0 1100 320" role="img" aria-label="Allowed: plan, validate and fmt. Blocked, revealed as a fragment: apply and destroy on production.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="80" y="60" width="460" height="200" rx="12" class="f-green"/></g>
-    <text x="310" y="115" text-anchor="middle" class="lbl-b">allowed</text>
-    <text x="310" y="165" text-anchor="middle" class="lbl-sm">plan &middot; validate &middot; fmt</text>
-    <g class="fragment"><g filter="url(#rough)" stroke="#1e1e1e" stroke-width="3"><rect x="560" y="60" width="460" height="200" rx="12" class="f-red"/></g>
-    <text x="790" y="115" text-anchor="middle" class="lbl-b">blocked on production</text>
-    <text x="790" y="165" text-anchor="middle" class="lbl-sm">apply &middot; destroy</text></g>
-  </svg>
-  <div class="pageno">M11&middot;22</div>
-</section>
-<section>
-  <h2 class="t">Turning off prompts does not turn off the answer</h2>
-  <p class="s">this check runs before the permission prompt, every time</p>
-  <svg viewBox="0 0 1100 260" role="img" aria-label="Three results: production apply denied, production plan allowed, development apply allowed.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="30" y="60" width="330" height="140" rx="10" class="f-red"/></g>
-    <text x="195" y="120" text-anchor="middle" class="lbl-sm">prod apply</text>
-    <text x="195" y="155" text-anchor="middle" class="lbl-b">denied</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="390" y="60" width="330" height="140" rx="10" class="f-green"/></g>
-    <text x="555" y="120" text-anchor="middle" class="lbl-sm">prod plan</text>
-    <text x="555" y="155" text-anchor="middle" class="lbl-b">allowed</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="750" y="60" width="330" height="140" rx="10" class="f-green"/></g>
-    <text x="915" y="120" text-anchor="middle" class="lbl-sm">dev apply</text>
-    <text x="915" y="155" text-anchor="middle" class="lbl-b">allowed</text>
-  </svg>
-  <p class="recap fragment">The rule names environments, not the apply command.</p>
-  <div class="pageno">M11&middot;23</div>
-</section>
-<section class="divider">
-  <h2 class="t">Match the Model to the Job</h2>
-  <p class="s">the same instinct you use for picking an instance size</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="A hand-drawn scene: three tools of increasing size hanging on a wall, each labelled with the kind of job it suits.">
-  <g fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round"><path d="M80,70 L1020,70"/></g>
-  <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="190" y="90" width="26" height="80" rx="6" class="f-green"/><rect x="176" y="168" width="54" height="26" rx="6" class="f-green"/></g>
-  <text x="203" y="232" text-anchor="middle" class="lbl-sm">haiku</text>
-  <text x="203" y="258" text-anchor="middle" class="lbl-g">compare two numbers</text>
-  <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="530" y="90" width="30" height="110" rx="6" class="f-blue"/><rect x="506" y="198" width="78" height="34" rx="6" class="f-blue"/></g>
-  <text x="545" y="266" text-anchor="middle" class="lbl-sm">sonnet</text>
-  <text x="545" y="292" text-anchor="middle" class="lbl-g">write the module</text>
-  <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="860" y="90" width="36" height="140" rx="6" class="f-purple"/><rect x="828" y="228" width="100" height="42" rx="8" class="f-purple"/></g>
-  <text x="878" y="304" text-anchor="middle" class="lbl-sm">opus</text>
-</svg>
-  <div class="pageno">M11&middot;24</div>
-</section>
-<section>
-  <h2 class="t">Authoring is judgment. Pricing is arithmetic.</h2>
-  <p class="s">Sonnet writes the HCL; Haiku compares two numbers</p>
-  <svg viewBox="0 0 1100 280" role="img" aria-label="Sonnet authors the module, a judgment task. Haiku prices the plan by comparing numbers to a threshold.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="80" y="70" width="440" height="160" rx="12" class="f-blue"/></g>
-    <text x="300" y="130" text-anchor="middle" class="lbl-b">sonnet authors</text>
-    <text x="300" y="168" text-anchor="middle" class="lbl-sm">judgment work</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="580" y="70" width="440" height="160" rx="12" class="f-green"/></g>
-    <text x="800" y="130" text-anchor="middle" class="lbl-b">haiku prices</text>
-    <text x="800" y="168" text-anchor="middle" class="lbl-sm">compare two numbers</text>
-  </svg>
-  <div class="pageno">M11&middot;25</div>
-</section>
-<section>
-  <h2 class="t">What the run actually cost</h2>
-  <p class="s">measured, not estimated</p>
-  <svg viewBox="0 0 1100 320" role="img" aria-label="The build cost 88 cents on Sonnet, the reviewer cost 91 cents on Opus, and the mixed chain costs 1 dollar 78 against 2 dollars 48 for all opus.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="60" y="50" width="460" height="110" rx="10" class="f-blue"/></g>
-    <text x="290" y="90" text-anchor="middle" class="lbl-sm">the build, on sonnet</text>
-    <text x="290" y="130" text-anchor="middle" class="lbl-b">$0.88</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="580" y="50" width="460" height="110" rx="10" class="f-purple"/></g>
-    <text x="810" y="90" text-anchor="middle" class="lbl-sm">the reviewer, on opus</text>
-    <text x="810" y="130" text-anchor="middle" class="lbl-b">$0.91</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="60" y="185" width="460" height="110" rx="10" class="f-green"/></g>
-    <text x="290" y="225" text-anchor="middle" class="lbl-sm">the chain, right-sized</text>
-    <text x="290" y="265" text-anchor="middle" class="lbl-b">$1.78</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="580" y="185" width="460" height="110" rx="10" class="f-orange"/></g>
-    <text x="810" y="225" text-anchor="middle" class="lbl-sm">the same chain, all opus</text>
-    <text x="810" y="265" text-anchor="middle" class="lbl-b">$2.48</text>
-  </svg>
-  <p class="recap fragment">Opus on judgement is insurance. Opus on arithmetic is waste.</p>
-  <div class="pageno">M11&middot;26</div>
-</section>
-<section class="divider">
-  <h2 class="t">A Review Chain Checks the Plan</h2>
-  <p class="s">four questions, four reviewers, one verdict</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="A hand-drawn scene: one plan document travelling along a line past four separate inspectors, any one of whom can stop it.">
-  <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><path d="M40,110 L114,110 L140,136 L140,230 L40,230 Z" class="f-purple"/></g><g fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M58,156 L118,156"/><path d="M58,180 L118,180"/><path d="M58,204 L118,204"/></g><text x="90.0" y="260" text-anchor="middle" class="lbl-sm">the plan</text>
-  <g fill="none" stroke="#757575" stroke-width="2.6" stroke-linecap="round"><path d="M150,170 L1010,170"/></g>
-  <g transform="translate(280,128) scale(0.72)" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><circle cx="0" cy="-34" r="14"/><path d="M0,-20 L0,16"/><path d="M0,-10 L-18,6"/><path d="M0,-10 L18,4"/><path d="M0,16 L-13,44"/><path d="M0,16 L13,44"/></g><text x="280" y="196" text-anchor="middle" class="lbl-sm">structure</text>
-  <g transform="translate(470,128) scale(0.72)" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><circle cx="0" cy="-34" r="14"/><path d="M0,-20 L0,16"/><path d="M0,-10 L-18,6"/><path d="M0,-10 L18,4"/><path d="M0,16 L-13,44"/><path d="M0,16 L13,44"/></g><text x="470" y="196" text-anchor="middle" class="lbl-sm">security</text>
-  <g transform="translate(660,128) scale(0.72)" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><circle cx="0" cy="-34" r="14"/><path d="M0,-20 L0,16"/><path d="M0,-10 L-18,6"/><path d="M0,-10 L18,4"/><path d="M0,16 L-13,44"/><path d="M0,16 L13,44"/></g><text x="660" y="196" text-anchor="middle" class="lbl-sm">cost</text>
-  <g transform="translate(850,128) scale(0.72)" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><circle cx="0" cy="-34" r="14"/><path d="M0,-20 L0,16"/><path d="M0,-10 L-18,6"/><path d="M0,-10 L18,4"/><path d="M0,16 L-13,44"/><path d="M0,16 L13,44"/></g><text x="850" y="196" text-anchor="middle" class="lbl-sm">rollback</text>
-  <g fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><path d="M1000,170 L1050,170" marker-end="url(#ah)"/></g>
-  <text x="560" y="300" text-anchor="middle" class="lbl-g">any one of them can stop it</text>
-</svg>
-  <div class="pageno">M11&middot;27</div>
-</section>
-<section>
-  <h2 class="t">Four questions, every time</h2>
-  <p class="s">replaced? how much destroyed? drifted? what does it cost?</p>
-  <svg viewBox="0 0 1100 320" role="img" aria-label="Four question boxes revealed one at a time: what is replaced, what is the blast radius, what drifted, and what does it cost.">
-    <g class="fragment"><g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="40" y="70" width="240" height="180" rx="10" class="f-green"/></g>
-    <text x="160" y="150" text-anchor="middle" class="lbl-sm">1. replaced?</text></g>
-    <g class="fragment"><g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="300" y="70" width="240" height="180" rx="10" class="f-green"/></g>
-    <text x="420" y="150" text-anchor="middle" class="lbl-sm">2. blast radius?</text></g>
-    <g class="fragment"><g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="560" y="70" width="240" height="180" rx="10" class="f-green"/></g>
-    <text x="680" y="150" text-anchor="middle" class="lbl-sm">3. drifted?</text></g>
-    <g class="fragment"><g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="820" y="70" width="240" height="180" rx="10" class="f-green"/></g>
-    <text x="940" y="150" text-anchor="middle" class="lbl-sm">4. what cost?</text></g>
-  </svg>
-  <div class="pageno">M11&middot;28</div>
-</section>
-<section>
-  <h2 class="t">Each question has an owner, and reviewers cannot write</h2>
-  <p class="s">a reviewer that could edit the change is not a reviewer</p>
-  <svg viewBox="0 0 1100 260" role="img" aria-label="The iac-engineer has a write tool. The security reviewer, FinOps analyst and change reviewer are read-only.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="70" width="260" height="140" rx="10" class="f-blue"/></g>
-    <text x="190" y="140" text-anchor="middle" class="lbl-sm">iac-engineer</text>
-    <text x="190" y="175" text-anchor="middle" class="lbl-good">has write</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="360" y="70" width="680" height="140" rx="10" class="f-red"/></g>
-    <text x="700" y="140" text-anchor="middle" class="lbl-sm">security &middot; finops &middot; change reviewer</text>
-    <text x="700" y="175" text-anchor="middle" class="lbl-bad">read-only, no write</text>
-  </svg>
-  <div class="pageno">M11&middot;29</div>
-</section>
-<section>
-  <h2 class="t">The reviewer also asks who was allowed to change this</h2>
-  <p class="s">a permission change riding inside a Terraform branch</p>
-  <svg viewBox="0 0 1100 320" role="img" aria-label="A branch containing Terraform files plus one edited role file, which the reviewer flags as an authority violation.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="80" y="50" width="420" height="220" rx="12" class="f-blue"/></g>
-    <text x="290" y="100" text-anchor="middle" class="lbl-b">the branch</text>
-    <text x="290" y="150" text-anchor="middle" class="lbl-sm">main.tf &nbsp;&middot;&nbsp; variables.tf</text>
-    <text x="290" y="188" text-anchor="middle" class="lbl-sm">outputs.tf</text>
-    <text x="290" y="234" text-anchor="middle" class="lbl-bad">+ one role file, quietly edited</text>
-    <g fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><path d="M512,160 L596,160" marker-end="url(#ah)"/></g>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="3"><rect x="610" y="50" width="410" height="220" rx="12" class="f-red"/></g>
-    <text x="815" y="120" text-anchor="middle" class="lbl-b">BLOCK</text>
-    <text x="815" y="172" text-anchor="middle" class="lbl-sm">no role has authority</text>
-    <text x="815" y="210" text-anchor="middle" class="lbl-sm">over the agent files at all</text>
-  </svg>
-  <div class="pageno">M11&middot;30</div>
-</section>
-<section>
-  <h2 class="t">One real block stops the change</h2>
-  <p class="s">passing three checks does not rescue a change that fails the fourth</p>
-  <svg viewBox="0 0 1100 220" role="img" aria-label="Three passing checks and one blocking check, producing a single verdict of block.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="60" y="60" width="180" height="90" rx="8" class="f-green"/><rect x="270" y="60" width="180" height="90" rx="8" class="f-green"/><rect x="480" y="60" width="180" height="90" rx="8" class="f-green"/></g>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="690" y="60" width="180" height="90" rx="8" class="f-red"/></g>
-    <text x="780" y="112" text-anchor="middle" class="lbl-sm">block</text>
-  </svg>
-  <p class="recap fragment">No averaging, no vote. One objection is the whole signal.</p>
-  <div class="pageno">M11&middot;31</div>
-</section>
-<section class="divider">
-  <h2 class="t">Refactor It Safely</h2>
-  <p class="s">the tests pass, and that proves less than you think</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="A hand-drawn scene: a block being lifted out of one module into its own separate module, with a crane hook, and its address changing as it moves.">
-  <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="90" y="120" width="300" height="170" rx="14" class="f-blue"/></g>
-  <text x="240" y="316" text-anchor="middle" class="lbl-sm">read-replica</text>
-  <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="120" y="200" width="110" height="70" rx="8" class="f-green"/></g>
-  <text x="175" y="242" text-anchor="middle" class="lbl-g">db</text>
-  <g fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round"><path d="M560,30 L560,96"/></g>
-  <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="490" y="96" width="150" height="86" rx="10" class="f-orange"/></g>
-  <text x="565" y="148" text-anchor="middle" class="lbl-sm">alarm + SNS</text>
-  <g fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="7 7"><path d="M392,180 L478,148" marker-end="url(#ahg)"/></g>
-  <g fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="7 7"><path d="M650,150 L740,178" marker-end="url(#ahg)"/></g>
-  <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="760" y="130" width="260" height="150" rx="14" class="f-purple"/></g>
-  <text x="890" y="306" text-anchor="middle" class="lbl-sm">alarm-notify</text>
-  <text x="890" y="212" text-anchor="middle" class="lbl-g">its own module now</text>
-</svg>
-  <div class="pageno">M11&middot;32</div>
-</section>
-<section>
-  <h2 class="t">What your tests can see is what you asserted</h2>
-  <p class="s">orphan the child module and find out</p>
-  <svg viewBox="0 0 1100 300" role="img" aria-label="A new module exists but nothing references it, the test still passes, and the plan is byte identical.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="60" y="60" width="300" height="160" rx="12" class="f-purple"/></g>
-    <text x="210" y="130" text-anchor="middle" class="lbl-sm">asserts the wiring</text>
-    <text x="210" y="170" text-anchor="middle" class="lbl-good">catches it</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="400" y="60" width="300" height="160" rx="12" class="f-green"/></g>
-    <text x="550" y="130" text-anchor="middle" class="lbl-sm">asserts an output only</text>
-    <text x="550" y="170" text-anchor="middle" class="lbl-bad">stays green</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="740" y="60" width="300" height="160" rx="12" class="f-orange"/></g>
-    <text x="890" y="130" text-anchor="middle" class="lbl-sm">the plan</text>
-    <text x="890" y="170" text-anchor="middle" class="lbl-b">byte-identical</text>
-  </svg>
-  <p class="recap fragment">A green suite proves what you asserted still holds. Nothing more.</p>
-  <div class="pageno">M11&middot;33</div>
-</section>
-<section>
-  <h2 class="t">Same resources, different addresses</h2>
-  <p class="s">the set did not change; three of the four addresses did</p>
-  <svg viewBox="0 0 1100 320" role="img" aria-label="Before the refactor the alarm and SNS resources sit directly in read replica. After, three of them sit inside module.alarm.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="40" y="50" width="480" height="230" rx="12" class="f-blue"/></g>
-    <text x="280" y="95" text-anchor="middle" class="lbl-b">before</text>
-    <text x="280" y="145" text-anchor="middle" class="lbl-g">read_replica.aws_sns_topic.alerts</text>
-    <text x="280" y="185" text-anchor="middle" class="lbl-g">read_replica.aws_cloudwatch...replica_lag</text>
-    <text x="280" y="235" text-anchor="middle" class="lbl-sm">4 resources</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="580" y="50" width="480" height="230" rx="12" class="f-orange"/></g>
-    <text x="820" y="95" text-anchor="middle" class="lbl-b">after</text>
-    <text x="820" y="145" text-anchor="middle" class="lbl-g">read_replica.module.alarm.aws_sns_topic.alerts</text>
-    <text x="820" y="185" text-anchor="middle" class="lbl-g">read_replica.module.alarm.aws_cloudwatch...main</text>
-    <text x="820" y="235" text-anchor="middle" class="lbl-sm">still 4 resources</text>
-  </svg>
-  <div class="pageno">M11&middot;34</div>
-</section>
-<section>
-  <h2 class="t">A plan full of creates can still destroy</h2>
-  <p class="s">Terraform tracks a resource by its address, not by what it is in AWS</p>
-  <svg viewBox="0 0 1100 320" role="img" aria-label="A plan showing only creates becomes destroy and recreate against real state, unless moved blocks are written.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="60" y="50" width="420" height="200" rx="12" class="f-green"/></g>
-    <text x="270" y="110" text-anchor="middle" class="lbl-b">the plan says</text>
-    <text x="270" y="165" text-anchor="middle" class="lbl-sm">4 creates, 0 destroys</text>
-    <text x="270" y="210" text-anchor="middle" class="lbl-good">every check passes</text>
-    <g fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><path d="M492,150 L588,150" marker-end="url(#ah)"/></g>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="3"><rect x="600" y="50" width="440" height="200" rx="12" class="f-red"/></g>
-    <text x="820" y="110" text-anchor="middle" class="lbl-b">against real state</text>
-    <text x="820" y="165" text-anchor="middle" class="lbl-sm">destroy and recreate the alarm</text>
-    <text x="820" y="210" text-anchor="middle" class="lbl-sm">and the subscription nobody re-confirms</text>
-  </svg>
-  <p class="recap fragment">Only a <tt>moved</tt> block tells Terraform they are the same thing.</p>
-  <div class="pageno">M11&middot;35</div>
-</section>
-<section class="divider">
-  <h2 class="t">A Good Refusal Is Not a Control</h2>
-  <p class="s">what actually stops a bad change when no model is involved</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="A hand-drawn scene: on the left a person refusing a request; on the right a locked gate that stops anyone who walks up to it, whoever they are.">
-  <g transform="translate(180,160) scale(1.1)" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><circle cx="0" cy="-34" r="14"/><path d="M0,-20 L0,16"/><path d="M0,-10 L-18,6"/><path d="M0,-10 L18,4"/><path d="M0,16 L-13,44"/><path d="M0,16 L13,44"/></g>
-  <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="250" y="96" width="170" height="70" rx="14" class="f-blue"/></g>
-  <text x="335" y="138" text-anchor="middle" class="lbl-sm">"no, I won't"</text>
-  <text x="300" y="262" text-anchor="middle" class="lbl-g">depends who is asking</text>
-  <g fill="none" stroke="#757575" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 10"><path d="M560,40 L560,300"/></g>
-  <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="3"><rect x="700" y="86" width="240" height="170" rx="8" class="f-red"/></g>
-  <g fill="none" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round">
-    <path d="M760,86 L760,256"/><path d="M820,86 L820,256"/><path d="M880,86 L880,256"/>
-  </g>
-  <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><circle cx="820" cy="170" r="26" class="f-orange"/></g>
-  <text x="820" y="300" text-anchor="middle" class="lbl-g">stops anyone, every time</text>
-</svg>
-  <div class="pageno">M11&middot;36</div>
-</section>
-<section>
-  <h2 class="t">It refuses well — and that is still not a control</h2>
-  <p class="s">make the same change by hand, and the scanner blocks it anyway</p>
-  <svg viewBox="0 0 1100 300" role="img" aria-label="The agent refuses a risky request, but a hand edit with no model involved is still blocked by the scanner.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="60" y="40" width="440" height="100" rx="10" class="f-blue"/></g>
-    <text x="280" y="98" text-anchor="middle" class="lbl-sm">ask the agent &rarr; it refuses</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="170" width="440" height="100" rx="10" class="f-purple"/></g>
-    <text x="280" y="228" text-anchor="middle" class="lbl-sm">edit the file yourself &rarr; no model</text>
-    <g fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><path d="M512,220 L596,220" marker-end="url(#ah)"/></g>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="3"><rect x="610" y="120" width="430" height="120" rx="12" class="f-red"/></g>
-    <text x="825" y="190" text-anchor="middle" class="lbl-b">the scanner blocks it</text>
-  </svg>
-  <div class="pageno">M11&middot;37</div>
-</section>
-<section>
-  <h2 class="t">What you carry into the lab</h2>
-  <p class="s">six habits for building infrastructure with an agent</p>
-  <svg viewBox="0 0 1100 400" role="img" aria-label="Six numbered habits for building infrastructure with an agent.">
-    <g class="fragment"><g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="50" y="30" width="36" height="36" rx="6"/></g>
-    <text x="68" y="55" text-anchor="middle" class="lbl-b">1</text>
-    <text x="110" y="56" class="lbl-sm">Write the spec and the test yourself</text></g>
-    <g class="fragment"><g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="50" y="92" width="36" height="36" rx="6"/></g>
-    <text x="68" y="117" text-anchor="middle" class="lbl-b">2</text>
-    <text x="110" y="118" class="lbl-sm">Dispatch a role, and give it the tools its job needs</text></g>
-    <g class="fragment"><g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="50" y="154" width="36" height="36" rx="6"/></g>
-    <text x="68" y="179" text-anchor="middle" class="lbl-b">3</text>
-    <text x="110" y="180" class="lbl-sm">Hold it to a house style skill, not to memory</text></g>
-    <g class="fragment"><g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="50" y="216" width="36" height="36" rx="6"/></g>
-    <text x="68" y="241" text-anchor="middle" class="lbl-b">4</text>
-    <text x="110" y="242" class="lbl-sm">Match the model to the job</text></g>
-    <g class="fragment"><g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="50" y="278" width="36" height="36" rx="6"/></g>
-    <text x="68" y="303" text-anchor="middle" class="lbl-b">5</text>
-    <text x="110" y="304" class="lbl-sm">Passing tests are not proof a refactor happened</text></g>
-    <g class="fragment"><g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="50" y="340" width="36" height="36" rx="6"/></g>
-    <text x="68" y="365" text-anchor="middle" class="lbl-b">6</text>
-    <text x="110" y="366" class="lbl-sm">A refusal is not a control; a check with no model is</text></g>
-  </svg>
-  <div class="pageno">M11&middot;38</div>
-</section>
+
+
 </div></div>
 
 <script>/* reveal.js 5.x (inlined) */
@@ -834,3 +595,4 @@ footer, header, hgroup, main, menu, nav, section {
 </script>
 </body>
 </html>
+
