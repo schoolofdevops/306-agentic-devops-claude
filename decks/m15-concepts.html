@@ -261,26 +261,58 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M15&middot;07</div>
 </section>
 <section>
+  <p class="kicker">THE MISCONFIGURATION</p>
+  <h2 class="t">The fan-out that did not happen</h2>
+  <p class="s">The lab says four specialists. The run was one agent, four times.</p>
+  <svg viewBox="0 0 1150 340" role="img" aria-label="The graded run dispatched zero subagents. security-reviewer had no Task tool in its bundle and the read-only reporter scripts were not in the permission allow list, so one session worked every finding lane itself, in sequence.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="25" y="30" width="1100" height="130" rx="12" class="f-orange"/></g>
+    <text x="575" y="80" text-anchor="middle" class="lbl-b">0 subagents dispatched</text>
+    <text x="575" y="122" text-anchor="middle" class="lbl-sm">one session worked dependencies, secrets and posture itself &mdash; in sequence</text>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="25" y="190" width="540" height="120" rx="12" class="f-red"/><rect x="610" y="190" width="515" height="120" rx="12" class="f-red"/></g>
+    <text x="295" y="232" text-anchor="middle" class="lbl-b">no Task tool in the bundle</text>
+    <text x="295" y="272" text-anchor="middle" class="lbl-sm">tools: Read, Grep, Glob, Bash, Skill</text>
+    <text x="867" y="232" text-anchor="middle" class="lbl-b">reporters not allow-listed</text>
+    <text x="867" y="272" text-anchor="middle" class="lbl-sm">the honest path prompts; the agent works around it</text>
+  </svg>
+  <div class="pageno">M15&middot;08</div>
+</section>
+<section>
+  <p class="kicker">THE FIX</p>
+  <h2 class="t">Two lines turn one agent into a team</h2>
+  <p class="s">A tool list is provisioning. Nothing fans out that was not granted it.</p>
+  <svg viewBox="0 0 1150 340" role="img" aria-label="Two lines of configuration fix it: add Task to the reviewer's tool list and allow-list the read-only reporter scripts. The re-run dispatched three subagents, one per finding lane, in twenty two seconds.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="25" y="25" width="540" height="125" rx="12" class="f-green"/><rect x="610" y="25" width="515" height="125" rx="12" class="f-green"/></g>
+    <text x="295" y="65" text-anchor="middle" class="lbl-b">+ "Task" in tools</text>
+    <text x="295" y="105" text-anchor="middle" class="lbl-sm">declared Task &mdash; invoked as Agent(subagent_type)</text>
+    <text x="867" y="65" text-anchor="middle" class="lbl-b">+ reporters in permissions.allow</text>
+    <text x="867" y="105" text-anchor="middle" class="lbl-sm">read-only scripts stop needing a prompt</text>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="25" y="185" width="1100" height="125" rx="12" class="f-green"/></g>
+    <text x="575" y="228" text-anchor="middle" class="lbl-b">3 subagents dispatched &mdash; dep-triage &middot; secret-triage &middot; posture-auditor</text>
+    <text x="575" y="272" text-anchor="middle" class="lbl-sm">7 reviewer turns &middot; 22.3 s &middot; $1.86 &middot; verdict no-ship, on three reasons none of them CVSS-driven</text>
+  </svg>
+  <div class="pageno">M15&middot;09</div>
+</section>
+<section>
   <p class="kicker">HONEST LIMITS</p>
-  <h2 class="t">What the controls miss</h2>
-  <p class="s">Measured on a real graded run — not hypotheticals.</p>
-  <svg viewBox="0 0 1150 340" role="img" aria-label="Three measured misses from a live graded run: the MCP server was never called, no fan-out occurred, and a hook blocked the agent's own git log.">
+  <h2 class="t">What the controls still miss</h2>
+  <p class="s">Measured on real graded runs — not hypotheticals.</p>
+  <svg viewBox="0 0 1150 340" role="img" aria-label="Three measured misses that survive the fix: the MCP server was connected but never called, a hook blocked the agent's own git log, and fan-out buys independence and latency rather than saving money.">
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="25" y="30" width="350" height="220" rx="12" class="f-orange"/><rect x="400" y="30" width="350" height="220" rx="12" class="f-orange"/><rect x="775" y="30" width="350" height="220" rx="12" class="f-orange"/></g>
     <text x="200" y="70" text-anchor="middle" class="lbl-b">MCP never called</text>
     <text x="200" y="106" text-anchor="middle" class="lbl-sm">The server was connected.</text>
     <text x="200" y="130" text-anchor="middle" class="lbl-sm">The agent read the corpus</text>
     <text x="200" y="154" text-anchor="middle" class="lbl-sm">with raw jq instead.</text>
-    <text x="575" y="70" text-anchor="middle" class="lbl-b">No fan-out occurred</text>
-    <text x="575" y="106" text-anchor="middle" class="lbl-sm">security-reviewer has no Task tool.</text>
-    <text x="575" y="130" text-anchor="middle" class="lbl-sm">One session did every lane</text>
-    <text x="575" y="154" text-anchor="middle" class="lbl-sm">itself, in sequence.</text>
-    <text x="950" y="70" text-anchor="middle" class="lbl-b">git log got blocked</text>
-    <text x="950" y="106" text-anchor="middle" class="lbl-sm">A hook denied the agent&#39;s own</text>
-    <text x="950" y="130" text-anchor="middle" class="lbl-sm">git log &mdash; it never reached</text>
-    <text x="950" y="154" text-anchor="middle" class="lbl-sm">&quot;deletion isn&#39;t rotation.&quot;</text>
-    <text x="575" y="290" text-anchor="middle" class="lbl-g">Live graded run: $1.117 &middot; 306s &middot; 36 turns &middot; verdict: no-ship (3 unresolved criticals)</text>
+    <text x="575" y="70" text-anchor="middle" class="lbl-b">git log got blocked</text>
+    <text x="575" y="106" text-anchor="middle" class="lbl-sm">A hook denied the agent&#39;s own</text>
+    <text x="575" y="130" text-anchor="middle" class="lbl-sm">git log &mdash; it never reached</text>
+    <text x="575" y="154" text-anchor="middle" class="lbl-sm">&quot;deletion isn&#39;t rotation.&quot;</text>
+    <text x="950" y="70" text-anchor="middle" class="lbl-b">fan-out is not free</text>
+    <text x="950" y="106" text-anchor="middle" class="lbl-sm">Three lanes cost more tokens</text>
+    <text x="950" y="130" text-anchor="middle" class="lbl-sm">than one. You buy independence</text>
+    <text x="950" y="154" text-anchor="middle" class="lbl-sm">and wall clock, not savings.</text>
+    <text x="575" y="290" text-anchor="middle" class="lbl-g">Every one of these came back from a run &mdash; none was predicted in advance</text>
   </svg>
-  <div class="pageno">M15&middot;08</div>
+  <div class="pageno">M15&middot;10</div>
 </section>
 
 
