@@ -146,7 +146,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section data-auto-animate>
   <p class="kicker">MODULE 16 &nbsp;&middot;&nbsp; AGENTIC DEVOPS WITH CLAUDE CODE</p>
   <h2 class="t" style="font-size:2.2em">MLOps and LLMOps</h2>
-  <p class="s" style="font-size:1.1em">Failures Prometheus was never going to see</p>
+  <p class="s" style="font-size:1.1em">Diagnosing a route change you can defend</p>
   <svg viewBox="0 0 1120 330" role="img" aria-label="Every request returning 200 while latency, cost, rate-limit headroom and quality all move in the wrong direction, because the change was one word in a routing file rather than a service failure.">
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="40" y="80" width="300" height="170" rx="12" class="f-green"/></g>
     <text x="190" y="140" text-anchor="middle" class="lbl-b">every request: 200</text>
@@ -164,158 +164,23 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M16&middot;01</div>
 </section>
 <section>
-  <h2 class="t">What will you learn?</h2>
-  <p class="s">five things, and the lab prices a one-word diff</p>
-  <svg viewBox="0 0 1100 380" role="img" aria-label="A numbered contents list of the five chapters: MLOps or LLMOps, the gateway is the artifact, the four dials, whose latency is it, and prompts and the quality gate.">
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="70" y="80" width="44" height="44" rx="8"/></g>
-    <text x="92" y="110" text-anchor="middle" class="lbl-b">1</text>
-    <text x="134" y="110" class="lbl-b">MLOps or LLMOps</text>
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="70" y="180" width="44" height="44" rx="8"/></g>
-    <text x="92" y="210" text-anchor="middle" class="lbl-b">2</text>
-    <text x="134" y="210" class="lbl-b">The Model Gateway Config</text>
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="70" y="280" width="44" height="44" rx="8"/></g>
-    <text x="92" y="310" text-anchor="middle" class="lbl-b">3</text>
-    <text x="134" y="310" class="lbl-b">Latency, Cost, Rate Limits, Quality</text>
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="600" y="80" width="44" height="44" rx="8"/></g>
-    <text x="622" y="110" text-anchor="middle" class="lbl-b">4</text>
-    <text x="664" y="110" class="lbl-b">Provider vs Application Latency</text>
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="600" y="180" width="44" height="44" rx="8"/></g>
-    <text x="622" y="210" text-anchor="middle" class="lbl-b">5</text>
-    <text x="664" y="210" class="lbl-b">Prompts and the Quality Gate</text>
+  <h2 class="t">Contents</h2>
+  <p class="s">two chapters, then the diagnosis</p>
+  <svg viewBox="0 0 1100 380" role="img" aria-label="Two chapters: the gateway and the four dials; provenance and the dial that lies.">
+    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="120" y="110" width="52" height="52" rx="8"/></g>
+    <text x="146" y="145" text-anchor="middle" class="lbl-b">1</text>
+    <text x="200" y="136" class="lbl-b">The Gateway and the Four Dials</text>
+    <text x="200" y="168" class="lbl-sm">what moves, and how to read it</text>
+    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="120" y="230" width="52" height="52" rx="8"/></g>
+    <text x="146" y="265" text-anchor="middle" class="lbl-b">2</text>
+    <text x="200" y="256" class="lbl-b">Provenance and the Dial That Lies</text>
+    <text x="200" y="288" class="lbl-sm">why a number needs its command</text>
   </svg>
   <div class="pageno">M16&middot;02</div>
 </section>
 <section class="divider">
-  <h2 class="t">MLOps or LLMOps</h2>
-  <p class="s">two different jobs, two different signal sets</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="A bakery that makes the pastries beside a coffee shop that buys them. One owns the recipe, the oven and the quality of the product; the other owns the ordering, the price, the stock levels and what the customer finally gets.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="80" y="90" width="400" height="160" rx="12" class="f-purple"/></g>
-    <text x="280" y="150" text-anchor="middle" class="lbl-b">the bakery</text>
-    <text x="280" y="196" text-anchor="middle" class="lbl-sm">owns the recipe and the oven</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="3"><rect x="620" y="90" width="400" height="160" rx="12" class="f-blue"/></g>
-    <text x="820" y="150" text-anchor="middle" class="lbl-b">the coffee shop</text>
-    <text x="820" y="196" text-anchor="middle" class="lbl-sm">owns the order, the price, the shelf</text>
-    <text x="550" y="310" text-anchor="middle" class="lbl-g">most teams are the coffee shop, and that is still a real job</text>
-  </svg>
-  <div class="pageno">M16&middot;03</div>
-</section>
-<section>
-  <h2 class="t">Everything succeeded, and the day still broke</h2>
-  <p class="s">two hundreds all the way down, and a ten-times bill</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="A support queue backing up on the left, a green 200 OK stamp in the middle showing every request succeeded, and a red cost meter climbing on the right.">
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round">
-      <rect x="60" y="70" width="150" height="40" rx="8"/>
-      <rect x="60" y="120" width="150" height="40" rx="8"/>
-      <rect x="60" y="170" width="150" height="40" rx="8"/>
-      <rect x="60" y="220" width="150" height="40" rx="8"/>
-    </g>
-    <text x="135" y="290" text-anchor="middle" class="lbl-g">queue backing up</text>
-    <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.6"><circle cx="470" cy="150" r="70"/></g>
-    <text x="470" y="145" text-anchor="middle" class="lbl-b">200 OK</text>
-    <text x="470" y="175" text-anchor="middle" class="lbl-sm">every request</text>
-    <text x="470" y="270" text-anchor="middle" class="lbl-g">nothing is <tspan font-style="italic">down</tspan></text>
-    <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.8"><rect x="760" y="90" width="260" height="130" rx="12"/></g>
-    <text x="890" y="135" text-anchor="middle" class="lbl-b">bill 10× normal</text>
-    <g filter="url(#rough)" fill="none" stroke="#c62828" stroke-width="2.8" stroke-linecap="round"><path d="M790,190 L870,160 L950,120" marker-end="url(#ah)"/></g>
-    <text x="890" y="255" text-anchor="middle" class="lbl-g">cost climbing</text>
-  </svg>
-  <div class="pageno">M16&middot;04</div>
-</section>
-<section>
-  <h2 class="t">Analogy &mdash; the bakery and the coffee shop</h2>
-  <p class="s">one makes the model; one operates around it</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="Left: a bakery labelled produce, with gauges for oven temp, dough, reject rate. Right: a coffee shop labelled serve, with gauges for stock, price, line, happiness.">
-    <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6"><rect x="50" y="55" width="440" height="90" rx="12"/></g>
-    <text x="270" y="95" text-anchor="middle" class="lbl-b">bakery: you PRODUCE</text>
-    <text x="270" y="125" text-anchor="middle" class="lbl-g">flour, ovens, the recipe</text>
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2">
-      <circle cx="110" cy="215" r="30"/><circle cx="210" cy="215" r="30"/><circle cx="310" cy="215" r="30"/><circle cx="410" cy="215" r="30"/>
-    </g>
-    <g class="lbl-g" text-anchor="middle">
-      <text x="110" y="270">oven temp</text><text x="210" y="270">dough</text><text x="310" y="270">reject rate</text><text x="410" y="270">accuracy</text>
-    </g>
-    <g filter="url(#rough)" fill="#ecfdf5" stroke="#1e1e1e" stroke-width="2.6"><rect x="610" y="55" width="440" height="90" rx="12"/></g>
-    <text x="830" y="95" text-anchor="middle" class="lbl-b">coffee shop: you SERVE</text>
-    <text x="830" y="125" text-anchor="middle" class="lbl-g">buys the pastries, sells them</text>
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2">
-      <circle cx="670" cy="215" r="30"/><circle cx="770" cy="215" r="30"/><circle cx="870" cy="215" r="30"/><circle cx="970" cy="215" r="30"/>
-    </g>
-    <g class="lbl-g" text-anchor="middle">
-      <text x="670" y="270">stock</text><text x="770" y="270">price</text><text x="870" y="270">line</text><text x="970" y="270">happy</text>
-    </g>
-  </svg>
-  <div class="pageno">M16&middot;05</div>
-</section>
-<section>
-  <h2 class="t">MLOps is the bakery&rsquo;s job</h2>
-  <p class="s">train it, version it, serve it, watch it drift</p>
-  <svg viewBox="0 0 1100 320" role="img" aria-label="A bakery frame containing a pipeline: training pipeline to model versioning to your serving infra to drift and accuracy.">
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2" stroke-dasharray="5 5"><rect x="30" y="55" width="1040" height="210" rx="14"/></g>
-    <text x="60" y="85" text-anchor="start" class="lbl-g">the bakery</text>
-    <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6">
-      <rect x="60" y="120" width="200" height="90" rx="12"/>
-      <rect x="330" y="120" width="200" height="90" rx="12"/>
-      <rect x="600" y="120" width="200" height="90" rx="12"/>
-      <rect x="870" y="120" width="180" height="90" rx="12"/>
-    </g>
-    <text x="160" y="160" text-anchor="middle" class="lbl-b">training</text>
-    <text x="160" y="188" text-anchor="middle" class="lbl-sm">pipeline</text>
-    <text x="430" y="160" text-anchor="middle" class="lbl-b">model</text>
-    <text x="430" y="188" text-anchor="middle" class="lbl-sm">versioning</text>
-    <text x="700" y="160" text-anchor="middle" class="lbl-b">your serving</text>
-    <text x="700" y="188" text-anchor="middle" class="lbl-sm">infra</text>
-    <text x="960" y="160" text-anchor="middle" class="lbl-b">drift +</text>
-    <text x="960" y="188" text-anchor="middle" class="lbl-sm">accuracy</text>
-    <g fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round">
-      <path d="M260,165 L330,165" marker-end="url(#ah)"/>
-      <path d="M530,165 L600,165" marker-end="url(#ah)"/>
-      <path d="M800,165 L870,165" marker-end="url(#ah)"/>
-    </g>
-  </svg>
-  <div class="pageno">M16&middot;06</div>
-</section>
-<section>
-  <h2 class="t">LLMOps is the layer around the API call</h2>
-  <p class="s">routing, prompts, cost, rate limits, quality</p>
-  <svg viewBox="0 0 1100 330" role="img" aria-label="A pipeline: prompt plus routing config to a gateway to a hosted provider API. A dials cluster of latency, cost, rate limits and quality branches off the gateway.">
-    <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.6">
-      <rect x="40" y="70" width="210" height="90" rx="12"/>
-      <rect x="700" y="70" width="210" height="90" rx="12"/>
-    </g>
-    <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="3"><rect x="380" y="65" width="200" height="100" rx="12"/></g>
-    <text x="145" y="110" text-anchor="middle" class="lbl-b">prompt +</text>
-    <text x="145" y="138" text-anchor="middle" class="lbl-sm">routing config</text>
-    <text x="480" y="105" text-anchor="middle" class="lbl-b">gateway</text>
-    <text x="480" y="138" text-anchor="middle" class="lbl-g">the switchboard</text>
-    <text x="805" y="105" text-anchor="middle" class="lbl-b">hosted</text>
-    <text x="805" y="138" text-anchor="middle" class="lbl-sm">provider API</text>
-    <g fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round">
-      <path d="M250,115 L380,115" marker-end="url(#ah)"/>
-      <path d="M580,115 L700,115" marker-end="url(#ah)"/>
-    </g>
-    <g fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M480,165 L480,225" marker-end="url(#ahg)"/></g>
-    <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.4"><rect x="300" y="230" width="360" height="60" rx="10"/></g>
-    <text x="480" y="267" text-anchor="middle" class="lbl-sm">latency · cost · rate limits · quality</text>
-  </svg>
-  <div class="pageno">M16&middot;07</div>
-</section>
-<section>
-  <h2 class="t">&ldquo;It just calls the AI&rdquo; still means you own the bill</h2>
-  <p class="s">and the latency, and the quality of what ships</p>
-  <svg viewBox="0 0 1100 320" role="img" aria-label="A large front step labelled LLMOps day one, with a faded MLOps later step drawn behind it.">
-    <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2.2" stroke-dasharray="9 7"><rect x="470" y="70" width="360" height="120" rx="12"/></g>
-    <text x="650" y="120" text-anchor="middle" class="lbl-g">MLOps</text>
-    <text x="650" y="152" text-anchor="middle" class="lbl-g">later: training, serving, drift</text>
-    <g filter="url(#rough)" fill="#ecfdf5" stroke="#1e1e1e" stroke-width="3"><rect x="120" y="140" width="440" height="140" rx="14"/></g>
-    <text x="340" y="200" text-anchor="middle" class="lbl-b">LLMOps: day one</text>
-    <text x="340" y="240" text-anchor="middle" class="lbl-g">the feature that "just calls the AI"</text>
-  </svg>
-  <p class="recap fragment">Same governance, a new surface. Next: The Model Gateway Config.</p>
-  <div class="pageno">M16&middot;08</div>
-</section>
-<section class="divider">
-  <h2 class="t">The Model Gateway Config</h2>
-  <p class="s">routing is a decision, not a detail</p>
+  <h2 class="t">The Gateway and the Four Dials</h2>
+  <p class="s">what moves, and how to read it</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A switchboard routing three classes of traffic to three different desks: support traffic to a fast tier, incident traffic to a deep tier, and batch traffic to a cheap tier.">
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="400" y="120" width="300" height="100" rx="12" class="f-purple"/></g>
     <text x="550" y="178" text-anchor="middle" class="lbl-b">the switchboard</text>
@@ -327,90 +192,86 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="905" y="188" text-anchor="middle" class="lbl">deep tier</text>
     <text x="905" y="278" text-anchor="middle" class="lbl">cheap tier</text>
   </svg>
-  <div class="pageno">M16&middot;09</div>
+  <div class="pageno">M16&middot;03</div>
 </section>
 <section>
-  <h2 class="t">The gateway is the switchboard</h2>
-  <p class="s">it does not answer calls; it decides which desk does</p>
-  <svg viewBox="0 0 1100 330" role="img" aria-label="A call-routing switchboard with plugs; one plug is being moved, sending a flood arrow into an expensive premium desk.">
-    <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="2.8"><rect x="60" y="70" width="360" height="200" rx="12"/></g>
-    <text x="240" y="105" text-anchor="middle" class="lbl-b">switchboard</text>
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2">
-      <circle cx="130" cy="160" r="15"/><circle cx="200" cy="160" r="15"/><circle cx="270" cy="160" r="15"/><circle cx="340" cy="160" r="15"/>
-      <circle cx="130" cy="225" r="15"/><circle cx="200" cy="225" r="15"/><circle cx="270" cy="225" r="15"/><circle cx="340" cy="225" r="15"/>
-    </g>
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round"><path d="M200,160 C300,150 340,200 340,222"/></g>
-    <text x="240" y="298" text-anchor="middle" class="lbl-g">one plug moved</text>
-    <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.8"><rect x="720" y="120" width="300" height="110" rx="12"/></g>
-    <text x="870" y="165" text-anchor="middle" class="lbl-b">premium desk</text>
-    <text x="870" y="195" text-anchor="middle" class="lbl-g">expensive · now flooded</text>
-    <g fill="none" stroke="#c62828" stroke-width="3" stroke-linecap="round"><path d="M430,175 C560,175 600,175 715,175" marker-end="url(#ah)"/></g>
-    <text x="575" y="160" text-anchor="middle" class="lbl-g">flood</text>
+  <h2 class="t">One line, priced</h2>
+  <p class="s">a route change is a cost-and-SLO decision</p>
+  <svg viewBox="0 0 1180 400" role="img" aria-label="One line of the routing file changed: the support route moved from the fast model tier to the deep tier. The priced consequence is nearly nineteen times the token price, ten times the p95 latency, and an extra 8,946 dollars a day.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="40" width="1060" height="110" rx="12" fill="#ffffff"/></g>
+    <text x="90" y="78" class="lbl-g">platform/gateway/routing.yaml &nbsp;&middot;&nbsp; routes.support</text>
+    <text x="90" y="122" class="lbl-bad">&minus; model: fast</text>
+    <text x="420" y="122" class="lbl">&plus; model: deep</text>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="60" y="190" width="330" height="120" rx="11" fill="#ffffff"/><rect x="425" y="190" width="330" height="120" rx="11" fill="#ffffff"/><rect x="790" y="190" width="330" height="120" rx="11" class="f-red"/></g>
+    <text x="225" y="234" text-anchor="middle" class="lbl-sm">price per 1M tokens</text>
+    <text x="225" y="282" text-anchor="middle" class="lbl-b">$0.80 &rarr; $15.00</text>
+    <text x="590" y="234" text-anchor="middle" class="lbl-sm">p95 latency</text>
+    <text x="590" y="282" text-anchor="middle" class="lbl-b">900 ms &rarr; 9,500 ms</text>
+    <text x="955" y="234" text-anchor="middle" class="lbl-sm">cost of doing nothing</text>
+    <text x="955" y="282" text-anchor="middle" class="lbl-b">+$8,946 / day</text>
+    <text x="590" y="360" text-anchor="middle" class="lbl-sm">gateway-diff.sh verdict: review-required &mdash; costlier AND slower</text>
   </svg>
-  <div class="pageno">M16&middot;10</div>
+  <div class="pageno">M16&middot;04</div>
 </section>
 <section>
-  <h2 class="t">Each traffic class gets its own tier</h2>
-  <p class="s">because they do not want the same trade-off</p>
-  <svg viewBox="0 0 1100 330" role="img" aria-label="A gateway box containing three labelled rows: support maps to fast, incident maps to deep, batch maps to cost-only.">
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="3"><rect x="80" y="55" width="940" height="230" rx="14"/></g>
-    <text x="130" y="90" text-anchor="start" class="lbl-b">gateway routing</text>
-    <g filter="url(#rough)" fill="#ecfdf5" stroke="#1e1e1e" stroke-width="2.4"><rect x="120" y="110" width="860" height="45" rx="8"/></g>
-    <text x="150" y="140" text-anchor="start" class="lbl">support</text>
-    <text x="420" y="140" text-anchor="start" class="lbl-b">→ fast</text>
-    <text x="600" y="140" text-anchor="start" class="lbl-g">high volume · a human is waiting · "draftable"</text>
-    <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.4"><rect x="120" y="165" width="860" height="45" rx="8"/></g>
-    <text x="150" y="195" text-anchor="start" class="lbl">incident</text>
-    <text x="420" y="195" text-anchor="start" class="lbl-b">→ deep</text>
-    <text x="600" y="195" text-anchor="start" class="lbl-g">low volume · quality-critical · latency-tolerant</text>
-    <g filter="url(#rough)" fill="#ffe6cc" stroke="#1e1e1e" stroke-width="2.4"><rect x="120" y="220" width="860" height="45" rx="8"/></g>
-    <text x="150" y="250" text-anchor="start" class="lbl">batch</text>
-    <text x="420" y="250" text-anchor="start" class="lbl-b">→ cost</text>
-    <text x="600" y="250" text-anchor="start" class="lbl-g">no human waiting · cost is the only dial</text>
+  <h2 class="t">The four dials</h2>
+  <p class="s">read together, never one alone</p>
+  <svg viewBox="0 0 1180 400" role="img" aria-label="The four dials of an LLM feature: latency, token cost, rate limits and quality, each with the question it answers. A note says they trade off against each other and a recommendation that moves one without stating what it cost the other three is a preference, not a recommendation.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="40" y="50" width="262" height="170" rx="11" fill="#ffffff"/><rect x="322" y="50" width="262" height="170" rx="11" fill="#ffffff"/><rect x="604" y="50" width="262" height="170" rx="11" fill="#ffffff"/><rect x="886" y="50" width="244" height="170" rx="11" class="f-orange"/></g>
+    <text x="171" y="98" text-anchor="middle" class="lbl-b">latency</text>
+    <text x="171" y="142" text-anchor="middle" class="lbl-sm">how long until the</text>
+    <text x="171" y="174" text-anchor="middle" class="lbl-sm">user has an answer?</text>
+    <text x="453" y="98" text-anchor="middle" class="lbl-b">token cost</text>
+    <text x="453" y="142" text-anchor="middle" class="lbl-sm">what does a day of</text>
+    <text x="453" y="174" text-anchor="middle" class="lbl-sm">this traffic cost?</text>
+    <text x="735" y="98" text-anchor="middle" class="lbl-b">rate limits</text>
+    <text x="735" y="142" text-anchor="middle" class="lbl-sm">how close to being</text>
+    <text x="735" y="174" text-anchor="middle" class="lbl-sm">throttled?</text>
+    <text x="1008" y="98" text-anchor="middle" class="lbl-b">quality</text>
+    <text x="1008" y="142" text-anchor="middle" class="lbl-sm">still good enough</text>
+    <text x="1008" y="174" text-anchor="middle" class="lbl-sm">for its job?</text>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="40" y="258" width="1090" height="102" rx="11" fill="#ffffff"/></g>
+    <text x="585" y="300" text-anchor="middle" class="lbl">no setting wins on all four &mdash; only the right one for THIS traffic class</text>
+    <text x="585" y="340" text-anchor="middle" class="lbl-sm">move one dial without saying what it cost the other three and you have a preference, not a recommendation</text>
   </svg>
-  <div class="pageno">M16&middot;11</div>
+  <div class="pageno">M16&middot;05</div>
 </section>
 <section>
-  <h2 class="t">The decision file and the price map are separate</h2>
-  <p class="s">one is your choice; the other is a fact about the world</p>
-  <svg viewBox="0 0 1100 320" role="img" aria-label="Two boxes: a routing box holding the decision support runs on fast, and a provider-map box holding the facts fast equals 80 cents per million tokens at 900ms, joined by a lookup arrow.">
-    <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="3"><rect x="70" y="80" width="380" height="150" rx="12"/></g>
-    <text x="260" y="120" text-anchor="middle" class="lbl-b">routing</text>
-    <text x="260" y="160" text-anchor="middle" class="lbl">support → fast</text>
-    <text x="260" y="195" text-anchor="middle" class="lbl-g">the DECISION</text>
-    <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="3"><rect x="650" y="80" width="380" height="150" rx="12"/></g>
-    <text x="840" y="120" text-anchor="middle" class="lbl-b">provider map</text>
-    <text x="840" y="158" text-anchor="middle" class="lbl-sm">fast = \$0.80/1M · 900ms p95</text>
-    <text x="840" y="195" text-anchor="middle" class="lbl-g">the FACTS</text>
-    <g fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><path d="M450,155 L650,155" marker-end="url(#ah)"/></g>
-    <text x="550" y="140" text-anchor="middle" class="lbl-g">lookup</text>
-    <text x="550" y="285" text-anchor="middle" class="lbl-g">review can price the decision immediately</text>
+  <h2 class="t">Provider and application latency</h2>
+  <p class="s">opposite causes, opposite fixes</p>
+  <svg viewBox="0 0 1180 400" role="img" aria-label="Splitting a request: on the regressed trace 8,390 milliseconds is provider time against 340 milliseconds of application time, 96.1 percent provider. Provider-dominant means fix the route; application-dominant means fix the code.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.5"><rect x="60" y="50" width="660" height="80" rx="11" class="f-red"/><rect x="740" y="50" width="70" height="80" rx="11" class="f-green"/></g>
+    <text x="390" y="100" text-anchor="middle" class="lbl-b">provider &nbsp; 8,390 ms</text>
+    <text x="775" y="100" text-anchor="middle" class="lbl-sm">340</text>
+    <text x="860" y="100" class="lbl-b">96.1% provider</text>
+    <text x="90" y="176" class="lbl-g">current trace &nbsp;&middot;&nbsp; support-regressed.json</text>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="60" y="210" width="530" height="110" rx="11" fill="#ffffff"/><rect x="620" y="210" width="500" height="110" rx="11" fill="#ffffff"/></g>
+    <text x="325" y="252" text-anchor="middle" class="lbl-b">provider dominates</text>
+    <text x="325" y="294" text-anchor="middle" class="lbl-sm">the model is the slow part &rarr; fix the ROUTE</text>
+    <text x="870" y="252" text-anchor="middle" class="lbl-b">application dominates</text>
+    <text x="870" y="294" text-anchor="middle" class="lbl-sm">our queueing/assembly &rarr; fix the CODE</text>
+    <text x="590" y="370" text-anchor="middle" class="lbl-sm">never state a cause before the split has run &mdash; and it tells you which half, not that the route was wrong</text>
   </svg>
-  <div class="pageno">M16&middot;12</div>
+  <div class="pageno">M16&middot;06</div>
 </section>
 <section>
-  <h2 class="t">And the one-word change, priced</h2>
-  <p class="s">review-required, with a number attached</p>
-  <svg viewBox="0 0 1100 380" role="img" aria-label="The gateway diff against the baseline: the support route moved from the fast tier to the deep tier, the price per million tokens went from nought point eight to fifteen dollars, provider p95 went from nine hundred milliseconds to nine and a half seconds, the modelled cost delta is nearly nine thousand dollars a day, and the verdict is review-required.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="26" width="980" height="70" rx="10" class="f-blue"/></g>
-    <text x="330" y="68" text-anchor="middle" class="lbl-b">route: support</text>
-    <text x="800" y="68" text-anchor="middle" class="lbl">fast &rarr; deep</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="60" y="112" width="980" height="62" rx="10" class="f-orange"/></g>
-    <text x="330" y="150" text-anchor="middle" class="lbl-b">price per 1M tokens</text>
-    <text x="800" y="150" text-anchor="middle" class="lbl">$0.80 &rarr; $15.00</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="60" y="190" width="980" height="62" rx="10" class="f-orange"/></g>
-    <text x="330" y="228" text-anchor="middle" class="lbl-b">provider p95</text>
-    <text x="800" y="228" text-anchor="middle" class="lbl">900 ms &rarr; 9,500 ms</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="3"><rect x="60" y="268" width="980" height="86" rx="10" class="f-red"/></g>
-    <text x="330" y="310" text-anchor="middle" class="lbl-b">cost delta: +$8,946 / day</text>
-    <text x="800" y="310" text-anchor="middle" class="lbl-bad">verdict: review-required</text>
+  <h2 class="t">The dial nobody was looking for</h2>
+  <p class="s">rate limits, already negative</p>
+  <svg viewBox="0 0 1180 380" role="img" aria-label="The rate-limit dial: the support route is configured for 300,000 tokens per minute while the deep tier's provider ceiling is 120,000, leaving headroom of minus 150 percent. The route is over its provider limit before any traffic spike.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.5"><rect x="60" y="60" width="480" height="150" rx="11" fill="#ffffff"/><rect x="620" y="60" width="480" height="150" rx="11" class="f-red"/></g>
+    <text x="300" y="104" text-anchor="middle" class="lbl-sm">support route, configured</text>
+    <text x="300" y="158" text-anchor="middle" class="lbl-b">300,000 tpm</text>
+    <text x="860" y="104" text-anchor="middle" class="lbl-sm">deep tier, provider ceiling</text>
+    <text x="860" y="158" text-anchor="middle" class="lbl-b">120,000 tpm</text>
+    <text x="580" y="278" text-anchor="middle" class="lbl-b">headroom &minus;150%</text>
+    <text x="580" y="330" text-anchor="middle" class="lbl-sm">already over the limit before any traffic spike &mdash; a third reason to revert, and nobody was looking for it</text>
   </svg>
-  <p class="recap fragment">A route change is a priced decision. Next: Latency, Cost, Rate Limits, Quality.</p>
-  <div class="pageno">M16&middot;13</div>
+  <p class="recap fragment">Four dials, and the third one made the case on its own.</p>
+  <div class="pageno">M16&middot;07</div>
 </section>
 <section class="divider">
-  <h2 class="t">Latency, Cost, Rate Limits, Quality</h2>
-  <p class="s">the golden signals of an LLM feature</p>
+  <h2 class="t">Provenance and the Dial That Lies</h2>
+  <p class="s">why a number needs its command</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="Four dials for an LLM feature: latency, token cost, rate-limit headroom and quality, read together rather than one at a time.">
     <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><circle cx="230" cy="160" r="66"/><circle cx="440" cy="160" r="66"/><circle cx="650" cy="160" r="66"/><circle cx="860" cy="160" r="66"/></g>
     <text x="230" y="266" text-anchor="middle" class="lbl">latency</text>
@@ -420,272 +281,98 @@ footer, header, hgroup, main, menu, nav, section {
     <g fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round"><path d="M230,160 L264,132"/><path d="M440,160 L472,182"/><path d="M650,160 L680,128"/><path d="M860,160 L886,190"/></g>
     <text x="550" y="316" text-anchor="middle" class="lbl-g">no setting wins all four &mdash; only the right one for this traffic class</text>
   </svg>
-  <div class="pageno">M16&middot;14</div>
+  <div class="pageno">M16&middot;08</div>
 </section>
 <section>
-  <h2 class="t">Four dials, read together</h2>
-  <p class="s">the module fourteen idea, pointed at a model call</p>
-  <svg viewBox="0 0 1100 320" role="img" aria-label="A dashboard with four gauges labelled latency, token cost, rate limits, and quality.">
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8"><rect x="60" y="60" width="980" height="200" rx="14"/></g>
-    <g filter="url(#rough)" fill="#dae8fc" stroke="#1e1e1e" stroke-width="2.4">
-      <circle cx="200" cy="150" r="52"/><circle cx="450" cy="150" r="52"/><circle cx="700" cy="150" r="52"/><circle cx="950" cy="150" r="52"/>
-    </g>
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round">
-      <path d="M200,150 L232,120"/><path d="M450,150 L480,128"/><path d="M700,150 L672,118"/><path d="M950,150 L980,132"/>
-    </g>
-    <g class="lbl-b" text-anchor="middle">
-      <text x="200" y="240">latency</text><text x="450" y="240">token cost</text><text x="700" y="240">rate limits</text><text x="950" y="240">quality</text>
-    </g>
-    <text x="550" y="295" text-anchor="middle" class="lbl-g">the pattern across the four points at a cause before any deep query</text>
+  <h2 class="t">Every number names its command</h2>
+  <p class="s">the source field is the evidence</p>
+  <svg viewBox="0 0 1180 380" role="img" aria-label="Every dial in a recommendation is recorded with the exact command that produced it and a measured flag. A number that cannot name its command is a guess wearing a dial's clothes.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.5"><rect x="90" y="50" width="1000" height="170" rx="12" fill="#ffffff"/></g>
+    <text x="120" y="96" class="lbl">{ "dial": "token_cost", "value": 9450, "unit": "usd_per_day",</text>
+    <text x="120" y="140" class="lbl">&nbsp;&nbsp;"source": "llm-dials.sh dials support --field json",</text>
+    <text x="120" y="184" class="lbl">&nbsp;&nbsp;"measured": true }</text>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="90" y="250" width="1000" height="96" rx="12" class="f-green"/></g>
+    <text x="590" y="288" text-anchor="middle" class="lbl-b">a number that cannot name its command is not a dial reading</text>
+    <text x="590" y="326" text-anchor="middle" class="lbl-sm">the exact command, not a file path and not a description &middot; "measured": false is honest, next to a confident value it is not</text>
   </svg>
-  <div class="pageno">M16&middot;15</div>
+  <div class="pageno">M16&middot;09</div>
 </section>
 <section>
-  <h2 class="t">They trade off, and the trade differs by class</h2>
-  <p class="s">a drafting feature and a batch job want opposite things</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="A trade-off diagram with four axes: quality, latency, cost, headroom. Support is pinned in green at the fast-cheap corner; the regressed setting is pinned in red at the deep-slow corner.">
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2" stroke-linecap="round">
-      <line x1="550" y1="60" x2="550" y2="290"/><line x1="230" y1="175" x2="870" y2="175"/>
-    </g>
-    <g class="lbl-g" text-anchor="middle">
-      <text x="550" y="48">deep / slow</text><text x="550" y="315">fast / cheap</text>
-      <text x="180" y="180">quality</text><text x="930" y="180">headroom</text>
-    </g>
-    <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.6"><circle cx="720" cy="250" r="16"/></g>
-    <text x="720" y="290" text-anchor="middle" class="lbl-b" fill="#2e7d32">support ✓</text>
-    <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="2.6"><circle cx="440" cy="105" r="16"/></g>
-    <text x="410" y="95" text-anchor="middle" class="lbl-b" fill="#c62828">regressed ✗</text>
+  <h2 class="t">A packet with nothing behind it</h2>
+  <p class="s">the format is not the evidence</p>
+  <svg viewBox="0 0 1180 400" role="img" aria-label="A diagnosis run produced a perfectly formatted packet with four dials while none of the tools had run. Three of the four numbers were right and all three were printed in the role's own brief; the fourth, quality, was invented.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.5"><rect x="60" y="40" width="1060" height="130" rx="12" fill="#ffffff"/></g>
+    <text x="90" y="78" class="lbl-g">handoff packet &nbsp;&middot;&nbsp; $0.4506 / 23 turns &nbsp;&middot;&nbsp; zero tools run</text>
+    <text x="90" y="122" class="lbl">p95 9500 &nbsp; cost delta 8946 &nbsp; headroom &minus;150 &nbsp;</text>
+    <text x="700" y="122" class="lbl-bad">quality: "pass"</text>
+    <text x="90" y="158" class="lbl-sm">"cross-checked against handoff-example numbers in my brief &mdash; they match exactly"</text>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="60" y="210" width="520" height="130" rx="11" fill="#ffffff"/><rect x="620" y="210" width="500" height="130" rx="11" class="f-red"/></g>
+    <text x="320" y="252" text-anchor="middle" class="lbl-b">the three it copied</text>
+    <text x="320" y="294" text-anchor="middle" class="lbl-sm">all three are printed in its own</text>
+    <text x="320" y="324" text-anchor="middle" class="lbl-sm">role file as examples &mdash; circular</text>
+    <text x="870" y="252" text-anchor="middle" class="lbl-b">the one it had to measure</text>
+    <text x="870" y="294" text-anchor="middle" class="lbl-sm">reported pass; the dial said fail</text>
+    <text x="870" y="324" text-anchor="middle" class="lbl-sm">and it dismissed the contradiction</text>
   </svg>
-  <div class="pageno">M16&middot;16</div>
+  <div class="pageno">M16&middot;10</div>
 </section>
 <section>
-  <h2 class="t">What the dials actually read after the flip</h2>
-  <p class="s">and the third one is the finding nobody eyeballs</p>
-  <svg viewBox="0 0 1100 380" role="img" aria-label="The four dials for the support route after the regression: p95 latency of nine and a half seconds, a token cost of nine thousand four hundred and fifty dollars a day, rate-limit headroom of minus one hundred and fifty percent because the route is configured for three hundred thousand tokens a minute against a provider ceiling of one hundred and twenty thousand, and a quality verdict of unknown because no gate has run.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="60" y="26" width="980" height="62" rx="8" class="f-red"/></g>
-    <text x="300" y="64" text-anchor="middle" class="lbl-b">latency p95</text>
-    <text x="760" y="64" text-anchor="middle" class="lbl">9,500 ms, with a human waiting</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="60" y="98" width="980" height="62" rx="8" class="f-red"/></g>
-    <text x="300" y="136" text-anchor="middle" class="lbl-b">token cost</text>
-    <text x="760" y="136" text-anchor="middle" class="lbl">$9,450 / day</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="3"><rect x="60" y="170" width="980" height="86" rx="8" class="f-red"/></g>
-    <text x="300" y="208" text-anchor="middle" class="lbl-b">rate-limit headroom</text>
-    <text x="760" y="208" text-anchor="middle" class="lbl-bad">&minus;150%</text>
-    <text x="300" y="240" text-anchor="middle" class="lbl-g">300k tpm configured</text>
-    <text x="760" y="240" text-anchor="middle" class="lbl-sm">against a 120k provider ceiling</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="60" y="266" width="980" height="62" rx="8" class="f-orange"/></g>
-    <text x="300" y="304" text-anchor="middle" class="lbl-b">quality</text>
-    <text x="760" y="304" text-anchor="middle" class="lbl">unknown &mdash; no gate has run</text>
-    <text x="550" y="366" text-anchor="middle" class="lbl-g">an unchanged rate-limit line became a breach the moment the tier moved</text>
+  <h2 class="t">The dial that cannot name what it measured</h2>
+  <p class="s">three dials and a rumour</p>
+  <svg viewBox="0 0 1180 380" role="img" aria-label="Running the quality gate against the good output set makes the dial report pass; running it against the regressed set makes the same dial report fail. No route, model or config changed in between. The state file records which set was graded but the dial discards it.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="60" y="40" width="1060" height="70" rx="11" class="f-green"/><rect x="60" y="130" width="1060" height="70" rx="11" class="f-red"/></g>
+    <text x="90" y="84" class="lbl">gate --set good &nbsp;&rarr;&nbsp; dial says</text>
+    <text x="640" y="84" class="lbl-b">last_gate_verdict: "pass"</text>
+    <text x="90" y="174" class="lbl">gate --set regressed &nbsp;&rarr;&nbsp; dial says</text>
+    <text x="640" y="174" class="lbl-b">last_gate_verdict: "fail"</text>
+    <text x="590" y="236" text-anchor="middle" class="lbl-sm">no route changed &middot; no model changed &middot; nothing in the config moved</text>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.5"><rect x="60" y="264" width="1060" height="92" rx="11" fill="#ffffff"/></g>
+    <text x="590" y="302" text-anchor="middle" class="lbl-b">the state file records "set": "regressed" &mdash; the dial reads .verdict and throws it away</text>
+    <text x="590" y="338" text-anchor="middle" class="lbl-sm">so the honest reading is unknown, and unknown is never pass</text>
   </svg>
-  <p class="recap fragment">A safe number under one tier breaches under another. Next: Provider vs Application Latency.</p>
-  <div class="pageno">M16&middot;17</div>
-</section>
-<section class="divider">
-  <h2 class="t">Provider vs Application Latency</h2>
-  <p class="s">same symptom, opposite fix</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="A dish taking too long to reach the table has two possible causes: the kitchen is slow, or the waiter is stuck. The symptom is identical and the fixes are completely different.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="80" y="90" width="400" height="160" rx="12" class="f-orange"/></g>
-    <text x="280" y="150" text-anchor="middle" class="lbl-b">the kitchen is slow</text>
-    <text x="280" y="196" text-anchor="middle" class="lbl-sm">nothing the waiter does helps</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="620" y="90" width="400" height="160" rx="12" class="f-blue"/></g>
-    <text x="820" y="150" text-anchor="middle" class="lbl-b">the waiter is stuck</text>
-    <text x="820" y="196" text-anchor="middle" class="lbl-sm">the dish has been ready for ten minutes</text>
-    <text x="550" y="310" text-anchor="middle" class="lbl-g">same complaint at the table, completely different repair</text>
-  </svg>
-  <div class="pageno">M16&middot;18</div>
+  <div class="pageno">M16&middot;11</div>
 </section>
 <section>
-  <h2 class="t">Provider latency and application latency</h2>
-  <p class="s">the same symptom, and opposite repairs</p>
-  <svg viewBox="0 0 1100 320" role="img" aria-label="Two panels. Left: a slow kitchen labelled provider latency, fix the route. Right: a stuck waiter with food under a heat lamp labelled application latency, fix the code.">
-    <g filter="url(#rough)" fill="#fef3c7" stroke="#1e1e1e" stroke-width="2.8"><rect x="60" y="65" width="450" height="200" rx="12"/></g>
-    <text x="285" y="105" text-anchor="middle" class="lbl-b">kitchen = provider</text>
-    <text x="285" y="150" text-anchor="middle" class="lbl">the model's own time</text>
-    <text x="285" y="185" text-anchor="middle" class="lbl-g">a deeper model is a slower kitchen</text>
-    <text x="285" y="235" text-anchor="middle" class="lbl-b" fill="#b45309">→ fix the ROUTE</text>
-    <g filter="url(#rough)" fill="#e0e7ff" stroke="#1e1e1e" stroke-width="2.8"><rect x="590" y="65" width="450" height="200" rx="12"/></g>
-    <text x="815" y="105" text-anchor="middle" class="lbl-b">waiter = application</text>
-    <text x="815" y="150" text-anchor="middle" class="lbl">queueing, retries, your hops</text>
-    <text x="815" y="185" text-anchor="middle" class="lbl-g">food ready, sitting under the lamp</text>
-    <text x="815" y="235" text-anchor="middle" class="lbl-b" fill="#4338ca">→ fix the CODE</text>
+  <h2 class="t">The house standard, measured</h2>
+  <p class="s">same prompt, same model, three outcomes</p>
+  <svg viewBox="0 0 1180 400" role="img" aria-label="An A/B on the house standard with an identical prompt. With no standard the agent hand-computed the dials and cost 45 cents. With the standard but the tools denied it refused and asked, costing 38 cents. With the standard and the tools allowed it measured everything, costing 40 cents. The run that guessed was the most expensive.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="40" y="50" width="350" height="200" rx="11" class="f-red"/><rect x="415" y="50" width="350" height="200" rx="11" fill="#ffffff"/><rect x="790" y="50" width="340" height="200" rx="11" class="f-green"/></g>
+    <text x="215" y="94" text-anchor="middle" class="lbl-b">no standard</text>
+    <text x="215" y="140" text-anchor="middle" class="lbl-sm">hand-computed the dials</text>
+    <text x="215" y="178" text-anchor="middle" class="lbl-sm">quality: pass (wrong)</text>
+    <text x="215" y="222" text-anchor="middle" class="lbl-b">$0.4506</text>
+    <text x="590" y="94" text-anchor="middle" class="lbl-b">standard, tools denied</text>
+    <text x="590" y="140" text-anchor="middle" class="lbl-sm">refused; listed the commands</text>
+    <text x="590" y="178" text-anchor="middle" class="lbl-sm">quality: unknown</text>
+    <text x="590" y="222" text-anchor="middle" class="lbl-b">$0.3779</text>
+    <text x="960" y="94" text-anchor="middle" class="lbl-b">standard, tools allowed</text>
+    <text x="960" y="140" text-anchor="middle" class="lbl-sm">every dial measured + sourced</text>
+    <text x="960" y="178" text-anchor="middle" class="lbl-sm">quality: unknown, both sets run</text>
+    <text x="960" y="222" text-anchor="middle" class="lbl-b">$0.3966</text>
+    <text x="585" y="306" text-anchor="middle" class="lbl">the run that guessed was the most expensive of the three</text>
+    <text x="585" y="350" text-anchor="middle" class="lbl-sm">and the reporters were not in permissions.allow &mdash; the honest path was blocked, so it invented one</text>
   </svg>
-  <div class="pageno">M16&middot;19</div>
+  <p class="recap fragment">Denying a read-only reporter does not make an agent safe. It makes it guess.</p>
+  <div class="pageno">M16&middot;12</div>
 </section>
 <section>
-  <h2 class="t">Two halves, two owners, two repairs</h2>
-  <p class="s">and you cannot tell which from the symptom</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="If provider time dominates, the repair is the route: a different tier, a smaller context, or a streaming response. If application time dominates, the repair is your own code: the retries, the serialisation, the blocking call around the model.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="60" width="440" height="180" rx="12" class="f-red"/></g>
-    <text x="280" y="116" text-anchor="middle" class="lbl-b">provider dominates</text>
-    <text x="280" y="162" text-anchor="middle" class="lbl-sm">change the tier, the context, the streaming</text>
-    <text x="280" y="204" text-anchor="middle" class="lbl-bad">optimising your code does nothing</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="600" y="60" width="440" height="180" rx="12" class="f-blue"/></g>
-    <text x="820" y="116" text-anchor="middle" class="lbl-b">application dominates</text>
-    <text x="820" y="162" text-anchor="middle" class="lbl-sm">the retries, the serialisation, the blocking call</text>
-    <text x="820" y="204" text-anchor="middle" class="lbl-good">now the profiler earns its keep</text>
-    <text x="550" y="310" text-anchor="middle" class="lbl-g">the symptom at the table is identical either way</text>
-  </svg>
-  <div class="pageno">M16&middot;20</div>
-</section>
-<section>
-  <h2 class="t">Split the span, and the argument ends</h2>
-  <p class="s">ninety-six percent of the wait was the provider</p>
-  <svg viewBox="0 0 1100 360" role="img" aria-label="Splitting one real request trace after the regression: of eight thousand seven hundred and thirty milliseconds total, eight thousand three hundred and ninety were provider time and three hundred and forty were application time, so the dominant half is the provider at ninety-six point one percent.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="40" width="980" height="70" rx="10" class="f-blue"/></g>
-    <text x="300" y="82" text-anchor="middle" class="lbl-b">total</text>
-    <text x="760" y="82" text-anchor="middle" class="lbl">8,730 ms</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="3"><rect x="60" y="126" width="940" height="70" rx="10" class="f-red"/></g>
-    <text x="300" y="168" text-anchor="middle" class="lbl-b">provider</text>
-    <text x="740" y="168" text-anchor="middle" class="lbl-bad">8,390 ms &mdash; 96.1%</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="60" y="212" width="120" height="70" rx="10" class="f-green"/></g>
-    <text x="300" y="254" text-anchor="middle" class="lbl-b">application</text>
-    <text x="740" y="254" text-anchor="middle" class="lbl">340 ms</text>
-    <text x="550" y="332" text-anchor="middle" class="lbl-g">no amount of application optimisation touches the 96% that is not yours</text>
-  </svg>
-  <p class="recap fragment">Localise it before you optimise it. Next: Prompts and the Quality Gate.</p>
-  <div class="pageno">M16&middot;21</div>
-</section>
-<section class="divider">
-  <h2 class="t">Prompts and the Quality Gate</h2>
-  <p class="s">an SOP in Git, with assertions attached</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="A prompt treated as a standard operating procedure stored in version control, with a regression suite of assertions standing between a change to it and a merge.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="80" y="90" width="360" height="160" rx="12" class="f-purple"/></g>
-    <text x="260" y="150" text-anchor="middle" class="lbl-b">the prompt, in Git</text>
-    <text x="260" y="196" text-anchor="middle" class="lbl-sm">reviewed like any other file</text>
-    <g fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round"><path d="M462,170 L520,170" marker-end="url(#ah)"/></g>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="3"><rect x="540" y="90" width="300" height="160" rx="12" class="f-green"/></g>
-    <text x="690" y="150" text-anchor="middle" class="lbl-b">the suite</text>
-    <text x="690" y="196" text-anchor="middle" class="lbl-sm">assertions, not opinions</text>
-    <g fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round"><path d="M862,170 L920,170" marker-end="url(#ah)"/></g>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="940" y="120" width="120" height="100" rx="12" class="f-blue"/></g>
-    <text x="1000" y="176" text-anchor="middle" class="lbl-b">merge</text>
-  </svg>
-  <div class="pageno">M16&middot;22</div>
-</section>
-<section>
-  <h2 class="t">A prompt is an SOP, not a sticky note</h2>
-  <p class="s">so it lives in Git and goes through review</p>
-  <svg viewBox="0 0 1100 330" role="img" aria-label="A prompt file in Git with three assertions revealed, then a regressed set tripping a red CI check.">
-    <g class="fragment" data-fragment-index="0">
-      <g filter="url(#rough)" fill="#e1d5e7" stroke="#1e1e1e" stroke-width="3"><rect x="60" y="70" width="330" height="200" rx="12"/></g>
-      <text x="225" y="108" text-anchor="middle" class="lbl-b">prompt.md, in Git</text>
-      <text x="225" y="150" text-anchor="middle" class="lbl-g">an SOP with a history</text>
-      <g filter="url(#rough)" fill="#d5e8d4" stroke="#1e1e1e" stroke-width="2.2">
-        <rect x="90" y="170" width="270" height="30" rx="6"/>
-        <rect x="90" y="207" width="270" height="30" rx="6"/>
-      </g>
-      <text x="225" y="192" text-anchor="middle" class="lbl-sm">has order ID · no refund</text>
-      <text x="225" y="229" text-anchor="middle" class="lbl-sm">under 90 words</text>
+  <h2 class="t">In the lab</h2>
+  <p class="s">seven steps, one recommendation</p>
+  <svg viewBox="0 0 1180 400" role="img" aria-label="Seven lab steps: price the one-line change, write the brief, run the diagnosis and read it sceptically, fix the cause rather than the agent, re-run and check every number yourself, repair the dial that cannot name its input, and hand the recommendation to a reviewer.">
+    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2">
+      <circle cx="90" cy="55" r="19"/><circle cx="90" cy="107" r="19"/><circle cx="90" cy="159" r="19"/><circle cx="90" cy="211" r="19"/><circle cx="90" cy="263" r="19"/><circle cx="90" cy="315" r="19"/><circle cx="90" cy="367" r="19"/>
     </g>
-    <g class="fragment" data-fragment-index="1">
-      <g fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><path d="M390,170 L560,170" marker-end="url(#ah)"/></g>
-      <text x="475" y="155" text-anchor="middle" class="lbl-g">regressed set</text>
-      <g filter="url(#rough)" fill="#f8cecc" stroke="#1e1e1e" stroke-width="3"><rect x="600" y="90" width="440" height="160" rx="12"/></g>
-      <text x="820" y="135" text-anchor="middle" class="lbl-b" fill="#c62828">CI check: FAIL</text>
-      <text x="820" y="180" text-anchor="middle" class="lbl-sm">drafts invented refunds,</text>
-      <text x="820" y="210" text-anchor="middle" class="lbl-sm">dropped the order ID</text>
-    </g>
+    <text x="90" y="63" text-anchor="middle" class="lbl-sm">1</text><text x="140" y="63" class="lbl">Price the one-line routing change</text>
+    <text x="90" y="115" text-anchor="middle" class="lbl-sm">2</text><text x="140" y="115" class="lbl">Write the brief &mdash; what a recommendation must contain</text>
+    <text x="90" y="167" text-anchor="middle" class="lbl-sm">3</text><text x="140" y="167" class="lbl">Run the diagnosis, and read it sceptically</text>
+    <text x="90" y="219" text-anchor="middle" class="lbl-sm">4</text><text x="140" y="219" class="lbl">Fix the cause, not the agent</text>
+    <text x="90" y="271" text-anchor="middle" class="lbl-sm">5</text><text x="140" y="271" class="lbl">Re-run, and check every number yourself</text>
+    <text x="90" y="323" text-anchor="middle" class="lbl-sm">6</text><text x="140" y="323" class="lbl">Repair the dial that cannot name its input</text>
+    <text x="90" y="375" text-anchor="middle" class="lbl-sm">7</text><text x="140" y="375" class="lbl">Hand the recommendation to a reviewer</text>
   </svg>
-  <div class="pageno">M16&middot;23</div>
+  <div class="pageno">M16&middot;13</div>
 </section>
-<section>
-  <h2 class="t">The suite pins the behaviours that matter</h2>
-  <p class="s">keep the order ID, promise nothing, stay under the limit</p>
-  <svg viewBox="0 0 1100 360" role="img" aria-label="The regression suite run two ways. Against the good recorded outputs, eight assertions pass, zero fail, verdict pass, exit code 0. Against the regressed outputs, five required assertions break, verdict fail, exit code 2, so the change does not merge.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="3"><rect x="60" y="40" width="460" height="180" rx="12" class="f-green"/></g>
-    <text x="290" y="96" text-anchor="middle" class="lbl-b">the good set</text>
-    <text x="290" y="142" text-anchor="middle" class="lbl-sm">8 passed &middot; 0 failed</text>
-    <text x="290" y="184" text-anchor="middle" class="lbl-good">verdict: pass &middot; exit 0</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="3"><rect x="580" y="40" width="460" height="180" rx="12" class="f-red"/></g>
-    <text x="810" y="96" text-anchor="middle" class="lbl-b">the regressed set</text>
-    <text x="810" y="142" text-anchor="middle" class="lbl-sm">5 required assertions broke</text>
-    <text x="810" y="184" text-anchor="middle" class="lbl-bad">verdict: fail &middot; exit 2</text>
-    <text x="550" y="290" text-anchor="middle" class="lbl">invented refunds &middot; dropped order IDs &middot; guaranteed dates</text>
-    <text x="550" y="336" text-anchor="middle" class="lbl-g">quality stops being a vibe the moment it has an exit code</text>
-  </svg>
-  <div class="pageno">M16&middot;24</div>
-</section>
-<section>
-  <h2 class="t">And then the fourth dial finally reads</h2>
-  <p class="s">the gate writes its verdict where the dials can see it</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="Running the quality gate writes its verdict to a state file, so the quality dial changes from unknown to pass and all four dials finally read together.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="80" y="100" width="360" height="140" rx="12" class="f-orange"/></g>
-    <text x="260" y="152" text-anchor="middle" class="lbl-b">quality: unknown</text>
-    <text x="260" y="196" text-anchor="middle" class="lbl-sm">because no gate had run</text>
-    <g fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round"><path d="M462,170 L560,170" marker-end="url(#ah)"/></g>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="3"><rect x="580" y="100" width="440" height="140" rx="12" class="f-green"/></g>
-    <text x="800" y="152" text-anchor="middle" class="lbl-b">quality: pass</text>
-    <text x="800" y="196" text-anchor="middle" class="lbl-sm">all four dials reading together</text>
-  </svg>
-  <p class="recap fragment">Four dials, one surface. Next: what you carry into the lab.</p>
-  <div class="pageno">M16&middot;25</div>
-</section>
-<section>
-  <h2 class="t">What you carry into the lab</h2>
-  <p class="s">five habits for operating an LLM feature</p>
-  <svg viewBox="0 0 1100 380" role="img" aria-label="Five habits: most teams operate the model rather than train it, a routing change is a priced cost and SLO decision, read four dials together, split the span before optimising, and a prompt is an SOP that merges through a gate.">
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.2"><circle cx="100" cy="52" r="20"/></g>
-    <text x="100" y="60" text-anchor="middle" class="lbl-b">1</text>
-    <text x="150" y="60" text-anchor="start" class="lbl">most teams operate the model; that is still a real job</text>
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.2"><circle cx="100" cy="114" r="20"/></g>
-    <text x="100" y="122" text-anchor="middle" class="lbl-b">2</text>
-    <text x="150" y="122" text-anchor="start" class="lbl">a routing change is a priced cost and SLO decision</text>
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.2"><circle cx="100" cy="176" r="20"/></g>
-    <text x="100" y="184" text-anchor="middle" class="lbl-b">3</text>
-    <text x="150" y="184" text-anchor="start" class="lbl">read four dials together, not the loudest one</text>
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.2"><circle cx="100" cy="238" r="20"/></g>
-    <text x="100" y="246" text-anchor="middle" class="lbl-b">4</text>
-    <text x="150" y="246" text-anchor="start" class="lbl">split the span before anybody optimises anything</text>
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.2"><circle cx="100" cy="300" r="20"/></g>
-    <text x="100" y="308" text-anchor="middle" class="lbl-b">5</text>
-    <text x="150" y="308" text-anchor="start" class="lbl">a prompt is an SOP, and it merges through a gate</text>
-  </svg>
-  <div class="pageno">M16&middot;26</div>
-</section>
-<section>
-  <h2 class="t">What you will do as part of the lab</h2>
-  <p class="s">six steps, about ninety minutes</p>
-  <svg viewBox="0 0 1430 220" role="img" aria-label="Six lab steps revealed one at a time: read the routing file as a reviewed artifact, diff it against the baseline and see the cost delta, read all four dials and find the negative rate-limit headroom, split a real trace to prove the provider dominates, run the quality gate on the good and regressed sets, and deliver the fix through the same gate.">
-    <g class="fragment" data-fragment-index="1" transform="translate(30,0)">
-      <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2" stroke-dasharray="8 7"><rect x="0" y="10" width="140" height="100" rx="10"/></g>
-      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="44" y="24" width="52" height="64" rx="6" class="f-purple"/></g><g fill="none" stroke="#757575" stroke-width="2"><path d="M56,44 L84,44"/><path d="M56,58 L84,58"/><path d="M56,72 L76,72"/></g>
-      <text x="70" y="150" text-anchor="middle" class="lbl-b">read the artifact</text>
-      <text x="70" y="182" text-anchor="middle" class="lbl-sm">routing, in version control</text>
-    </g>
-    <g class="fragment" data-fragment-index="2" transform="translate(275,0)">
-      <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2" stroke-dasharray="8 7"><rect x="0" y="10" width="140" height="100" rx="10"/></g>
-      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="28" y="30" width="84" height="56" rx="6" class="f-orange"/></g><g fill="none" stroke="#757575" stroke-width="2"><path d="M70,30 L70,86"/></g>
-      <text x="70" y="150" text-anchor="middle" class="lbl-b">diff the baseline</text>
-      <text x="70" y="182" text-anchor="middle" class="lbl-sm">+$8,946 a day</text>
-    </g>
-    <g class="fragment" data-fragment-index="3" transform="translate(520,0)">
-      <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2" stroke-dasharray="8 7"><rect x="0" y="10" width="140" height="100" rx="10"/></g>
-      <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><circle cx="70" cy="56" r="28"/></g><g fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round"><path d="M70,56 L88,38"/></g>
-      <text x="70" y="150" text-anchor="middle" class="lbl-b">read four dials</text>
-      <text x="70" y="182" text-anchor="middle" class="lbl-sm">and find the &minus;150%</text>
-    </g>
-    <g class="fragment" data-fragment-index="4" transform="translate(765,0)">
-      <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2" stroke-dasharray="8 7"><rect x="0" y="10" width="140" height="100" rx="10"/></g>
-      <g fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><path d="M34,56 L106,56"/></g><g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="34" y="42" width="52" height="28" rx="6" class="f-red"/></g>
-      <text x="70" y="150" text-anchor="middle" class="lbl-b">split the span</text>
-      <text x="70" y="182" text-anchor="middle" class="lbl-sm">96% was the provider</text>
-    </g>
-    <g class="fragment" data-fragment-index="5" transform="translate(1010,0)">
-      <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2" stroke-dasharray="8 7"><rect x="0" y="10" width="140" height="100" rx="10"/></g>
-      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="34" y="34" width="72" height="48" rx="8" class="f-green"/></g><g fill="none" stroke="#2e7d32" stroke-width="3" stroke-linecap="round"><path d="M50,58 L64,72 L92,44"/></g>
-      <text x="70" y="150" text-anchor="middle" class="lbl-b">run the quality gate</text>
-      <text x="70" y="182" text-anchor="middle" class="lbl-sm">pass, then fail</text>
-    </g>
-    <g class="fragment" data-fragment-index="6" transform="translate(1255,0)">
-      <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2" stroke-dasharray="8 7"><rect x="0" y="10" width="140" height="100" rx="10"/></g>
-      <g fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><path d="M40,88 L40,34"/><path d="M40,44 L96,44"/></g><g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><circle cx="100" cy="44" r="12" class="f-green"/></g>
-      <text x="70" y="150" text-anchor="middle" class="lbl-b">deliver the fix</text>
-      <text x="70" y="182" text-anchor="middle" class="lbl-sm">through the same gate</text>
-    </g>
-  </svg>
-  <div class="pageno">M16&middot;27</div>
-</section>
+
 
 
 
