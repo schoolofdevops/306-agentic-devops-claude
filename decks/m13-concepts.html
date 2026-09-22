@@ -166,19 +166,15 @@ footer, header, hgroup, main, menu, nav, section {
 <section>
   <h2 class="t">Contents</h2>
   <p class="s">two chapters, then the project</p>
-  <svg viewBox="0 0 1100 400" role="img" aria-label="Three chapters: project and design; gate and verdict; invocation surfaces.">
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="120" y="90" width="52" height="52" rx="8"/></g>
-    <text x="146" y="125" text-anchor="middle" class="lbl-b">1</text>
-    <text x="200" y="116" class="lbl-b">Project and Design</text>
-    <text x="200" y="148" class="lbl-sm">artifacts, pipeline design, ownership</text>
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="120" y="190" width="52" height="52" rx="8"/></g>
-    <text x="146" y="225" text-anchor="middle" class="lbl-b">2</text>
-    <text x="200" y="216" class="lbl-b">Gate and Verdict</text>
-    <text x="200" y="248" class="lbl-sm">exit codes and the typed contract</text>
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="120" y="290" width="52" height="52" rx="8"/></g>
-    <text x="146" y="325" text-anchor="middle" class="lbl-b">3</text>
-    <text x="200" y="316" class="lbl-b">Invocation Surfaces</text>
-    <text x="200" y="348" class="lbl-sm">headless, Actions, and deploy authority</text>
+  <svg viewBox="0 0 1100 400" role="img" aria-label="Two chapters: project and design; core concepts.">
+    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="120" y="110" width="52" height="52" rx="8"/></g>
+    <text x="146" y="145" text-anchor="middle" class="lbl-b">1</text>
+    <text x="200" y="136" class="lbl-b">Project and Design</text>
+    <text x="200" y="168" class="lbl-sm">artifacts, pipeline design, ownership</text>
+    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="120" y="220" width="52" height="52" rx="8"/></g>
+    <text x="146" y="255" text-anchor="middle" class="lbl-b">2</text>
+    <text x="200" y="246" class="lbl-b">Core Concepts</text>
+    <text x="200" y="278" class="lbl-sm">exit contract, typed verdict, invocation, authority</text>
   </svg>
   <div class="pageno">M13&middot;02</div>
 </section>
@@ -236,7 +232,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section>
   <h2 class="t">Pipeline design</h2>
   <p class="s">four jobs, and one of them deploys</p>
-  <svg viewBox="0 0 1180 400" role="img" aria-label="Pipeline design. A pull request triggers the Claude Code Action review and the deterministic gate. On merge, a headless bare run emits a typed verdict. The pipeline branches on the verdict and deploys. A load check runs alongside.">
+  <svg viewBox="0 0 1180 400" role="img" aria-label="Pipeline design. A pull request triggers the Claude Code Action review and the deterministic gate. The gate result feeds a headless run that emits a typed verdict. The pipeline branches on the verdict and deploys. A load check runs alongside.">
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.5"><rect x="30" y="56" width="200" height="74" rx="10" class="f-purple"/></g>
     <text x="130" y="90" text-anchor="middle" class="lbl-b">pull request</text>
     <text x="130" y="116" text-anchor="middle" class="lbl-sm">opened</text>
@@ -247,7 +243,7 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="445" y="172" text-anchor="middle" class="lbl-sm">exit 0 / 2 / 1</text>
     <g fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M242,84 L290,62" marker-end="url(#ahg)"/><path d="M242,100 L290,148" marker-end="url(#ahg)"/><path d="M602,151 L652,151" marker-end="url(#ahg)"/></g>
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.5"><rect x="664" y="116" width="290" height="70" rx="10" class="f-blue"/></g>
-    <text x="809" y="148" text-anchor="middle" class="lbl-b">claude -p --bare</text>
+    <text x="809" y="148" text-anchor="middle" class="lbl-b">claude -p --agents</text>
     <text x="809" y="172" text-anchor="middle" class="lbl-sm">--json-schema &rarr; structured_output</text>
     <g fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M966,151 L1010,151" marker-end="url(#ahg)"/></g>
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.5"><rect x="1022" y="116" width="130" height="70" rx="10" class="f-orange"/></g>
