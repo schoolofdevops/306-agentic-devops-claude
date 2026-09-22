@@ -393,7 +393,7 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 <section>
   <h2 class="t">Three invocation surfaces</h2>
-  <p class="s">same tool, three entry points, two auth models</p>
+  <p class="s">same tool, three entry points, one subscription token</p>
   <svg viewBox="0 0 1180 400" role="img" aria-label="Three invocation surfaces: interactive terminal with a role, headless bare in the pipeline with a JSON schema, and the Claude Code Action on a pull request with subscription auth.">
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="40" y="60" width="340" height="250" rx="13" class="f-purple"/><rect x="420" y="60" width="340" height="250" rx="13" class="f-blue"/><rect x="800" y="60" width="340" height="250" rx="13" class="f-green"/></g>
     <text x="210" y="106" text-anchor="middle" class="lbl-b">interactive</text>
@@ -401,14 +401,14 @@ footer, header, hgroup, main, menu, nav, section {
     <text x="210" y="196" text-anchor="middle" class="lbl-sm">builds the artifacts</text>
     <text x="210" y="248" text-anchor="middle" class="lbl-g">subscription login</text>
     <text x="590" y="106" text-anchor="middle" class="lbl-b">headless in CI</text>
-    <text x="590" y="150" text-anchor="middle" class="lbl-sm">claude -p --bare --agents</text>
+    <text x="590" y="150" text-anchor="middle" class="lbl-sm">claude -p --agents --strict-mcp-config</text>
     <text x="590" y="196" text-anchor="middle" class="lbl-sm">--json-schema &rarr; typed verdict</text>
-    <text x="590" y="248" text-anchor="middle" class="lbl-bad">ANTHROPIC_API_KEY required</text>
+    <text x="590" y="248" text-anchor="middle" class="lbl-g">CLAUDE_CODE_OAUTH_TOKEN</text>
     <text x="970" y="106" text-anchor="middle" class="lbl-b">claude-code-action@v1</text>
     <text x="970" y="150" text-anchor="middle" class="lbl-sm">reviews the pull request</text>
     <text x="970" y="196" text-anchor="middle" class="lbl-sm">prompt input &rarr; automation mode</text>
     <text x="970" y="248" text-anchor="middle" class="lbl-g">claude_code_oauth_token</text>
-    <text x="590" y="368" text-anchor="middle" class="lbl-g">--bare never reads OAuth, so the two CI surfaces authenticate differently</text>
+    <text x="590" y="368" text-anchor="middle" class="lbl-g">one subscription token from claude setup-token covers all three &mdash; no API key anywhere</text>
   </svg>
   <div class="pageno">M13&middot;14</div>
 </section>
@@ -446,7 +446,7 @@ footer, header, hgroup, main, menu, nav, section {
     <g class="fragment" data-fragment-index="3">
       <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="50" y="246" width="1080" height="82" rx="10" class="f-blue"/></g>
       <text x="90" y="282" class="lbl-b">claude --bare &rarr; &ldquo;Not logged in&rdquo;, exit 1</text>
-      <text x="90" y="312" class="lbl-sm">bare mode never reads OAuth &mdash; it pins the run, and it needs an API key</text>
+      <text x="90" y="312" class="lbl-sm">bare mode reads no OAuth token &mdash; full isolation costs an API key, so we pin without it</text>
     </g>
   </svg>
   <div class="pageno">M13&middot;16</div>
@@ -496,8 +496,8 @@ footer, header, hgroup, main, menu, nav, section {
     <g class="fragment" data-fragment-index="4">
       <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.2"><circle cx="90" cy="330" r="22"/></g>
       <text x="90" y="340" text-anchor="middle" class="lbl-b">4</text>
-      <text x="146" y="326" class="lbl-b">--bare in a local command</text>
-      <text x="146" y="360" class="lbl-sm">it demands an API key; keep it in the workflow</text>
+      <text x="146" y="326" class="lbl-b">reaching for --bare to pin a run</text>
+      <text x="146" y="360" class="lbl-sm">it cannot read a subscription token at all</text>
     </g>
   </svg>
   <div class="pageno">M13&middot;18</div>
