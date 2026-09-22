@@ -146,7 +146,7 @@ footer, header, hgroup, main, menu, nav, section {
 <section data-auto-animate>
   <p class="kicker">MODULE 13 &nbsp;&middot;&nbsp; AGENTIC DEVOPS WITH CLAUDE CODE</p>
   <h2 class="t" style="font-size:2.2em">CI/CD and Release</h2>
-  <p class="s" style="font-size:1.1em">Build the gate, then decide who is allowed to decide</p>
+  <p class="s" style="font-size:1.1em">Release gate, typed verdict, and three Claude Code invocation surfaces</p>
   <svg viewBox="0 0 1130 330" role="img" aria-label="Four roles in a release: the agent inspects and signs a verdict, the pipeline decides on that verdict, the reconciler drives the change, and the canary check receives and confirms the shipment arrived healthy.">
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="40" y="100" width="230" height="120" rx="12" class="f-blue"/><rect x="310" y="100" width="230" height="120" rx="12" class="f-orange"/><rect x="580" y="100" width="230" height="120" rx="12" class="f-purple"/><rect x="850" y="100" width="240" height="120" rx="12" class="f-green"/></g>
     <text x="155" y="152" text-anchor="middle" class="lbl-b">inspect</text>
@@ -164,126 +164,126 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M13&middot;01</div>
 </section>
 <section>
-  <h2 class="t">What will you learn?</h2>
-  <p class="s">three chapters, then you build the thing</p>
-  <svg viewBox="0 0 1100 400" role="img" aria-label="A numbered contents list of the three chapters: the project and who does which part, the gate and its three answers rather than two, and the three ways to run it of which only one may decide.">
+  <h2 class="t">Contents</h2>
+  <p class="s">three chapters, then the project</p>
+  <svg viewBox="0 0 1100 400" role="img" aria-label="Three chapters: project and design; gate and verdict; invocation surfaces.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="120" y="90" width="52" height="52" rx="8"/></g>
     <text x="146" y="125" text-anchor="middle" class="lbl-b">1</text>
-    <text x="200" y="116" class="lbl-b">The Project</text>
-    <text x="200" y="148" class="lbl-sm">what we build, and who does which part</text>
+    <text x="200" y="116" class="lbl-b">Project and Design</text>
+    <text x="200" y="148" class="lbl-sm">artifacts, pipeline design, ownership</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="120" y="190" width="52" height="52" rx="8"/></g>
     <text x="146" y="225" text-anchor="middle" class="lbl-b">2</text>
-    <text x="200" y="216" class="lbl-b">The Gate</text>
-    <text x="200" y="248" class="lbl-sm">three answers, not two</text>
+    <text x="200" y="216" class="lbl-b">Gate and Verdict</text>
+    <text x="200" y="248" class="lbl-sm">exit codes and the typed contract</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="120" y="290" width="52" height="52" rx="8"/></g>
     <text x="146" y="325" text-anchor="middle" class="lbl-b">3</text>
-    <text x="200" y="316" class="lbl-b">Three Ways to Run It</text>
-    <text x="200" y="348" class="lbl-sm">and only one of them may decide</text>
+    <text x="200" y="316" class="lbl-b">Invocation Surfaces</text>
+    <text x="200" y="348" class="lbl-sm">headless, Actions, and deploy authority</text>
   </svg>
   <div class="pageno">M13&middot;02</div>
 </section>
 <section class="divider">
-  <h2 class="t">The Project</h2>
-  <p class="s">what we are building, and who does which part</p>
+  <h2 class="t">Project and Design</h2>
+  <p class="s">artifacts, pipeline design, ownership</p>
   <svg viewBox="0 0 1600 900" role="img" aria-label="Illustration: a bonded courier chain, where a high-value shipment is inspected, signed for, driven and received by four different people.">
     <image href="../img/decks/m13/bonded-courier-chain.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
   </svg>
   <div class="pageno">M13&middot;03</div>
 </section>
 <section>
-  <h2 class="t">The candidate that shipped</h2>
-  <p class="s">both defects were plain text in a reviewed file</p>
-  <svg viewBox="0 0 1180 400" role="img" aria-label="The release candidate that shipped, shown as two lines of a values file. The first sets a readiness probe path to slash health, a route the application does not serve. The second sets maxUnavailable to one hundred percent. Below, a note says the repository's own analyser already reports both, and nobody ran it.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="56" width="1060" height="150" rx="12" fill="#ffffff"/></g>
-    <text x="100" y="98" class="lbl-g">fixtures/release/candidate-values.yaml</text>
-    <text x="100" y="146" class="lbl">21:&nbsp;&nbsp;&nbsp;&nbsp;path: /health</text>
-    <text x="640" y="146" class="lbl-bad">a route the app does not serve</text>
-    <text x="100" y="186" class="lbl">30:&nbsp;&nbsp;&nbsp;&nbsp;maxUnavailable: "100%"</text>
-    <text x="640" y="186" class="lbl-bad">every pod may go at once</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="60" y="238" width="520" height="110" rx="11" class="f-green"/><rect x="600" y="238" width="520" height="110" rx="11" class="f-red"/></g>
-    <text x="320" y="280" text-anchor="middle" class="lbl-b">the analyser already knew</text>
-    <text x="320" y="318" text-anchor="middle" class="lbl-sm">pipeline-analyze.sh reports both</text>
-    <text x="860" y="280" text-anchor="middle" class="lbl-b">nobody ran it</text>
-    <text x="860" y="318" text-anchor="middle" class="lbl-sm">catching it meant remembering to look</text>
+  <h2 class="t">The release candidate</h2>
+  <p class="s">both defects detectable before it shipped</p>
+  <svg viewBox="0 0 1180 380" role="img" aria-label="Two lines of a release candidate values file: a readiness probe path of slash health, and maxUnavailable at one hundred percent. Below, the analyser output blocking on both, and a note that nothing in CI ran it.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="50" width="1060" height="130" rx="12" fill="#ffffff"/></g>
+    <text x="90" y="88" class="lbl-g">fixtures/release/candidate-values.yaml</text>
+    <text x="90" y="130" class="lbl">path: /health</text>
+    <text x="620" y="130" class="lbl-bad">route the app does not serve</text>
+    <text x="90" y="166" class="lbl">maxUnavailable: "100%"</text>
+    <text x="620" y="166" class="lbl-bad">no serving floor during rollout</text>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="60" y="210" width="520" height="120" rx="11" class="f-green"/><rect x="600" y="210" width="520" height="120" rx="11" class="f-red"/></g>
+    <text x="320" y="254" text-anchor="middle" class="lbl-b">pipeline-analyze.sh</text>
+    <text x="320" y="296" text-anchor="middle" class="lbl-sm">reports both, verdict: block</text>
+    <text x="860" y="254" text-anchor="middle" class="lbl-b">nothing in CI ran it</text>
+    <text x="860" y="296" text-anchor="middle" class="lbl-sm">and no job could act on the answer</text>
   </svg>
   <div class="pageno">M13&middot;04</div>
 </section>
 <section>
-  <h2 class="t">What we are building</h2>
-  <p class="s">a brief, a gate with tests, and the CI that runs it</p>
-  <svg viewBox="0 0 1180 400" role="img" aria-label="Three artifacts. First, a short brief you write. Second, the gate and its tests, written by the agent. Third, the CI wiring: one workflow that can fail a merge and one that can only comment.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="40" y="70" width="300" height="230" rx="14" class="f-purple"/></g>
-    <text x="190" y="116" text-anchor="middle" class="lbl-b">SPEC.md</text>
-    <text x="190" y="156" text-anchor="middle" class="lbl-sm">what a release must satisfy</text>
-    <text x="190" y="190" text-anchor="middle" class="lbl-sm">no exit codes, no schema</text>
-    <text x="190" y="252" text-anchor="middle" class="lbl-g">you write this</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="390" y="70" width="330" height="230" rx="14" class="f-blue"/></g>
-    <text x="555" y="116" text-anchor="middle" class="lbl-b">the gate + its tests</text>
-    <text x="555" y="156" text-anchor="middle" class="lbl-sm">one command CI runs</text>
-    <text x="555" y="190" text-anchor="middle" class="lbl-sm">tests for all three outcomes</text>
-    <text x="555" y="252" text-anchor="middle" class="lbl-g">the agent writes this</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="770" y="70" width="350" height="230" rx="14" class="f-green"/></g>
-    <text x="945" y="116" text-anchor="middle" class="lbl-b">the CI wiring</text>
-    <text x="945" y="156" text-anchor="middle" class="lbl-sm">one workflow may fail a merge</text>
-    <text x="945" y="190" text-anchor="middle" class="lbl-sm">one may only comment</text>
-    <text x="945" y="252" text-anchor="middle" class="lbl-g">the agent writes this too</text>
-    <text x="590" y="358" text-anchor="middle" class="lbl-g">a script anyone can read, and a model that cannot overrule it</text>
+  <h2 class="t">Artifacts</h2>
+  <p class="s">one brief, three agent-built components</p>
+  <svg viewBox="0 0 1180 400" role="img" aria-label="Four artifacts: the brief you write; the gate and its tests; the verdict schema and decider role; and three CI workflows.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.5"><rect x="30" y="70" width="265" height="230" rx="13" class="f-purple"/><rect x="315" y="70" width="265" height="230" rx="13" class="f-blue"/><rect x="600" y="70" width="265" height="230" rx="13" class="f-blue"/><rect x="885" y="70" width="265" height="230" rx="13" class="f-green"/></g>
+    <text x="162" y="114" text-anchor="middle" class="lbl-b">release/SPEC.md</text>
+    <text x="162" y="156" text-anchor="middle" class="lbl-sm">what a release</text>
+    <text x="162" y="186" text-anchor="middle" class="lbl-sm">must satisfy</text>
+    <text x="162" y="258" text-anchor="middle" class="lbl-g">you write this</text>
+    <text x="447" y="114" text-anchor="middle" class="lbl-b">gate + tests</text>
+    <text x="447" y="156" text-anchor="middle" class="lbl-sm">exit 0 / 2 / 1</text>
+    <text x="447" y="186" text-anchor="middle" class="lbl-sm">7 tests</text>
+    <text x="447" y="258" text-anchor="middle" class="lbl-g">agent, test-first</text>
+    <text x="732" y="114" text-anchor="middle" class="lbl-b">verdict.schema.json</text>
+    <text x="732" y="156" text-anchor="middle" class="lbl-sm">+ release-decider role</text>
+    <text x="732" y="186" text-anchor="middle" class="lbl-sm">ship | hold | block</text>
+    <text x="732" y="258" text-anchor="middle" class="lbl-g">agent, test-first</text>
+    <text x="1017" y="114" text-anchor="middle" class="lbl-b">3 workflows</text>
+    <text x="1017" y="156" text-anchor="middle" class="lbl-sm">gate &middot; verdict</text>
+    <text x="1017" y="186" text-anchor="middle" class="lbl-sm">review &middot; load check</text>
+    <text x="1017" y="258" text-anchor="middle" class="lbl-g">agent</text>
+    <text x="590" y="356" text-anchor="middle" class="lbl-g">none of them contains a deploy command</text>
   </svg>
   <div class="pageno">M13&middot;05</div>
 </section>
 <section>
-  <h2 class="t">How the work flows</h2>
-  <p class="s">seven steps, and the agent owns the middle two</p>
-  <svg viewBox="0 0 1180 370" role="img" aria-label="The project flow: you write the brief, the role designs and plans under the harness, seven tests are watched failing, the gate is written and they pass, you verify the three exit codes yourself, the CI wiring is added, and you price the stage that runs on every pull request.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="30" y="60" width="200" height="78" rx="10" class="f-purple"/><rect x="270" y="60" width="200" height="78" rx="10" class="f-blue"/><rect x="510" y="60" width="200" height="78" rx="10" class="f-red"/><rect x="750" y="60" width="200" height="78" rx="10" class="f-green"/></g>
-    <text x="130" y="96" text-anchor="middle" class="lbl-b">the brief</text>
-    <text x="130" y="124" text-anchor="middle" class="lbl-sm">you</text>
-    <text x="370" y="96" text-anchor="middle" class="lbl-b">design + plan</text>
-    <text x="370" y="124" text-anchor="middle" class="lbl-sm">the harness</text>
-    <text x="610" y="96" text-anchor="middle" class="lbl-b">7 tests fail</text>
-    <text x="610" y="124" text-anchor="middle" class="lbl-sm">before a gate exists</text>
-    <text x="850" y="96" text-anchor="middle" class="lbl-b">the gate</text>
-    <text x="850" y="124" text-anchor="middle" class="lbl-sm">and they pass</text>
-    <g fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round"><path d="M242,99 L258,99" marker-end="url(#ahg)"/><path d="M482,99 L498,99" marker-end="url(#ahg)"/><path d="M722,99 L738,99" marker-end="url(#ahg)"/><path d="M850,150 L850,192" marker-end="url(#ahg)"/></g>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="750" y="204" width="200" height="78" rx="10" class="f-orange"/><rect x="510" y="204" width="200" height="78" rx="10" class="f-blue"/><rect x="270" y="204" width="200" height="78" rx="10" class="f-green"/></g>
-    <text x="850" y="240" text-anchor="middle" class="lbl-b">you verify</text>
-    <text x="850" y="268" text-anchor="middle" class="lbl-sm">all three exit codes</text>
-    <text x="610" y="240" text-anchor="middle" class="lbl-b">wire it into CI</text>
-    <text x="610" y="268" text-anchor="middle" class="lbl-sm">three surfaces</text>
-    <text x="370" y="240" text-anchor="middle" class="lbl-b">price the stage</text>
-    <text x="370" y="268" text-anchor="middle" class="lbl-sm">it runs on every PR</text>
-    <g fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round"><path d="M738,243 L722,243" marker-end="url(#ahg)"/><path d="M498,243 L482,243" marker-end="url(#ahg)"/></g>
-    <text x="590" y="336" text-anchor="middle" class="lbl-g">you write the first step and check the last three</text>
+  <h2 class="t">Pipeline design</h2>
+  <p class="s">four jobs, and one of them deploys</p>
+  <svg viewBox="0 0 1180 400" role="img" aria-label="Pipeline design. A pull request triggers the Claude Code Action review and the deterministic gate. On merge, a headless bare run emits a typed verdict. The pipeline branches on the verdict and deploys. A load check runs alongside.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.5"><rect x="30" y="56" width="200" height="74" rx="10" class="f-purple"/></g>
+    <text x="130" y="90" text-anchor="middle" class="lbl-b">pull request</text>
+    <text x="130" y="116" text-anchor="middle" class="lbl-sm">opened</text>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.5"><rect x="300" y="26" width="290" height="70" rx="10" class="f-green"/><rect x="300" y="116" width="290" height="70" rx="10" class="f-green"/></g>
+    <text x="445" y="58" text-anchor="middle" class="lbl-b">claude-code-action@v1</text>
+    <text x="445" y="82" text-anchor="middle" class="lbl-sm">reviews the diff</text>
+    <text x="445" y="148" text-anchor="middle" class="lbl-b">ci-release-gate.sh</text>
+    <text x="445" y="172" text-anchor="middle" class="lbl-sm">exit 0 / 2 / 1</text>
+    <g fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M242,84 L290,62" marker-end="url(#ahg)"/><path d="M242,100 L290,148" marker-end="url(#ahg)"/><path d="M602,151 L652,151" marker-end="url(#ahg)"/></g>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.5"><rect x="664" y="116" width="290" height="70" rx="10" class="f-blue"/></g>
+    <text x="809" y="148" text-anchor="middle" class="lbl-b">claude -p --bare</text>
+    <text x="809" y="172" text-anchor="middle" class="lbl-sm">--json-schema &rarr; structured_output</text>
+    <g fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M966,151 L1010,151" marker-end="url(#ahg)"/></g>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.5"><rect x="1022" y="116" width="130" height="70" rx="10" class="f-orange"/></g>
+    <text x="1087" y="148" text-anchor="middle" class="lbl-b">pipeline</text>
+    <text x="1087" y="172" text-anchor="middle" class="lbl-sm">deploys</text>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="300" y="240" width="654" height="70" rx="10" fill="#ffffff"/></g>
+    <text x="627" y="272" text-anchor="middle" class="lbl-b">agent-load-check.yml</text>
+    <text x="627" y="296" text-anchor="middle" class="lbl-sm">fails the build when plugin_errors or mcp_server_errors is non-empty</text>
+    <text x="590" y="368" text-anchor="middle" class="lbl-g">the model reviews and decides; only the pipeline deploys</text>
   </svg>
   <div class="pageno">M13&middot;06</div>
 </section>
 <section>
-  <h2 class="t">What you own, and what the agent owns</h2>
-  <p class="s">you keep the two parts that govern the outcome</p>
-  <svg viewBox="0 0 1180 400" role="img" aria-label="Two panels. On the left, what you own: the brief saying what a release must satisfy, and the verification that all three exit codes behave. On the right, what the agent owns: the design, the plan, the failing tests, the gate and the CI wiring.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="50" y="60" width="470" height="280" rx="14" class="f-purple"/></g>
-    <text x="285" y="112" text-anchor="middle" class="lbl-b">you own</text>
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="90" y="140" width="390" height="70" rx="10"/><rect x="90" y="232" width="390" height="70" rx="10"/></g>
-    <text x="285" y="172" text-anchor="middle" class="lbl">the brief</text>
-    <text x="285" y="200" text-anchor="middle" class="lbl-sm">what a release must satisfy</text>
-    <text x="285" y="264" text-anchor="middle" class="lbl">the verification</text>
-    <text x="285" y="292" text-anchor="middle" class="lbl-sm">all three outcomes, checked by hand</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="660" y="60" width="470" height="280" rx="14" class="f-blue"/></g>
-    <text x="895" y="112" text-anchor="middle" class="lbl-b">the agent owns</text>
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="700" y="140" width="180" height="58" rx="10"/><rect x="910" y="140" width="180" height="58" rx="10"/><rect x="700" y="228" width="180" height="58" rx="10"/><rect x="910" y="228" width="180" height="58" rx="10"/></g>
-    <text x="790" y="176" text-anchor="middle" class="lbl">the design</text>
-    <text x="1000" y="176" text-anchor="middle" class="lbl">the plan</text>
-    <text x="790" y="264" text-anchor="middle" class="lbl">the failing tests</text>
-    <text x="1000" y="264" text-anchor="middle" class="lbl">gate + CI wiring</text>
-    <g fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round"><path d="M534,200 L646,200" marker-end="url(#ahg)"/></g>
-    <text x="590" y="182" text-anchor="middle" class="lbl-sm">hand off</text>
+  <h2 class="t">Ownership</h2>
+  <p class="s">you keep the brief and the verification</p>
+  <svg viewBox="0 0 1180 380" role="img" aria-label="Ownership. You own the brief and the verification. The agent owns the design, the tests, the gate, the schema, the role and the workflows.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="50" y="50" width="470" height="270" rx="14" class="f-purple"/><rect x="660" y="50" width="470" height="270" rx="14" class="f-blue"/></g>
+    <text x="285" y="102" text-anchor="middle" class="lbl-b">you</text>
+    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="90" y="130" width="390" height="66" rx="10"/><rect x="90" y="216" width="390" height="66" rx="10"/></g>
+    <text x="285" y="160" text-anchor="middle" class="lbl">the brief</text>
+    <text x="285" y="186" text-anchor="middle" class="lbl-sm">what a release must satisfy</text>
+    <text x="285" y="246" text-anchor="middle" class="lbl">the verification</text>
+    <text x="285" y="272" text-anchor="middle" class="lbl-sm">three exit codes, checked by hand</text>
+    <text x="895" y="102" text-anchor="middle" class="lbl-b">the agent</text>
+    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="700" y="130" width="180" height="56" rx="10"/><rect x="910" y="130" width="180" height="56" rx="10"/><rect x="700" y="216" width="180" height="56" rx="10"/><rect x="910" y="216" width="180" height="56" rx="10"/></g>
+    <text x="790" y="164" text-anchor="middle" class="lbl">tests, then gate</text>
+    <text x="1000" y="164" text-anchor="middle" class="lbl">schema</text>
+    <text x="790" y="250" text-anchor="middle" class="lbl">decider role</text>
+    <text x="1000" y="250" text-anchor="middle" class="lbl">workflows</text>
   </svg>
-  <p class="recap fragment">Next: the gate itself &mdash; and why it answers three questions, not two.</p>
+  <p class="recap fragment">Next: exit codes and the typed verdict contract.</p>
   <div class="pageno">M13&middot;07</div>
 </section>
 <section class="divider">
-  <h2 class="t">The Gate</h2>
-  <p class="s">three answers, not two</p>
+  <h2 class="t">Gate and Verdict</h2>
+  <p class="s">exit codes and the typed contract</p>
   <svg viewBox="0 0 1100 340" role="img" aria-label="A headless agent invocation drawn as a pipeline stage: a prompt and a schema go in, the agent runs without a human in the loop, and a structured verdict comes out for the pipeline to branch on.">
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="60" y="120" width="240" height="100" rx="10" class="f-blue"/></g>
     <text x="180" y="162" text-anchor="middle" class="lbl-b">prompt + schema</text>
@@ -299,92 +299,91 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M13&middot;08</div>
 </section>
 <section>
-  <h2 class="t">Three answers, not two</h2>
-  <p class="s">and the third one is the whole module</p>
-  <svg viewBox="0 0 1180 400" role="img" aria-label="Three exit codes in a row. Zero means approve: it examined the candidate and found nothing blocking. Two means block: it examined the candidate and found blockers. One means cannot evaluate: it could not do its job, and it must not approve.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="50" y="70" width="330" height="230" rx="14" class="f-green"/><rect x="425" y="70" width="330" height="230" rx="14" class="f-red"/><rect x="800" y="70" width="330" height="230" rx="14" class="f-orange"/></g>
-    <text x="215" y="132" text-anchor="middle" class="num">0</text>
-    <text x="215" y="176" text-anchor="middle" class="lbl-b">approve</text>
-    <text x="215" y="220" text-anchor="middle" class="lbl-sm">it examined the candidate</text>
-    <text x="215" y="254" text-anchor="middle" class="lbl-sm">and found nothing blocking</text>
-    <text x="590" y="132" text-anchor="middle" class="num">2</text>
-    <text x="590" y="176" text-anchor="middle" class="lbl-b">block</text>
-    <text x="590" y="220" text-anchor="middle" class="lbl-sm">it examined the candidate</text>
-    <text x="590" y="254" text-anchor="middle" class="lbl-sm">and found a blocker</text>
-    <text x="965" y="132" text-anchor="middle" class="num">1</text>
-    <text x="965" y="176" text-anchor="middle" class="lbl-b">cannot evaluate</text>
-    <text x="965" y="220" text-anchor="middle" class="lbl-sm">it could not do its job</text>
-    <text x="965" y="254" text-anchor="middle" class="lbl-sm">so it must not approve</text>
-    <text x="590" y="352" text-anchor="middle" class="lbl-g">most checks have two outcomes because a shell gives you two for free</text>
+  <h2 class="t">Exit codes</h2>
+  <p class="s">three outcomes, and the third is designed in</p>
+  <svg viewBox="0 0 1180 380" role="img" aria-label="Three exit codes: zero approve, two block, one cannot evaluate.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="50" y="60" width="330" height="220" rx="14" class="f-green"/><rect x="425" y="60" width="330" height="220" rx="14" class="f-red"/><rect x="800" y="60" width="330" height="220" rx="14" class="f-orange"/></g>
+    <text x="215" y="124" text-anchor="middle" class="num">0</text>
+    <text x="215" y="170" text-anchor="middle" class="lbl-b">approve</text>
+    <text x="215" y="216" text-anchor="middle" class="lbl-sm">examined, nothing blocking</text>
+    <text x="590" y="124" text-anchor="middle" class="num">2</text>
+    <text x="590" y="170" text-anchor="middle" class="lbl-b">block</text>
+    <text x="590" y="216" text-anchor="middle" class="lbl-sm">examined, blocker found</text>
+    <text x="965" y="124" text-anchor="middle" class="num">1</text>
+    <text x="965" y="170" text-anchor="middle" class="lbl-b">cannot evaluate</text>
+    <text x="965" y="216" text-anchor="middle" class="lbl-sm">missing input or failed analyser</text>
+    <text x="590" y="336" text-anchor="middle" class="lbl-g">exit 1 is fail-closed: it must never be read as approval</text>
   </svg>
   <div class="pageno">M13&middot;09</div>
 </section>
 <section>
-  <h2 class="t">The outcome people leave out</h2>
-  <p class="s">two failures, two owners, two different fixes</p>
-  <svg viewBox="0 0 1180 400" role="img" aria-label="Two failures side by side. On the left, the gate blocked your candidate, which sends a developer to their values file. On the right, the gate could not evaluate, which sends somebody to the gate. Below, a warning that collapsing the two sends everybody to the wrong place.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="60" width="480" height="180" rx="13" class="f-red"/><rect x="640" y="60" width="480" height="180" rx="13" class="f-orange"/></g>
-    <text x="300" y="108" text-anchor="middle" class="lbl-b">&ldquo;the gate blocked your candidate&rdquo;</text>
-    <text x="300" y="156" text-anchor="middle" class="lbl">a developer reads their values file</text>
-    <text x="300" y="200" text-anchor="middle" class="lbl-sm">the candidate is the problem</text>
-    <text x="880" y="108" text-anchor="middle" class="lbl-b">&ldquo;the gate could not evaluate&rdquo;</text>
-    <text x="880" y="156" text-anchor="middle" class="lbl">somebody reads the gate</text>
-    <text x="880" y="200" text-anchor="middle" class="lbl-sm">the gate is the problem</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="220" y="278" width="740" height="90" rx="12" fill="#ffffff"/></g>
-    <text x="590" y="316" text-anchor="middle" class="lbl-b">collapse them and a gate that stopped examining anything</text>
-    <text x="590" y="350" text-anchor="middle" class="lbl-bad">looks exactly like a strict one</text>
+  <h2 class="t">Block vs cannot-evaluate</h2>
+  <p class="s">two failures, two owners</p>
+  <svg viewBox="0 0 1180 360" role="img" aria-label="Block sends a developer to the candidate; cannot-evaluate sends an engineer to the gate. Collapsing them hides a broken gate.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="54" width="480" height="160" rx="12" class="f-red"/><rect x="640" y="54" width="480" height="160" rx="12" class="f-orange"/></g>
+    <text x="300" y="100" text-anchor="middle" class="lbl-b">exit 2 &mdash; block</text>
+    <text x="300" y="146" text-anchor="middle" class="lbl">developer reads the candidate</text>
+    <text x="300" y="186" text-anchor="middle" class="lbl-sm">the release is the problem</text>
+    <text x="880" y="100" text-anchor="middle" class="lbl-b">exit 1 &mdash; cannot evaluate</text>
+    <text x="880" y="146" text-anchor="middle" class="lbl">engineer reads the gate</text>
+    <text x="880" y="186" text-anchor="middle" class="lbl-sm">the gate is the problem</text>
+    <text x="590" y="284" text-anchor="middle" class="lbl-bad">collapse them and a gate that stopped examining looks like a strict one</text>
   </svg>
   <div class="pageno">M13&middot;10</div>
 </section>
 <section>
-  <h2 class="t">Compose the analysers, never copy them</h2>
-  <p class="s">the repository already knows; the gate is trusted about it</p>
-  <svg viewBox="0 0 1180 400" role="img" aria-label="The gate composes two existing analysers rather than re-implementing their rules, and emits one verdict that names the candidate it judged and the source of every blocker.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="40" y="70" width="300" height="76" rx="10" class="f-blue"/><rect x="40" y="176" width="300" height="76" rx="10" class="f-blue"/></g>
-    <text x="190" y="104" text-anchor="middle" class="lbl-b">pipeline-analyze.sh</text>
-    <text x="190" y="132" text-anchor="middle" class="lbl-sm">probe path, rollout floor</text>
-    <text x="190" y="210" text-anchor="middle" class="lbl-b">canary-verify.sh</text>
-    <text x="190" y="238" text-anchor="middle" class="lbl-sm">a canary snapshot</text>
-    <g fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round"><path d="M352,108 L412,150" marker-end="url(#ahg)"/><path d="M352,214 L412,172" marker-end="url(#ahg)"/></g>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="424" y="112" width="250" height="100" rx="12" class="f-purple"/></g>
-    <text x="549" y="152" text-anchor="middle" class="lbl-b">the gate</text>
-    <text x="549" y="186" text-anchor="middle" class="lbl-sm">aggregates, never re-derives</text>
-    <g fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round"><path d="M686,162 L740,162" marker-end="url(#ahg)"/></g>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="752" y="66" width="376" height="196" rx="12" fill="#ffffff"/></g>
-    <text x="940" y="104" text-anchor="middle" class="lbl-b">one verdict</text>
-    <text x="940" y="146" text-anchor="middle" class="lbl-sm">candidate: which release it judged</text>
-    <text x="940" y="184" text-anchor="middle" class="lbl-sm">verdict: approve or block</text>
-    <text x="940" y="222" text-anchor="middle" class="lbl-sm">source: on every blocker</text>
-    <text x="590" y="336" text-anchor="middle" class="lbl-g">two copies of a rule is two definitions of what blocks a release, and they drift</text>
+  <h2 class="t">The verdict contract</h2>
+  <p class="s">a schema a job branches on, not prose</p>
+  <svg viewBox="0 0 1180 400" role="img" aria-label="The verdict schema: required fields verdict, risk, blast radius, rollback, release notes and blockers, with verdict constrained to ship, hold or block. Tests assert the schema rejects an out-of-enum value and a verdict missing rollback.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="50" y="50" width="560" height="290" rx="13" fill="#ffffff"/></g>
+    <text x="90" y="92" class="lbl-b">release/verdict.schema.json</text>
+    <text x="90" y="138" class="lbl-sm">verdict &nbsp; ship | hold | block</text>
+    <text x="90" y="172" class="lbl-sm">risk &nbsp; low | medium | high</text>
+    <text x="90" y="206" class="lbl-sm">blast_radius</text>
+    <text x="90" y="240" class="lbl-sm">rollback &nbsp;&nbsp;&mdash; required</text>
+    <text x="90" y="274" class="lbl-sm">release_notes[]</text>
+    <text x="90" y="308" class="lbl-sm">blockers[] &nbsp; detail + source</text>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.5"><rect x="660" y="66" width="470" height="120" rx="11" class="f-green"/><rect x="660" y="212" width="470" height="120" rx="11" class="f-green"/></g>
+    <text x="895" y="112" text-anchor="middle" class="lbl-b">rejects verdict: "maybe"</text>
+    <text x="895" y="152" text-anchor="middle" class="lbl-sm">not one of ship, hold, block</text>
+    <text x="895" y="258" text-anchor="middle" class="lbl-b">rejects a missing rollback</text>
+    <text x="895" y="298" text-anchor="middle" class="lbl-sm">a decision that cannot say how to undo itself</text>
   </svg>
   <div class="pageno">M13&middot;11</div>
 </section>
 <section>
-  <h2 class="t">Four ways a gate lies</h2>
-  <p class="s">every one of them survives review by eye</p>
-  <svg viewBox="0 0 1180 400" role="img" aria-label="Four shell constructs that silently turn a block into an approval: set -e with grep -q, dollar-question after a pipeline, a file test followed by echo, and an unset candidate variable that makes the gate analyse the default.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.3"><rect x="50" y="52" width="1080" height="72" rx="10" class="f-red"/><rect x="50" y="136" width="1080" height="72" rx="10" class="f-red"/><rect x="50" y="220" width="1080" height="72" rx="10" class="f-red"/><rect x="50" y="304" width="1080" height="72" rx="10" class="f-red"/></g>
-    <text x="90" y="96" class="lbl-b">set -e with grep -q</text>
-    <text x="620" y="96" class="lbl">grep exits 1 on no match and kills the script mid-check</text>
-    <text x="90" y="180" class="lbl-b">$? after a pipeline</text>
-    <text x="620" y="180" class="lbl">that is the last command&rsquo;s status, not the gate&rsquo;s</text>
-    <text x="90" y="264" class="lbl-b">[[ -f $f ]] || echo</text>
-    <text x="620" y="264" class="lbl">prints a message, then carries on to approve</text>
-    <text x="90" y="348" class="lbl-b">an unset $CANDIDATE</text>
-    <text x="620" y="348" class="lbl">analyses the default instead of the release</text>
+  <h2 class="t">Typed verdict from the gate</h2>
+  <p class="s">measured on the real candidate</p>
+  <svg viewBox="0 0 1180 380" role="img" aria-label="The gate decides block at exit two; the headless run turns that into a schema-validated structured output with verdict block, risk high and release notes, costing thirty-seven cents in three turns.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="50" y="90" width="300" height="140" rx="12" class="f-red"/></g>
+    <text x="200" y="140" text-anchor="middle" class="lbl-b">gate: exit 2</text>
+    <text x="200" y="184" text-anchor="middle" class="lbl-sm">2 blockers, each with a source</text>
+    <g fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><path d="M362,160 L440,160" marker-end="url(#ah)"/></g>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="452" y="60" width="300" height="200" rx="12" class="f-blue"/></g>
+    <text x="602" y="104" text-anchor="middle" class="lbl-b">claude -p --json-schema</text>
+    <text x="602" y="146" text-anchor="middle" class="lbl-sm">$0.3750 &middot; 3 turns</text>
+    <text x="602" y="186" text-anchor="middle" class="lbl-sm">reads the gate&rsquo;s JSON</text>
+    <text x="602" y="226" text-anchor="middle" class="lbl-sm">does not re-judge the chart</text>
+    <g fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><path d="M764,160 L842,160" marker-end="url(#ah)"/></g>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="854" y="70" width="276" height="180" rx="12" class="f-green"/></g>
+    <text x="992" y="112" text-anchor="middle" class="lbl-b">.structured_output</text>
+    <text x="992" y="152" text-anchor="middle" class="lbl-sm">verdict: block</text>
+    <text x="992" y="186" text-anchor="middle" class="lbl-sm">risk: high</text>
+    <text x="992" y="220" text-anchor="middle" class="lbl-sm">release_notes[3]</text>
+    <text x="590" y="336" text-anchor="middle" class="lbl-g">validated before you see it &mdash; a job reads a field, not a sentence</text>
   </svg>
-  <p class="recap fragment">Next: three ways to run it &mdash; and which one may decide.</p>
+  <p class="recap fragment">Next: the three invocation surfaces, and deploy authority.</p>
   <div class="pageno">M13&middot;12</div>
 </section>
 <section class="divider">
-  <h2 class="t">Three Ways to Run It</h2>
-  <p class="s">and only one of them may decide</p>
-  <svg viewBox="0 0 1180 420" role="img" aria-label="A hand-drawn scene: three doorways side by side, labelled your terminal, the pipeline and the pull request. A path leads from each one to the same small gate in the middle of a fence, and only the middle path carries a signpost reading decides.">
+  <h2 class="t">Invocation Surfaces</h2>
+  <p class="s">headless, Actions, and deploy authority</p>
+  <svg viewBox="0 0 1180 420" role="img" aria-label="Three doorways labelled terminal, pipeline and pull request, with paths leading to one gate in a fence.">
     <g fill="none" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round"><path d="M120,60 L120,200 L250,200 L250,60 Z"/><path d="M520,60 L520,200 L650,200 L650,60 Z"/><path d="M920,60 L920,200 L1050,200 L1050,60 Z"/></g>
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><circle cx="232" cy="132" r="7" class="f-purple"/><circle cx="632" cy="132" r="7" class="f-blue"/><circle cx="1032" cy="132" r="7" class="f-green"/></g>
-    <text x="185" y="232" text-anchor="middle" class="lbl">your terminal</text>
-    <text x="585" y="232" text-anchor="middle" class="lbl">the pipeline</text>
-    <text x="985" y="232" text-anchor="middle" class="lbl">the pull request</text>
+    <text x="185" y="232" text-anchor="middle" class="lbl">terminal</text>
+    <text x="585" y="232" text-anchor="middle" class="lbl">pipeline</text>
+    <text x="985" y="232" text-anchor="middle" class="lbl">pull request</text>
     <g fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="9 7"><path d="M185,248 C 300,300 480,300 560,318"/><path d="M585,248 L588,312"/><path d="M985,248 C 870,300 700,300 616,318"/></g>
     <g fill="none" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round"><path d="M180,352 L1000,352"/><path d="M240,352 L240,392"/><path d="M400,352 L400,392"/><path d="M760,352 L760,392"/><path d="M920,352 L920,392"/></g>
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="500" y="322" width="180" height="62" rx="8" class="f-green"/></g>
@@ -393,161 +392,155 @@ footer, header, hgroup, main, menu, nav, section {
   <div class="pageno">M13&middot;13</div>
 </section>
 <section>
-  <h2 class="t">Three surfaces, one job each</h2>
-  <p class="s">the same gate, invoked three different ways</p>
-  <svg viewBox="0 0 1180 400" role="img" aria-label="Three invocation surfaces. Interactive on your machine with the agent role, where judgment is spent once. Headless as a pipeline stage, machine readable and cheap. And the GitHub Action, which runs Claude Code inside a workflow in response to an event or a mention.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="40" y="66" width="340" height="250" rx="13" class="f-purple"/><rect x="420" y="66" width="340" height="250" rx="13" class="f-blue"/><rect x="800" y="66" width="340" height="250" rx="13" class="f-green"/></g>
-    <text x="210" y="112" text-anchor="middle" class="lbl-b">interactive</text>
-    <text x="210" y="152" text-anchor="middle" class="lbl-sm">claude --agent release-engineer</text>
-    <text x="210" y="196" text-anchor="middle" class="lbl">judgment, spent once</text>
-    <text x="210" y="240" text-anchor="middle" class="lbl-sm">produces something deterministic</text>
-    <text x="590" y="112" text-anchor="middle" class="lbl-b">headless stage</text>
-    <text x="590" y="152" text-anchor="middle" class="lbl-sm">claude -p --output-format json</text>
-    <text x="590" y="196" text-anchor="middle" class="lbl">explains a verdict</text>
-    <text x="590" y="240" text-anchor="middle" class="lbl-sm">machine-readable, carries its cost</text>
-    <text x="970" y="112" text-anchor="middle" class="lbl-b">the GitHub Action</text>
-    <text x="970" y="152" text-anchor="middle" class="lbl-sm">claude-code-action@v1</text>
-    <text x="970" y="196" text-anchor="middle" class="lbl">runs where the review is</text>
-    <text x="970" y="240" text-anchor="middle" class="lbl-sm">on an event, or on @claude</text>
-    <text x="590" y="368" text-anchor="middle" class="lbl-g">one input decides the Action&rsquo;s mode: a prompt runs it automatically, no prompt waits for a mention</text>
+  <h2 class="t">Three invocation surfaces</h2>
+  <p class="s">same tool, three entry points, two auth models</p>
+  <svg viewBox="0 0 1180 400" role="img" aria-label="Three invocation surfaces: interactive terminal with a role, headless bare in the pipeline with a JSON schema, and the Claude Code Action on a pull request with subscription auth.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="40" y="60" width="340" height="250" rx="13" class="f-purple"/><rect x="420" y="60" width="340" height="250" rx="13" class="f-blue"/><rect x="800" y="60" width="340" height="250" rx="13" class="f-green"/></g>
+    <text x="210" y="106" text-anchor="middle" class="lbl-b">interactive</text>
+    <text x="210" y="150" text-anchor="middle" class="lbl-sm">claude --agent release-engineer</text>
+    <text x="210" y="196" text-anchor="middle" class="lbl-sm">builds the artifacts</text>
+    <text x="210" y="248" text-anchor="middle" class="lbl-g">subscription login</text>
+    <text x="590" y="106" text-anchor="middle" class="lbl-b">headless in CI</text>
+    <text x="590" y="150" text-anchor="middle" class="lbl-sm">claude -p --bare --agents</text>
+    <text x="590" y="196" text-anchor="middle" class="lbl-sm">--json-schema &rarr; typed verdict</text>
+    <text x="590" y="248" text-anchor="middle" class="lbl-bad">ANTHROPIC_API_KEY required</text>
+    <text x="970" y="106" text-anchor="middle" class="lbl-b">claude-code-action@v1</text>
+    <text x="970" y="150" text-anchor="middle" class="lbl-sm">reviews the pull request</text>
+    <text x="970" y="196" text-anchor="middle" class="lbl-sm">prompt input &rarr; automation mode</text>
+    <text x="970" y="248" text-anchor="middle" class="lbl-g">claude_code_oauth_token</text>
+    <text x="590" y="368" text-anchor="middle" class="lbl-g">--bare never reads OAuth, so the two CI surfaces authenticate differently</text>
   </svg>
   <div class="pageno">M13&middot;14</div>
 </section>
 <section>
-  <h2 class="t">Only one of them may decide</h2>
-  <p class="s">the deterministic thing decides; the model explains</p>
-  <svg viewBox="0 0 1180 400" role="img" aria-label="Two workflows on the same pull request. The shell workflow can fail the merge. The Claude workflow carries continue-on-error and an explicit exit zero, so it can never pass or fail anything. An arrow from the shell workflow to the merge is solid; the arrow from the Claude workflow is crossed out.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="60" y="70" width="440" height="130" rx="12" class="f-green"/></g>
-    <text x="280" y="116" text-anchor="middle" class="lbl-b">release-gate.yml</text>
-    <text x="280" y="158" text-anchor="middle" class="lbl-sm">shell only &mdash; no model, no secrets</text>
-    <text x="280" y="188" text-anchor="middle" class="lbl-good">may fail the merge</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="60" y="236" width="440" height="130" rx="12" class="f-blue"/></g>
-    <text x="280" y="282" text-anchor="middle" class="lbl-b">claude-release-review.yml</text>
-    <text x="280" y="324" text-anchor="middle" class="lbl-sm">continue-on-error + explicit exit 0</text>
-    <text x="280" y="354" text-anchor="middle" class="lbl-bad">can never pass or fail anything</text>
-    <g fill="none" stroke="#1e1e1e" stroke-width="2.8" stroke-linecap="round"><path d="M512,135 L740,135" marker-end="url(#ah)"/></g>
-    <g fill="none" stroke="#bdbdbd" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="10 8"><path d="M512,300 L700,205"/></g>
-    <g fill="none" stroke="#c62828" stroke-width="3" stroke-linecap="round"><path d="M586,238 L626,272"/><path d="M626,238 L586,272"/></g>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="752" y="86" width="368" height="100" rx="12" fill="#ffffff"/></g>
-    <text x="936" y="126" text-anchor="middle" class="lbl-b">the merge</text>
-    <text x="936" y="162" text-anchor="middle" class="lbl-sm">one authority, and it is a script</text>
-    <text x="936" y="300" text-anchor="middle" class="lbl-g">the model runs after a decision,</text>
-    <text x="936" y="334" text-anchor="middle" class="lbl-g">about a decision</text>
+  <h2 class="t">Deploy authority</h2>
+  <p class="s">four jobs, none of them ships</p>
+  <svg viewBox="0 0 1180 380" role="img" aria-label="Permissions per job: gate read-only, verdict read-only, review read plus pull-requests write, load check read-only. None has contents write and no workflow contains a deploy command.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.3"><rect x="50" y="46" width="1080" height="62" rx="9" class="f-green"/><rect x="50" y="120" width="1080" height="62" rx="9" class="f-green"/><rect x="50" y="194" width="1080" height="62" rx="9" class="f-blue"/><rect x="50" y="268" width="1080" height="62" rx="9" class="f-green"/></g>
+    <text x="90" y="84" class="lbl-b">release-gate.yml</text>
+    <text x="620" y="84" class="lbl-sm">contents: read &nbsp;&middot;&nbsp; fails the job on exit 2 or 1</text>
+    <text x="90" y="158" class="lbl-b">release-verdict.yml</text>
+    <text x="620" y="158" class="lbl-sm">contents: read &nbsp;&middot;&nbsp; emits the typed verdict</text>
+    <text x="90" y="232" class="lbl-b">claude-pr-review.yml</text>
+    <text x="620" y="232" class="lbl-sm">contents: read + pull-requests: write &nbsp;&middot;&nbsp; comments only</text>
+    <text x="90" y="306" class="lbl-b">agent-load-check.yml</text>
+    <text x="620" y="306" class="lbl-sm">contents: read &nbsp;&middot;&nbsp; fails on plugin_errors</text>
+    <text x="590" y="360" text-anchor="middle" class="lbl-bad">no job has contents: write, and no workflow contains a deploy command</text>
   </svg>
   <div class="pageno">M13&middot;15</div>
 </section>
 <section>
-  <h2 class="t">Bounding an agent nobody is watching</h2>
-  <p class="s">four limits, and only one of them is the boundary</p>
-  <svg viewBox="0 0 1180 400" role="img" aria-label="Four limits on an agent running in CI, revealed one at a time: a guard so it only runs on a block, an allow-list with no edit or write tools, a turn cap, and read-only repository permissions.">
+  <h2 class="t">Reproducible CI runs</h2>
+  <p class="s">what a pipeline stage loads, measured</p>
+  <svg viewBox="0 0 1180 400" role="img" aria-label="Three measurements about reproducibility: a plain -p run loaded fifty-one agents, plugin errors was non-empty with two invalid manifests, and bare mode refused a subscription login.">
     <g class="fragment" data-fragment-index="1">
-      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.3"><rect x="50" y="60" width="1080" height="68" rx="10" class="f-orange"/></g>
-      <text x="90" y="90" class="lbl-b">if: rc == 2</text>
-      <text x="90" y="116" class="lbl-sm">no verdict, no model &mdash; it does not run at all</text>
+      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="50" y="50" width="1080" height="82" rx="10" class="f-orange"/></g>
+      <text x="90" y="86" class="lbl-b">a plain claude -p run: agents = 51</text>
+      <text x="90" y="116" class="lbl-sm">everything installed on the host; on a runner it is whatever the image carries</text>
     </g>
     <g class="fragment" data-fragment-index="2">
-      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.3"><rect x="50" y="144" width="1080" height="68" rx="10" class="f-orange"/></g>
-      <text x="90" y="174" class="lbl-b">--allowedTools, no Edit or Write</text>
-      <text x="90" y="200" class="lbl-sm">it can read to explain, never change what it judges</text>
+      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="50" y="148" width="1080" height="82" rx="10" class="f-red"/></g>
+      <text x="90" y="184" class="lbl-b">plugin_errors = 2</text>
+      <text x="90" y="214" class="lbl-sm">two skill folders with invalid manifests, silently not loaded, nobody knew</text>
     </g>
     <g class="fragment" data-fragment-index="3">
-      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.3"><rect x="50" y="228" width="1080" height="68" rx="10" class="f-orange"/></g>
-      <text x="90" y="258" class="lbl-b">--max-turns 3</text>
-      <text x="90" y="284" class="lbl-sm">a budget; an uncapped agent in CI is an unbounded bill</text>
-    </g>
-    <g class="fragment" data-fragment-index="4">
-      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.3"><rect x="50" y="312" width="1080" height="68" rx="10" class="f-orange"/></g>
-      <text x="90" y="342" class="lbl-b">permissions: contents: read</text>
-      <text x="90" y="368" class="lbl-sm">even if it went wrong, the token cannot push</text>
+      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="50" y="246" width="1080" height="82" rx="10" class="f-blue"/></g>
+      <text x="90" y="282" class="lbl-b">claude --bare &rarr; &ldquo;Not logged in&rdquo;, exit 1</text>
+      <text x="90" y="312" class="lbl-sm">bare mode never reads OAuth &mdash; it pins the run, and it needs an API key</text>
     </g>
   </svg>
   <div class="pageno">M13&middot;16</div>
 </section>
 <section>
-  <h2 class="t">What a model in a pipeline is good at</h2>
-  <p class="s">it explains well and recommends badly</p>
-  <svg viewBox="0 0 1180 400" role="img" aria-label="The measured headless stage. It cost four cents, one turn, twelve seconds on the cheapest model, and produced a clear pull request comment. But its recommended fix, maxUnavailable at most seventy five percent, is not the house standard, and it cited no source for it.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="50" y="56" width="1080" height="120" rx="12" class="f-green"/></g>
-    <text x="90" y="98" class="lbl-b">$0.0436 &nbsp;&middot;&nbsp; 1 turn &nbsp;&middot;&nbsp; 12 s &nbsp;&middot;&nbsp; on the cheapest model</text>
-    <text x="90" y="142" class="lbl-sm">a clean PR comment naming the candidate and both blockers &mdash; work a script writes badly</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="50" y="200" width="1080" height="160" rx="12" class="f-red"/></g>
-    <text x="90" y="244" class="lbl-b">and its recommended fix was &ldquo;set maxUnavailable to &le;75%&rdquo;</text>
-    <text x="90" y="286" class="lbl-sm">which is not the rule &mdash; a floor depends on the replica count too, and 75% of one replica is zero</text>
-    <text x="90" y="330" class="lbl-bad">the gate cited scripts/pipeline-analyze.sh. the model cited nothing.</text>
+  <h2 class="t">Load check</h2>
+  <p class="s">turn silent degradation into a red build</p>
+  <svg viewBox="0 0 1180 360" role="img" aria-label="The load check reads the system init event and fails the job when plugin errors or mcp server errors is non-empty.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="70" width="330" height="140" rx="12" class="f-blue"/></g>
+    <text x="225" y="120" text-anchor="middle" class="lbl-b">system/init event</text>
+    <text x="225" y="164" text-anchor="middle" class="lbl-sm">plugin_errors, mcp_server_errors</text>
+    <g fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><path d="M402,140 L480,140" marker-end="url(#ah)"/></g>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="492" y="70" width="290" height="140" rx="12" fill="#ffffff"/></g>
+    <text x="637" y="120" text-anchor="middle" class="lbl-b">length &gt; 0 ?</text>
+    <text x="637" y="164" text-anchor="middle" class="lbl-sm">jq over the stream</text>
+    <g fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><path d="M794,140 L872,140" marker-end="url(#ah)"/></g>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="884" y="70" width="240" height="140" rx="12" class="f-red"/></g>
+    <text x="1004" y="120" text-anchor="middle" class="lbl-b">fail the build</text>
+    <text x="1004" y="164" text-anchor="middle" class="lbl-sm">name the offenders</text>
+    <text x="590" y="286" text-anchor="middle" class="lbl-g">a run whose skill did not load still answers, with none of the procedure behind it</text>
   </svg>
-  <p class="recap fragment">Next: the four things to watch for while you build.</p>
+  <p class="recap fragment">Next: what to watch for while you build.</p>
   <div class="pageno">M13&middot;17</div>
 </section>
 <section>
-  <h2 class="t">What to watch for while you build</h2>
-  <p class="s">four flags, and what each one means</p>
-  <svg viewBox="0 0 1180 400" role="img" aria-label="Four flags revealed one at a time: a red run reporting exit 127 is command-not-found rather than a behaviour test; checking a gate through a pipe reports jq status so a block looks like success; downgrading a fail-closed to a warning approves every unevaluable release; and a model that suggests a fix cited no source for it.">
+  <h2 class="t">What to watch for</h2>
+  <p class="s">four flags, demonstrated in the screencast</p>
+  <svg viewBox="0 0 1180 400" role="img" aria-label="Four flags: exit 127 in a first red run, checking a gate through a pipe, a fail-closed downgraded to a warning, and bare mode in a local command.">
     <g class="fragment" data-fragment-index="1">
       <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.2"><circle cx="90" cy="72" r="22"/></g>
       <text x="90" y="82" text-anchor="middle" class="lbl-b">1</text>
-      <text x="146" y="68" class="lbl-b">the RED says &ldquo;got 127&rdquo;</text>
-      <text x="146" y="102" class="lbl-sm">that is command-not-found, not a behaviour test</text>
+      <text x="146" y="68" class="lbl-b">exit 127 in the first red run</text>
+      <text x="146" y="102" class="lbl-sm">command-not-found, not a behaviour test</text>
     </g>
     <g class="fragment" data-fragment-index="2">
       <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.2"><circle cx="90" cy="158" r="22"/></g>
       <text x="90" y="168" text-anchor="middle" class="lbl-b">2</text>
-      <text x="146" y="154" class="lbl-b">you check a gate through a pipe</text>
-      <text x="146" y="188" class="lbl-sm">$? is jq&rsquo;s status; a block reports success</text>
+      <text x="146" y="154" class="lbl-b">checking a gate through a pipe</text>
+      <text x="146" y="188" class="lbl-sm">$? is jq&rsquo;s status; a block reads as success</text>
     </g>
     <g class="fragment" data-fragment-index="3">
       <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.2"><circle cx="90" cy="244" r="22"/></g>
       <text x="90" y="254" text-anchor="middle" class="lbl-b">3</text>
-      <text x="146" y="240" class="lbl-b">a fail-closed becomes a warning</text>
-      <text x="146" y="274" class="lbl-sm">one line, and every unevaluable release approves</text>
+      <text x="146" y="240" class="lbl-b">a fail-closed downgraded to a warning</text>
+      <text x="146" y="274" class="lbl-sm">every unevaluable release approves</text>
     </g>
     <g class="fragment" data-fragment-index="4">
       <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.2"><circle cx="90" cy="330" r="22"/></g>
       <text x="90" y="340" text-anchor="middle" class="lbl-b">4</text>
-      <text x="146" y="326" class="lbl-b">the model suggests a fix</text>
-      <text x="146" y="360" class="lbl-sm">it cited nothing; go and read the standard</text>
+      <text x="146" y="326" class="lbl-b">--bare in a local command</text>
+      <text x="146" y="360" class="lbl-sm">it demands an API key; keep it in the workflow</text>
     </g>
   </svg>
   <div class="pageno">M13&middot;18</div>
 </section>
 <section>
-  <h2 class="t">What you will do as part of the lab</h2>
-  <p class="s">six steps, and a gate a team can rely on</p>
-  <svg viewBox="0 0 1430 220" role="img" aria-label="Six lab steps revealed one at a time: write the brief including the outcome people skip, watch seven tests fail before any gate exists, verify the three exit codes by hand rather than through a pipe, break the fail-closed path and watch the suite catch it, wire three invocation surfaces of which one may fail the merge, and price the stage that runs on every pull request.">
+  <h2 class="t">In the lab</h2>
+  <p class="s">six steps</p>
+  <svg viewBox="0 0 1430 220" role="img" aria-label="Six lab steps: write the brief, build the gate test-first, break the fail-closed path, add the verdict schema, emit a typed verdict, and wire three workflows.">
     <g class="fragment" data-fragment-index="1" transform="translate(30,0)">
       <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2" stroke-dasharray="8 7"><rect x="0" y="10" width="140" height="100" rx="10"/></g>
-      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="44" y="24" width="52" height="64" rx="6" class="f-purple"/></g><g fill="none" stroke="#757575" stroke-width="2"><path d="M56,44 L84,44"/><path d="M56,58 L84,58"/><path d="M56,72 L76,72"/></g>
+      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="44" y="24" width="52" height="64" rx="6" class="f-purple"/></g><g fill="none" stroke="#757575" stroke-width="2"><path d="M56,44 L84,44"/><path d="M56,58 L84,58"/></g>
       <text x="70" y="150" text-anchor="middle" class="lbl-b">write the brief</text>
-      <text x="70" y="182" text-anchor="middle" class="lbl-sm">including the outcome people skip</text>
+      <text x="70" y="182" text-anchor="middle" class="lbl-sm">what a release must satisfy</text>
     </g>
     <g class="fragment" data-fragment-index="2" transform="translate(275,0)">
       <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2" stroke-dasharray="8 7"><rect x="0" y="10" width="140" height="100" rx="10"/></g>
-      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="26" y="34" width="40" height="48" rx="6" class="f-red"/><rect x="76" y="34" width="40" height="48" rx="6" class="f-red"/></g>
-      <text x="70" y="150" text-anchor="middle" class="lbl-b">watch 7 tests fail</text>
-      <text x="70" y="182" text-anchor="middle" class="lbl-sm">before any gate exists</text>
+      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="26" y="34" width="40" height="48" rx="6" class="f-red"/><rect x="76" y="34" width="40" height="48" rx="6" class="f-green"/></g>
+      <text x="70" y="150" text-anchor="middle" class="lbl-b">build the gate</text>
+      <text x="70" y="182" text-anchor="middle" class="lbl-sm">test-first, three exit codes</text>
     </g>
     <g class="fragment" data-fragment-index="3" transform="translate(520,0)">
-      <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2" stroke-dasharray="8 7"><rect x="0" y="10" width="140" height="100" rx="10"/></g>
-      <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4"><circle cx="46" cy="58" r="15"/><circle cx="96" cy="58" r="15"/></g><text x="46" y="64" text-anchor="middle" class="lbl-b">2</text><text x="96" y="64" text-anchor="middle" class="lbl-b">1</text>
-      <text x="70" y="150" text-anchor="middle" class="lbl-b">verify three codes</text>
-      <text x="70" y="182" text-anchor="middle" class="lbl-sm">by hand, not through a pipe</text>
-    </g>
-    <g class="fragment" data-fragment-index="4" transform="translate(765,0)">
       <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2" stroke-dasharray="8 7"><rect x="0" y="10" width="140" height="100" rx="10"/></g>
       <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><path d="M70,26 L106,86 L34,86 Z" class="f-orange"/></g><text x="70" y="78" text-anchor="middle" class="lbl-b">!</text>
       <text x="70" y="150" text-anchor="middle" class="lbl-b">break fail-closed</text>
       <text x="70" y="182" text-anchor="middle" class="lbl-sm">and watch the suite catch it</text>
     </g>
+    <g class="fragment" data-fragment-index="4" transform="translate(765,0)">
+      <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2" stroke-dasharray="8 7"><rect x="0" y="10" width="140" height="100" rx="10"/></g>
+      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="30" y="30" width="84" height="56" rx="6" class="f-blue"/></g><g fill="none" stroke="#757575" stroke-width="2"><path d="M30,58 L114,58"/></g>
+      <text x="70" y="150" text-anchor="middle" class="lbl-b">add the schema</text>
+      <text x="70" y="182" text-anchor="middle" class="lbl-sm">ship | hold | block, rollback required</text>
+    </g>
     <g class="fragment" data-fragment-index="5" transform="translate(1010,0)">
       <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2" stroke-dasharray="8 7"><rect x="0" y="10" width="140" height="100" rx="10"/></g>
-      <g fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round"><path d="M34,38 L106,38"/><path d="M34,58 L106,58"/><path d="M34,78 L106,78"/></g>
-      <text x="70" y="150" text-anchor="middle" class="lbl-b">wire three surfaces</text>
-      <text x="70" y="182" text-anchor="middle" class="lbl-sm">one may fail the merge</text>
+      <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4"><circle cx="46" cy="58" r="15"/><circle cx="96" cy="58" r="15"/></g>
+      <text x="70" y="150" text-anchor="middle" class="lbl-b">emit a typed verdict</text>
+      <text x="70" y="182" text-anchor="middle" class="lbl-sm">--json-schema, structured_output</text>
     </g>
     <g class="fragment" data-fragment-index="6" transform="translate(1255,0)">
       <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2" stroke-dasharray="8 7"><rect x="0" y="10" width="140" height="100" rx="10"/></g>
-      <g fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><path d="M32,86 L32,30"/><path d="M32,86 L116,86"/><path d="M44,74 L64,74 L64,52 L88,52 L88,74 L108,74"/></g>
-      <text x="70" y="150" text-anchor="middle" class="lbl-b">price the stage</text>
-      <text x="70" y="182" text-anchor="middle" class="lbl-sm">it runs on every PR forever</text>
+      <g fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round"><path d="M34,38 L106,38"/><path d="M34,58 L106,58"/><path d="M34,78 L106,78"/></g>
+      <text x="70" y="150" text-anchor="middle" class="lbl-b">wire three workflows</text>
+      <text x="70" y="182" text-anchor="middle" class="lbl-sm">none of them can deploy</text>
     </g>
   </svg>
   <div class="pageno">M13&middot;19</div>
