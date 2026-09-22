@@ -145,154 +145,145 @@ footer, header, hgroup, main, menu, nav, section {
 <div class="reveal"><div class="slides">
 <section data-auto-animate>
   <p class="kicker">MODULE 12 &nbsp;&middot;&nbsp; AGENTIC DEVOPS WITH CLAUDE CODE</p>
-  <h2 class="t" style="font-size:2.2em">Kubernetes and GitOps</h2>
-  <p class="s" style="font-size:1.1em">Harden a chart with an agent, then ship it the only way in</p>
-  <svg viewBox="0 0 1130 330" role="img" aria-label="The golden path: the agent reviews an image and a rendered chart and proposes a change on a branch, a human approves and merges, and the reconciler is the only identity that writes to the cluster.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="40" y="100" width="220" height="120" rx="12" class="f-blue"/><rect x="300" y="100" width="220" height="120" rx="12" class="f-purple"/><rect x="560" y="100" width="220" height="120" rx="12" class="f-orange"/><rect x="820" y="100" width="270" height="120" rx="12" class="f-green"/></g>
-    <text x="150" y="152" text-anchor="middle" class="lbl-b">the agent</text>
-    <text x="150" y="186" text-anchor="middle" class="lbl-sm">reviews and proposes</text>
-    <text x="410" y="152" text-anchor="middle" class="lbl-b">a branch</text>
-    <text x="410" y="186" text-anchor="middle" class="lbl-sm">a candidate change</text>
-    <text x="670" y="152" text-anchor="middle" class="lbl-b">a human</text>
-    <text x="670" y="186" text-anchor="middle" class="lbl-sm">approves and merges</text>
-    <text x="955" y="152" text-anchor="middle" class="lbl-b">the reconciler</text>
-    <text x="955" y="186" text-anchor="middle" class="lbl-sm">the only cluster writer</text>
-    <g fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round"><path d="M272,160 L290,160" marker-end="url(#ah)"/><path d="M532,160 L550,160" marker-end="url(#ah)"/><path d="M792,160 L810,160" marker-end="url(#ah)"/></g>
-    <text x="560" y="286" text-anchor="middle" class="lbl-g">the worst the agent can do is propose a bad change</text>
+  <h2 class="t" style="font-size:2.2em">AI Agents for Kubernetes</h2>
+  <p class="s" style="font-size:1.1em">Triage a degraded cluster with a read-only agent</p>
+  <svg viewBox="0 0 1130 330" role="img" aria-label="An agent, bound to a read-only ServiceAccount, sends a delete request to the API server. The API server refuses it with a 403, the same refusal it would give a person typing the same command by hand.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="40" y="100" width="240" height="120" rx="12" class="f-blue"/><rect x="320" y="100" width="240" height="120" rx="12" class="f-purple"/><rect x="600" y="100" width="240" height="120" rx="12" class="f-orange"/><rect x="880" y="100" width="210" height="120" rx="12" class="f-red"/></g>
+    <text x="160" y="152" text-anchor="middle" class="lbl-b">agent-readonly</text>
+    <text x="160" y="186" text-anchor="middle" class="lbl-sm">a real identity</text>
+    <text x="440" y="152" text-anchor="middle" class="lbl-b">kubectl delete</text>
+    <text x="440" y="186" text-anchor="middle" class="lbl-sm">a mutating verb</text>
+    <text x="720" y="152" text-anchor="middle" class="lbl-b">the API server</text>
+    <text x="720" y="186" text-anchor="middle" class="lbl-sm">checks the RBAC grant</text>
+    <text x="985" y="152" text-anchor="middle" class="lbl-b">403</text>
+    <text x="985" y="186" text-anchor="middle" class="lbl-sm">refused</text>
+    <g fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round"><path d="M292,160 L310,160" marker-end="url(#ah)"/><path d="M572,160 L590,160" marker-end="url(#ah)"/><path d="M852,160 L870,160" marker-end="url(#ah)"/></g>
+    <text x="560" y="286" text-anchor="middle" class="lbl-g">the same refusal, whether the agent typed it or you did</text>
   </svg>
   <p class="credit"><b>Gourav Shah</b> &nbsp;&middot;&nbsp; School of DevOps &amp; AI &nbsp;&middot;&nbsp; Lesson + Lab + Quiz</p>
   <div class="pageno">M12&middot;01</div>
 </section>
 <section>
   <h2 class="t">What will you learn?</h2>
-  <p class="s">three chapters, then you build the thing</p>
-  <svg viewBox="0 0 1100 400" role="img" aria-label="A numbered contents list of the three chapters: the project and who does which part, the five tools and the question each answers, and the golden path, which decides who is allowed to write to a cluster.">
+  <p class="s">three chapters, then you operate the thing</p>
+  <svg viewBox="0 0 1100 400" role="img" aria-label="A numbered contents list of the three chapters: the project and who does which part, the five tools and the question each answers, and the cluster is the boundary, the one idea a learner cannot be lost on.">
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="120" y="90" width="52" height="52" rx="8"/></g>
     <text x="146" y="125" text-anchor="middle" class="lbl-b">1</text>
     <text x="200" y="116" class="lbl-b">The Project</text>
-    <text x="200" y="148" class="lbl-sm">what we build, and who does which part</text>
+    <text x="200" y="148" class="lbl-sm">what we operate, and who does which part</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="120" y="190" width="52" height="52" rx="8"/></g>
     <text x="146" y="225" text-anchor="middle" class="lbl-b">2</text>
     <text x="200" y="216" class="lbl-b">The Tools</text>
-    <text x="200" y="248" class="lbl-sm">five of them, one question each</text>
+    <text x="200" y="248" class="lbl-sm">five tools, each answering one question</text>
     <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2.2"><rect x="120" y="290" width="52" height="52" rx="8"/></g>
     <text x="146" y="325" text-anchor="middle" class="lbl-b">3</text>
-    <text x="200" y="316" class="lbl-b">The Golden Path</text>
-    <text x="200" y="348" class="lbl-sm">who is allowed to write to a cluster</text>
+    <text x="200" y="316" class="lbl-b">The Cluster Is the Boundary</text>
+    <text x="200" y="348" class="lbl-sm">the one idea you cannot be lost on</text>
   </svg>
   <div class="pageno">M12&middot;02</div>
 </section>
 <section class="divider">
   <h2 class="t">The Project</h2>
-  <p class="s">what we are building, and who does which part</p>
-  <svg viewBox="0 0 1600 900" role="img" aria-label="Illustration: a shipping container sealed at origin and travelling by truck, crane and ship without being reopened.">
-    <image href="../img/decks/m12/sealed-container-journey.jpg" x="0" y="0" width="1600" height="900" preserveAspectRatio="xMidYMid meet"/>
+  <p class="s">what we operate, and who does which part</p>
+  <svg viewBox="0 0 1180 400" role="img" aria-label="An on-call console showing five status lights, all red, beside a clock reading fifteen minutes to standup.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="70" width="640" height="260" rx="16" class="f-blue"/></g>
+    <text x="380" y="116" text-anchor="middle" class="lbl-b">northstar &mdash; namespace: northstar</text>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><circle cx="140" cy="200" r="26" class="f-red"/><circle cx="260" cy="200" r="26" class="f-red"/><circle cx="380" cy="200" r="26" class="f-red"/><circle cx="500" cy="200" r="26" class="f-red"/><circle cx="620" cy="200" r="26" class="f-red"/></g>
+    <text x="140" y="260" text-anchor="middle" class="lbl-sm">imagepull</text>
+    <text x="260" y="260" text-anchor="middle" class="lbl-sm">crashloop</text>
+    <text x="380" y="260" text-anchor="middle" class="lbl-sm">resource</text>
+    <text x="500" y="260" text-anchor="middle" class="lbl-sm">liveness</text>
+    <text x="620" y="260" text-anchor="middle" class="lbl-sm">configmap</text>
+    <text x="380" y="300" text-anchor="middle" class="lbl-g">five workloads, unhealthy, unrelated by name alone</text>
+    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><circle cx="920" cy="200" r="110"/></g>
+    <path d="M920,200 L920,130 M920,200 L965,220" fill="none" stroke="#1e1e1e" stroke-width="4" stroke-linecap="round"/>
+    <text x="920" y="336" text-anchor="middle" class="lbl-b">15 minutes to standup</text>
   </svg>
   <div class="pageno">M12&middot;03</div>
 </section>
 <section>
-  <h2 class="t">The job: a deploy that is not an outage</h2>
-  <p class="s">nine days to the campaign, and we ship several times a day</p>
-  <svg viewBox="0 0 1180 400" role="img" aria-label="Last month's deploy, sampled twice a second. The count of serving pods reads two, then drops to zero for a long run of samples, then returns to two. A bracket over the zeros is labelled nine and a half seconds serving nothing. Below, the two chart values that caused it: maxUnavailable one hundred percent and replicas one.">
-    <text x="60" y="86" class="lbl-b">pods serving, sampled twice a second</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2"><rect x="60" y="112" width="46" height="56" rx="6" class="f-green"/><rect x="112" y="112" width="46" height="56" rx="6" class="f-green"/></g>
-    <text x="83" y="150" text-anchor="middle" class="lbl-b">2</text>
-    <text x="135" y="150" text-anchor="middle" class="lbl-b">2</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2"><rect x="164" y="112" width="46" height="56" rx="6" class="f-red"/><rect x="216" y="112" width="46" height="56" rx="6" class="f-red"/><rect x="268" y="112" width="46" height="56" rx="6" class="f-red"/><rect x="320" y="112" width="46" height="56" rx="6" class="f-red"/><rect x="372" y="112" width="46" height="56" rx="6" class="f-red"/><rect x="424" y="112" width="46" height="56" rx="6" class="f-red"/><rect x="476" y="112" width="46" height="56" rx="6" class="f-red"/><rect x="528" y="112" width="46" height="56" rx="6" class="f-red"/><rect x="580" y="112" width="46" height="56" rx="6" class="f-red"/><rect x="632" y="112" width="46" height="56" rx="6" class="f-red"/></g>
-    <text x="187" y="150" text-anchor="middle" class="lbl-b">0</text>
-    <text x="239" y="150" text-anchor="middle" class="lbl-b">0</text>
-    <text x="291" y="150" text-anchor="middle" class="lbl-b">0</text>
-    <text x="343" y="150" text-anchor="middle" class="lbl-b">0</text>
-    <text x="395" y="150" text-anchor="middle" class="lbl-b">0</text>
-    <text x="447" y="150" text-anchor="middle" class="lbl-b">0</text>
-    <text x="499" y="150" text-anchor="middle" class="lbl-b">0</text>
-    <text x="551" y="150" text-anchor="middle" class="lbl-b">0</text>
-    <text x="603" y="150" text-anchor="middle" class="lbl-b">0</text>
-    <text x="655" y="150" text-anchor="middle" class="lbl-b">0</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2"><rect x="684" y="112" width="46" height="56" rx="6" class="f-green"/><rect x="736" y="112" width="46" height="56" rx="6" class="f-green"/></g>
-    <text x="707" y="150" text-anchor="middle" class="lbl-b">2</text>
-    <text x="759" y="150" text-anchor="middle" class="lbl-b">2</text>
-    <g fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M164,186 L164,202 L678,202 L678,186"/></g>
-    <text x="421" y="232" text-anchor="middle" class="lbl-bad">nine and a half seconds serving nothing</text>
-    <text x="421" y="264" text-anchor="middle" class="lbl-sm">nothing failed &mdash; no build broke, no command was wrong</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="820" y="104" width="300" height="76" rx="10" class="f-orange"/><rect x="820" y="196" width="300" height="76" rx="10" class="f-orange"/></g>
-    <text x="970" y="140" text-anchor="middle" class="lbl-b">maxUnavailable: 100%</text>
-    <text x="970" y="168" text-anchor="middle" class="lbl-sm">take them all away</text>
-    <text x="970" y="232" text-anchor="middle" class="lbl-b">replicas: 1</text>
-    <text x="970" y="260" text-anchor="middle" class="lbl-sm">nothing to fall back to</text>
-    <text x="970" y="314" text-anchor="middle" class="lbl-g">two values, written months apart</text>
+  <h2 class="t">The job: a degraded cluster, fifteen minutes</h2>
+  <p class="s">Five faults, one cluster, none of them solved yet</p>
+  <svg viewBox="0 0 1180 400" role="img" aria-label="Five workload cards, each labelled with its failure signature: ImagePullBackOff, CrashLoopBackOff, Pending, RestartLoop times two, and ConfigError. The Pending card is annotated with the node's 7.74 gibibyte allocatable memory against a 10 gibibyte request.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="30" y="60" width="205" height="140" rx="10" class="f-red"/><rect x="255" y="60" width="205" height="140" rx="10" class="f-orange"/><rect x="480" y="60" width="230" height="140" rx="10" class="f-purple"/><rect x="730" y="60" width="205" height="140" rx="10" class="f-blue"/><rect x="955" y="60" width="195" height="140" rx="10" class="f-green"/></g>
+    <text x="132" y="116" text-anchor="middle" class="lbl-b">imagepull-test</text>
+    <text x="132" y="148" text-anchor="middle" class="lbl-sm">ImagePullBackOff</text>
+    <text x="132" y="176" text-anchor="middle" class="lbl-sm">2 replicas</text>
+    <text x="357" y="116" text-anchor="middle" class="lbl-b">crashloop-test</text>
+    <text x="357" y="148" text-anchor="middle" class="lbl-sm">CrashLoopBackOff</text>
+    <text x="357" y="176" text-anchor="middle" class="lbl-sm">1 replica</text>
+    <text x="595" y="116" text-anchor="middle" class="lbl-b">resource-limit-test</text>
+    <text x="595" y="148" text-anchor="middle" class="lbl-sm">Pending</text>
+    <text x="595" y="176" text-anchor="middle" class="lbl-sm">10Gi req vs 7.74Gi node</text>
+    <text x="832" y="116" text-anchor="middle" class="lbl-b">liveness-probe-test</text>
+    <text x="832" y="148" text-anchor="middle" class="lbl-sm">RestartLoop x2</text>
+    <text x="832" y="176" text-anchor="middle" class="lbl-sm">two independent defects</text>
+    <text x="1052" y="116" text-anchor="middle" class="lbl-b">configmap-mount-test</text>
+    <text x="1052" y="148" text-anchor="middle" class="lbl-sm">ConfigError</text>
+    <text x="1052" y="176" text-anchor="middle" class="lbl-sm">1 replica</text>
+    <text x="590" y="250" text-anchor="middle" class="lbl-g">none of the five is solvable from one command</text>
+    <text x="590" y="300" text-anchor="middle" class="lbl">the ticket: triage all five, rank by blast radius, remediate</text>
   </svg>
   <div class="pageno">M12&middot;04</div>
 </section>
 <section>
-  <h2 class="t">What we are building</h2>
-  <p class="s">a brief, a hardened chart, and the tests that hold it there</p>
-  <svg viewBox="0 0 1180 400" role="img" aria-label="What we are building, shown as three artifacts. First, a short brief you write. Second, a hardened chart with a serving floor, bounded resources and a non-root pod. Third, a committed test suite next to the chart that a reviewer can run. An arrow leads from the three to a merge on the main branch, which the reconciler syncs.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="40" y="70" width="300" height="240" rx="14" class="f-purple"/></g>
-    <text x="190" y="118" text-anchor="middle" class="lbl-b">SPEC.md</text>
-    <text x="190" y="158" text-anchor="middle" class="lbl-sm">eleven lines of requirements</text>
-    <text x="190" y="196" text-anchor="middle" class="lbl-sm">no field names, no design</text>
-    <text x="190" y="256" text-anchor="middle" class="lbl-g">you write this</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="390" y="70" width="330" height="240" rx="14" class="f-blue"/></g>
-    <text x="555" y="118" text-anchor="middle" class="lbl-b">the chart</text>
-    <text x="555" y="158" text-anchor="middle" class="lbl-sm">a serving floor</text>
-    <text x="555" y="192" text-anchor="middle" class="lbl-sm">bounded cpu and memory</text>
-    <text x="555" y="226" text-anchor="middle" class="lbl-sm">a pod that is not root</text>
-    <text x="555" y="286" text-anchor="middle" class="lbl-g">the agent writes this</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="770" y="70" width="330" height="240" rx="14" class="f-green"/></g>
-    <text x="935" y="118" text-anchor="middle" class="lbl-b">tests/</text>
-    <text x="935" y="158" text-anchor="middle" class="lbl-sm">run.sh + three render tests</text>
-    <text x="935" y="192" text-anchor="middle" class="lbl-sm">committed next to the chart</text>
-    <text x="935" y="226" text-anchor="middle" class="lbl-sm">a reviewer can run them</text>
-    <text x="935" y="286" text-anchor="middle" class="lbl-g">the agent writes these too</text>
-    <text x="590" y="360" text-anchor="middle" class="lbl">three artifacts, one merge, and a reconciler that does the applying</text>
+  <h2 class="t">What we operate</h2>
+  <p class="s">One brief, six pieces, one cluster.</p>
+  <svg viewBox="0 0 1180 400" role="img" aria-label="Your SPEC.md brief on the left, feeding into the operating kit on the right: the role, two identities, a bounded tool, a triage skill, a hook and a directory context file.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="40" y="130" width="260" height="140" rx="14" class="f-purple"/></g>
+    <text x="170" y="190" text-anchor="middle" class="lbl-b">SPEC.md</text>
+    <text x="170" y="222" text-anchor="middle" class="lbl-sm">yours &mdash; what done means</text>
+    <g fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round"><path d="M310,200 L360,200" marker-end="url(#ahg)"/></g>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="380" y="40" width="180" height="70" rx="10" class="f-blue"/><rect x="580" y="40" width="180" height="70" rx="10" class="f-blue"/><rect x="780" y="40" width="180" height="70" rx="10" class="f-blue"/><rect x="380" y="260" width="180" height="70" rx="10" class="f-green"/><rect x="580" y="260" width="180" height="70" rx="10" class="f-green"/><rect x="780" y="260" width="180" height="70" rx="10" class="f-green"/></g>
+    <text x="470" y="80" text-anchor="middle" class="lbl-sm">the role</text>
+    <text x="670" y="80" text-anchor="middle" class="lbl-sm">two identities</text>
+    <text x="870" y="80" text-anchor="middle" class="lbl-sm">bounded kubectl</text>
+    <text x="470" y="300" text-anchor="middle" class="lbl-sm">triage skill</text>
+    <text x="670" y="300" text-anchor="middle" class="lbl-sm">deny hook</text>
+    <text x="870" y="300" text-anchor="middle" class="lbl-sm">directory context</text>
+    <text x="900" y="360" text-anchor="middle" class="lbl-g">the kit is already here &mdash; you inspect it, then use it</text>
   </svg>
   <div class="pageno">M12&middot;05</div>
 </section>
 <section>
   <h2 class="t">How the work flows</h2>
-  <p class="s">seven steps, and you start and finish it</p>
-  <svg viewBox="0 0 1180 380" role="img" aria-label="The project flow across seven steps: you write the brief, the role designs and plans under the harness, the tests are watched failing, the chart changes and the tests pass, an independent reviewer gives a verdict, the change is merged and pushed, and the reconciler syncs it to the cluster where you measure the result.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="30" y="60" width="200" height="80" rx="10" class="f-purple"/><rect x="270" y="60" width="200" height="80" rx="10" class="f-blue"/><rect x="510" y="60" width="200" height="80" rx="10" class="f-red"/><rect x="750" y="60" width="200" height="80" rx="10" class="f-green"/></g>
-    <text x="130" y="96" text-anchor="middle" class="lbl-b">the brief</text>
-    <text x="130" y="124" text-anchor="middle" class="lbl-sm">you</text>
-    <text x="370" y="96" text-anchor="middle" class="lbl-b">design + plan</text>
-    <text x="370" y="124" text-anchor="middle" class="lbl-sm">the harness</text>
-    <text x="610" y="96" text-anchor="middle" class="lbl-b">tests fail</text>
-    <text x="610" y="124" text-anchor="middle" class="lbl-sm">watched, not assumed</text>
-    <text x="850" y="96" text-anchor="middle" class="lbl-b">tests pass</text>
-    <text x="850" y="124" text-anchor="middle" class="lbl-sm">the chart changed</text>
-    <g fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round"><path d="M242,100 L258,100" marker-end="url(#ahg)"/><path d="M482,100 L498,100" marker-end="url(#ahg)"/><path d="M722,100 L738,100" marker-end="url(#ahg)"/><path d="M850,152 L850,196" marker-end="url(#ahg)"/></g>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="750" y="208" width="200" height="80" rx="10" class="f-orange"/><rect x="510" y="208" width="200" height="80" rx="10" class="f-blue"/><rect x="270" y="208" width="200" height="80" rx="10" class="f-green"/></g>
-    <text x="850" y="244" text-anchor="middle" class="lbl-b">review</text>
-    <text x="850" y="272" text-anchor="middle" class="lbl-sm">an independent verdict</text>
-    <text x="610" y="244" text-anchor="middle" class="lbl-b">merge + push</text>
-    <text x="610" y="272" text-anchor="middle" class="lbl-sm">to the remote</text>
-    <text x="370" y="244" text-anchor="middle" class="lbl-b">reconciler syncs</text>
-    <text x="370" y="272" text-anchor="middle" class="lbl-sm">then you measure it</text>
-    <g fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round"><path d="M738,248 L722,248" marker-end="url(#ahg)"/><path d="M498,248 L482,248" marker-end="url(#ahg)"/></g>
-    <text x="590" y="340" text-anchor="middle" class="lbl-g">the flow is fixed; only the middle two steps are the agent&rsquo;s</text>
+  <p class="s">Five steps; the agent triages, you decide.</p>
+  <svg viewBox="0 0 1180 260" role="img" aria-label="The whole project on one line: the brief, then proving the kit holds, then triage and rank, then remediate through the second identity, then measure the miss.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="10" y="90" width="200" height="80" rx="10" class="f-purple"/><rect x="250" y="90" width="200" height="80" rx="10" class="f-blue"/><rect x="490" y="90" width="200" height="80" rx="10" class="f-orange"/><rect x="730" y="90" width="200" height="80" rx="10" class="f-red"/><rect x="970" y="90" width="200" height="80" rx="10" class="f-green"/></g>
+    <text x="110" y="126" text-anchor="middle" class="lbl">the brief</text>
+    <text x="110" y="150" text-anchor="middle" class="lbl-sm">SPEC.md</text>
+    <text x="350" y="126" text-anchor="middle" class="lbl">prove the kit</text>
+    <text x="350" y="150" text-anchor="middle" class="lbl-sm">can-i, then a 403</text>
+    <text x="590" y="126" text-anchor="middle" class="lbl">triage &amp; rank</text>
+    <text x="590" y="150" text-anchor="middle" class="lbl-sm">five findings</text>
+    <text x="830" y="126" text-anchor="middle" class="lbl">remediate</text>
+    <text x="830" y="150" text-anchor="middle" class="lbl-sm">agent-remediator</text>
+    <text x="1070" y="126" text-anchor="middle" class="lbl">measure</text>
+    <text x="1070" y="150" text-anchor="middle" class="lbl-sm">the Secret read</text>
+    <g fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M212,130 L248,130" marker-end="url(#ahg)"/><path d="M452,130 L488,130" marker-end="url(#ahg)"/><path d="M692,130 L728,130" marker-end="url(#ahg)"/><path d="M932,130 L968,130" marker-end="url(#ahg)"/></g>
   </svg>
   <div class="pageno">M12&middot;06</div>
 </section>
 <section>
   <h2 class="t">What you own, and what the agent owns</h2>
-  <p class="s">you keep the two parts that govern the outcome</p>
-  <svg viewBox="0 0 1180 400" role="img" aria-label="Two panels. On the left, what you own: the brief that says what is needed, and the verification that says whether you got it. On the right, what the agent owns: the design, the plan, the failing tests, and the chart changes that make them pass.">
+  <p class="s">You keep the brief and the verdict.</p>
+  <svg viewBox="0 0 1180 400" role="img" aria-label="Two panels. On the left, what you own: the brief, the ranking check, and which identity remediates. On the right, what the agent owns: the kit design, the findings, and the remediation patch itself.">
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="50" y="60" width="470" height="280" rx="14" class="f-purple"/></g>
     <text x="285" y="112" text-anchor="middle" class="lbl-b">you own</text>
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="90" y="140" width="390" height="70" rx="10"/><rect x="90" y="232" width="390" height="70" rx="10"/></g>
-    <text x="285" y="172" text-anchor="middle" class="lbl">the brief</text>
-    <text x="285" y="200" text-anchor="middle" class="lbl-sm">what a safe deploy has to mean</text>
-    <text x="285" y="264" text-anchor="middle" class="lbl">the verification</text>
-    <text x="285" y="292" text-anchor="middle" class="lbl-sm">including the number you measure</text>
+    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="90" y="140" width="390" height="60" rx="10"/><rect x="90" y="212" width="390" height="60" rx="10"/><rect x="90" y="284" width="390" height="42" rx="10"/></g>
+    <text x="285" y="167" text-anchor="middle" class="lbl">the brief</text>
+    <text x="285" y="189" text-anchor="middle" class="lbl-sm">what done means this session</text>
+    <text x="285" y="239" text-anchor="middle" class="lbl">the ranking</text>
+    <text x="285" y="261" text-anchor="middle" class="lbl-sm">which fault matters most</text>
+    <text x="285" y="310" text-anchor="middle" class="lbl-sm">which identity remediates</text>
     <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="660" y="60" width="470" height="280" rx="14" class="f-blue"/></g>
     <text x="895" y="112" text-anchor="middle" class="lbl-b">the agent owns</text>
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="700" y="140" width="180" height="58" rx="10"/><rect x="910" y="140" width="180" height="58" rx="10"/><rect x="700" y="228" width="180" height="58" rx="10"/><rect x="910" y="228" width="180" height="58" rx="10"/></g>
-    <text x="790" y="176" text-anchor="middle" class="lbl">the design</text>
-    <text x="1000" y="176" text-anchor="middle" class="lbl">the plan</text>
-    <text x="790" y="264" text-anchor="middle" class="lbl">the failing tests</text>
-    <text x="1000" y="264" text-anchor="middle" class="lbl">the chart edits</text>
+    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="700" y="140" width="390" height="60" rx="10"/><rect x="700" y="212" width="390" height="60" rx="10"/><rect x="700" y="284" width="390" height="42" rx="10"/></g>
+    <text x="895" y="167" text-anchor="middle" class="lbl">the six-field findings</text>
+    <text x="895" y="189" text-anchor="middle" class="lbl-sm">one per workload</text>
+    <text x="895" y="239" text-anchor="middle" class="lbl">the evidence</text>
+    <text x="895" y="261" text-anchor="middle" class="lbl-sm">bounded reads, cited</text>
+    <text x="895" y="310" text-anchor="middle" class="lbl-sm">the remediation patch itself</text>
     <g fill="none" stroke="#757575" stroke-width="2.4" stroke-linecap="round"><path d="M534,200 L646,200" marker-end="url(#ahg)"/></g>
     <text x="590" y="182" text-anchor="middle" class="lbl-sm">hand off</text>
   </svg>
@@ -301,300 +292,268 @@ footer, header, hgroup, main, menu, nav, section {
 </section>
 <section class="divider">
   <h2 class="t">The Tools</h2>
-  <p class="s">five of them, and the question each one answers</p>
-  <svg viewBox="0 0 1100 360" role="img" aria-label="A Helm chart and a values file merging into rendered YAML, with the rendered YAML marked as the only artifact the cluster ever acts on.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="70" y="70" width="280" height="80" rx="10" class="f-purple"/><rect x="70" y="190" width="280" height="80" rx="10" class="f-blue"/></g>
-    <text x="210" y="118" text-anchor="middle" class="lbl">the chart</text>
-    <text x="210" y="238" text-anchor="middle" class="lbl">values.yaml</text>
-    <g fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M362,110 L470,160" marker-end="url(#ahg)"/><path d="M362,230 L470,180" marker-end="url(#ahg)"/></g>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="3"><rect x="490" y="110" width="290" height="120" rx="12" class="f-green"/></g>
-    <text x="635" y="162" text-anchor="middle" class="lbl-b">the rendered YAML</text>
-    <text x="635" y="196" text-anchor="middle" class="lbl-sm">what the cluster acts on</text>
-    <g fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round"><path d="M792,170 L850,170" marker-end="url(#ah)"/></g>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="860" y="120" width="180" height="100" rx="12" class="f-orange"/></g>
-    <text x="950" y="176" text-anchor="middle" class="lbl-b">review this</text>
+  <p class="s">five tools, each answering one question</p>
+  <svg viewBox="0 0 1180 400" role="img" aria-label="Five tools laid out on a shelf: the role file, the bounded kubectl wrapper, the triage skill, the deny hook, and the directory context file.">
+    <g fill="none" stroke="#1e1e1e" stroke-width="3" stroke-linecap="round"><path d="M120,180 L1060,182"/><path d="M120,290 L1060,292"/><path d="M140,180 L140,292"/><path d="M1040,180 L1040,292"/></g>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="170" y="96" width="150" height="90" rx="8" class="f-blue"/><rect x="350" y="90" width="150" height="96" rx="8" class="f-purple"/><rect x="530" y="100" width="150" height="86" rx="8" class="f-orange"/><rect x="710" y="94" width="150" height="92" rx="8" class="f-red"/><rect x="890" y="98" width="150" height="88" rx="8" class="f-green"/></g>
+    <text x="245" y="210" text-anchor="middle" class="lbl-sm">the role</text>
+    <text x="425" y="210" text-anchor="middle" class="lbl-sm">bounded kubectl</text>
+    <text x="605" y="210" text-anchor="middle" class="lbl-sm">triage skill</text>
+    <text x="785" y="210" text-anchor="middle" class="lbl-sm">deny hook</text>
+    <text x="965" y="210" text-anchor="middle" class="lbl-sm">context file</text>
+    <text x="590" y="260" text-anchor="middle" class="lbl-g">five tools, already on the shelf</text>
+    <text x="590" y="360" text-anchor="middle" class="lbl-b">each one answers exactly one question</text>
   </svg>
   <div class="pageno">M12&middot;08</div>
 </section>
 <section>
   <h2 class="t">Five tools, one question each</h2>
-  <p class="s">every tool here answers exactly one question</p>
-  <svg viewBox="0 0 1180 400" role="img" aria-label="Five tools, each paired with the one question it answers. helm template: what will the cluster actually receive. helm lint: will this chart install at all. yq with a shell test: does the render meet our standard. kind: does it really run on a real API server. Argo CD: who is allowed to write to the cluster.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="60" y="52" width="330" height="50" rx="9" class="f-blue"/></g>
-    <text x="225" y="84" text-anchor="middle" class="lbl-b">helm template</text>
-    <g fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M400,77 L436,77" marker-end="url(#ahg)"/></g>
-    <text x="452" y="84" class="lbl">what will the cluster actually receive?</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="60" y="120" width="330" height="50" rx="9" class="f-blue"/></g>
-    <text x="225" y="152" text-anchor="middle" class="lbl-b">helm lint</text>
-    <g fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M400,145 L436,145" marker-end="url(#ahg)"/></g>
-    <text x="452" y="152" class="lbl">will this chart install at all?</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="60" y="188" width="330" height="50" rx="9" class="f-blue"/></g>
-    <text x="225" y="220" text-anchor="middle" class="lbl-b">yq + a shell test</text>
-    <g fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M400,213 L436,213" marker-end="url(#ahg)"/></g>
-    <text x="452" y="220" class="lbl">does the render meet our standard?</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="60" y="256" width="330" height="50" rx="9" class="f-blue"/></g>
-    <text x="225" y="288" text-anchor="middle" class="lbl-b">kind</text>
-    <g fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M400,281 L436,281" marker-end="url(#ahg)"/></g>
-    <text x="452" y="288" class="lbl">does it really run, on a real API server?</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="60" y="324" width="330" height="50" rx="9" class="f-blue"/></g>
-    <text x="225" y="356" text-anchor="middle" class="lbl-b">Argo CD</text>
-    <g fill="none" stroke="#757575" stroke-width="2.2" stroke-linecap="round"><path d="M400,349 L436,349" marker-end="url(#ahg)"/></g>
-    <text x="452" y="356" class="lbl">who is allowed to write to the cluster?</text>
+  <p class="s">Each tool answers exactly one question.</p>
+  <svg viewBox="0 0 1180 400" role="img" aria-label="Five rows, each pairing a tool with the one question it answers: the role file answers what it can even try; the bounded kubectl wrapper answers how much cluster state reaches its context; the triage skill answers how five findings compare; the deny hook answers what the fast loud no is; the directory context file answers which cluster, always.">
+    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="40" y="30" width="1100" height="60" rx="10"/><rect x="40" y="100" width="1100" height="60" rx="10"/><rect x="40" y="170" width="1100" height="60" rx="10"/><rect x="40" y="240" width="1100" height="60" rx="10"/><rect x="40" y="310" width="1100" height="60" rx="10"/></g>
+    <text x="70" y="66" class="lbl-b">the role file</text>
+    <text x="450" y="66" class="lbl-sm">what is this agent even allowed to try?</text>
+    <text x="70" y="136" class="lbl-b">the bounded kubectl wrapper</text>
+    <text x="700" y="136" class="lbl-sm">how much cluster state reaches its context?</text>
+    <text x="70" y="206" class="lbl-b">the triage skill</text>
+    <text x="450" y="206" class="lbl-sm">how do five findings become comparable?</text>
+    <text x="70" y="276" class="lbl-b">the deny hook</text>
+    <text x="450" y="276" class="lbl-sm">what's the fast, loud no?</text>
+    <text x="70" y="346" class="lbl-b">the directory CLAUDE.md</text>
+    <text x="600" y="346" class="lbl-sm">which cluster and namespace, always?</text>
   </svg>
   <div class="pageno">M12&middot;09</div>
 </section>
 <section>
-  <h2 class="t">The render is the artifact</h2>
-  <p class="s">the template is a form letter; the render is the envelope</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="A form letter with fill-in-the-blank fields plus a mail-merge spreadsheet combine through a merge step into an actual posted letter with all blanks filled in.">
-    <!-- form letter template -->
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8"><rect x="70" y="70" width="230" height="200" rx="8"/></g>
-    <text x="185" y="60" text-anchor="middle" class="lbl-g">chart templates</text>
-    <text x="185" y="115" text-anchor="middle" class="lbl-sm">Dear ⟨name⟩,</text>
-    <text x="185" y="150" text-anchor="middle" class="lbl-sm">your ⟨plan⟩</text>
-    <text x="185" y="185" text-anchor="middle" class="lbl-sm">renews ⟨date⟩</text>
-    <text x="185" y="248" text-anchor="middle" class="lbl-b">the form letter</text>
-    <!-- spreadsheet -->
-    <g filter="url(#rough)" fill="var(--p-blue)" stroke="none"><rect x="340" y="90" width="200" height="160" rx="8"/></g>
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><rect x="340" y="90" width="200" height="160" rx="8"/><line x1="340" y1="130" x2="540" y2="130"/><line x1="340" y1="170" x2="540" y2="170"/><line x1="340" y1="210" x2="540" y2="210"/><line x1="440" y1="90" x2="440" y2="250"/></g>
-    <text x="440" y="278" text-anchor="middle" class="lbl-b">values.yaml</text>
-    <!-- merge -->
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8"><line x1="300" y1="170" x2="336" y2="170" marker-end="url(#ah)"/><line x1="560" y1="170" x2="660" y2="170" marker-end="url(#ah)"/></g>
-    <text x="610" y="152" text-anchor="middle" class="lbl-g" style="font-size:15px">merge</text>
-    <!-- posted letter -->
-    <g filter="url(#rough)" fill="var(--p-green)" stroke="none"><rect x="680" y="70" width="230" height="200" rx="8"/></g>
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="3"><rect x="680" y="70" width="230" height="200" rx="8"/></g>
-    <text x="795" y="115" text-anchor="middle" class="lbl-sm">Dear Priya,</text>
-    <text x="795" y="150" text-anchor="middle" class="lbl-sm">your Pro plan</text>
-    <text x="795" y="185" text-anchor="middle" class="lbl-sm">renews Aug 1</text>
-    <text x="795" y="248" text-anchor="middle" class="lbl-good">the letter you get</text>
-    <text x="1000" y="172" text-anchor="middle" class="lbl-g">this is<tspan x="1000" dy="24">what</tspan><tspan x="1000" dy="24">ships</tspan></text>
+  <h2 class="t">The read that lies if you trust the wrong column</h2>
+  <p class="s">The column that looks safe often isn't.</p>
+  <svg viewBox="0 0 1180 400" role="img" aria-label="A seating chart listing two assigned seats, next to the actual half-empty room. The ADDRESSES column lists both pods; the ready condition on both reads false. Reading the chart instead of checking attendance concludes the room is full when it is not."">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="40" y="60" width="480" height="260" rx="14" class="f-orange"/></g>
+    <text x="280" y="106" text-anchor="middle" class="lbl-b">the seating chart</text>
+    <text x="280" y="136" text-anchor="middle" class="lbl-sm">(the ADDRESSES column)</text>
+    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="90" y="160" width="380" height="50" rx="8"/><rect x="90" y="220" width="380" height="50" rx="8"/></g>
+    <text x="280" y="192" text-anchor="middle" class="lbl">seat A &mdash; assigned</text>
+    <text x="280" y="252" text-anchor="middle" class="lbl">seat B &mdash; assigned</text>
+    <text x="280" y="298" text-anchor="middle" class="lbl-bad">looks full</text>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="660" y="60" width="480" height="260" rx="14" class="f-green"/></g>
+    <text x="900" y="106" text-anchor="middle" class="lbl-b">the actual room</text>
+    <text x="900" y="136" text-anchor="middle" class="lbl-sm">(.conditions.ready)</text>
+    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="710" y="160" width="380" height="50" rx="8"/><rect x="710" y="220" width="380" height="50" rx="8"/></g>
+    <text x="900" y="192" text-anchor="middle" class="lbl">seat A &mdash; ready=false</text>
+    <text x="900" y="252" text-anchor="middle" class="lbl">seat B &mdash; ready=false</text>
+    <text x="900" y="298" text-anchor="middle" class="lbl-good">actually empty</text>
   </svg>
   <div class="pageno">M12&middot;10</div>
 </section>
 <section>
-  <h2 class="t">A clean lint and a guaranteed outage</h2>
-  <p class="s">lint reads the form, never the sense of your values</p>
-  <svg viewBox="0 0 1100 380" role="img" aria-label="Rendering the chart shows the readiness probe path healthz, which is correct, and a rolling update strategy with maxUnavailable at one hundred percent, which allows every serving pod to go down before a replacement is ready. Helm lint passes anyway, because lint checks the form letter rather than the merged result.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="60" y="30" width="980" height="80" rx="10" class="f-green"/></g>
-    <text x="300" y="66" text-anchor="middle" class="lbl-b">readinessProbe path</text>
-    <text x="760" y="66" text-anchor="middle" class="lbl-good">/healthz &mdash; a path the process serves</text>
-    <text x="300" y="96" text-anchor="middle" class="lbl-g">in the render</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="3"><rect x="60" y="124" width="980" height="100" rx="10" class="f-red"/></g>
-    <text x="300" y="164" text-anchor="middle" class="lbl-b">maxUnavailable: 100%</text>
-    <text x="760" y="164" text-anchor="middle" class="lbl-bad">every serving pod may go down at once</text>
-    <text x="300" y="200" text-anchor="middle" class="lbl-g">invisible in the template</text>
-    <text x="760" y="200" text-anchor="middle" class="lbl-sm">on one replica, that is a gap on every deploy</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="60" y="244" width="980" height="86" rx="10" class="f-orange"/></g>
-    <text x="550" y="284" text-anchor="middle" class="lbl-b">helm lint: 1 chart linted, 0 failed</text>
-    <text x="550" y="316" text-anchor="middle" class="lbl-sm">lint checks the form letter; your review checks the merged result</text>
+  <h2 class="t">The schema that makes five findings comparable</h2>
+  <p class="s">Five paragraphs can't be ranked. Five schemas can.</p>
+  <svg viewBox="0 0 1180 340" role="img" aria-label="Six labeled fields stacked: workload, signature, root cause, evidence, blast radius, confidence. Five free-form essays cannot be ranked against each other; five identical records can.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="240" y="20" width="700" height="46" rx="8" class="f-blue"/><rect x="240" y="72" width="700" height="46" rx="8" class="f-purple"/><rect x="240" y="124" width="700" height="46" rx="8" class="f-orange"/><rect x="240" y="176" width="700" height="46" rx="8" class="f-red"/><rect x="240" y="228" width="700" height="46" rx="8" class="f-green"/><rect x="240" y="280" width="700" height="46" rx="8" fill="#ffffff"/></g>
+    <text x="590" y="50" text-anchor="middle" class="lbl-b">workload</text>
+    <text x="590" y="102" text-anchor="middle" class="lbl-b">signature</text>
+    <text x="590" y="154" text-anchor="middle" class="lbl-b">root_cause</text>
+    <text x="590" y="206" text-anchor="middle" class="lbl-b">evidence</text>
+    <text x="590" y="258" text-anchor="middle" class="lbl-b">blast_radius</text>
+    <text x="590" y="310" text-anchor="middle" class="lbl-b">confidence</text>
   </svg>
   <div class="pageno">M12&middot;11</div>
 </section>
 <section>
-  <h2 class="t">A serving floor is arithmetic</h2>
-  <p class="s">one number is never the fix, because the floor needs both</p>
-  <svg viewBox="0 0 1180 400" role="img" aria-label="A two by two table of maxUnavailable against replica count. One hundred percent with one replica has no floor. Twenty five percent with one replica also has no floor, because a quarter of one rounds down to the only pod. One hundred percent with two replicas has no floor, because all of them may go at once. Zero with two replicas is the only combination that keeps a pod serving.">
-    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="120" y="70" width="440" height="120" rx="10"/><rect x="600" y="70" width="440" height="120" rx="10"/><rect x="120" y="212" width="440" height="120" rx="10"/><rect x="600" y="212" width="440" height="120" rx="10"/></g>
-    <text x="340" y="112" text-anchor="middle" class="lbl-b">maxUnavailable: 100% &nbsp;&middot;&nbsp; replicas: 1</text>
-    <text x="340" y="156" text-anchor="middle" class="lbl-bad">every pod may go &mdash; no floor</text>
-    <text x="820" y="112" text-anchor="middle" class="lbl-b">maxUnavailable: 25% &nbsp;&middot;&nbsp; replicas: 1</text>
-    <text x="820" y="156" text-anchor="middle" class="lbl-bad">a quarter of one rounds down &mdash; no floor</text>
-    <text x="340" y="254" text-anchor="middle" class="lbl-b">maxUnavailable: 100% &nbsp;&middot;&nbsp; replicas: 2</text>
-    <text x="340" y="298" text-anchor="middle" class="lbl-bad">both may go at once &mdash; no floor</text>
-    <text x="820" y="254" text-anchor="middle" class="lbl-b">maxUnavailable: 0 &nbsp;&middot;&nbsp; replicas: 2</text>
-    <text x="820" y="298" text-anchor="middle" class="lbl-good">one pod always serving</text>
-    <text x="580" y="374" text-anchor="middle" class="lbl-g">the floor is the two values together, which is why fixing one changes nothing</text>
+  <h2 class="t">The kit only works if Skill is on the list</h2>
+  <p class="s">No Skill, no schema &mdash; output without method.</p>
+  <svg viewBox="0 0 1180 340" role="img" aria-label="k8s-operator's tools line shown two ways: without Skill, the triage skill is just a file the agent reads and no schema fires; with Skill, the schema fires. This is the same fact measured in Module 9, applied here.">
+    <g class="fragment" data-fragment-index="1">
+      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="60" y="60" width="500" height="200" rx="14" class="f-red"/></g>
+      <text x="310" y="112" text-anchor="middle" class="lbl-b">without Skill</text>
+      <text x="310" y="160" text-anchor="middle" class="lbl-sm">reads SKILL.md as a plain file</text>
+      <text x="310" y="196" text-anchor="middle" class="lbl-bad">no schema, no discipline</text>
+    </g>
+    <g class="fragment" data-fragment-index="2">
+      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="620" y="60" width="500" height="200" rx="14" class="f-green"/></g>
+      <text x="870" y="112" text-anchor="middle" class="lbl-b">with Skill</text>
+      <text x="870" y="160" text-anchor="middle" class="lbl-sm">k8s-triage actually fires</text>
+      <text x="870" y="196" text-anchor="middle" class="lbl-good">the six-field schema, every time</text>
+    </g>
   </svg>
-  <p class="recap fragment">Next: the golden path &mdash; who is allowed to write to a cluster.</p>
+  <p class="recap fragment">Next: the cluster is the boundary &mdash; the one idea a learner cannot be lost on at step one.</p>
   <div class="pageno">M12&middot;12</div>
 </section>
 <section class="divider">
-  <h2 class="t">The Golden Path</h2>
-  <p class="s">the reconciler is the only writer</p>
-  <svg viewBox="0 0 1100 360" role="img" aria-label="A vault with a single key held by an automated reconciler rather than by a person or an agent, with the agent's path to the vault running through a branch, a review and a merge.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.8"><rect x="360" y="90" width="380" height="160" rx="14" class="f-green"/></g>
-    <text x="550" y="150" text-anchor="middle" class="lbl-b">the cluster</text>
-    <text x="550" y="194" text-anchor="middle" class="lbl-sm">one key, held by the reconciler</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="60" y="130" width="230" height="80" rx="10" class="f-blue"/><rect x="810" y="130" width="230" height="80" rx="10" class="f-purple"/></g>
-    <text x="175" y="178" text-anchor="middle" class="lbl">the agent</text>
-    <text x="925" y="178" text-anchor="middle" class="lbl">the reconciler</text>
-    <g fill="none" stroke="#c62828" stroke-width="2.4" stroke-dasharray="9 7" stroke-linecap="round"><path d="M302,170 L348,170"/></g>
-    <g fill="none" stroke="#1e1e1e" stroke-width="2.4" stroke-linecap="round"><path d="M798,170 L752,170" marker-end="url(#ah)"/></g>
-    <text x="550" y="320" text-anchor="middle" class="lbl-g">no person and no agent holds a key to this vault</text>
+  <h2 class="t">The Cluster Is the Boundary</h2>
+  <p class="s">a different machine says no, not just the agent</p>
+  <svg viewBox="0 0 1180 400" role="img" aria-label="A locked gate at the cluster's edge, with a hand-lettered sign lying on the ground beside it rather than nailed to it: a sign is advisory, a lock is not.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="3"><rect x="440" y="70" width="300" height="260" rx="10" class="f-blue"/></g>
+    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><circle cx="590" cy="210" r="26"/></g>
+    <path d="M590,236 L590,270" stroke="#1e1e1e" stroke-width="4" stroke-linecap="round"/>
+    <text x="590" y="120" text-anchor="middle" class="lbl-b">the API server</text>
+    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2" stroke-dasharray="7 6" transform="rotate(-8 220 300)"><rect x="120" y="272" width="200" height="56" rx="6"/></g>
+    <text x="220" y="306" text-anchor="middle" class="lbl-sm" transform="rotate(-8 220 300)">"read-only, please"</text>
+    <text x="220" y="360" text-anchor="middle" class="lbl-g">a sign on the ground &mdash; advisory</text>
+    <text x="920" y="200" text-anchor="middle" class="lbl-b">the lock</text>
+    <text x="920" y="236" text-anchor="middle" class="lbl-sm">is not asking to be read</text>
+    <text x="590" y="384" text-anchor="middle" class="lbl">a different machine says no</text>
   </svg>
   <div class="pageno">M12&middot;13</div>
 </section>
 <section>
-  <h2 class="t">One key, and the agent is not holding it</h2>
-  <p class="s">the agent proposes; an automated system applies</p>
-  <svg viewBox="0 0 1100 340" role="img" aria-label="A bank vault with a single key held by a reconciler robot labelled Argo CD. An agent stands at the counter holding a transfer slip but has no key, marked with a red no-key note. Only the robot's arrow reaches the vault.">
-    <!-- agent at counter with slip, no key -->
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><circle cx="130" cy="130" r="28"/><line x1="130" y1="158" x2="130" y2="200"/></g>
-    <text x="130" y="230" text-anchor="middle" class="lbl-g">agent</text>
-    <g filter="url(#rough)" fill="var(--p-blue)" stroke="none"><rect x="200" y="110" width="130" height="60" rx="8"/></g>
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><rect x="200" y="110" width="130" height="60" rx="8"/></g>
-    <text x="265" y="146" text-anchor="middle" class="lbl-sm">transfer slip</text>
-    <text x="130" y="270" text-anchor="middle" class="lbl-bad">no key</text>
-    <!-- reconciler robot holds key -->
-    <g filter="url(#rough)" fill="var(--p-purple)" stroke="none"><rect x="430" y="90" width="180" height="150" rx="12"/></g>
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="3"><rect x="430" y="90" width="180" height="150" rx="12"/><circle cx="490" cy="140" r="10"/><circle cx="550" cy="140" r="10"/><line x1="480" y1="185" x2="560" y2="185"/></g>
-    <text x="520" y="272" text-anchor="middle" class="lbl-b">Argo CD · the reconciler</text>
-    <!-- the one key -->
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8"><circle cx="650" cy="150" r="14"/><line x1="664" y1="150" x2="710" y2="150"/><line x1="700" y1="150" x2="700" y2="164"/><line x1="710" y1="150" x2="710" y2="168"/></g>
-    <text x="685" y="128" text-anchor="middle" class="lbl-good">the only key</text>
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><line x1="335" y1="145" x2="424" y2="145" marker-end="url(#ah)"/></g>
-    <!-- vault -->
-    <g filter="url(#rough)" fill="var(--p-green)" stroke="none"><rect x="800" y="80" width="220" height="180" rx="12"/></g>
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="3"><rect x="800" y="80" width="220" height="180" rx="12"/><circle cx="910" cy="170" r="40"/><line x1="910" y1="170" x2="940" y2="150"/><line x1="910" y1="170" x2="910" y2="210"/></g>
-    <text x="910" y="70" text-anchor="middle" class="lbl-b">the cluster · vault</text>
-    <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.8"><line x1="720" y1="150" x2="796" y2="150" marker-end="url(#ah)"/></g>
+  <h2 class="t">Prove it before you trust it</h2>
+  <p class="s">Read-only can still read more than you'd guess.</p>
+  <svg viewBox="0 0 1180 360" role="img" aria-label="The read-only can-i matrix, measured: get, list and watch are yes on pods, deployments, configmaps and secrets. Create, update, patch and delete are all no.">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="60" y="30" width="500" height="280" rx="14" class="f-green"/></g>
+    <text x="310" y="76" text-anchor="middle" class="lbl-b">get / list / watch</text>
+    <text x="310" y="130" text-anchor="middle" class="lbl">pods &mdash; yes</text>
+    <text x="310" y="164" text-anchor="middle" class="lbl">deployments &mdash; yes</text>
+    <text x="310" y="198" text-anchor="middle" class="lbl">configmaps &mdash; yes</text>
+    <text x="310" y="232" text-anchor="middle" class="lbl-b">secrets &mdash; yes</text>
+    <text x="310" y="272" text-anchor="middle" class="lbl-g">hold onto that last line</text>
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="620" y="30" width="500" height="280" rx="14" class="f-red"/></g>
+    <text x="870" y="76" text-anchor="middle" class="lbl-b">create / update / patch / delete</text>
+    <text x="870" y="150" text-anchor="middle" class="lbl">every verb, every resource</text>
+    <text x="870" y="200" text-anchor="middle" class="lbl-bad">no</text>
   </svg>
   <div class="pageno">M12&middot;14</div>
 </section>
 <section>
-  <h2 class="t">Three controls, three different failures</h2>
-  <p class="s">only one of them is enforcement in the strict sense</p>
-  <svg viewBox="0 0 1180 400" role="img" aria-label="Three controls revealed one at a time, each failing differently. Self-heal on the reconciler notices drift and puts it back, but does not prevent the change. The pre-tool-use change gate refuses named commands before they run, but protects nothing nobody enumerated. The read-only identity has every write refused by the API server, and does not care about intent at all.">
+  <h2 class="t">The 403 — and the hook removed</h2>
+  <p class="s">The hook is ours. The 403 isn't, and can't be.</p>
+  <svg viewBox="0 0 1180 340" role="img" aria-label="Two states. Hook active: the mutating command is denied by the hook. Hook bypassed: the exact same command still returns the verbatim 403 from the API server &mdash; the hook is ours and removable, the 403 is not."">
     <g class="fragment" data-fragment-index="1">
-      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="50" y="56" width="1080" height="92" rx="11" class="f-green"/></g>
-      <text x="230" y="94" text-anchor="middle" class="lbl-b">selfHeal</text>
-      <text x="230" y="126" text-anchor="middle" class="lbl-sm">the reconciler</text>
-      <text x="640" y="94" class="lbl">puts the cluster back when it drifts from Git</text>
-      <text x="640" y="126" class="lbl-bad">it reverts &mdash; it does not prevent</text>
+      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="60" y="40" width="500" height="240" rx="14" class="f-orange"/></g>
+      <text x="310" y="90" text-anchor="middle" class="lbl-b">hook active</text>
+      <text x="310" y="140" text-anchor="middle" class="lbl-sm">kubectl delete deployment ...</text>
+      <text x="310" y="190" text-anchor="middle" class="lbl-bad">denied by the hook</text>
+      <text x="310" y="240" text-anchor="middle" class="lbl-g">ours &mdash; removable</text>
     </g>
     <g class="fragment" data-fragment-index="2">
-      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="50" y="164" width="1080" height="92" rx="11" class="f-orange"/></g>
-      <text x="230" y="202" text-anchor="middle" class="lbl-b">the change gate</text>
-      <text x="230" y="234" text-anchor="middle" class="lbl-sm">a PreToolUse hook</text>
-      <text x="640" y="202" class="lbl">refuses named commands before they execute</text>
-      <text x="640" y="234" class="lbl-bad">it protects only what someone enumerated</text>
-    </g>
-    <g class="fragment" data-fragment-index="3">
-      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="50" y="272" width="1080" height="92" rx="11" class="f-blue"/></g>
-      <text x="230" y="310" text-anchor="middle" class="lbl-b">the identity</text>
-      <text x="230" y="342" text-anchor="middle" class="lbl-sm">RBAC, at the API server</text>
-      <text x="640" y="310" class="lbl">every write verb refused, on every call</text>
-      <text x="640" y="342" class="lbl-good">it does not care what anyone intended</text>
+      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="620" y="40" width="500" height="240" rx="14" class="f-red"/></g>
+      <text x="870" y="90" text-anchor="middle" class="lbl-b">hook bypassed</text>
+      <text x="870" y="140" text-anchor="middle" class="lbl-sm">same command, called directly</text>
+      <text x="870" y="190" text-anchor="middle" class="lbl-bad">403 Forbidden &mdash; same words</text>
+      <text x="870" y="240" text-anchor="middle" class="lbl-g">not ours &mdash; no file to delete</text>
     </g>
   </svg>
   <div class="pageno">M12&middot;15</div>
 </section>
 <section>
-  <h2 class="t">Two changes, two different paths</h2>
-  <p class="s">desired state goes through Git; images go through CI</p>
-  <svg viewBox="0 0 1180 400" role="img" aria-label="Two lanes. The upper lane is the chart change: a branch, a review, a merge, and then the reconciler syncs it, so the cluster converges on the merged state. The lower lane is the image: a branch, a review, a merge, and then CI builds and publishes it. A note says the change gate denies docker push from the agent identity, because an image is an artifact and not a manifest.">
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="40" y="60" width="1100" height="116" rx="12" class="f-green"/></g>
-    <text x="180" y="104" text-anchor="middle" class="lbl-b">the chart change</text>
-    <text x="180" y="136" text-anchor="middle" class="lbl-sm">desired state, in Git</text>
-    <text x="640" y="104" class="lbl">branch &rarr; review &rarr; merge &rarr; the reconciler syncs</text>
-    <text x="640" y="136" class="lbl-good">the cluster converges on the merged state</text>
-    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.6"><rect x="40" y="200" width="1100" height="116" rx="12" class="f-blue"/></g>
-    <text x="180" y="244" text-anchor="middle" class="lbl-b">the image</text>
-    <text x="180" y="276" text-anchor="middle" class="lbl-sm">an artifact, not a manifest</text>
-    <text x="640" y="244" class="lbl">branch &rarr; review &rarr; merge &rarr; CI builds and publishes</text>
-    <text x="640" y="276" class="lbl-bad">docker push is denied from the agent identity</text>
-    <text x="590" y="360" text-anchor="middle" class="lbl-g">same discipline, two pipelines &mdash; and a chart rollback does not roll back an image</text>
+  <h2 class="t">A second identity: narrower, not bigger</h2>
+  <p class="s">It can write. It still can't read what read-only can.</p>
+  <svg viewBox="0 0 1180 340" role="img" aria-label="The remediator identity's own matrix: patch deployments in northstar yes, delete no, patch in kube-system no, get secrets no. Narrower than the read-only identity, not a superset of it."">
+    <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.4"><rect x="60" y="30" width="1060" height="260" rx="14" class="f-blue"/></g>
+    <text x="590" y="76" text-anchor="middle" class="lbl-b">agent-remediator</text>
+    <g filter="url(#rough)" fill="none" stroke="#757575" stroke-width="2"><rect x="100" y="110" width="230" height="60" rx="8"/><rect x="350" y="110" width="230" height="60" rx="8"/><rect x="600" y="110" width="230" height="60" rx="8"/><rect x="850" y="110" width="230" height="60" rx="8"/></g>
+    <text x="215" y="146" text-anchor="middle" class="lbl-sm">patch deployments -n northstar</text>
+    <text x="215" y="166" text-anchor="middle" class="lbl-good">yes</text>
+    <text x="465" y="146" text-anchor="middle" class="lbl-sm">delete deployments</text>
+    <text x="465" y="166" text-anchor="middle" class="lbl-bad">no</text>
+    <text x="715" y="146" text-anchor="middle" class="lbl-sm">patch -n kube-system</text>
+    <text x="715" y="166" text-anchor="middle" class="lbl-bad">no</text>
+    <text x="965" y="146" text-anchor="middle" class="lbl-sm">get secrets</text>
+    <text x="965" y="166" text-anchor="middle" class="lbl-bad">no</text>
+    <text x="590" y="236" text-anchor="middle" class="lbl-g">it can write. it still can't read what read-only can.</text>
   </svg>
   <div class="pageno">M12&middot;16</div>
 </section>
 <section>
   <h2 class="t">What the controls miss</h2>
-  <p class="s">three of them, and you measure each one in the lab</p>
-  <svg viewBox="0 0 1180 400" role="img" aria-label="Three limits revealed one at a time. Baseline pod security admits a root pod with only a warning, so the non-root guarantee comes from your chart. A selector label change passes lint, tests and render and is then rejected forever as an immutable field while the service still reports healthy. And your tests render one set of values, so the same defect in another overlay passes unnoticed.">
+  <p class="s">Read-only kept it from deleting. Not from reading.</p>
+  <svg viewBox="0 0 1180 340" role="img" aria-label="Three fragments: can-i get secrets returns yes, a real Secret read succeeds, and it decodes to sk-demo-not-real-12345. Recap: read-only kept it from deleting; nothing kept it from reading."">
     <g class="fragment" data-fragment-index="1">
-      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.3"><rect x="50" y="46" width="1080" height="96" rx="11" class="f-red"/></g>
-      <text x="590" y="86" text-anchor="middle" class="lbl-b">enforce: baseline admits a root pod</text>
-      <text x="590" y="120" text-anchor="middle" class="lbl-sm">it warns about restricted and lets it in &mdash; your chart is the only thing making the pod non-root</text>
+      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="40" y="30" width="340" height="200" rx="12" class="f-orange"/></g>
+      <text x="210" y="76" text-anchor="middle" class="lbl-b">can-i get secrets</text>
+      <text x="210" y="130" text-anchor="middle" class="lbl-bad" style="font-size:26px">yes</text>
     </g>
     <g class="fragment" data-fragment-index="2">
-      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.3"><rect x="50" y="156" width="1080" height="96" rx="11" class="f-red"/></g>
-      <text x="590" y="196" text-anchor="middle" class="lbl-b">lint green, tests green, and it can never apply</text>
-      <text x="590" y="230" text-anchor="middle" class="lbl-sm">a selector label is immutable &mdash; OutOfSync while the health column still reads Healthy</text>
+      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="420" y="30" width="340" height="200" rx="12" class="f-red"/></g>
+      <text x="590" y="76" text-anchor="middle" class="lbl-b">the read</text>
+      <text x="590" y="130" text-anchor="middle" class="lbl-bad">succeeds</text>
     </g>
     <g class="fragment" data-fragment-index="3">
-      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.3"><rect x="50" y="266" width="1080" height="96" rx="11" class="f-red"/></g>
-      <text x="590" y="306" text-anchor="middle" class="lbl-b">your tests see one render</text>
-      <text x="590" y="340" text-anchor="middle" class="lbl-sm">the same defect in another values overlay passes three green tests</text>
+      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="800" y="30" width="340" height="200" rx="12" class="f-purple"/></g>
+      <text x="970" y="76" text-anchor="middle" class="lbl-b">decoded</text>
+      <text x="970" y="130" text-anchor="middle" class="lbl-sm">sk-demo-not-real-12345</text>
+    </g>
+    <g class="fragment" data-fragment-index="4">
+      <text x="590" y="280" text-anchor="middle" class="lbl-g">read-only kept it from deleting. nothing kept it from reading.</text>
     </g>
   </svg>
-  <p class="recap fragment">Next: the four things to watch for while you build.</p>
   <div class="pageno">M12&middot;17</div>
 </section>
 <section>
   <h2 class="t">What to watch for while you build</h2>
-  <p class="s">four flags, and what each one means</p>
-  <svg viewBox="0 0 1180 400" role="img" aria-label="Four flags revealed one at a time: Skill missing from the role gives a good chart with no method behind it; a worktree that was promised but not made needs one more ask; tests written after the fix prove nothing because they were never seen failing; and a values edit carrying a privilege change, because a writable path is not an approvable change class.">
+  <p class="s">Each is demonstrated in the screencast.</p>
+  <svg viewBox="0 0 1180 400" role="img" aria-label="Four flags revealed one at a time: generated kubeconfigs expire and should be regenerated, never hand-edited; agent-remediator is a namespaced Role, not a ClusterRole, on purpose; read the ready condition on an EndpointSlice, never just the address list; and an injected instruction can get a mutation attempted, but RBAC decides whether it succeeds.">
     <g class="fragment" data-fragment-index="1">
       <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.2"><circle cx="90" cy="72" r="22"/></g>
       <text x="90" y="82" text-anchor="middle" class="lbl-b">1</text>
-      <text x="146" y="68" class="lbl-b">Skill is missing from the role</text>
-      <text x="146" y="102" class="lbl-sm">you get a good chart with no method behind it</text>
+      <text x="146" y="68" class="lbl-b">generated kubeconfigs expire</text>
+      <text x="146" y="102" class="lbl-sm">regenerate the token, never hand-edit the file</text>
     </g>
     <g class="fragment" data-fragment-index="2">
       <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.2"><circle cx="90" cy="158" r="22"/></g>
       <text x="90" y="168" text-anchor="middle" class="lbl-b">2</text>
-      <text x="146" y="154" class="lbl-b">the worktree was promised, not made</text>
-      <text x="146" y="188" class="lbl-sm">ask again; it finishes the job</text>
+      <text x="146" y="154" class="lbl-b">agent-remediator is a Role, not a ClusterRole</text>
+      <text x="146" y="188" class="lbl-sm">one namespace, on purpose</text>
     </g>
     <g class="fragment" data-fragment-index="3">
       <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.2"><circle cx="90" cy="244" r="22"/></g>
       <text x="90" y="254" text-anchor="middle" class="lbl-b">3</text>
-      <text x="146" y="240" class="lbl-b">the tests were written after the fix</text>
-      <text x="146" y="274" class="lbl-sm">an assertion never seen failing proves nothing</text>
+      <text x="146" y="240" class="lbl-b">read the ready condition, never just the address list</text>
+      <text x="146" y="274" class="lbl-sm">a listed address is not the same as a serving one</text>
     </g>
     <g class="fragment" data-fragment-index="4">
       <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.2"><circle cx="90" cy="330" r="22"/></g>
       <text x="90" y="340" text-anchor="middle" class="lbl-b">4</text>
-      <text x="146" y="326" class="lbl-b">a values edit carries a privilege change</text>
-      <text x="146" y="360" class="lbl-sm">writable path is not approvable change</text>
+      <text x="146" y="326" class="lbl-b">an injected instruction can get a mutation attempted</text>
+      <text x="146" y="360" class="lbl-sm">RBAC decides whether it succeeds, not whether it was tried</text>
     </g>
   </svg>
   <div class="pageno">M12&middot;18</div>
 </section>
 <section>
   <h2 class="t">What you will do as part of the lab</h2>
-  <p class="s">six steps, and a chart you would defend in review</p>
-  <svg viewBox="0 0 1430 220" role="img" aria-label="Six lab steps revealed one at a time: write the brief with requirements and no field names, build in a worktree as the platform-engineer role, watch three failing tests go green, block a planted privilege change with an independent verdict, ship the change through Git so the reconciler applies it, and measure the serving floor before taking it away again.">
+  <p class="s">Summary and lab handoff.</p>
+  <svg viewBox="0 0 1430 220" role="img" aria-label="Six lab steps revealed one at a time: plant the five faults from a pinned vendored set, write SPEC.md stating what done means, prove the boundary with a can-i matrix and a real 403, triage all five faults and rank them with the fixed schema, remediate the top fault through the agent-remediator identity, and measure whether the Secret read succeeds under the read-only identity.">
     <g class="fragment" data-fragment-index="1" transform="translate(30,0)">
       <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2" stroke-dasharray="8 7"><rect x="0" y="10" width="140" height="100" rx="10"/></g>
-      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="44" y="24" width="52" height="64" rx="6" class="f-purple"/></g><g fill="none" stroke="#757575" stroke-width="2"><path d="M56,44 L84,44"/><path d="M56,58 L84,58"/><path d="M56,72 L76,72"/></g>
-      <text x="70" y="150" text-anchor="middle" class="lbl-b">write the brief</text>
-      <text x="70" y="182" text-anchor="middle" class="lbl-sm">requirements, no field names</text>
+      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><circle cx="70" cy="56" r="30" class="f-red"/></g>
+      <text x="70" y="150" text-anchor="middle" class="lbl-b">plant the faults</text>
+      <text x="70" y="182" text-anchor="middle" class="lbl-sm">a pinned, vendored set</text>
     </g>
     <g class="fragment" data-fragment-index="2" transform="translate(275,0)">
       <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2" stroke-dasharray="8 7"><rect x="0" y="10" width="140" height="100" rx="10"/></g>
-      <g fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><path d="M40,88 L40,34"/><path d="M40,44 L96,44"/></g><g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><circle cx="100" cy="44" r="12" class="f-green"/></g>
-      <text x="70" y="150" text-anchor="middle" class="lbl-b">build in a worktree</text>
-      <text x="70" y="182" text-anchor="middle" class="lbl-sm">as the platform-engineer role</text>
+      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="44" y="24" width="52" height="64" rx="6" class="f-purple"/></g><g fill="none" stroke="#757575" stroke-width="2"><path d="M56,44 L84,44"/><path d="M56,58 L84,58"/><path d="M56,72 L76,72"/></g>
+      <text x="70" y="150" text-anchor="middle" class="lbl-b">write SPEC.md</text>
+      <text x="70" y="182" text-anchor="middle" class="lbl-sm">what done means</text>
     </g>
     <g class="fragment" data-fragment-index="3" transform="translate(520,0)">
       <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2" stroke-dasharray="8 7"><rect x="0" y="10" width="140" height="100" rx="10"/></g>
-      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="26" y="34" width="40" height="48" rx="6" class="f-red"/><rect x="76" y="34" width="40" height="48" rx="6" class="f-green"/></g>
-      <text x="70" y="150" text-anchor="middle" class="lbl-b">watch red go green</text>
-      <text x="70" y="182" text-anchor="middle" class="lbl-sm">three tests, written first</text>
+      <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.6"><circle cx="70" cy="56" r="30"/></g><path d="M70,86 L70,110" stroke="#1e1e1e" stroke-width="4" stroke-linecap="round"/>
+      <text x="70" y="150" text-anchor="middle" class="lbl-b">prove the boundary</text>
+      <text x="70" y="182" text-anchor="middle" class="lbl-sm">can-i, then the 403</text>
     </g>
     <g class="fragment" data-fragment-index="4" transform="translate(765,0)">
       <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2" stroke-dasharray="8 7"><rect x="0" y="10" width="140" height="100" rx="10"/></g>
-      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><path d="M70,26 L106,86 L34,86 Z" class="f-orange"/></g><text x="70" y="78" text-anchor="middle" class="lbl-b">!</text>
-      <text x="70" y="150" text-anchor="middle" class="lbl-b">block a planted change</text>
-      <text x="70" y="182" text-anchor="middle" class="lbl-sm">an independent verdict</text>
+      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="28" y="30" width="84" height="56" rx="6" class="f-blue"/></g><g fill="none" stroke="#757575" stroke-width="2"><path d="M28,58 L112,58"/><path d="M70,30 L70,86"/></g>
+      <text x="70" y="150" text-anchor="middle" class="lbl-b">triage & rank</text>
+      <text x="70" y="182" text-anchor="middle" class="lbl-sm">five findings, one schema</text>
     </g>
     <g class="fragment" data-fragment-index="5" transform="translate(1010,0)">
       <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2" stroke-dasharray="8 7"><rect x="0" y="10" width="140" height="100" rx="10"/></g>
-      <g filter="url(#rough)" fill="none" stroke="#1e1e1e" stroke-width="2.4"><circle cx="44" cy="58" r="14"/><circle cx="100" cy="58" r="14"/></g><g fill="none" stroke="#757575" stroke-width="2.2"><path d="M58,58 L86,58"/></g>
-      <text x="70" y="150" text-anchor="middle" class="lbl-b">ship it through Git</text>
-      <text x="70" y="182" text-anchor="middle" class="lbl-sm">the reconciler applies it</text>
+      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><rect x="26" y="34" width="40" height="48" rx="6" class="f-red"/><rect x="76" y="34" width="40" height="48" rx="6" class="f-green"/></g>
+      <text x="70" y="150" text-anchor="middle" class="lbl-b">remediate</text>
+      <text x="70" y="182" text-anchor="middle" class="lbl-sm">via agent-remediator</text>
     </g>
     <g class="fragment" data-fragment-index="6" transform="translate(1255,0)">
       <g filter="url(#rough)" fill="none" stroke="#bdbdbd" stroke-width="2" stroke-dasharray="8 7"><rect x="0" y="10" width="140" height="100" rx="10"/></g>
-      <g fill="none" stroke="#1e1e1e" stroke-width="2.6" stroke-linecap="round"><path d="M32,86 L32,30"/><path d="M32,86 L116,86"/><path d="M40,70 L60,70 L60,48 L84,48 L84,70 L108,70"/></g>
-      <text x="70" y="150" text-anchor="middle" class="lbl-b">measure the floor</text>
-      <text x="70" y="182" text-anchor="middle" class="lbl-sm">then take it away</text>
+      <g filter="url(#rough)" stroke="#1e1e1e" stroke-width="2.2"><path d="M70,26 L106,86 L34,86 Z" class="f-orange"/></g><text x="70" y="78" text-anchor="middle" class="lbl-b">!</text>
+      <text x="70" y="150" text-anchor="middle" class="lbl-b">measure the hole</text>
+      <text x="70" y="182" text-anchor="middle" class="lbl-sm">the Secret read</text>
     </g>
   </svg>
   <div class="pageno">M12&middot;19</div>
 </section>
+
 
 
 
